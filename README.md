@@ -1,2 +1,2 @@
 # AutoPas.github.io
-Webpage for AutoPas
+Webpage for AutoPas accessible at autopas.github.io
