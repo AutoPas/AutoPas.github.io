@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['owned_2510',['owned',['../namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a8f9a4c5fe0824547590a3fc568f5c7c7',1,'autopas']]],
-  ['ownedonly_2511',['ownedOnly',['../namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42a30bdce7517eacf5a795a2b165e4a4eb8',1,'autopas']]]
+  ['newton_2513',['newton',['../classautopas_1_1options_1_1ExtrapolationMethodOption.html#a1b1bc16ff7760d2cf1b29652c27b6dd1a8917be04c085b6ae210844cb615f6fd5',1,'autopas::options::ExtrapolationMethodOption']]],
+  ['nompi_2514',['noMPI',['../classautopas_1_1options_1_1MPIStrategyOption.html#a2a5c0654572e9b20f28a707cd3268bbfae3508e7567687f85c0b9359218bfe302',1,'autopas::options::MPIStrategyOption']]]
 ];

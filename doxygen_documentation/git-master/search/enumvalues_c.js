@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['verletsoa_2517',['VerletSoA',['../classautopas_1_1VerletLists.html#a1b26e3d1bd7b90b726c27b5a5b0ef4ceaf68139e7576708bca363a7e8668d3d18',1,'autopas::VerletLists']]]
+  ['throwexception_2521',['throwException',['../namespaceautopas_1_1utils.html#a9d742020d77e569b7b7200992d15fef8a7a63dd0a1bcc8bc1c5f54b779701d85d',1,'autopas::utils']]]
 ];

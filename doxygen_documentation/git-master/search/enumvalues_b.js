@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['throwexception_2516',['throwException',['../namespaceautopas_1_1utils.html#a9d742020d77e569b7b7200992d15fef8a7a63dd0a1bcc8bc1c5f54b779701d85d',1,'autopas::utils']]]
+  ['randomsearch_2520',['randomSearch',['../classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4ae3de72e246f63041a5df81e5a9b27bfa',1,'autopas::options::TuningStrategyOption']]]
 ];

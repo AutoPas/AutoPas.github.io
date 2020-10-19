@@ -49,7 +49,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/">AutoPas</a>
-   &#160;<span id="projectnumber">0.1.0-18f3213</span>
+   &#160;<span id="projectnumber">0.1.0-4da775b</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -94,7 +94,7 @@ $(function() {
 <div class="title">AutoPas </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="md__github_workspace_README"></a>AutoPas is a node-level auto-tuned particle simulation library developed in the context of the <b>TaLPas</b> project. <a href="https://www5.in.tum.de/jenkins/mardyn/job/AutoPas-Multibranch/job/master/"><img src="https://www5.in.tum.de/jenkins/mardyn/buildStatus/icon?job=AutoPas-Multibranch/master" alt="Build Status" class="inline"/></a></p>
+<div class="textblock"><p><a class="anchor" id="md__github_workspace_README"></a>AutoPas is a node-level auto-tuned particle simulation library developed in the context of the <a href="http://www.talpas.de"><b>TaLPas</b></a> project. <a href="https://www5.in.tum.de/jenkins/mardyn/job/AutoPas-Multibranch/job/master/"><img src="https://www5.in.tum.de/jenkins/mardyn/buildStatus/icon?job=AutoPas-Multibranch/master" alt="Build Status" class="inline"/></a></p>
 <h1><a class="anchor" id="autotoc_md1"></a>
 Documentation</h1>
 <p>The documentation can be found at our website: <a href="https://autopas.github.io/doxygen_documentation/git-master/">https://autopas.github.io/doxygen_documentation/git-master/</a></p>
@@ -159,8 +159,7 @@ Using AutoPas</h1>
 <p>Steps to using AutoPas in your particle simulation program:</p>
 <h2><a class="anchor" id="autotoc_md11"></a>
 Defining a Custom Particle Class</h2>
-<p>First you will need to define a particle class. For that we provide some basic Particle classes defined in <code>src/particles/</code> that you can use either directly or you can write your own Particle class by inheriting from one of the provided classes. </p><div class="fragment"><div class="line"> {C++}</div>
-<div class="line">class SPHParticle : public autopas::Particle {</div>
+<p>First you will need to define a particle class. For that we provide some basic Particle classes defined in <code>src/particles/</code> that you can use either directly or you can write your own Particle class by inheriting from one of the provided classes. </p><div class="fragment"><div class="line"><span class="keyword">class </span>SPHParticle : <span class="keyword">public</span> <a class="code" href="classautopas_1_1ParticleBase.html">autopas::Particle</a> {</div>
 <div class="line"> </div>
 <div class="line">}</div>
 </div><!-- fragment --><h2><a class="anchor" id="autotoc_md12"></a>
@@ -180,35 +179,31 @@ Particle Ownership</h2>
 </ul>
 <h2><a class="anchor" id="autotoc_md16"></a>
 Iterating Through Particles</h2>
-<p>Iterators to iterate over particle are provided. The particle can be accesses using <code>iter-&gt;</code> (<code>*iter</code> is also possible). When created inside a OpenMP parallel region, work is automatically spread over all iterators. </p><div class="fragment"><div class="line"> {C++}</div>
-<div class="line">#pragma omp parallel</div>
-<div class="line">for(auto iter = autoPas.begin(); iter.isValid(); ++iter) {</div>
-<div class="line">  // user code:</div>
-<div class="line">  auto position = iter-&gt;getR();</div>
+<p>Iterators to iterate over particle are provided. The particle can be accesses using <code>iter-&gt;</code> (<code>*iter</code> is also possible). When created inside a OpenMP parallel region, work is automatically spread over all iterators. </p><div class="fragment"><div class="line"><span class="preprocessor">#pragma omp parallel</span></div>
+<div class="line"><span class="keywordflow">for</span>(<span class="keyword">auto</span> iter = autoPas.begin(); iter.isValid(); ++iter) {</div>
+<div class="line">  <span class="comment">// user code:</span></div>
+<div class="line">  <span class="keyword">auto</span> position = iter-&gt;getR();</div>
 <div class="line">}</div>
-</div><!-- fragment --><p>For convenience the <code>end()</code> method is also implemented for the AutoPas class. </p><div class="fragment"><div class="line"> {C++}</div>
-<div class="line">#pragma omp parallel</div>
-<div class="line">for(auto iter = autoPas.begin(); iter != autoPas.end(); ++iter) {</div>
-<div class="line">  // user code:</div>
-<div class="line">  auto position = iter-&gt;getR();</div>
+</div><!-- fragment --><p>For convenience the <code>end()</code> method is also implemented for the AutoPas class. </p><div class="fragment"><div class="line"><span class="preprocessor">#pragma omp parallel</span></div>
+<div class="line"><span class="keywordflow">for</span>(<span class="keyword">auto</span> iter = autoPas.begin(); iter != autoPas.end(); ++iter) {</div>
+<div class="line">  <span class="comment">// user code:</span></div>
+<div class="line">  <span class="keyword">auto</span> position = iter-&gt;getR();</div>
 <div class="line">}</div>
-</div><!-- fragment --><p>You might also use range-based for loops: </p><div class="fragment"><div class="line"> {C++}</div>
-<div class="line">#pragma omp parallel</div>
-<div class="line">for(auto&amp; particle : autoPas) {</div>
-<div class="line">  // user code:</div>
-<div class="line">  auto position = particle.getR();</div>
+</div><!-- fragment --><p>You might also use range-based for loops: </p><div class="fragment"><div class="line"><span class="preprocessor">#pragma omp parallel</span></div>
+<div class="line"><span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; particle : autoPas) {</div>
+<div class="line">  <span class="comment">// user code:</span></div>
+<div class="line">  <span class="keyword">auto</span> position = particle.getR();</div>
 <div class="line">}</div>
-</div><!-- fragment --><p>To iterate over a subset of particles, the <code>getRegionIterator(lowCorner, highCorner)</code> method can be used: </p><div class="fragment"><div class="line"> {C++}</div>
-<div class="line">#pragma omp parallel</div>
-<div class="line">for(auto iter = autoPas.getRegionIterator(lowCorner, highCorner); iter != autoPas.end(); ++iter) {</div>
-<div class="line">  // user code:</div>
-<div class="line">  auto position = iter-&gt;getR();</div>
+</div><!-- fragment --><p>To iterate over a subset of particles, the <code>getRegionIterator(lowCorner, highCorner)</code> method can be used: </p><div class="fragment"><div class="line"><span class="preprocessor">#pragma omp parallel</span></div>
+<div class="line"><span class="keywordflow">for</span>(<span class="keyword">auto</span> iter = autoPas.getRegionIterator(lowCorner, highCorner); iter != autoPas.end(); ++iter) {</div>
+<div class="line">  <span class="comment">// user code:</span></div>
+<div class="line">  <span class="keyword">auto</span> position = iter-&gt;getR();</div>
 <div class="line">}</div>
-</div><!-- fragment --><p>Both <code>begin()</code> and <code>getRegionIterator()</code> can also take the additional parameter <code>IteratorBehavior</code>, which indicates over which particles the iteration should be performed. </p><div class="fragment"><div class="line"> {C++}</div>
-<div class="line">enum IteratorBehavior {</div>
-<div class="line">  haloOnly,     /// iterate only over halo particles</div>
-<div class="line">  ownedOnly,    /// iterate only over owned particles</div>
-<div class="line">  haloAndOwned  /// iterate over both halo and owned particles</div>
+</div><!-- fragment --><p>Both <code>begin()</code> and <code>getRegionIterator()</code> can also take the additional parameter <code>IteratorBehavior</code>, which indicates over which particles the iteration should be performed. </p><div class="fragment"><div class="line"><span class="keyword">enum</span> <a class="code" href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42">IteratorBehavior</a> {</div>
+<div class="line">  <a class="code" href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42ac7100cec3dab7c9f031d06e44cdd4993">haloOnly</a>,          </div>
+<div class="line">  <a class="code" href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42a30bdce7517eacf5a795a2b165e4a4eb8">ownedOnly</a>,         </div>
+<div class="line">  <a class="code" href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42ae92b03f5be5a06c5bb4c5f72ffd26f84">haloAndOwned</a>,      </div>
+<div class="line">  <a class="code" href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42aa79bf7e94374210cd4bdb537ab8f66ad">haloOwnedAndDummy</a>  </div>
 <div class="line">};</div>
 </div><!-- fragment --><p>The default parameter is <code>haloAndOwned</code>, which is also used for range-based for loops.</p>
 <p>Analogously to <code>begin()</code>, <code>cbegin()</code> is also defined, which guarantees to return a <code>const_iterator</code>.</p>
@@ -216,8 +211,7 @@ Iterating Through Particles</h2>
 Simulation Loop</h2>
 <p>One simulation loop should always consist of the following phases:</p>
 <ol type="1">
-<li><p class="startli">Updating the Container: </p><div class="fragment"><div class="line">{C++}</div>
-<div class="line">  auto [invalidParticles, updated] = autoPas.updateContainer();</div>
+<li><p class="startli">Updating the Container: </p><div class="fragment"><div class="line"><span class="keyword">auto</span> [invalidParticles, updated] = autoPas.updateContainer();</div>
 </div><!-- fragment --><p class="startli">This call will potentially trigger an update of the container inside of AutoPas. The update will be performed if either</p>
 <p class="startli">a. The AutoTuner collected enough samples for the current configuration and will move to the next one OR</p>
 <p class="startli">b. The rebuild frequency of the container is reached.</p>
@@ -228,31 +222,28 @@ Simulation Loop</h2>
 <li>This step can be skipped if <code>updated</code> was false. If you use multiple MPI instances, you have to ensure that all instances rebuild during the same time step. This is guaranteed if the sampling frequency is the same as (or a multiple of) the rebuild frequency.</li>
 <li>Apply boundary conditions on them</li>
 <li>Potentially send them to other mpi-processes, skip this if MPI is not needed</li>
-<li>Add them to the containers using ```C++ autoPas.addParticle(particle) ```</li>
+<li>Add them to the containers using ```cpp autoPas.addParticle(particle) ```</li>
 </ul>
 </li>
 <li>Handle halo particles:<ul>
 <li>This step always has to be performed, even if <code>updated</code> was false.</li>
 <li>Identify the halo particles by use of AutoPas' iterators and send them in a similar way as the leaving particles.</li>
-<li>Add the particles as haloParticles using ```C++ autoPas.addOrUpdateHaloParticle(haloParticle) ```</li>
+<li>Add the particles as haloParticles using ```cpp autoPas.addOrUpdateHaloParticle(haloParticle) ```</li>
 </ul>
 </li>
-<li>Perform an iteratePairwise step. <div class="fragment"><div class="line">{C++}</div>
-<div class="line">  autoPas.iteratePairwise(functor);</div>
+<li>Perform an iteratePairwise step. <div class="fragment"><div class="line">autoPas.iteratePairwise(functor);</div>
 </div><!-- fragment --></li>
 </ol>
 <h2><a class="anchor" id="autotoc_md18"></a>
 Using multiple functors</h2>
 <p>AutoPas is able to work with simulation setups using multiple functors that describe different forces. A good demonstration for that is the sph example found under examples/sph or examples/sph-mpi. There exist some things you have to be careful about when using multiple functors:</p><ul>
-<li>If you use multiple functors it is necessary that all functors support the same newton3 options. If there is one functor not supporting newton3, you have to disable newton3 support for AutoPas by calling <div class="fragment"><div class="line">{C++}</div>
-<div class="line"> autoPas.setAllowedNewton3Options({false});</div>
+<li>If you use multiple functors it is necessary that all functors support the same newton3 options. If there is one functor not supporting newton3, you have to disable newton3 support for AutoPas by calling <div class="fragment"><div class="line">autoPas.setAllowedNewton3Options({<span class="keyword">false</span>});</div>
 </div><!-- fragment --></li>
 <li>If you have <code>n</code> functors within one iteration and update the particle position only at the end or start of the iteration, the rebuildFrequency and the samplingRate have to be a multiple of <code>n</code>.</li>
 </ul>
 <h2><a class="anchor" id="autotoc_md19"></a>
 Inserting additional particles</h2>
-<p>Before inserting additional particles (e.g. through a grand-canonical thermostat ), you always have to enforce a containerUpdate on ALL AutoPas instances, i.e., on all mpi processes, by calling </p><div class="fragment"><div class="line"> {C++}</div>
-<div class="line">autoPas.updateContainerForced();</div>
+<p>Before inserting additional particles (e.g. through a grand-canonical thermostat ), you always have to enforce a containerUpdate on ALL AutoPas instances, i.e., on all mpi processes, by calling </p><div class="fragment"><div class="line">autoPas.updateContainerForced();</div>
 </div><!-- fragment --><p>This will invalidate the internal neighbor lists and containers.</p>
 <h1><a class="anchor" id="autotoc_md20"></a>
 Developing AutoPas</h1>
@@ -269,6 +260,12 @@ Papers to cite</h1>
 </ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
+<div class="ttc" id="anamespaceautopas_html_a520fefd51e4555074cd16e7c3fd19c42ac7100cec3dab7c9f031d06e44cdd4993"><div class="ttname"><a href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42ac7100cec3dab7c9f031d06e44cdd4993">autopas::haloOnly</a></div><div class="ttdeci">@ haloOnly</div><div class="ttdoc">iterate only over halo particles</div><div class="ttdef"><b>Definition:</b> ParticleIteratorInterface.h:15</div></div>
+<div class="ttc" id="anamespaceautopas_html_a520fefd51e4555074cd16e7c3fd19c42a30bdce7517eacf5a795a2b165e4a4eb8"><div class="ttname"><a href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42a30bdce7517eacf5a795a2b165e4a4eb8">autopas::ownedOnly</a></div><div class="ttdeci">@ ownedOnly</div><div class="ttdoc">iterate only over owned particles</div><div class="ttdef"><b>Definition:</b> ParticleIteratorInterface.h:16</div></div>
+<div class="ttc" id="anamespaceautopas_html_a520fefd51e4555074cd16e7c3fd19c42aa79bf7e94374210cd4bdb537ab8f66ad"><div class="ttname"><a href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42aa79bf7e94374210cd4bdb537ab8f66ad">autopas::haloOwnedAndDummy</a></div><div class="ttdeci">@ haloOwnedAndDummy</div><div class="ttdoc">iterate over both halo and owned particles and also dummy particles</div><div class="ttdef"><b>Definition:</b> ParticleIteratorInterface.h:18</div></div>
+<div class="ttc" id="anamespaceautopas_html_a520fefd51e4555074cd16e7c3fd19c42ae92b03f5be5a06c5bb4c5f72ffd26f84"><div class="ttname"><a href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42ae92b03f5be5a06c5bb4c5f72ffd26f84">autopas::haloAndOwned</a></div><div class="ttdeci">@ haloAndOwned</div><div class="ttdoc">iterate over both halo and owned particles</div><div class="ttdef"><b>Definition:</b> ParticleIteratorInterface.h:17</div></div>
+<div class="ttc" id="aclassautopas_1_1ParticleBase_html"><div class="ttname"><a href="classautopas_1_1ParticleBase.html">autopas::ParticleBase</a></div><div class="ttdoc">Minimal definition of a basic particle.</div><div class="ttdef"><b>Definition:</b> ParticleBase.h:32</div></div>
+<div class="ttc" id="anamespaceautopas_html_a520fefd51e4555074cd16e7c3fd19c42"><div class="ttname"><a href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42">autopas::IteratorBehavior</a></div><div class="ttdeci">IteratorBehavior</div><div class="ttdoc">Enum to specify the behavior of an iterator.</div><div class="ttdef"><b>Definition:</b> ParticleIteratorInterface.h:14</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
