@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['outputtype_2490',['OutputType',['../classautopas_1_1GaussianClusterLogger.html#adbb35ac53582d48c161780f0da4cf12c',1,'autopas::GaussianClusterLogger']]],
-  ['ownershipstate_2491',['OwnershipState',['../namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0',1,'autopas']]]
+  ['outputtype_2489',['OutputType',['../classautopas_1_1GaussianClusterLogger.html#adbb35ac53582d48c161780f0da4cf12c',1,'autopas::GaussianClusterLogger']]],
+  ['ownershipstate_2490',['OwnershipState',['../namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0',1,'autopas']]]
 ];
