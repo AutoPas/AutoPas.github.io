@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['fastestabs_2500',['fastestAbs',['../classautopas_1_1options_1_1SelectorStrategyOption.html#a3de3088a46744ca2c1aac058ba33f5a4a5dae9b284ee73155e0699bd29b2c2695',1,'autopas::options::SelectorStrategyOption']]],
-  ['fastestmean_2501',['fastestMean',['../classautopas_1_1options_1_1SelectorStrategyOption.html#a3de3088a46744ca2c1aac058ba33f5a4a4514696aa627664dde5644d54cf10d7b',1,'autopas::options::SelectorStrategyOption']]],
-  ['fastestmedian_2502',['fastestMedian',['../classautopas_1_1options_1_1SelectorStrategyOption.html#a3de3088a46744ca2c1aac058ba33f5a4abc25b908898344d60a611ac1d9066b6c',1,'autopas::options::SelectorStrategyOption']]],
-  ['fullsearch_2503',['fullSearch',['../classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4ad42ba736aeaba29a778f30b55ead58d3',1,'autopas::options::TuningStrategyOption']]]
+  ['enabled_2532',['enabled',['../classautopas_1_1options_1_1Newton3Option.html#a38afa593fbe0c8c3e5044ef16f506967a7421d52be74f8448b4a5000108b7d298',1,'autopas::options::Newton3Option']]],
+  ['evidencematchingprobabilitygm_2533',['evidenceMatchingProbabilityGM',['../classautopas_1_1GaussianCluster.html#aa27fe3fde2aa4a672513bc2546bc8977a06d741a31e0e811e5585ff0cf915b216',1,'autopas::GaussianCluster']]],
+  ['evidencematchingscaledprobabilitygm_2534',['evidenceMatchingScaledProbabilityGM',['../classautopas_1_1GaussianCluster.html#aa27fe3fde2aa4a672513bc2546bc8977a5af604968f7e58ed206f630fa7ee9e0e',1,'autopas::GaussianCluster']]]
 ];

@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['halo_2504',['halo',['../namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a57f842286171094855e51fc3a541c1e2',1,'autopas']]],
-  ['haloandowned_2505',['haloAndOwned',['../namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42ae92b03f5be5a06c5bb4c5f72ffd26f84',1,'autopas']]],
-  ['haloonly_2506',['haloOnly',['../namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42ac7100cec3dab7c9f031d06e44cdd4993',1,'autopas']]],
-  ['haloownedanddummy_2507',['haloOwnedAndDummy',['../namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42aa79bf7e94374210cd4bdb537ab8f66ad',1,'autopas']]]
+  ['fastestabs_2535',['fastestAbs',['../classautopas_1_1options_1_1SelectorStrategyOption.html#a3de3088a46744ca2c1aac058ba33f5a4a5dae9b284ee73155e0699bd29b2c2695',1,'autopas::options::SelectorStrategyOption']]],
+  ['fastestmean_2536',['fastestMean',['../classautopas_1_1options_1_1SelectorStrategyOption.html#a3de3088a46744ca2c1aac058ba33f5a4a4514696aa627664dde5644d54cf10d7b',1,'autopas::options::SelectorStrategyOption']]],
+  ['fastestmedian_2537',['fastestMedian',['../classautopas_1_1options_1_1SelectorStrategyOption.html#a3de3088a46744ca2c1aac058ba33f5a4abc25b908898344d60a611ac1d9066b6c',1,'autopas::options::SelectorStrategyOption']]],
+  ['fullsearch_2538',['fullSearch',['../classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4ad42ba736aeaba29a778f30b55ead58d3',1,'autopas::options::TuningStrategyOption']]]
 ];

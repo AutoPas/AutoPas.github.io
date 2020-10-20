@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wasserstein2_2523',['wasserstein2',['../classautopas_1_1GaussianCluster.html#aa27fe3fde2aa4a672513bc2546bc8977a2886c50cac69f50d1a3a478086c7fac8',1,'autopas::GaussianCluster']]]
+  ['throwexception_2571',['throwException',['../namespaceautopas_1_1utils.html#a9d742020d77e569b7b7200992d15fef8a7a63dd0a1bcc8bc1c5f54b779701d85d',1,'autopas::utils']]]
 ];

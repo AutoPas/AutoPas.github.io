@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['predictivetuning_2516',['predictiveTuning',['../classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4a99433dd6fbbb59032915d9c222abf372',1,'autopas::options::TuningStrategyOption']]],
-  ['printabort_2517',['printAbort',['../namespaceautopas_1_1utils.html#a9d742020d77e569b7b7200992d15fef8a79e1a15b8378159c39a9a5be15316d23',1,'autopas::utils']]],
-  ['printcustomabortfunction_2518',['printCustomAbortFunction',['../namespaceautopas_1_1utils.html#a9d742020d77e569b7b7200992d15fef8a058274e8811813f9c032f665c060e542',1,'autopas::utils']]]
+  ['owned_2563',['owned',['../namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a8f9a4c5fe0824547590a3fc568f5c7c7',1,'autopas']]],
+  ['ownedonly_2564',['ownedOnly',['../namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42a30bdce7517eacf5a795a2b165e4a4eb8',1,'autopas']]]
 ];

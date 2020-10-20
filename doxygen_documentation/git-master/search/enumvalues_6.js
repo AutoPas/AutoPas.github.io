@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['ignore_2508',['ignore',['../namespaceautopas_1_1utils.html#a9d742020d77e569b7b7200992d15fef8a25f9f84486f9f4d59df399c5a6391f35',1,'autopas::utils']]]
+  ['halo_2539',['halo',['../namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a57f842286171094855e51fc3a541c1e2',1,'autopas']]],
+  ['haloandowned_2540',['haloAndOwned',['../namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42ae92b03f5be5a06c5bb4c5f72ffd26f84',1,'autopas']]],
+  ['haloonly_2541',['haloOnly',['../namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42ac7100cec3dab7c9f031d06e44cdd4993',1,'autopas']]],
+  ['haloownedanddummy_2542',['haloOwnedAndDummy',['../namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42aa79bf7e94374210cd4bdb537ab8f66ad',1,'autopas']]]
 ];
