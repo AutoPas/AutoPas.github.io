@@ -50,7 +50,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-51d9407</span>
+   &#160;<span id="projectnumber">0.1.0-39b4cd9</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -96,46 +96,42 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><dl class="reflist">
+<dt>Class <a class="el" href="classautopas_1_1VerletListHelpers_1_1VerletListValidityCheckerFunctor.html">autopas::VerletListHelpers&lt; Particle &gt;::VerletListValidityCheckerFunctor&lt; ParticleCell &gt;</a>  </dt>
+<dd><a class="anchor" id="_todo000016"></a>: <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a>?  </dd>
+<dt>Member <a class="el" href="classautopas_1_1utils_1_1SoAStorage.html#a32ede55b59cbe6e9245f948e47c749c6">autopas::utils::SoAStorage&lt; SoAArraysType &gt;::apply</a>  (FunctorT func)</dt>
+<dd><a class="anchor" id="_todo000031"></a>c++20: replace with expansion statement: <code>for... (auto&amp; elem : tup) {}</code>  </dd>
+<dt>Member <a class="el" href="namespaceautopas.html#ac64a70a137851f9fe1941487cfc42e52">autopas::DEFAULT_CACHE_LINE_SIZE</a>  </dt>
+<dd><a class="anchor" id="_todo000030"></a>C++17: replace value by std::hardware_destructive_interference_size not yet possible: as of 27.06.2019 this(P0154R1) is in neither libstc++ (gnu) nor libc++ (clang)  </dd>
+<dt>Member <a class="el" href="classautopas_1_1sph_1_1SPHCalcHydroForceFunctor.html#afb94e6bebf118e9ab2b9a98ac0ffbc69">autopas::sph::SPHCalcHydroForceFunctor&lt; Particle, ParticleCell &gt;::getNumFlopsPerKernelCall</a>  ()</dt>
+<dd><a class="anchor" id="_todo000029"></a>return correct flopcount  </dd>
+<dt>Member <a class="el" href="namespaceautopas_1_1OptimumSelector.html#a35cebb2a0115a295d8f1f5b0d1e4a884">autopas::OptimumSelector::medianValue</a>  (std::vector&lt; unsigned long &gt; values)</dt>
+<dd><a class="anchor" id="_todo000028"></a>C++20: replace by std::midpoint  </dd>
+<dt>Member <a class="el" href="classautopas_1_1Functor.html#abacf71085d75442e8539228af7078f99">autopas::Functor&lt; Particle, ParticleCell_t, SoAArraysType, Impl_t &gt;::getComputedAttr</a>  ()</dt>
+<dd><a class="anchor" id="_todo000027"></a>C++20: make this function virtual  </dd>
+<dt>Member <a class="el" href="classautopas_1_1Functor.html#a1b6e66e82af6d8eb08e8529667718019">autopas::Functor&lt; Particle, ParticleCell_t, SoAArraysType, Impl_t &gt;::getNeededAttr</a>  (std::false_type)</dt>
+<dd><a class="anchor" id="_todo000026"></a>C++20: make this function virtual  </dd>
+<dt>Member <a class="el" href="classautopas_1_1Functor.html#a64289b7fbe68999cec38bde9873f8f7d">autopas::Functor&lt; Particle, ParticleCell_t, SoAArraysType, Impl_t &gt;::getNeededAttr</a>  ()</dt>
+<dd><a class="anchor" id="_todo000025"></a>C++20: make this function virtual  </dd>
 <dt>Class <a class="el" href="classautopas_1_1FlopCounterFunctor.html">autopas::FlopCounterFunctor&lt; Particle, ParticleCell &gt;</a>  </dt>
-<dd><a class="anchor" id="_todo000026"></a>this class currently is limited to the following case:<ul>
+<dd><a class="anchor" id="_todo000024"></a>this class currently is limited to the following case:<ul>
 <li>constant cutoff radius</li>
 <li>constant amount of floating point operations for one kernel call (distance &lt; cutoff)  </li>
 </ul>
 </dd>
-<dt>Member <a class="el" href="classautopas_1_1VerletLists.html#a6503a9ab7723e166a6b9e007a0fdf974">autopas::VerletLists&lt; Particle &gt;::updateVerletListsAoS</a>  (bool useNewton3)</dt>
-<dd><a class="anchor" id="_todo000018"></a>autotune traversal  </dd>
-<dt>Class <a class="el" href="classautopas_1_1internal_1_1RegionParticleIterator.html">autopas::internal::RegionParticleIterator&lt; Particle, ParticleCell, modifiable &gt;</a>  </dt>
-<dd><a class="anchor" id="_todo000019"></a>optimize the region particle iterater. Currently we iterate over all particles  </dd>
-<dt>Member <a class="el" href="classautopas_1_1internal_1_1RegionParticleIterator.html#a7938a73351cc08a365d3fea4fdc284d3">autopas::internal::RegionParticleIterator&lt; Particle, ParticleCell, modifiable &gt;::clone</a>  () const override</dt>
-<dd><a class="anchor" id="_todo000020"></a>add test of clone  </dd>
-<dt>Member <a class="el" href="classautopas_1_1LogicHandler.html#a1c638029f6c8ee462e082ef1616a850b">autopas::LogicHandler&lt; Particle, ParticleCell &gt;::begin</a>  (IteratorBehavior behavior=IteratorBehavior::haloAndOwned)</dt>
-<dd><a class="anchor" id="_todo000021"></a>: we might have to add a rebuild here, if the verlet cluster lists are used.  </dd>
-<dt>Member <a class="el" href="classautopas_1_1LogicHandler.html#a408b37421ff58e500d64758dd07d90b6">autopas::LogicHandler&lt; Particle, ParticleCell &gt;::begin</a>  (IteratorBehavior behavior=IteratorBehavior::haloAndOwned) const</dt>
+<dt>Member <a class="el" href="classautopas_1_1LogicHandler.html#a86cb78e5b97db92eb2fae0e4c881d8d6">autopas::LogicHandler&lt; Particle, ParticleCell &gt;::getRegionIterator</a>  (std::array&lt; double, 3 &gt; lowerCorner, std::array&lt; double, 3 &gt; higherCorner, IteratorBehavior behavior=IteratorBehavior::haloAndOwned) const</dt>
 <dd><a class="anchor" id="_todo000022"></a>: we might have to add a rebuild here, if the verlet cluster lists are used.  </dd>
 <dt>Member <a class="el" href="classautopas_1_1LogicHandler.html#a7b94b89e27ee482428da5c7fbf2ad237">autopas::LogicHandler&lt; Particle, ParticleCell &gt;::getRegionIterator</a>  (std::array&lt; double, 3 &gt; lowerCorner, std::array&lt; double, 3 &gt; higherCorner, IteratorBehavior behavior=IteratorBehavior::haloAndOwned)</dt>
-<dd><a class="anchor" id="_todo000023"></a>: we might have to add a rebuild here, if the verlet cluster lists are used.  </dd>
-<dt>Member <a class="el" href="classautopas_1_1LogicHandler.html#a86cb78e5b97db92eb2fae0e4c881d8d6">autopas::LogicHandler&lt; Particle, ParticleCell &gt;::getRegionIterator</a>  (std::array&lt; double, 3 &gt; lowerCorner, std::array&lt; double, 3 &gt; higherCorner, IteratorBehavior behavior=IteratorBehavior::haloAndOwned) const</dt>
-<dd><a class="anchor" id="_todo000024"></a>: we might have to add a rebuild here, if the verlet cluster lists are used.  </dd>
+<dd><a class="anchor" id="_todo000021"></a>: we might have to add a rebuild here, if the verlet cluster lists are used.  </dd>
+<dt>Member <a class="el" href="classautopas_1_1LogicHandler.html#a408b37421ff58e500d64758dd07d90b6">autopas::LogicHandler&lt; Particle, ParticleCell &gt;::begin</a>  (IteratorBehavior behavior=IteratorBehavior::haloAndOwned) const</dt>
+<dd><a class="anchor" id="_todo000020"></a>: we might have to add a rebuild here, if the verlet cluster lists are used.  </dd>
+<dt>Member <a class="el" href="classautopas_1_1LogicHandler.html#a1c638029f6c8ee462e082ef1616a850b">autopas::LogicHandler&lt; Particle, ParticleCell &gt;::begin</a>  (IteratorBehavior behavior=IteratorBehavior::haloAndOwned)</dt>
+<dd><a class="anchor" id="_todo000019"></a>: we might have to add a rebuild here, if the verlet cluster lists are used.  </dd>
+<dt>Member <a class="el" href="classautopas_1_1VerletLists.html#a6503a9ab7723e166a6b9e007a0fdf974">autopas::VerletLists&lt; Particle &gt;::updateVerletListsAoS</a>  (bool useNewton3)</dt>
+<dd><a class="anchor" id="_todo000018"></a>autotune traversal  </dd>
 <dt>Class <a class="el" href="classautopas_1_1VerletLists.html">autopas::VerletLists&lt; Particle &gt;</a>  </dt>
 <dd><a class="anchor" id="_todo000017"></a>deleting particles should also invalidate the verlet lists - should be implemented somehow  </dd>
-<dt>Member <a class="el" href="classautopas_1_1Functor.html#a64289b7fbe68999cec38bde9873f8f7d">autopas::Functor&lt; Particle, ParticleCell_t, SoAArraysType, Impl_t &gt;::getNeededAttr</a>  ()</dt>
-<dd><a class="anchor" id="_todo000027"></a>C++20: make this function virtual  </dd>
-<dt>Member <a class="el" href="classautopas_1_1Functor.html#a1b6e66e82af6d8eb08e8529667718019">autopas::Functor&lt; Particle, ParticleCell_t, SoAArraysType, Impl_t &gt;::getNeededAttr</a>  (std::false_type)</dt>
-<dd><a class="anchor" id="_todo000028"></a>C++20: make this function virtual  </dd>
-<dt>Member <a class="el" href="classautopas_1_1Functor.html#abacf71085d75442e8539228af7078f99">autopas::Functor&lt; Particle, ParticleCell_t, SoAArraysType, Impl_t &gt;::getComputedAttr</a>  ()</dt>
-<dd><a class="anchor" id="_todo000029"></a>C++20: make this function virtual  </dd>
-<dt>Member <a class="el" href="namespaceautopas_1_1OptimumSelector.html#a35cebb2a0115a295d8f1f5b0d1e4a884">autopas::OptimumSelector::medianValue</a>  (std::vector&lt; unsigned long &gt; values)</dt>
-<dd><a class="anchor" id="_todo000030"></a>C++20: replace by std::midpoint  </dd>
-<dt>Member <a class="el" href="classautopas_1_1sph_1_1SPHCalcHydroForceFunctor.html#afb94e6bebf118e9ab2b9a98ac0ffbc69">autopas::sph::SPHCalcHydroForceFunctor&lt; Particle, ParticleCell &gt;::getNumFlopsPerKernelCall</a>  ()</dt>
-<dd><a class="anchor" id="_todo000031"></a>return correct flopcount  </dd>
-<dt>Member <a class="el" href="namespaceautopas.html#ac64a70a137851f9fe1941487cfc42e52">autopas::DEFAULT_CACHE_LINE_SIZE</a>  </dt>
-<dd><a class="anchor" id="_todo000032"></a>C++17: replace value by std::hardware_destructive_interference_size not yet possible: as of 27.06.2019 this(P0154R1) is in neither libstc++ (gnu) nor libc++ (clang)  </dd>
-<dt>Member <a class="el" href="classautopas_1_1utils_1_1SoAStorage.html#a32ede55b59cbe6e9245f948e47c749c6">autopas::utils::SoAStorage&lt; SoAArraysType &gt;::apply</a>  (FunctorT func)</dt>
-<dd><a class="anchor" id="_todo000033"></a>c++20: replace with expansion statement: <code>for... (auto&amp; elem : tup) {}</code>  </dd>
 <dt>Member <a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#afcfb9db81e466a9c46e23238be9100e9">autopas::internal::CellBlock3D&lt; ParticleCell &gt;::get3DIndexOfPosition</a>  (const std::array&lt; double, 3 &gt; &amp;pos) const</dt>
 <dd><a class="anchor" id="_todo000001"></a>when the border and flag manager is there  </dd>
-<dt>Class <a class="el" href="classautopas_1_1VerletListHelpers_1_1VerletListValidityCheckerFunctor.html">autopas::VerletListHelpers&lt; Particle &gt;::VerletListValidityCheckerFunctor&lt; ParticleCell &gt;</a>  </dt>
-<dd><a class="anchor" id="_todo000016"></a>: <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a>?  </dd>
 <dt>Member <a class="el" href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html#a96a655dc5537cd7f39cb5fbc40984513">autopas::internal::VerletClusterListsRebuilder&lt; Particle &gt;::getTowerCoordinates</a>  (std::array&lt; double, 3 &gt; location)</dt>
 <dd><a class="anchor" id="_todo000015"></a>this is a sanity check to prevent doubling of particles, but could be done better! e.g. by border and  </dd>
 <dt>Member <a class="el" href="classautopas_1_1VerletClusterLists.html#acd0f7752f56f81855a332a5b05cf353a">autopas::VerletClusterLists&lt; Particle &gt;::begin</a>  (IteratorBehavior behavior=IteratorBehavior::haloAndOwned) const override</dt>

@@ -50,7 +50,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-51d9407</span>
+   &#160;<span id="projectnumber">0.1.0-39b4cd9</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -410,30 +410,30 @@ $(function() {
 <div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;    <span class="keywordflow">return</span> theta * std::exp(-<a class="code" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a1d321ba1191121f73334c284d1e72e72">dot</a>);</div>
 <div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;  }</div>
 <div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160; </div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;  [[nodiscard]] Eigen::VectorXd kernelVector(<span class="keyword">const</span> Vector &amp;input, <span class="keywordtype">double</span> theta, <span class="keyword">const</span> Eigen::VectorXd &amp;dimScale)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;    std::vector&lt;double&gt; k(_inputs.size());</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; k.size(); ++i) {</div>
-<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;      k[i] = kernel(input, _inputs[i], theta, dimScale);</div>
-<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    }</div>
-<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;    <span class="keywordflow">return</span> utils::Math::makeVectorXd(k);</div>
-<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;  }</div>
-<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160; </div>
-<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;  std::vector&lt;Vector&gt; _inputs;</div>
-<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160;  Eigen::VectorXd _outputs;</div>
-<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160; </div>
-<div class="line"><a name="l00458"></a><span class="lineno">  458</span>&#160;  <span class="keywordtype">size_t</span> _dims;</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160; </div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;  <span class="keywordtype">double</span> _evidenceMinValue;</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;  <span class="keywordtype">double</span> _evidenceMaxValue;</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;  Vector _evidenceMaxVector;</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160; </div>
-<div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">double</span> _sigma;</div>
-<div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160; </div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;  std::vector&lt;GaussianHyperparameters&gt; _hypers;</div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160; </div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;  Random &amp;_rng;</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;};</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;}  <span class="comment">// namespace autopas</span></div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;  [[nodiscard]] Eigen::VectorXd kernelVector(<span class="keyword">const</span> Vector &amp;input, <span class="keywordtype">double</span> theta, <span class="keyword">const</span> Eigen::VectorXd &amp;dimScale)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160;    std::vector&lt;double&gt; k(_inputs.size());</div>
+<div class="line"><a name="l00448"></a><span class="lineno">  448</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; k.size(); ++i) {</div>
+<div class="line"><a name="l00449"></a><span class="lineno">  449</span>&#160;      k[i] = kernel(input, _inputs[i], theta, dimScale);</div>
+<div class="line"><a name="l00450"></a><span class="lineno">  450</span>&#160;    }</div>
+<div class="line"><a name="l00451"></a><span class="lineno">  451</span>&#160;    <span class="keywordflow">return</span> utils::Math::makeVectorXd(k);</div>
+<div class="line"><a name="l00452"></a><span class="lineno">  452</span>&#160;  }</div>
+<div class="line"><a name="l00453"></a><span class="lineno">  453</span>&#160; </div>
+<div class="line"><a name="l00454"></a><span class="lineno">  454</span>&#160;  std::vector&lt;Vector&gt; _inputs;</div>
+<div class="line"><a name="l00455"></a><span class="lineno">  455</span>&#160;  Eigen::VectorXd _outputs;</div>
+<div class="line"><a name="l00456"></a><span class="lineno">  456</span>&#160; </div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;  <span class="keywordtype">size_t</span> _dims;</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160; </div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;  <span class="keywordtype">double</span> _evidenceMinValue;</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;  <span class="keywordtype">double</span> _evidenceMaxValue;</div>
+<div class="line"><a name="l00473"></a><span class="lineno">  473</span>&#160;  Vector _evidenceMaxVector;</div>
+<div class="line"><a name="l00474"></a><span class="lineno">  474</span>&#160; </div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;  <span class="keyword">const</span> <span class="keywordtype">double</span> _sigma;</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160; </div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;  std::vector&lt;GaussianHyperparameters&gt; _hypers;</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160; </div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;  Random &amp;_rng;</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;};</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;}  <span class="comment">// namespace autopas</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassautopas_1_1GaussianProcess_html_a693f5afd3333df0347e1aff2fd23f0d3"><div class="ttname"><a href="classautopas_1_1GaussianProcess.html#a693f5afd3333df0347e1aff2fd23f0d3">autopas::GaussianProcess::getHyperparameters</a></div><div class="ttdeci">std::vector&lt; GaussianHyperparameters &gt; &amp; getHyperparameters()</div><div class="ttdoc">Get current hyperparameters.</div><div class="ttdef"><b>Definition:</b> GaussianProcess.h:329</div></div>
 <div class="ttc" id="aclassautopas_1_1GaussianProcess_html"><div class="ttname"><a href="classautopas_1_1GaussianProcess.html">autopas::GaussianProcess</a></div><div class="ttdoc">Gaussian process is a stochastical model.</div><div class="ttdef"><b>Definition:</b> GaussianProcess.h:31</div></div>
@@ -467,7 +467,7 @@ $(function() {
 <div class="ttc" id="aExceptionHandler_8h_html"><div class="ttname"><a href="ExceptionHandler_8h.html">ExceptionHandler.h</a></div></div>
 <div class="ttc" id="aclassautopas_1_1GaussianProcess_html_ab25f8695a68cf70a73ed7fb91594cdf9"><div class="ttname"><a href="classautopas_1_1GaussianProcess.html#ab25f8695a68cf70a73ed7fb91594cdf9">autopas::GaussianProcess::addEvidence</a></div><div class="ttdeci">void addEvidence(const Vector &amp;input, double output, bool tuneHypers)</div><div class="ttdoc">Provide a input-output pair as evidence.</div><div class="ttdef"><b>Definition:</b> GaussianProcess.h:99</div></div>
 <div class="ttc" id="aclassautopas_1_1NumberInterval_html"><div class="ttname"><a href="classautopas_1_1NumberInterval.html">autopas::NumberInterval</a></div><div class="ttdoc">Class describing an interval.</div><div class="ttdef"><b>Definition:</b> NumberInterval.h:15</div></div>
-<div class="ttc" id="anamespaceautopas_html_a0bcb9c71d0158db0bd7464764e3e5b39"><div class="ttname"><a href="namespaceautopas.html#a0bcb9c71d0158db0bd7464764e3e5b39">autopas::autopas_get_num_threads</a></div><div class="ttdeci">int autopas_get_num_threads()</div><div class="ttdoc">Dummy for omp_get_num_threads() when no OpenMP is available.</div><div class="ttdef"><b>Definition:</b> WrapOpenMP.h:111</div></div>
+<div class="ttc" id="anamespaceautopas_html_a0bcb9c71d0158db0bd7464764e3e5b39"><div class="ttname"><a href="namespaceautopas.html#a0bcb9c71d0158db0bd7464764e3e5b39">autopas::autopas_get_num_threads</a></div><div class="ttdeci">int autopas_get_num_threads()</div><div class="ttdoc">Dummy for omp_get_num_threads() when no OpenMP is available.</div><div class="ttdef"><b>Definition:</b> WrapOpenMP.h:110</div></div>
 <div class="ttc" id="aclassautopas_1_1GaussianProcess_html_a9afd30be507a56ccb5da3b2a11300e83"><div class="ttname"><a href="classautopas_1_1GaussianProcess.html#a9afd30be507a56ccb5da3b2a11300e83">autopas::GaussianProcess::numEvidence</a></div><div class="ttdeci">size_t numEvidence() const</div><div class="ttdoc">Get the number of evidence provided.</div><div class="ttdef"><b>Definition:</b> GaussianProcess.h:82</div></div>
 <div class="ttc" id="aGaussianHyperparameters_8h_html"><div class="ttname"><a href="GaussianHyperparameters_8h.html">GaussianHyperparameters.h</a></div></div>
 <div class="ttc" id="aclassautopas_1_1GaussianProcess_html_a40033477f95833e30bc2911f995c2cef"><div class="ttname"><a href="classautopas_1_1GaussianProcess.html#a40033477f95833e30bc2911f995c2cef">autopas::GaussianProcess::predictVar</a></div><div class="ttdeci">double predictVar(const Vector &amp;input) const</div><div class="ttdoc">The variance of the predicted f(x) from predictMean().</div><div class="ttdef"><b>Definition:</b> GaussianProcess.h:187</div></div>
