@@ -4,11 +4,15 @@ function url_content(url) {
     return $.get(url);
 }
 
-function add_link(d, url, text) {
+function add_link(d, url, text, open_in_new_tab = false) {
     let link = document.createElement("a");
     link.href = url;
     link.style.marginRight = '30px';
     link.innerText = text;
+    if (open_in_new_tab) {
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+    }
     d.append(link);
 }
 
@@ -18,7 +22,7 @@ function create_main_selector() {
 
     add_link(main_selector, "/doxygen_documentation/git-master/", "AutoPas Doxygen");
     add_link(main_selector, "/doxygen_documentation_md-flexible/git-master/", "MD-Flexible Doxygen");
-    add_link(main_selector, "http://autopas-performance-explorer.pproc-be.sccs.in.tum.de/", "Performance-Explorer");
+    add_link(main_selector, "http://autopas-performance-explorer.pproc-be.sccs.in.tum.de/", "Performance-Explorer", true);
 
 }
 
