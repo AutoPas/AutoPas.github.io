@@ -7,6 +7,9 @@ function url_content(url) {
 function add_link(d, link, text){
     var link = document.createElement("a");
     link.href="/doxygen_documentation/git-master/";
+    link.style="margin-right:30px"
+    link.innerText=text;
+    d.append(link);
 }
 
 function create_main_selector() {
