@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['unknowingcellborderandflagmanager_2456',['unknowingCellBorderAndFlagManager',['../namespaceautopas_1_1internal.html#a0e84310903fb32509aac090e431375d7',1,'autopas::internal']]]
+  ['verletclustersize_2458',['verletClusterSize',['../classautopas_1_1ContainerSelectorInfo.html#ad54f256db9819b63fccc91a2d675583d',1,'autopas::ContainerSelectorInfo']]],
+  ['verletskin_2459',['verletSkin',['../classautopas_1_1ContainerSelectorInfo.html#acddddcb66489c0fc77356fe769367abb',1,'autopas::ContainerSelectorInfo']]]
 ];

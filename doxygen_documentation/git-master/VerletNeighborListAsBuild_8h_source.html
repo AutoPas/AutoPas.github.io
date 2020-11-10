@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-e673bc8</span>
+   &#160;<span id="projectnumber">0.1.0-81fb187</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -101,7 +101,7 @@ $(function() {
 <div class="title">VerletNeighborListAsBuild.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="VerletNeighborListAsBuild_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<a href="VerletNeighborListAsBuild_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno"><a class="line" href="classautopas_1_1VerletNeighborListAsBuild.html#a016acd1ec4c83868203a40971446a053">    1</a></span>&#160; </div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="AsBuildPairGeneratorFunctor_8h.html">AsBuildPairGeneratorFunctor.h</a>&quot;</span></div>
@@ -303,18 +303,12 @@ $(function() {
 <div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160; </div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;  <span class="keywordtype">bool</span> _soaListIsValid;</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
-<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">int</span> _currentColor;</div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;<span class="preprocessor">#if defined(AUTOPAS_OPENMP)</span></div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;<span class="preprocessor">#pragma omp threadprivate(_currentColor)</span></div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
-<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;  std::atomic&lt;bool&gt; _allPairsPresent;</div>
-<div class="line"><a name="l00347"></a><span class="lineno">  347</span>&#160;};</div>
-<div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160; </div>
-<div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
-<div class="line"><a name="l00350"></a><span class="lineno"><a class="line" href="classautopas_1_1VerletNeighborListAsBuild.html#a016acd1ec4c83868203a40971446a053">  350</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="classautopas_1_1VerletNeighborListAsBuild.html">VerletNeighborListAsBuild&lt;Particle&gt;::_currentColor</a> = 0;</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160; </div>
-<div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;}  <span class="comment">// namespace autopas</span></div>
+<div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  <span class="keywordtype">int</span> _currentColor{0};</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160; </div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  std::atomic&lt;bool&gt; _allPairsPresent;</div>
+<div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;};</div>
+<div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
+<div class="line"><a name="l00346"></a><span class="lineno">  346</span>&#160;}  <span class="comment">// namespace autopas</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_a9f15d9150c9e22aaee84f55a1b08b3be"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#a9f15d9150c9e22aaee84f55a1b08b3be">autopas::VerletNeighborListAsBuild&lt; autopas::ParticleBase &gt;::SoAThreadNeighborList</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; size_t, std::vector&lt; size_t, autopas::AlignedAllocator&lt; size_t &gt; &gt;&gt; &gt; SoAThreadNeighborList</div><div class="ttdoc">This type represents the SoA neighbor list that each thread has for each color.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:69</div></div>
 <div class="ttc" id="anamespaceautopas_html_ac3917775976f91c4251e72887dc1876e"><div class="ttname"><a href="namespaceautopas.html#ac3917775976f91c4251e72887dc1876e">autopas::autopas_get_thread_num</a></div><div class="ttdeci">int autopas_get_thread_num()</div><div class="ttdoc">Dummy for omp_set_lock() when no OpenMP is available.</div><div class="ttdef"><b>Definition:</b> WrapOpenMP.h:104</div></div>
@@ -336,7 +330,7 @@ $(function() {
 <div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_af76782c4d57c0d82a03fea3ede4fcc91"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#af76782c4d57c0d82a03fea3ede4fcc91">autopas::VerletNeighborListAsBuild::getContainerType</a></div><div class="ttdeci">ContainerOption getContainerType() const override</div><div class="ttdoc">Returns the ContainerOption this neighbor list is for.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:83</div></div>
 <div class="ttc" id="aAsBuildPairGeneratorFunctor_8h_html"><div class="ttname"><a href="AsBuildPairGeneratorFunctor_8h.html">AsBuildPairGeneratorFunctor.h</a></div></div>
 <div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_af9e148e37bc7b5dc1206d3afbed9aacf"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#af9e148e37bc7b5dc1206d3afbed9aacf">autopas::VerletNeighborListAsBuild&lt; autopas::ParticleBase &gt;::AoSColorNeighborList</a></div><div class="ttdeci">std::vector&lt; AoSThreadNeighborList &gt; AoSColorNeighborList</div><div class="ttdoc">This type represents the thread lists for all colors.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:64</div></div>
-<div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">This is the main namespace of AutoPas.</div><div class="ttdef"><b>Definition:</b> AutoPas.h:26</div></div>
+<div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">This is the main namespace of AutoPas.</div><div class="ttdef"><b>Definition:</b> AutoPas.h:27</div></div>
 <div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_ac33794b52c68067814068d0417335f51"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#ac33794b52c68067814068d0417335f51">autopas::VerletNeighborListAsBuild::extractSoA</a></div><div class="ttdeci">void extractSoA(TFunctor *f)</div><div class="ttdoc">Extracts the particle information out of the SoA returned by loadSoA() before.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:234</div></div>
 <div class="ttc" id="aclassautopas_1_1internal_1_1AsBuildPairGeneratorFunctor_html"><div class="ttname"><a href="classautopas_1_1internal_1_1AsBuildPairGeneratorFunctor.html">autopas::internal::AsBuildPairGeneratorFunctor</a></div><div class="ttdoc">This functor can generate or check variable verlet lists using the typical pairwise traversal.</div><div class="ttdef"><b>Definition:</b> AsBuildPairGeneratorFunctor.h:31</div></div>
 <div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_a7c8a1416c3d7d8bec0f77703cfc7e49a"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#a7c8a1416c3d7d8bec0f77703cfc7e49a">autopas::VerletNeighborListAsBuild::getNumberOfNeighborPairs</a></div><div class="ttdeci">long getNumberOfNeighborPairs() const override</div><div class="ttdoc">Returns the number of neighbor pairs in the list.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:250</div></div>
