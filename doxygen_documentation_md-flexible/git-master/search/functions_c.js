@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['simulate_326',['simulate',['../classSimulation.html#abd0d4dc9e7689b8265a783ede029bd33',1,'Simulation']]],
-  ['simulation_327',['Simulation',['../classSimulation.html#a3f4831968e116ce66c133145d911d281',1,'Simulation']]],
-  ['sphere_328',['sphere',['../classGenerator.html#ae74048ae5f50e72054494a981e0eb8dc',1,'Generator::sphere()'],['../classSphere.html#a7c59fcfeb1b920705356eb722f3164d7',1,'Sphere::Sphere()']]]
+  ['set_331',['set',['../classPrintableMolecule.html#a2963bb8fe0b2de9ed2652cde8e710da4',1,'PrintableMolecule']]],
+  ['simulate_332',['simulate',['../classSimulation.html#a4250ad866e8c92cd336d2c41e680a4f7',1,'Simulation']]],
+  ['simulation_333',['Simulation',['../classSimulation.html#a4b6612938038a53f3913b85363537dc9',1,'Simulation']]],
+  ['sphere_334',['Sphere',['../classSphere.html#a7c59fcfeb1b920705356eb722f3164d7',1,'Sphere::Sphere()'],['../classGenerator.html#a2947dab5f2a188e82048bf672f8b7427',1,'Generator::sphere()']]]
 ];
