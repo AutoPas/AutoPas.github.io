@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-81fb187</span>
+   &#160;<span id="projectnumber">0.1.0-ef9cf8d</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -193,104 +193,109 @@ $(function() {
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">return</span> soaStorage.template get&lt;attribute&gt;().data();</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  }</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
-<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="classautopas_1_1SoA.html#a7e9911415eb3916ebee5e10cacbe576a">  179</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">size_t</span> <a class="code" href="classautopas_1_1SoA.html#a7e9911415eb3916ebee5e10cacbe576a">getNumParticles</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> soaStorage.template get&lt;0&gt;().size(); }</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="classautopas_1_1SoA.html#a530a47fe9169c2fe80540d84c8797d6b">  184</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classautopas_1_1SoA.html#a530a47fe9169c2fe80540d84c8797d6b">clear</a>() {</div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;    soaStorage.apply([](<span class="keyword">auto</span> &amp;list) { list.clear(); });</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;  }</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160; </div>
-<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="classautopas_1_1SoA.html#ad652c2ba5d7c73400cf2ead2a2c53c0d">  193</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classautopas_1_1SoA.html#ad652c2ba5d7c73400cf2ead2a2c53c0d">swap</a>(std::size_t a, std::size_t b) {</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;    soaStorage.apply([=](<span class="keyword">auto</span> &amp;list) { std::swap(list[a], list[b]); });</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;  }</div>
-<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
-<div class="line"><a name="l00200"></a><span class="lineno"><a class="line" href="classautopas_1_1SoA.html#a47d7dc0b5d916e1a49b0745217334e42">  200</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classautopas_1_1SoA.html#a47d7dc0b5d916e1a49b0745217334e42">pop_back</a>() {</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;    soaStorage.apply([](<span class="keyword">auto</span> &amp;list) { list.pop_back(); });</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;  }</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160; </div>
-<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="classautopas_1_1SoA.html#a4a38e87c0524142d23dbab5dc8e3999f">  208</a></span>&#160;  <a class="code" href="classautopas_1_1SoAView.html">SoAView&lt;SoAArraysType&gt;</a> <a class="code" href="classautopas_1_1SoA.html#a4a38e87c0524142d23dbab5dc8e3999f">constructView</a>() { <span class="keywordflow">return</span> {<span class="keyword">this</span>, 0, <a class="code" href="classautopas_1_1SoA.html#a7e9911415eb3916ebee5e10cacbe576a">getNumParticles</a>()}; }</div>
-<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
-<div class="line"><a name="l00219"></a><span class="lineno"><a class="line" href="classautopas_1_1SoA.html#a6e6a447c87da9796fe1bd73ba836b072">  219</a></span>&#160;  <a class="code" href="classautopas_1_1SoAView.html">SoAView&lt;SoAArraysType&gt;</a> <a class="code" href="classautopas_1_1SoA.html#a6e6a447c87da9796fe1bd73ba836b072">constructView</a>(<span class="keywordtype">size_t</span> startIndex, <span class="keywordtype">size_t</span> endIndex) { <span class="keywordflow">return</span> {<span class="keyword">this</span>, startIndex, endIndex}; }</div>
-<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
-<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00222"></a><span class="lineno">  222</span>&#160;  <span class="comment">// actual implementation of read</span></div>
-<div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;  <span class="keyword">template</span> &lt;<span class="keywordtype">int</span> attribute, <span class="keywordtype">int</span>... attributes, <span class="keyword">class </span>ValueArrayType&gt;</div>
-<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;  <span class="keywordtype">void</span> read_impl(<span class="keywordtype">size_t</span> particleId, ValueArrayType &amp;values, <span class="keywordtype">int</span> _current = 0)<span class="keyword"> const </span>{</div>
-<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;    values[_current] = soaStorage.template get&lt;attribute&gt;().at(particleId);</div>
-<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;    read_impl&lt;attributes...&gt;(particleId, values, _current + 1);</div>
-<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  }</div>
-<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160; </div>
-<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;  <span class="comment">// stop of recursive read call</span></div>
-<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> ValueArrayType&gt;</div>
-<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  <span class="keywordtype">void</span> read_impl(<span class="keywordtype">size_t</span> particleId, ValueArrayType &amp;values, <span class="keywordtype">int</span> _current = 0)<span class="keyword"> const </span>{}</div>
+<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="classautopas_1_1SoA.html#a7e9911415eb3916ebee5e10cacbe576a">  179</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">size_t</span> <a class="code" href="classautopas_1_1SoA.html#a7e9911415eb3916ebee5e10cacbe576a">getNumParticles</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;    <span class="keywordtype">size_t</span> maxLength = 0;</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;    <a class="code" href="namespaceautopas_1_1utils_1_1TupleUtils.html#a63430b206450d8a9b37e629b0b917acc">utils::TupleUtils::for_each</a>(soaStorage.getTuple(), [&amp;](<span class="keyword">auto</span> &amp;v) { maxLength = std::max(maxLength, v.size()); });</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    <span class="keywordflow">return</span> maxLength;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;  }</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
+<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="classautopas_1_1SoA.html#a530a47fe9169c2fe80540d84c8797d6b">  188</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classautopas_1_1SoA.html#a530a47fe9169c2fe80540d84c8797d6b">clear</a>() {</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;    soaStorage.apply([](<span class="keyword">auto</span> &amp;list) { list.clear(); });</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;  }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="classautopas_1_1SoA.html#ad652c2ba5d7c73400cf2ead2a2c53c0d">  197</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classautopas_1_1SoA.html#ad652c2ba5d7c73400cf2ead2a2c53c0d">swap</a>(std::size_t a, std::size_t b) {</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;    soaStorage.apply([=](<span class="keyword">auto</span> &amp;list) { std::swap(list[a], list[b]); });</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  }</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00204"></a><span class="lineno"><a class="line" href="classautopas_1_1SoA.html#a47d7dc0b5d916e1a49b0745217334e42">  204</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classautopas_1_1SoA.html#a47d7dc0b5d916e1a49b0745217334e42">pop_back</a>() {</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    soaStorage.apply([](<span class="keyword">auto</span> &amp;list) { list.pop_back(); });</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;  }</div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00212"></a><span class="lineno"><a class="line" href="classautopas_1_1SoA.html#a4a38e87c0524142d23dbab5dc8e3999f">  212</a></span>&#160;  <a class="code" href="classautopas_1_1SoAView.html">SoAView&lt;SoAArraysType&gt;</a> <a class="code" href="classautopas_1_1SoA.html#a4a38e87c0524142d23dbab5dc8e3999f">constructView</a>() { <span class="keywordflow">return</span> {<span class="keyword">this</span>, 0, <a class="code" href="classautopas_1_1SoA.html#a7e9911415eb3916ebee5e10cacbe576a">getNumParticles</a>()}; }</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160; </div>
+<div class="line"><a name="l00223"></a><span class="lineno"><a class="line" href="classautopas_1_1SoA.html#a6e6a447c87da9796fe1bd73ba836b072">  223</a></span>&#160;  <a class="code" href="classautopas_1_1SoAView.html">SoAView&lt;SoAArraysType&gt;</a> <a class="code" href="classautopas_1_1SoA.html#a6e6a447c87da9796fe1bd73ba836b072">constructView</a>(<span class="keywordtype">size_t</span> startIndex, <span class="keywordtype">size_t</span> endIndex) { <span class="keywordflow">return</span> {<span class="keyword">this</span>, startIndex, endIndex}; }</div>
+<div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160; </div>
+<div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00226"></a><span class="lineno">  226</span>&#160;  <span class="comment">// actual implementation of read</span></div>
+<div class="line"><a name="l00227"></a><span class="lineno">  227</span>&#160;  <span class="keyword">template</span> &lt;<span class="keywordtype">int</span> attribute, <span class="keywordtype">int</span>... attributes, <span class="keyword">class </span>ValueArrayType&gt;</div>
+<div class="line"><a name="l00228"></a><span class="lineno">  228</span>&#160;  <span class="keywordtype">void</span> read_impl(<span class="keywordtype">size_t</span> particleId, ValueArrayType &amp;values, <span class="keywordtype">int</span> _current = 0)<span class="keyword"> const </span>{</div>
+<div class="line"><a name="l00229"></a><span class="lineno">  229</span>&#160;    values[_current] = soaStorage.template get&lt;attribute&gt;().at(particleId);</div>
+<div class="line"><a name="l00230"></a><span class="lineno">  230</span>&#160;    read_impl&lt;attributes...&gt;(particleId, values, _current + 1);</div>
+<div class="line"><a name="l00231"></a><span class="lineno">  231</span>&#160;  }</div>
 <div class="line"><a name="l00232"></a><span class="lineno">  232</span>&#160; </div>
-<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  <span class="comment">// actual implementation of the write function.</span></div>
-<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  <span class="comment">// uses a recursive call.</span></div>
-<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  <span class="keyword">template</span> &lt;<span class="keywordtype">int</span> attribute, <span class="keywordtype">int</span>... attributes, <span class="keyword">class </span>ValueArrayType&gt;</div>
-<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160;  <span class="keywordtype">void</span> write_impl(<span class="keywordtype">size_t</span> particleId, <span class="keyword">const</span> ValueArrayType &amp;values, <span class="keywordtype">int</span> _current = 0) {</div>
-<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;    soaStorage.template get&lt;attribute&gt;().at(particleId) = values[_current];</div>
-<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    write_impl&lt;attributes...&gt;(particleId, values, _current + 1);</div>
-<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  }</div>
-<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160; </div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;  <span class="comment">// Stop of the recursive write_impl call</span></div>
-<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> ValueArrayType&gt;</div>
-<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  <span class="keywordtype">void</span> write_impl(<span class="keywordtype">size_t</span> particleId, <span class="keyword">const</span> ValueArrayType &amp;values, <span class="keywordtype">int</span> _current = 0) {}</div>
+<div class="line"><a name="l00233"></a><span class="lineno">  233</span>&#160;  <span class="comment">// stop of recursive read call</span></div>
+<div class="line"><a name="l00234"></a><span class="lineno">  234</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> ValueArrayType&gt;</div>
+<div class="line"><a name="l00235"></a><span class="lineno">  235</span>&#160;  <span class="keywordtype">void</span> read_impl(<span class="keywordtype">size_t</span> particleId, ValueArrayType &amp;values, <span class="keywordtype">int</span> _current = 0)<span class="keyword"> const </span>{}</div>
+<div class="line"><a name="l00236"></a><span class="lineno">  236</span>&#160; </div>
+<div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;  <span class="comment">// actual implementation of the write function.</span></div>
+<div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;  <span class="comment">// uses a recursive call.</span></div>
+<div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;  <span class="keyword">template</span> &lt;<span class="keywordtype">int</span> attribute, <span class="keywordtype">int</span>... attributes, <span class="keyword">class </span>ValueArrayType&gt;</div>
+<div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;  <span class="keywordtype">void</span> write_impl(<span class="keywordtype">size_t</span> particleId, <span class="keyword">const</span> ValueArrayType &amp;values, <span class="keywordtype">int</span> _current = 0) {</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    soaStorage.template get&lt;attribute&gt;().at(particleId) = values[_current];</div>
+<div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    write_impl&lt;attributes...&gt;(particleId, values, _current + 1);</div>
+<div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;  }</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160; </div>
-<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  <span class="comment">// helper function to append a single array</span></div>
-<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <span class="keyword">template</span> &lt;std::<span class="keywordtype">size_t</span> attribute&gt;</div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  <span class="keywordtype">void</span> appendSingleArray(<span class="keyword">const</span> utils::SoAStorage&lt;SoAArraysType&gt; &amp;valArrays) {</div>
-<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    <span class="keyword">auto</span> &amp;currentVector = soaStorage.template get&lt;attribute&gt;();</div>
-<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;    <span class="keyword">auto</span> &amp;otherVector = valArrays.template get&lt;attribute&gt;();</div>
-<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    currentVector.insert(currentVector.end(), otherVector.begin(), otherVector.end());</div>
-<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  }</div>
-<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160; </div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;  <span class="comment">// helper function to append a single array</span></div>
-<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  <span class="keyword">template</span> &lt;std::<span class="keywordtype">size_t</span> attribute&gt;</div>
-<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  <span class="keywordtype">void</span> appendSingleArray(<span class="keyword">const</span> SoAView&lt;SoAArraysType&gt; &amp;valArrays) {</div>
-<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;    <span class="keyword">auto</span> &amp;currentVector = soaStorage.template get&lt;attribute&gt;();</div>
-<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;    <span class="keyword">auto</span> otherVectorIterator = valArrays.template begin&lt;attribute&gt;();</div>
-<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    currentVector.insert(currentVector.end(), otherVectorIterator, otherVectorIterator + valArrays.getNumParticles());</div>
-<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  }</div>
-<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160; </div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;  <span class="comment">// actual implementation of append</span></div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;  <span class="keyword">template</span> &lt;std::size_t... Is&gt;</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  <span class="keywordtype">void</span> append_impl(<span class="keyword">const</span> utils::SoAStorage&lt;SoAArraysType&gt; &amp;valArrays, std::index_sequence&lt;Is...&gt;) {</div>
-<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="comment">// fold expression</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    (appendSingleArray&lt;Is&gt;(valArrays), ...);</div>
-<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  }</div>
-<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160; </div>
-<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;  <span class="comment">// actual implementation of append</span></div>
-<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;  <span class="keyword">template</span> &lt;std::size_t... Is&gt;</div>
-<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  <span class="keywordtype">void</span> append_impl(<span class="keyword">const</span> SoAView&lt;SoAArraysType&gt; &amp;valArrays, std::index_sequence&lt;Is...&gt;) {</div>
-<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160;    <span class="comment">// fold expression</span></div>
-<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;    (appendSingleArray&lt;Is&gt;(valArrays), ...);</div>
-<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  }</div>
-<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
-<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  <span class="comment">// ------------- members ---------------</span></div>
-<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  <span class="comment">// storage container for the SoA&#39;s</span></div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  utils::SoAStorage&lt;SoAArraysType&gt; soaStorage;</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;};  <span class="comment">// namespace autopas</span></div>
-<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;}  <span class="comment">// namespace autopas</span></div>
+<div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;  <span class="comment">// Stop of the recursive write_impl call</span></div>
+<div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> ValueArrayType&gt;</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;  <span class="keywordtype">void</span> write_impl(<span class="keywordtype">size_t</span> particleId, <span class="keyword">const</span> ValueArrayType &amp;values, <span class="keywordtype">int</span> _current = 0) {}</div>
+<div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160; </div>
+<div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;  <span class="comment">// helper function to append a single array</span></div>
+<div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;  <span class="keyword">template</span> &lt;std::<span class="keywordtype">size_t</span> attribute&gt;</div>
+<div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;  <span class="keywordtype">void</span> appendSingleArray(<span class="keyword">const</span> utils::SoAStorage&lt;SoAArraysType&gt; &amp;valArrays) {</div>
+<div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="keyword">auto</span> &amp;currentVector = soaStorage.template get&lt;attribute&gt;();</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keyword">auto</span> &amp;otherVector = valArrays.template get&lt;attribute&gt;();</div>
+<div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    currentVector.insert(currentVector.end(), otherVector.begin(), otherVector.end());</div>
+<div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;  }</div>
+<div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160; </div>
+<div class="line"><a name="l00257"></a><span class="lineno">  257</span>&#160;  <span class="comment">// helper function to append a single array</span></div>
+<div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;  <span class="keyword">template</span> &lt;std::<span class="keywordtype">size_t</span> attribute&gt;</div>
+<div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;  <span class="keywordtype">void</span> appendSingleArray(<span class="keyword">const</span> SoAView&lt;SoAArraysType&gt; &amp;valArrays) {</div>
+<div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="keyword">auto</span> &amp;currentVector = soaStorage.template get&lt;attribute&gt;();</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <span class="keyword">auto</span> otherVectorIterator = valArrays.template begin&lt;attribute&gt;();</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    currentVector.insert(currentVector.end(), otherVectorIterator, otherVectorIterator + valArrays.getNumParticles());</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;  }</div>
+<div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160; </div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;  <span class="comment">// actual implementation of append</span></div>
+<div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;  <span class="keyword">template</span> &lt;std::size_t... Is&gt;</div>
+<div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;  <span class="keywordtype">void</span> append_impl(<span class="keyword">const</span> utils::SoAStorage&lt;SoAArraysType&gt; &amp;valArrays, std::index_sequence&lt;Is...&gt;) {</div>
+<div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160;    <span class="comment">// fold expression</span></div>
+<div class="line"><a name="l00269"></a><span class="lineno">  269</span>&#160;    (appendSingleArray&lt;Is&gt;(valArrays), ...);</div>
+<div class="line"><a name="l00270"></a><span class="lineno">  270</span>&#160;  }</div>
+<div class="line"><a name="l00271"></a><span class="lineno">  271</span>&#160; </div>
+<div class="line"><a name="l00272"></a><span class="lineno">  272</span>&#160;  <span class="comment">// actual implementation of append</span></div>
+<div class="line"><a name="l00273"></a><span class="lineno">  273</span>&#160;  <span class="keyword">template</span> &lt;std::size_t... Is&gt;</div>
+<div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160;  <span class="keywordtype">void</span> append_impl(<span class="keyword">const</span> SoAView&lt;SoAArraysType&gt; &amp;valArrays, std::index_sequence&lt;Is...&gt;) {</div>
+<div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;    <span class="comment">// fold expression</span></div>
+<div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160;    (appendSingleArray&lt;Is&gt;(valArrays), ...);</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  }</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160; </div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  <span class="comment">// ------------- members ---------------</span></div>
+<div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160; </div>
+<div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  <span class="comment">// storage container for the SoA&#39;s</span></div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  utils::SoAStorage&lt;SoAArraysType&gt; soaStorage;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;};  <span class="comment">// namespace autopas</span></div>
+<div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;}  <span class="comment">// namespace autopas</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aSoAType_8h_html"><div class="ttname"><a href="SoAType_8h.html">SoAType.h</a></div><div class="ttdoc">Provides a struct to easily generate the desired SoAType.</div></div>
-<div class="ttc" id="aclassautopas_1_1SoA_html_a530a47fe9169c2fe80540d84c8797d6b"><div class="ttname"><a href="classautopas_1_1SoA.html#a530a47fe9169c2fe80540d84c8797d6b">autopas::SoA::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">delete all particles in the soa</div><div class="ttdef"><b>Definition:</b> SoA.h:184</div></div>
+<div class="ttc" id="aclassautopas_1_1SoA_html_a530a47fe9169c2fe80540d84c8797d6b"><div class="ttname"><a href="classautopas_1_1SoA.html#a530a47fe9169c2fe80540d84c8797d6b">autopas::SoA::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">delete all particles in the soa</div><div class="ttdef"><b>Definition:</b> SoA.h:188</div></div>
 <div class="ttc" id="aclassautopas_1_1SoA_html_a90b4e2d97f7d734bc04cd5d97987d58b"><div class="ttname"><a href="classautopas_1_1SoA.html#a90b4e2d97f7d734bc04cd5d97987d58b">autopas::SoA::writeMultiple</a></div><div class="ttdeci">void writeMultiple(size_t particleId, std::array&lt; double, N &gt; values)</div><div class="ttdoc">Specialized version to pass arrays without specifying it directly.</div><div class="ttdef"><b>Definition:</b> SoA.h:125</div></div>
 <div class="ttc" id="aclassautopas_1_1SoA_html_a0b5b4f246fa897a069a7c7fb2343fc07"><div class="ttname"><a href="classautopas_1_1SoA.html#a0b5b4f246fa897a069a7c7fb2343fc07">autopas::SoA::append</a></div><div class="ttdeci">void append(const SoAView&lt; SoAArraysType &gt; &amp;other)</div><div class="ttdoc">Appends the other SoA buffer to this.</div><div class="ttdef"><b>Definition:</b> SoA.h:85</div></div>
-<div class="ttc" id="aclassautopas_1_1SoA_html_a6e6a447c87da9796fe1bd73ba836b072"><div class="ttname"><a href="classautopas_1_1SoA.html#a6e6a447c87da9796fe1bd73ba836b072">autopas::SoA::constructView</a></div><div class="ttdeci">SoAView&lt; SoAArraysType &gt; constructView(size_t startIndex, size_t endIndex)</div><div class="ttdoc">Constructs a view that starts at startIndex (inclusive) and ends at endIndex (exclusive).</div><div class="ttdef"><b>Definition:</b> SoA.h:219</div></div>
-<div class="ttc" id="aclassautopas_1_1SoA_html_ad652c2ba5d7c73400cf2ead2a2c53c0d"><div class="ttname"><a href="classautopas_1_1SoA.html#ad652c2ba5d7c73400cf2ead2a2c53c0d">autopas::SoA::swap</a></div><div class="ttdeci">void swap(std::size_t a, std::size_t b)</div><div class="ttdoc">swap the position of two particles in the soa</div><div class="ttdef"><b>Definition:</b> SoA.h:193</div></div>
+<div class="ttc" id="aclassautopas_1_1SoA_html_a6e6a447c87da9796fe1bd73ba836b072"><div class="ttname"><a href="classautopas_1_1SoA.html#a6e6a447c87da9796fe1bd73ba836b072">autopas::SoA::constructView</a></div><div class="ttdeci">SoAView&lt; SoAArraysType &gt; constructView(size_t startIndex, size_t endIndex)</div><div class="ttdoc">Constructs a view that starts at startIndex (inclusive) and ends at endIndex (exclusive).</div><div class="ttdef"><b>Definition:</b> SoA.h:223</div></div>
+<div class="ttc" id="aclassautopas_1_1SoA_html_ad652c2ba5d7c73400cf2ead2a2c53c0d"><div class="ttname"><a href="classautopas_1_1SoA.html#ad652c2ba5d7c73400cf2ead2a2c53c0d">autopas::SoA::swap</a></div><div class="ttdeci">void swap(std::size_t a, std::size_t b)</div><div class="ttdoc">swap the position of two particles in the soa</div><div class="ttdef"><b>Definition:</b> SoA.h:197</div></div>
 <div class="ttc" id="aclassautopas_1_1SoA_html_a50beadba8e8d2c44ac42888e9a9cd73f"><div class="ttname"><a href="classautopas_1_1SoA.html#a50beadba8e8d2c44ac42888e9a9cd73f">autopas::SoA::write</a></div><div class="ttdeci">void write(size_t particleId, const ValueType &amp;value)</div><div class="ttdoc">Writes / updates the value of an attribute for a specific particle.</div><div class="ttdef"><b>Definition:</b> SoA.h:67</div></div>
 <div class="ttc" id="aclassautopas_1_1SoA_html_a8fbc5f0202cda2efd0e505fc4bd2557a"><div class="ttname"><a href="classautopas_1_1SoA.html#a8fbc5f0202cda2efd0e505fc4bd2557a">autopas::SoA::push</a></div><div class="ttdeci">void push(const double value)</div><div class="ttdoc">Pushes a given value to the desired attribute array.</div><div class="ttdef"><b>Definition:</b> SoA.h:55</div></div>
 <div class="ttc" id="aclassautopas_1_1SoA_html"><div class="ttname"><a href="classautopas_1_1SoA.html">autopas::SoA</a></div><div class="ttdoc">Structur of the array class.</div><div class="ttdef"><b>Definition:</b> SoA.h:28</div></div>
 <div class="ttc" id="aclassautopas_1_1SoA_html_ae25d36763ba2a7eac560af8c4ddb1736"><div class="ttname"><a href="classautopas_1_1SoA.html#ae25d36763ba2a7eac560af8c4ddb1736">autopas::SoA::begin</a></div><div class="ttdeci">auto begin()</div><div class="ttdoc">Returns a pointer to the given attribute vector.</div><div class="ttdef"><b>Definition:</b> SoA.h:167</div></div>
 <div class="ttc" id="aclassautopas_1_1SoAView_html"><div class="ttname"><a href="classautopas_1_1SoAView.html">autopas::SoAView</a></div><div class="ttdoc">View on a fixed part of a SoA between a start index and an end index.</div><div class="ttdef"><b>Definition:</b> SoAView.h:23</div></div>
-<div class="ttc" id="aclassautopas_1_1SoA_html_a47d7dc0b5d916e1a49b0745217334e42"><div class="ttname"><a href="classautopas_1_1SoA.html#a47d7dc0b5d916e1a49b0745217334e42">autopas::SoA::pop_back</a></div><div class="ttdeci">void pop_back()</div><div class="ttdoc">Delete the last particle in the SoA.</div><div class="ttdef"><b>Definition:</b> SoA.h:200</div></div>
+<div class="ttc" id="aclassautopas_1_1SoA_html_a47d7dc0b5d916e1a49b0745217334e42"><div class="ttname"><a href="classautopas_1_1SoA.html#a47d7dc0b5d916e1a49b0745217334e42">autopas::SoA::pop_back</a></div><div class="ttdeci">void pop_back()</div><div class="ttdoc">Delete the last particle in the SoA.</div><div class="ttdef"><b>Definition:</b> SoA.h:204</div></div>
 <div class="ttc" id="aclassautopas_1_1SoA_html_a57a6424570a86ad7af8ab2ddc984e727"><div class="ttname"><a href="classautopas_1_1SoA.html#a57a6424570a86ad7af8ab2ddc984e727">autopas::SoA::SoA</a></div><div class="ttdeci">SoA(const SoA &amp;soa)=default</div><div class="ttdoc">Copy constructor.</div></div>
 <div class="ttc" id="aclassautopas_1_1SoA_html_a363b70e1b48d15da31b41d3a0d805ca1"><div class="ttname"><a href="classautopas_1_1SoA.html#a363b70e1b48d15da31b41d3a0d805ca1">autopas::SoA::resizeArrays</a></div><div class="ttdeci">void resizeArrays(size_t length)</div><div class="ttdoc">Resizes all Vectors to the given length.</div><div class="ttdef"><b>Definition:</b> SoA.h:45</div></div>
 <div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">This is the main namespace of AutoPas.</div><div class="ttdef"><b>Definition:</b> AutoPas.h:27</div></div>
 <div class="ttc" id="aclassautopas_1_1SoA_html_a7e9911415eb3916ebee5e10cacbe576a"><div class="ttname"><a href="classautopas_1_1SoA.html#a7e9911415eb3916ebee5e10cacbe576a">autopas::SoA::getNumParticles</a></div><div class="ttdeci">size_t getNumParticles() const</div><div class="ttdoc">Returns the number of particles.</div><div class="ttdef"><b>Definition:</b> SoA.h:179</div></div>
 <div class="ttc" id="aclassautopas_1_1SoA_html_aa7bf150ce0a11d6f22483c0b0680d8b7"><div class="ttname"><a href="classautopas_1_1SoA.html#aa7bf150ce0a11d6f22483c0b0680d8b7">autopas::SoA::SoA</a></div><div class="ttdeci">SoA()=default</div><div class="ttdoc">Default constructor.</div></div>
+<div class="ttc" id="anamespaceautopas_1_1utils_1_1TupleUtils_html_a63430b206450d8a9b37e629b0b917acc"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1TupleUtils.html#a63430b206450d8a9b37e629b0b917acc">autopas::utils::TupleUtils::for_each</a></div><div class="ttdeci">void for_each(T &amp;&amp;tuple, F &amp;&amp;f)</div><div class="ttdoc">Applies a function f on every element of the tuple.</div><div class="ttdef"><b>Definition:</b> TupleUtils.h:22</div></div>
 <div class="ttc" id="aclassautopas_1_1SoA_html_ae26124e9a9640e9b7e58e4a688ac40b6"><div class="ttname"><a href="classautopas_1_1SoA.html#ae26124e9a9640e9b7e58e4a688ac40b6">autopas::SoA::read</a></div><div class="ttdeci">auto read(size_t particleId) const</div><div class="ttdoc">Reads the value of a given attribute of a given particle.</div><div class="ttdef"><b>Definition:</b> SoA.h:157</div></div>
-<div class="ttc" id="aclassautopas_1_1SoA_html_a4a38e87c0524142d23dbab5dc8e3999f"><div class="ttname"><a href="classautopas_1_1SoA.html#a4a38e87c0524142d23dbab5dc8e3999f">autopas::SoA::constructView</a></div><div class="ttdeci">SoAView&lt; SoAArraysType &gt; constructView()</div><div class="ttdoc">Constructs a SoAView for the whole SoA and returns it.</div><div class="ttdef"><b>Definition:</b> SoA.h:208</div></div>
+<div class="ttc" id="aclassautopas_1_1SoA_html_a4a38e87c0524142d23dbab5dc8e3999f"><div class="ttname"><a href="classautopas_1_1SoA.html#a4a38e87c0524142d23dbab5dc8e3999f">autopas::SoA::constructView</a></div><div class="ttdeci">SoAView&lt; SoAArraysType &gt; constructView()</div><div class="ttdoc">Constructs a SoAView for the whole SoA and returns it.</div><div class="ttdef"><b>Definition:</b> SoA.h:212</div></div>
 <div class="ttc" id="aclassautopas_1_1SoA_html_af10a64d967da7b9b3fe76fab792e0622"><div class="ttname"><a href="classautopas_1_1SoA.html#af10a64d967da7b9b3fe76fab792e0622">autopas::SoA::append</a></div><div class="ttdeci">void append(const SoA&lt; SoAArraysType &gt; &amp;other)</div><div class="ttdoc">Appends the other SoA buffer to this.</div><div class="ttdef"><b>Definition:</b> SoA.h:75</div></div>
 <div class="ttc" id="aSoAStorage_8h_html"><div class="ttname"><a href="SoAStorage_8h.html">SoAStorage.h</a></div></div>
 <div class="ttc" id="aclassautopas_1_1SoA_html_a32ee50d6e85c4d64f059b472c12b33e8"><div class="ttname"><a href="classautopas_1_1SoA.html#a32ee50d6e85c4d64f059b472c12b33e8">autopas::SoA::append</a></div><div class="ttdeci">void append(const SoA&lt; SoAArraysType &gt; &amp;other)</div><div class="ttdoc">Appends the specified attributes from the other SoA buffer to this.</div><div class="ttdef"><b>Definition:</b> SoA.h:97</div></div>

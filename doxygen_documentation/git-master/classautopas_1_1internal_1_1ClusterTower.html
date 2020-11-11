@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-81fb187</span>
+   &#160;<span id="projectnumber">0.1.0-ef9cf8d</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -136,6 +136,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a460a62d35a28ffdd8102716ed7958540"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a460a62d35a28ffdd8102716ed7958540">addParticle</a> (const <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &amp;particle) override</td></tr>
 <tr class="memdesc:a460a62d35a28ffdd8102716ed7958540"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a particle to the cluster tower.  <a href="classautopas_1_1internal_1_1ClusterTower.html#a460a62d35a28ffdd8102716ed7958540">More...</a><br /></td></tr>
 <tr class="separator:a460a62d35a28ffdd8102716ed7958540"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d6b7dd9b3270c646af15edb9575d0e2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8">CellType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a7d6b7dd9b3270c646af15edb9575d0e2">getParticleCellTypeAsEnum</a> () override</td></tr>
+<tr class="memdesc:a7d6b7dd9b3270c646af15edb9575d0e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a> type as an ParticleCellTypeEnum.  <a href="classautopas_1_1internal_1_1ClusterTower.html#a7d6b7dd9b3270c646af15edb9575d0e2">More...</a><br /></td></tr>
+<tr class="separator:a7d6b7dd9b3270c646af15edb9575d0e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae98d5ab4e259af08ba3603393566df1c"><td class="memItemLeft" align="right" valign="top"><a id="ae98d5ab4e259af08ba3603393566df1c"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#ae98d5ab4e259af08ba3603393566df1c">clear</a> () override</td></tr>
 <tr class="memdesc:ae98d5ab4e259af08ba3603393566df1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears all particles from the tower and resets it to be ready for new particles. <br /></td></tr>
@@ -619,7 +622,7 @@ template&lt;class Particle &gt; </div>
 </div><div class="memdoc">
 
 <p>Replaces the copies of the last particle made in <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a6af5c60c4a6967713ee098486e3f8a0c" title="Generates the clusters for the particles in this cluster tower.">generateClusters()</a> with dummies. </p>
-<p><a class="el" href="classautopas_1_1internal_1_1Dummy.html" title="Dummy class to provide empty arrays.">Dummy</a> particles have ID 0.</p>
+<p>Dummy particles have ID 0.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">dummyStartX</td><td>The x-coordinate for all dummies. </td></tr>
@@ -884,6 +887,38 @@ template&lt;class Particle &gt; </div>
 
 <p>Returns the number of dummy particles in the tower (that all are in the last cluster). </p>
 <dl class="section return"><dt>Returns</dt><dd>the number of dummy particles in the tower. </dd></dl>
+
+</div>
+</div>
+<a id="a7d6b7dd9b3270c646af15edb9575d0e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d6b7dd9b3270c646af15edb9575d0e2">&#9670;&nbsp;</a></span>getParticleCellTypeAsEnum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Particle &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8">CellType</a> <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html">autopas::internal::ClusterTower</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getParticleCellTypeAsEnum </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a> type as an ParticleCellTypeEnum. </p>
+<dl class="section return"><dt>Returns</dt><dd>The Cell type as an Enum </dd></dl>
+
+<p>Implements <a class="el" href="classautopas_1_1ParticleCell.html#ab0506ec233704b7210c9fbb0a26f2dd6">autopas::ParticleCell&lt; Particle &gt;</a>.</p>
 
 </div>
 </div>

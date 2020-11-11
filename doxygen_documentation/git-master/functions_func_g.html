@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-81fb187</span>
+   &#160;<span id="projectnumber">0.1.0-ef9cf8d</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -131,12 +131,14 @@ $(function() {
 : <a class="el" href="classautopas_1_1CudaSoA.html#aabd66bdf318123f2708b427b1c1df642">autopas::CudaSoA&lt; CudaSoAArraysType &gt;</a>
 , <a class="el" href="classautopas_1_1internal_1_1UnknowingCellBorderAndFlagManager.html#a054bbe2ac097a607747e2f51bfc5e4d6">autopas::internal::UnknowingCellBorderAndFlagManager</a>
 , <a class="el" href="classautopas_1_1Logger.html#ae6125241be21442ba2cd5eaa84a432c1">autopas::Logger</a>
-, <a class="el" href="classautopas_1_1MoleculeLJ.html#a54a59835f3e03f576d8b55571a9c66b8">autopas::MoleculeLJ&lt; floatType &gt;</a>
-, <a class="el" href="classautopas_1_1ParticleBase.html#aafece5b1b2425143c841d5197bca2c8c">autopas::ParticleBase&lt; floatType, idType &gt;</a>
+, <a class="el" href="classautopas_1_1MoleculeLJ.html#af606306ec6f1abdf27126dcade1eec18">autopas::MoleculeLJ&lt; floatType &gt;</a>
+, <a class="el" href="classautopas_1_1ParticleBase.html#a40b8e14b5fba598675accf6d0c196a5f">autopas::ParticleBase&lt; floatType, idType &gt;</a>
 , <a class="el" href="classautopas_1_1SingleCellIteratorWrapper.html#a96a72509c92c7b9a20775785d547527d">autopas::SingleCellIteratorWrapper&lt; Particle, modifiable &gt;</a>
-, <a class="el" href="classautopas_1_1sph_1_1SPHParticle.html#a4bc5fbd3326802101144d104745590a0">autopas::sph::SPHParticle</a>
+, <a class="el" href="classautopas_1_1sph_1_1SPHParticle.html#af337434bf1d6a871cc775571eafce2e8">autopas::sph::SPHParticle</a>
 , <a class="el" href="classautopas_1_1utils_1_1CudaDeviceVector.html#a2a1364b178fdaef5404635ba8f9c45af">autopas::utils::CudaDeviceVector&lt; T &gt;</a>
 , <a class="el" href="classautopas_1_1utils_1_1SoAStorage.html#a84059a766051a684a52a33170362a89e">autopas::utils::SoAStorage&lt; SoAArraysType &gt;</a>
+, <a class="el" href="classNonConstructibleParticle.html#abbc3ec045bf6f3b6d4296807d7169dd3">NonConstructibleParticle</a>
+, <a class="el" href="classTouchableParticle.html#a0a5f32ec80d2b3f33d2714ab32db9734">TouchableParticle</a>
 </li>
 <li>get1DIndexOfPosition()
 : <a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#a70b55e790bc60441e31d9bf335e266c3">autopas::internal::CellBlock3D&lt; ParticleCell &gt;</a>
@@ -154,7 +156,7 @@ $(function() {
 : <a class="el" href="classautopas_1_1sph_1_1SPHParticle.html#acc5f5dc3cfb7fe2a70d71dee855638e8">autopas::sph::SPHParticle</a>
 </li>
 <li>getAcquisitionFunction()
-: <a class="el" href="classautopas_1_1AutoPas.html#a538cddc3af486f4607570d466305708d">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#a21dc749aecf16302c3dd1f9d52901b2b">autopas::AutoPas&lt; Particle &gt;</a>
 </li>
 <li>getAll()
 : <a class="el" href="classautopas_1_1NumberInterval.html#acce47e87e7225af57606fe1d7e01ff47">autopas::NumberInterval&lt; Number &gt;</a>
@@ -165,7 +167,7 @@ $(function() {
 : <a class="el" href="classautopas_1_1options_1_1Option.html#a099b7bf52ef375a6f9621f6a956a5f97">autopas::options::Option&lt; actualOption &gt;</a>
 </li>
 <li>getAllowedCellSizeFactors()
-: <a class="el" href="classautopas_1_1AutoPas.html#ac24d81df4186ae395a356724cd480f47">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#a97493fcab5c92dcadb1ec22615c419a3">autopas::AutoPas&lt; Particle &gt;</a>
 </li>
 <li>getAllowedContainerOptions()
 : <a class="el" href="classautopas_1_1ActiveHarmony.html#af20269081f15cd28d57e9fed44997ef8">autopas::ActiveHarmony</a>
@@ -177,66 +179,69 @@ $(function() {
 , <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a415505a6e9a7538293aa23d952aee46d">autopas::TuningStrategyInterface</a>
 </li>
 <li>getAllowedContainers()
-: <a class="el" href="classautopas_1_1AutoPas.html#ad277efaa89cb493d7b07a625491d2fdf">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#a592e6d03efaf2de584eccb4ab39c40eb">autopas::AutoPas&lt; Particle &gt;</a>
 </li>
 <li>getAllowedDataLayouts()
-: <a class="el" href="classautopas_1_1AutoPas.html#aa5366afc49bf860b55cf39e4b67305ed">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#aa700a3d2a04e44d8637e362fe030e931">autopas::AutoPas&lt; Particle &gt;</a>
 </li>
 <li>getAllowedLoadEstimators()
-: <a class="el" href="classautopas_1_1AutoPas.html#a0353665b6deb5a114772adbcb6595710">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#ae9c5195c9f5c62414750dd84cee6602a">autopas::AutoPas&lt; Particle &gt;</a>
 </li>
 <li>getAllowedNewton3Options()
-: <a class="el" href="classautopas_1_1AutoPas.html#a676f30bd4a8cb3cfd14c8eb9ecbf78c9">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#ab9203f568ab756480610fd77afc0313d">autopas::AutoPas&lt; Particle &gt;</a>
 </li>
 <li>getAllowedTraversals()
-: <a class="el" href="classautopas_1_1AutoPas.html#a26f3f96bbdef672284e8afc987f6e28b">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#af6bc29c25850891b161d33e85fe636fb">autopas::AutoPas&lt; Particle &gt;</a>
 </li>
 <li>getAllTraversals()
-: <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a5df3e7bc6dc5b370734d30f9bf68e442">autopas::ParticleContainerInterface&lt; ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a2d8dcb95fb2ba2fdd4b4fce62268a2f5">autopas::ParticleContainerInterface&lt; Particle &gt;</a>
 </li>
 <li>getAoSNeighborList()
 : <a class="el" href="classautopas_1_1VerletNeighborListAsBuild.html#afa3a531a147af97da343204cfbe6f655">autopas::VerletNeighborListAsBuild&lt; Particle &gt;</a>
 </li>
 <li>getBoxMax()
-: <a class="el" href="classautopas_1_1AutoPas.html#a4e939aad0d1646c1c9da9ebf506ccd4a">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
-, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a8f74507a67adea5fa3bcd732e6c2e349">autopas::CellBasedParticleContainer&lt; ParticleCell, SoAArraysType &gt;</a>
-, <a class="el" href="classautopas_1_1ParticleContainerInterface.html#aef65bbe92aa5d66a85ae9ed7e9134a68">autopas::ParticleContainerInterface&lt; ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#a99ce8667018e80c1351f2988a28bf4a8">autopas::AutoPas&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a40a323b0626614c03d9a0eaa57749aef">autopas::CellBasedParticleContainer&lt; ParticleCell &gt;</a>
+, <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a49d609de0ed23d9fa5145bdae3f3ffff">autopas::ParticleContainerInterface&lt; Particle &gt;</a>
 , <a class="el" href="classautopas_1_1VerletClusterLists.html#a59bc457c7516f4c998d775fad70a0e20">autopas::VerletClusterLists&lt; Particle &gt;</a>
-, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a91e64de32d046db2aa0f02182d56d9ab">autopas::VerletListsLinkedBase&lt; Particle, LinkedParticleCell, LinkedSoAArraysType &gt;</a>
+, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#ae84dbbdf8672446397cd7064afca9dbf">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>
 </li>
 <li>getBoxMin()
-: <a class="el" href="classautopas_1_1AutoPas.html#a21809719337cd7b0ff9fe86fc7d1f388">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
-, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a8afada3d1ae835a70f2ca7b111d50160">autopas::CellBasedParticleContainer&lt; ParticleCell, SoAArraysType &gt;</a>
-, <a class="el" href="classautopas_1_1ParticleContainerInterface.html#afd23915087d6cbb113765e75bdffee55">autopas::ParticleContainerInterface&lt; ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#ad7acc80ca3b026cd0b203013a88204ef">autopas::AutoPas&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a72d962aa2de130a4b1d68d0b3de1943e">autopas::CellBasedParticleContainer&lt; ParticleCell &gt;</a>
+, <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a0828c5d50dd51467dfe9cdff1a49c3f1">autopas::ParticleContainerInterface&lt; Particle &gt;</a>
 , <a class="el" href="classautopas_1_1VerletClusterLists.html#a3affa96e1b3df7fbaefbed098b7d41f0">autopas::VerletClusterLists&lt; Particle &gt;</a>
-, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a5beb8a8ee4e64a9ab5a97e1559a34531">autopas::VerletListsLinkedBase&lt; Particle, LinkedParticleCell, LinkedSoAArraysType &gt;</a>
+, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a98e6b0585c3468a5dbc77c467c9fa839">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>
 </li>
 <li>getCell()
 : <a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#ab40ee7872c9e50c65b42d7533d568e7a">autopas::internal::CellBlock3D&lt; ParticleCell &gt;</a>
 </li>
 <li>getCellBlock()
-: <a class="el" href="classautopas_1_1LinkedCells.html#a692fc57e75a43f6d13a2bf6be96e0aaf">autopas::LinkedCells&lt; ParticleCell, SoAArraysType &gt;</a>
+: <a class="el" href="classautopas_1_1LinkedCells.html#acf0e9df8ef32d08171f33b0eea7ef33e">autopas::LinkedCells&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1LinkedCellsReferences.html#a71399f994c1ea105282752c30fb63df6">autopas::LinkedCellsReferences&lt; Particle &gt;</a>
 </li>
 <li>getCellBoundingBox()
 : <a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#ae48423cd9ceded43902ee033831bfabc">autopas::internal::CellBlock3D&lt; ParticleCell &gt;</a>
 </li>
 <li>getCellLength()
-: <a class="el" href="classautopas_1_1FullParticleCell.html#a45725d607663ad61610fbf8470e65f8a">autopas::FullParticleCell&lt; Particle, SoAArraysType &gt;</a>
+: <a class="el" href="classautopas_1_1FullParticleCell.html#a02242fd0a73d713408fc4f78a2b47f5b">autopas::FullParticleCell&lt; Particle &gt;</a>
 , <a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#a333445540b30edd9e03127247a7a16a6">autopas::internal::CellBlock3D&lt; ParticleCell &gt;</a>
 , <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a7e9e88d5c073afbdb4bdf053175f6c5d">autopas::internal::ClusterTower&lt; Particle &gt;</a>
 , <a class="el" href="classautopas_1_1ParticleCell.html#a015417d724b5dd9965a67a4ec1f76569">autopas::ParticleCell&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1ReferenceParticleCell.html#a702311c74838c5899fba26b329da9dc1">autopas::ReferenceParticleCell&lt; Particle &gt;</a>
 , <a class="el" href="classautopas_1_1SortedCellView.html#aadfcf85dcf42f93eb36526b5360f86e0">autopas::SortedCellView&lt; Particle, ParticleCellType &gt;</a>
 , <a class="el" href="classautopas_1_1VerletListsCells.html#ae6a86615c73927dc56c9c75a9d346823">autopas::VerletListsCells&lt; Particle &gt;</a>
 </li>
 <li>getCells()
-: <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a4ef099910bf778c042678623487c8570">autopas::CellBasedParticleContainer&lt; ParticleCell, SoAArraysType &gt;</a>
-, <a class="el" href="classautopas_1_1LinkedCells.html#a5294a752bb48387752ac2712887bdc6f">autopas::LinkedCells&lt; ParticleCell, SoAArraysType &gt;</a>
+: <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#adec3b5d7db7b0da6efec45d7724b91b1">autopas::CellBasedParticleContainer&lt; ParticleCell &gt;</a>
+, <a class="el" href="classautopas_1_1LinkedCells.html#a9e278664f137c32d990211929372404d">autopas::LinkedCells&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1LinkedCellsReferences.html#ae220f39282612b209b2edf321c914608">autopas::LinkedCellsReferences&lt; Particle &gt;</a>
 </li>
 <li>getCellSizeFactorIterator()
 : <a class="el" href="classautopas_1_1utils_1_1ConfigurationAndRankIteratorHandler.html#add823a6d37bc56d334aec63021be0aa3">autopas::utils::ConfigurationAndRankIteratorHandler</a>
 </li>
 <li>getCellsPerDimension()
-: <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a1e06ced10a45df1b6a5840d0f240ed3b">autopas::VerletListsLinkedBase&lt; Particle, LinkedParticleCell, LinkedSoAArraysType &gt;</a>
+: <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a25f6f914d44ca74be08d8d4fa0b8b204">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>
 </li>
 <li>getCellsPerDimensionWithHalo()
 : <a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#ad8c48632125b1c6a4399f47c0698f633">autopas::internal::CellBlock3D&lt; ParticleCell &gt;</a>
@@ -258,29 +263,30 @@ $(function() {
 : <a class="el" href="classautopas_1_1VerletClusterLists.html#a84c7c9259169b349769ad08881519a46">autopas::VerletClusterLists&lt; Particle &gt;</a>
 </li>
 <li>getComputedAttr()
-: <a class="el" href="classautopas_1_1FlopCounterFunctor.html#af90fbbaca310696eddb63415f672b06f">autopas::FlopCounterFunctor&lt; Particle, ParticleCell &gt;</a>
-, <a class="el" href="classautopas_1_1Functor.html#abacf71085d75442e8539228af7078f99">autopas::Functor&lt; Particle, ParticleCell_t, SoAArraysType, Impl_t &gt;</a>
-, <a class="el" href="classautopas_1_1internal_1_1Dummy.html#a0cb222c2c0cda526bada588b8d612c31">autopas::internal::Dummy&lt; Particle &gt;</a>
-, <a class="el" href="classautopas_1_1LJFunctor.html#a5a4ae05c0c7f097dfdfbeeb97a188cb2">autopas::LJFunctor&lt; Particle, ParticleCell, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
-, <a class="el" href="classautopas_1_1LJFunctorAVX.html#a69b5c93e1fb6d0dc7f22d6dbb373f131">autopas::LJFunctorAVX&lt; Particle, ParticleCell, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
-, <a class="el" href="classautopas_1_1sph_1_1SPHCalcDensityFunctor.html#a0e44eece2d8bb00ded9c9fc48cd7bbaa">autopas::sph::SPHCalcDensityFunctor&lt; Particle, ParticleCell &gt;</a>
-, <a class="el" href="classautopas_1_1sph_1_1SPHCalcHydroForceFunctor.html#a1f05e170c9f9fc0a5e7f4f06d95b0751">autopas::sph::SPHCalcHydroForceFunctor&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1FlopCounterFunctor.html#a5171651de5421d3e4280cc9ac978fa92">autopas::FlopCounterFunctor&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1Functor.html#aae7500aad5e379d05c0be9b0b9801b4d">autopas::Functor&lt; Particle, CRTP_T &gt;</a>
+, <a class="el" href="classautopas_1_1internal_1_1AsBuildPairGeneratorFunctor.html#ab8f1a95df482be5ea10aa2a246d7db40">autopas::internal::AsBuildPairGeneratorFunctor&lt; Particle, callCheckInstead &gt;</a>
+, <a class="el" href="classautopas_1_1LJFunctor.html#afb3abd0445a7acaa85b69cf1cf5025f1">autopas::LJFunctor&lt; Particle, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
+, <a class="el" href="classautopas_1_1LJFunctorAVX.html#a560e86ac159d59985783e0c5704c08eb">autopas::LJFunctorAVX&lt; Particle, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
+, <a class="el" href="classautopas_1_1sph_1_1SPHCalcDensityFunctor.html#a7962c172896a6843389748625f237ced">autopas::sph::SPHCalcDensityFunctor&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1sph_1_1SPHCalcHydroForceFunctor.html#ae44b6fb97801421fc4cef46337d3e3b9">autopas::sph::SPHCalcHydroForceFunctor&lt; Particle &gt;</a>
 , <a class="el" href="classautopas_1_1VerletListHelpers_1_1VerletListGeneratorFunctor.html#aa2029cebe1e1a6429198a9956ab2db66">autopas::VerletListHelpers&lt; Particle &gt;::VerletListGeneratorFunctor</a>
 </li>
 <li>getConfigIterators()
 : <a class="el" href="classautopas_1_1utils_1_1ConfigurationAndRankIteratorHandler.html#a9a799743d24ba9cf6d6067f11d9db34e">autopas::utils::ConfigurationAndRankIteratorHandler</a>
 </li>
 <li>getContainer()
-: <a class="el" href="classautopas_1_1AutoTuner.html#ad611dab62eddcad4beb6e32bba9f86a5">autopas::AutoTuner&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoTuner.html#a46931baa117531d89242da13595a3665">autopas::AutoTuner&lt; Particle &gt;</a>
 </li>
 <li>getContainerIterator()
 : <a class="el" href="classautopas_1_1utils_1_1ConfigurationAndRankIteratorHandler.html#a15419d237006031f434c354791c006f4">autopas::utils::ConfigurationAndRankIteratorHandler</a>
 </li>
 <li>getContainerType()
-: <a class="el" href="classautopas_1_1AutoPas.html#a878c9e336fa5a9725d4af5d639b98882">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
-, <a class="el" href="classautopas_1_1DirectSum.html#a667754f099a14110d0b18181946f70d9">autopas::DirectSum&lt; ParticleCell &gt;</a>
-, <a class="el" href="classautopas_1_1LinkedCells.html#a0eb8ee8fe0a94a879684539e48e108fb">autopas::LinkedCells&lt; ParticleCell, SoAArraysType &gt;</a>
-, <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a236f6d7cec0bac05f4496e46b54afbe0">autopas::ParticleContainerInterface&lt; ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#affd80d83875724cdc61ba72e2441e883">autopas::AutoPas&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1DirectSum.html#ae6113018345c5f478a71e682fe850e09">autopas::DirectSum&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1LinkedCells.html#ad93dce201cf243419dddeec5fd3b1435">autopas::LinkedCells&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1LinkedCellsReferences.html#a848f902c285e4741d13ba9e9dd26d9da">autopas::LinkedCellsReferences&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a78c5851f31e16a544c291b03a3081762">autopas::ParticleContainerInterface&lt; Particle &gt;</a>
 , <a class="el" href="classautopas_1_1VarVerletLists.html#aac6c532cdceba9a78d38fe81fa1a72d8">autopas::VarVerletLists&lt; Particle, NeighborList &gt;</a>
 , <a class="el" href="classautopas_1_1VerletClusterCells.html#a19d7a2f7639159193a0791232265954d">autopas::VerletClusterCells&lt; Particle &gt;</a>
 , <a class="el" href="classautopas_1_1VerletClusterLists.html#a8887080a9bc1687dad671e68e9ef721f">autopas::VerletClusterLists&lt; Particle &gt;</a>
@@ -293,16 +299,16 @@ $(function() {
 : <a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#a32d6c0590c732d4dd2059b8ebe231a0b">autopas::internal::CellBlock3D&lt; ParticleCell &gt;</a>
 </li>
 <li>getCudaWrapper()
-: <a class="el" href="classautopas_1_1Functor.html#a35defb77ba8248c2bec9c73c8f8f50e7">autopas::Functor&lt; Particle, ParticleCell_t, SoAArraysType, Impl_t &gt;</a>
-, <a class="el" href="classautopas_1_1LJFunctor.html#a9c6082648ef83f674880771feeb3ec06">autopas::LJFunctor&lt; Particle, ParticleCell, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
-, <a class="el" href="classEmptyFunctor.html#afc8365cf078c5607981fecda15c95635">EmptyFunctor&lt; Particle, ParticleCell_t, SoAArraysType &gt;</a>
+: <a class="el" href="classautopas_1_1Functor.html#a40de876e9705e9b58d2ff61da0850045">autopas::Functor&lt; Particle, CRTP_T &gt;</a>
+, <a class="el" href="classautopas_1_1LJFunctor.html#abc127c58e1173c7b7c2974204f60cc90">autopas::LJFunctor&lt; Particle, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
+, <a class="el" href="classEmptyFunctor.html#a4cc7e18097920777dabd28e3f64c1ffa">EmptyFunctor&lt; Particle &gt;</a>
 </li>
 <li>getCurrentCellId()
 : <a class="el" href="classautopas_1_1internal_1_1ParticleIterator.html#a0c795ad22349a3a70879bdba0e393ee7">autopas::internal::ParticleIterator&lt; Particle, ParticleCell, modifiable &gt;</a>
 </li>
 <li>getCurrentConfig()
-: <a class="el" href="classautopas_1_1AutoPas.html#a71bc1f04eaf82f07edca7d649c4a00d3">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
-, <a class="el" href="classautopas_1_1AutoTuner.html#afa2570b58826b952489c9026980c19e2">autopas::AutoTuner&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#a00c9a1303bb05424adb7293bcfab83ff">autopas::AutoPas&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1AutoTuner.html#aeed76de468a530f915b60fcb0e4e1ffc">autopas::AutoTuner&lt; Particle &gt;</a>
 </li>
 <li>getCurrentConfiguration()
 : <a class="el" href="classautopas_1_1ActiveHarmony.html#a813d7866779beb50f7dfd96177022a01">autopas::ActiveHarmony</a>
@@ -316,15 +322,15 @@ $(function() {
 , <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a8fa5d24bb66e75083ffcec5d19715ea1">autopas::TuningStrategyInterface</a>
 </li>
 <li>getCurrentContainer()
-: <a class="el" href="classautopas_1_1ContainerSelector.html#a99be6d510360258a19fe445cd19f39a5">autopas::ContainerSelector&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1ContainerSelector.html#afc5018f32f4d0b76bd23e764a2aacd6c">autopas::ContainerSelector&lt; Particle &gt;</a>
 </li>
 <li>getCutoff()
-: <a class="el" href="classautopas_1_1AutoPas.html#a85e01a2c3acf6dd13c0fbdc0bc12c5b4">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
-, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#af310c51bbf298789442fd36c61fbf8b7">autopas::CellBasedParticleContainer&lt; ParticleCell, SoAArraysType &gt;</a>
-, <a class="el" href="classautopas_1_1Functor.html#af84c789fac1ee51b364f3c9dd231a2ce">autopas::Functor&lt; Particle, ParticleCell_t, SoAArraysType, Impl_t &gt;</a>
-, <a class="el" href="classautopas_1_1ParticleContainerInterface.html#ac226a705ed7a682dcb89869dd1978f9e">autopas::ParticleContainerInterface&lt; ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#aec92ce60599389baf90e25f3c1836f01">autopas::AutoPas&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#afcd34ca95028f7ff82d007d9c3021f73">autopas::CellBasedParticleContainer&lt; ParticleCell &gt;</a>
+, <a class="el" href="classautopas_1_1Functor.html#aaa2af22908c3b6846a95a91a26e30093">autopas::Functor&lt; Particle, CRTP_T &gt;</a>
+, <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a4cde802a2682931d2c8fbea7188742ff">autopas::ParticleContainerInterface&lt; Particle &gt;</a>
 , <a class="el" href="classautopas_1_1VerletClusterLists.html#ab086ec424ccf1ce4fdd949ca66639d64">autopas::VerletClusterLists&lt; Particle &gt;</a>
-, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a3327af9475d62165ee8effba497034be">autopas::VerletListsLinkedBase&lt; Particle, LinkedParticleCell, LinkedSoAArraysType &gt;</a>
+, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a6981ddbaeed630594edf17735c85e78e">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>
 </li>
 <li>getDataLayout()
 : <a class="el" href="classautopas_1_1DSSequentialTraversal.html#a6330050e946275a2867331fca368b05c">autopas::DSSequentialTraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
@@ -339,7 +345,7 @@ $(function() {
 , <a class="el" href="classautopas_1_1LCSlicedC02Traversal.html#a3fd41744fef0b4a3d47155abf054c157">autopas::LCSlicedC02Traversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
 , <a class="el" href="classautopas_1_1LCSlicedTraversal.html#ab91d8163e9cf677b35a2d70f7f1aaecd">autopas::LCSlicedTraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
 , <a class="el" href="classautopas_1_1TraversalInterface.html#aa4aa379addfddf672457b819d2a80ad2">autopas::TraversalInterface</a>
-, <a class="el" href="classautopas_1_1VCCClusterItrationCUDATraversal.html#ac4c5909c443a7f1ddd5880306a5c1230">autopas::VCCClusterItrationCUDATraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
+, <a class="el" href="classautopas_1_1VCCClusterIterationCUDATraversal.html#ac18a985b1dce6918a71a8d750161ea5f">autopas::VCCClusterIterationCUDATraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
 , <a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html#a077d3ac7b007fc2e8393c2e9a1698845">autopas::VCLC01BalancedTraversal&lt; Particle, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
 , <a class="el" href="classautopas_1_1VCLC06Traversal.html#af75069ffbe6a69bbe4e722fb7a3b136b">autopas::VCLC06Traversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
 , <a class="el" href="classautopas_1_1VCLClusterIterationTraversal.html#a789a84f3229326f05ebd8a410bb88fe8">autopas::VCLClusterIterationTraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
@@ -377,7 +383,7 @@ $(function() {
 : <a class="el" href="classautopas_1_1FeatureVectorEncoder.html#addee5160c19f6ff43c9c997f10c36f5b">autopas::FeatureVectorEncoder</a>
 </li>
 <li>getDistanceCalculations()
-: <a class="el" href="classautopas_1_1FlopCounterFunctor.html#a745f65bf71be2c020cc177228f0bfab3">autopas::FlopCounterFunctor&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1FlopCounterFunctor.html#a4e15dea3fe2e27a9e8bcb8da9c6fceb6">autopas::FlopCounterFunctor&lt; Particle &gt;</a>
 </li>
 <li>getDt()
 : <a class="el" href="classautopas_1_1sph_1_1SPHParticle.html#a5089f6de073cba84cdb8238507339e30">autopas::sph::SPHParticle</a>
@@ -395,7 +401,7 @@ $(function() {
 : <a class="el" href="classautopas_1_1sph_1_1SPHParticle.html#ae945031f95472f16a77d3c9446e1b2fc">autopas::sph::SPHParticle</a>
 </li>
 <li>getEpsilon24()
-: <a class="el" href="classautopas_1_1LJFunctor.html#aaeee92b128ded15ccb6d2e7f8ae686d2">autopas::LJFunctor&lt; Particle, ParticleCell, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
+: <a class="el" href="classautopas_1_1LJFunctor.html#a08503a2516e71610dbd06964e05eab77">autopas::LJFunctor&lt; Particle, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
 </li>
 <li>getEvidence()
 : <a class="el" href="classautopas_1_1ActiveHarmony.html#a798b53f687f741dc4ab337d128400bf3">autopas::ActiveHarmony</a>
@@ -409,20 +415,20 @@ $(function() {
 , <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a0bf8cb8457787a21e909609830efa74e">autopas::TuningStrategyInterface</a>
 </li>
 <li>getEvidenceFirstPrediction()
-: <a class="el" href="classautopas_1_1AutoPas.html#ad0ce0cf3f3ea8da906338dee67785dec">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#a83738fd79aa57e4e171cb33d40730d49">autopas::AutoPas&lt; Particle &gt;</a>
 </li>
 <li>getEvidenceMax()
 : <a class="el" href="classautopas_1_1GaussianCluster.html#a8d58a3e409bc46898af9addb7f45fb82">autopas::GaussianCluster</a>
 , <a class="el" href="classautopas_1_1GaussianProcess.html#aa50099ce6306fe86c8243d0779ec6eab">autopas::GaussianProcess</a>
 </li>
 <li>getExtrapolationMethodOption()
-: <a class="el" href="classautopas_1_1AutoPas.html#a8a627bdd900289b8f6eb5fd2ff631601">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#aac0ec919a9f8de036bde63079a8a83de">autopas::AutoPas&lt; Particle &gt;</a>
 </li>
 <li>getF()
 : <a class="el" href="classautopas_1_1ParticleBase.html#a63801bf6f2fe6ac42ff5884c1558fa26">autopas::ParticleBase&lt; floatType, idType &gt;</a>
 </li>
 <li>getFlops()
-: <a class="el" href="classautopas_1_1FlopCounterFunctor.html#a18891228673fcd50355be3f5c26e3547">autopas::FlopCounterFunctor&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1FlopCounterFunctor.html#a6f8b8f5f88fbff2e21d5b775b429ef06">autopas::FlopCounterFunctor&lt; Particle &gt;</a>
 </li>
 <li>getFlopsW()
 : <a class="el" href="classautopas_1_1sph_1_1SPHKernels.html#aef9d18fde9bba3ad9f96e7da1be7191a">autopas::sph::SPHKernels</a>
@@ -436,7 +442,7 @@ $(function() {
 , <a class="el" href="classautopas_1_1VerletClusterLists.html#a6300a9a2571b24c792df3236a82d427f">autopas::VerletClusterLists&lt; Particle &gt;</a>
 </li>
 <li>getHitRate()
-: <a class="el" href="classautopas_1_1FlopCounterFunctor.html#aac607b7df6c33b82aaa6924586fb6209">autopas::FlopCounterFunctor&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1FlopCounterFunctor.html#ab37775a6287bdecf449236738359bea9">autopas::FlopCounterFunctor&lt; Particle &gt;</a>
 </li>
 <li>getHyperparameters()
 : <a class="el" href="classautopas_1_1GaussianProcess.html#a693f5afd3333df0347e1aff2fd23f0d3">autopas::GaussianProcess</a>
@@ -456,19 +462,20 @@ $(function() {
 : <a class="el" href="classautopas_1_1utils_1_1ConfigurationAndRankIteratorHandler.html#a576ffa82dcaa68c5c19425c37ff72972">autopas::utils::ConfigurationAndRankIteratorHandler</a>
 </li>
 <li>getInteractionLength()
-: <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#aaa514bf024e658f33c702b1fc8107ebc">autopas::CellBasedParticleContainer&lt; ParticleCell, SoAArraysType &gt;</a>
-, <a class="el" href="classautopas_1_1ParticleContainerInterface.html#aae03a423174870f00090eab00a7570d2">autopas::ParticleContainerInterface&lt; ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a4fd6d6f447fc85888bd652e28928aa1e">autopas::CellBasedParticleContainer&lt; ParticleCell &gt;</a>
+, <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a2191ad8b6814478b7ccca24081468f99">autopas::ParticleContainerInterface&lt; Particle &gt;</a>
 , <a class="el" href="classautopas_1_1VerletClusterLists.html#a6b313d604c233b44eb7b23b15884bea9">autopas::VerletClusterLists&lt; Particle &gt;</a>
-, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a57090aad50a8e6dbca25b41116c24783">autopas::VerletListsLinkedBase&lt; Particle, LinkedParticleCell, LinkedSoAArraysType &gt;</a>
+, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a62d24060a551090035744003ee2485fa">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>
 </li>
 <li>getKernelCalls()
-: <a class="el" href="classautopas_1_1FlopCounterFunctor.html#a308091e1c52483d4699c501620c7bd26">autopas::FlopCounterFunctor&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1FlopCounterFunctor.html#a5dc31f763808b22660a73cfb2fe27165">autopas::FlopCounterFunctor&lt; Particle &gt;</a>
 </li>
 <li>getKernelSupportRadius()
 : <a class="el" href="classautopas_1_1sph_1_1SPHKernels.html#a495f729848296af7ea85d61a01c1f5e5">autopas::sph::SPHKernels</a>
 </li>
 <li>getLoadEstimatorFunction()
-: <a class="el" href="classautopas_1_1LinkedCells.html#a3a33a5bd640ee34f1426f315cacfddef">autopas::LinkedCells&lt; ParticleCell, SoAArraysType &gt;</a>
+: <a class="el" href="classautopas_1_1LinkedCells.html#ad1f9c69d03c0555e998aaa1ebff68c26">autopas::LinkedCells&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1LinkedCellsReferences.html#ae1ffccee750a55b24490e3c875e4c67e">autopas::LinkedCellsReferences&lt; Particle &gt;</a>
 , <a class="el" href="classautopas_1_1VerletListsCells.html#a73180b3190b7906aae49485ff34716d8">autopas::VerletListsCells&lt; Particle &gt;</a>
 </li>
 <li>getLoadEstimatorIterator()
@@ -484,10 +491,10 @@ $(function() {
 , <a class="el" href="classautopas_1_1NumberSetFinite.html#a759c6454a46e209bbf4addb61d24cf59">autopas::NumberSetFinite&lt; Number &gt;</a>
 </li>
 <li>getMaxEvidence()
-: <a class="el" href="classautopas_1_1AutoPas.html#aa6063dbb01cd5f7bfcc1832ddba5f8cb">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#a3bb1e75c5e3e5de84d13e356a1362e42">autopas::AutoPas&lt; Particle &gt;</a>
 </li>
 <li>getMaxTuningPhasesWithoutTest()
-: <a class="el" href="classautopas_1_1AutoPas.html#a9092d6896d0d8478532f6ce52a6f573c">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#a24aa51196d52c9270a0786bb0d12a294">autopas::AutoPas&lt; Particle &gt;</a>
 </li>
 <li>getMedian()
 : <a class="el" href="classautopas_1_1NumberInterval.html#a3e632922819eef6fd3ee7b12b80fd86f">autopas::NumberInterval&lt; Number &gt;</a>
@@ -500,8 +507,8 @@ $(function() {
 , <a class="el" href="classautopas_1_1NumberSetFinite.html#a96c76c404e30ea22372ff90167681648">autopas::NumberSetFinite&lt; Number &gt;</a>
 </li>
 <li>getMixing()
-: <a class="el" href="classautopas_1_1LJFunctor.html#afa8feeb48e4a80d258a26517b5841c73">autopas::LJFunctor&lt; Particle, ParticleCell, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
-, <a class="el" href="classautopas_1_1LJFunctorAVX.html#adf8cf3f50c4c43c615977cdaa84a969d">autopas::LJFunctorAVX&lt; Particle, ParticleCell, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
+: <a class="el" href="classautopas_1_1LJFunctor.html#a606ad0ebd6bb1e07d207fd4dd174172d">autopas::LJFunctor&lt; Particle, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
+, <a class="el" href="classautopas_1_1LJFunctorAVX.html#ae8a8bbedbf9cc6b91fcb2e902d03cc8e">autopas::LJFunctorAVX&lt; Particle, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
 </li>
 <li>getMixingData()
 : <a class="el" href="classParticlePropertiesLibrary.html#a3b3a757d9eaf16705ec2e458712aef04">ParticlePropertiesLibrary&lt; floatType, intType &gt;</a>
@@ -513,13 +520,13 @@ $(function() {
 : <a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#a15009842fbfa5e805255937d8fcf2cf0">autopas::internal::CellBlock3D&lt; ParticleCell &gt;</a>
 </li>
 <li>getNeededAttr()
-: <a class="el" href="classautopas_1_1FlopCounterFunctor.html#a2a420a1ec6e2fe2eb94a7fcf981b900e">autopas::FlopCounterFunctor&lt; Particle, ParticleCell &gt;</a>
-, <a class="el" href="classautopas_1_1Functor.html#a64289b7fbe68999cec38bde9873f8f7d">autopas::Functor&lt; Particle, ParticleCell_t, SoAArraysType, Impl_t &gt;</a>
-, <a class="el" href="classautopas_1_1internal_1_1Dummy.html#a1b1ed48e59d976b0d13728d8f40dd07a">autopas::internal::Dummy&lt; Particle &gt;</a>
-, <a class="el" href="classautopas_1_1LJFunctor.html#acdcfef303f26af5879774f11999b0de5">autopas::LJFunctor&lt; Particle, ParticleCell, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
-, <a class="el" href="classautopas_1_1LJFunctorAVX.html#a53ad9746b88b7c327009242ed6b7e06a">autopas::LJFunctorAVX&lt; Particle, ParticleCell, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
-, <a class="el" href="classautopas_1_1sph_1_1SPHCalcDensityFunctor.html#a97cb93b1cfa0e1da23d83936359fc924">autopas::sph::SPHCalcDensityFunctor&lt; Particle, ParticleCell &gt;</a>
-, <a class="el" href="classautopas_1_1sph_1_1SPHCalcHydroForceFunctor.html#a13be329b366bd7f5f1e0f86c555df17b">autopas::sph::SPHCalcHydroForceFunctor&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1FlopCounterFunctor.html#afb1e5695270c36e483fd098eeaf9ecb3">autopas::FlopCounterFunctor&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1Functor.html#a70d177af1222ae27eafb9fe1a3a962a1">autopas::Functor&lt; Particle, CRTP_T &gt;</a>
+, <a class="el" href="classautopas_1_1internal_1_1AsBuildPairGeneratorFunctor.html#a8c00b541f5b8400ce3cd5f76b6b54869">autopas::internal::AsBuildPairGeneratorFunctor&lt; Particle, callCheckInstead &gt;</a>
+, <a class="el" href="classautopas_1_1LJFunctor.html#ad049679ee8f82779427eba463d6eb402">autopas::LJFunctor&lt; Particle, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
+, <a class="el" href="classautopas_1_1LJFunctorAVX.html#a7c40cc59696087636f2619bf71603516">autopas::LJFunctorAVX&lt; Particle, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
+, <a class="el" href="classautopas_1_1sph_1_1SPHCalcDensityFunctor.html#a47ee07b81da45f6757271d5418c3e847">autopas::sph::SPHCalcDensityFunctor&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1sph_1_1SPHCalcHydroForceFunctor.html#a85c04e9bce63bd629d0e8de7944b7e2c">autopas::sph::SPHCalcHydroForceFunctor&lt; Particle &gt;</a>
 , <a class="el" href="classautopas_1_1VerletListHelpers_1_1VerletListGeneratorFunctor.html#afda533fd40a9deb12c89249836687f3b">autopas::VerletListHelpers&lt; Particle &gt;::VerletListGeneratorFunctor</a>
 </li>
 <li>getNeighbors()
@@ -537,7 +544,7 @@ $(function() {
 , <a class="el" href="classautopas_1_1VerletNeighborListInterface.html#a986a32be08029ef19159a3bd75c5ae50">autopas::VerletNeighborListInterface&lt; Particle &gt;</a>
 </li>
 <li>getNumberOfParticles()
-: <a class="el" href="classautopas_1_1AutoPas.html#af4cf38ea07b662a78f88c8872351ac76">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#ae606e0f22ab640ac681d632cfa627764">autopas::AutoPas&lt; Particle &gt;</a>
 </li>
 <li>getNumClusters()
 : <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a61fc690df63426163a8bb985d4b80b78">autopas::internal::ClusterTower&lt; Particle &gt;</a>
@@ -547,28 +554,28 @@ $(function() {
 : <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a40e31a55d6af90650161c4c57d7272f2">autopas::internal::ClusterTower&lt; Particle &gt;</a>
 </li>
 <li>getNumFlopsPerKernelCall()
-: <a class="el" href="classautopas_1_1LJFunctor.html#abc9e20964ed81ebbb308879562943c56">autopas::LJFunctor&lt; Particle, ParticleCell, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
-, <a class="el" href="classautopas_1_1LJFunctorAVX.html#af234bb9a170f8e6a07e51c3ee6fde691">autopas::LJFunctorAVX&lt; Particle, ParticleCell, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
-, <a class="el" href="classautopas_1_1sph_1_1SPHCalcDensityFunctor.html#a02ec599d4c15e9783f8b091c5945cb90">autopas::sph::SPHCalcDensityFunctor&lt; Particle, ParticleCell &gt;</a>
-, <a class="el" href="classautopas_1_1sph_1_1SPHCalcHydroForceFunctor.html#afb94e6bebf118e9ab2b9a98ac0ffbc69">autopas::sph::SPHCalcHydroForceFunctor&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1LJFunctor.html#a0cd4f809c4c13f29434390513fcd8d9f">autopas::LJFunctor&lt; Particle, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
+, <a class="el" href="classautopas_1_1LJFunctorAVX.html#ad3fef0cca6b6e73eec666ca363476bb4">autopas::LJFunctorAVX&lt; Particle, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
+, <a class="el" href="classautopas_1_1sph_1_1SPHCalcDensityFunctor.html#a614ef70ebe782f256177db2964f0d39e">autopas::sph::SPHCalcDensityFunctor&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1sph_1_1SPHCalcHydroForceFunctor.html#ade512fe730a6b1d4de6dca4a0550c904">autopas::sph::SPHCalcHydroForceFunctor&lt; Particle &gt;</a>
 </li>
 <li>getNumParticles()
-: <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#adc1147eb663de2ccdded0bcd3a0ff7bc">autopas::CellBasedParticleContainer&lt; ParticleCell, SoAArraysType &gt;</a>
-, <a class="el" href="classautopas_1_1ParticleContainerInterface.html#ada1adbfdb70a94191b2ec438b6c34a35">autopas::ParticleContainerInterface&lt; ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a24cb5cd71a864db339e81b56cee883ec">autopas::CellBasedParticleContainer&lt; ParticleCell &gt;</a>
+, <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a07ccdb795b02e157d01e4677325f78d9">autopas::ParticleContainerInterface&lt; Particle &gt;</a>
 , <a class="el" href="classautopas_1_1SoA.html#a7e9911415eb3916ebee5e10cacbe576a">autopas::SoA&lt; SoAArraysType &gt;</a>
 , <a class="el" href="classautopas_1_1SoAView.html#a3ae6e6252d189a1e3aec6c391e5e2d61">autopas::SoAView&lt; SoAArraysType &gt;</a>
 , <a class="el" href="classautopas_1_1VerletClusterCells.html#a296bc481da6aa4aae906f09f16d9c729">autopas::VerletClusterCells&lt; Particle &gt;</a>
 , <a class="el" href="classautopas_1_1VerletClusterLists.html#a8faad50f42188cc9edfb6f932c403fa3">autopas::VerletClusterLists&lt; Particle &gt;</a>
-, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a50618a1bdff6dfa4e2010880819b16be">autopas::VerletListsLinkedBase&lt; Particle, LinkedParticleCell, LinkedSoAArraysType &gt;</a>
+, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#ab9e97aacf4315a296f6fe62ef88ee4d4">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>
 </li>
 <li>getNumParticlesHalo()
-: <a class="el" href="classautopas_1_1LogicHandler.html#aaa425e6459eb865cf64d201e036fc2e0">autopas::LogicHandler&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1LogicHandler.html#ad37ece7d532f215f5d34bd3c79397837">autopas::LogicHandler&lt; Particle &gt;</a>
 </li>
 <li>getNumParticlesOwned()
-: <a class="el" href="classautopas_1_1LogicHandler.html#a3d803d19985aa1575acedcfe9816d45b">autopas::LogicHandler&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1LogicHandler.html#a811ee13fee3ff2aab05d87c552549ba4">autopas::LogicHandler&lt; Particle &gt;</a>
 </li>
 <li>getNumSamples()
-: <a class="el" href="classautopas_1_1AutoPas.html#afc6e1cf181c554ca3270173caffd7fc6">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#acc5ed51fceabf9b442034425f796f6d4">autopas::AutoPas&lt; Particle &gt;</a>
 </li>
 <li>getNumTouched()
 : <a class="el" href="classTouchableParticle.html#ad3662fe72d5e7dbd6650930626a80006">TouchableParticle</a>
@@ -597,6 +604,22 @@ $(function() {
 , <a class="el" href="classautopas_1_1options_1_1TraversalOption.html#a1d7f0e68b44aa7029c32dd6a2c489eaa">autopas::options::TraversalOption</a>
 , <a class="el" href="classautopas_1_1options_1_1TuningStrategyOption.html#ae0ad9cccc5c5db93f99f826e7c540fa4">autopas::options::TuningStrategyOption</a>
 </li>
+<li>getParticleCellTypeAsEnum()
+: <a class="el" href="classautopas_1_1FullParticleCell.html#a5d0eac7d43111485deaf8880db1fcc71">autopas::FullParticleCell&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a7d6b7dd9b3270c646af15edb9575d0e2">autopas::internal::ClusterTower&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1ParticleCell.html#ab0506ec233704b7210c9fbb0a26f2dd6">autopas::ParticleCell&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1ReferenceParticleCell.html#a893d266a34c34587fb58f256a503e7f7">autopas::ReferenceParticleCell&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1SortedCellView.html#aa75041b886281cc42bbc7880743a978b">autopas::SortedCellView&lt; Particle, ParticleCellType &gt;</a>
+</li>
+<li>getParticleCellTypeEnum()
+: <a class="el" href="classautopas_1_1DirectSum.html#a2c730988b00c947622ef99101000866c">autopas::DirectSum&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1LinkedCells.html#a250a9e663a93e31e4c5192650f84db2a">autopas::LinkedCells&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1LinkedCellsReferences.html#ad7a65b694455d3349945baccde077c86">autopas::LinkedCellsReferences&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1ParticleContainerInterface.html#ab193930094db8fdd6424047f93cd05dd">autopas::ParticleContainerInterface&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1VerletClusterCells.html#af4cb2814c10860b58fb3d2e6251ed3c2">autopas::VerletClusterCells&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1VerletClusterLists.html#a7c09b45926d44432e69dd98fe34a9c89">autopas::VerletClusterLists&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a21d6755501a9aeaf8e8ab294176b5e6c">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>
+</li>
 <li>getPressure()
 : <a class="el" href="classautopas_1_1sph_1_1SPHParticle.html#a0e5d9e9cdc48d8ba5dc7ea919410d9ba">autopas::sph::SPHParticle</a>
 </li>
@@ -612,37 +635,38 @@ $(function() {
 : <a class="el" href="classautopas_1_1utils_1_1ConfigurationAndRankIteratorHandler.html#a115d7e57ca9bebe809cc3f0d89c1eb6b">autopas::utils::ConfigurationAndRankIteratorHandler</a>
 </li>
 <li>getRegionIterator()
-: <a class="el" href="classautopas_1_1AutoPas.html#ad322de58b3f3e43438a91cbec39b4595">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
-, <a class="el" href="classautopas_1_1DirectSum.html#a2cf416f33fd09b80a99a71ce20a77c36">autopas::DirectSum&lt; ParticleCell &gt;</a>
-, <a class="el" href="classautopas_1_1LinkedCells.html#aa2227534315cd33b4565af8b5d7a867a">autopas::LinkedCells&lt; ParticleCell, SoAArraysType &gt;</a>
-, <a class="el" href="classautopas_1_1LogicHandler.html#a86cb78e5b97db92eb2fae0e4c881d8d6">autopas::LogicHandler&lt; Particle, ParticleCell &gt;</a>
-, <a class="el" href="classautopas_1_1ParticleContainerInterface.html#adf4478ccd23c0d4d06c43a120db0ab53">autopas::ParticleContainerInterface&lt; ParticleCell &gt;</a>
-, <a class="el" href="classautopas_1_1VerletClusterCells.html#ad5260de644eef56a181b495825cbf4a5">autopas::VerletClusterCells&lt; Particle &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#a61df6fed7ab1206909f6b52d49ae8fec">autopas::AutoPas&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1DirectSum.html#a5693ef1723e069b93cbf3dfcff4f95c1">autopas::DirectSum&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1LinkedCells.html#a0125983ec828cb631c372df5024f76c3">autopas::LinkedCells&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1LinkedCellsReferences.html#afd26f4564b8d33d01ee09065a6140163">autopas::LinkedCellsReferences&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1LogicHandler.html#adec53a51fdce3f9540cf366cd1b72778">autopas::LogicHandler&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a298c5f2e866a89a8a1fb08973bbf7ab9">autopas::ParticleContainerInterface&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1VerletClusterCells.html#a1ce3c5ee022ea2ddeceab03dcf0ea24b">autopas::VerletClusterCells&lt; Particle &gt;</a>
 , <a class="el" href="classautopas_1_1VerletClusterLists.html#aa82511d9f3723e9978c78ffa90ec6b87">autopas::VerletClusterLists&lt; Particle &gt;</a>
-, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#ab45aef746c904877709f557edeb28681">autopas::VerletListsLinkedBase&lt; Particle, LinkedParticleCell, LinkedSoAArraysType &gt;</a>
+, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#ae805fce3eb189c6fca001ce462ce9ca5">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>
 </li>
 <li>getRelativeBlacklistRange()
-: <a class="el" href="classautopas_1_1AutoPas.html#a3f7e1fce66b4e6ca3157317c0794160d">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#a8c93b03f0c054d40d0160dbcde17dbec">autopas::AutoPas&lt; Particle &gt;</a>
 </li>
 <li>getRelativeOptimumRange()
-: <a class="el" href="classautopas_1_1AutoPas.html#ad9c74a7c1704773edddaa840f330894a">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#ae13ae8d237417fe146cbb1b9e27c1145">autopas::AutoPas&lt; Particle &gt;</a>
 </li>
 <li>getSelectorStrategy()
-: <a class="el" href="classautopas_1_1AutoPas.html#a866b7ad3de3035760369a32e71685c08">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#ac43ab1152c273f005be629d9f76269f8">autopas::AutoPas&lt; Particle &gt;</a>
 </li>
 <li>getSigmaSquare()
-: <a class="el" href="classautopas_1_1LJFunctor.html#ad12122620ad3a6c9acd9204ec875b5e3">autopas::LJFunctor&lt; Particle, ParticleCell, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
+: <a class="el" href="classautopas_1_1LJFunctor.html#a0f91e73f3ec1d996a3f90605694d62e2">autopas::LJFunctor&lt; Particle, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
 , <a class="el" href="classParticlePropertiesLibrary.html#acbe1f19ae8ffb2785ae96106340e02e3">ParticlePropertiesLibrary&lt; floatType, intType &gt;</a>
 </li>
 <li>getSignature()
-: <a class="el" href="classautopas_1_1VCCClusterItrationCUDATraversal.html#aadf3a46e9bc083cb2aa6da236621c5d3">autopas::VCCClusterItrationCUDATraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
+: <a class="el" href="classautopas_1_1VCCClusterIterationCUDATraversal.html#a86a19e3ba88a10db95e90fa70d55fd86">autopas::VCCClusterIterationCUDATraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
 , <a class="el" href="classautopas_1_1VCCTraversalInterface.html#a1df4eba6c8666f6f2469483858da061c">autopas::VCCTraversalInterface&lt; ParticleCell &gt;</a>
 </li>
 <li>getSkin()
-: <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#aed52d2b73ac6e1dcf984c101285ce45b">autopas::CellBasedParticleContainer&lt; ParticleCell, SoAArraysType &gt;</a>
-, <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a9760889556ca9f2e229a1bc5fdf6393f">autopas::ParticleContainerInterface&lt; ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#acd2c413352bc751c86bdf19f58183f4c">autopas::CellBasedParticleContainer&lt; ParticleCell &gt;</a>
+, <a class="el" href="classautopas_1_1ParticleContainerInterface.html#ab075fe7760cfaca82d7fd0c59e5992fd">autopas::ParticleContainerInterface&lt; Particle &gt;</a>
 , <a class="el" href="classautopas_1_1VerletClusterLists.html#a9de86a343a2fb515a2c04cde71fbf013">autopas::VerletClusterLists&lt; Particle &gt;</a>
-, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#aed5b4ac111190fe698b90161fccf0399">autopas::VerletListsLinkedBase&lt; Particle, LinkedParticleCell, LinkedSoAArraysType &gt;</a>
+, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#ab385cb8a9b9f158b7721be30abbe5384">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>
 </li>
 <li>getSmoothingLength()
 : <a class="el" href="classautopas_1_1sph_1_1SPHParticle.html#ad93217441b4dbf7f1fe99fc80abc5356">autopas::sph::SPHParticle</a>
@@ -669,7 +693,7 @@ $(function() {
 : <a class="el" href="classautopas_1_1utils_1_1Timer.html#a1d07d1624bc4192abb0abd4e6e588e02">autopas::utils::Timer</a>
 </li>
 <li>getTower()
-: <a class="el" href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html#a02920488f911b4817776d363d9d28b4a">autopas::internal::VerletClusterListsRebuilder&lt; Particle &gt;</a>
+: <a class="el" href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html#acfbe41699f797d07c4a3508e5be12a8d">autopas::internal::VerletClusterListsRebuilder&lt; Particle &gt;</a>
 </li>
 <li>getTowerAtCoordinates()
 : <a class="el" href="classautopas_1_1VerletClusterLists.html#a1183dcb2b12fae12da5b0c5ad6761f4e">autopas::VerletClusterLists&lt; Particle &gt;</a>
@@ -690,12 +714,13 @@ $(function() {
 : <a class="el" href="classautopas_1_1utils_1_1ConfigurationAndRankIteratorHandler.html#aef16e6cb2ccd6d12cffcc786564526cf">autopas::utils::ConfigurationAndRankIteratorHandler</a>
 </li>
 <li>getTraversalSelectorInfo()
-: <a class="el" href="classautopas_1_1DirectSum.html#a6c6a3500f90c2860882cfdf0c74cb03e">autopas::DirectSum&lt; ParticleCell &gt;</a>
-, <a class="el" href="classautopas_1_1LinkedCells.html#ab5ced324f2579f70339704cdfbeb701c">autopas::LinkedCells&lt; ParticleCell, SoAArraysType &gt;</a>
-, <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a2cbd12c9d80b83fdc273f2c9b5e6142e">autopas::ParticleContainerInterface&lt; ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1DirectSum.html#ad2aca36f974ad21c2edbcf12ba8f6f9c">autopas::DirectSum&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1LinkedCells.html#a7a44fbc300db83788991d85bed8a268e">autopas::LinkedCells&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1LinkedCellsReferences.html#a6e206f4829daf6c149aa4b29e73a30c6">autopas::LinkedCellsReferences&lt; Particle &gt;</a>
+, <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a0792166b79e13d3f310ba67bc7531432">autopas::ParticleContainerInterface&lt; Particle &gt;</a>
 , <a class="el" href="classautopas_1_1VerletClusterCells.html#ac9078d46e1aeceafed324bb6ff16dfca">autopas::VerletClusterCells&lt; Particle &gt;</a>
 , <a class="el" href="classautopas_1_1VerletClusterLists.html#aa01918ad43ab0768b187d11ebefe82de">autopas::VerletClusterLists&lt; Particle &gt;</a>
-, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a141ae32299a7eb787bb34eca749eef21">autopas::VerletListsLinkedBase&lt; Particle, LinkedParticleCell, LinkedSoAArraysType &gt;</a>
+, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a1e227fcf7e2a316e727d940f9d7d532a">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>
 </li>
 <li>getTraversalType()
 : <a class="el" href="classautopas_1_1DSSequentialTraversal.html#aae5fff0e5deae4e5459f457c65148cf8">autopas::DSSequentialTraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
@@ -710,7 +735,7 @@ $(function() {
 , <a class="el" href="classautopas_1_1LCSlicedC02Traversal.html#a99a42d2faa8188780a251c3b1005ef1c">autopas::LCSlicedC02Traversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
 , <a class="el" href="classautopas_1_1LCSlicedTraversal.html#a6bf2994746c418334e42187b1acfbd2a">autopas::LCSlicedTraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
 , <a class="el" href="classautopas_1_1TraversalInterface.html#a37474936c05b085f9ad3be1de9f86aaa">autopas::TraversalInterface</a>
-, <a class="el" href="classautopas_1_1VCCClusterItrationCUDATraversal.html#a3a3e45e7021c7edd1b73036426475c23">autopas::VCCClusterItrationCUDATraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
+, <a class="el" href="classautopas_1_1VCCClusterIterationCUDATraversal.html#af2858f2a6e587d97226f5715316f1c46">autopas::VCCClusterIterationCUDATraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
 , <a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html#a2c8cbb39ec5d4c8dfb0f1812d4a1f750">autopas::VCLC01BalancedTraversal&lt; Particle, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
 , <a class="el" href="classautopas_1_1VCLC06Traversal.html#a457e25573c6358b0f5369509cbc57b46">autopas::VCLC06Traversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
 , <a class="el" href="classautopas_1_1VCLClusterIterationTraversal.html#aa5266503c6ffb564f1cfcd317c80524a">autopas::VCLClusterIterationTraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
@@ -723,10 +748,13 @@ $(function() {
 , <a class="el" href="classautopas_1_1VVLAsBuildTraversal.html#ae39cd5b3db4050afd8a4115b3fe1a8a0">autopas::VVLAsBuildTraversal&lt; ParticleCell, Particle, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
 </li>
 <li>getTuningInterval()
-: <a class="el" href="classautopas_1_1AutoPas.html#acee5a52a334ee7091088db32d19ce415">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#aaade7f91b85219a9b204a73424fd2529">autopas::AutoPas&lt; Particle &gt;</a>
 </li>
 <li>getTuningStrategyOption()
-: <a class="el" href="classautopas_1_1AutoPas.html#ac27c8cb7df106e5fecefab35566864b7">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#a3a4ccb760130bdaf4bbd1985ab395b68">autopas::AutoPas&lt; Particle &gt;</a>
+</li>
+<li>getTuple()
+: <a class="el" href="classautopas_1_1utils_1_1SoAStorage.html#ae767a60a6c8b91a17c24191823250b60">autopas::utils::SoAStorage&lt; SoAArraysType &gt;</a>
 </li>
 <li>getTypeId()
 : <a class="el" href="classautopas_1_1MoleculeLJ.html#a8d74126cf3662fddcddbdcf84ef384cf">autopas::MoleculeLJ&lt; floatType &gt;</a>
@@ -735,8 +763,8 @@ $(function() {
 : <a class="el" href="classParticlePropertiesLibrary.html#a2bf6473ec1c18bfabfeef835a6c327a8">ParticlePropertiesLibrary&lt; floatType, intType &gt;</a>
 </li>
 <li>getUpot()
-: <a class="el" href="classautopas_1_1LJFunctor.html#a587c9c7bcac989fa3053d3ec70493724">autopas::LJFunctor&lt; Particle, ParticleCell, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
-, <a class="el" href="classautopas_1_1LJFunctorAVX.html#ac0c3e970c065abf8a7c4ada5a7bd5b8e">autopas::LJFunctorAVX&lt; Particle, ParticleCell, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
+: <a class="el" href="classautopas_1_1LJFunctor.html#ab96c0a17d3253f141eedbffa20afbb13">autopas::LJFunctor&lt; Particle, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
+, <a class="el" href="classautopas_1_1LJFunctorAVX.html#a28eb7b3f6dce5c7e8837d3e65827f533">autopas::LJFunctorAVX&lt; Particle, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
 </li>
 <li>getUseNewton3()
 : <a class="el" href="classautopas_1_1DSSequentialTraversal.html#a86d8323efd14279d47a008cfa0238d4d">autopas::DSSequentialTraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
@@ -751,7 +779,7 @@ $(function() {
 , <a class="el" href="classautopas_1_1LCSlicedC02Traversal.html#ac5129bc3d9f3632cd8f03c0e2af503e4">autopas::LCSlicedC02Traversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
 , <a class="el" href="classautopas_1_1LCSlicedTraversal.html#a6f8bfb56c2ba6843ffd24604d9248d94">autopas::LCSlicedTraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
 , <a class="el" href="classautopas_1_1TraversalInterface.html#a6be6caa9e895c375d0b416510ec1596a">autopas::TraversalInterface</a>
-, <a class="el" href="classautopas_1_1VCCClusterItrationCUDATraversal.html#a8ff61600d377da3c9b4df48d17437a7b">autopas::VCCClusterItrationCUDATraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
+, <a class="el" href="classautopas_1_1VCCClusterIterationCUDATraversal.html#a329012288378a79e6160e34394a5e0fe">autopas::VCCClusterIterationCUDATraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
 , <a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html#a7f71e45cf38aff652573c330fb1ebd54">autopas::VCLC01BalancedTraversal&lt; Particle, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
 , <a class="el" href="classautopas_1_1VCLC06Traversal.html#ac391a7a0bfa916de35d0894c9f8c89fc">autopas::VCLC06Traversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
 , <a class="el" href="classautopas_1_1VCLClusterIterationTraversal.html#a5fd1a1350ff4a7d8c35c16ac8a890a70">autopas::VCLClusterIterationTraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>
@@ -770,7 +798,7 @@ $(function() {
 : <a class="el" href="classautopas_1_1sph_1_1SPHParticle.html#ab8374c2ddf8d352183b2ef650d934b1c">autopas::sph::SPHParticle</a>
 </li>
 <li>getVerletClusterSize()
-: <a class="el" href="classautopas_1_1AutoPas.html#a5151e25879714ff89f9d184c3db20a10">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#a64c33011595eb88abc24bfbc61eb0c81">autopas::AutoPas&lt; Particle &gt;</a>
 </li>
 <li>getVerletList()
 : <a class="el" href="classautopas_1_1VerletListsCells.html#a081bdefc010d1b638fef53fba21882ca">autopas::VerletListsCells&lt; Particle &gt;</a>
@@ -779,14 +807,14 @@ $(function() {
 : <a class="el" href="classautopas_1_1VerletLists.html#ab0f52271ac9981a53d525b72b3f62546">autopas::VerletLists&lt; Particle &gt;</a>
 </li>
 <li>getVerletRebuildFrequency()
-: <a class="el" href="classautopas_1_1AutoPas.html#ae346484e70514b0f1ab863fb07951e44">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#a362774100575a196d19bb0efb829a215">autopas::AutoPas&lt; Particle &gt;</a>
 </li>
 <li>getVerletSkin()
-: <a class="el" href="classautopas_1_1AutoPas.html#a5ba4e33d3bb88c0e14c30ba03db6859c">autopas::AutoPas&lt; Particle, ParticleCell &gt;</a>
+: <a class="el" href="classautopas_1_1AutoPas.html#adffdc192ad93bfca2923b8e8960ba28e">autopas::AutoPas&lt; Particle &gt;</a>
 </li>
 <li>getVirial()
-: <a class="el" href="classautopas_1_1LJFunctor.html#ad76cb352ce39f66c61787b3d8125f1e7">autopas::LJFunctor&lt; Particle, ParticleCell, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
-, <a class="el" href="classautopas_1_1LJFunctorAVX.html#ab8128ce517ec66ee205252aaac6e559d">autopas::LJFunctorAVX&lt; Particle, ParticleCell, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
+: <a class="el" href="classautopas_1_1LJFunctor.html#a0abc00bde56398c52e69a1c6b782b548">autopas::LJFunctor&lt; Particle, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
+, <a class="el" href="classautopas_1_1LJFunctorAVX.html#ad474a11d4f78d3821fb7f3d0b7f2aeb8">autopas::LJFunctorAVX&lt; Particle, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;</a>
 </li>
 <li>getVSigMax()
 : <a class="el" href="classautopas_1_1sph_1_1SPHParticle.html#aa1349455a6d1e157bc88b584a6f2e37f">autopas::sph::SPHParticle</a>

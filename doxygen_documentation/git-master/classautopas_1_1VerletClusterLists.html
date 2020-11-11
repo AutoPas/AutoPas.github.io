@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-81fb187</span>
+   &#160;<span id="projectnumber">0.1.0-ef9cf8d</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -133,8 +133,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a75e67d6ede673fd6fb8e8134700ebf43"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletClusterLists.html#a75e67d6ede673fd6fb8e8134700ebf43">VerletClusterLists</a> (const std::array&lt; double, 3 &gt; boxMin, const std::array&lt; double, 3 &gt; boxMax, double cutoff, double skin, size_t clusterSize)</td></tr>
 <tr class="memdesc:a75e67d6ede673fd6fb8e8134700ebf43"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the <a class="el" href="classautopas_1_1VerletClusterLists.html" title="Particles are divided into clusters.">VerletClusterLists</a> class.  <a href="classautopas_1_1VerletClusterLists.html#a75e67d6ede673fd6fb8e8134700ebf43">More...</a><br /></td></tr>
 <tr class="separator:a75e67d6ede673fd6fb8e8134700ebf43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c09b45926d44432e69dd98fe34a9c89"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8">CellType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletClusterLists.html#a7c09b45926d44432e69dd98fe34a9c89">getParticleCellTypeEnum</a> () override</td></tr>
+<tr class="memdesc:a7c09b45926d44432e69dd98fe34a9c89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a> type as an Enum.  <a href="classautopas_1_1VerletClusterLists.html#a7c09b45926d44432e69dd98fe34a9c89">More...</a><br /></td></tr>
+<tr class="separator:a7c09b45926d44432e69dd98fe34a9c89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8887080a9bc1687dad671e68e9ef721f"><td class="memItemLeft" align="right" valign="top">ContainerOption&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletClusterLists.html#a8887080a9bc1687dad671e68e9ef721f">getContainerType</a> () const override</td></tr>
-<tr class="memdesc:a8887080a9bc1687dad671e68e9ef721f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a enum representing the name of the container class.  <a href="classautopas_1_1VerletClusterLists.html#a8887080a9bc1687dad671e68e9ef721f">More...</a><br /></td></tr>
+<tr class="memdesc:a8887080a9bc1687dad671e68e9ef721f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the ContainerType.  <a href="classautopas_1_1VerletClusterLists.html#a8887080a9bc1687dad671e68e9ef721f">More...</a><br /></td></tr>
 <tr class="separator:a8887080a9bc1687dad671e68e9ef721f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6200cb4240d6e6d59d02b94fd197dfdf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletClusterLists.html#a6200cb4240d6e6d59d02b94fd197dfdf">iteratePairwise</a> (<a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *traversal) override</td></tr>
 <tr class="memdesc:a6200cb4240d6e6d59d02b94fd197dfdf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates over all particle pairs in the container.  <a href="classautopas_1_1VerletClusterLists.html#a6200cb4240d6e6d59d02b94fd197dfdf">More...</a><br /></td></tr>
@@ -814,8 +817,8 @@ template&lt;class Particle &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Return a enum representing the name of the container class. </p>
-<dl class="section return"><dt>Returns</dt><dd>Enum representing the container. </dd></dl>
+<p>Get the ContainerType. </p>
+<dl class="section return"><dt>Returns</dt><dd>ContainerOption of the type of this container. </dd></dl>
 
 </div>
 </div>
@@ -1026,6 +1029,36 @@ template&lt;class Particle &gt; </div>
 
 <p>Returns the towers per interaction length. </p>
 <p>That is how many towers fit into one interaction length rounded up. </p><dl class="section return"><dt>Returns</dt><dd>the number of towers per interaction length. </dd></dl>
+
+</div>
+</div>
+<a id="a7c09b45926d44432e69dd98fe34a9c89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c09b45926d44432e69dd98fe34a9c89">&#9670;&nbsp;</a></span>getParticleCellTypeEnum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Particle &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8">CellType</a> <a class="el" href="classautopas_1_1VerletClusterLists.html">autopas::VerletClusterLists</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getParticleCellTypeEnum </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a> type as an Enum. </p>
+<dl class="section return"><dt>Returns</dt><dd>The Cell type as an Enum </dd></dl>
 
 </div>
 </div>

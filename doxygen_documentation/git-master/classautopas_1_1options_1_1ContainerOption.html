@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-81fb187</span>
+   &#160;<span id="projectnumber">0.1.0-ef9cf8d</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -137,10 +137,11 @@ Public Types</h2></td></tr>
 <tr class="memitem:a16b80e72223e48e127689234cafa302f"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1ContainerOption.html#a16b80e72223e48e127689234cafa302f">Value</a> { <br />
 &#160;&#160;<a class="el" href="classautopas_1_1options_1_1ContainerOption.html#a16b80e72223e48e127689234cafa302fae82da021b57f2ad601e487ca22e4b56e">directSum</a>, 
 <a class="el" href="classautopas_1_1options_1_1ContainerOption.html#a16b80e72223e48e127689234cafa302fa657f39216299680045883468af1debeb">linkedCells</a>, 
+<a class="el" href="classautopas_1_1options_1_1ContainerOption.html#a16b80e72223e48e127689234cafa302fa7f591ef8b52751126db14f096adfe64a">linkedCellsReferences</a>, 
 <a class="el" href="classautopas_1_1options_1_1ContainerOption.html#a16b80e72223e48e127689234cafa302fa73754b5d8a128fc088db7dbe5731766e">varVerletListsAsBuild</a>, 
-<a class="el" href="classautopas_1_1options_1_1ContainerOption.html#a16b80e72223e48e127689234cafa302faeb0b6998980b84916276d9c87fc35000">verletClusterCells</a>, 
 <br />
-&#160;&#160;<a class="el" href="classautopas_1_1options_1_1ContainerOption.html#a16b80e72223e48e127689234cafa302fa845b26300ca6bc579a7574994632ddf6">verletClusterLists</a>, 
+&#160;&#160;<a class="el" href="classautopas_1_1options_1_1ContainerOption.html#a16b80e72223e48e127689234cafa302faeb0b6998980b84916276d9c87fc35000">verletClusterCells</a>, 
+<a class="el" href="classautopas_1_1options_1_1ContainerOption.html#a16b80e72223e48e127689234cafa302fa845b26300ca6bc579a7574994632ddf6">verletClusterLists</a>, 
 <a class="el" href="classautopas_1_1options_1_1ContainerOption.html#a16b80e72223e48e127689234cafa302fadfab604ab5c55b564cea982a52aa9d18">verletLists</a>, 
 <a class="el" href="classautopas_1_1options_1_1ContainerOption.html#a16b80e72223e48e127689234cafa302faf43cc5d4dfe42b7da68a532431411135">verletListsCells</a>
 <br />
@@ -212,6 +213,9 @@ Static Public Member Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="a16b80e72223e48e127689234cafa302fa657f39216299680045883468af1debeb"></a>linkedCells&#160;</td><td class="fielddoc"><p><a class="el" href="classautopas_1_1LinkedCells.html" title="LinkedCells class.">LinkedCells</a> : Segmentation of the domain into a regular cell grid. </p>
 <p>Only interactions with particles from neighbor cells are considered. Good data locality and vectorizability but low hit rate of particles in cutoff. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a16b80e72223e48e127689234cafa302fa7f591ef8b52751126db14f096adfe64a"></a>linkedCellsReferences&#160;</td><td class="fielddoc"><p><a class="el" href="classautopas_1_1LinkedCellsReferences.html" title="LinkedCells class.">LinkedCellsReferences</a> : Same algorithm as <a class="el" href="classautopas_1_1LinkedCells.html" title="LinkedCells class.">LinkedCells</a> but stores all particles in one big vector. </p>
+<p>Cells only contain references to this vector. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a16b80e72223e48e127689234cafa302fa73754b5d8a128fc088db7dbe5731766e"></a>varVerletListsAsBuild&#160;</td><td class="fielddoc"><p><a class="el" href="classautopas_1_1VarVerletLists.html" title="Variable Verlet Lists container with different neighbor lists.">VarVerletLists</a> interface with neighbor list type <a class="el" href="classautopas_1_1VerletNeighborListAsBuild.html" title="This class implements a neighbor list that remembers which thread added which particle pair and at wh...">VerletNeighborListAsBuild</a> : Same algorithm as <a class="el" href="classautopas_1_1VerletLists.html" title="Verlet Lists container.">VerletLists</a>. </p>
 <p>Remembers which thread created the neighbor list of each particle to exploit this information to avoid data races during the parallel force calculation. </p>

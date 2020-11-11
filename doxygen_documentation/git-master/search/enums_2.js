@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['exceptionbehavior_2518',['ExceptionBehavior',['../namespaceautopas_1_1utils.html#a9d742020d77e569b7b7200992d15fef8',1,'autopas::utils']]]
+  ['celltype_2533',['CellType',['../namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8',1,'autopas']]]
 ];

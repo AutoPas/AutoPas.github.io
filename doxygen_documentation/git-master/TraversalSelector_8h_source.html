@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-81fb187</span>
+   &#160;<span id="projectnumber">0.1.0-ef9cf8d</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -121,7 +121,7 @@ $(function() {
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="LCSlicedBalancedTraversal_8h.html">autopas/containers/linkedCells/traversals/LCSlicedBalancedTraversal.h</a>&quot;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="LCSlicedC02Traversal_8h.html">autopas/containers/linkedCells/traversals/LCSlicedC02Traversal.h</a>&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="LCSlicedTraversal_8h.html">autopas/containers/linkedCells/traversals/LCSlicedTraversal.h</a>&quot;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="VCCClusterItrationCUDATraversal_8h.html">autopas/containers/verletClusterCells/traversals/VCCClusterItrationCUDATraversal.h</a>&quot;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="VCCClusterIterationCUDATraversal_8h.html">autopas/containers/verletClusterCells/traversals/VCCClusterIterationCUDATraversal.h</a>&quot;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="VCLC01BalancedTraversal_8h.html">autopas/containers/verletClusterLists/traversals/VCLC01BalancedTraversal.h</a>&quot;</span></div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="VCLC06Traversal_8h.html">autopas/containers/verletClusterLists/traversals/VCLC06Traversal.h</a>&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="VCLClusterIterationTraversal_8h.html">autopas/containers/verletClusterLists/traversals/VCLClusterIterationTraversal.h</a>&quot;</span></div>
@@ -263,7 +263,7 @@ $(function() {
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;    }</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;    <span class="comment">// Verlet Cluster Cells</span></div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;    <span class="keywordflow">case</span> TraversalOption::vcc_cluster_iteration_cuda: {</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      <span class="keywordflow">return</span> std::make_unique&lt;VCCClusterItrationCUDATraversal&lt;ParticleCell, PairwiseFunctor, dataLayout, useNewton3&gt;&gt;(</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;      <span class="keywordflow">return</span> std::make_unique&lt;VCCClusterIterationCUDATraversal&lt;ParticleCell, PairwiseFunctor, dataLayout, useNewton3&gt;&gt;(</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;          &amp;pairwiseFunctor, info.<a class="code" href="classautopas_1_1TraversalSelectorInfo.html#a435a4aec527d6fbcf5b3511a08df4c82">clusterSize</a>);</div>
 <div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    }</div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;  }</div>
@@ -328,11 +328,12 @@ $(function() {
 <div class="ttc" id="aclassautopas_1_1TraversalSelectorInfo_html_a3ca1d12c89d38153b5ad7add77066fc1"><div class="ttname"><a href="classautopas_1_1TraversalSelectorInfo.html#a3ca1d12c89d38153b5ad7add77066fc1">autopas::TraversalSelectorInfo::dims</a></div><div class="ttdeci">const std::array&lt; unsigned long, 3 &gt; dims</div><div class="ttdoc">Array with the dimension lengths of the domain.</div><div class="ttdef"><b>Definition:</b> TraversalSelectorInfo.h:35</div></div>
 <div class="ttc" id="aCellFunctor_8h_html"><div class="ttname"><a href="CellFunctor_8h.html">CellFunctor.h</a></div></div>
 <div class="ttc" id="aVLCSlicedC02Traversal_8h_html"><div class="ttname"><a href="VLCSlicedC02Traversal_8h.html">VLCSlicedC02Traversal.h</a></div></div>
+<div class="ttc" id="aVCCClusterIterationCUDATraversal_8h_html"><div class="ttname"><a href="VCCClusterIterationCUDATraversal_8h.html">VCCClusterIterationCUDATraversal.h</a></div></div>
 <div class="ttc" id="aLCC04Traversal_8h_html"><div class="ttname"><a href="LCC04Traversal_8h.html">LCC04Traversal.h</a></div></div>
 <div class="ttc" id="aVLCC01Traversal_8h_html"><div class="ttname"><a href="VLCC01Traversal_8h.html">VLCC01Traversal.h</a></div></div>
 <div class="ttc" id="aDataLayoutOption_8h_html"><div class="ttname"><a href="DataLayoutOption_8h.html">DataLayoutOption.h</a></div></div>
 <div class="ttc" id="aVLCSlicedTraversal_8h_html"><div class="ttname"><a href="VLCSlicedTraversal_8h.html">VLCSlicedTraversal.h</a></div></div>
-<div class="ttc" id="aclassautopas_1_1ParticleCell_html_a553070a9b356ecf3bea43f1a2b344765"><div class="ttname"><a href="classautopas_1_1ParticleCell.html#a553070a9b356ecf3bea43f1a2b344765">autopas::ParticleCell::ParticleType</a></div><div class="ttdeci">Particle ParticleType</div><div class="ttdoc">The particle type for this cell.</div><div class="ttdef"><b>Definition:</b> ParticleCell.h:27</div></div>
+<div class="ttc" id="aclassautopas_1_1ParticleCell_html_a553070a9b356ecf3bea43f1a2b344765"><div class="ttname"><a href="classautopas_1_1ParticleCell.html#a553070a9b356ecf3bea43f1a2b344765">autopas::ParticleCell::ParticleType</a></div><div class="ttdeci">Particle ParticleType</div><div class="ttdoc">The particle type for this cell.</div><div class="ttdef"><b>Definition:</b> ParticleCell.h:53</div></div>
 <div class="ttc" id="aLCC08Traversal_8h_html"><div class="ttname"><a href="LCC08Traversal_8h.html">LCC08Traversal.h</a></div></div>
 <div class="ttc" id="aLCC04HCPTraversal_8h_html"><div class="ttname"><a href="LCC04HCPTraversal_8h.html">LCC04HCPTraversal.h</a></div></div>
 <div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">This is the main namespace of AutoPas.</div><div class="ttdef"><b>Definition:</b> AutoPas.h:27</div></div>
@@ -344,7 +345,6 @@ $(function() {
 <div class="ttc" id="aLCSlicedBalancedTraversal_8h_html"><div class="ttname"><a href="LCSlicedBalancedTraversal_8h.html">LCSlicedBalancedTraversal.h</a></div></div>
 <div class="ttc" id="aVCLC06Traversal_8h_html"><div class="ttname"><a href="VCLC06Traversal_8h.html">VCLC06Traversal.h</a></div></div>
 <div class="ttc" id="aVCLC01BalancedTraversal_8h_html"><div class="ttname"><a href="VCLC01BalancedTraversal_8h.html">VCLC01BalancedTraversal.h</a></div></div>
-<div class="ttc" id="aVCCClusterItrationCUDATraversal_8h_html"><div class="ttname"><a href="VCCClusterItrationCUDATraversal_8h.html">VCCClusterItrationCUDATraversal.h</a></div></div>
 <div class="ttc" id="aExceptionHandler_8h_html"><div class="ttname"><a href="ExceptionHandler_8h.html">ExceptionHandler.h</a></div></div>
 <div class="ttc" id="aVVLAsBuildTraversal_8h_html"><div class="ttname"><a href="VVLAsBuildTraversal_8h.html">VVLAsBuildTraversal.h</a></div></div>
 <div class="ttc" id="aTraversalSelectorInfo_8h_html"><div class="ttname"><a href="TraversalSelectorInfo_8h.html">TraversalSelectorInfo.h</a></div></div>
@@ -358,7 +358,7 @@ $(function() {
 <div class="ttc" id="aclassautopas_1_1TraversalSelectorInfo_html"><div class="ttname"><a href="classautopas_1_1TraversalSelectorInfo.html">autopas::TraversalSelectorInfo</a></div><div class="ttdoc">Info for traversals of a specific container.</div><div class="ttdef"><b>Definition:</b> TraversalSelectorInfo.h:14</div></div>
 <div class="ttc" id="aVLCSlicedBalancedTraversal_8h_html"><div class="ttname"><a href="VLCSlicedBalancedTraversal_8h.html">VLCSlicedBalancedTraversal.h</a></div></div>
 <div class="ttc" id="aclassautopas_1_1TraversalSelector_html"><div class="ttname"><a href="classautopas_1_1TraversalSelector.html">autopas::TraversalSelector</a></div><div class="ttdoc">Selector for a container traversal.</div><div class="ttdef"><b>Definition:</b> TraversalSelector.h:55</div></div>
-<div class="ttc" id="aclassautopas_1_1ParticleCell_html"><div class="ttname"><a href="classautopas_1_1ParticleCell.html">autopas::ParticleCell</a></div><div class="ttdoc">Class for Cells of Particles.</div><div class="ttdef"><b>Definition:</b> ParticleCell.h:22</div></div>
+<div class="ttc" id="aclassautopas_1_1ParticleCell_html"><div class="ttname"><a href="classautopas_1_1ParticleCell.html">autopas::ParticleCell</a></div><div class="ttdoc">Class for Cells of Particles.</div><div class="ttdef"><b>Definition:</b> ParticleCell.h:48</div></div>
 <div class="ttc" id="aclassautopas_1_1utils_1_1ExceptionHandler_html_ae61b9aac49a90a9ff86859c73005ee07"><div class="ttname"><a href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a></div><div class="ttdeci">static void exception(const Exception e)</div><div class="ttdoc">Handle an exception derived by std::exception.</div><div class="ttdef"><b>Definition:</b> ExceptionHandler.h:53</div></div>
 <div class="ttc" id="aDSSequentialTraversal_8h_html"><div class="ttname"><a href="DSSequentialTraversal_8h.html">DSSequentialTraversal.h</a></div></div>
 <div class="ttc" id="aNewton3Option_8h_html"><div class="ttname"><a href="Newton3Option_8h.html">Newton3Option.h</a></div></div>

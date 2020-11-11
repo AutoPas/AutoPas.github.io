@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-81fb187</span>
+   &#160;<span id="projectnumber">0.1.0-ef9cf8d</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -115,12 +115,13 @@ Inheritance diagram for autopas::ParticleCell&lt; Particle &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classautopas_1_1ParticleCell__inherit__graph.png" border="0" usemap="#aautopas_1_1ParticleCell_3_01Particle_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="autopas_1_1ParticleCell_3_01Particle_01_4_inherit__map" id="aautopas_1_1ParticleCell_3_01Particle_01_4_inherit__map">
-<area shape="rect" title="Class for Cells of Particles." alt="" coords="5,104,145,145"/>
-<area shape="rect" href="classautopas_1_1FullParticleCell.html" title="This class handles the storage of particles in their full form." alt="" coords="350,5,511,47"/>
-<area shape="rect" href="classautopas_1_1internal_1_1ClusterTower.html" title="This class represents one tower for clusters in the VerletClusterLists container." alt="" coords="348,71,513,112"/>
-<area shape="rect" href="classautopas_1_1SortedCellView.html" title="This class defines a sorted view on a given ParticleCell." alt="" coords="349,136,512,177"/>
-<area shape="rect" href="classautopas_1_1ParticleCell.html" title=" " alt="" coords="345,201,516,243"/>
-<area shape="rect" href="classautopas_1_1FullParticleCell.html" title=" " alt="" coords="716,104,887,145"/>
+<area shape="rect" title="Class for Cells of Particles." alt="" coords="5,136,145,177"/>
+<area shape="rect" href="classautopas_1_1FullParticleCell.html" title="This class handles the storage of particles in their full form." alt="" coords="353,5,515,47"/>
+<area shape="rect" href="classautopas_1_1internal_1_1ClusterTower.html" title="This class represents one tower for clusters in the VerletClusterLists container." alt="" coords="351,71,517,112"/>
+<area shape="rect" href="classautopas_1_1ReferenceParticleCell.html" title="This class handles the storage of particles in their full form." alt="" coords="345,136,523,177"/>
+<area shape="rect" href="classautopas_1_1SortedCellView.html" title="This class defines a sorted view on a given ParticleCell." alt="" coords="353,201,515,243"/>
+<area shape="rect" href="classautopas_1_1ParticleCell.html" title=" " alt="" coords="349,267,519,308"/>
+<area shape="rect" href="classautopas_1_1FullParticleCell.html" title=" " alt="" coords="723,137,893,179"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -163,6 +164,9 @@ virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" hr
 virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleCell.html#af4ae5c0a2aa1d83f6c28d3d8457bdcc0">deleteDummyParticles</a> ()=0</td></tr>
 <tr class="memdesc:af4ae5c0a2aa1d83f6c28d3d8457bdcc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all dummy particles in this cell. <br /></td></tr>
 <tr class="separator:af4ae5c0a2aa1d83f6c28d3d8457bdcc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0506ec233704b7210c9fbb0a26f2dd6"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8">CellType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleCell.html#ab0506ec233704b7210c9fbb0a26f2dd6">getParticleCellTypeAsEnum</a> ()=0</td></tr>
+<tr class="memdesc:ab0506ec233704b7210c9fbb0a26f2dd6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a> type as an ParticleCellTypeEnum.  <a href="classautopas_1_1ParticleCell.html#ab0506ec233704b7210c9fbb0a26f2dd6">More...</a><br /></td></tr>
+<tr class="separator:ab0506ec233704b7210c9fbb0a26f2dd6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a179869c9a897f50d5952947099272c4a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleCell.html#a179869c9a897f50d5952947099272c4a">deleteByIndex</a> (size_t index)=0</td></tr>
 <tr class="memdesc:a179869c9a897f50d5952947099272c4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the index-th particle.  <a href="classautopas_1_1ParticleCell.html#a179869c9a897f50d5952947099272c4a">More...</a><br /></td></tr>
 <tr class="separator:a179869c9a897f50d5952947099272c4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -220,7 +224,7 @@ template&lt;class Particle &gt; </div>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a460a62d35a28ffdd8102716ed7958540">autopas::internal::ClusterTower&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1SortedCellView.html#a268069c19448cecc794aed77e1c39966">autopas::SortedCellView&lt; Particle, ParticleCellType &gt;</a>, <a class="el" href="classautopas_1_1FullParticleCell.html#a66e589ac1a0370f796c6a9c7bc99eb41">autopas::FullParticleCell&lt; Particle, SoAArraysType &gt;</a>, and <a class="el" href="classautopas_1_1FullParticleCell.html#a66e589ac1a0370f796c6a9c7bc99eb41">autopas::FullParticleCell&lt; autopas::ParticleBase &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a460a62d35a28ffdd8102716ed7958540">autopas::internal::ClusterTower&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1SortedCellView.html#a268069c19448cecc794aed77e1c39966">autopas::SortedCellView&lt; Particle, ParticleCellType &gt;</a>, <a class="el" href="classautopas_1_1ReferenceParticleCell.html#ae6edff775d9b436ac9e8d99edcbf2f5e">autopas::ReferenceParticleCell&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1FullParticleCell.html#a9cb6d903969cd3ba9e99a282d6a6ba2a">autopas::FullParticleCell&lt; Particle &gt;</a>, and <a class="el" href="classautopas_1_1FullParticleCell.html#a9cb6d903969cd3ba9e99a282d6a6ba2a">autopas::FullParticleCell&lt; autopas::ParticleBase &gt;</a>.</p>
 
 </div>
 </div>
@@ -253,7 +257,7 @@ template&lt;class Particle &gt; </div>
 <p>normal use: for(auto iter = cell.begin(); iter.isValid; ++iter){...} </p><dl class="section return"><dt>Returns</dt><dd>the iterator </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>const version </dd></dl>
 
-<p>Implemented in <a class="el" href="classautopas_1_1FullParticleCell.html#a831369da05c24de0c10035d914a32e0c">autopas::FullParticleCell&lt; autopas::ParticleBase &gt;</a>, <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a45c8ecc7645761050bee5e182b791777">autopas::internal::ClusterTower&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1SortedCellView.html#a3683bc8adea454c0600da1fd9cbb25a0">autopas::SortedCellView&lt; Particle, ParticleCellType &gt;</a>, <a class="el" href="classautopas_1_1FullParticleCell.html#ac2c9d54b6010e4d437a05dca341eefa7">autopas::FullParticleCell&lt; Particle, SoAArraysType &gt;</a>, and <a class="el" href="classautopas_1_1FullParticleCell.html#ac2c9d54b6010e4d437a05dca341eefa7">autopas::FullParticleCell&lt; autopas::ParticleBase &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classautopas_1_1FullParticleCell.html#acac1a39b3405672a74a25b527197e9ce">autopas::FullParticleCell&lt; autopas::ParticleBase &gt;</a>, <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a45c8ecc7645761050bee5e182b791777">autopas::internal::ClusterTower&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1SortedCellView.html#a3683bc8adea454c0600da1fd9cbb25a0">autopas::SortedCellView&lt; Particle, ParticleCellType &gt;</a>, <a class="el" href="classautopas_1_1ReferenceParticleCell.html#a1da048edb9a6bb15224955851cfd5bee">autopas::ReferenceParticleCell&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1FullParticleCell.html#aca0190f5725b23f94f88eebd2990338d">autopas::FullParticleCell&lt; Particle &gt;</a>, and <a class="el" href="classautopas_1_1FullParticleCell.html#aca0190f5725b23f94f88eebd2990338d">autopas::FullParticleCell&lt; autopas::ParticleBase &gt;</a>.</p>
 
 </div>
 </div>
@@ -285,7 +289,7 @@ template&lt;class Particle &gt; </div>
 <p>Get an iterator to the start of a <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a>. </p>
 <p>normal use: for(auto iter = cell.begin(); iter.isValid; ++iter){...} </p><dl class="section return"><dt>Returns</dt><dd>the iterator </dd></dl>
 
-<p>Implemented in <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a3856376c1b4aa18f29f4ca48e0502ef6">autopas::internal::ClusterTower&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1SortedCellView.html#a4f26ec7a2f24d1193f872fb26ecb02e3">autopas::SortedCellView&lt; Particle, ParticleCellType &gt;</a>, <a class="el" href="classautopas_1_1FullParticleCell.html#a831369da05c24de0c10035d914a32e0c">autopas::FullParticleCell&lt; Particle, SoAArraysType &gt;</a>, <a class="el" href="classautopas_1_1FullParticleCell.html#a831369da05c24de0c10035d914a32e0c">autopas::FullParticleCell&lt; autopas::ParticleBase &gt;</a>, and <a class="el" href="classautopas_1_1FullParticleCell.html#ac2c9d54b6010e4d437a05dca341eefa7">autopas::FullParticleCell&lt; autopas::ParticleBase &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a3856376c1b4aa18f29f4ca48e0502ef6">autopas::internal::ClusterTower&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1SortedCellView.html#a4f26ec7a2f24d1193f872fb26ecb02e3">autopas::SortedCellView&lt; Particle, ParticleCellType &gt;</a>, <a class="el" href="classautopas_1_1ReferenceParticleCell.html#a640235f95eb2b5bba5555ef06910c175">autopas::ReferenceParticleCell&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1FullParticleCell.html#acac1a39b3405672a74a25b527197e9ce">autopas::FullParticleCell&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1FullParticleCell.html#acac1a39b3405672a74a25b527197e9ce">autopas::FullParticleCell&lt; autopas::ParticleBase &gt;</a>, and <a class="el" href="classautopas_1_1FullParticleCell.html#aca0190f5725b23f94f88eebd2990338d">autopas::FullParticleCell&lt; autopas::ParticleBase &gt;</a>.</p>
 
 </div>
 </div>
@@ -323,7 +327,7 @@ template&lt;class Particle &gt; </div>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a4e539f8d9390e928b1ca7e8333882785">autopas::internal::ClusterTower&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1SortedCellView.html#a06402c6d41d59472f11faaca6fa93b7c">autopas::SortedCellView&lt; Particle, ParticleCellType &gt;</a>, <a class="el" href="classautopas_1_1FullParticleCell.html#afc3d2f416d23567df609e8dfc106bcae">autopas::FullParticleCell&lt; Particle, SoAArraysType &gt;</a>, and <a class="el" href="classautopas_1_1FullParticleCell.html#afc3d2f416d23567df609e8dfc106bcae">autopas::FullParticleCell&lt; autopas::ParticleBase &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a4e539f8d9390e928b1ca7e8333882785">autopas::internal::ClusterTower&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1SortedCellView.html#a06402c6d41d59472f11faaca6fa93b7c">autopas::SortedCellView&lt; Particle, ParticleCellType &gt;</a>, <a class="el" href="classautopas_1_1ReferenceParticleCell.html#af470624838674f51fc2422dfd9de68ec">autopas::ReferenceParticleCell&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1FullParticleCell.html#adcc366e8fe290c2d3d97322d2a6d74d2">autopas::FullParticleCell&lt; Particle &gt;</a>, and <a class="el" href="classautopas_1_1FullParticleCell.html#adcc366e8fe290c2d3d97322d2a6d74d2">autopas::FullParticleCell&lt; autopas::ParticleBase &gt;</a>.</p>
 
 </div>
 </div>
@@ -385,7 +389,39 @@ template&lt;class Particle &gt; </div>
 <p>Get the side lengths of this cell. </p>
 <dl class="section return"><dt>Returns</dt><dd>cell side length </dd></dl>
 
-<p>Implemented in <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a7e9e88d5c073afbdb4bdf053175f6c5d">autopas::internal::ClusterTower&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1SortedCellView.html#aadfcf85dcf42f93eb36526b5360f86e0">autopas::SortedCellView&lt; Particle, ParticleCellType &gt;</a>, <a class="el" href="classautopas_1_1FullParticleCell.html#a45725d607663ad61610fbf8470e65f8a">autopas::FullParticleCell&lt; Particle, SoAArraysType &gt;</a>, and <a class="el" href="classautopas_1_1FullParticleCell.html#a45725d607663ad61610fbf8470e65f8a">autopas::FullParticleCell&lt; autopas::ParticleBase &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a7e9e88d5c073afbdb4bdf053175f6c5d">autopas::internal::ClusterTower&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1SortedCellView.html#aadfcf85dcf42f93eb36526b5360f86e0">autopas::SortedCellView&lt; Particle, ParticleCellType &gt;</a>, <a class="el" href="classautopas_1_1ReferenceParticleCell.html#a702311c74838c5899fba26b329da9dc1">autopas::ReferenceParticleCell&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1FullParticleCell.html#a02242fd0a73d713408fc4f78a2b47f5b">autopas::FullParticleCell&lt; Particle &gt;</a>, and <a class="el" href="classautopas_1_1FullParticleCell.html#a02242fd0a73d713408fc4f78a2b47f5b">autopas::FullParticleCell&lt; autopas::ParticleBase &gt;</a>.</p>
+
+</div>
+</div>
+<a id="ab0506ec233704b7210c9fbb0a26f2dd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0506ec233704b7210c9fbb0a26f2dd6">&#9670;&nbsp;</a></span>getParticleCellTypeAsEnum()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Particle &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8">CellType</a> <a class="el" href="classautopas_1_1ParticleCell.html">autopas::ParticleCell</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getParticleCellTypeAsEnum </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a> type as an ParticleCellTypeEnum. </p>
+<dl class="section return"><dt>Returns</dt><dd>The Cell type as an Enum </dd></dl>
+
+<p>Implemented in <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a7d6b7dd9b3270c646af15edb9575d0e2">autopas::internal::ClusterTower&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1SortedCellView.html#aa75041b886281cc42bbc7880743a978b">autopas::SortedCellView&lt; Particle, ParticleCellType &gt;</a>, <a class="el" href="classautopas_1_1ReferenceParticleCell.html#a893d266a34c34587fb58f256a503e7f7">autopas::ReferenceParticleCell&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1FullParticleCell.html#a5d0eac7d43111485deaf8880db1fcc71">autopas::FullParticleCell&lt; Particle &gt;</a>, and <a class="el" href="classautopas_1_1FullParticleCell.html#a5d0eac7d43111485deaf8880db1fcc71">autopas::FullParticleCell&lt; autopas::ParticleBase &gt;</a>.</p>
 
 </div>
 </div>
@@ -417,7 +453,7 @@ template&lt;class Particle &gt; </div>
 <p>Check if the cell is not empty. </p>
 <dl class="section return"><dt>Returns</dt><dd>true if at least one particle is stored in this cell </dd></dl>
 
-<p>Implemented in <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#ac12b8840e559300b423b2fa206705786">autopas::internal::ClusterTower&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1SortedCellView.html#a84ca4286c089a0a230bcf33825a3c19f">autopas::SortedCellView&lt; Particle, ParticleCellType &gt;</a>, <a class="el" href="classautopas_1_1FullParticleCell.html#a31894458640d8c5bfc11cb988fcce024">autopas::FullParticleCell&lt; Particle, SoAArraysType &gt;</a>, and <a class="el" href="classautopas_1_1FullParticleCell.html#a31894458640d8c5bfc11cb988fcce024">autopas::FullParticleCell&lt; autopas::ParticleBase &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#ac12b8840e559300b423b2fa206705786">autopas::internal::ClusterTower&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1SortedCellView.html#a84ca4286c089a0a230bcf33825a3c19f">autopas::SortedCellView&lt; Particle, ParticleCellType &gt;</a>, <a class="el" href="classautopas_1_1ReferenceParticleCell.html#a0d862a57908aa18add168883a717a753">autopas::ReferenceParticleCell&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1FullParticleCell.html#a3f1a4b458ca9f7c81a147633ddef8e34">autopas::FullParticleCell&lt; Particle &gt;</a>, and <a class="el" href="classautopas_1_1FullParticleCell.html#a3f1a4b458ca9f7c81a147633ddef8e34">autopas::FullParticleCell&lt; autopas::ParticleBase &gt;</a>.</p>
 
 </div>
 </div>
@@ -449,7 +485,7 @@ template&lt;class Particle &gt; </div>
 <p>Get the number of particles stored in this cell. </p>
 <dl class="section return"><dt>Returns</dt><dd>number of particles stored in this cell </dd></dl>
 
-<p>Implemented in <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#afbd022cdcb9aabaabfa71f56d611e820">autopas::internal::ClusterTower&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1SortedCellView.html#a707b8d8f33b63e19fd5c88f370642675">autopas::SortedCellView&lt; Particle, ParticleCellType &gt;</a>, <a class="el" href="classautopas_1_1FullParticleCell.html#aaf93a7a8052331b0a37642a93ef77c8a">autopas::FullParticleCell&lt; Particle, SoAArraysType &gt;</a>, and <a class="el" href="classautopas_1_1FullParticleCell.html#aaf93a7a8052331b0a37642a93ef77c8a">autopas::FullParticleCell&lt; autopas::ParticleBase &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#afbd022cdcb9aabaabfa71f56d611e820">autopas::internal::ClusterTower&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1SortedCellView.html#a707b8d8f33b63e19fd5c88f370642675">autopas::SortedCellView&lt; Particle, ParticleCellType &gt;</a>, <a class="el" href="classautopas_1_1ReferenceParticleCell.html#ab7317a3beb578b246a8e3c2fab31338e">autopas::ReferenceParticleCell&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1FullParticleCell.html#a966981e351e508bf9c6fe7af7c218dab">autopas::FullParticleCell&lt; Particle &gt;</a>, and <a class="el" href="classautopas_1_1FullParticleCell.html#a966981e351e508bf9c6fe7af7c218dab">autopas::FullParticleCell&lt; autopas::ParticleBase &gt;</a>.</p>
 
 </div>
 </div>
@@ -487,7 +523,7 @@ template&lt;class Particle &gt; </div>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classautopas_1_1SortedCellView.html#a8fb1c8af0d7183571229fb14c1edc915">autopas::SortedCellView&lt; Particle, ParticleCellType &gt;</a>, <a class="el" href="classautopas_1_1FullParticleCell.html#ac8a568432a8bf1ff45ab8b185598a1ef">autopas::FullParticleCell&lt; Particle, SoAArraysType &gt;</a>, <a class="el" href="classautopas_1_1FullParticleCell.html#ac8a568432a8bf1ff45ab8b185598a1ef">autopas::FullParticleCell&lt; autopas::ParticleBase &gt;</a>, and <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#ac446e9ce71a0a7d97fd33ad3a12e578c">autopas::internal::ClusterTower&lt; Particle &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classautopas_1_1SortedCellView.html#a8fb1c8af0d7183571229fb14c1edc915">autopas::SortedCellView&lt; Particle, ParticleCellType &gt;</a>, <a class="el" href="classautopas_1_1ReferenceParticleCell.html#af7886f22eda29b5392dfd5821323febf">autopas::ReferenceParticleCell&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1FullParticleCell.html#a7e2f9f6f67019e53cbacd08cc2360025">autopas::FullParticleCell&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1FullParticleCell.html#a7e2f9f6f67019e53cbacd08cc2360025">autopas::FullParticleCell&lt; autopas::ParticleBase &gt;</a>, and <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#ac446e9ce71a0a7d97fd33ad3a12e578c">autopas::internal::ClusterTower&lt; Particle &gt;</a>.</p>
 
 </div>
 </div>
