@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-c43af12</span>
+   &#160;<span id="projectnumber">0.1.0-181a85f</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -319,8 +319,8 @@ $(function() {
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="preprocessor">#ifdef AUTOPAS_OPENMP</span></div>
 <div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;<span class="preprocessor">#pragma omp parallel default(none) shared(autopas)</span></div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> iter = autopas.begin(); iter.isValid(); ++iter) {</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    iter-&gt;addF(_config-&gt;globalForce.value);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> particleItr = autopas.begin(autopas::IteratorBehavior::ownedOnly); particleItr.isValid(); ++particleItr) {</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;    particleItr-&gt;addF(_config-&gt;globalForce.value);</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;  }</div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;}</div>
 <div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160; </div>
@@ -618,8 +618,8 @@ $(function() {
 <div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;  std::vector&lt;double&gt; allVolumes(numberOfCells, 0);</div>
 <div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160; </div>
 <div class="line"><a name="l00610"></a><span class="lineno">  610</span>&#160;  <span class="comment">// add particles accordingly to their cell to get the amount of particles in each cell</span></div>
-<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> iter = autopas.begin(); iter.isValid(); ++iter) {</div>
-<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    std::array&lt;double, 3&gt; particleLocation = iter-&gt;getR();</div>
+<div class="line"><a name="l00611"></a><span class="lineno">  611</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> particleItr = autopas.begin(autopas::IteratorBehavior::ownedOnly); particleItr.isValid(); ++particleItr) {</div>
+<div class="line"><a name="l00612"></a><span class="lineno">  612</span>&#160;    std::array&lt;double, 3&gt; particleLocation = particleItr-&gt;getR();</div>
 <div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;    std::array&lt;size_t, 3&gt; index = {};</div>
 <div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; particleLocation.size(); i++) {</div>
 <div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;      index[i] = particleLocation[i] / cellLength;</div>
