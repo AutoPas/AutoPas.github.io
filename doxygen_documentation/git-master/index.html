@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-c43af12</span>
+   &#160;<span id="projectnumber">0.1.0-181a85f</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -108,7 +108,7 @@ Documentation</h1>
 <h1><a class="anchor" id="autotoc_md2"></a>
 Requirements</h1>
 <ul>
-<li>cmake 3.14 or newer</li>
+<li>CMake 3.14 or newer</li>
 <li>make (build-essentials) or ninja</li>
 <li>a c++17 compiler (gcc7, clang8 and <strike>icpc 2019</strike> are tested.)</li>
 </ul>
@@ -118,7 +118,7 @@ Building AutoPas</h1>
 <div class="line">cd build</div>
 <div class="line">cmake ..</div>
 <div class="line">make</div>
-</div><!-- fragment --><p>if you want to use another compiler, specify it at the first cmake call, e.g.: </p><div class="fragment"><div class="line">mkdir build</div>
+</div><!-- fragment --><p>if you want to use a specific compiler, specify it at the first CMake call, e.g.: </p><div class="fragment"><div class="line">mkdir build</div>
 <div class="line">cd build</div>
 <div class="line">CC=clang CXX=clang++ cmake ..</div>
 <div class="line">make</div>
@@ -132,67 +132,78 @@ Building AutoPas on a Cluster</h2>
 <div class="line">cd build</div>
 <div class="line">CC=`which gcc` CXX=`which g++` cmake ..</div>
 <div class="line">make</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md5"></a>
+</div><!-- fragment --><p>AutoPas relies on a small number of dependencies. By default AutoPas looks for installed versions of those libraries but it can also be forced to (selectively) use bundled versions. To make use of this feature, call <code>cmake</code> with: </p><div class="fragment"><div class="line">cmake -D spdlog_ForceBundled=ON    # replace spdlog by the lib you want to force</div>
+</div><!-- fragment --><p>Or better have a look at the variables exposed in <code>ccmake</code>.</p>
+<h1><a class="anchor" id="autotoc_md5"></a>
 Testing</h1>
+<p>AutoPas uses <a href="https://github.com/google/googletest">googletest</a> as testing framework and exposes tests to ctest, the CMake test driver.</p>
 <h2><a class="anchor" id="autotoc_md6"></a>
 Running Tests</h2>
-<p>to run tests: </p><div class="fragment"><div class="line">make test</div>
-<div class="line"># or</div>
-<div class="line">ninja test</div>
-</div><!-- fragment --><p>or using the ctest environment: </p><div class="fragment"><div class="line">ctest</div>
-</div><!-- fragment --><p>to get verbose output: </p><div class="fragment"><div class="line">ctest --verbose</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md7"></a>
-How to run specific tests</h3>
-<p>use the &ndash;gtest_filter variable: </p><div class="fragment"><div class="line">./tests/testAutopas/runTests --gtest_filter=ArrayMathTest.testAdd*</div>
-</div><!-- fragment --><p>or use the GTEST_FILTER environment variable: </p><div class="fragment"><div class="line">GTEST_FILTER=&quot;ArrayMathTest.testAdd*&quot; ctest --verbose</div>
-</div><!-- fragment --><p>or <code>ctest</code> arguments like <code>-R</code> (run tests matching regex) and <code>-E</code> (exclude tests matching regex) </p><div class="fragment"><div class="line">ctest -R &#39;Array.*testAdd&#39; -E &#39;Double&#39;</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md8"></a>
+<p>There are multiple possibilities. In order of recommendation:</p>
+<ol type="1">
+<li><p class="startli">Using <code>ctest</code>: </p><div class="fragment"><div class="line">ctest # add --verbose for more details on the tests</div>
+</div><!-- fragment --><p class="startli">To only run specific tests use arguments like <code>-R</code> (run tests matching regex) and <code>-E</code> (exclude tests matching regex) </p><div class="fragment"><div class="line">ctest -R &#39;Array.*testAdd&#39; -E &#39;Double&#39;</div>
+</div><!-- fragment --></li>
+<li>Using the <code>make</code> target: <div class="fragment"><div class="line">make test</div>
+</div><!-- fragment --></li>
+<li><p class="startli">Directly launching the test executable: </p><div class="fragment"><div class="line">tests/testAutopas/runTests</div>
+</div><!-- fragment --><p class="startli">To only run specific tests use arguments </p><div class="fragment"><div class="line">tests/testAutopas/runTests --gtest_filter=ArrayMathTest.testAdd*</div>
+</div><!-- fragment --></li>
+</ol>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Debugging Tests</h2>
-<p>Find out the command to start your desired test with <code>-N</code> aka. <code>--show-only</code>: </p><div class="fragment"><div class="line">ctest -R &#39;Array.*testAdd&#39; -N</div>
-</div><!-- fragment --><p>Start the test with <code>gdb</code> </p><div class="fragment"><div class="line">gdb --args ${TestCommand}</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md9"></a>
+<p>Many IDEs (e.g., CLion) have integrated support for googletest and you can debug the tests directly within the IDE.</p>
+<p>If you prefer <code>gdb</code>:</p><ol type="1">
+<li>Find out the command to start your desired test with <code>-N</code> aka. <code>--show-only</code>: <div class="fragment"><div class="line">ctest -R &#39;Array.*testAdd&#39; -N</div>
+</div><!-- fragment --></li>
+<li>Start the test with <code>gdb</code> <div class="fragment"><div class="line">gdb --args ${TestCommand}</div>
+</div><!-- fragment --></li>
+</ol>
+<h1><a class="anchor" id="autotoc_md8"></a>
 Examples</h1>
-<p>As AutoPas is only a library for particle simulations it itself is not able to run simulations. We have, however, included a variety of examples in the <b>examples</b> directory. The examples include:</p><ul>
-<li>Molecular dynamics simulations with 1 centered Lennard-Jones particles.</li>
+<p>As AutoPas is only a library, it is not able to run simulations by itself. We have, however, included a few example proxy applications in the <b>examples</b> directory. The examples include:</p><ul>
+<li><a href="examples/md-flexible">md-flexible</a>: Molecular dynamics simulations with single centered Lennard-Jones particles.</li>
 <li>Smoothed particle hydrodynamics simulations</li>
-<li>Gravity simulations</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md9"></a>
 Using AutoPas</h1>
 <p>Steps to using AutoPas in your particle simulation program:</p>
+<h2><a class="anchor" id="autotoc_md10"></a>
+Custom Particles</h2>
+<p>First you will need to define a particle class which will be passed to AutoPas as template Argument. For that we provide some basic Particle classes defined in <code>src/autopas/molecularDynamics</code> or <code>src/autopas/sph</code> that you can use either directly or you can write your own Particle class by inheriting from one of the provided classes or from <code><a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2" title="Alias for Particle with all variables in 64 bit precision.">autopas::Particle</a></code>.</p>
+<p>Important parts to implement:</p><ul>
+<li><code>enum AttributeNames</code></li>
+<li>Definition of a matching <code>SoAArraysType</code></li>
+<li>Getter and setter connecting the <code>AttributeNames</code> and actual members.</li>
+</ul>
 <h2><a class="anchor" id="autotoc_md11"></a>
-Defining a Custom Particle Class</h2>
-<p>First you will need to define a particle class. For that we provide some basic Particle classes defined in <code>src/particles/</code> that you can use either directly or you can write your own Particle class by inheriting from one of the provided classes. </p><div class="fragment"><div class="line"><span class="keyword">class </span>SPHParticle : <span class="keyword">public</span> <a class="code" href="classautopas_1_1ParticleBase.html">autopas::Particle</a> {</div>
-<div class="line"> </div>
-<div class="line">}</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md12"></a>
-Functors</h2>
-<p>Once you have defined your particle you can start with functors; </p>
-<h3><a class="anchor" id="autotoc_md13"></a>
+Custom Functors</h2>
+<p>Once you have defined your particle you can start with the functor class.</p>
+<h3><a class="anchor" id="autotoc_md12"></a>
 Definition</h3>
-<p>TODO </p>
-<h3><a class="anchor" id="autotoc_md14"></a>
+<p>Importatnt parts to implement:</p><ul>
+<li>Actual force calculations: <code>AoSFunctor()</code> and all Versions of <code>SoAFunctor*()</code></li>
+<li>Newton3 characteristics of the force: <code>allowsNewton3()</code> and <code>allowsNonNewton3()</code></li>
+<li>Input and output variables of the force calculation via: <code>getComputedAttr()</code> and <code>getNeededAttr()</code></li>
+</ul>
+<h3><a class="anchor" id="autotoc_md13"></a>
 Usage</h3>
-<p>TODO</p>
-<h2><a class="anchor" id="autotoc_md15"></a>
+<p>Each functor is applied to AutoPas via: </p><div class="fragment"><div class="line">autoPas.iteratePairwise(&amp;myFunctor);</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md14"></a>
 Particle Ownership</h2>
 <p>Particles saved in an AutoPas container can be one of two possible states:</p><ul>
 <li>owned: Particles that belong to this AutoPas instance. These particles are either inside of the boundary of the AutoPas instance or very close to the boundary (less than a distance of skin/2 away). If a particle is added via <code>addParticle()</code>, it is automatically added as an owned particle. An owned particle can explicitly be removed by deleting the particle using an iterator (<code>autoPas.deleteParticle(iterator)</code>). On an update of the AutoPas container (using <code>updateContainer()</code>) owned particles that move outside of the boundary of its parent AutoPas container are returned.</li>
 <li>halo: Particles that do not belong to the current AutoPas instance. These normally are ghost particles arising from either periodic boundary conditions or particles of a neighboring AutoPas object (if you split the entire domain over multiple AutoPas objects, i.e., you use a domain decomposition algorithm). The halo particles are needed for the correct calculation of the pairwise forces. On update of the AutoPas container, halo particles are deleted (note that not every call to <code>updateContainer()</code> does this!, see <a href="#simulation-loop">Simulation Loop</a>).</li>
+<li>dummy: Particles that are about to be deleted or that act as filler for certain algorithms. These particles do not affect the force calculation.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md16"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 Iterating Through Particles</h2>
-<p>Iterators to iterate over particle are provided. The particle can be accesses using <code>iter-&gt;</code> (<code>*iter</code> is also possible). When created inside a OpenMP parallel region, work is automatically spread over all iterators. </p><div class="fragment"><div class="line"><span class="preprocessor">#pragma omp parallel</span></div>
+<p>Iterators to iterate over particle are provided. The particle can be accesses using <code>iter-&gt;</code> or <code>*iter</code>. When created inside a OpenMP parallel region, work is automatically spread over all threads. </p><div class="fragment"><div class="line"><span class="preprocessor">#pragma omp parallel</span></div>
 <div class="line"><span class="keywordflow">for</span>(<span class="keyword">auto</span> iter = autoPas.begin(); iter.isValid(); ++iter) {</div>
 <div class="line">  <span class="comment">// user code:</span></div>
 <div class="line">  <span class="keyword">auto</span> position = iter-&gt;getR();</div>
 <div class="line">}</div>
-</div><!-- fragment --><p>For convenience the <code>end()</code> method is also implemented for the AutoPas class. </p><div class="fragment"><div class="line"><span class="preprocessor">#pragma omp parallel</span></div>
-<div class="line"><span class="keywordflow">for</span>(<span class="keyword">auto</span> iter = autoPas.begin(); iter != autoPas.end(); ++iter) {</div>
-<div class="line">  <span class="comment">// user code:</span></div>
-<div class="line">  <span class="keyword">auto</span> position = iter-&gt;getR();</div>
-<div class="line">}</div>
-</div><!-- fragment --><p>You might also use range-based for loops: </p><div class="fragment"><div class="line"><span class="preprocessor">#pragma omp parallel</span></div>
+</div><!-- fragment --><p>For convenience the <code>end()</code> method is also implemented for the AutoPas class so you might also use range-based for loops: </p><div class="fragment"><div class="line"><span class="preprocessor">#pragma omp parallel</span></div>
 <div class="line"><span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; particle : autoPas) {</div>
 <div class="line">  <span class="comment">// user code:</span></div>
 <div class="line">  <span class="keyword">auto</span> position = particle.getR();</div>
@@ -202,15 +213,9 @@ Iterating Through Particles</h2>
 <div class="line">  <span class="comment">// user code:</span></div>
 <div class="line">  <span class="keyword">auto</span> position = iter-&gt;getR();</div>
 <div class="line">}</div>
-</div><!-- fragment --><p>Both <code>begin()</code> and <code>getRegionIterator()</code> can also take the additional parameter <code>IteratorBehavior</code>, which indicates over which particles the iteration should be performed. </p><div class="fragment"><div class="line"><span class="keyword">enum</span> <a class="code" href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42">IteratorBehavior</a> {</div>
-<div class="line">  <a class="code" href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42ac7100cec3dab7c9f031d06e44cdd4993">haloOnly</a>,          </div>
-<div class="line">  <a class="code" href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42a30bdce7517eacf5a795a2b165e4a4eb8">ownedOnly</a>,         </div>
-<div class="line">  <a class="code" href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42ae92b03f5be5a06c5bb4c5f72ffd26f84">haloAndOwned</a>,      </div>
-<div class="line">  <a class="code" href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42aa79bf7e94374210cd4bdb537ab8f66ad">haloOwnedAndDummy</a>  </div>
-<div class="line">};</div>
-</div><!-- fragment --><p>The default parameter is <code>haloAndOwned</code>, which is also used for range-based for loops.</p>
+</div><!-- fragment --><p>Both <code>begin()</code> and <code>getRegionIterator()</code> can also take the additional parameter <code>IteratorBehavior</code>, which indicates over which particles the iteration should be performed. See <a href="https://autopas.github.io/doxygen_documentation/git-master/namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42">autopas::IteratorBehavior</a> for possible options and details. The default parameter is <code>haloAndOwned</code>, which is also used for range-based for loops.</p>
 <p>Analogously to <code>begin()</code>, <code>cbegin()</code> is also defined, which guarantees to return a <code>const_iterator</code>.</p>
-<h2><a class="anchor" id="autotoc_md17"></a>
+<h2><a class="anchor" id="autotoc_md16"></a>
 Simulation Loop</h2>
 <p>One simulation loop should always consist of the following phases:</p>
 <ol type="1">
@@ -237,38 +242,33 @@ Simulation Loop</h2>
 <li>Perform an iteratePairwise step. <div class="fragment"><div class="line">autoPas.iteratePairwise(functor);</div>
 </div><!-- fragment --></li>
 </ol>
+<h2><a class="anchor" id="autotoc_md17"></a>
+Inserting additional particles</h2>
+<p>Before inserting additional particles (e.g. through a grand-canonical thermostat ), you always have to enforce a containerUpdate on ALL AutoPas instances, i.e., on all mpi processes, by calling </p><div class="fragment"><div class="line">autoPas.updateContainerForced();</div>
+</div><!-- fragment --><p>This will invalidate the internal neighbor lists and containers.</p>
 <h2><a class="anchor" id="autotoc_md18"></a>
 Using multiple functors</h2>
 <p>AutoPas is able to work with simulation setups using multiple functors that describe different forces. A good demonstration for that is the sph example found under examples/sph or examples/sph-mpi. There exist some things you have to be careful about when using multiple functors:</p><ul>
 <li>If you use multiple functors it is necessary that all functors support the same newton3 options. If there is one functor not supporting newton3, you have to disable newton3 support for AutoPas by calling <div class="fragment"><div class="line">autoPas.setAllowedNewton3Options({<span class="keyword">false</span>});</div>
 </div><!-- fragment --></li>
 <li>If you have <code>n</code> functors within one iteration and update the particle position only at the end or start of the iteration, the rebuildFrequency and the samplingRate have to be a multiple of <code>n</code>.</li>
+<li>Functors must be marked as (not) relevant for tuning by specifying <code>Functor::isRelevantForTuning()</code>. Functors marked as relevant should have a near-identical performance profile otherwise the sampling of configurations will be distorted. It is recommended, to only mark the most expensive functor as relevant.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md19"></a>
-Inserting additional particles</h2>
-<p>Before inserting additional particles (e.g. through a grand-canonical thermostat ), you always have to enforce a containerUpdate on ALL AutoPas instances, i.e., on all mpi processes, by calling </p><div class="fragment"><div class="line">autoPas.updateContainerForced();</div>
-</div><!-- fragment --><p>This will invalidate the internal neighbor lists and containers.</p>
-<h1><a class="anchor" id="autotoc_md20"></a>
+<h1><a class="anchor" id="autotoc_md19"></a>
 Developing AutoPas</h1>
 <p>Please look at our <a href="https://github.com/AutoPas/AutoPas/blob/master/.github/CONTRIBUTING.md">contribution guidelines</a>.</p>
-<h1><a class="anchor" id="autotoc_md21"></a>
+<h1><a class="anchor" id="autotoc_md20"></a>
 Acknowledgements</h1>
 <p>This work was financially supported by:</p><ul>
 <li>the Federal Ministry of Education and Research, Germany, project “Task-based load balancing and auto-tuning in particle simulations” (TaLPas) 8 , grant numbers 01IH16008A and 01IH16008B.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md22"></a>
+<h1><a class="anchor" id="autotoc_md21"></a>
 Papers to cite</h1>
 <ul>
 <li>F. A. Gratl, S. Seckler, N. Tchipev, H.-J. Bungartz and P. Neumann: <a href="https://ieeexplore.ieee.org/document/8778280">AutoPas: Auto-Tuning for Particle Simulations</a> <a href="https://mediatum.ub.tum.de/services/export/node/1535848/?format=template_test&amp;mask=bibtex&amp;lang=de&amp;template=$$[defaultexport]$$&amp;mimetype=text/plain">BibTeX</a> <a href="https://mediatum.ub.tum.de/1535848">MediaTum</a>, In 2019 IEEE International Parallel and Distributed Processing Symposium Workshops (IPDPSW), Rio de Janeiro, May 2019. </li>
 </ul>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
-<div class="ttc" id="anamespaceautopas_html_a520fefd51e4555074cd16e7c3fd19c42ac7100cec3dab7c9f031d06e44cdd4993"><div class="ttname"><a href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42ac7100cec3dab7c9f031d06e44cdd4993">autopas::haloOnly</a></div><div class="ttdeci">@ haloOnly</div><div class="ttdoc">iterate only over halo particles</div><div class="ttdef"><b>Definition:</b> ParticleIteratorInterface.h:15</div></div>
-<div class="ttc" id="anamespaceautopas_html_a520fefd51e4555074cd16e7c3fd19c42a30bdce7517eacf5a795a2b165e4a4eb8"><div class="ttname"><a href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42a30bdce7517eacf5a795a2b165e4a4eb8">autopas::ownedOnly</a></div><div class="ttdeci">@ ownedOnly</div><div class="ttdoc">iterate only over owned particles</div><div class="ttdef"><b>Definition:</b> ParticleIteratorInterface.h:16</div></div>
-<div class="ttc" id="anamespaceautopas_html_a520fefd51e4555074cd16e7c3fd19c42aa79bf7e94374210cd4bdb537ab8f66ad"><div class="ttname"><a href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42aa79bf7e94374210cd4bdb537ab8f66ad">autopas::haloOwnedAndDummy</a></div><div class="ttdeci">@ haloOwnedAndDummy</div><div class="ttdoc">iterate over both halo and owned particles and also dummy particles</div><div class="ttdef"><b>Definition:</b> ParticleIteratorInterface.h:18</div></div>
-<div class="ttc" id="anamespaceautopas_html_a520fefd51e4555074cd16e7c3fd19c42ae92b03f5be5a06c5bb4c5f72ffd26f84"><div class="ttname"><a href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42ae92b03f5be5a06c5bb4c5f72ffd26f84">autopas::haloAndOwned</a></div><div class="ttdeci">@ haloAndOwned</div><div class="ttdoc">iterate over both halo and owned particles</div><div class="ttdef"><b>Definition:</b> ParticleIteratorInterface.h:17</div></div>
-<div class="ttc" id="aclassautopas_1_1ParticleBase_html"><div class="ttname"><a href="classautopas_1_1ParticleBase.html">autopas::ParticleBase</a></div><div class="ttdoc">Minimal definition of a basic particle.</div><div class="ttdef"><b>Definition:</b> ParticleBase.h:32</div></div>
-<div class="ttc" id="anamespaceautopas_html_a520fefd51e4555074cd16e7c3fd19c42"><div class="ttname"><a href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42">autopas::IteratorBehavior</a></div><div class="ttdeci">IteratorBehavior</div><div class="ttdoc">Enum to specify the behavior of an iterator.</div><div class="ttdef"><b>Definition:</b> ParticleIteratorInterface.h:14</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20
