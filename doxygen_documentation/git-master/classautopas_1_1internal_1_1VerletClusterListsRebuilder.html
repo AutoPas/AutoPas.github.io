@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-e7c2c50</span>
+   &#160;<span id="projectnumber">0.1.0-c584673</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -99,6 +99,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classautopas_1_1internal_1_1VerletClusterListsRebuilder-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">autopas::internal::VerletClusterListsRebuilder&lt; Particle &gt; Class Template Reference</div>  </div>
@@ -127,12 +128,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4eb94de9ce6759ffeaea83fbf5576e9e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html#a4eb94de9ce6759ffeaea83fbf5576e9e">collectAllParticlesFromTowers</a> ()</td></tr>
 <tr class="memdesc:a4eb94de9ce6759ffeaea83fbf5576e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes all particles from all towers and returns them.  <a href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html#a4eb94de9ce6759ffeaea83fbf5576e9e">More...</a><br /></td></tr>
 <tr class="separator:a4eb94de9ce6759ffeaea83fbf5576e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a052ff08f6d8bfd768c4054c5eda00c04"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html#a052ff08f6d8bfd768c4054c5eda00c04">estimateOptimalGridSideLength</a> (size_t numParticles, std::array&lt; double, 3 &gt; boxSize) const</td></tr>
-<tr class="memdesc:a052ff08f6d8bfd768c4054c5eda00c04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estimates the optimal grid side length.  <a href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html#a052ff08f6d8bfd768c4054c5eda00c04">More...</a><br /></td></tr>
-<tr class="separator:a052ff08f6d8bfd768c4054c5eda00c04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24a1b65b1ffee0f66399e2524fa522b7"><td class="memItemLeft" align="right" valign="top">std::array&lt; size_t, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html#a24a1b65b1ffee0f66399e2524fa522b7">calculateTowersPerDim</a> (std::array&lt; double, 3 &gt; boxSize) const</td></tr>
-<tr class="memdesc:a24a1b65b1ffee0f66399e2524fa522b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the cells per dimension in the container using the _towerSideLengthReciprocal.  <a href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html#a24a1b65b1ffee0f66399e2524fa522b7">More...</a><br /></td></tr>
-<tr class="separator:a24a1b65b1ffee0f66399e2524fa522b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3d32380ea1501ef904f5a185dca9a0c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html#a3d32380ea1501ef904f5a185dca9a0c7">sortParticlesIntoTowers</a> (const std::vector&lt; std::vector&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;&gt; &amp;particles2D)</td></tr>
 <tr class="memdesc:a3d32380ea1501ef904f5a185dca9a0c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sorts all passed particles in the appropriate clusters.  <a href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html#a3d32380ea1501ef904f5a185dca9a0c7">More...</a><br /></td></tr>
 <tr class="separator:a3d32380ea1501ef904f5a185dca9a0c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -167,6 +162,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:acfbe41699f797d07c4a3508e5be12a8d"><td class="memItemLeft" align="right" valign="top">auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html#acfbe41699f797d07c4a3508e5be12a8d">getTower</a> (const size_t x, const size_t y)</td></tr>
 <tr class="memdesc:acfbe41699f797d07c4a3508e5be12a8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the tower for the given 2D tower index.  <a href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html#acfbe41699f797d07c4a3508e5be12a8d">More...</a><br /></td></tr>
 <tr class="separator:acfbe41699f797d07c4a3508e5be12a8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:afba50bdfb256ebba5d05dbce987c70ba"><td class="memItemLeft" align="right" valign="top">static double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html#afba50bdfb256ebba5d05dbce987c70ba">estimateOptimalGridSideLength</a> (size_t numParticles, std::array&lt; double, 3 &gt; boxSize, size_t clusterSize)</td></tr>
+<tr class="memdesc:afba50bdfb256ebba5d05dbce987c70ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estimates the optimal grid side length.  <a href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html#afba50bdfb256ebba5d05dbce987c70ba">More...</a><br /></td></tr>
+<tr class="separator:afba50bdfb256ebba5d05dbce987c70ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3bc6ea22f40fb6ff3df353c5a356940a"><td class="memItemLeft" align="right" valign="top">static std::array&lt; size_t, 2 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html#a3bc6ea22f40fb6ff3df353c5a356940a">calculateTowersPerDim</a> (std::array&lt; double, 3 &gt; boxSize, double towerSideLengthReciprocal)</td></tr>
+<tr class="memdesc:a3bc6ea22f40fb6ff3df353c5a356940a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the cells per dimension in the container using the _towerSideLengthReciprocal.  <a href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html#a3bc6ea22f40fb6ff3df353c5a356940a">More...</a><br /></td></tr>
+<tr class="separator:a3bc6ea22f40fb6ff3df353c5a356940a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class Particle&gt;<br />
@@ -369,8 +373,8 @@ template&lt;class Particle &gt; </div>
 
 </div>
 </div>
-<a id="a24a1b65b1ffee0f66399e2524fa522b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24a1b65b1ffee0f66399e2524fa522b7">&#9670;&nbsp;</a></span>calculateTowersPerDim()</h2>
+<a id="a3bc6ea22f40fb6ff3df353c5a356940a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bc6ea22f40fb6ff3df353c5a356940a">&#9670;&nbsp;</a></span>calculateTowersPerDim()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -381,16 +385,26 @@ template&lt;class Particle &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;size_t, 2&gt; <a class="el" href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html">autopas::internal::VerletClusterListsRebuilder</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::calculateTowersPerDim </td>
+          <td class="memname">static std::array&lt;size_t, 2&gt; <a class="el" href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html">autopas::internal::VerletClusterListsRebuilder</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::calculateTowersPerDim </td>
           <td>(</td>
           <td class="paramtype">std::array&lt; double, 3 &gt;&#160;</td>
-          <td class="paramname"><em>boxSize</em></td><td>)</td>
-          <td> const</td>
+          <td class="paramname"><em>boxSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>towerSideLengthReciprocal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -399,6 +413,7 @@ template&lt;class Particle &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">boxSize</td><td>the size of the domain. </td></tr>
+    <tr><td class="paramname">towerSideLengthReciprocal</td><td>1.0 / towerSidelength. </td></tr>
   </table>
   </dd>
 </dl>
@@ -466,8 +481,8 @@ template&lt;class Particle &gt; </div>
 
 </div>
 </div>
-<a id="a052ff08f6d8bfd768c4054c5eda00c04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a052ff08f6d8bfd768c4054c5eda00c04">&#9670;&nbsp;</a></span>estimateOptimalGridSideLength()</h2>
+<a id="afba50bdfb256ebba5d05dbce987c70ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afba50bdfb256ebba5d05dbce987c70ba">&#9670;&nbsp;</a></span>estimateOptimalGridSideLength()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -478,7 +493,7 @@ template&lt;class Particle &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual double <a class="el" href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html">autopas::internal::VerletClusterListsRebuilder</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::estimateOptimalGridSideLength </td>
+          <td class="memname">static double <a class="el" href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html">autopas::internal::VerletClusterListsRebuilder</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::estimateOptimalGridSideLength </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>numParticles</em>, </td>
@@ -487,17 +502,23 @@ template&lt;class Particle &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::array&lt; double, 3 &gt;&#160;</td>
-          <td class="paramname"><em>boxSize</em>&#160;</td>
+          <td class="paramname"><em>boxSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>clusterSize</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td> const</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -507,6 +528,7 @@ template&lt;class Particle &gt; </div>
   <table class="params">
     <tr><td class="paramname">numParticles</td><td>The number of particles in the container. </td></tr>
     <tr><td class="paramname">boxSize</td><td>The size of the domain. </td></tr>
+    <tr><td class="paramname">clusterSize</td><td>the number of particles per cluster. </td></tr>
   </table>
   </dd>
 </dl>

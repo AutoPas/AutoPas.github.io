@@ -6,7 +6,7 @@ var searchData=
   ['randomgenerator_2ecpp_873',['RandomGenerator.cpp',['../RandomGenerator_8cpp.html',1,'']]],
   ['randomgenerator_2eh_874',['RandomGenerator.h',['../RandomGenerator_8h.html',1,'']]],
   ['randomposition_875',['randomPosition',['../classautopasTools_1_1generators_1_1RandomGenerator.html#adb271ee5687aa1c373489955aa6cf2fd',1,'autopasTools::generators::RandomGenerator']]],
-  ['randomsearch_876',['RandomSearch',['../classautopas_1_1RandomSearch.html',1,'autopas::RandomSearch'],['../classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4ae3de72e246f63041a5df81e5a9b27bfa',1,'autopas::options::TuningStrategyOption::randomSearch()'],['../classautopas_1_1RandomSearch.html#ad3d80807932196158c07049c83c02099',1,'autopas::RandomSearch::RandomSearch()']]],
+  ['randomsearch_876',['RandomSearch',['../classautopas_1_1RandomSearch.html',1,'autopas::RandomSearch'],['../classautopas_1_1RandomSearch.html#ad3d80807932196158c07049c83c02099',1,'autopas::RandomSearch::RandomSearch()'],['../classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4ae3de72e246f63041a5df81e5a9b27bfa',1,'autopas::options::TuningStrategyOption::randomSearch()']]],
   ['randomsearch_2eh_877',['RandomSearch.h',['../RandomSearch_8h.html',1,'']]],
   ['randomsubset_878',['randomSubset',['../classautopas_1_1Random.html#a48b74e3400faa8e51e44219138ff0604',1,'autopas::Random']]],
   ['read_879',['read',['../classautopas_1_1SoA.html#ae26124e9a9640e9b7e58e4a688ac40b6',1,'autopas::SoA']]],

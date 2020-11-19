@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-e7c2c50</span>
+   &#160;<span id="projectnumber">0.1.0-c584673</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -125,50 +125,54 @@ $(function() {
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;                                                    <a class="code" href="classautopas_1_1LoadEstimatorOption.html#a0acdad94f9dac7d5704a9ca612a20c8ca8097677584cd3d01b1994c1ae835a2ff">LoadEstimatorOption::squaredParticlesPerCell</a>,</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                                    <a class="code" href="classautopas_1_1LoadEstimatorOption.html#a0acdad94f9dac7d5704a9ca612a20c8ca8146789e4e69873b174140313cc62cbc">LoadEstimatorOption::neighborListLength</a>};</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">default</span>: {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keywordflow">return</span> std::set&lt;autopas::LoadEstimatorOption&gt;{};</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">case</span> ContainerOption::verletClusterLists: {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keywordflow">return</span> std::set&lt;autopas::LoadEstimatorOption&gt;{<a class="code" href="classautopas_1_1LoadEstimatorOption.html#a0acdad94f9dac7d5704a9ca612a20c8ca9041bea590e9f47eafd12e04150895c8">LoadEstimatorOption::none</a>, <a class="code" href="classautopas_1_1LoadEstimatorOption.html#a0acdad94f9dac7d5704a9ca612a20c8ca8146789e4e69873b174140313cc62cbc">LoadEstimatorOption::neighborListLength</a>};</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;}</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="namespaceautopas_1_1loadEstimators.html#ae2350ca697b3704ede0e9d60e8ec7b3d">   52</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="namespaceautopas_1_1loadEstimators.html#ae2350ca697b3704ede0e9d60e8ec7b3d">usesLoadEstimator</a>(autopas::TraversalOption traversal) {</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <span class="keywordflow">switch</span> (traversal) {</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">case</span> TraversalOption::lc_sliced_balanced: {</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">case</span> TraversalOption::vlc_sliced_balanced: {</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    }</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordflow">default</span>: {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  }</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;}</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="namespaceautopas_1_1loadEstimators.html#a21f90a25ad1c7c8fd50c67df3bcc27bf">   75</a></span>&#160;<span class="keyword">static</span> std::set&lt;autopas::LoadEstimatorOption&gt; <a class="code" href="namespaceautopas_1_1loadEstimators.html#a21f90a25ad1c7c8fd50c67df3bcc27bf">getApplicableLoadEstimators</a>(</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    autopas::ContainerOption container, autopas::TraversalOption traversal,</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">const</span> std::set&lt;autopas::LoadEstimatorOption&gt; allowedOptions) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="namespaceautopas_1_1loadEstimators.html#ae2350ca697b3704ede0e9d60e8ec7b3d">usesLoadEstimator</a>(traversal)) {</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keyword">auto</span> compatible = <a class="code" href="namespaceautopas_1_1loadEstimators.html#ac931325b5f7f7f60a92264e9844427ab">allCompatibleLoadEstimators</a>(container);</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    std::set&lt;autopas::LoadEstimatorOption&gt; intersection;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    std::set_intersection(allowedOptions.begin(), allowedOptions.end(), compatible.begin(), compatible.end(),</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                          std::inserter(intersection, intersection.begin()));</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">if</span> (not intersection.empty()) {</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      <span class="keywordflow">return</span> intersection;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  }</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  <span class="keywordflow">return</span> std::set&lt;autopas::LoadEstimatorOption&gt;{<a class="code" href="classautopas_1_1LoadEstimatorOption.html#a0acdad94f9dac7d5704a9ca612a20c8ca9041bea590e9f47eafd12e04150895c8">LoadEstimatorOption::none</a>};</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;}</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;}  <span class="comment">// namespace autopas::loadEstimators</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">default</span>: {</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <span class="keywordflow">return</span> std::set&lt;autopas::LoadEstimatorOption&gt;{};</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  }</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;}</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="namespaceautopas_1_1loadEstimators.html#ae2350ca697b3704ede0e9d60e8ec7b3d">   55</a></span>&#160;<span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="namespaceautopas_1_1loadEstimators.html#ae2350ca697b3704ede0e9d60e8ec7b3d">usesLoadEstimator</a>(autopas::TraversalOption traversal) {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;  <span class="keywordflow">switch</span> (traversal) {</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordflow">case</span> TraversalOption::lc_sliced_balanced:</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      [[fallthrough]];</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">case</span> TraversalOption::vcl_sliced_balanced:</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      [[fallthrough]];</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordflow">case</span> TraversalOption::vlc_sliced_balanced: {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">default</span>: {</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  }</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;}</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno"><a class="line" href="namespaceautopas_1_1loadEstimators.html#a21f90a25ad1c7c8fd50c67df3bcc27bf">   79</a></span>&#160;<span class="keyword">static</span> std::set&lt;autopas::LoadEstimatorOption&gt; <a class="code" href="namespaceautopas_1_1loadEstimators.html#a21f90a25ad1c7c8fd50c67df3bcc27bf">getApplicableLoadEstimators</a>(</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    autopas::ContainerOption container, autopas::TraversalOption traversal,</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keyword">const</span> std::set&lt;autopas::LoadEstimatorOption&gt; allowedOptions) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="namespaceautopas_1_1loadEstimators.html#ae2350ca697b3704ede0e9d60e8ec7b3d">usesLoadEstimator</a>(traversal)) {</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keyword">auto</span> compatible = <a class="code" href="namespaceautopas_1_1loadEstimators.html#ac931325b5f7f7f60a92264e9844427ab">allCompatibleLoadEstimators</a>(container);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    std::set&lt;autopas::LoadEstimatorOption&gt; intersection;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    std::set_intersection(allowedOptions.begin(), allowedOptions.end(), compatible.begin(), compatible.end(),</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                          std::inserter(intersection, intersection.begin()));</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordflow">if</span> (not intersection.empty()) {</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;      <span class="keywordflow">return</span> intersection;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    }</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  <span class="keywordflow">return</span> std::set&lt;autopas::LoadEstimatorOption&gt;{<a class="code" href="classautopas_1_1LoadEstimatorOption.html#a0acdad94f9dac7d5704a9ca612a20c8ca9041bea590e9f47eafd12e04150895c8">LoadEstimatorOption::none</a>};</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;}</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;}  <span class="comment">// namespace autopas::loadEstimators</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclassautopas_1_1LoadEstimatorOption_html_a0acdad94f9dac7d5704a9ca612a20c8ca8146789e4e69873b174140313cc62cbc"><div class="ttname"><a href="classautopas_1_1LoadEstimatorOption.html#a0acdad94f9dac7d5704a9ca612a20c8ca8146789e4e69873b174140313cc62cbc">autopas::LoadEstimatorOption::neighborListLength</a></div><div class="ttdeci">@ neighborListLength</div><div class="ttdoc">Sum of neighbor list lengths.</div><div class="ttdef"><b>Definition:</b> LoadEstimatorOption.h:35</div></div>
 <div class="ttc" id="aContainerOption_8h_html"><div class="ttname"><a href="ContainerOption_8h.html">ContainerOption.h</a></div></div>
-<div class="ttc" id="anamespaceautopas_1_1loadEstimators_html_a21f90a25ad1c7c8fd50c67df3bcc27bf"><div class="ttname"><a href="namespaceautopas_1_1loadEstimators.html#a21f90a25ad1c7c8fd50c67df3bcc27bf">autopas::loadEstimators::getApplicableLoadEstimators</a></div><div class="ttdeci">static std::set&lt; autopas::LoadEstimatorOption &gt; getApplicableLoadEstimators(autopas::ContainerOption container, autopas::TraversalOption traversal, const std::set&lt; autopas::LoadEstimatorOption &gt; allowedOptions)</div><div class="ttdoc">If traversal uses load estimation, returns all load estimators in allowedOptions, that are compatible...</div><div class="ttdef"><b>Definition:</b> CompatibleLoadEstimators.h:75</div></div>
+<div class="ttc" id="anamespaceautopas_1_1loadEstimators_html_a21f90a25ad1c7c8fd50c67df3bcc27bf"><div class="ttname"><a href="namespaceautopas_1_1loadEstimators.html#a21f90a25ad1c7c8fd50c67df3bcc27bf">autopas::loadEstimators::getApplicableLoadEstimators</a></div><div class="ttdeci">static std::set&lt; autopas::LoadEstimatorOption &gt; getApplicableLoadEstimators(autopas::ContainerOption container, autopas::TraversalOption traversal, const std::set&lt; autopas::LoadEstimatorOption &gt; allowedOptions)</div><div class="ttdoc">If traversal uses load estimation, returns all load estimators in allowedOptions, that are compatible...</div><div class="ttdef"><b>Definition:</b> CompatibleLoadEstimators.h:79</div></div>
 <div class="ttc" id="anamespaceautopas_1_1loadEstimators_html"><div class="ttname"><a href="namespaceautopas_1_1loadEstimators.html">autopas::loadEstimators</a></div><div class="ttdoc">Collection of functions for estimating the load required to update a specific region within a contain...</div><div class="ttdef"><b>Definition:</b> CompatibleLoadEstimators.h:21</div></div>
 <div class="ttc" id="aLoadEstimatorOption_8h_html"><div class="ttname"><a href="LoadEstimatorOption_8h.html">LoadEstimatorOption.h</a></div></div>
 <div class="ttc" id="aclassautopas_1_1LoadEstimatorOption_html_a0acdad94f9dac7d5704a9ca612a20c8ca8097677584cd3d01b1994c1ae835a2ff"><div class="ttname"><a href="classautopas_1_1LoadEstimatorOption.html#a0acdad94f9dac7d5704a9ca612a20c8ca8097677584cd3d01b1994c1ae835a2ff">autopas::LoadEstimatorOption::squaredParticlesPerCell</a></div><div class="ttdeci">@ squaredParticlesPerCell</div><div class="ttdoc">Number of particles per cell squared.</div><div class="ttdef"><b>Definition:</b> LoadEstimatorOption.h:31</div></div>
-<div class="ttc" id="anamespaceautopas_1_1loadEstimators_html_ae2350ca697b3704ede0e9d60e8ec7b3d"><div class="ttname"><a href="namespaceautopas_1_1loadEstimators.html#ae2350ca697b3704ede0e9d60e8ec7b3d">autopas::loadEstimators::usesLoadEstimator</a></div><div class="ttdeci">static bool usesLoadEstimator(autopas::TraversalOption traversal)</div><div class="ttdoc">returns whether or not the given traversal uses load estimation.</div><div class="ttdef"><b>Definition:</b> CompatibleLoadEstimators.h:52</div></div>
+<div class="ttc" id="anamespaceautopas_1_1loadEstimators_html_ae2350ca697b3704ede0e9d60e8ec7b3d"><div class="ttname"><a href="namespaceautopas_1_1loadEstimators.html#ae2350ca697b3704ede0e9d60e8ec7b3d">autopas::loadEstimators::usesLoadEstimator</a></div><div class="ttdeci">static bool usesLoadEstimator(autopas::TraversalOption traversal)</div><div class="ttdoc">returns whether or not the given traversal uses load estimation.</div><div class="ttdef"><b>Definition:</b> CompatibleLoadEstimators.h:55</div></div>
 <div class="ttc" id="aclassautopas_1_1LoadEstimatorOption_html_a0acdad94f9dac7d5704a9ca612a20c8ca9041bea590e9f47eafd12e04150895c8"><div class="ttname"><a href="classautopas_1_1LoadEstimatorOption.html#a0acdad94f9dac7d5704a9ca612a20c8ca9041bea590e9f47eafd12e04150895c8">autopas::LoadEstimatorOption::none</a></div><div class="ttdeci">@ none</div><div class="ttdoc">No load estimator.</div><div class="ttdef"><b>Definition:</b> LoadEstimatorOption.h:27</div></div>
 <div class="ttc" id="anamespaceautopas_1_1loadEstimators_html_ac931325b5f7f7f60a92264e9844427ab"><div class="ttname"><a href="namespaceautopas_1_1loadEstimators.html#ac931325b5f7f7f60a92264e9844427ab">autopas::loadEstimators::allCompatibleLoadEstimators</a></div><div class="ttdeci">static std::set&lt; autopas::LoadEstimatorOption &gt; allCompatibleLoadEstimators(autopas::ContainerOption container)</div><div class="ttdoc">Returns set of load estimators compatible with the container.</div><div class="ttdef"><b>Definition:</b> CompatibleLoadEstimators.h:29</div></div>
 <div class="ttc" id="aTraversalOption_8h_html"><div class="ttname"><a href="TraversalOption_8h.html">TraversalOption.h</a></div></div>
