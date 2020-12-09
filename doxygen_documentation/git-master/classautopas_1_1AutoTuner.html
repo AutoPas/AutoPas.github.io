@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-433268a</span>
+   &#160;<span id="projectnumber">0.1.0-cbc5510</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -105,7 +105,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Automated tuner for optimal iteration performance.  
+<p>Calls to the <a class="el" href="classautopas_1_1AutoTuner.html#ae8c0c7bb9c214456a39e53bb60068b46" title="Function to iterate over all pairs of particles in the container.">iteratePairwise()</a> method are passed through this class for two reasons:  
  <a href="classautopas_1_1AutoTuner.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="AutoTuner_8h_source.html">AutoTuner.h</a>&gt;</code></p>
@@ -114,7 +114,7 @@ Inheritance diagram for autopas::AutoTuner&lt; Particle &gt;:</div>
 <div class="dyncontent">
 <div class="center"><img src="classautopas_1_1AutoTuner__inherit__graph.png" border="0" usemap="#aautopas_1_1AutoTuner_3_01Particle_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="autopas_1_1AutoTuner_3_01Particle_01_4_inherit__map" id="aautopas_1_1AutoTuner_3_01Particle_01_4_inherit__map">
-<area shape="rect" title="Automated tuner for optimal iteration performance." alt="" coords="23,5,158,47"/>
+<area shape="rect" title="Calls to the iteratePairwise() method are passed through this class for two reasons:" alt="" coords="23,5,158,47"/>
 <area shape="rect" href="classautopas_1_1AutoTuner.html" title=" " alt="" coords="5,109,176,151"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
@@ -122,7 +122,7 @@ Inheritance diagram for autopas::AutoTuner&lt; Particle &gt;:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5d3d36971fd17f88d6bbf9baf3dd6fd3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a5d3d36971fd17f88d6bbf9baf3dd6fd3">AutoTuner</a> (std::array&lt; double, 3 &gt; boxMin, std::array&lt; double, 3 &gt; boxMax, double cutoff, double verletSkin, unsigned int verletClusterSize, std::unique_ptr&lt; <a class="el" href="classautopas_1_1TuningStrategyInterface.html">TuningStrategyInterface</a> &gt; tuningStrategy, SelectorStrategyOption selectorStrategy, unsigned int tuningInterval, unsigned int maxSamples)</td></tr>
-<tr class="memdesc:a5d3d36971fd17f88d6bbf9baf3dd6fd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classautopas_1_1AutoTuner.html" title="Automated tuner for optimal iteration performance.">AutoTuner</a> that generates all configurations from the given options.  <a href="classautopas_1_1AutoTuner.html#a5d3d36971fd17f88d6bbf9baf3dd6fd3">More...</a><br /></td></tr>
+<tr class="memdesc:a5d3d36971fd17f88d6bbf9baf3dd6fd3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classautopas_1_1AutoTuner.html" title="Calls to the iteratePairwise() method are passed through this class for two reasons:">AutoTuner</a> that generates all configurations from the given options.  <a href="classautopas_1_1AutoTuner.html#a5d3d36971fd17f88d6bbf9baf3dd6fd3">More...</a><br /></td></tr>
 <tr class="separator:a5d3d36971fd17f88d6bbf9baf3dd6fd3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92163468b7a80449dcd963bd42d62c67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1AutoTuner.html">AutoTuner</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a92163468b7a80449dcd963bd42d62c67">operator=</a> (<a class="el" href="classautopas_1_1AutoTuner.html">AutoTuner</a> &amp;&amp;other) noexcept</td></tr>
 <tr class="memdesc:a92163468b7a80449dcd963bd42d62c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator.  <a href="classautopas_1_1AutoTuner.html#a92163468b7a80449dcd963bd42d62c67">More...</a><br /></td></tr>
@@ -156,8 +156,12 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><h3>template&lt;class Particle&gt;<br />
 class autopas::AutoTuner&lt; Particle &gt;</h3>
 
-<p>Automated tuner for optimal iteration performance. </p>
-<p>This class offers an interface to the iteratePairwise method. Internally it chooses the best container, traversal etc for the current simulation.</p>
+<p>Calls to the <a class="el" href="classautopas_1_1AutoTuner.html#ae8c0c7bb9c214456a39e53bb60068b46" title="Function to iterate over all pairs of particles in the container.">iteratePairwise()</a> method are passed through this class for two reasons: </p>
+<ol type="1">
+<li>Measuring time of the iteration.</li>
+<li>Selecting an appropriate configuration for the pairwise iteration.</li>
+</ol>
+<p>The tuner can be in one of two states. If it currently should look for a new optimum, it is in the so-called tuning phase. During a tuning phase, for each <a class="el" href="classautopas_1_1Configuration.html" title="Class containing multiple options that form an algorithm configuration for the pairwise iteration.">Configuration</a>, multiple measurements can be taken, which are called samples. To reduce noise, the samples for one configuration are then condensed to one value for the current tuning phase, called evidence. The evidences are handed on to a tuningStrategy, which selects a) what <a class="el" href="classautopas_1_1Configuration.html" title="Class containing multiple options that form an algorithm configuration for the pairwise iteration.">Configuration</a> to test next and b) which configuration is the best in this tuning phase. If it should not look for a new optimum it is not in a tuning phase.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Particle</td><td></td></tr>
@@ -244,7 +248,7 @@ template&lt;class Particle &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Constructor for the <a class="el" href="classautopas_1_1AutoTuner.html" title="Automated tuner for optimal iteration performance.">AutoTuner</a> that generates all configurations from the given options. </p>
+<p>Constructor for the <a class="el" href="classautopas_1_1AutoTuner.html" title="Calls to the iteratePairwise() method are passed through this class for two reasons:">AutoTuner</a> that generates all configurations from the given options. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">boxMin</td><td>Lower corner of the container. </td></tr>

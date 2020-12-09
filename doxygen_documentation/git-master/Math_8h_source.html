@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-433268a</span>
+   &#160;<span id="projectnumber">0.1.0-cbc5510</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -111,23 +111,33 @@ $(function() {
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
 <div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="Math_8h.html#aca362e100bc1a4f790e6120c513aeae6">   17</a></span>&#160;<span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code" href="Math_8h.html#aca362e100bc1a4f790e6120c513aeae6">normalScale</a> = 1. / std::sqrt(2 * M_PI);</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keywordtype">double</span> <a class="code" href="Math_8cpp.html#a7c914bb15f7f5bf861364a249ac885a4">normalPDF</a>(<span class="keywordtype">double</span> x);</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keywordtype">double</span> <a class="code" href="Math_8cpp.html#a0c857a75f74c676298617b6a1d8f8803">normalCDF</a>(<span class="keywordtype">double</span> x);</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="keywordtype">double</span> <a class="code" href="Math_8cpp.html#acf7e940d35b3d514d0d11247cec006f4">sigmoid</a>(<span class="keywordtype">double</span> x);</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> exponent, <span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="Math_8h.html#a83f95eedc559db37b88b02ca8f1039d0">   27</a></span>&#160;T <a class="code" href="Math_8h.html#a83f95eedc559db37b88b02ca8f1039d0">pow</a>(T base) {</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordflow">if</span> (exponent == 0) {</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  }</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  T res = base;</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;  <span class="comment">// the compiler should unroll this loop</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; exponent - 1; ++i) {</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    res *= base;</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  }</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keywordflow">return</span> res;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;}</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;Eigen::VectorXd <a class="code" href="Math_8cpp.html#a178157dc9219ded73d569c77ef53e04e">makeVectorXd</a>(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;elements);</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;<span class="keywordtype">double</span> normalPDF(<span class="keywordtype">double</span> x);</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;Eigen::VectorXi <a class="code" href="Math_8cpp.html#adc3522881e0471f27bde8362d4503653">makeVectorXi</a>(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;elements);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keywordtype">double</span> normalCDF(<span class="keywordtype">double</span> x);</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;}  <span class="comment">// namespace autopas::utils::Math</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keywordtype">double</span> sigmoid(<span class="keywordtype">double</span> x);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;Eigen::VectorXd makeVectorXd(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;elements);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;Eigen::VectorXi makeVectorXi(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;elements);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;}  <span class="comment">// namespace autopas::utils::Math</span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aMath_8cpp_html_a0c857a75f74c676298617b6a1d8f8803"><div class="ttname"><a href="Math_8cpp.html#a0c857a75f74c676298617b6a1d8f8803">autopas::utils::Math::normalCDF</a></div><div class="ttdeci">double normalCDF(double x)</div><div class="ttdoc">Cumulative distribution function CDF of the standard normal distribution.</div><div class="ttdef"><b>Definition:</b> Math.cpp:16</div></div>
-<div class="ttc" id="aMath_8cpp_html_a7c914bb15f7f5bf861364a249ac885a4"><div class="ttname"><a href="Math_8cpp.html#a7c914bb15f7f5bf861364a249ac885a4">autopas::utils::Math::normalPDF</a></div><div class="ttdeci">double normalPDF(double x)</div><div class="ttdoc">Probability density function PDF of the standard normal distribution.</div><div class="ttdef"><b>Definition:</b> Math.cpp:11</div></div>
-<div class="ttc" id="aMath_8cpp_html_acf7e940d35b3d514d0d11247cec006f4"><div class="ttname"><a href="Math_8cpp.html#acf7e940d35b3d514d0d11247cec006f4">autopas::utils::Math::sigmoid</a></div><div class="ttdeci">double sigmoid(double x)</div><div class="ttdoc">Sigmoid logistic function.</div><div class="ttdef"><b>Definition:</b> Math.cpp:21</div></div>
-<div class="ttc" id="aMath_8cpp_html_a178157dc9219ded73d569c77ef53e04e"><div class="ttname"><a href="Math_8cpp.html#a178157dc9219ded73d569c77ef53e04e">autopas::utils::Math::makeVectorXd</a></div><div class="ttdeci">Eigen::VectorXd makeVectorXd(const std::vector&lt; double &gt; &amp;elements)</div><div class="ttdoc">Create a vector of doubles from given elements.</div><div class="ttdef"><b>Definition:</b> Math.cpp:32</div></div>
-<div class="ttc" id="aMath_8cpp_html_adc3522881e0471f27bde8362d4503653"><div class="ttname"><a href="Math_8cpp.html#adc3522881e0471f27bde8362d4503653">autopas::utils::Math::makeVectorXi</a></div><div class="ttdeci">Eigen::VectorXi makeVectorXi(const std::vector&lt; int &gt; &amp;elements)</div><div class="ttdoc">Create a vector of ints from given elements.</div><div class="ttdef"><b>Definition:</b> Math.cpp:36</div></div>
+<div class="ttc" id="aMath_8h_html_a83f95eedc559db37b88b02ca8f1039d0"><div class="ttname"><a href="Math_8h.html#a83f95eedc559db37b88b02ca8f1039d0">autopas::utils::Math::pow</a></div><div class="ttdeci">T pow(T base)</div><div class="ttdoc">No-overhead power function with exponent known at compile time.</div><div class="ttdef"><b>Definition:</b> Math.h:27</div></div>
 <div class="ttc" id="aMath_8h_html_aca362e100bc1a4f790e6120c513aeae6"><div class="ttname"><a href="Math_8h.html#aca362e100bc1a4f790e6120c513aeae6">autopas::utils::Math::normalScale</a></div><div class="ttdeci">const double normalScale</div><div class="ttdoc">Factor of PDF of standard normal distribution.</div><div class="ttdef"><b>Definition:</b> Math.h:17</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
