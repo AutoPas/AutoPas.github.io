@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-523ebbc</span>
+   &#160;<span id="projectnumber">0.1.0-1800fd3</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -98,7 +98,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="classautopas_1_1VerletListsCellsHelpers-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -120,17 +119,14 @@ Inheritance diagram for autopas::VerletListsCellsHelpers&lt; Particle &gt;:</div
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsCellsHelpers_1_1VerletListGeneratorFunctor.html">VerletListGeneratorFunctor</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This functor can generate verlet lists using the typical pairwise traversal.  <a href="classautopas_1_1VerletListsCellsHelpers_1_1VerletListGeneratorFunctor.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a1f7bff250618a1b9ce4e531486e78414"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsCellsHelpers.html#a1f7bff250618a1b9ce4e531486e78414">NeighborListsType</a> = std::vector&lt; std::vector&lt; std::pair&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> *, std::vector&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> * &gt; &gt;&gt; &gt;</td></tr>
 <tr class="memdesc:a1f7bff250618a1b9ce4e531486e78414"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cell wise verlet lists: For every cell, a vector of pairs.  <a href="classautopas_1_1VerletListsCellsHelpers.html#a1f7bff250618a1b9ce4e531486e78414">More...</a><br /></td></tr>
 <tr class="separator:a1f7bff250618a1b9ce4e531486e78414"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5c2daf8933e6c2ae375dc2c68823bdaf"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsCellsHelpers.html#a5c2daf8933e6c2ae375dc2c68823bdaf">PairwiseNeighborListsType</a> = std::vector&lt; std::vector&lt; std::vector&lt; std::pair&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> *, std::vector&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> * &gt; &gt;&gt; &gt;&gt;</td></tr>
+<tr class="memdesc:a5c2daf8933e6c2ae375dc2c68823bdaf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pairwise verlet lists: For every cell a vector, for every neighboring cell a vector of particle-neighborlist pairs.  <a href="classautopas_1_1VerletListsCellsHelpers.html#a5c2daf8933e6c2ae375dc2c68823bdaf">More...</a><br /></td></tr>
+<tr class="separator:a5c2daf8933e6c2ae375dc2c68823bdaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><h3>template&lt;class Particle&gt;<br />
@@ -160,6 +156,25 @@ template&lt;class Particle&gt; </div>
 
 <p>Cell wise verlet lists: For every cell, a vector of pairs. </p>
 <p>Each pair maps a particle to a vector of its neighbors. </p>
+
+</div>
+</div>
+<a id="a5c2daf8933e6c2ae375dc2c68823bdaf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5c2daf8933e6c2ae375dc2c68823bdaf">&#9670;&nbsp;</a></span>PairwiseNeighborListsType</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Particle&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="classautopas_1_1VerletListsCellsHelpers.html">autopas::VerletListsCellsHelpers</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::<a class="el" href="classautopas_1_1VerletListsCellsHelpers.html#a5c2daf8933e6c2ae375dc2c68823bdaf">PairwiseNeighborListsType</a> =  std::vector&lt;std::vector&lt;std::vector&lt;std::pair&lt;<a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> *, std::vector&lt;<a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> *&gt; &gt;&gt; &gt;&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Pairwise verlet lists: For every cell a vector, for every neighboring cell a vector of particle-neighborlist pairs. </p>
+<p>Each pair maps a particle to a vector of its neighbor particles. Cells&lt;NeighboringCells&lt;Particle,NeighborParticles&gt;&gt; </p>
 
 </div>
 </div>

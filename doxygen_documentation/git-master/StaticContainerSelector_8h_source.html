@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-523ebbc</span>
+   &#160;<span id="projectnumber">0.1.0-1800fd3</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -134,12 +134,14 @@ $(function() {
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">function</span>(<span class="keyword">dynamic_cast&lt;</span><a class="code" href="classautopas_1_1VerletClusterLists.html">autopas::VerletClusterLists&lt;Particle&gt;</a> *<span class="keyword">&gt;</span>(containerPtr));</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordflow">case</span> ContainerOption::verletClusterCells:</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">function</span>(<span class="keyword">dynamic_cast&lt;</span><a class="code" href="classautopas_1_1VerletClusterCells.html">autopas::VerletClusterCells&lt;Particle&gt;</a> *<span class="keyword">&gt;</span>(containerPtr));</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  <a class="code" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a>(<span class="stringliteral">&quot;Unknown type of container in StaticContainerSelector.h. Type: {}&quot;</span>,</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                                              container-&gt;getContainerType());</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;}</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}  <span class="comment">// namespace autopas</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keywordflow">case</span> ContainerOption::pairwiseVerletLists:</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;      <span class="keywordflow">return</span> <span class="keyword">function</span>(<span class="keyword">dynamic_cast&lt;</span><a class="code" href="classautopas_1_1VerletListsCells.html">autopas::VerletListsCells&lt;Particle&gt;</a> *<span class="keyword">&gt;</span>(containerPtr));</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  }</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a>(<span class="stringliteral">&quot;Unknown type of container in StaticContainerSelector.h. Type: {}&quot;</span>,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                                              container-&gt;getContainerType());</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;}  <span class="comment">// namespace autopas</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="anamespaceautopas_html_ab242e86680fb47d6f6d9dd45dbcb7d33"><div class="ttname"><a href="namespaceautopas.html#ab242e86680fb47d6f6d9dd45dbcb7d33">autopas::withStaticContainerType</a></div><div class="ttdeci">decltype(auto) withStaticContainerType(std::shared_ptr&lt; CellBasedParticleContainer&lt; Particle &gt;&gt; &amp;container, FunctionType &amp;&amp;function)</div><div class="ttdoc">Will execute the passed function body with the static container type of container.</div><div class="ttdef"><b>Definition:</b> StaticContainerSelector.h:32</div></div>
 <div class="ttc" id="aclassautopas_1_1LinkedCells_html"><div class="ttname"><a href="classautopas_1_1LinkedCells.html">autopas::LinkedCells</a></div><div class="ttdoc">LinkedCells class.</div><div class="ttdef"><b>Definition:</b> LinkedCells.h:39</div></div>
@@ -156,7 +158,7 @@ $(function() {
 <div class="ttc" id="aVerletClusterLists_8h_html"><div class="ttname"><a href="VerletClusterLists_8h.html">VerletClusterLists.h</a></div></div>
 <div class="ttc" id="aclassautopas_1_1VerletClusterLists_html"><div class="ttname"><a href="classautopas_1_1VerletClusterLists.html">autopas::VerletClusterLists</a></div><div class="ttdoc">Particles are divided into clusters.</div><div class="ttdef"><b>Definition:</b> VCLTraversalInterface.h:14</div></div>
 <div class="ttc" id="aclassautopas_1_1VerletLists_html"><div class="ttname"><a href="classautopas_1_1VerletLists.html">autopas::VerletLists</a></div><div class="ttdoc">Verlet Lists container.</div><div class="ttdef"><b>Definition:</b> VerletLists.h:33</div></div>
-<div class="ttc" id="aclassautopas_1_1VerletListsCells_html"><div class="ttname"><a href="classautopas_1_1VerletListsCells.html">autopas::VerletListsCells</a></div><div class="ttdoc">Linked Cells with Verlet Lists container.</div><div class="ttdef"><b>Definition:</b> VerletListsCells.h:39</div></div>
+<div class="ttc" id="aclassautopas_1_1VerletListsCells_html"><div class="ttname"><a href="classautopas_1_1VerletListsCells.html">autopas::VerletListsCells</a></div><div class="ttdoc">Linked Cells with Verlet Lists container.</div><div class="ttdef"><b>Definition:</b> VerletListsCells.h:35</div></div>
 <div class="ttc" id="aclassautopas_1_1VerletClusterCells_html"><div class="ttname"><a href="classautopas_1_1VerletClusterCells.html">autopas::VerletClusterCells</a></div><div class="ttdoc">Particles are divided into clusters.</div><div class="ttdef"><b>Definition:</b> VerletClusterCells.h:38</div></div>
 <div class="ttc" id="aclassautopas_1_1utils_1_1ExceptionHandler_html_ae61b9aac49a90a9ff86859c73005ee07"><div class="ttname"><a href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a></div><div class="ttdeci">static void exception(const Exception e)</div><div class="ttdoc">Handle an exception derived by std::exception.</div><div class="ttdef"><b>Definition:</b> ExceptionHandler.h:65</div></div>
 <!-- start footer part -->

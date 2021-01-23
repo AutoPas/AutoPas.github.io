@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-523ebbc</span>
+   &#160;<span id="projectnumber">0.1.0-1800fd3</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -143,7 +143,9 @@ Public Types</h2></td></tr>
 &#160;&#160;<a class="el" href="classautopas_1_1options_1_1ContainerOption.html#a16b80e72223e48e127689234cafa302faeb0b6998980b84916276d9c87fc35000">verletClusterCells</a>, 
 <a class="el" href="classautopas_1_1options_1_1ContainerOption.html#a16b80e72223e48e127689234cafa302fa845b26300ca6bc579a7574994632ddf6">verletClusterLists</a>, 
 <a class="el" href="classautopas_1_1options_1_1ContainerOption.html#a16b80e72223e48e127689234cafa302fadfab604ab5c55b564cea982a52aa9d18">verletLists</a>, 
-<a class="el" href="classautopas_1_1options_1_1ContainerOption.html#a16b80e72223e48e127689234cafa302faf43cc5d4dfe42b7da68a532431411135">verletListsCells</a>
+<a class="el" href="classautopas_1_1options_1_1ContainerOption.html#a16b80e72223e48e127689234cafa302faf43cc5d4dfe42b7da68a532431411135">verletListsCells</a>, 
+<br />
+&#160;&#160;<a class="el" href="classautopas_1_1options_1_1ContainerOption.html#a16b80e72223e48e127689234cafa302fa67517fe7f851fefea49af1d0de94cfb5">pairwiseVerletLists</a>
 <br />
  }</td></tr>
 <tr class="memdesc:a16b80e72223e48e127689234cafa302f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Possible choices for the particle container type.  <a href="classautopas_1_1options_1_1ContainerOption.html#a16b80e72223e48e127689234cafa302f">More...</a><br /></td></tr>
@@ -230,6 +232,9 @@ Static Public Member Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="a16b80e72223e48e127689234cafa302faf43cc5d4dfe42b7da68a532431411135"></a>verletListsCells&#160;</td><td class="fielddoc"><p><a class="el" href="classautopas_1_1VerletListsCells.html" title="Linked Cells with Verlet Lists container.">VerletListsCells</a> : Similar to <a class="el" href="classautopas_1_1VerletLists.html" title="Verlet Lists container.">VerletLists</a> but Lists are associated with the underlying cells to achieve location information. </p>
 <p>Parallelization options similar to <a class="el" href="classautopas_1_1LinkedCells.html" title="LinkedCells class.">LinkedCells</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a16b80e72223e48e127689234cafa302fa67517fe7f851fefea49af1d0de94cfb5"></a>pairwiseVerletLists&#160;</td><td class="fielddoc"><p>PairwiseVerletLists : Also similar to <a class="el" href="classautopas_1_1VerletLists.html" title="Verlet Lists container.">VerletLists</a> but the lists are associated to each pair of neighboring cells. </p>
+<p>Improves data locality and cache efficiency. </p>
 </td></tr>
 </table>
 

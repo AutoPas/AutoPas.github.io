@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-523ebbc</span>
+   &#160;<span id="projectnumber">0.1.0-1800fd3</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -157,9 +157,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a523bc5a864629d7f447d452deac07cc0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsCells.html#a523bc5a864629d7f447d452deac07cc0">iteratePairwise</a> (<a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *traversal) override</td></tr>
 <tr class="memdesc:a523bc5a864629d7f447d452deac07cc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates over all particle pairs in the container.  <a href="classautopas_1_1VerletListsCells.html#a523bc5a864629d7f447d452deac07cc0">More...</a><br /></td></tr>
 <tr class="separator:a523bc5a864629d7f447d452deac07cc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4ba8657109042296c1e15b259db3844"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> * &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsCells.html#ab4ba8657109042296c1e15b259db3844">getVerletList</a> (const <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> *particle) const</td></tr>
-<tr class="memdesc:ab4ba8657109042296c1e15b259db3844"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the neighbors list of a particle.  <a href="classautopas_1_1VerletListsCells.html#ab4ba8657109042296c1e15b259db3844">More...</a><br /></td></tr>
-<tr class="separator:ab4ba8657109042296c1e15b259db3844"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99fbb20d928797f8a412ae94205940eb"><td class="memItemLeft" align="right" valign="top">const size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsCells.html#a99fbb20d928797f8a412ae94205940eb">getNumberOfPartners</a> (const <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> *particle) const</td></tr>
+<tr class="memdesc:a99fbb20d928797f8a412ae94205940eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of neighbors over all neighbor lists that belong to this particle.  <a href="classautopas_1_1VerletListsCells.html#a99fbb20d928797f8a412ae94205940eb">More...</a><br /></td></tr>
+<tr class="separator:a99fbb20d928797f8a412ae94205940eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e4c8d6d360c347353ad7985be1987bc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsCells.html#a1e4c8d6d360c347353ad7985be1987bc">rebuildNeighborLists</a> (<a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *traversal) override</td></tr>
 <tr class="memdesc:a1e4c8d6d360c347353ad7985be1987bc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuilds the neighbor lists.  <a href="classautopas_1_1VerletListsCells.html#a1e4c8d6d360c347353ad7985be1987bc">More...</a><br /></td></tr>
 <tr class="separator:a1e4c8d6d360c347353ad7985be1987bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -294,7 +294,7 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="separator:a02f7d97fae34ede2f78cbde0cf667dfb inherit pro_attribs_classautopas_1_1VerletListsLinkedBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><h3>template&lt;class Particle, class NeighborList = VerletListsCellsNeighborList&lt;Particle&gt;&gt;<br />
+<div class="textblock"><h3>template&lt;class Particle, class NeighborList&gt;<br />
 class autopas::VerletListsCells&lt; Particle, NeighborList &gt;</h3>
 
 <p>Linked Cells with Verlet Lists container. </p>
@@ -312,7 +312,7 @@ class autopas::VerletListsCells&lt; Particle, NeighborList &gt;</h3>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Particle , class NeighborList  = VerletListsCellsNeighborList&lt;Particle&gt;&gt; </div>
+template&lt;class Particle , class NeighborList &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -395,7 +395,7 @@ template&lt;class Particle , class NeighborList  = VerletListsCellsNeighborList&
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Particle , class NeighborList  = VerletListsCellsNeighborList&lt;Particle&gt;&gt; </div>
+template&lt;class Particle , class NeighborList &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -425,7 +425,7 @@ template&lt;class Particle , class NeighborList  = VerletListsCellsNeighborList&
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Particle , class NeighborList  = VerletListsCellsNeighborList&lt;Particle&gt;&gt; </div>
+template&lt;class Particle , class NeighborList &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -457,7 +457,7 @@ template&lt;class Particle , class NeighborList  = VerletListsCellsNeighborList&
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Particle , class NeighborList  = VerletListsCellsNeighborList&lt;Particle&gt;&gt; </div>
+template&lt;class Particle , class NeighborList &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -481,19 +481,19 @@ template&lt;class Particle , class NeighborList  = VerletListsCellsNeighborList&
 
 </div>
 </div>
-<a id="ab4ba8657109042296c1e15b259db3844"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab4ba8657109042296c1e15b259db3844">&#9670;&nbsp;</a></span>getVerletList()</h2>
+<a id="a99fbb20d928797f8a412ae94205940eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99fbb20d928797f8a412ae94205940eb">&#9670;&nbsp;</a></span>getNumberOfPartners()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Particle , class NeighborList  = VerletListsCellsNeighborList&lt;Particle&gt;&gt; </div>
+template&lt;class Particle , class NeighborList &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::vector&lt;<a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> *&gt;&amp; <a class="el" href="classautopas_1_1VerletListsCells.html">autopas::VerletListsCells</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, NeighborList &gt;::getVerletList </td>
+          <td class="memname">const size_t <a class="el" href="classautopas_1_1VerletListsCells.html">autopas::VerletListsCells</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, NeighborList &gt;::getNumberOfPartners </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> *&#160;</td>
           <td class="paramname"><em>particle</em></td><td>)</td>
@@ -507,14 +507,14 @@ template&lt;class Particle , class NeighborList  = VerletListsCellsNeighborList&
 </table>
 </div><div class="memdoc">
 
-<p>Get the neighbors list of a particle. </p>
+<p>Gets the number of neighbors over all neighbor lists that belong to this particle. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">particle</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>the neighbor list of the particle </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>the size of the neighbor list(s) of this particle </dd></dl>
 
 </div>
 </div>
@@ -524,7 +524,7 @@ template&lt;class Particle , class NeighborList  = VerletListsCellsNeighborList&
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Particle , class NeighborList  = VerletListsCellsNeighborList&lt;Particle&gt;&gt; </div>
+template&lt;class Particle , class NeighborList &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -562,7 +562,7 @@ template&lt;class Particle , class NeighborList  = VerletListsCellsNeighborList&
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Particle , class NeighborList  = VerletListsCellsNeighborList&lt;Particle&gt;&gt; </div>
+template&lt;class Particle , class NeighborList &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">

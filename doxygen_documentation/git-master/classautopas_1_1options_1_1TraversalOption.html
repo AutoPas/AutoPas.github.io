@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-523ebbc</span>
+   &#160;<span id="projectnumber">0.1.0-1800fd3</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -166,7 +166,13 @@ Public Types</h2></td></tr>
 <a class="el" href="classautopas_1_1options_1_1TraversalOption.html#a581c23bd69741242b26363a84b5c0d44ac2c8c3a9db3d782edfa324af69da3a89">vlc_sliced_balanced</a>, 
 <br />
 &#160;&#160;<a class="el" href="classautopas_1_1options_1_1TraversalOption.html#a581c23bd69741242b26363a84b5c0d44ad6d1fa50913251b877127336e2574f71">vlc_sliced_c02</a>, 
-<a class="el" href="classautopas_1_1options_1_1TraversalOption.html#a581c23bd69741242b26363a84b5c0d44adc19ac45bb8274d076c28f9ee60f3adb">vvl_as_built</a>
+<a class="el" href="classautopas_1_1options_1_1TraversalOption.html#a581c23bd69741242b26363a84b5c0d44adc19ac45bb8274d076c28f9ee60f3adb">vvl_as_built</a>, 
+<a class="el" href="classautopas_1_1options_1_1TraversalOption.html#a581c23bd69741242b26363a84b5c0d44aa9a7561d6fcd8677bb56bf68bc5e4f89">vlp_c01</a>, 
+<a class="el" href="classautopas_1_1options_1_1TraversalOption.html#a581c23bd69741242b26363a84b5c0d44ada1006d6b5ec36d72a0fd7893ebc8b0f">vlp_c18</a>, 
+<br />
+&#160;&#160;<a class="el" href="classautopas_1_1options_1_1TraversalOption.html#a581c23bd69741242b26363a84b5c0d44a0f9e6e6f4b085ef000cfc8cd1fd75378">vlp_sliced</a>, 
+<a class="el" href="classautopas_1_1options_1_1TraversalOption.html#a581c23bd69741242b26363a84b5c0d44a8c45d3337ec1d82d4e4e60120bc41a25">vlp_sliced_balanced</a>, 
+<a class="el" href="classautopas_1_1options_1_1TraversalOption.html#a581c23bd69741242b26363a84b5c0d44a810346b2328cba06e1baac7449ce3dd7">vlp_sliced_c02</a>
 <br />
  }</td></tr>
 <tr class="memdesc:a581c23bd69741242b26363a84b5c0d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Possible choices for the cell pair traversal.  <a href="classautopas_1_1options_1_1TraversalOption.html#a581c23bd69741242b26363a84b5c0d44">More...</a><br /></td></tr>
@@ -298,6 +304,20 @@ Static Public Member Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="a581c23bd69741242b26363a84b5c0d44adc19ac45bb8274d076c28f9ee60f3adb"></a>vvl_as_built&#160;</td><td class="fielddoc"><p><a class="el" href="classautopas_1_1VVLAsBuildTraversal.html" title="Traversal for VarVerletLists with VerletNeighborListAsBuild as neighbor list.">VVLAsBuildTraversal</a> : Track which thread built what neighbor list and schedule them the same way for the pairwise iteration. </p>
 <p>Provides some kind of load balancing if the force calculation is cheap but is sensitive to hardware fluctuations. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a581c23bd69741242b26363a84b5c0d44aa9a7561d6fcd8677bb56bf68bc5e4f89"></a>vlp_c01&#160;</td><td class="fielddoc"><p><a class="el" href="classautopas_1_1VLCC01Traversal.html" title="This class provides the c01 traversal.">VLCC01Traversal</a> : Equivalent to <a class="el" href="classautopas_1_1LCC01Traversal.html" title="This class provides the c01 traversal and the c01 traversal with combined SoA buffers.">LCC01Traversal</a>. </p>
+<p>Schedules all neighbor lists of one cell at once. Does not support Newton3. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a581c23bd69741242b26363a84b5c0d44ada1006d6b5ec36d72a0fd7893ebc8b0f"></a>vlp_c18&#160;</td><td class="fielddoc"><p><a class="el" href="classautopas_1_1VLCC18Traversal.html" title="This class provides the lc_c18 traversal.">VLCC18Traversal</a> : Equivalent to <a class="el" href="classautopas_1_1LCC18Traversal.html" title="This class provides the lc_c18 traversal.">LCC18Traversal</a>. </p>
+<p>Neighbor lists contain only forward neighbors. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a581c23bd69741242b26363a84b5c0d44a0f9e6e6f4b085ef000cfc8cd1fd75378"></a>vlp_sliced&#160;</td><td class="fielddoc"><p><a class="el" href="classautopas_1_1VLCSlicedTraversal.html" title="This class provides the (locked) sliced traversal.">VLCSlicedTraversal</a> : Equivalent to <a class="el" href="classautopas_1_1LCSlicedTraversal.html" title="This class provides the (locked) sliced traversal.">LCSlicedTraversal</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a581c23bd69741242b26363a84b5c0d44a8c45d3337ec1d82d4e4e60120bc41a25"></a>vlp_sliced_balanced&#160;</td><td class="fielddoc"><p><a class="el" href="classautopas_1_1VLCSlicedBalancedTraversal.html" title="This class provides the balanced sliced traversal.">VLCSlicedBalancedTraversal</a> : Equivalent to <a class="el" href="classautopas_1_1LCSlicedBalancedTraversal.html" title="This class provides the balanced sliced traversal.">LCSlicedBalancedTraversal</a>. </p>
+<p>Tries to balance slice thickness according to a given <a class="el" href="classautopas_1_1LoadEstimatorOption.html" title="Class representing the load estimator choices.">LoadEstimatorOption</a>. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a581c23bd69741242b26363a84b5c0d44a810346b2328cba06e1baac7449ce3dd7"></a>vlp_sliced_c02&#160;</td><td class="fielddoc"><p><a class="el" href="classautopas_1_1VLCSlicedC02Traversal.html" title="This class provides the colored sliced traversal.">VLCSlicedC02Traversal</a> : Equivalent to <a class="el" href="classautopas_1_1LCSlicedC02Traversal.html" title="This class provides the colored sliced traversal.">LCSlicedC02Traversal</a>. </p>
+<p>1D slicing with as many slices of minimal thickness as possible. No locks but two-way coloring of slices. </p>
 </td></tr>
 </table>
 
