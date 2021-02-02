@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-165b477</span>
+   &#160;<span id="projectnumber">0.1.0-2018056</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -104,149 +104,151 @@ $(function() {
 <a href="SlicedLockBasedTraversal_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SlicedBasedTraversal_8h.html">autopas/containers/cellPairTraversals/SlicedBasedTraversal.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ThreeDimensionalMapping_8h.html">autopas/utils/ThreeDimensionalMapping.h</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Timer_8h.html">autopas/utils/Timer.h</a>&quot;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="WrapOpenMP_8h.html">autopas/utils/WrapOpenMP.h</a>&quot;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceautopas.html">autopas</a> {</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;numeric&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="SlicedBasedTraversal_8h.html">autopas/containers/cellPairTraversals/SlicedBasedTraversal.h</a>&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="ThreeDimensionalMapping_8h.html">autopas/utils/ThreeDimensionalMapping.h</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Timer_8h.html">autopas/utils/Timer.h</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="WrapOpenMP_8h.html">autopas/utils/WrapOpenMP.h</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class </span>ParticleCell, <span class="keyword">class </span>PairwiseFunctor, DataLayoutOption::Value dataLayout, <span class="keywordtype">bool</span> useNewton3,</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;          <span class="keywordtype">bool</span> spaciallyForward&gt;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classautopas_1_1SlicedLockBasedTraversal.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="classautopas_1_1SlicedLockBasedTraversal.html">SlicedLockBasedTraversal</a></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    : <span class="keyword">public</span> <a class="code" href="classautopas_1_1SlicedBasedTraversal.html">SlicedBasedTraversal</a>&lt;ParticleCell, PairwiseFunctor, dataLayout, useNewton3, spaciallyForward&gt; {</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00046"></a><span class="lineno"><a class="line" href="classautopas_1_1SlicedLockBasedTraversal.html#a0d0cbecdd4c49e017cf88c7ca367c1bd">   46</a></span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classautopas_1_1SlicedLockBasedTraversal.html#a0d0cbecdd4c49e017cf88c7ca367c1bd">SlicedLockBasedTraversal</a>(<span class="keyword">const</span> std::array&lt;unsigned long, 3&gt; &amp;dims, PairwiseFunctor *pairwiseFunctor,</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                                    <span class="keyword">const</span> <span class="keywordtype">double</span> interactionLength, <span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;cellLength)</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      : <a class="code" href="classautopas_1_1SlicedBasedTraversal.html">SlicedBasedTraversal</a>&lt;<a class="code" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor, dataLayout, useNewton3, spaciallyForward&gt;(</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;            dims, pairwiseFunctor, interactionLength, cellLength) {}</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classautopas_1_1SlicedLockBasedTraversal.html#a09df6759c2ec4234398aed8a89adf872">   55</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classautopas_1_1SlicedLockBasedTraversal.html#a09df6759c2ec4234398aed8a89adf872">_dynamic</a> = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> LoopBody&gt;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classautopas_1_1SlicedLockBasedTraversal.html#ab80f331ac4e345a88794f62c31bbfdf6">slicedTraversal</a>(LoopBody &amp;&amp;loopBody);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;};</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class </span><a class="code" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <span class="keyword">class </span>PairwiseFunctor, DataLayoutOption::Value dataLayout, <span class="keywordtype">bool</span> useNewton3,</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;          <span class="keywordtype">bool</span> spaciallyForward&gt;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> LoopBody&gt;</div>
-<div class="line"><a name="l00070"></a><span class="lineno"><a class="line" href="classautopas_1_1SlicedLockBasedTraversal.html#ab80f331ac4e345a88794f62c31bbfdf6">   70</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classautopas_1_1SlicedLockBasedTraversal.html#ab80f331ac4e345a88794f62c31bbfdf6">SlicedLockBasedTraversal&lt;ParticleCell, PairwiseFunctor, dataLayout, useNewton3, spaciallyForward&gt;::slicedTraversal</a>(</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    LoopBody &amp;&amp;loopBody) {</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keyword">using</span> std::array;</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keyword">auto</span> numSlices = this-&gt;_sliceThickness.size();</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;  std::vector&lt;AutoPasLock&gt; locks;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  locks.resize((numSlices - 1) * this-&gt;_overlapLongestAxis);</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  <span class="comment">// 0) check if applicable</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  std::array&lt;size_t, 2&gt; overLapps23{this-&gt;_overlap[this-&gt;_dimsPerLength[1]], this-&gt;_overlap[this-&gt;_dimsPerLength[2]]};</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160; </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  <span class="keywordflow">if</span> (not spaciallyForward) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    overLapps23 = {0ul, 0ul};</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  }</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  std::vector&lt;utils::Timer&gt; timers;</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;  std::vector&lt;double&gt; threadTimes;</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  timers.resize(numSlices);</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;  threadTimes.resize(numSlices);</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#ifdef AUTOPAS_OPENMP</span></div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  <span class="comment">// although every thread gets exactly one iteration (=slice) this is faster than a normal parallel region</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;  <span class="keyword">auto</span> numThreads = static_cast&lt;size_t&gt;(<a class="code" href="namespaceautopas.html#a385797c464a683f32da2d4a43ab53220">autopas_get_max_threads</a>());</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">if</span> (this-&gt;_dynamic) {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    omp_set_schedule(omp_sched_dynamic, 1);</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    omp_set_schedule(omp_sched_static, 1);</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  }</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#pragma omp parallel for schedule(runtime) num_threads(numThreads)</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> slice = 0; slice &lt; numSlices; ++slice) {</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    timers[slice].start();</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    array&lt;unsigned long, 3&gt; myStartArray{0, 0, 0};</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; slice; ++i) {</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;      myStartArray[this-&gt;_dimsPerLength[0]] += this-&gt;_sliceThickness[i];</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    }</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="comment">// all but the first slice need to lock their starting layers.</span></div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> lockBaseIndex = (slice - 1) * this-&gt;_overlapLongestAxis;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keywordflow">if</span> (slice &gt; 0) {</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> i = 0ul; i &lt; this-&gt;_overlapLongestAxis; i++) {</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        locks[lockBaseIndex + i].lock();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      }</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> lastLayer = myStartArray[this-&gt;_dimsPerLength[0]] + this-&gt;_sliceThickness[slice];</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> sliceOffset = 0ul; sliceOffset &lt; this-&gt;_sliceThickness[slice]; ++sliceOffset) {</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;      <span class="keyword">const</span> <span class="keyword">auto</span> dimSlice = myStartArray[this-&gt;_dimsPerLength[0]] + sliceOffset;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      <span class="comment">// at the last layers request lock for the starting layer of the next</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      <span class="comment">// slice. Does not apply for the last slice.</span></div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      <span class="keywordflow">if</span> (slice != numSlices - 1 and dimSlice &gt;= lastLayer - this-&gt;_overlapLongestAxis) {</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        locks[((slice + 1) * this-&gt;_overlapLongestAxis) - (lastLayer - dimSlice)].lock();</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      }</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> dimMedium = 0; dimMedium &lt; this-&gt;_cellsPerDimension[this-&gt;_dimsPerLength[1]] - overLapps23[0];</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;           ++dimMedium) {</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> dimShort = 0; dimShort &lt; this-&gt;_cellsPerDimension[this-&gt;_dimsPerLength[2]] - overLapps23[1];</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;             ++dimShort) {</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;          array&lt;unsigned long, 3&gt; idArray = {};</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;          idArray[this-&gt;_dimsPerLength[0]] = dimSlice;</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;          idArray[this-&gt;_dimsPerLength[1]] = dimMedium;</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;          idArray[this-&gt;_dimsPerLength[2]] = dimShort;</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;          loopBody(idArray[0], idArray[1], idArray[2]);</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;        }</div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;      }</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;      <span class="comment">// at the end of the first layers release the lock</span></div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;      <span class="keywordflow">if</span> (slice &gt; 0 and dimSlice &lt; myStartArray[this-&gt;_dimsPerLength[0]] + this-&gt;_overlapLongestAxis) {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;        locks[lockBaseIndex + sliceOffset].unlock();</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;        <span class="comment">// if lastLayer is reached within overlap area, unlock all following locks</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        <span class="comment">// this should never be the case if slice thicknesses are set up properly; thickness should always be</span></div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="comment">// greater than the overlap along the longest axis, or the slices won&#39;t be processed in parallel.</span></div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="keywordflow">if</span> (dimSlice == lastLayer - 1) {</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> i = sliceOffset + 1; i &lt; this-&gt;_overlapLongestAxis; ++i) {</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;            locks[lockBaseIndex + i].unlock();</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;          }</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        }</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (slice != numSlices - 1 and dimSlice == lastLayer - 1) {</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <span class="comment">// clearing of the locks set on the last layers of each slice</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = (slice * this-&gt;_overlapLongestAxis); i &lt; (slice + 1) * this-&gt;_overlapLongestAxis; ++i) {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;          locks[i].unlock();</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        }</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;      }</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;    }</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;    threadTimes[slice] = timers[slice].stop();</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;  }</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160; </div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  std::string timesStr;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> t : threadTimes) {</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;    timesStr += <a class="code" href="namespaceautopas_1_1utils_1_1ArrayUtils.html#a0346f7b6c9ecf44ec6aa5f5c666d8c9a">std::to_string</a>(t) + <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  }</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="keyword">auto</span> minMax = std::minmax_element(threadTimes.begin(), threadTimes.end());</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keyword">auto</span> avg = std::accumulate(threadTimes.begin(), threadTimes.end(), 0.0) / numSlices;</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keyword">auto</span> variance = std::accumulate(threadTimes.cbegin(), threadTimes.cend(), 0.0,</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                                  [avg](<span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b) -&gt; <span class="keywordtype">double</span> { <span class="keywordflow">return</span> a + std::pow(avg - b, 2.0); }) /</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                  numSlices;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keyword">auto</span> stddev = std::sqrt(variance);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(debug, <span class="stringliteral">&quot;times per slice: [{}].&quot;</span>, timesStr);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(debug, <span class="stringliteral">&quot;Difference between longest and shortest time: {:.3G}&quot;</span>, *minMax.second - *minMax.first);</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(debug, <span class="stringliteral">&quot;Ratio between longest and shortest time: {:.3G}&quot;</span>, (<span class="keywordtype">float</span>)*minMax.second / *minMax.first);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(debug, <span class="stringliteral">&quot;avg: {:.3G}, std-deviation: {:.3G} ({:.3G}%)&quot;</span>, avg, stddev, 100 * stddev / avg);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;}</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}  <span class="comment">// namespace autopas</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceautopas.html">autopas</a> {</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class </span>ParticleCell, <span class="keyword">class </span>PairwiseFunctor, DataLayoutOption::Value dataLayout, <span class="keywordtype">bool</span> useNewton3,</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;          <span class="keywordtype">bool</span> spaciallyForward&gt;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="classautopas_1_1SlicedLockBasedTraversal.html">   37</a></span>&#160;<span class="keyword">class </span><a class="code" href="classautopas_1_1SlicedLockBasedTraversal.html">SlicedLockBasedTraversal</a></div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    : <span class="keyword">public</span> <a class="code" href="classautopas_1_1SlicedBasedTraversal.html">SlicedBasedTraversal</a>&lt;ParticleCell, PairwiseFunctor, dataLayout, useNewton3, spaciallyForward&gt; {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="classautopas_1_1SlicedLockBasedTraversal.html#a0d0cbecdd4c49e017cf88c7ca367c1bd">   48</a></span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classautopas_1_1SlicedLockBasedTraversal.html#a0d0cbecdd4c49e017cf88c7ca367c1bd">SlicedLockBasedTraversal</a>(<span class="keyword">const</span> std::array&lt;unsigned long, 3&gt; &amp;dims, PairwiseFunctor *pairwiseFunctor,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;                                    <span class="keyword">const</span> <span class="keywordtype">double</span> interactionLength, <span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;cellLength)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      : <a class="code" href="classautopas_1_1SlicedBasedTraversal.html">SlicedBasedTraversal</a>&lt;<a class="code" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor, dataLayout, useNewton3, spaciallyForward&gt;(</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;            dims, pairwiseFunctor, interactionLength, cellLength) {}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00057"></a><span class="lineno"><a class="line" href="classautopas_1_1SlicedLockBasedTraversal.html#a09df6759c2ec4234398aed8a89adf872">   57</a></span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classautopas_1_1SlicedLockBasedTraversal.html#a09df6759c2ec4234398aed8a89adf872">_dynamic</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> LoopBody&gt;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classautopas_1_1SlicedLockBasedTraversal.html#ab80f331ac4e345a88794f62c31bbfdf6">slicedTraversal</a>(LoopBody &amp;&amp;loopBody);</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class </span><a class="code" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <span class="keyword">class </span>PairwiseFunctor, DataLayoutOption::Value dataLayout, <span class="keywordtype">bool</span> useNewton3,</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;          <span class="keywordtype">bool</span> spaciallyForward&gt;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> LoopBody&gt;</div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="classautopas_1_1SlicedLockBasedTraversal.html#ab80f331ac4e345a88794f62c31bbfdf6">   72</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classautopas_1_1SlicedLockBasedTraversal.html#ab80f331ac4e345a88794f62c31bbfdf6">SlicedLockBasedTraversal&lt;ParticleCell, PairwiseFunctor, dataLayout, useNewton3, spaciallyForward&gt;::slicedTraversal</a>(</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    LoopBody &amp;&amp;loopBody) {</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keyword">using</span> std::array;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;  <span class="keyword">auto</span> numSlices = this-&gt;_sliceThickness.size();</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  std::vector&lt;AutoPasLock&gt; locks;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;  locks.resize((numSlices - 1) * this-&gt;_overlapLongestAxis);</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  <span class="comment">// 0) check if applicable</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  std::array&lt;size_t, 2&gt; overLapps23{this-&gt;_overlap[this-&gt;_dimsPerLength[1]], this-&gt;_overlap[this-&gt;_dimsPerLength[2]]};</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160; </div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;  <span class="keywordflow">if</span> (not spaciallyForward) {</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    overLapps23 = {0ul, 0ul};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;  }</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  std::vector&lt;utils::Timer&gt; timers;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  std::vector&lt;double&gt; threadTimes;</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;  timers.resize(numSlices);</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;  threadTimes.resize(numSlices);</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#ifdef AUTOPAS_OPENMP</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="comment">// although every thread gets exactly one iteration (=slice) this is faster than a normal parallel region</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;  <span class="keyword">auto</span> numThreads = static_cast&lt;size_t&gt;(<a class="code" href="namespaceautopas.html#a385797c464a683f32da2d4a43ab53220">autopas_get_max_threads</a>());</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;  <span class="keywordflow">if</span> (this-&gt;_dynamic) {</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;    omp_set_schedule(omp_sched_dynamic, 1);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;  } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    omp_set_schedule(omp_sched_static, 1);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#pragma omp parallel for schedule(runtime) num_threads(numThreads)</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> slice = 0; slice &lt; numSlices; ++slice) {</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    timers[slice].start();</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    array&lt;unsigned long, 3&gt; myStartArray{0, 0, 0};</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; slice; ++i) {</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;      myStartArray[this-&gt;_dimsPerLength[0]] += this-&gt;_sliceThickness[i];</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    }</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="comment">// all but the first slice need to lock their starting layers.</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> lockBaseIndex = (slice - 1) * this-&gt;_overlapLongestAxis;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">if</span> (slice &gt; 0) {</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> i = 0ul; i &lt; this-&gt;_overlapLongestAxis; i++) {</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;        locks[lockBaseIndex + i].lock();</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;      }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    }</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> lastLayer = myStartArray[this-&gt;_dimsPerLength[0]] + this-&gt;_sliceThickness[slice];</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> sliceOffset = 0ul; sliceOffset &lt; this-&gt;_sliceThickness[slice]; ++sliceOffset) {</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;      <span class="keyword">const</span> <span class="keyword">auto</span> dimSlice = myStartArray[this-&gt;_dimsPerLength[0]] + sliceOffset;</div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;      <span class="comment">// at the last layers request lock for the starting layer of the next</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;      <span class="comment">// slice. Does not apply for the last slice.</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;      <span class="keywordflow">if</span> (slice != numSlices - 1 and dimSlice &gt;= lastLayer - this-&gt;_overlapLongestAxis) {</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        locks[((slice + 1) * this-&gt;_overlapLongestAxis) - (lastLayer - dimSlice)].lock();</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;      }</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> dimMedium = 0; dimMedium &lt; this-&gt;_cellsPerDimension[this-&gt;_dimsPerLength[1]] - overLapps23[0];</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;           ++dimMedium) {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> dimShort = 0; dimShort &lt; this-&gt;_cellsPerDimension[this-&gt;_dimsPerLength[2]] - overLapps23[1];</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;             ++dimShort) {</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;          array&lt;unsigned long, 3&gt; idArray = {};</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;          idArray[this-&gt;_dimsPerLength[0]] = dimSlice;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;          idArray[this-&gt;_dimsPerLength[1]] = dimMedium;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;          idArray[this-&gt;_dimsPerLength[2]] = dimShort;</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;          loopBody(idArray[0], idArray[1], idArray[2]);</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;        }</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;      }</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;      <span class="comment">// at the end of the first layers release the lock</span></div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;      <span class="keywordflow">if</span> (slice &gt; 0 and dimSlice &lt; myStartArray[this-&gt;_dimsPerLength[0]] + this-&gt;_overlapLongestAxis) {</div>
+<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;        locks[lockBaseIndex + sliceOffset].unlock();</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="comment">// if lastLayer is reached within overlap area, unlock all following locks</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;        <span class="comment">// this should never be the case if slice thicknesses are set up properly; thickness should always be</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;        <span class="comment">// greater than the overlap along the longest axis, or the slices won&#39;t be processed in parallel.</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <span class="keywordflow">if</span> (dimSlice == lastLayer - 1) {</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;          <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> i = sliceOffset + 1; i &lt; this-&gt;_overlapLongestAxis; ++i) {</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;            locks[lockBaseIndex + i].unlock();</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;          }</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (slice != numSlices - 1 and dimSlice == lastLayer - 1) {</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="comment">// clearing of the locks set on the last layers of each slice</span></div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = (slice * this-&gt;_overlapLongestAxis); i &lt; (slice + 1) * this-&gt;_overlapLongestAxis; ++i) {</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;          locks[i].unlock();</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        }</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;      }</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    }</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    threadTimes[slice] = timers[slice].stop();</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  }</div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  std::string timesStr;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> t : threadTimes) {</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    timesStr += <a class="code" href="namespaceautopas_1_1utils_1_1ArrayUtils.html#a0346f7b6c9ecf44ec6aa5f5c666d8c9a">std::to_string</a>(t) + <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  }</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keyword">auto</span> minMax = std::minmax_element(threadTimes.begin(), threadTimes.end());</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;  <span class="keyword">auto</span> avg = std::accumulate(threadTimes.begin(), threadTimes.end(), 0.0) / numSlices;</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <span class="keyword">auto</span> variance = std::accumulate(threadTimes.cbegin(), threadTimes.cend(), 0.0,</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                                  [avg](<span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b) -&gt; <span class="keywordtype">double</span> { <span class="keywordflow">return</span> a + std::pow(avg - b, 2.0); }) /</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                  numSlices;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="keyword">auto</span> stddev = std::sqrt(variance);</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(debug, <span class="stringliteral">&quot;times per slice: [{}].&quot;</span>, timesStr);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(debug, <span class="stringliteral">&quot;Difference between longest and shortest time: {:.3G}&quot;</span>, *minMax.second - *minMax.first);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(debug, <span class="stringliteral">&quot;Ratio between longest and shortest time: {:.3G}&quot;</span>, (<span class="keywordtype">float</span>)*minMax.second / *minMax.first);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;  <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(debug, <span class="stringliteral">&quot;avg: {:.3G}, std-deviation: {:.3G} ({:.3G}%)&quot;</span>, avg, stddev, 100 * stddev / avg);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;}  <span class="comment">// namespace autopas</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aWrapOpenMP_8h_html"><div class="ttname"><a href="WrapOpenMP_8h.html">WrapOpenMP.h</a></div></div>
-<div class="ttc" id="aclassautopas_1_1SlicedLockBasedTraversal_html_a0d0cbecdd4c49e017cf88c7ca367c1bd"><div class="ttname"><a href="classautopas_1_1SlicedLockBasedTraversal.html#a0d0cbecdd4c49e017cf88c7ca367c1bd">autopas::SlicedLockBasedTraversal::SlicedLockBasedTraversal</a></div><div class="ttdeci">SlicedLockBasedTraversal(const std::array&lt; unsigned long, 3 &gt; &amp;dims, PairwiseFunctor *pairwiseFunctor, const double interactionLength, const std::array&lt; double, 3 &gt; &amp;cellLength)</div><div class="ttdoc">Constructor of the sliced traversal.</div><div class="ttdef"><b>Definition:</b> SlicedLockBasedTraversal.h:46</div></div>
+<div class="ttc" id="aclassautopas_1_1SlicedLockBasedTraversal_html_a0d0cbecdd4c49e017cf88c7ca367c1bd"><div class="ttname"><a href="classautopas_1_1SlicedLockBasedTraversal.html#a0d0cbecdd4c49e017cf88c7ca367c1bd">autopas::SlicedLockBasedTraversal::SlicedLockBasedTraversal</a></div><div class="ttdeci">SlicedLockBasedTraversal(const std::array&lt; unsigned long, 3 &gt; &amp;dims, PairwiseFunctor *pairwiseFunctor, const double interactionLength, const std::array&lt; double, 3 &gt; &amp;cellLength)</div><div class="ttdoc">Constructor of the sliced traversal.</div><div class="ttdef"><b>Definition:</b> SlicedLockBasedTraversal.h:48</div></div>
 <div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">Collection of functions for estimating the load required to update a specific region within a contain...</div><div class="ttdef"><b>Definition:</b> AutoPas.h:27</div></div>
 <div class="ttc" id="aTimer_8h_html"><div class="ttname"><a href="Timer_8h.html">Timer.h</a></div></div>
-<div class="ttc" id="aclassautopas_1_1SlicedLockBasedTraversal_html_a09df6759c2ec4234398aed8a89adf872"><div class="ttname"><a href="classautopas_1_1SlicedLockBasedTraversal.html#a09df6759c2ec4234398aed8a89adf872">autopas::SlicedLockBasedTraversal::_dynamic</a></div><div class="ttdeci">bool _dynamic</div><div class="ttdoc">whether to use static or dynamic scheduling.</div><div class="ttdef"><b>Definition:</b> SlicedLockBasedTraversal.h:55</div></div>
+<div class="ttc" id="aclassautopas_1_1SlicedLockBasedTraversal_html_a09df6759c2ec4234398aed8a89adf872"><div class="ttname"><a href="classautopas_1_1SlicedLockBasedTraversal.html#a09df6759c2ec4234398aed8a89adf872">autopas::SlicedLockBasedTraversal::_dynamic</a></div><div class="ttdeci">bool _dynamic</div><div class="ttdoc">whether to use static or dynamic scheduling.</div><div class="ttdef"><b>Definition:</b> SlicedLockBasedTraversal.h:57</div></div>
 <div class="ttc" id="aSlicedBasedTraversal_8h_html"><div class="ttname"><a href="SlicedBasedTraversal_8h.html">SlicedBasedTraversal.h</a></div></div>
 <div class="ttc" id="aclassautopas_1_1SlicedBasedTraversal_html"><div class="ttname"><a href="classautopas_1_1SlicedBasedTraversal.html">autopas::SlicedBasedTraversal</a></div><div class="ttdoc">This class provides base for locked- and colored sliced traversals.</div><div class="ttdef"><b>Definition:</b> SlicedBasedTraversal.h:34</div></div>
 <div class="ttc" id="anamespaceautopas_1_1utils_1_1ArrayUtils_html_a0346f7b6c9ecf44ec6aa5f5c666d8c9a"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ArrayUtils.html#a0346f7b6c9ecf44ec6aa5f5c666d8c9a">autopas::utils::ArrayUtils::to_string</a></div><div class="ttdeci">std::string to_string(T &amp;&amp;a, const std::string &amp;delimiter=&quot;, &quot;, const std::array&lt; std::string, 2 &gt; &amp;surround={&quot;[&quot;, &quot;]&quot;})</div><div class="ttdoc">Generates a string representation of a container which fulfills the Container requirement (provide cb...</div><div class="ttdef"><b>Definition:</b> ArrayUtils.h:41</div></div>
-<div class="ttc" id="aclassautopas_1_1SlicedLockBasedTraversal_html"><div class="ttname"><a href="classautopas_1_1SlicedLockBasedTraversal.html">autopas::SlicedLockBasedTraversal</a></div><div class="ttdoc">This class provides the sliced traversal.</div><div class="ttdef"><b>Definition:</b> SlicedLockBasedTraversal.h:35</div></div>
+<div class="ttc" id="aclassautopas_1_1SlicedLockBasedTraversal_html"><div class="ttname"><a href="classautopas_1_1SlicedLockBasedTraversal.html">autopas::SlicedLockBasedTraversal</a></div><div class="ttdoc">This class provides the sliced traversal.</div><div class="ttdef"><b>Definition:</b> SlicedLockBasedTraversal.h:37</div></div>
 <div class="ttc" id="aLogger_8h_html_ab5eef0a7030352f281056d3ee7f86575"><div class="ttname"><a href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a></div><div class="ttdeci">#define AutoPasLog(lvl, fmt,...)</div><div class="ttdoc">Macro for logging providing common meta information without filename.</div><div class="ttdef"><b>Definition:</b> Logger.h:42</div></div>
-<div class="ttc" id="aclassautopas_1_1SlicedLockBasedTraversal_html_ab80f331ac4e345a88794f62c31bbfdf6"><div class="ttname"><a href="classautopas_1_1SlicedLockBasedTraversal.html#ab80f331ac4e345a88794f62c31bbfdf6">autopas::SlicedLockBasedTraversal::slicedTraversal</a></div><div class="ttdeci">void slicedTraversal(LoopBody &amp;&amp;loopBody)</div><div class="ttdoc">The main traversal of the sliced traversal.</div><div class="ttdef"><b>Definition:</b> SlicedLockBasedTraversal.h:70</div></div>
+<div class="ttc" id="aclassautopas_1_1SlicedLockBasedTraversal_html_ab80f331ac4e345a88794f62c31bbfdf6"><div class="ttname"><a href="classautopas_1_1SlicedLockBasedTraversal.html#ab80f331ac4e345a88794f62c31bbfdf6">autopas::SlicedLockBasedTraversal::slicedTraversal</a></div><div class="ttdeci">void slicedTraversal(LoopBody &amp;&amp;loopBody)</div><div class="ttdoc">The main traversal of the sliced traversal.</div><div class="ttdef"><b>Definition:</b> SlicedLockBasedTraversal.h:72</div></div>
 <div class="ttc" id="aThreeDimensionalMapping_8h_html"><div class="ttname"><a href="ThreeDimensionalMapping_8h.html">ThreeDimensionalMapping.h</a></div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleCell_html"><div class="ttname"><a href="classautopas_1_1ParticleCell.html">autopas::ParticleCell</a></div><div class="ttdoc">Class for Cells of Particles.</div><div class="ttdef"><b>Definition:</b> ParticleCell.h:48</div></div>
 <div class="ttc" id="anamespaceautopas_html_a385797c464a683f32da2d4a43ab53220"><div class="ttname"><a href="namespaceautopas.html#a385797c464a683f32da2d4a43ab53220">autopas::autopas_get_max_threads</a></div><div class="ttdeci">int autopas_get_max_threads()</div><div class="ttdoc">Dummy for omp_get_max_threads() when no OpenMP is available.</div><div class="ttdef"><b>Definition:</b> WrapOpenMP.h:116</div></div>

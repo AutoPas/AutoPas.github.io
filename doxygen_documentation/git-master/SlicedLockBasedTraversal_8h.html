@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-165b477</span>
+   &#160;<span id="projectnumber">0.1.0-2018056</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -104,7 +104,8 @@ $(function() {
 <div class="title">SlicedLockBasedTraversal.h File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="SlicedBasedTraversal_8h_source.html">autopas/containers/cellPairTraversals/SlicedBasedTraversal.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;numeric&gt;</code><br />
+<code>#include &quot;<a class="el" href="SlicedBasedTraversal_8h_source.html">autopas/containers/cellPairTraversals/SlicedBasedTraversal.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ThreeDimensionalMapping_8h_source.html">autopas/utils/ThreeDimensionalMapping.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Timer_8h_source.html">autopas/utils/Timer.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="WrapOpenMP_8h_source.html">autopas/utils/WrapOpenMP.h</a>&quot;</code><br />
@@ -113,44 +114,45 @@ Include dependency graph for SlicedLockBasedTraversal.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="SlicedLockBasedTraversal_8h__incl.png" border="0" usemap="#autopas_2containers_2cellPairTraversals_2SlicedLockBasedTraversal_8h" alt=""/></div>
 <map name="autopas_2containers_2cellPairTraversals_2SlicedLockBasedTraversal_8h" id="autopas_2containers_2cellPairTraversals_2SlicedLockBasedTraversal_8h">
-<area shape="rect" title=" " alt="" coords="1133,5,1325,61"/>
-<area shape="rect" href="SlicedBasedTraversal_8h.html" title=" " alt="" coords="1089,109,1252,165"/>
-<area shape="rect" href="ThreeDimensionalMapping_8h.html" title=" " alt="" coords="970,221,1174,262"/>
-<area shape="rect" href="Timer_8h.html" title=" " alt="" coords="1198,228,1341,255"/>
-<area shape="rect" href="WrapOpenMP_8h.html" title=" " alt="" coords="1365,228,1555,255"/>
-<area shape="rect" href="CellPairTraversal_8h.html" title=" " alt="" coords="753,213,887,269"/>
-<area shape="rect" href="DataLayoutConverter_8h_source.html" title=" " alt="" coords="62,317,229,359"/>
-<area shape="rect" title=" " alt="" coords="1048,795,1099,821"/>
-<area shape="rect" title=" " alt="" coords="587,795,645,821"/>
-<area shape="rect" href="TraversalInterface_8h.html" title=" " alt="" coords="348,317,489,359"/>
-<area shape="rect" href="DataLayoutOption_8h.html" title=" " alt="" coords="5,407,189,448"/>
-<area shape="rect" href="TraversalOption_8h.html" title=" " alt="" coords="214,407,386,448"/>
-<area shape="rect" title=" " alt="" coords="410,414,521,441"/>
-<area shape="rect" title=" " alt="" coords="237,869,277,896"/>
-<area shape="rect" href="Option_8h.html" title=" " alt="" coords="54,496,221,523"/>
-<area shape="rect" title=" " alt="" coords="114,571,161,597"/>
-<area shape="rect" title=" " alt="" coords="114,645,169,672"/>
-<area shape="rect" href="StringUtils_8h.html" title=" " alt="" coords="319,571,489,597"/>
-<area shape="rect" title=" " alt="" coords="295,645,353,672"/>
-<area shape="rect" title=" " alt="" coords="377,645,431,672"/>
-<area shape="rect" href="NumberInterval_8h.html" title=" " alt="" coords="555,645,754,672"/>
-<area shape="rect" href="NumberSet_8h.html" title=" " alt="" coords="821,720,920,747"/>
-<area shape="rect" href="NumberSetFinite_8h.html" title=" " alt="" coords="828,645,1036,672"/>
-<area shape="rect" title=" " alt="" coords="955,795,1024,821"/>
-<area shape="rect" href="ExceptionHandler_8h.html" title=" " alt="" coords="856,869,1067,896"/>
-<area shape="rect" href="Random_8h.html" title=" " alt="" coords="721,795,879,821"/>
-<area shape="rect" title=" " alt="" coords="866,944,926,971"/>
-<area shape="rect" href="Logger_8h.html" title=" " alt="" coords="950,944,1101,971"/>
-<area shape="rect" title=" " alt="" coords="632,1019,763,1060"/>
-<area shape="rect" title=" " alt="" coords="787,1019,933,1060"/>
-<area shape="rect" title=" " alt="" coords="958,1019,1093,1060"/>
-<area shape="rect" title=" " alt="" coords="1117,1026,1229,1053"/>
-<area shape="rect" title=" " alt="" coords="1253,1026,1325,1053"/>
-<area shape="rect" title=" " alt="" coords="668,869,743,896"/>
-<area shape="rect" title=" " alt="" coords="767,869,833,896"/>
-<area shape="rect" href="ArrayUtils_8h.html" title=" " alt="" coords="945,720,1034,747"/>
-<area shape="rect" title=" " alt="" coords="1161,325,1244,351"/>
-<area shape="rect" title=" " alt="" coords="1268,325,1329,351"/>
+<area shape="rect" title=" " alt="" coords="568,5,760,61"/>
+<area shape="rect" title=" " alt="" coords="439,124,507,151"/>
+<area shape="rect" href="SlicedBasedTraversal_8h.html" title=" " alt="" coords="583,109,745,165"/>
+<area shape="rect" href="ThreeDimensionalMapping_8h.html" title=" " alt="" coords="154,221,358,262"/>
+<area shape="rect" href="Timer_8h.html" title=" " alt="" coords="913,228,1055,255"/>
+<area shape="rect" href="WrapOpenMP_8h.html" title=" " alt="" coords="698,228,889,255"/>
+<area shape="rect" href="CellPairTraversal_8h.html" title=" " alt="" coords="451,213,586,269"/>
+<area shape="rect" href="DataLayoutConverter_8h_source.html" title=" " alt="" coords="595,317,762,359"/>
+<area shape="rect" title=" " alt="" coords="139,795,189,821"/>
+<area shape="rect" title=" " alt="" coords="1136,795,1195,821"/>
+<area shape="rect" href="TraversalInterface_8h.html" title=" " alt="" coords="429,317,571,359"/>
+<area shape="rect" href="DataLayoutOption_8h.html" title=" " alt="" coords="585,407,769,448"/>
+<area shape="rect" href="TraversalOption_8h.html" title=" " alt="" coords="251,407,423,448"/>
+<area shape="rect" title=" " alt="" coords="447,414,558,441"/>
+<area shape="rect" title=" " alt="" coords="487,869,527,896"/>
+<area shape="rect" href="Option_8h.html" title=" " alt="" coords="293,496,459,523"/>
+<area shape="rect" title=" " alt="" coords="381,571,427,597"/>
+<area shape="rect" title=" " alt="" coords="315,645,370,672"/>
+<area shape="rect" href="StringUtils_8h.html" title=" " alt="" coords="621,571,792,597"/>
+<area shape="rect" title=" " alt="" coords="677,645,736,672"/>
+<area shape="rect" title=" " alt="" coords="760,645,813,672"/>
+<area shape="rect" href="NumberInterval_8h.html" title=" " alt="" coords="837,645,1035,672"/>
+<area shape="rect" href="NumberSet_8h.html" title=" " alt="" coords="899,720,997,747"/>
+<area shape="rect" href="NumberSetFinite_8h.html" title=" " alt="" coords="445,645,653,672"/>
+<area shape="rect" title=" " alt="" coords="595,795,664,821"/>
+<area shape="rect" href="ExceptionHandler_8h.html" title=" " alt="" coords="1037,869,1248,896"/>
+<area shape="rect" href="Random_8h.html" title=" " alt="" coords="902,795,1061,821"/>
+<area shape="rect" title=" " alt="" coords="1047,944,1107,971"/>
+<area shape="rect" href="Logger_8h.html" title=" " alt="" coords="1131,944,1282,971"/>
+<area shape="rect" title=" " alt="" coords="813,1019,944,1060"/>
+<area shape="rect" title=" " alt="" coords="968,1019,1115,1060"/>
+<area shape="rect" title=" " alt="" coords="1139,1019,1274,1060"/>
+<area shape="rect" title=" " alt="" coords="1299,1026,1411,1053"/>
+<area shape="rect" title=" " alt="" coords="1435,1026,1507,1053"/>
+<area shape="rect" title=" " alt="" coords="849,869,924,896"/>
+<area shape="rect" title=" " alt="" coords="949,869,1014,896"/>
+<area shape="rect" href="ArrayUtils_8h.html" title=" " alt="" coords="545,720,634,747"/>
+<area shape="rect" title=" " alt="" coords="5,325,88,351"/>
+<area shape="rect" title=" " alt="" coords="1312,325,1373,351"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
