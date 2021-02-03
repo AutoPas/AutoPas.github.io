@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-2018056</span>
+   &#160;<span id="projectnumber">0.1.0-b6516b4</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -182,7 +182,7 @@ $(function() {
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            _allowedLoadEstimators, _allowedDataLayouts, _allowedNewton3Options, _maxEvidence, _relativeOptimumRange,</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;            _maxTuningPhasesWithoutTest, _relativeBlacklistRange, _evidenceFirstPrediction, _acquisitionFunctionOption,</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;            _extrapolationMethodOption, _mpiStrategyOption, _autopasMPICommunicator)),</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        _selectorStrategy, _tuningInterval, _numSamples);</div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        _selectorStrategy, _tuningInterval, _numSamples, _outputSuffix);</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    _logicHandler = std::make_unique&lt;std::remove_reference_t&lt;decltype(*_logicHandler)&gt;&gt;(*(_autoTuner.get()),</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                                                                                        _verletRebuildFrequency);</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;  }</div>
@@ -393,7 +393,7 @@ $(function() {
 <div class="line"><a name="l00621"></a><span class="lineno">  621</span>&#160;    AutoPas::_allowedNewton3Options = allowedNewton3Options;</div>
 <div class="line"><a name="l00622"></a><span class="lineno">  622</span>&#160;  }</div>
 <div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160; </div>
-<div class="line"><a name="l00628"></a><span class="lineno"><a class="line" href="classautopas_1_1AutoPas.html#a00c9a1303bb05424adb7293bcfab83ff">  628</a></span>&#160;  [[nodiscard]] <a class="code" href="classautopas_1_1Configuration.html">Configuration</a> <a class="code" href="classautopas_1_1AutoPas.html#a00c9a1303bb05424adb7293bcfab83ff">getCurrentConfig</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _autoTuner-&gt;getCurrentConfig(); }</div>
+<div class="line"><a name="l00628"></a><span class="lineno"><a class="line" href="classautopas_1_1AutoPas.html#abb0a491c65e9129acb4bfa35e385c08f">  628</a></span>&#160;  [[nodiscard]] <span class="keyword">const</span> <a class="code" href="classautopas_1_1Configuration.html">Configuration</a> &amp;<a class="code" href="classautopas_1_1AutoPas.html#abb0a491c65e9129acb4bfa35e385c08f">getCurrentConfig</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _autoTuner-&gt;getCurrentConfig(); }</div>
 <div class="line"><a name="l00629"></a><span class="lineno">  629</span>&#160; </div>
 <div class="line"><a name="l00634"></a><span class="lineno"><a class="line" href="classautopas_1_1AutoPas.html#a3a4ccb760130bdaf4bbd1985ab395b68">  634</a></span>&#160;  [[nodiscard]] TuningStrategyOption <a class="code" href="classautopas_1_1AutoPas.html#a3a4ccb760130bdaf4bbd1985ab395b68">getTuningStrategyOption</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _tuningStrategyOption; }</div>
 <div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160; </div>
@@ -412,57 +412,61 @@ $(function() {
 <div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;  MPI_Comm getMPICommunicator() { <span class="keywordflow">return</span> _autopasMPICommunicator; }</div>
 <div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160; </div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;  std::array&lt;double, 3&gt; _boxMin{0, 0, 0};</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;  std::array&lt;double, 3&gt; _boxMax{0, 0, 0};</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;  <span class="keywordtype">double</span> _cutoff{1.0};</div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;  <span class="keywordtype">double</span> _verletSkin{0.2};</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _verletRebuildFrequency{20};</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _verletClusterSize{4};</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _tuningInterval{5000};</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _numSamples{3};</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _maxEvidence{10};</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;  <span class="keywordtype">double</span> _relativeOptimumRange{1.2};</div>
-<div class="line"><a name="l00712"></a><span class="lineno">  712</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _maxTuningPhasesWithoutTest{5};</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160;  <span class="keywordtype">double</span> _relativeBlacklistRange{0};</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _evidenceFirstPrediction{3};</div>
-<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;  AcquisitionFunctionOption _acquisitionFunctionOption{AcquisitionFunctionOption::upperConfidenceBound};</div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160; </div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160;  ExtrapolationMethodOption _extrapolationMethodOption{ExtrapolationMethodOption::linearRegression};</div>
-<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160; </div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;  TuningStrategyOption _tuningStrategyOption{TuningStrategyOption::fullSearch};</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160; </div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;  SelectorStrategyOption _selectorStrategy{SelectorStrategyOption::fastestAbs};</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160; </div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160;  std::set&lt;ContainerOption&gt; _allowedContainers{ContainerOption::getMostOptions()};</div>
-<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160; </div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160;  std::set&lt;TraversalOption&gt; _allowedTraversals{TraversalOption::getMostOptions()};</div>
-<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160; </div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;  std::set&lt;DataLayoutOption&gt; _allowedDataLayouts{DataLayoutOption::getMostOptions()};</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160; </div>
-<div class="line"><a name="l00768"></a><span class="lineno">  768</span>&#160;  std::set&lt;Newton3Option&gt; _allowedNewton3Options{Newton3Option::getMostOptions()};</div>
-<div class="line"><a name="l00769"></a><span class="lineno">  769</span>&#160; </div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;  MPIStrategyOption _mpiStrategyOption{MPIStrategyOption::noMPI};</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160; </div>
-<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;  std::unique_ptr&lt;NumberSet&lt;double&gt;&gt; _allowedCellSizeFactors{</div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;      std::make_unique&lt;NumberSetFinite&lt;double&gt;&gt;(std::set&lt;double&gt;({1.}))};</div>
-<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160; </div>
-<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160;<span class="comment">  /***</span></div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160;<span class="comment">   * Load estimation algorithm to be used for efficient parallelisation (only relevant for LCSlicedBalancedTraversal and</span></div>
-<div class="line"><a name="l00783"></a><span class="lineno">  783</span>&#160;<span class="comment">   * VLCSlicedBalancedTraversal).</span></div>
-<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160;<span class="comment">   */</span></div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;  std::set&lt;LoadEstimatorOption&gt; _allowedLoadEstimators{LoadEstimatorOption::getAllOptions()};</div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160; </div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;  std::unique_ptr&lt;autopas::LogicHandler&lt;Particle&gt;&gt; _logicHandler;</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160; </div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;  std::unique_ptr&lt;autopas::AutoTuner&lt;Particle&gt;&gt; _autoTuner;</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160; </div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;  <a class="code" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> _autopasMPICommunicator{AUTOPAS_MPI_COMM_NULL};</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160; </div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;  <span class="keywordtype">bool</span> _externalMPICommunicator{<span class="keyword">false</span>};</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160; </div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;};  <span class="comment">// class AutoPas</span></div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;}  <span class="comment">// namespace autopas</span></div>
+<div class="line"><a name="l00673"></a><span class="lineno"><a class="line" href="classautopas_1_1AutoPas.html#a7fda177450646c9ce68a9bb3174cbd10">  673</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classautopas_1_1AutoPas.html#a7fda177450646c9ce68a9bb3174cbd10">setOutputSuffix</a>(<span class="keyword">const</span> std::string &amp;suffix) { _outputSuffix = suffix; }</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160; </div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;  std::array&lt;double, 3&gt; _boxMin{0, 0, 0};</div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;  std::array&lt;double, 3&gt; _boxMax{0, 0, 0};</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;  <span class="keywordtype">double</span> _cutoff{1.0};</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;  <span class="keywordtype">double</span> _verletSkin{0.2};</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _verletRebuildFrequency{20};</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _verletClusterSize{4};</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _tuningInterval{5000};</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _numSamples{3};</div>
+<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _maxEvidence{10};</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;  <span class="keywordtype">double</span> _relativeOptimumRange{1.2};</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _maxTuningPhasesWithoutTest{5};</div>
+<div class="line"><a name="l00724"></a><span class="lineno">  724</span>&#160;  <span class="keywordtype">double</span> _relativeBlacklistRange{0};</div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _evidenceFirstPrediction{3};</div>
+<div class="line"><a name="l00734"></a><span class="lineno">  734</span>&#160;  AcquisitionFunctionOption _acquisitionFunctionOption{AcquisitionFunctionOption::upperConfidenceBound};</div>
+<div class="line"><a name="l00735"></a><span class="lineno">  735</span>&#160; </div>
+<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160;  ExtrapolationMethodOption _extrapolationMethodOption{ExtrapolationMethodOption::linearRegression};</div>
+<div class="line"><a name="l00741"></a><span class="lineno">  741</span>&#160; </div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;  TuningStrategyOption _tuningStrategyOption{TuningStrategyOption::fullSearch};</div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160; </div>
+<div class="line"><a name="l00752"></a><span class="lineno">  752</span>&#160;  SelectorStrategyOption _selectorStrategy{SelectorStrategyOption::fastestAbs};</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160; </div>
+<div class="line"><a name="l00758"></a><span class="lineno">  758</span>&#160;  std::set&lt;ContainerOption&gt; _allowedContainers{ContainerOption::getMostOptions()};</div>
+<div class="line"><a name="l00759"></a><span class="lineno">  759</span>&#160; </div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;  std::set&lt;TraversalOption&gt; _allowedTraversals{TraversalOption::getMostOptions()};</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160; </div>
+<div class="line"><a name="l00770"></a><span class="lineno">  770</span>&#160;  std::set&lt;DataLayoutOption&gt; _allowedDataLayouts{DataLayoutOption::getMostOptions()};</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160; </div>
+<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160;  std::set&lt;Newton3Option&gt; _allowedNewton3Options{Newton3Option::getMostOptions()};</div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160; </div>
+<div class="line"><a name="l00780"></a><span class="lineno">  780</span>&#160;  MPIStrategyOption _mpiStrategyOption{MPIStrategyOption::noMPI};</div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160; </div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;  std::unique_ptr&lt;NumberSet&lt;double&gt;&gt; _allowedCellSizeFactors{</div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;      std::make_unique&lt;NumberSetFinite&lt;double&gt;&gt;(std::set&lt;double&gt;({1.}))};</div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160; </div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;<span class="comment">  /***</span></div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;<span class="comment">   * Load estimation algorithm to be used for efficient parallelisation (only relevant for LCSlicedBalancedTraversal and</span></div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;<span class="comment">   * VLCSlicedBalancedTraversal).</span></div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;<span class="comment">   */</span></div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;  std::set&lt;LoadEstimatorOption&gt; _allowedLoadEstimators{LoadEstimatorOption::getAllOptions()};</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160; </div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;  std::unique_ptr&lt;autopas::LogicHandler&lt;Particle&gt;&gt; _logicHandler;</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160; </div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;  std::unique_ptr&lt;autopas::AutoTuner&lt;Particle&gt;&gt; _autoTuner;</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160; </div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;  <a class="code" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> _autopasMPICommunicator{AUTOPAS_MPI_COMM_NULL};</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160; </div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;  <span class="keywordtype">bool</span> _externalMPICommunicator{<span class="keyword">false</span>};</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160; </div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;  std::string _outputSuffix{<span class="stringliteral">&quot;&quot;</span>};</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160; </div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;};  <span class="comment">// class AutoPas</span></div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;}  <span class="comment">// namespace autopas</span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aLogicHandler_8h_html"><div class="ttname"><a href="LogicHandler_8h.html">LogicHandler.h</a></div></div>
 <div class="ttc" id="aclassautopas_1_1AutoPas_html_a3d9517b8f1df382392df4c469c019f67"><div class="ttname"><a href="classautopas_1_1AutoPas.html#a3d9517b8f1df382392df4c469c019f67">autopas::AutoPas::const_iterator_t</a></div><div class="ttdeci">typename autopas::IteratorTraits&lt; Particle &gt;::const_iterator_t const_iterator_t</div><div class="ttdoc">Define the const_iterator_t for simple use, also from the outside.</div><div class="ttdef"><b>Definition:</b> AutoPas.h:53</div></div>
@@ -473,6 +477,7 @@ $(function() {
 <div class="ttc" id="anamespaceautopas_html_a520fefd51e4555074cd16e7c3fd19c42ac7100cec3dab7c9f031d06e44cdd4993"><div class="ttname"><a href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42ac7100cec3dab7c9f031d06e44cdd4993">autopas::haloOnly</a></div><div class="ttdoc">Iterate only over halo particles.</div><div class="ttdef"><b>Definition:</b> ParticleIteratorInterface.h:18</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoPas_html_adffdc192ad93bfca2923b8e8960ba28e"><div class="ttname"><a href="classautopas_1_1AutoPas.html#adffdc192ad93bfca2923b8e8960ba28e">autopas::AutoPas::getVerletSkin</a></div><div class="ttdeci">double getVerletSkin() const</div><div class="ttdoc">Get length added to the cutoff for the Verlet lists' skin.</div><div class="ttdef"><b>Definition:</b> AutoPas.h:380</div></div>
 <div class="ttc" id="aclassautopas_1_1Functor_html_aaa2af22908c3b6846a95a91a26e30093"><div class="ttname"><a href="classautopas_1_1Functor.html#aaa2af22908c3b6846a95a91a26e30093">autopas::Functor::getCutoff</a></div><div class="ttdeci">double getCutoff() const</div><div class="ttdoc">Getter for the functor's cutoff.</div><div class="ttdef"><b>Definition:</b> Functor.h:302</div></div>
+<div class="ttc" id="aclassautopas_1_1AutoPas_html_abb0a491c65e9129acb4bfa35e385c08f"><div class="ttname"><a href="classautopas_1_1AutoPas.html#abb0a491c65e9129acb4bfa35e385c08f">autopas::AutoPas::getCurrentConfig</a></div><div class="ttdeci">const Configuration &amp; getCurrentConfig() const</div><div class="ttdoc">Getter for the currently selected configuration.</div><div class="ttdef"><b>Definition:</b> AutoPas.h:628</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoPas_html_ae9c5195c9f5c62414750dd84cee6602a"><div class="ttname"><a href="classautopas_1_1AutoPas.html#ae9c5195c9f5c62414750dd84cee6602a">autopas::AutoPas::getAllowedLoadEstimators</a></div><div class="ttdeci">const std::set&lt; LoadEstimatorOption &gt; &amp; getAllowedLoadEstimators() const</div><div class="ttdoc">Get the list of allowed load estimation algorithms.</div><div class="ttdef"><b>Definition:</b> AutoPas.h:553</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoPas_html_a181ac9a8f20037ffddcc896774cecf19"><div class="ttname"><a href="classautopas_1_1AutoPas.html#a181ac9a8f20037ffddcc896774cecf19">autopas::AutoPas::cbegin</a></div><div class="ttdeci">const_iterator_t cbegin(IteratorBehavior behavior=IteratorBehavior::haloAndOwned) const</div><div class="ttdoc">Iterate over all particles by using for(auto iter = autoPas.begin(); iter.isValid(); ++iter)</div><div class="ttdef"><b>Definition:</b> AutoPas.h:242</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoPas_html_a72dd36154513c16eefe676e976a4b6a3"><div class="ttname"><a href="classautopas_1_1AutoPas.html#a72dd36154513c16eefe676e976a4b6a3">autopas::AutoPas::begin</a></div><div class="ttdeci">iterator_t begin(IteratorBehavior behavior=IteratorBehavior::haloAndOwned)</div><div class="ttdoc">Iterate over all particles by using for(auto iter = autoPas.begin(); iter.isValid(); ++iter)</div><div class="ttdef"><b>Definition:</b> AutoPas.h:226</div></div>
@@ -484,7 +489,6 @@ $(function() {
 <div class="ttc" id="anamespaceautopas_html_a520fefd51e4555074cd16e7c3fd19c42a30bdce7517eacf5a795a2b165e4a4eb8"><div class="ttname"><a href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42a30bdce7517eacf5a795a2b165e4a4eb8">autopas::ownedOnly</a></div><div class="ttdoc">Iterate only over owned particles.</div><div class="ttdef"><b>Definition:</b> ParticleIteratorInterface.h:22</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoPas_html_a61df6fed7ab1206909f6b52d49ae8fec"><div class="ttname"><a href="classautopas_1_1AutoPas.html#a61df6fed7ab1206909f6b52d49ae8fec">autopas::AutoPas::getRegionIterator</a></div><div class="ttdeci">iterator_t getRegionIterator(std::array&lt; double, 3 &gt; lowerCorner, std::array&lt; double, 3 &gt; higherCorner, IteratorBehavior behavior=IteratorBehavior::haloAndOwned)</div><div class="ttdoc">iterate over all particles in a specified region for(auto iter = container.getRegionIterator(lowCorne...</div><div class="ttdef"><b>Definition:</b> AutoPas.h:261</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoPas_html_aec92ce60599389baf90e25f3c1836f01"><div class="ttname"><a href="classautopas_1_1AutoPas.html#aec92ce60599389baf90e25f3c1836f01">autopas::AutoPas::getCutoff</a></div><div class="ttdeci">double getCutoff() const</div><div class="ttdoc">Get cutoff radius.</div><div class="ttdef"><b>Definition:</b> AutoPas.h:332</div></div>
-<div class="ttc" id="aclassautopas_1_1AutoPas_html_a00c9a1303bb05424adb7293bcfab83ff"><div class="ttname"><a href="classautopas_1_1AutoPas.html#a00c9a1303bb05424adb7293bcfab83ff">autopas::AutoPas::getCurrentConfig</a></div><div class="ttdeci">Configuration getCurrentConfig() const</div><div class="ttdoc">Getter for the currently selected configuration.</div><div class="ttdef"><b>Definition:</b> AutoPas.h:628</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoPas_html_a3a4ccb760130bdaf4bbd1985ab395b68"><div class="ttname"><a href="classautopas_1_1AutoPas.html#a3a4ccb760130bdaf4bbd1985ab395b68">autopas::AutoPas::getTuningStrategyOption</a></div><div class="ttdeci">TuningStrategyOption getTuningStrategyOption() const</div><div class="ttdoc">Getter for the tuning strategy option.</div><div class="ttdef"><b>Definition:</b> AutoPas.h:634</div></div>
 <div class="ttc" id="anamespaceautopas_html_a520fefd51e4555074cd16e7c3fd19c42aa79bf7e94374210cd4bdb537ab8f66ad"><div class="ttname"><a href="namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42aa79bf7e94374210cd4bdb537ab8f66ad">autopas::haloOwnedAndDummy</a></div><div class="ttdoc">Iterate over both halo and owned particles and also dummy particles.</div><div class="ttdef"><b>Definition:</b> ParticleIteratorInterface.h:30</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoPas_html_aa4f698155519b2dc75f7a4ec800b3763"><div class="ttname"><a href="classautopas_1_1AutoPas.html#aa4f698155519b2dc75f7a4ec800b3763">autopas::AutoPas::iteratePairwise</a></div><div class="ttdeci">bool iteratePairwise(Functor *f)</div><div class="ttdoc">Function to iterate over all pairs of particles in the container.</div><div class="ttdef"><b>Definition:</b> AutoPas.h:208</div></div>
@@ -564,6 +568,7 @@ $(function() {
 <div class="ttc" id="aclassautopas_1_1AutoPas_html_ac43ab1152c273f005be629d9f76269f8"><div class="ttname"><a href="classautopas_1_1AutoPas.html#ac43ab1152c273f005be629d9f76269f8">autopas::AutoPas::getSelectorStrategy</a></div><div class="ttdeci">SelectorStrategyOption getSelectorStrategy() const</div><div class="ttdoc">Get the selector configuration strategy.</div><div class="ttdef"><b>Definition:</b> AutoPas.h:540</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoPas_html_aac0ec919a9f8de036bde63079a8a83de"><div class="ttname"><a href="classautopas_1_1AutoPas.html#aac0ec919a9f8de036bde63079a8a83de">autopas::AutoPas::getExtrapolationMethodOption</a></div><div class="ttdeci">ExtrapolationMethodOption getExtrapolationMethodOption() const</div><div class="ttdoc">Get extrapolation method for the prediction of the configuration performance.</div><div class="ttdef"><b>Definition:</b> AutoPas.h:526</div></div>
 <div class="ttc" id="aclassautopas_1_1Configuration_html"><div class="ttname"><a href="classautopas_1_1Configuration.html">autopas::Configuration</a></div><div class="ttdoc">Class containing multiple options that form an algorithm configuration for the pairwise iteration.</div><div class="ttdef"><b>Definition:</b> Configuration.h:23</div></div>
+<div class="ttc" id="aclassautopas_1_1AutoPas_html_a7fda177450646c9ce68a9bb3174cbd10"><div class="ttname"><a href="classautopas_1_1AutoPas.html#a7fda177450646c9ce68a9bb3174cbd10">autopas::AutoPas::setOutputSuffix</a></div><div class="ttdeci">void setOutputSuffix(const std::string &amp;suffix)</div><div class="ttdoc">Suffix for all output files produced by this instance of AutoPas, e.g.</div><div class="ttdef"><b>Definition:</b> AutoPas.h:673</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoPas_html_a3bb1e75c5e3e5de84d13e356a1362e42"><div class="ttname"><a href="classautopas_1_1AutoPas.html#a3bb1e75c5e3e5de84d13e356a1362e42">autopas::AutoPas::getMaxEvidence</a></div><div class="ttdeci">unsigned int getMaxEvidence() const</div><div class="ttdoc">Get maximum number of evidence for tuning.</div><div class="ttdef"><b>Definition:</b> AutoPas.h:442</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoPas_html_a86439a37c2c7d6e8529acbcaef918509"><div class="ttname"><a href="classautopas_1_1AutoPas.html#a86439a37c2c7d6e8529acbcaef918509">autopas::AutoPas::addOrUpdateHaloParticle</a></div><div class="ttdeci">void addOrUpdateHaloParticle(const Particle &amp;haloParticle)</div><div class="ttdoc">Adds or updates a particle to/in the container that lies in the halo region of the container.</div><div class="ttdef"><b>Definition:</b> AutoPas.h:187</div></div>
 <div class="ttc" id="aclassautopas_1_1utils_1_1ExceptionHandler_html_ae61b9aac49a90a9ff86859c73005ee07"><div class="ttname"><a href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a></div><div class="ttdeci">static void exception(const Exception e)</div><div class="ttdoc">Handle an exception derived by std::exception.</div><div class="ttdef"><b>Definition:</b> ExceptionHandler.h:65</div></div>

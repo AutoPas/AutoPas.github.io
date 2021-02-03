@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-2018056</span>
+   &#160;<span id="projectnumber">0.1.0-b6516b4</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -141,6 +141,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a00914b38297aa034f1b727afa2fa39f0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Configuration.html#a00914b38297aa034f1b727afa2fa39f0">toString</a> () const</td></tr>
 <tr class="memdesc:a00914b38297aa034f1b727afa2fa39f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns string representation in JSON style of the configuration object.  <a href="classautopas_1_1Configuration.html#a00914b38297aa034f1b727afa2fa39f0">More...</a><br /></td></tr>
 <tr class="separator:a00914b38297aa034f1b727afa2fa39f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d629bf64b43da517d40d83d8e570dbc"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Configuration.html#a1d629bf64b43da517d40d83d8e570dbc">getCSVHeader</a> () const</td></tr>
+<tr class="memdesc:a1d629bf64b43da517d40d83d8e570dbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a csv header containing all keys from the <a class="el" href="classautopas_1_1Configuration.html#a00914b38297aa034f1b727afa2fa39f0" title="Returns string representation in JSON style of the configuration object.">toString()</a> method.  <a href="classautopas_1_1Configuration.html#a1d629bf64b43da517d40d83d8e570dbc">More...</a><br /></td></tr>
+<tr class="separator:a1d629bf64b43da517d40d83d8e570dbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af71245ac5b773fa9dd269210814ca113"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Configuration.html#af71245ac5b773fa9dd269210814ca113">getCSVLine</a> () const</td></tr>
+<tr class="memdesc:af71245ac5b773fa9dd269210814ca113"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a csv representation containing all values from the <a class="el" href="classautopas_1_1Configuration.html#a00914b38297aa034f1b727afa2fa39f0" title="Returns string representation in JSON style of the configuration object.">toString()</a> method.  <a href="classautopas_1_1Configuration.html#af71245ac5b773fa9dd269210814ca113">More...</a><br /></td></tr>
+<tr class="separator:af71245ac5b773fa9dd269210814ca113"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3dec7a71096a98368a92f4c255cffc3b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Configuration.html#a3dec7a71096a98368a92f4c255cffc3b">hasValidValues</a> () const</td></tr>
 <tr class="memdesc:a3dec7a71096a98368a92f4c255cffc3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the configuration has been initialized with valid values or as an invalid one.  <a href="classautopas_1_1Configuration.html#a3dec7a71096a98368a92f4c255cffc3b">More...</a><br /></td></tr>
 <tr class="separator:a3dec7a71096a98368a92f4c255cffc3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -277,6 +283,62 @@ double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cl
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a1d629bf64b43da517d40d83d8e570dbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d629bf64b43da517d40d83d8e570dbc">&#9670;&nbsp;</a></span>getCSVHeader()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string autopas::Configuration::getCSVHeader </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generate a csv header containing all keys from the <a class="el" href="classautopas_1_1Configuration.html#a00914b38297aa034f1b727afa2fa39f0" title="Returns string representation in JSON style of the configuration object.">toString()</a> method. </p>
+<dl class="section return"><dt>Returns</dt><dd>Contains the header. </dd></dl>
+
+</div>
+</div>
+<a id="af71245ac5b773fa9dd269210814ca113"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af71245ac5b773fa9dd269210814ca113">&#9670;&nbsp;</a></span>getCSVLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string autopas::Configuration::getCSVLine </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generate a csv representation containing all values from the <a class="el" href="classautopas_1_1Configuration.html#a00914b38297aa034f1b727afa2fa39f0" title="Returns string representation in JSON style of the configuration object.">toString()</a> method. </p>
+<dl class="section return"><dt>Returns</dt><dd>String representing the current configuration. </dd></dl>
+
+</div>
+</div>
 <a id="a3dec7a71096a98368a92f4c255cffc3b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3dec7a71096a98368a92f4c255cffc3b">&#9670;&nbsp;</a></span>hasValidValues()</h2>
 

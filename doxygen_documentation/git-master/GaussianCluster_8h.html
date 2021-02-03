@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-2018056</span>
+   &#160;<span id="projectnumber">0.1.0-b6516b4</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -106,57 +106,58 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &lt;Eigen/Core&gt;</code><br />
 <code>#include &lt;utility&gt;</code><br />
-<code>#include &quot;<a class="el" href="GaussianClusterLogger_8h_source.html">GaussianClusterLogger.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="GaussianProcess_8h_source.html">GaussianProcess.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="AcquisitionFunctionOption_8h_source.html">autopas/options/AcquisitionFunctionOption.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GaussianModelTypes_8h_source.html">autopas/selectors/tuningStrategy/GaussianModel/GaussianModelTypes.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GaussianProcess_8h_source.html">autopas/selectors/tuningStrategy/GaussianModel/GaussianProcess.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ExceptionHandler_8h_source.html">autopas/utils/ExceptionHandler.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Math_8h_source.html">autopas/utils/Math.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="NumberSet_8h_source.html">autopas/utils/NumberSet.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Random_8h_source.html">autopas/utils/Random.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="WrapOpenMP_8h_source.html">autopas/utils/WrapOpenMP.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="GaussianClusterLogger_8h_source.html">autopas/utils/logging/GaussianClusterLogger.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for GaussianCluster.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="GaussianCluster_8h__incl.png" border="0" usemap="#autopas_2selectors_2tuningStrategy_2GaussianModel_2GaussianCluster_8h" alt=""/></div>
 <map name="autopas_2selectors_2tuningStrategy_2GaussianModel_2GaussianCluster_8h" id="autopas_2selectors_2tuningStrategy_2GaussianModel_2GaussianCluster_8h">
-<area shape="rect" title=" " alt="" coords="843,5,1007,61"/>
-<area shape="rect" title=" " alt="" coords="167,423,252,449"/>
-<area shape="rect" title=" " alt="" coords="259,341,311,367"/>
-<area shape="rect" href="GaussianClusterLogger_8h.html" title=" " alt="" coords="304,109,472,136"/>
-<area shape="rect" href="GaussianProcess_8h.html" title=" " alt="" coords="751,184,886,211"/>
-<area shape="rect" href="AcquisitionFunctionOption_8h.html" title=" " alt="" coords="569,333,751,375"/>
-<area shape="rect" href="NumberSet_8h.html" title=" " alt="" coords="683,647,781,673"/>
-<area shape="rect" href="ExceptionHandler_8h.html" title=" " alt="" coords="939,796,1149,823"/>
-<area shape="rect" href="Random_8h.html" title=" " alt="" coords="1107,721,1266,748"/>
-<area shape="rect" href="Math_8h.html" title=" " alt="" coords="776,341,915,367"/>
-<area shape="rect" href="WrapOpenMP_8h.html" title=" " alt="" coords="1193,259,1383,285"/>
-<area shape="rect" title=" " alt="" coords="336,184,440,211"/>
-<area shape="rect" href="GaussianModelTypes_8h.html" title=" " alt="" coords="72,259,229,285"/>
-<area shape="rect" title=" " alt="" coords="93,341,171,367"/>
-<area shape="rect" href="AcquisitionFunction_8h.html" title=" " alt="" coords="717,259,864,285"/>
-<area shape="rect" href="GaussianHyperparameters_8h.html" title=" " alt="" coords="405,259,592,285"/>
-<area shape="rect" title=" " alt="" coords="316,796,356,823"/>
-<area shape="rect" href="Option_8h.html" title=" " alt="" coords="399,423,566,449"/>
-<area shape="rect" title=" " alt="" coords="593,497,639,524"/>
-<area shape="rect" title=" " alt="" coords="94,572,149,599"/>
-<area shape="rect" href="StringUtils_8h.html" title=" " alt="" coords="397,497,568,524"/>
-<area shape="rect" title=" " alt="" coords="856,572,915,599"/>
-<area shape="rect" title=" " alt="" coords="456,572,509,599"/>
-<area shape="rect" title=" " alt="" coords="780,721,839,748"/>
-<area shape="rect" href="NumberInterval_8h.html" title=" " alt="" coords="533,572,731,599"/>
-<area shape="rect" href="NumberSetFinite_8h.html" title=" " alt="" coords="173,572,381,599"/>
-<area shape="rect" title=" " alt="" coords="492,721,561,748"/>
-<area shape="rect" title=" " alt="" coords="949,871,1009,897"/>
-<area shape="rect" href="Logger_8h.html" title=" " alt="" coords="1033,871,1183,897"/>
-<area shape="rect" title=" " alt="" coords="715,945,845,987"/>
-<area shape="rect" title=" " alt="" coords="869,945,1016,987"/>
-<area shape="rect" title=" " alt="" coords="1041,945,1175,987"/>
-<area shape="rect" title=" " alt="" coords="1200,953,1312,979"/>
-<area shape="rect" title=" " alt="" coords="1336,953,1408,979"/>
-<area shape="rect" title=" " alt="" coords="1173,796,1248,823"/>
-<area shape="rect" title=" " alt="" coords="1273,796,1338,823"/>
-<area shape="rect" href="ArrayUtils_8h.html" title=" " alt="" coords="291,647,381,673"/>
-<area shape="rect" title=" " alt="" coords="311,721,361,748"/>
+<area shape="rect" title=" " alt="" coords="671,5,835,61"/>
+<area shape="rect" title=" " alt="" coords="5,467,91,493"/>
+<area shape="rect" title=" " alt="" coords="221,385,273,411"/>
+<area shape="rect" href="AcquisitionFunctionOption_8h.html" title=" " alt="" coords="773,377,955,419"/>
+<area shape="rect" href="NumberSet_8h.html" title=" " alt="" coords="864,691,963,717"/>
+<area shape="rect" href="ExceptionHandler_8h.html" title=" " alt="" coords="1167,840,1377,867"/>
+<area shape="rect" href="Random_8h.html" title=" " alt="" coords="999,765,1158,792"/>
+<area shape="rect" href="GaussianModelTypes_8h.html" title=" " alt="" coords="101,199,265,255"/>
+<area shape="rect" href="GaussianProcess_8h.html" title=" " alt="" coords="671,199,835,255"/>
+<area shape="rect" href="Math_8h.html" title=" " alt="" coords="559,385,697,411"/>
+<area shape="rect" href="WrapOpenMP_8h.html" title=" " alt="" coords="1285,303,1475,329"/>
+<area shape="rect" href="GaussianClusterLogger_8h.html" title=" " alt="" coords="341,109,513,151"/>
+<area shape="rect" title=" " alt="" coords="365,840,405,867"/>
+<area shape="rect" href="Option_8h.html" title=" " alt="" coords="258,467,425,493"/>
+<area shape="rect" title=" " alt="" coords="318,541,365,568"/>
+<area shape="rect" title=" " alt="" coords="267,616,322,643"/>
+<area shape="rect" href="StringUtils_8h.html" title=" " alt="" coords="389,541,560,568"/>
+<area shape="rect" title=" " alt="" coords="133,616,192,643"/>
+<area shape="rect" title=" " alt="" coords="448,616,501,643"/>
+<area shape="rect" title=" " alt="" coords="515,765,573,792"/>
+<area shape="rect" href="NumberInterval_8h.html" title=" " alt="" coords="758,616,957,643"/>
+<area shape="rect" href="NumberSetFinite_8h.html" title=" " alt="" coords="525,616,733,643"/>
+<area shape="rect" title=" " alt="" coords="780,765,849,792"/>
+<area shape="rect" title=" " alt="" coords="1179,922,1239,949"/>
+<area shape="rect" href="Logger_8h.html" title=" " alt="" coords="1264,915,1405,956"/>
+<area shape="rect" title=" " alt="" coords="941,1004,1072,1045"/>
+<area shape="rect" title=" " alt="" coords="1096,1004,1243,1045"/>
+<area shape="rect" title=" " alt="" coords="1267,1004,1402,1045"/>
+<area shape="rect" title=" " alt="" coords="1427,1011,1539,1038"/>
+<area shape="rect" title=" " alt="" coords="1563,1011,1635,1038"/>
+<area shape="rect" title=" " alt="" coords="963,840,1037,867"/>
+<area shape="rect" title=" " alt="" coords="1062,840,1127,867"/>
+<area shape="rect" href="ArrayUtils_8h.html" title=" " alt="" coords="650,691,739,717"/>
+<area shape="rect" title=" " alt="" coords="669,765,720,792"/>
+<area shape="rect" title=" " alt="" coords="66,303,145,329"/>
+<area shape="rect" href="AcquisitionFunction_8h.html" title=" " alt="" coords="680,303,827,329"/>
+<area shape="rect" href="GaussianHyperparameters_8h.html" title=" " alt="" coords="297,385,484,411"/>
+<area shape="rect" title=" " alt="" coords="375,213,479,240"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
