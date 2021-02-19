@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-40dad5f</span>
+   &#160;<span id="projectnumber">0.1.0-6e14d95</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -132,9 +132,9 @@ Collaboration diagram for autopas::PredictiveTuning:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6a6e633929eba5856a9e574e56800a9d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1PredictiveTuning.html#a6a6e633929eba5856a9e574e56800a9d">PredictiveTuning</a> (const std::set&lt; ContainerOption &gt; &amp;allowedContainerOptions, const std::set&lt; double &gt; &amp;allowedCellSizeFactors, const std::set&lt; TraversalOption &gt; &amp;allowedTraversalOptions, const std::set&lt; <a class="el" href="classautopas_1_1LoadEstimatorOption.html">LoadEstimatorOption</a> &gt; &amp;allowedLoadEstimatorOptions, const std::set&lt; DataLayoutOption &gt; &amp;allowedDataLayoutOptions, const std::set&lt; Newton3Option &gt; &amp;allowedNewton3Options, double relativeOptimum, unsigned int maxTuningIterationsWithoutTest, double relativeRangeForBlacklist, unsigned int testsUntilFirstPrediction, ExtrapolationMethodOption extrapolationMethodOption)</td></tr>
-<tr class="memdesc:a6a6e633929eba5856a9e574e56800a9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classautopas_1_1PredictiveTuning.html" title="In every tuning phase, this strategy makes a prediction about the run time for every configuration.">PredictiveTuning</a> that generates the search space from the allowed options.  <a href="classautopas_1_1PredictiveTuning.html#a6a6e633929eba5856a9e574e56800a9d">More...</a><br /></td></tr>
-<tr class="separator:a6a6e633929eba5856a9e574e56800a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a87cbdbaea401d32f6ccb3b6826dc1d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1PredictiveTuning.html#a2a87cbdbaea401d32f6ccb3b6826dc1d">PredictiveTuning</a> (const std::set&lt; ContainerOption &gt; &amp;allowedContainerOptions, const std::set&lt; double &gt; &amp;allowedCellSizeFactors, const std::set&lt; TraversalOption &gt; &amp;allowedTraversalOptions, const std::set&lt; <a class="el" href="classautopas_1_1LoadEstimatorOption.html">LoadEstimatorOption</a> &gt; &amp;allowedLoadEstimatorOptions, const std::set&lt; DataLayoutOption &gt; &amp;allowedDataLayoutOptions, const std::set&lt; Newton3Option &gt; &amp;allowedNewton3Options, double relativeOptimum, unsigned int maxTuningIterationsWithoutTest, double relativeRangeForBlacklist, unsigned int testsUntilFirstPrediction, ExtrapolationMethodOption extrapolationMethodOption, const std::string &amp;outputSuffix=&quot;&quot;)</td></tr>
+<tr class="memdesc:a2a87cbdbaea401d32f6ccb3b6826dc1d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classautopas_1_1PredictiveTuning.html" title="In every tuning phase, this strategy makes a prediction about the run time for every configuration.">PredictiveTuning</a> that generates the search space from the allowed options.  <a href="classautopas_1_1PredictiveTuning.html#a2a87cbdbaea401d32f6ccb3b6826dc1d">More...</a><br /></td></tr>
+<tr class="separator:a2a87cbdbaea401d32f6ccb3b6826dc1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0fa300f39900da977792b37291e324be"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1PredictiveTuning.html#a0fa300f39900da977792b37291e324be">PredictiveTuning</a> (std::set&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; allowedConfigurations)</td></tr>
 <tr class="memdesc:a0fa300f39900da977792b37291e324be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classautopas_1_1PredictiveTuning.html" title="In every tuning phase, this strategy makes a prediction about the run time for every configuration.">PredictiveTuning</a> that only contains the given configurations.  <a href="classautopas_1_1PredictiveTuning.html#a0fa300f39900da977792b37291e324be">More...</a><br /></td></tr>
 <tr class="separator:a0fa300f39900da977792b37291e324be"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -210,8 +210,8 @@ std::set&lt; <a class="el" href="classautopas_1_1Configuration.html">Configurati
 </ul>
 <p>The strategy works by having multiple sets of configurations (e.g. the whole search space, optimal search space, search space of configurations that were not tested for a long time). _currentConfig is a iterator to any of them and might be switched between the sets depending on what is currently tested. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a6a6e633929eba5856a9e574e56800a9d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a6e633929eba5856a9e574e56800a9d">&#9670;&nbsp;</a></span>PredictiveTuning() <span class="overload">[1/2]</span></h2>
+<a id="a2a87cbdbaea401d32f6ccb3b6826dc1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a87cbdbaea401d32f6ccb3b6826dc1d">&#9670;&nbsp;</a></span>PredictiveTuning() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -283,7 +283,13 @@ std::set&lt; <a class="el" href="classautopas_1_1Configuration.html">Configurati
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">ExtrapolationMethodOption&#160;</td>
-          <td class="paramname"><em>extrapolationMethodOption</em>&#160;</td>
+          <td class="paramname"><em>extrapolationMethodOption</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>outputSuffix</em> = <code>&quot;&quot;</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -312,6 +318,7 @@ std::set&lt; <a class="el" href="classautopas_1_1Configuration.html">Configurati
     <tr><td class="paramname">relativeRangeForBlacklist</td><td></td></tr>
     <tr><td class="paramname">testsUntilFirstPrediction</td><td></td></tr>
     <tr><td class="paramname">extrapolationMethodOption</td><td></td></tr>
+    <tr><td class="paramname">outputSuffix</td><td></td></tr>
   </table>
   </dd>
 </dl>

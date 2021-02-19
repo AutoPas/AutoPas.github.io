@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-40dad5f</span>
+   &#160;<span id="projectnumber">0.1.0-6e14d95</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -100,6 +100,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classautopas_1_1GaussianCluster-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">autopas::GaussianCluster Class Reference</div>  </div>
@@ -122,7 +123,7 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abf2ad16086d8441850b9ceb17e3637ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1GaussianCluster.html#abf2ad16086d8441850b9ceb17e3637ba">GaussianCluster</a> (const std::vector&lt; int &gt; &amp;dimRestriction, size_t continuousDims, <a class="el" href="classautopas_1_1GaussianCluster.html#aa27fe3fde2aa4a672513bc2546bc8977">WeightFunction</a> weightFun, double sigma, <a class="el" href="classautopas_1_1Random.html">Random</a> &amp;rngRef, const <a class="el" href="GaussianModelTypes_8h.html#acf4b1f8a8881615190c8478c2d9fba10">GaussianModelTypes::VectorToStringFun</a> &amp;vectorToString=defaultVecToString, const std::string &amp;outputSuffix=&quot;&quot;)</td></tr>
+<tr class="memitem:abf2ad16086d8441850b9ceb17e3637ba"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1GaussianCluster.html#abf2ad16086d8441850b9ceb17e3637ba">GaussianCluster</a> (const std::vector&lt; int &gt; &amp;dimRestriction, size_t continuousDims, <a class="el" href="classautopas_1_1GaussianCluster.html#aa27fe3fde2aa4a672513bc2546bc8977">WeightFunction</a> weightFun, double sigma, <a class="el" href="classautopas_1_1Random.html">Random</a> &amp;rngRef, const <a class="el" href="GaussianModelTypes_8h.html#acf4b1f8a8881615190c8478c2d9fba10">GaussianModelTypes::VectorToStringFun</a> &amp;vectorToString=<a class="el" href="classautopas_1_1GaussianCluster.html#a5b8b1ffbf02481301ed5e70d645d2286">defaultVecToString</a>, const std::string &amp;outputSuffix=&quot;&quot;)</td></tr>
 <tr class="memdesc:abf2ad16086d8441850b9ceb17e3637ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classautopas_1_1GaussianCluster.html#abf2ad16086d8441850b9ceb17e3637ba">More...</a><br /></td></tr>
 <tr class="separator:abf2ad16086d8441850b9ceb17e3637ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4e046dcf2043c02121cda6fcf1953ab2"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; int &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1GaussianCluster.html#a4e046dcf2043c02121cda6fcf1953ab2">getDimensions</a> () const</td></tr>
@@ -165,6 +166,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:a7e1a1cfd84ad6947877ca6e8c4ca96e3"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="GaussianModelTypes_8h.html#ae8c3c00ac4793781e41d72a53c2822e9">GaussianModelTypes::VectorPairDiscreteContinuous</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1GaussianCluster.html#a7e1a1cfd84ad6947877ca6e8c4ca96e3">sampleOrderedByAcquisition</a> (AcquisitionFunctionOption af, const <a class="el" href="GaussianModelTypes_8h.html#af9a9c7e83f69993fd5b666fd34ea3486">GaussianModelTypes::NeighbourFunction</a> &amp;neighbourFun, const std::vector&lt; <a class="el" href="GaussianModelTypes_8h.html#a1c5218d2f18be22d51126d544dc0ff73">GaussianModelTypes::VectorContinuous</a> &gt; &amp;continuousSamples) const</td></tr>
 <tr class="memdesc:a7e1a1cfd84ad6947877ca6e8c4ca96e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate all possible combinations of discrete tuples and continuous tuples in samples and order them by their acquisition.  <a href="classautopas_1_1GaussianCluster.html#a7e1a1cfd84ad6947877ca6e8c4ca96e3">More...</a><br /></td></tr>
 <tr class="separator:a7e1a1cfd84ad6947877ca6e8c4ca96e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a5b8b1ffbf02481301ed5e70d645d2286"><td class="memItemLeft" align="right" valign="top">static std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1GaussianCluster.html#a5b8b1ffbf02481301ed5e70d645d2286">defaultVecToString</a> (const <a class="el" href="GaussianModelTypes_8h.html#ae8c3c00ac4793781e41d72a53c2822e9">GaussianModelTypes::VectorPairDiscreteContinuous</a> &amp;vec)</td></tr>
+<tr class="memdesc:a5b8b1ffbf02481301ed5e70d645d2286"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default function used to convert vectors to readable strings.  <a href="classautopas_1_1GaussianCluster.html#a5b8b1ffbf02481301ed5e70d645d2286">More...</a><br /></td></tr>
+<tr class="separator:a5b8b1ffbf02481301ed5e70d645d2286"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Model to predicts the output of a blackbox function f(x) for given input x. </p>
@@ -238,7 +245,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="GaussianModelTypes_8h.html#acf4b1f8a8881615190c8478c2d9fba10">GaussianModelTypes::VectorToStringFun</a> &amp;&#160;</td>
-          <td class="paramname"><em>vectorToString</em> = <code>defaultVecToString</code>, </td>
+          <td class="paramname"><em>vectorToString</em> = <code><a class="el" href="classautopas_1_1GaussianCluster.html#a5b8b1ffbf02481301ed5e70d645d2286">defaultVecToString</a></code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -370,6 +377,42 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a5b8b1ffbf02481301ed5e70d645d2286"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b8b1ffbf02481301ed5e70d645d2286">&#9670;&nbsp;</a></span>defaultVecToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::string autopas::GaussianCluster::defaultVecToString </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="GaussianModelTypes_8h.html#ae8c3c00ac4793781e41d72a53c2822e9">GaussianModelTypes::VectorPairDiscreteContinuous</a> &amp;&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Default function used to convert vectors to readable strings. </p>
+<dl class="section note"><dt>Note</dt><dd>begin() and end() currently not available for Eigen::Vector, so <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> ArrayUtils cannot be used. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vec</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>string with format (a,b,...,n) beginning with discrete values. </dd></dl>
 
 </div>
 </div>

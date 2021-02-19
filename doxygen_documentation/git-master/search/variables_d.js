@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['weights_2631',['weights',['../structautopas_1_1GaussianHyperparameters.html#aadd1d0fb1ab3a1deec50c7866ab5fcff',1,'autopas::GaussianHyperparameters']]]
+  ['weights_2633',['weights',['../structautopas_1_1GaussianHyperparameters.html#aadd1d0fb1ab3a1deec50c7866ab5fcff',1,'autopas::GaussianHyperparameters']]]
 ];
