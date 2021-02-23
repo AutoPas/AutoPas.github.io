@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['_7eboundaryconditions_348',['~BoundaryConditions',['../classBoundaryConditions.html#a8ce1ec1f933f0fbbc349f42964af3eb4',1,'BoundaryConditions']]],
-  ['_7esimulation_349',['~Simulation',['../classSimulation.html#ac1aeebea5eb7486798801fa1af4c68fd',1,'Simulation']]]
+  ['writevtkfile_351',['writeVTKFile',['../classSimulation.html#ab0ef46db5d779707023a4854f49882e2',1,'Simulation']]]
 ];
