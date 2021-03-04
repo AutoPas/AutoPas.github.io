@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-c42e6bc</span>
+   &#160;<span id="projectnumber">0.1.0-fe46182</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -111,7 +111,7 @@ $(function() {
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceautopas.html">autopas</a> {</div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> <span class="keywordtype">float</span>Type = <span class="keywordtype">double</span>&gt;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classautopas_1_1MoleculeLJ.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classautopas_1_1MoleculeLJ.html">MoleculeLJ</a> : <span class="keyword">public</span> <a class="code" href="classautopas_1_1ParticleBase.html">Particle</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="classautopas_1_1MoleculeLJ.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="classautopas_1_1MoleculeLJ.html">MoleculeLJ</a> final : <span class="keyword">public</span> <a class="code" href="classautopas_1_1ParticleBase.html">Particle</a> {</div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  <a class="code" href="classautopas_1_1MoleculeLJ.html">MoleculeLJ</a>() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
@@ -119,9 +119,9 @@ $(function() {
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;                      <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> typeId = 0)</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      : <a class="code" href="classautopas_1_1ParticleBase.html">Particle</a>(pos, v, moleculeId), _typeId(typeId) {}</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  ~<a class="code" href="classautopas_1_1MoleculeLJ.html">MoleculeLJ</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  ~<a class="code" href="classautopas_1_1MoleculeLJ.html">MoleculeLJ</a>() final = default;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classautopas_1_1MoleculeLJ.html#a1f62b19f2918c37c8cb58d7ce8644160">   40</a></span>&#160;  <span class="keyword">enum</span> <a class="code" href="classautopas_1_1MoleculeLJ.html#a1f62b19f2918c37c8cb58d7ce8644160">AttributeNames</a> : <span class="keywordtype">int</span> { ptr, id, posX, posY, posZ, forceX, forceY, forceZ, typeId, ownershipState };</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classautopas_1_1MoleculeLJ.html#a1f62b19f2918c37c8cb58d7ce8644160">   40</a></span>&#160;  enum <a class="code" href="classautopas_1_1MoleculeLJ.html#a1f62b19f2918c37c8cb58d7ce8644160">AttributeNames</a> : <span class="keywordtype">int</span> { ptr, id, posX, posY, posZ, forceX, forceY, forceZ, typeId, ownershipState };</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  <span class="keyword">using</span> <a class="code" href="classautopas_1_1MoleculeLJ.html#a6763e2de9bc22c6f74c8b0aa7540105b">SoAArraysType</a> =</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keyword">typename</span> <a class="code" href="structautopas_1_1utils_1_1SoAType.html">autopas::utils::SoAType&lt;MoleculeLJ&lt;floatType&gt;</a> *, <span class="keywordtype">size_t</span> <span class="comment">/*id*/</span>, floatType <span class="comment">/*x*/</span>, floatType <span class="comment">/*y*/</span>,</div>
