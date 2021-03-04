@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-c42e6bc</span>
+   &#160;<span id="projectnumber">0.1.0-fe46182</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -91,23 +91,28 @@ $(function() {
 </iframe>
 </div>
 
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_d28a4824dc47e487b107a5db32ef43c4.html">examples</a></li><li class="navelem"><a class="el" href="dir_b4de35d03da195f9c11ceb40b47103fa.html">md-flexible</a></li><li class="navelem"><a class="el" href="dir_9fe9d0186c57da72ba4f4818de4024c9.html">src</a></li>  </ul>
+</div>
 </div><!-- top -->
 <div class="header">
   <div class="headertitle">
-<div class="title">BoundaryConditions&lt; Particle &gt; Member List</div>  </div>
+<div class="title">TypeDefinitions.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-
-<p>This is the complete list of members for <a class="el" href="classBoundaryConditions.html">BoundaryConditions&lt; Particle &gt;</a>, including all inherited members.</p>
-<table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classBoundaryConditions.html#ad288d0b2e45ef29ebf71dbd853c9c51d">addEnteringParticles</a>(autopas::AutoPas&lt; Particle &gt; &amp;autoPas, std::vector&lt; Particle &gt; &amp;enteringParticles)</td><td class="entry"><a class="el" href="classBoundaryConditions.html">BoundaryConditions&lt; Particle &gt;</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classBoundaryConditions.html#adea19ae0198294e32121bf16bfc874d5">addHaloParticles</a>(autopas::AutoPas&lt; Particle &gt; &amp;autoPas, std::vector&lt; Particle &gt; &amp;haloParticles)</td><td class="entry"><a class="el" href="classBoundaryConditions.html">BoundaryConditions&lt; Particle &gt;</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classBoundaryConditions.html#af9936bb038af60985177db34b8f06d45">applyPeriodic</a>(autopas::AutoPas&lt; Particle &gt; &amp;autoPas, bool forceUpdate)</td><td class="entry"><a class="el" href="classBoundaryConditions.html">BoundaryConditions&lt; Particle &gt;</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classBoundaryConditions.html#a0efebb2b109a3e7dff358bd8ac33d95a">BoundaryConditions</a>()=default</td><td class="entry"><a class="el" href="classBoundaryConditions.html">BoundaryConditions&lt; Particle &gt;</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classBoundaryConditions.html#ab3426158b5f94e53e96b0b65c2b8150b">convertToEnteringParticles</a>(autopas::AutoPas&lt; Particle &gt; &amp;autopas, const std::vector&lt; Particle &gt; &amp;leavingParticles)</td><td class="entry"><a class="el" href="classBoundaryConditions.html">BoundaryConditions&lt; Particle &gt;</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr><td class="entry"><a class="el" href="classBoundaryConditions.html#a8f05e4e58c96b667a983f64c757f52b9">identifyAndSendHaloParticles</a>(autopas::AutoPas&lt; Particle &gt; &amp;autoPas)</td><td class="entry"><a class="el" href="classBoundaryConditions.html">BoundaryConditions&lt; Particle &gt;</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classBoundaryConditions.html#a8ce1ec1f933f0fbbc349f42964af3eb4">~BoundaryConditions</a>()=default</td><td class="entry"><a class="el" href="classBoundaryConditions.html">BoundaryConditions&lt; Particle &gt;</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-</table></div><!-- contents -->
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#pragma once</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;autopas/molecularDynamics/MoleculeLJ.h&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;autopas/molecularDynamics/ParticlePropertiesLibrary.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="keyword">using</span> FloatPrecision = double;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">using</span> ParticleType = autopas::MoleculeLJ&lt;FloatPrecision&gt;;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">using</span> ParticlePropertiesLibraryType = ParticlePropertiesLibrary&lt;FloatPrecision, size_t&gt;;</div>
+</div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1

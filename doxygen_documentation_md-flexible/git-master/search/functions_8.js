@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['main_332',['main',['../main_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627',1,'main.cpp']]],
-  ['mdflexoption_333',['MDFlexOption',['../structMDFlexConfig_1_1MDFlexOption.html#af76683cbb021d60bcda57ea81d357826',1,'MDFlexConfig::MDFlexOption']]]
+  ['needsmoreiterations_315',['needsMoreIterations',['../classSimulation.html#afe46093d2c48c0863d92892c86e61964',1,'Simulation']]]
 ];

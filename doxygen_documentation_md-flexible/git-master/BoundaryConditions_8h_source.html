@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-c42e6bc</span>
+   &#160;<span id="projectnumber">0.1.0-fe46182</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -108,135 +108,129 @@ $(function() {
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;autopas/AutoPas.h&quot;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Particle&gt;</div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classBoundaryConditions.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classBoundaryConditions.html">BoundaryConditions</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="classBoundaryConditions.html#a0efebb2b109a3e7dff358bd8ac33d95a">   23</a></span>&#160;  <a class="code" href="classBoundaryConditions.html#a0efebb2b109a3e7dff358bd8ac33d95a">BoundaryConditions</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classBoundaryConditions.html#a8ce1ec1f933f0fbbc349f42964af3eb4">   28</a></span>&#160;  <span class="keyword">virtual</span> <a class="code" href="classBoundaryConditions.html#a8ce1ec1f933f0fbbc349f42964af3eb4">~BoundaryConditions</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;  <span class="keyword">static</span> std::vector&lt;Particle&gt; <a class="code" href="classBoundaryConditions.html#ab3426158b5f94e53e96b0b65c2b8150b">convertToEnteringParticles</a>(autopas::AutoPas&lt;Particle&gt; &amp;autopas,</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;                                                          <span class="keyword">const</span> std::vector&lt;Particle&gt; &amp;leavingParticles);</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;  <span class="keyword">static</span> std::vector&lt;Particle&gt; <a class="code" href="classBoundaryConditions.html#a8f05e4e58c96b667a983f64c757f52b9">identifyAndSendHaloParticles</a>(autopas::AutoPas&lt;Particle&gt; &amp;autoPas);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">size_t</span> <a class="code" href="classBoundaryConditions.html#ad288d0b2e45ef29ebf71dbd853c9c51d">addEnteringParticles</a>(autopas::AutoPas&lt;Particle&gt; &amp;autoPas, std::vector&lt;Particle&gt; &amp;enteringParticles);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classBoundaryConditions.html#adea19ae0198294e32121bf16bfc874d5">addHaloParticles</a>(autopas::AutoPas&lt;Particle&gt; &amp;autoPas, std::vector&lt;Particle&gt; &amp;haloParticles);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classBoundaryConditions.html#af9936bb038af60985177db34b8f06d45">applyPeriodic</a>(autopas::AutoPas&lt;Particle&gt; &amp;autoPas, <span class="keywordtype">bool</span> forceUpdate);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;};</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Particle&gt;</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="classBoundaryConditions.html#ab3426158b5f94e53e96b0b65c2b8150b">   71</a></span>&#160;std::vector&lt;Particle&gt; <a class="code" href="classBoundaryConditions.html#ab3426158b5f94e53e96b0b65c2b8150b">BoundaryConditions&lt;Particle&gt;::convertToEnteringParticles</a>(</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    autopas::AutoPas&lt;Particle&gt; &amp;autopas, <span class="keyword">const</span> std::vector&lt;Particle&gt; &amp;leavingParticles) {</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  std::vector&lt;Particle&gt; enteringParticles{leavingParticles};</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;p : enteringParticles) {</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keyword">auto</span> pos = p.getR();</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dim = 0; dim &lt; 3; dim++) {</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;      <span class="keywordflow">if</span> (pos[dim] &lt; autopas.getBoxMin()[dim]) {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <span class="comment">// has to be smaller than boxMax</span></div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        pos[dim] = std::min(std::nextafter(autopas.getBoxMax()[dim], -1),</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                            pos[dim] + (autopas.getBoxMax()[dim] - autopas.getBoxMin()[dim]));</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pos[dim] &gt;= autopas.getBoxMax()[dim]) {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="comment">// should at least be boxMin</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        pos[dim] = std::max(autopas.getBoxMin()[dim], pos[dim] - (autopas.getBoxMax()[dim] - autopas.getBoxMin()[dim]));</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;      }</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    }</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    p.setR(pos);</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;  }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  <span class="keywordflow">return</span> enteringParticles;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;}</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Particle&gt;</div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="classBoundaryConditions.html#a8f05e4e58c96b667a983f64c757f52b9">   91</a></span>&#160;std::vector&lt;Particle&gt; <a class="code" href="classBoundaryConditions.html#a8f05e4e58c96b667a983f64c757f52b9">BoundaryConditions&lt;Particle&gt;::identifyAndSendHaloParticles</a>(autopas::AutoPas&lt;Particle&gt; &amp;autoPas) {</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;  std::vector&lt;Particle&gt; haloParticles;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;  <span class="keywordflow">for</span> (<span class="keywordtype">short</span> x : {-1, 0, 1}) {</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">short</span> y : {-1, 0, 1}) {</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;      <span class="keywordflow">for</span> (<span class="keywordtype">short</span> z : {-1, 0, 1}) {</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        <span class="keywordflow">if</span> (x == 0 and y == 0 and z == 0) <span class="keywordflow">continue</span>;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        std::array&lt;short, 3&gt; direction{x, y, z};</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        std::array&lt;double, 3&gt; min{}, max{}, shiftVec{};</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> dim = 0; dim &lt; 3; ++dim) {</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;          <span class="comment">// The search domain has to be enlarged as the position of the particles is not certain.</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;          <span class="keywordtype">bool</span> needsShift = <span class="keyword">false</span>;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;          <span class="keywordflow">if</span> (direction[dim] == -1) {</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;            min[dim] = autoPas.getBoxMin()[dim] - autoPas.getVerletSkin();</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;            max[dim] = autoPas.getBoxMin()[dim] + autoPas.getCutoff() + autoPas.getVerletSkin();</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;            needsShift = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;          } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (direction[dim] == 1) {</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            min[dim] = autoPas.getBoxMax()[dim] - autoPas.getCutoff() - autoPas.getVerletSkin();</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;            max[dim] = autoPas.getBoxMax()[dim] + autoPas.getVerletSkin();</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;            needsShift = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;          } <span class="keywordflow">else</span> {  <span class="comment">// 0</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;            min[dim] = autoPas.getBoxMin()[dim] - autoPas.getVerletSkin();</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;            max[dim] = autoPas.getBoxMax()[dim] + autoPas.getVerletSkin();</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;          }</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;          <span class="keywordflow">if</span> (needsShift) {</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;            shiftVec[dim] = -(autoPas.getBoxMax()[dim] - autoPas.getBoxMin()[dim]) * direction[dim];</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;          } <span class="keywordflow">else</span> {</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;            shiftVec[dim] = 0;</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;          }</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        }</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="comment">// here it is important to only iterate over the owned particles!</span></div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> iter = autoPas.getRegionIterator(min, max, autopas::IteratorBehavior::ownedOnly); iter.isValid();</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;             ++iter) {</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;          <span class="keyword">auto</span> particleCopy = *iter;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;          particleCopy.addR(shiftVec);</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;          haloParticles.push_back(particleCopy);</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;        }</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;      }</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    }</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;  }</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;  <span class="keywordflow">return</span> haloParticles;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;}</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Particle&gt;</div>
-<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="classBoundaryConditions.html#ad288d0b2e45ef29ebf71dbd853c9c51d">  135</a></span>&#160;<span class="keywordtype">size_t</span> <a class="code" href="classBoundaryConditions.html#ad288d0b2e45ef29ebf71dbd853c9c51d">BoundaryConditions&lt;Particle&gt;::addEnteringParticles</a>(autopas::AutoPas&lt;Particle&gt; &amp;autoPas,</div>
-<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;                                                          std::vector&lt;Particle&gt; &amp;enteringParticles) {</div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;  <span class="keywordtype">size_t</span> numAdded = 0;</div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;p : enteringParticles) {</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    <span class="keywordflow">if</span> (autopas::utils::inBox(p.getR(), autoPas.getBoxMin(), autoPas.getBoxMax())) {</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;      autoPas.addParticle(p);</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;      ++numAdded;</div>
-<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;    }</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;  }</div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  <span class="keywordflow">return</span> numAdded;</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Particle&gt;</div>
-<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="classBoundaryConditions.html#adea19ae0198294e32121bf16bfc874d5">  147</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classBoundaryConditions.html#adea19ae0198294e32121bf16bfc874d5">BoundaryConditions&lt;Particle&gt;::addHaloParticles</a>(autopas::AutoPas&lt;Particle&gt; &amp;autoPas,</div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                                                    std::vector&lt;Particle&gt; &amp;haloParticles) {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;p : haloParticles) {</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    autoPas.addOrUpdateHaloParticle(p);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;  }</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;}</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Particle&gt;</div>
-<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="classBoundaryConditions.html#af9936bb038af60985177db34b8f06d45">  155</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classBoundaryConditions.html#af9936bb038af60985177db34b8f06d45">BoundaryConditions&lt;Particle&gt;::applyPeriodic</a>(autopas::AutoPas&lt;Particle&gt; &amp;autoPas, <span class="keywordtype">bool</span> forceUpdate) {</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;  <span class="comment">// 1. update Container; return value is vector of invalid == leaving particles!</span></div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;  <span class="keyword">auto</span> [invalidParticles, updated] = autoPas.updateContainer(forceUpdate);</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;  <span class="keywordflow">if</span> (updated) {</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    <span class="comment">// 2. leaving and entering particles</span></div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keyword">const</span> <span class="keyword">auto</span> &amp;sendLeavingParticles = invalidParticles;</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    <span class="comment">// 2b. get+add entering particles (addParticle)</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    std::vector&lt;Particle&gt; enteringParticles = convertToEnteringParticles(autoPas, sendLeavingParticles);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    addEnteringParticles(autoPas, enteringParticles);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  }</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="comment">// 3. halo particles</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="comment">// 3a. identify and send inner particles that are in the halo of other autopas instances or itself.</span></div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="keyword">auto</span> sendHaloParticles = identifyAndSendHaloParticles(autoPas);</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="comment">// 3b. get halo particles</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keyword">auto</span> &amp;recvHaloParticles = sendHaloParticles;</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  addHaloParticles(autoPas, recvHaloParticles);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;  <span class="comment">// after this, pairwise force calculation</span></div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}</div>
-<div class="ttc" id="aclassBoundaryConditions_html"><div class="ttname"><a href="classBoundaryConditions.html">BoundaryConditions</a></div><div class="ttdoc">This Class implements the Periodic Boudaries for an AutoPas Object The implementation was taken from ...</div><div class="ttdef"><b>Definition:</b> BoundaryConditions.h:18</div></div>
-<div class="ttc" id="aclassBoundaryConditions_html_a0efebb2b109a3e7dff358bd8ac33d95a"><div class="ttname"><a href="classBoundaryConditions.html#a0efebb2b109a3e7dff358bd8ac33d95a">BoundaryConditions::BoundaryConditions</a></div><div class="ttdeci">BoundaryConditions()=default</div><div class="ttdoc">Default constructor.</div></div>
-<div class="ttc" id="aclassBoundaryConditions_html_a8ce1ec1f933f0fbbc349f42964af3eb4"><div class="ttname"><a href="classBoundaryConditions.html#a8ce1ec1f933f0fbbc349f42964af3eb4">BoundaryConditions::~BoundaryConditions</a></div><div class="ttdeci">virtual ~BoundaryConditions()=default</div><div class="ttdoc">Default destructor.</div></div>
-<div class="ttc" id="aclassBoundaryConditions_html_a8f05e4e58c96b667a983f64c757f52b9"><div class="ttname"><a href="classBoundaryConditions.html#a8f05e4e58c96b667a983f64c757f52b9">BoundaryConditions::identifyAndSendHaloParticles</a></div><div class="ttdeci">static std::vector&lt; Particle &gt; identifyAndSendHaloParticles(autopas::AutoPas&lt; Particle &gt; &amp;autoPas)</div><div class="ttdoc">Identifies and sends particles that are in the halo of neighboring AutoPas instances or the same inst...</div><div class="ttdef"><b>Definition:</b> BoundaryConditions.h:91</div></div>
-<div class="ttc" id="aclassBoundaryConditions_html_ab3426158b5f94e53e96b0b65c2b8150b"><div class="ttname"><a href="classBoundaryConditions.html#ab3426158b5f94e53e96b0b65c2b8150b">BoundaryConditions::convertToEnteringParticles</a></div><div class="ttdeci">static std::vector&lt; Particle &gt; convertToEnteringParticles(autopas::AutoPas&lt; Particle &gt; &amp;autopas, const std::vector&lt; Particle &gt; &amp;leavingParticles)</div><div class="ttdoc">Convert the leaving particle to entering particles.</div><div class="ttdef"><b>Definition:</b> BoundaryConditions.h:71</div></div>
-<div class="ttc" id="aclassBoundaryConditions_html_ad288d0b2e45ef29ebf71dbd853c9c51d"><div class="ttname"><a href="classBoundaryConditions.html#ad288d0b2e45ef29ebf71dbd853c9c51d">BoundaryConditions::addEnteringParticles</a></div><div class="ttdeci">static size_t addEnteringParticles(autopas::AutoPas&lt; Particle &gt; &amp;autoPas, std::vector&lt; Particle &gt; &amp;enteringParticles)</div><div class="ttdoc">Adds entering Particles to the Autopas Object.</div><div class="ttdef"><b>Definition:</b> BoundaryConditions.h:135</div></div>
-<div class="ttc" id="aclassBoundaryConditions_html_adea19ae0198294e32121bf16bfc874d5"><div class="ttname"><a href="classBoundaryConditions.html#adea19ae0198294e32121bf16bfc874d5">BoundaryConditions::addHaloParticles</a></div><div class="ttdeci">static void addHaloParticles(autopas::AutoPas&lt; Particle &gt; &amp;autoPas, std::vector&lt; Particle &gt; &amp;haloParticles)</div><div class="ttdoc">Adds Halo Particles to the AutoPas Object.</div><div class="ttdef"><b>Definition:</b> BoundaryConditions.h:147</div></div>
-<div class="ttc" id="aclassBoundaryConditions_html_af9936bb038af60985177db34b8f06d45"><div class="ttname"><a href="classBoundaryConditions.html#af9936bb038af60985177db34b8f06d45">BoundaryConditions::applyPeriodic</a></div><div class="ttdeci">static void applyPeriodic(autopas::AutoPas&lt; Particle &gt; &amp;autoPas, bool forceUpdate)</div><div class="ttdoc">Realizes periodic Boundaries for the simulation by handling halo particles and updating the container...</div><div class="ttdef"><b>Definition:</b> BoundaryConditions.h:155</div></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="namespaceBoundaryConditions.html">   16</a></span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceBoundaryConditions.html">BoundaryConditions</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03.html">   20</a></span>&#160;<span class="keyword">namespace </span>{</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="namespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03.html#a5b7a3a95ac8708b577a74a1ebaffb4f4">   29</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03.html#a5b7a3a95ac8708b577a74a1ebaffb4f4">wrapPositionsAroundBoundaries</a>(autopas::AutoPas&lt;Particle&gt; &amp;autoPas, std::vector&lt;Particle&gt; &amp;particles) {</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;boxMin = autoPas.getBoxMin();</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;boxMax = autoPas.getBoxMax();</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span> boxLength = std::array&lt;double, 3&gt;{</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;      boxMax[0] - boxMin[0],</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;      boxMax[1] - boxMin[1],</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;      boxMax[2] - boxMin[2],</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  };</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;p : particles) {</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">auto</span> pos = p.getR();</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> dim = 0ul; dim &lt; pos.size(); dim++) {</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;      <span class="keywordflow">if</span> (pos[dim] &lt; boxMin[dim]) {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="comment">// has to be smaller than boxMax</span></div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        pos[dim] = std::min(std::nextafter(boxMax[dim], boxMin[dim]), pos[dim] + boxLength[dim]);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (pos[dim] &gt;= boxMax[dim]) {</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        <span class="comment">// should at least be boxMin</span></div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        pos[dim] = std::max(boxMin[dim], pos[dim] - boxLength[dim]);</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      }</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    p.setR(pos);</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;}</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="namespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03.html#af272064e1999bb1b23b7641d882713d4">   62</a></span>&#160;std::vector&lt;Particle&gt; <a class="code" href="namespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03.html#af272064e1999bb1b23b7641d882713d4">identifyNewHaloParticles</a>(autopas::AutoPas&lt;Particle&gt; &amp;autoPas) {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  std::vector&lt;Particle&gt; haloParticles;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;boxMin = autoPas.getBoxMin();</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;boxMax = autoPas.getBoxMax();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;  <span class="keyword">const</span> <span class="keyword">auto</span> boxLength = std::array&lt;double, 3&gt;{</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;      boxMax[0] - boxMin[0],</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;      boxMax[1] - boxMin[1],</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;      boxMax[2] - boxMin[2],</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  };</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  <span class="comment">// look in every direction</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> x : {-1, 0, 1}) {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordflow">for</span> (<span class="keyword">auto</span> y : {-1, 0, 1}) {</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;      <span class="keywordflow">for</span> (<span class="keyword">auto</span> z : {-1, 0, 1}) {</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        <span class="keywordflow">if</span> (x == 0 and y == 0 and z == 0) <span class="keywordflow">continue</span>;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        std::array&lt;int, 3&gt; direction{x, y, z};</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="comment">// Define a region where to search for particles that need to be copied to the halo.</span></div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        std::array&lt;double, 3&gt; min{}, max{}, shiftVec{};</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> dim = 0ul; dim &lt; direction.size(); ++dim) {</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;          <span class="comment">// Flag for the periodic wrap. Will occur in at least one direction.</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;          <span class="keywordtype">bool</span> needsShift = <span class="keyword">false</span>;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;          <span class="comment">// The search domain has to be enlarged by the skin as the position of the particles is not certain.</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;          <span class="keywordflow">if</span> (direction[dim] == -1) {</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            <span class="comment">// just inside of boxMin</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;            min[dim] = boxMin[dim] - autoPas.getVerletSkin();</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            max[dim] = boxMin[dim] + autoPas.getCutoff() + autoPas.getVerletSkin();</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;            needsShift = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;          } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (direction[dim] == 1) {</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;            <span class="comment">// just inside of boxMax</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;            min[dim] = boxMax[dim] - autoPas.getCutoff() - autoPas.getVerletSkin();</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;            max[dim] = boxMax[dim] + autoPas.getVerletSkin();</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;            needsShift = <span class="keyword">true</span>;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;          } <span class="keywordflow">else</span> {  <span class="comment">// direction[dim] == 0</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;            min[dim] = boxMin[dim] - autoPas.getVerletSkin();</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;            max[dim] = boxMax[dim] + autoPas.getVerletSkin();</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;          }</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;          <span class="keywordflow">if</span> (needsShift) {</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;            <span class="comment">// particles left of min (direction == -1) need a shift by +boxLength. For right of max the opposite.</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;            shiftVec[dim] = -boxLength[dim] * direction[dim];</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;          } <span class="keywordflow">else</span> {</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;            shiftVec[dim] = 0;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;          }</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="comment">// Find non-halo particles in the designated region, create periodic copies of them and insert those as halos.</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> iter = autoPas.getRegionIterator(min, max, autopas::IteratorBehavior::ownedOnly); iter.isValid();</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;             ++iter) {</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;          <span class="keyword">auto</span> particleCopy = *iter;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;          particleCopy.addR(shiftVec);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;          haloParticles.push_back(particleCopy);</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;        }</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      }</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    }</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  }</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keywordflow">return</span> haloParticles;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;}</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="namespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03.html#a2eb09f0959899763e627d8ee9c0b2ea8">  126</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03.html#a2eb09f0959899763e627d8ee9c0b2ea8">addEnteringParticles</a>(autopas::AutoPas&lt;Particle&gt; &amp;autoPas, std::vector&lt;Particle&gt; &amp;enteringParticles) {</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;p : enteringParticles) {</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    autoPas.addParticle(p);</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;  }</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;}</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="namespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03.html#ac3a2bf31d6db703c952af3e0fcc05e9b">  139</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03.html#ac3a2bf31d6db703c952af3e0fcc05e9b">addHaloParticles</a>(autopas::AutoPas&lt;Particle&gt; &amp;autoPas, std::vector&lt;Particle&gt; &amp;haloParticles) {</div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;p : haloParticles) {</div>
+<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;    autoPas.addOrUpdateHaloParticle(p);</div>
+<div class="line"><a name="l00142"></a><span class="lineno">  142</span>&#160;  }</div>
+<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;}</div>
+<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160; </div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;}  <span class="comment">// namespace</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="namespaceBoundaryConditions.html#a759f853706e2c2b3afe7900d575c511b">  158</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="namespaceBoundaryConditions.html#a759f853706e2c2b3afe7900d575c511b">applyPeriodic</a>(autopas::AutoPas&lt;Particle&gt; &amp;autoPas, <span class="keywordtype">bool</span> forceUpdate) {</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  <span class="comment">// 1. update Container; return value is a vector of the particles leaving the domain box</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;  <span class="comment">// and a flag whether an update occured.</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keyword">auto</span> [leavingParticles, updated] = autoPas.updateContainer(forceUpdate);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;  <span class="keywordflow">if</span> (updated) {</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="comment">// 2. apply periodic wrap by shifting positions of leaving particles to positions of periodic images.</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="namespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03.html#a5b7a3a95ac8708b577a74a1ebaffb4f4">wrapPositionsAroundBoundaries</a>(autoPas, leavingParticles);</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    <span class="comment">// 2b. re-insert shifted particles</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;    <a class="code" href="namespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03.html#a2eb09f0959899763e627d8ee9c0b2ea8">addEnteringParticles</a>(autoPas, leavingParticles);</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  }</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="comment">// 3. identify inner particles for which a periodic copy in the opposing halo region is needed.</span></div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keyword">auto</span> haloParticles = <a class="code" href="namespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03.html#af272064e1999bb1b23b7641d882713d4">identifyNewHaloParticles</a>(autoPas);</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;  <a class="code" href="namespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03.html#ac3a2bf31d6db703c952af3e0fcc05e9b">addHaloParticles</a>(autoPas, haloParticles);</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;}</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;}  <span class="comment">// namespace BoundaryConditions</span></div>
+<div class="ttc" id="anamespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03_html_a2eb09f0959899763e627d8ee9c0b2ea8"><div class="ttname"><a href="namespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03.html#a2eb09f0959899763e627d8ee9c0b2ea8">BoundaryConditions::anonymous_namespace{BoundaryConditions.h}::addEnteringParticles</a></div><div class="ttdeci">void addEnteringParticles(autopas::AutoPas&lt; Particle &gt; &amp;autoPas, std::vector&lt; Particle &gt; &amp;enteringParticles)</div><div class="ttdoc">Insertes the given entering particles into the AutoPas object.</div><div class="ttdef"><b>Definition:</b> BoundaryConditions.h:126</div></div>
+<div class="ttc" id="anamespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03_html_a5b7a3a95ac8708b577a74a1ebaffb4f4"><div class="ttname"><a href="namespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03.html#a5b7a3a95ac8708b577a74a1ebaffb4f4">BoundaryConditions::anonymous_namespace{BoundaryConditions.h}::wrapPositionsAroundBoundaries</a></div><div class="ttdeci">void wrapPositionsAroundBoundaries(autopas::AutoPas&lt; Particle &gt; &amp;autoPas, std::vector&lt; Particle &gt; &amp;particles)</div><div class="ttdoc">Convert the leaving particle to entering particles.</div><div class="ttdef"><b>Definition:</b> BoundaryConditions.h:29</div></div>
+<div class="ttc" id="anamespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03_html_ac3a2bf31d6db703c952af3e0fcc05e9b"><div class="ttname"><a href="namespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03.html#ac3a2bf31d6db703c952af3e0fcc05e9b">BoundaryConditions::anonymous_namespace{BoundaryConditions.h}::addHaloParticles</a></div><div class="ttdeci">void addHaloParticles(autopas::AutoPas&lt; Particle &gt; &amp;autoPas, std::vector&lt; Particle &gt; &amp;haloParticles)</div><div class="ttdoc">Inserts the given halo particles into the AutoPas object.</div><div class="ttdef"><b>Definition:</b> BoundaryConditions.h:139</div></div>
+<div class="ttc" id="anamespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03_html_af272064e1999bb1b23b7641d882713d4"><div class="ttname"><a href="namespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03.html#af272064e1999bb1b23b7641d882713d4">BoundaryConditions::anonymous_namespace{BoundaryConditions.h}::identifyNewHaloParticles</a></div><div class="ttdeci">std::vector&lt; Particle &gt; identifyNewHaloParticles(autopas::AutoPas&lt; Particle &gt; &amp;autoPas)</div><div class="ttdoc">Identifies particles that are near the edge of the domain and returns properly shifted periodic copie...</div><div class="ttdef"><b>Definition:</b> BoundaryConditions.h:62</div></div>
+<div class="ttc" id="anamespaceBoundaryConditions_html"><div class="ttname"><a href="namespaceBoundaryConditions.html">BoundaryConditions</a></div><div class="ttdoc">This namespace implements functions for periodic boundaries using AutoPas.</div><div class="ttdef"><b>Definition:</b> BoundaryConditions.h:16</div></div>
+<div class="ttc" id="anamespaceBoundaryConditions_html_a759f853706e2c2b3afe7900d575c511b"><div class="ttname"><a href="namespaceBoundaryConditions.html#a759f853706e2c2b3afe7900d575c511b">BoundaryConditions::applyPeriodic</a></div><div class="ttdeci">void applyPeriodic(autopas::AutoPas&lt; Particle &gt; &amp;autoPas, bool forceUpdate)</div><div class="ttdoc">Applies periodic boundary conditions to inner and halo particles.</div><div class="ttdef"><b>Definition:</b> BoundaryConditions.h:158</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

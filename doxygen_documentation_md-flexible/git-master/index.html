@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-c42e6bc</span>
+   &#160;<span id="projectnumber">0.1.0-fe46182</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -111,32 +111,36 @@ Compiling</h1>
 <div class="line">cmake ..</div>
 <div class="line">make md-flexible</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md3"></a>
+Testing</h1>
+<p>Simple tests can be run via: </p><div class="fragment"><div class="line">make mdFlexTests</div>
+<div class="line">ctest -R mdFlexTests</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
 Usage</h1>
 <p>When starting md-flexible without any arguments a default simulation with most AutoPas options active is run and it's configuration printed. From there you can change any AutoPas options or change the simulation.</p>
 <p>For all available arguments and options see: </p><div class="fragment"><div class="line">examples/md-flexible/md-flexible --help</div>
 </div><!-- fragment --><p>The Falling Drop example simulation can be started with: </p><div class="fragment"><div class="line">cd examples/md-flexible</div>
 <div class="line">./md-flexible --yaml-filename fallingDrop.yaml</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md4"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md5"></a>
 Input</h2>
 <p>MD-Flexible accepts input via command line arguments and YAML files. When given both, any command line options will overwrite their YAML counterparts.</p>
 <p>The keywords for the YAML file are the same as for the command line input. However, since there are options that can only be defined through the YAML file there is also the file <a href="https://github.com/AutoPas/AutoPas/blob/master/examples/md-flexible/input/AllOptions.yaml"><code>input/AllOptions.yaml</code></a> to be used as a reference.</p>
 <p>Additionally, that options that require a list of choices also accept the keyword <code>all</code> to enable all, even discouraged choices.</p>
-<h3><a class="anchor" id="autotoc_md5"></a>
+<h3><a class="anchor" id="autotoc_md6"></a>
 Object generators</h3>
 <p>To quickly set up scenarios md-flexible provides a couple of object generators that create 3D shapes filled with particles. From the command line only one generator can be used at a time, however when using a YAML file one can use as an arbitrary amount of generators. In YAML files it is also possible to generate multiple objects from the same generator as one specifies the objects directly. For a list of all possible objects and their descriptions see <a href="https://autopas.github.io/doxygen_documentation_md-flexible/git-master/dir_8e5023335c6d80afeb9fe41ac1daf95f.html"><code>src/Objects</code></a>. For examples how to define and configure each object see <a href="https://github.com/AutoPas/AutoPas/blob/master/examples/md-flexible/input/AllOptions.yaml"><code>input/AllOptions.yaml</code></a>.</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md7"></a>
 Output</h2>
 <ul>
 <li>After every execution, a configuration YAML file is generated. It is possible to use this file as input for a new simulation.</li>
 <li>You can generate vtk output by providing a vtk-filename (see help for details).</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md7"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 Checkpoints</h2>
 <p>MD-Flexible can be initialized through a previously written VTK file. Please use only VTK files written by MD-Flexible since the parsing is rather strict. The VTK file only contains Information about all particles positions, velocities, forces and typeIDs. All other options, especially the simulation box size and particle properties (still) need to be set through a YAML file.</p>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md9"></a>
 Command line Completions</h2>
 <p>md-flexible can generate a shell completions file with it's latest options. Feel free to add completions for your favorite shell.</p>
-<h3><a class="anchor" id="autotoc_md9"></a>
+<h3><a class="anchor" id="autotoc_md10"></a>
 zsh</h3>
 <ol type="1">
 <li>Run: <div class="fragment"><div class="line">./md-flexible --zsh-completions</div>
@@ -147,7 +151,7 @@ zsh</h3>
 </div><!-- fragment --></li>
 <li>Reload your <code>zsh</code></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md11"></a>
 Misc</h2>
 <ul>
 <li><code>tuning-phases</code> overwrites restrictions set by <code>iterations</code> </li>
