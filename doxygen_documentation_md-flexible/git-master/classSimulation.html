@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-3fa461d</span>
+   &#160;<span id="projectnumber">0.1.0-42ee440</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -146,6 +146,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="clas
 <tr class="memitem:afe46093d2c48c0863d92892c86e61964"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulation.html#afe46093d2c48c0863d92892c86e61964">needsMoreIterations</a> () const</td></tr>
 <tr class="memdesc:afe46093d2c48c0863d92892c86e61964"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if enough iterations were completed yet.  <a href="classSimulation.html#afe46093d2c48c0863d92892c86e61964">More...</a><br /></td></tr>
 <tr class="separator:afe46093d2c48c0863d92892c86e61964"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c90889e6a23b18036ef8f8dcbf123aa"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulation.html#a6c90889e6a23b18036ef8f8dcbf123aa">getMPISuffix</a> () const</td></tr>
+<tr class="memdesc:a6c90889e6a23b18036ef8f8dcbf123aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns Suffix for the mpi rank the process is running on.  <a href="classSimulation.html#a6c90889e6a23b18036ef8f8dcbf123aa">More...</a><br /></td></tr>
+<tr class="separator:a6c90889e6a23b18036ef8f8dcbf123aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2680c21d35ed9662eb731f769d232b40"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; size_t, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulation.html#a2680c21d35ed9662eb731f769d232b40">estimateNumIterations</a> () const</td></tr>
 <tr class="memdesc:a2680c21d35ed9662eb731f769d232b40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gives an estimate of how many iterations the simulation will do in total.  <a href="classSimulation.html#a2680c21d35ed9662eb731f769d232b40">More...</a><br /></td></tr>
 <tr class="separator:a2680c21d35ed9662eb731f769d232b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -297,6 +300,26 @@ template&lt;class FunctorType &gt; </div>
 
 <p>Gives an estimate of how many iterations the simulation will do in total. </p>
 <dl class="section return"><dt>Returns</dt><dd>The estimate and true iff this is the correct number and not only an estimate. </dd></dl>
+
+</div>
+</div>
+<a id="a6c90889e6a23b18036ef8f8dcbf123aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c90889e6a23b18036ef8f8dcbf123aa">&#9670;&nbsp;</a></span>getMPISuffix()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string Simulation::getMPISuffix </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns Suffix for the mpi rank the process is running on. </p>
+<p>Otherwise returns empty string. </p><dl class="section return"><dt>Returns</dt><dd>suffix </dd></dl>
 
 </div>
 </div>
