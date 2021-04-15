@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-e015c3c</span>
+   &#160;<span id="projectnumber">0.1.0-0e5c80f</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -213,8 +213,9 @@ Iterating Through Particles</h2>
 <div class="line">  <span class="comment">// user code:</span></div>
 <div class="line">  <span class="keyword">auto</span> position = iter-&gt;getR();</div>
 <div class="line">}</div>
-</div><!-- fragment --><p>Both <code>begin()</code> and <code>getRegionIterator()</code> can also take the additional parameter <code>IteratorBehavior</code>, which indicates over which particles the iteration should be performed. See <a href="https://autopas.github.io/doxygen_documentation/git-master/namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42">autopas::IteratorBehavior</a> for possible options and details. The default parameter is <code>haloAndOwned</code>, which is also used for range-based for loops.</p>
+</div><!-- fragment --><p>Both <code>begin()</code> and <code>getRegionIterator()</code> can also take the additional parameter <code>IteratorBehavior</code>, which indicates over which particles the iteration should be performed. See <a href="https://autopas.github.io/doxygen_documentation/git-master/namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42">autopas::IteratorBehavior</a> for possible options and details. The default parameter is <code>ownedOrHalo</code>, which is also used for range-based for loops.</p>
 <p>Analogously to <code>begin()</code>, <code>cbegin()</code> is also defined, which guarantees to return a <code>const_iterator</code>.</p>
+<p>Iterators are not guaranteed to be valid after particle insertion. However, particle deletion while iterating is supported via <code>autoPas.deleteParticle(iterator)</code>.</p>
 <h2><a class="anchor" id="autotoc_md16"></a>
 Simulation Loop</h2>
 <p>One simulation loop should always consist of the following phases:</p>

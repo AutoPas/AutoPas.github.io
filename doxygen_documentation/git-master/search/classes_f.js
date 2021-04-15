@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['timer_1519',['Timer',['../classautopas_1_1utils_1_1Timer.html',1,'autopas::utils']]],
-  ['touchableparticle_1520',['TouchableParticle',['../classTouchableParticle.html',1,'']]],
+  ['timer_1520',['Timer',['../classautopas_1_1utils_1_1Timer.html',1,'autopas::utils']]],
   ['traversalinterface_1521',['TraversalInterface',['../classautopas_1_1TraversalInterface.html',1,'autopas']]],
   ['traversaloption_1522',['TraversalOption',['../classautopas_1_1options_1_1TraversalOption.html',1,'autopas::options']]],
   ['traversalselector_1523',['TraversalSelector',['../classautopas_1_1TraversalSelector.html',1,'autopas']]],

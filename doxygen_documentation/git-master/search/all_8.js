@@ -1,8 +1,5 @@
 var searchData=
 [
-  ['halo_600',['halo',['../namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a57f842286171094855e51fc3a541c1e2',1,'autopas']]],
-  ['haloandowned_601',['haloAndOwned',['../namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42ae92b03f5be5a06c5bb4c5f72ffd26f84',1,'autopas']]],
-  ['haloonly_602',['haloOnly',['../namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42ac7100cec3dab7c9f031d06e44cdd4993',1,'autopas']]],
-  ['haloownedanddummy_603',['haloOwnedAndDummy',['../namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42aa79bf7e94374210cd4bdb537ab8f66ad',1,'autopas']]],
-  ['hasvalidvalues_604',['hasValidValues',['../classautopas_1_1Configuration.html#a3dec7a71096a98368a92f4c255cffc3b',1,'autopas::Configuration']]]
+  ['halo_601',['halo',['../classautopas_1_1options_1_1IteratorBehavior.html#a0a837e939fb797fc79a34a27a88d7927a555de30a5fde7212e7ed28a65d7244d9',1,'autopas::options::IteratorBehavior::halo()'],['../namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a57f842286171094855e51fc3a541c1e2',1,'autopas::halo()']]],
+  ['hasvalidvalues_602',['hasValidValues',['../classautopas_1_1Configuration.html#a3dec7a71096a98368a92f4c255cffc3b',1,'autopas::Configuration']]]
 ];
