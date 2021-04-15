@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-e015c3c</span>
+   &#160;<span id="projectnumber">0.1.0-0e5c80f</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -181,7 +181,7 @@ $(function() {
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;          }</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        }</div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="comment">// Find non-halo particles in the designated region, create periodic copies of them and insert those as halos.</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> iter = autoPas.getRegionIterator(min, max, autopas::IteratorBehavior::ownedOnly); iter.isValid();</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        <span class="keywordflow">for</span> (<span class="keyword">auto</span> iter = autoPas.getRegionIterator(min, max, autopas::IteratorBehavior::owned); iter.isValid();</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;             ++iter) {</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;          <span class="keyword">auto</span> particleCopy = *iter;</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;          particleCopy.addR(shiftVec);</div>
