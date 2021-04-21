@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-0e5c80f</span>
+   &#160;<span id="projectnumber">0.1.0-cc1052c</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -399,9 +399,9 @@ $(function() {
 <div class="line"><a name="l00640"></a><span class="lineno">  640</span>&#160; </div>
 <div class="line"><a name="l00645"></a><span class="lineno"><a class="line" href="classautopas_1_1AutoPas.html#ab697923f0ec8411c69c5c49315870bcf">  645</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classautopas_1_1AutoPas.html#ab697923f0ec8411c69c5c49315870bcf">setMPIStrategy</a>(MPIStrategyOption mpiStrategyOption) { _mpiStrategyOption = mpiStrategyOption; }</div>
 <div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160; </div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;<span class="comment">// Only define the interface for the MPI communicator if AUTOPAS_MPI=ON</span></div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;<span class="comment">// The internal implementation will use _autopasMPICommunicator with WrapMPI regardless of AUTOPAS_MPI</span></div>
-<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;<span class="preprocessor">#if defined(AUTOPAS_MPI)</span></div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;<span class="comment">// Only define the interface for the MPI communicator if AUTOPAS_INTERNODE_TUNING=ON</span></div>
+<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160;<span class="comment">// The internal implementation will use _autopasMPICommunicator with WrapMPI regardless of AUTOPAS_INTERNODE_TUNING</span></div>
+<div class="line"><a name="l00649"></a><span class="lineno">  649</span>&#160;<span class="preprocessor">#if defined(AUTOPAS_INTERNODE_TUNING)</span></div>
 <div class="line"><a name="l00650"></a><span class="lineno">  650</span>&#160; </div>
 <div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160;  <span class="keywordtype">void</span> setMPICommunicator(MPI_Comm comm) { _autopasMPICommunicator = comm; }</div>
 <div class="line"><a name="l00656"></a><span class="lineno">  656</span>&#160; </div>
