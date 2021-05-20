@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-271fa47</span>
+   &#160;<span id="projectnumber">0.1.0-d906d29</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -126,13 +126,13 @@ $(function() {
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="classautopas_1_1BayesianSearch.html#a9bd31a64358daee1f2aad8ad69f24df8">   54</a></span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classautopas_1_1BayesianSearch.html#a9bd31a64358daee1f2aad8ad69f24df8">BayesianSearch</a>(</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <span class="keyword">const</span> std::set&lt;ContainerOption&gt; &amp;allowedContainerOptions = <a class="code" href="classautopas_1_1options_1_1Option.html#a099b7bf52ef375a6f9621f6a956a5f97">ContainerOption::getAllOptions</a>(),</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <span class="keyword">const</span> std::set&lt;ContainerOption&gt; &amp;allowedContainerOptions = ContainerOption::getAllOptions(),</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;      <span class="keyword">const</span> <a class="code" href="classautopas_1_1NumberSet.html">NumberSet&lt;double&gt;</a> &amp;allowedCellSizeFactors = <a class="code" href="classautopas_1_1NumberInterval.html">NumberInterval&lt;double&gt;</a>(1., 2.),</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keyword">const</span> std::set&lt;TraversalOption&gt; &amp;allowedTraversalOptions = <a class="code" href="classautopas_1_1options_1_1Option.html#a099b7bf52ef375a6f9621f6a956a5f97">TraversalOption::getAllOptions</a>(),</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      <span class="keyword">const</span> std::set&lt;TraversalOption&gt; &amp;allowedTraversalOptions = TraversalOption::getAllOptions(),</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keyword">const</span> std::set&lt;LoadEstimatorOption&gt; &amp;allowedLoadEstimatorOptions = LoadEstimatorOption::getAllOptions(),</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="keyword">const</span> std::set&lt;DataLayoutOption&gt; &amp;allowedDataLayoutOptions = <a class="code" href="classautopas_1_1options_1_1Option.html#a099b7bf52ef375a6f9621f6a956a5f97">DataLayoutOption::getAllOptions</a>(),</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <span class="keyword">const</span> std::set&lt;Newton3Option&gt; &amp;allowedNewton3Options = <a class="code" href="classautopas_1_1options_1_1Option.html#a099b7bf52ef375a6f9621f6a956a5f97">Newton3Option::getAllOptions</a>(), <span class="keywordtype">size_t</span> maxEvidence = 10,</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      <a class="code" href="classautopas_1_1options_1_1AcquisitionFunctionOption.html">AcquisitionFunctionOption</a> predAcqFunction = AcquisitionFunctionOption::upperConfidenceBound,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;      <span class="keyword">const</span> std::set&lt;DataLayoutOption&gt; &amp;allowedDataLayoutOptions = DataLayoutOption::getAllOptions(),</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <span class="keyword">const</span> std::set&lt;Newton3Option&gt; &amp;allowedNewton3Options = Newton3Option::getAllOptions(), <span class="keywordtype">size_t</span> maxEvidence = 10,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      AcquisitionFunctionOption predAcqFunction = AcquisitionFunctionOption::upperConfidenceBound,</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      <span class="keywordtype">size_t</span> predNumLHSamples = 1000, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> seed = std::random_device()())</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      : _containerOptionsSet(allowedContainerOptions),</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        _dataLayoutOptions(allowedDataLayoutOptions.begin(), allowedDataLayoutOptions.end()),</div>
@@ -184,7 +184,7 @@ $(function() {
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
 <div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="classautopas_1_1BayesianSearch.html#a83ffdbb0d2681e775e98450dbacd2e5c">  111</a></span>&#160;  <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code" href="classautopas_1_1Configuration.html">Configuration</a> &amp;<a class="code" href="classautopas_1_1BayesianSearch.html#a83ffdbb0d2681e775e98450dbacd2e5c">getCurrentConfiguration</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> _currentConfig; }</div>
 <div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classautopas_1_1BayesianSearch.html#a6d2fe4c66cd7392a88bd73bef360b89a">removeN3Option</a>(<a class="code" href="classautopas_1_1options_1_1Newton3Option.html">Newton3Option</a> badNewton3Option) <span class="keyword">override</span>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classautopas_1_1BayesianSearch.html#a6d2fe4c66cd7392a88bd73bef360b89a">removeN3Option</a>(Newton3Option badNewton3Option) <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
 <div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="classautopas_1_1BayesianSearch.html#a29b222460acded2cd5953984af0e6c20">  115</a></span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classautopas_1_1BayesianSearch.html#a29b222460acded2cd5953984af0e6c20">addEvidence</a>(<span class="keywordtype">long</span> time, <span class="keywordtype">size_t</span> iteration)<span class="keyword"> override </span>{</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;    <span class="comment">// time is converted to seconds, to big values may lead to errors in GaussianProcess. Time is also negated to</span></div>
@@ -212,7 +212,7 @@ $(function() {
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classautopas_1_1BayesianSearch.html#af516864ce5802b88245f729ec8afbb41">searchSpaceIsEmpty</a>() <span class="keyword">const override</span>;</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> sampleAcquisitions(<span class="keywordtype">size_t</span> n, <a class="code" href="classautopas_1_1options_1_1AcquisitionFunctionOption.html">AcquisitionFunctionOption</a> af);</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;  <span class="keyword">inline</span> <span class="keywordtype">void</span> sampleAcquisitions(<span class="keywordtype">size_t</span> n, AcquisitionFunctionOption af);</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  std::set&lt;ContainerOption&gt; _containerOptionsSet;</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  std::vector&lt;FeatureVector::ContainerTraversalEstimatorOption&gt; _containerTraversalEstimatorOptions;</div>
@@ -229,7 +229,7 @@ $(function() {
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <a class="code" href="classautopas_1_1Random.html">Random</a> _rng;</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <a class="code" href="classautopas_1_1GaussianProcess.html">GaussianProcess</a> _gaussianProcess;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="keywordtype">size_t</span> _maxEvidence;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <a class="code" href="classautopas_1_1options_1_1AcquisitionFunctionOption.html">AcquisitionFunctionOption</a> _predAcqFunction;</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  AcquisitionFunctionOption _predAcqFunction;</div>
 <div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keywordtype">size_t</span> _predNumLHSamples;</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;};</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
@@ -278,7 +278,7 @@ $(function() {
 <div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;}</div>
 <div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
-<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="keywordtype">void</span> BayesianSearch::sampleAcquisitions(<span class="keywordtype">size_t</span> n, <a class="code" href="classautopas_1_1options_1_1AcquisitionFunctionOption.html">AcquisitionFunctionOption</a> af) {</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="keywordtype">void</span> BayesianSearch::sampleAcquisitions(<span class="keywordtype">size_t</span> n, AcquisitionFunctionOption af) {</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;  <span class="comment">// create n lhs samples</span></div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;  _currentSamples = _encoder.<a class="code" href="classautopas_1_1FeatureVectorEncoder.html#ab4c202693ade7342bddf42506d1fbf6e">lhsSampleFeatures</a>(n, _rng);</div>
 <div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
@@ -312,7 +312,7 @@ $(function() {
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;         _newton3Options.empty();</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;}</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160; </div>
-<div class="line"><a name="l00251"></a><span class="lineno"><a class="line" href="classautopas_1_1BayesianSearch.html#a6d2fe4c66cd7392a88bd73bef360b89a">  251</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classautopas_1_1BayesianSearch.html#a6d2fe4c66cd7392a88bd73bef360b89a">BayesianSearch::removeN3Option</a>(<a class="code" href="classautopas_1_1options_1_1Newton3Option.html">Newton3Option</a> badNewton3Option) {</div>
+<div class="line"><a name="l00251"></a><span class="lineno"><a class="line" href="classautopas_1_1BayesianSearch.html#a6d2fe4c66cd7392a88bd73bef360b89a">  251</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classautopas_1_1BayesianSearch.html#a6d2fe4c66cd7392a88bd73bef360b89a">BayesianSearch::removeN3Option</a>(Newton3Option badNewton3Option) {</div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;  _newton3Options.erase(std::remove(_newton3Options.begin(), _newton3Options.end(), badNewton3Option),</div>
 <div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;                        _newton3Options.end());</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;  _encoder.<a class="code" href="classautopas_1_1FeatureVectorEncoder.html#a241df7c09d24863d29063437673a9518">setAllowedOptions</a>(_containerTraversalEstimatorOptions, _dataLayoutOptions, _newton3Options,</div>
@@ -368,12 +368,9 @@ $(function() {
 <div class="ttc" id="aclassautopas_1_1NumberSet_html"><div class="ttname"><a href="classautopas_1_1NumberSet.html">autopas::NumberSet</a></div><div class="ttdoc">Virtual class describing a finite or infinite set of numbers.</div><div class="ttdef"><b>Definition:</b> NumberSet.h:22</div></div>
 <div class="ttc" id="aclassautopas_1_1Random_html"><div class="ttname"><a href="classautopas_1_1Random.html">autopas::Random</a></div><div class="ttdoc">Class for random algorithms.</div><div class="ttdef"><b>Definition:</b> Random.h:21</div></div>
 <div class="ttc" id="aclassautopas_1_1TuningStrategyInterface_html"><div class="ttname"><a href="classautopas_1_1TuningStrategyInterface.html">autopas::TuningStrategyInterface</a></div><div class="ttdoc">Interface for tuning strategies for the auto tuner.</div><div class="ttdef"><b>Definition:</b> TuningStrategyInterface.h:16</div></div>
-<div class="ttc" id="aclassautopas_1_1options_1_1AcquisitionFunctionOption_html"><div class="ttname"><a href="classautopas_1_1options_1_1AcquisitionFunctionOption.html">autopas::AcquisitionFunctionOption</a></div><div class="ttdoc">Class representing the acquisition function choices for the Bayesian search.</div><div class="ttdef"><b>Definition:</b> AcquisitionFunctionOption.h:18</div></div>
-<div class="ttc" id="aclassautopas_1_1options_1_1Newton3Option_html"><div class="ttname"><a href="classautopas_1_1options_1_1Newton3Option.html">autopas::Newton3Option</a></div><div class="ttdoc">Class representing the choices for the Newton 3 optimization.</div><div class="ttdef"><b>Definition:</b> Newton3Option.h:18</div></div>
-<div class="ttc" id="aclassautopas_1_1options_1_1Option_html_a099b7bf52ef375a6f9621f6a956a5f97"><div class="ttname"><a href="classautopas_1_1options_1_1Option.html#a099b7bf52ef375a6f9621f6a956a5f97">autopas::options::Option&lt; ContainerOption &gt;::getAllOptions</a></div><div class="ttdeci">static std::set&lt; ContainerOption &gt; getAllOptions()</div><div class="ttdoc">Provides a way to iterate over the possible options.</div><div class="ttdef"><b>Definition:</b> Option.h:34</div></div>
 <div class="ttc" id="aclassautopas_1_1utils_1_1ExceptionHandler_html_ae61b9aac49a90a9ff86859c73005ee07"><div class="ttname"><a href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a></div><div class="ttdeci">static void exception(const Exception e)</div><div class="ttdoc">Handle an exception derived by std::exception.</div><div class="ttdef"><b>Definition:</b> ExceptionHandler.h:65</div></div>
 <div class="ttc" id="anamespaceautopas_1_1loadEstimators_html_a21f90a25ad1c7c8fd50c67df3bcc27bf"><div class="ttname"><a href="namespaceautopas_1_1loadEstimators.html#a21f90a25ad1c7c8fd50c67df3bcc27bf">autopas::loadEstimators::getApplicableLoadEstimators</a></div><div class="ttdeci">static std::set&lt; autopas::LoadEstimatorOption &gt; getApplicableLoadEstimators(autopas::ContainerOption container, autopas::TraversalOption traversal, const std::set&lt; autopas::LoadEstimatorOption &gt; allowedOptions)</div><div class="ttdoc">If traversal uses load estimation, returns all load estimators in allowedOptions, that are compatible...</div><div class="ttdef"><b>Definition:</b> CompatibleLoadEstimators.h:79</div></div>
-<div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">Provide non-MPI versions of the needed MPI function calls.</div><div class="ttdef"><b>Definition:</b> TraversalInterface.h:15</div></div>
+<div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">This is the main namespace of AutoPas.</div><div class="ttdef"><b>Definition:</b> SortedCellView.h:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

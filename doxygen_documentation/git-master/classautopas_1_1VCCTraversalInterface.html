@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-271fa47</span>
+   &#160;<span id="projectnumber">0.1.0-d906d29</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -127,8 +127,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a367ec678400c8d6de31fe80089dc27be"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VCCTraversalInterface.html#a367ec678400c8d6de31fe80089dc27be">setVerletListPointer</a> (std::vector&lt; std::vector&lt; std::vector&lt; std::pair&lt; size_t, size_t &gt;&gt;&gt;&gt; *neighborCellIds, size_t *neighborMatrixDim, <a class="el" href="classautopas_1_1utils_1_1CudaDeviceVector.html">utils::CudaDeviceVector</a>&lt; unsigned int &gt; *neighborMatrix)=0</td></tr>
 <tr class="memdesc:a367ec678400c8d6de31fe80089dc27be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets pointer to the verlet lists stored in the container.  <a href="classautopas_1_1VCCTraversalInterface.html#a367ec678400c8d6de31fe80089dc27be">More...</a><br /></td></tr>
 <tr class="separator:a367ec678400c8d6de31fe80089dc27be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1df4eba6c8666f6f2469483858da061c"><td class="memItemLeft" align="right" valign="top">virtual std::tuple&lt; <a class="el" href="classautopas_1_1options_1_1TraversalOption.html">TraversalOption</a>, <a class="el" href="classautopas_1_1options_1_1DataLayoutOption.html">DataLayoutOption</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VCCTraversalInterface.html#a1df4eba6c8666f6f2469483858da061c">getSignature</a> ()=0</td></tr>
-<tr class="memdesc:a1df4eba6c8666f6f2469483858da061c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns the Data Layout <a class="el" href="classautopas_1_1options_1_1Option.html" title="Base class for autopas options.">Option</a> and use of newton3 to identify a Traversal object.  <a href="classautopas_1_1VCCTraversalInterface.html#a1df4eba6c8666f6f2469483858da061c">More...</a><br /></td></tr>
+<tr class="memitem:a1df4eba6c8666f6f2469483858da061c"><td class="memItemLeft" align="right" valign="top">virtual std::tuple&lt; TraversalOption, DataLayoutOption, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VCCTraversalInterface.html#a1df4eba6c8666f6f2469483858da061c">getSignature</a> ()=0</td></tr>
+<tr class="memdesc:a1df4eba6c8666f6f2469483858da061c"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function returns the Data Layout Option and use of newton3 to identify a Traversal object.  <a href="classautopas_1_1VCCTraversalInterface.html#a1df4eba6c8666f6f2469483858da061c">More...</a><br /></td></tr>
 <tr class="separator:a1df4eba6c8666f6f2469483858da061c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -156,7 +156,7 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual std::tuple&lt;<a class="el" href="classautopas_1_1options_1_1TraversalOption.html">TraversalOption</a>, <a class="el" href="classautopas_1_1options_1_1DataLayoutOption.html">DataLayoutOption</a>, bool&gt; <a class="el" href="classautopas_1_1VCCTraversalInterface.html">autopas::VCCTraversalInterface</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt;::getSignature </td>
+          <td class="memname">virtual std::tuple&lt;TraversalOption, DataLayoutOption, bool&gt; <a class="el" href="classautopas_1_1VCCTraversalInterface.html">autopas::VCCTraversalInterface</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt;::getSignature </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -169,8 +169,8 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 </table>
 </div><div class="memdoc">
 
-<p>This function returns the Data Layout <a class="el" href="classautopas_1_1options_1_1Option.html" title="Base class for autopas options.">Option</a> and use of newton3 to identify a Traversal object. </p>
-<dl class="section return"><dt>Returns</dt><dd>pair with <a class="el" href="classautopas_1_1options_1_1DataLayoutOption.html" title="Class representing the traversal choices.">DataLayoutOption</a> and use of newton3 </dd></dl>
+<p>This function returns the Data Layout Option and use of newton3 to identify a Traversal object. </p>
+<dl class="section return"><dt>Returns</dt><dd>pair with DataLayoutOption and use of newton3 </dd></dl>
 
 <p>Implemented in <a class="el" href="classautopas_1_1VCCClusterIterationCUDATraversal.html#a86a19e3ba88a10db95e90fa70d55fd86">autopas::VCCClusterIterationCUDATraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;</a>.</p>
 

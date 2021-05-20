@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-271fa47</span>
+   &#160;<span id="projectnumber">0.1.0-d906d29</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -168,7 +168,7 @@ $(function() {
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keywordflow">return</span> s;</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;}</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="CompatibleTraversals_8h.html#a2ffc54a289427bdc8272ea1ceae52ad9">  115</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">const</span> std::set&lt;TraversalOption&gt; &amp;<a class="code" href="CompatibleTraversals_8h.html#a2ffc54a289427bdc8272ea1ceae52ad9">allCompatibleTraversals</a>(<a class="code" href="classautopas_1_1options_1_1ContainerOption.html">ContainerOption</a> containerOption) {</div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="CompatibleTraversals_8h.html#a2ffc54a289427bdc8272ea1ceae52ad9">  115</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">const</span> std::set&lt;TraversalOption&gt; &amp;<a class="code" href="CompatibleTraversals_8h.html#a2ffc54a289427bdc8272ea1ceae52ad9">allCompatibleTraversals</a>(ContainerOption containerOption) {</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keywordflow">switch</span> (containerOption) {</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;    <span class="keywordflow">case</span> ContainerOption::linkedCells: {</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;      <span class="keywordflow">return</span> <a class="code" href="CompatibleTraversals_8h.html#accbeee566599d0336c73bd62728041f6">allLCCompatibleTraversals</a>();</div>
@@ -200,16 +200,16 @@ $(function() {
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;  }</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;  <a class="code" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a>(<span class="stringliteral">&quot;CompatibleTraversals: Unknown container option {}!&quot;</span>,</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                                              containerOption.<a class="code" href="classautopas_1_1options_1_1Option.html#ae65415d6b5bb89139341952feea8a0df">to_string</a>());</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;                                              containerOption.to_string());</div>
 <div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160; </div>
 <div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;  <span class="keyword">static</span> <span class="keyword">const</span> std::set&lt;TraversalOption&gt; s{};</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;  <span class="keywordflow">return</span> s;</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
-<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="CompatibleTraversals_8h.html#a6c7946e6559045e142dc8bef65540b25">  158</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> std::set&lt;ContainerOption&gt; <a class="code" href="CompatibleTraversals_8h.html#a6c7946e6559045e142dc8bef65540b25">allCompatibleContainers</a>(<a class="code" href="classautopas_1_1options_1_1TraversalOption.html">TraversalOption</a> traversalOption) {</div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="CompatibleTraversals_8h.html#a6c7946e6559045e142dc8bef65540b25">  158</a></span>&#160;<span class="keyword">static</span> <span class="keyword">inline</span> std::set&lt;ContainerOption&gt; <a class="code" href="CompatibleTraversals_8h.html#a6c7946e6559045e142dc8bef65540b25">allCompatibleContainers</a>(TraversalOption traversalOption) {</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;  std::set&lt;ContainerOption&gt; result{};</div>
 <div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;container : <a class="code" href="classautopas_1_1options_1_1Option.html#a099b7bf52ef375a6f9621f6a956a5f97">ContainerOption::getAllOptions</a>()) {</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;container : ContainerOption::getAllOptions()) {</div>
 <div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;    <span class="keyword">auto</span> allCompatible = compatibleTraversals::allCompatibleTraversals(container);</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    <span class="keywordflow">if</span> (allCompatible.find(traversalOption) != allCompatible.end()) {</div>
 <div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;      result.insert(container);</div>
@@ -235,10 +235,6 @@ $(function() {
 <div class="ttc" id="aExceptionHandler_8h_html"><div class="ttname"><a href="ExceptionHandler_8h.html">ExceptionHandler.h</a></div></div>
 <div class="ttc" id="aStringUtils_8h_html"><div class="ttname"><a href="StringUtils_8h.html">StringUtils.h</a></div></div>
 <div class="ttc" id="aTraversalOption_8h_html"><div class="ttname"><a href="TraversalOption_8h.html">TraversalOption.h</a></div></div>
-<div class="ttc" id="aclassautopas_1_1options_1_1ContainerOption_html"><div class="ttname"><a href="classautopas_1_1options_1_1ContainerOption.html">autopas::ContainerOption</a></div><div class="ttdoc">Class representing the container choices.</div><div class="ttdef"><b>Definition:</b> ContainerOption.h:18</div></div>
-<div class="ttc" id="aclassautopas_1_1options_1_1Option_html_a099b7bf52ef375a6f9621f6a956a5f97"><div class="ttname"><a href="classautopas_1_1options_1_1Option.html#a099b7bf52ef375a6f9621f6a956a5f97">autopas::options::Option&lt; ContainerOption &gt;::getAllOptions</a></div><div class="ttdeci">static std::set&lt; ContainerOption &gt; getAllOptions()</div><div class="ttdoc">Provides a way to iterate over the possible options.</div><div class="ttdef"><b>Definition:</b> Option.h:34</div></div>
-<div class="ttc" id="aclassautopas_1_1options_1_1Option_html_ae65415d6b5bb89139341952feea8a0df"><div class="ttname"><a href="classautopas_1_1options_1_1Option.html#ae65415d6b5bb89139341952feea8a0df">autopas::options::Option::to_string</a></div><div class="ttdeci">std::string to_string() const</div><div class="ttdoc">Converts an Option object to its respective string representation.</div><div class="ttdef"><b>Definition:</b> Option.h:60</div></div>
-<div class="ttc" id="aclassautopas_1_1options_1_1TraversalOption_html"><div class="ttname"><a href="classautopas_1_1options_1_1TraversalOption.html">autopas::TraversalOption</a></div><div class="ttdoc">Class representing the traversal choices.</div><div class="ttdef"><b>Definition:</b> TraversalOption.h:18</div></div>
 <div class="ttc" id="aclassautopas_1_1utils_1_1ExceptionHandler_html_ae61b9aac49a90a9ff86859c73005ee07"><div class="ttname"><a href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a></div><div class="ttdeci">static void exception(const Exception e)</div><div class="ttdoc">Handle an exception derived by std::exception.</div><div class="ttdef"><b>Definition:</b> ExceptionHandler.h:65</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
