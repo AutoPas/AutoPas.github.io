@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-3fc478e</span>
+   &#160;<span id="projectnumber">0.1.0-519d1e6</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -399,7 +399,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This interface serves as a common parent class for all traversals.  <a href="classautopas_1_1TraversalInterface.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalSelector.html">TraversalSelector</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classautopas_1_1TraversalSelector.html" title="TraversalSelector is used for the construction of the list in the applyBuildFunctor method.">TraversalSelector</a> is used for the construction of the list in the applyBuildFunctor method.  <a href="classautopas_1_1TraversalSelector.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selector for a container traversal.  <a href="classautopas_1_1TraversalSelector.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalSelectorInfo.html">TraversalSelectorInfo</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Info for traversals of a specific container.  <a href="classautopas_1_1TraversalSelectorInfo.html#details">More...</a><br /></td></tr>
@@ -536,6 +536,18 @@ using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="nam
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:a82a8cce861d1c5e0aae32f34ed39e5e0"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0">OwnershipState</a> : int64_t { <a class="el" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a275876e34cf609db118f3d84b799a790">dummy</a> = 0
+, <a class="el" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a8f9a4c5fe0824547590a3fc568f5c7c7">owned</a>
+, <a class="el" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a57f842286171094855e51fc3a541c1e2">halo</a>
+ }</td></tr>
+<tr class="memdesc:a82a8cce861d1c5e0aae32f34ed39e5e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum that specifies the state of ownership.  <a href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0">More...</a><br /></td></tr>
+<tr class="separator:a82a8cce861d1c5e0aae32f34ed39e5e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aae98cfb33c0ad2e9682bff91f985fcdb"><td class="memItemLeft" align="right" valign="top"><a id="aae98cfb33c0ad2e9682bff91f985fcdb"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#aae98cfb33c0ad2e9682bff91f985fcdb">FunctorN3Modes</a> { <b>Newton3Only</b>
+, <b>Newton3Off</b>
+, <b>Both</b>
+ }</td></tr>
+<tr class="memdesc:aae98cfb33c0ad2e9682bff91f985fcdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Newton 3 modes for the LJFunctor. <br /></td></tr>
+<tr class="separator:aae98cfb33c0ad2e9682bff91f985fcdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0503ca3cdb1ed5bdd6844883536ca3f8"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8">CellType</a> { <br />
 &#160;&#160;<a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8a8644cb057acddc83274e92b5d319ee53">FullParticleCell</a>
 , <a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8ae5e6fc2ac7bf5ed173b4cef47d8fcf41">ReferenceParticleCell</a>
@@ -547,12 +559,6 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a0503ca3cdb1ed5bdd6844883536ca3f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The ParticleCell Type as an Enum.  <a href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8">More...</a><br /></td></tr>
 <tr class="separator:a0503ca3cdb1ed5bdd6844883536ca3f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a82a8cce861d1c5e0aae32f34ed39e5e0"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0">OwnershipState</a> : int64_t { <a class="el" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a275876e34cf609db118f3d84b799a790">dummy</a> = 0
-, <a class="el" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a8f9a4c5fe0824547590a3fc568f5c7c7">owned</a>
-, <a class="el" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a57f842286171094855e51fc3a541c1e2">halo</a>
- }</td></tr>
-<tr class="memdesc:a82a8cce861d1c5e0aae32f34ed39e5e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum that specifies the state of ownership.  <a href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0">More...</a><br /></td></tr>
-<tr class="separator:a82a8cce861d1c5e0aae32f34ed39e5e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7d7e9a630b960c5bb1d4622504c7b1a"><td class="memItemLeft" align="right" valign="top"><a id="ab7d7e9a630b960c5bb1d4622504c7b1a"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> { <b>AUTOPAS_MPI_COMM_NULL</b> = 0
 , <b>AUTOPAS_MPI_COMM_WORLD</b>
  }</td></tr>
@@ -593,27 +599,27 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a95f95958d8aa569491ee4e9d3388dbac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dummy for MPI_Error. <br /></td></tr>
 <tr class="separator:a95f95958d8aa569491ee4e9d3388dbac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae98cfb33c0ad2e9682bff91f985fcdb"><td class="memItemLeft" align="right" valign="top"><a id="aae98cfb33c0ad2e9682bff91f985fcdb"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#aae98cfb33c0ad2e9682bff91f985fcdb">FunctorN3Modes</a> { <b>Newton3Only</b>
-, <b>Newton3Off</b>
-, <b>Both</b>
- }</td></tr>
-<tr class="memdesc:aae98cfb33c0ad2e9682bff91f985fcdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Newton 3 modes for the LJFunctor. <br /></td></tr>
-<tr class="separator:aae98cfb33c0ad2e9682bff91f985fcdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a758f650e79ca92e030a81a6d743dfe0f"><td class="memItemLeft" align="right" valign="top">static std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#a758f650e79ca92e030a81a6d743dfe0f">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0">OwnershipState</a> &amp;ownershipState)</td></tr>
 <tr class="memdesc:a758f650e79ca92e030a81a6d743dfe0f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insertion operator for OwnershipState.  <a href="namespaceautopas.html#a758f650e79ca92e030a81a6d743dfe0f">More...</a><br /></td></tr>
 <tr class="separator:a758f650e79ca92e030a81a6d743dfe0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac3917775976f91c4251e72887dc1876e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#ac3917775976f91c4251e72887dc1876e">autopas_get_thread_num</a> ()</td></tr>
-<tr class="memdesc:ac3917775976f91c4251e72887dc1876e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dummy for omp_set_lock() when no OpenMP is available.  <a href="namespaceautopas.html#ac3917775976f91c4251e72887dc1876e">More...</a><br /></td></tr>
-<tr class="separator:ac3917775976f91c4251e72887dc1876e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bcb9c71d0158db0bd7464764e3e5b39"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#a0bcb9c71d0158db0bd7464764e3e5b39">autopas_get_num_threads</a> ()</td></tr>
-<tr class="memdesc:a0bcb9c71d0158db0bd7464764e3e5b39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dummy for omp_get_num_threads() when no OpenMP is available.  <a href="namespaceautopas.html#a0bcb9c71d0158db0bd7464764e3e5b39">More...</a><br /></td></tr>
-<tr class="separator:a0bcb9c71d0158db0bd7464764e3e5b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a385797c464a683f32da2d4a43ab53220"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#a385797c464a683f32da2d4a43ab53220">autopas_get_max_threads</a> ()</td></tr>
-<tr class="memdesc:a385797c464a683f32da2d4a43ab53220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dummy for omp_get_max_threads() when no OpenMP is available.  <a href="namespaceautopas.html#a385797c464a683f32da2d4a43ab53220">More...</a><br /></td></tr>
-<tr class="separator:a385797c464a683f32da2d4a43ab53220"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af710dfd13078bfb65c1dac69afc94ea9"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#af710dfd13078bfb65c1dac69afc94ea9">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classautopas_1_1FeatureVector.html">FeatureVector</a> &amp;featureVector)</td></tr>
+<tr class="memdesc:af710dfd13078bfb65c1dac69afc94ea9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream insertion operator.  <a href="namespaceautopas.html#af710dfd13078bfb65c1dac69afc94ea9">More...</a><br /></td></tr>
+<tr class="separator:af710dfd13078bfb65c1dac69afc94ea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acbb28c82a82e1690b87412ce6ac1f975"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#acbb28c82a82e1690b87412ce6ac1f975">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;configuration)</td></tr>
+<tr class="memdesc:acbb28c82a82e1690b87412ce6ac1f975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream insertion operator.  <a href="namespaceautopas.html#acbb28c82a82e1690b87412ce6ac1f975">More...</a><br /></td></tr>
+<tr class="separator:acbb28c82a82e1690b87412ce6ac1f975"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a328f658f21a49315ef4df2936135576c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#a328f658f21a49315ef4df2936135576c">operator==</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;lhs, const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;rhs)</td></tr>
+<tr class="memdesc:a328f658f21a49315ef4df2936135576c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equals operator for <a class="el" href="classautopas_1_1Configuration.html" title="Class containing multiple options that form an algorithm configuration for the pairwise iteration.">Configuration</a> objects.  <a href="namespaceautopas.html#a328f658f21a49315ef4df2936135576c">More...</a><br /></td></tr>
+<tr class="separator:a328f658f21a49315ef4df2936135576c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a079ab9f3687c9fa1abaa7f14958ecc2e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#a079ab9f3687c9fa1abaa7f14958ecc2e">operator!=</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;lhs, const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;rhs)</td></tr>
+<tr class="memdesc:a079ab9f3687c9fa1abaa7f14958ecc2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not-Equals operator for <a class="el" href="classautopas_1_1Configuration.html" title="Class containing multiple options that form an algorithm configuration for the pairwise iteration.">Configuration</a> objects.  <a href="namespaceautopas.html#a079ab9f3687c9fa1abaa7f14958ecc2e">More...</a><br /></td></tr>
+<tr class="separator:a079ab9f3687c9fa1abaa7f14958ecc2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae183b4659bc8632146f94292bcc21439"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#ae183b4659bc8632146f94292bcc21439">operator&lt;</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;lhs, const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;rhs)</td></tr>
+<tr class="memdesc:ae183b4659bc8632146f94292bcc21439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comparison operator for <a class="el" href="classautopas_1_1Configuration.html" title="Class containing multiple options that form an algorithm configuration for the pairwise iteration.">Configuration</a> objects.  <a href="namespaceautopas.html#ae183b4659bc8632146f94292bcc21439">More...</a><br /></td></tr>
+<tr class="separator:ae183b4659bc8632146f94292bcc21439"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab71419c37050830801522289eda8caee"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#ab71419c37050830801522289eda8caee">AutoPas_MPI_Init</a> (int *argc, char ***argv)</td></tr>
 <tr class="memdesc:ab71419c37050830801522289eda8caee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wrapper for MPI_Init Also defines the <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> communicator, so it needs to be called when <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> should use MPI.  <a href="namespaceautopas.html#ab71419c37050830801522289eda8caee">More...</a><br /></td></tr>
 <tr class="separator:ab71419c37050830801522289eda8caee"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -683,21 +689,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ab242e86680fb47d6f6d9dd45dbcb7d33"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#ab242e86680fb47d6f6d9dd45dbcb7d33">withStaticContainerType</a> (std::shared_ptr&lt; <a class="el" href="classautopas_1_1CellBasedParticleContainer.html">CellBasedParticleContainer</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;&gt; &amp;container, FunctionType &amp;&amp;function)</td></tr>
 <tr class="memdesc:ab242e86680fb47d6f6d9dd45dbcb7d33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Will execute the passed function body with the static container type of container.  <a href="namespaceautopas.html#ab242e86680fb47d6f6d9dd45dbcb7d33">More...</a><br /></td></tr>
 <tr class="separator:ab242e86680fb47d6f6d9dd45dbcb7d33"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acbb28c82a82e1690b87412ce6ac1f975"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#acbb28c82a82e1690b87412ce6ac1f975">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;configuration)</td></tr>
-<tr class="memdesc:acbb28c82a82e1690b87412ce6ac1f975"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream insertion operator.  <a href="namespaceautopas.html#acbb28c82a82e1690b87412ce6ac1f975">More...</a><br /></td></tr>
-<tr class="separator:acbb28c82a82e1690b87412ce6ac1f975"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a328f658f21a49315ef4df2936135576c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#a328f658f21a49315ef4df2936135576c">operator==</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;lhs, const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;rhs)</td></tr>
-<tr class="memdesc:a328f658f21a49315ef4df2936135576c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equals operator for <a class="el" href="classautopas_1_1Configuration.html" title="Class containing multiple options that form an algorithm configuration for the pairwise iteration.">Configuration</a> objects.  <a href="namespaceautopas.html#a328f658f21a49315ef4df2936135576c">More...</a><br /></td></tr>
-<tr class="separator:a328f658f21a49315ef4df2936135576c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a079ab9f3687c9fa1abaa7f14958ecc2e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#a079ab9f3687c9fa1abaa7f14958ecc2e">operator!=</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;lhs, const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;rhs)</td></tr>
-<tr class="memdesc:a079ab9f3687c9fa1abaa7f14958ecc2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Not-Equals operator for <a class="el" href="classautopas_1_1Configuration.html" title="Class containing multiple options that form an algorithm configuration for the pairwise iteration.">Configuration</a> objects.  <a href="namespaceautopas.html#a079ab9f3687c9fa1abaa7f14958ecc2e">More...</a><br /></td></tr>
-<tr class="separator:a079ab9f3687c9fa1abaa7f14958ecc2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae183b4659bc8632146f94292bcc21439"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#ae183b4659bc8632146f94292bcc21439">operator&lt;</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;lhs, const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;rhs)</td></tr>
-<tr class="memdesc:ae183b4659bc8632146f94292bcc21439"><td class="mdescLeft">&#160;</td><td class="mdescRight">Comparison operator for <a class="el" href="classautopas_1_1Configuration.html" title="Class containing multiple options that form an algorithm configuration for the pairwise iteration.">Configuration</a> objects.  <a href="namespaceautopas.html#ae183b4659bc8632146f94292bcc21439">More...</a><br /></td></tr>
-<tr class="separator:ae183b4659bc8632146f94292bcc21439"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af710dfd13078bfb65c1dac69afc94ea9"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#af710dfd13078bfb65c1dac69afc94ea9">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classautopas_1_1FeatureVector.html">FeatureVector</a> &amp;featureVector)</td></tr>
-<tr class="memdesc:af710dfd13078bfb65c1dac69afc94ea9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream insertion operator.  <a href="namespaceautopas.html#af710dfd13078bfb65c1dac69afc94ea9">More...</a><br /></td></tr>
-<tr class="separator:af710dfd13078bfb65c1dac69afc94ea9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac3917775976f91c4251e72887dc1876e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#ac3917775976f91c4251e72887dc1876e">autopas_get_thread_num</a> ()</td></tr>
+<tr class="memdesc:ac3917775976f91c4251e72887dc1876e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dummy for omp_set_lock() when no OpenMP is available.  <a href="namespaceautopas.html#ac3917775976f91c4251e72887dc1876e">More...</a><br /></td></tr>
+<tr class="separator:ac3917775976f91c4251e72887dc1876e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bcb9c71d0158db0bd7464764e3e5b39"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#a0bcb9c71d0158db0bd7464764e3e5b39">autopas_get_num_threads</a> ()</td></tr>
+<tr class="memdesc:a0bcb9c71d0158db0bd7464764e3e5b39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dummy for omp_get_num_threads() when no OpenMP is available.  <a href="namespaceautopas.html#a0bcb9c71d0158db0bd7464764e3e5b39">More...</a><br /></td></tr>
+<tr class="separator:a0bcb9c71d0158db0bd7464764e3e5b39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a385797c464a683f32da2d4a43ab53220"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#a385797c464a683f32da2d4a43ab53220">autopas_get_max_threads</a> ()</td></tr>
+<tr class="memdesc:a385797c464a683f32da2d4a43ab53220"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dummy for omp_get_max_threads() when no OpenMP is available.  <a href="namespaceautopas.html#a385797c464a683f32da2d4a43ab53220">More...</a><br /></td></tr>
+<tr class="separator:a385797c464a683f32da2d4a43ab53220"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -2341,7 +2341,7 @@ template&lt;typename <a class="el" href="namespaceautopas.html#a1103977ab8f79d29
 </div><div class="memdoc">
 
 <p>Default size for a cache line. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000021">Todo:</a></b></dt><dd>C++17: replace value by std::hardware_destructive_interference_size not yet possible: as of 27.06.2019 this(P0154R1) is in neither libstc++ (gnu) nor libc++ (clang) </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000030">Todo:</a></b></dt><dd>C++17: replace value by std::hardware_destructive_interference_size not yet possible: as of 27.06.2019 this(P0154R1) is in neither libstc++ (gnu) nor libc++ (clang) </dd></dl>
 
 </div>
 </div>
