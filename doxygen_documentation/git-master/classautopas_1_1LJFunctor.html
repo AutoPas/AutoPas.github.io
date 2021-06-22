@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-519d1e6</span>
+   &#160;<span id="projectnumber">0.1.0-f1fbb09</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -153,9 +153,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a66561ac6d1c5232216079ce15d53fb1c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LJFunctor.html#a66561ac6d1c5232216079ce15d53fb1c">allowsNonNewton3</a> () final</td></tr>
 <tr class="memdesc:a66561ac6d1c5232216079ce15d53fb1c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies whether the functor is capable of non-Newton3-like functors.  <a href="classautopas_1_1LJFunctor.html#a66561ac6d1c5232216079ce15d53fb1c">More...</a><br /></td></tr>
 <tr class="separator:a66561ac6d1c5232216079ce15d53fb1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a803772d69956b455537300f3d23d7b70"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LJFunctor.html#a803772d69956b455537300f3d23d7b70">isAppropriateClusterSize</a> (unsigned int clusterSize, DataLayoutOption::Value dataLayout) const final</td></tr>
-<tr class="memdesc:a803772d69956b455537300f3d23d7b70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the given clusterSize is appropriate and can be used by the functor.  <a href="classautopas_1_1LJFunctor.html#a803772d69956b455537300f3d23d7b70">More...</a><br /></td></tr>
-<tr class="separator:a803772d69956b455537300f3d23d7b70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a780b4b3fd6277eeb74be681d4599bd60"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LJFunctor.html#a780b4b3fd6277eeb74be681d4599bd60">AoSFunctor</a> (<a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &amp;i, <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &amp;j, bool newton3) final</td></tr>
 <tr class="memdesc:a780b4b3fd6277eeb74be681d4599bd60"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classautopas_1_1Functor.html" title="Functor class.">Functor</a> for arrays of structures (AoS).  <a href="classautopas_1_1LJFunctor.html#a780b4b3fd6277eeb74be681d4599bd60">More...</a><br /></td></tr>
 <tr class="separator:a780b4b3fd6277eeb74be681d4599bd60"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -168,27 +165,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abe10481193eb3dad3454e6aee4edec37"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LJFunctor.html#abe10481193eb3dad3454e6aee4edec37">SoAFunctorVerlet</a> (<a class="el" href="classautopas_1_1SoAView.html">SoAView</a>&lt; SoAArraysType &gt; soa, const size_t indexFirst, const std::vector&lt; size_t, <a class="el" href="classautopas_1_1AlignedAllocator.html">autopas::AlignedAllocator</a>&lt; size_t &gt;&gt; &amp;neighborList, bool newton3) final</td></tr>
 <tr class="memdesc:abe10481193eb3dad3454e6aee4edec37"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classautopas_1_1Functor.html" title="Functor class.">Functor</a> for structure of arrays (<a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a>) for neighbor lists.  <a href="classautopas_1_1LJFunctor.html#abe10481193eb3dad3454e6aee4edec37">More...</a><br /></td></tr>
 <tr class="separator:abe10481193eb3dad3454e6aee4edec37"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afd2c3c4640ad434d26e33f744481481c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LJFunctor.html#afd2c3c4640ad434d26e33f744481481c">CudaFunctor</a> (<a class="el" href="classautopas_1_1CudaSoA.html">CudaSoA</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#aefa90c6362d865ad496e2d784be9d386">Particle::CudaDeviceArraysType</a> &gt; &amp;device_handle, bool newton3) final</td></tr>
-<tr class="memdesc:afd2c3c4640ad434d26e33f744481481c"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classautopas_1_1Functor.html" title="Functor class.">Functor</a> using Cuda on <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> in device Memory.  <a href="classautopas_1_1LJFunctor.html#afd2c3c4640ad434d26e33f744481481c">More...</a><br /></td></tr>
-<tr class="separator:afd2c3c4640ad434d26e33f744481481c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a6c92a29663d5596efd8dc9ba5cc3be"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LJFunctor.html#a4a6c92a29663d5596efd8dc9ba5cc3be">setParticleProperties</a> (SoAFloatPrecision epsilon24, SoAFloatPrecision sigmaSquare)</td></tr>
 <tr class="memdesc:a4a6c92a29663d5596efd8dc9ba5cc3be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the particle properties constants for this functor.  <a href="classautopas_1_1LJFunctor.html#a4a6c92a29663d5596efd8dc9ba5cc3be">More...</a><br /></td></tr>
 <tr class="separator:a4a6c92a29663d5596efd8dc9ba5cc3be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9fa073e74d9450ddc30fe6ca762254a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LJFunctor.html#a9fa073e74d9450ddc30fe6ca762254a1">CudaFunctor</a> (<a class="el" href="classautopas_1_1CudaSoA.html">CudaSoA</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#aefa90c6362d865ad496e2d784be9d386">Particle::CudaDeviceArraysType</a> &gt; &amp;device_handle1, <a class="el" href="classautopas_1_1CudaSoA.html">CudaSoA</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#aefa90c6362d865ad496e2d784be9d386">Particle::CudaDeviceArraysType</a> &gt; &amp;device_handle2, bool newton3) final</td></tr>
-<tr class="memdesc:a9fa073e74d9450ddc30fe6ca762254a1"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classautopas_1_1Functor.html" title="Functor class.">Functor</a> using Cuda on SoAs in device Memory.  <a href="classautopas_1_1LJFunctor.html#a9fa073e74d9450ddc30fe6ca762254a1">More...</a><br /></td></tr>
-<tr class="separator:a9fa073e74d9450ddc30fe6ca762254a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aceead553bf5bc68dc4882d7d75871b93"><td class="memItemLeft" align="right" valign="top">CudaWrapperInterface&lt; SoAFloatPrecision &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LJFunctor.html#aceead553bf5bc68dc4882d7d75871b93">getCudaWrapper</a> () final</td></tr>
-<tr class="memdesc:aceead553bf5bc68dc4882d7d75871b93"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an interface for traversals to directly access Cuda Functions.  <a href="classautopas_1_1LJFunctor.html#aceead553bf5bc68dc4882d7d75871b93">More...</a><br /></td></tr>
-<tr class="separator:aceead553bf5bc68dc4882d7d75871b93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a49bd23460931a2d8079392987fb3dbb4"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; FunctorCudaSoA&lt; SoAFloatPrecision &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LJFunctor.html#a49bd23460931a2d8079392987fb3dbb4">createFunctorCudaSoA</a> (<a class="el" href="classautopas_1_1CudaSoA.html">CudaSoA</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#aefa90c6362d865ad496e2d784be9d386">Particle::CudaDeviceArraysType</a> &gt; &amp;device_handle) final</td></tr>
-<tr class="memdesc:a49bd23460931a2d8079392987fb3dbb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a Cuda <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> object containing all the relevant pointers from the generic Cuda <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a>.  <a href="classautopas_1_1LJFunctor.html#a49bd23460931a2d8079392987fb3dbb4">More...</a><br /></td></tr>
-<tr class="separator:a49bd23460931a2d8079392987fb3dbb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5e923450b4f2b672eed6b3dde22cf864"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LJFunctor.html#a5e923450b4f2b672eed6b3dde22cf864">deviceSoALoader</a> (::<a class="el" href="classautopas_1_1SoA.html">autopas::SoA</a>&lt; SoAArraysType &gt; &amp;soa, <a class="el" href="classautopas_1_1CudaSoA.html">CudaSoA</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#aefa90c6362d865ad496e2d784be9d386">Particle::CudaDeviceArraysType</a> &gt; &amp;device_handle) final</td></tr>
-<tr class="memdesc:a5e923450b4f2b672eed6b3dde22cf864"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> data of the given cell to the Cuda device.  <a href="classautopas_1_1LJFunctor.html#a5e923450b4f2b672eed6b3dde22cf864">More...</a><br /></td></tr>
-<tr class="separator:a5e923450b4f2b672eed6b3dde22cf864"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a429515d2df082836e46edcf0d3def8b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LJFunctor.html#a429515d2df082836e46edcf0d3def8b1">deviceSoAExtractor</a> (::<a class="el" href="classautopas_1_1SoA.html">autopas::SoA</a>&lt; SoAArraysType &gt; &amp;soa, <a class="el" href="classautopas_1_1CudaSoA.html">CudaSoA</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#aefa90c6362d865ad496e2d784be9d386">Particle::CudaDeviceArraysType</a> &gt; &amp;device_handle) final</td></tr>
-<tr class="memdesc:a429515d2df082836e46edcf0d3def8b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the data stored on the Cuda device back to the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> overwrites the data in the soa.  <a href="classautopas_1_1LJFunctor.html#a429515d2df082836e46edcf0d3def8b1">More...</a><br /></td></tr>
-<tr class="separator:a429515d2df082836e46edcf0d3def8b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae420ca4b5a519e60d795b25e36215ae0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LJFunctor.html#ae420ca4b5a519e60d795b25e36215ae0">initTraversal</a> () final</td></tr>
 <tr class="memdesc:ae420ca4b5a519e60d795b25e36215ae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the global values.  <a href="classautopas_1_1LJFunctor.html#ae420ca4b5a519e60d795b25e36215ae0">More...</a><br /></td></tr>
 <tr class="separator:ae420ca4b5a519e60d795b25e36215ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -211,12 +190,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae72cd156a183c29c07770f1878ea5a8b inherit pub_methods_classautopas_1_1Functor"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Functor.html#ae72cd156a183c29c07770f1878ea5a8b">Functor</a> (double cutoff)</td></tr>
 <tr class="memdesc:ae72cd156a183c29c07770f1878ea5a8b inherit pub_methods_classautopas_1_1Functor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classautopas_1_1Functor.html#ae72cd156a183c29c07770f1878ea5a8b">More...</a><br /></td></tr>
 <tr class="separator:ae72cd156a183c29c07770f1878ea5a8b inherit pub_methods_classautopas_1_1Functor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe3023227a10ede5213926b1f74873ed inherit pub_methods_classautopas_1_1Functor"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Functor.html#abe3023227a10ede5213926b1f74873ed">deviceSoALoader</a> (<a class="el" href="classautopas_1_1SoA.html">SoA</a>&lt; <a class="el" href="classautopas_1_1Functor.html#a99c0257aaf2adcdacf967c98c474a572">SoAArraysType</a> &gt; &amp;soa, <a class="el" href="classautopas_1_1CudaSoA.html">CudaSoA</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#aefa90c6362d865ad496e2d784be9d386">Particle::CudaDeviceArraysType</a> &gt; &amp;device_handle)</td></tr>
-<tr class="memdesc:abe3023227a10ede5213926b1f74873ed inherit pub_methods_classautopas_1_1Functor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the SoA data of the given cell to the Cuda device.  <a href="classautopas_1_1Functor.html#abe3023227a10ede5213926b1f74873ed">More...</a><br /></td></tr>
-<tr class="separator:abe3023227a10ede5213926b1f74873ed inherit pub_methods_classautopas_1_1Functor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31195bfb50540f690e7cf4b3f751a567 inherit pub_methods_classautopas_1_1Functor"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Functor.html#a31195bfb50540f690e7cf4b3f751a567">deviceSoAExtractor</a> (<a class="el" href="classautopas_1_1SoA.html">SoA</a>&lt; <a class="el" href="classautopas_1_1Functor.html#a99c0257aaf2adcdacf967c98c474a572">SoAArraysType</a> &gt; &amp;soa, <a class="el" href="classautopas_1_1CudaSoA.html">CudaSoA</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#aefa90c6362d865ad496e2d784be9d386">Particle::CudaDeviceArraysType</a> &gt; &amp;device_handle)</td></tr>
-<tr class="memdesc:a31195bfb50540f690e7cf4b3f751a567 inherit pub_methods_classautopas_1_1Functor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the data stored on the Cuda device back to the SoA overwrites the data in the soa.  <a href="classautopas_1_1Functor.html#a31195bfb50540f690e7cf4b3f751a567">More...</a><br /></td></tr>
-<tr class="separator:a31195bfb50540f690e7cf4b3f751a567 inherit pub_methods_classautopas_1_1Functor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a38492402565dca539823229292b444 inherit pub_methods_classautopas_1_1Functor"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Functor.html#a3a38492402565dca539823229292b444">SoALoader</a> (<a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &amp;cell, <a class="el" href="classautopas_1_1SoA.html">SoA</a>&lt; <a class="el" href="classautopas_1_1Functor.html#a99c0257aaf2adcdacf967c98c474a572">SoAArraysType</a> &gt; &amp;soa, size_t offset)</td></tr>
 <tr class="memdesc:a3a38492402565dca539823229292b444 inherit pub_methods_classautopas_1_1Functor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the AoS data of the given cell in the given soa.  <a href="classautopas_1_1Functor.html#a3a38492402565dca539823229292b444">More...</a><br /></td></tr>
 <tr class="separator:a3a38492402565dca539823229292b444 inherit pub_methods_classautopas_1_1Functor"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -487,246 +460,6 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="a49bd23460931a2d8079392987fb3dbb4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a49bd23460931a2d8079392987fb3dbb4">&#9670;&nbsp;</a></span>createFunctorCudaSoA()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , bool applyShift = false, bool useMixing = false, <a class="el" href="namespaceautopas.html#aae98cfb33c0ad2e9682bff91f985fcdb">FunctorN3Modes</a> useNewton3 = FunctorN3Modes::Both, bool calculateGlobals = false, bool relevantForTuning = true&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::unique_ptr&lt;FunctorCudaSoA&lt;SoAFloatPrecision&gt; &gt; <a class="el" href="classautopas_1_1LJFunctor.html">autopas::LJFunctor</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;::createFunctorCudaSoA </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classautopas_1_1CudaSoA.html">CudaSoA</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#aefa90c6362d865ad496e2d784be9d386">Particle::CudaDeviceArraysType</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>device_handle</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creates a Cuda <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> object containing all the relevant pointers from the generic Cuda <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a>. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">device_handle</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>unique pointer to the object </dd></dl>
-
-<p>Reimplemented from <a class="el" href="classautopas_1_1Functor.html#ae37e71b69cbbdac29c0aca35c98ca8e0">autopas::Functor&lt; Particle, LJFunctor&lt; Particle, false, false, FunctorN3Modes::Both, false, true &gt; &gt;</a>.</p>
-
-</div>
-</div>
-<a id="afd2c3c4640ad434d26e33f744481481c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd2c3c4640ad434d26e33f744481481c">&#9670;&nbsp;</a></span>CudaFunctor() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , bool applyShift = false, bool useMixing = false, <a class="el" href="namespaceautopas.html#aae98cfb33c0ad2e9682bff91f985fcdb">FunctorN3Modes</a> useNewton3 = FunctorN3Modes::Both, bool calculateGlobals = false, bool relevantForTuning = true&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1LJFunctor.html">autopas::LJFunctor</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;::CudaFunctor </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classautopas_1_1CudaSoA.html">CudaSoA</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#aefa90c6362d865ad496e2d784be9d386">Particle::CudaDeviceArraysType</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>device_handle</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>newton3</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="classautopas_1_1Functor.html" title="Functor class.">Functor</a> using Cuda on <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> in device Memory. </p>
-<p class="">This <a class="el" href="classautopas_1_1Functor.html" title="Functor class.">Functor</a> calculates the pair-wise interactions between particles in the device_handle on the GPU</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">device_handle</td><td>soa in device memory </td></tr>
-    <tr><td class="paramname">newton3</td><td>defines whether or whether not to use newton </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented from <a class="el" href="classautopas_1_1Functor.html#ab3f2c6a46fec3512c8a6401bb71ebd09">autopas::Functor&lt; Particle, LJFunctor&lt; Particle, false, false, FunctorN3Modes::Both, false, true &gt; &gt;</a>.</p>
-
-</div>
-</div>
-<a id="a9fa073e74d9450ddc30fe6ca762254a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9fa073e74d9450ddc30fe6ca762254a1">&#9670;&nbsp;</a></span>CudaFunctor() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , bool applyShift = false, bool useMixing = false, <a class="el" href="namespaceautopas.html#aae98cfb33c0ad2e9682bff91f985fcdb">FunctorN3Modes</a> useNewton3 = FunctorN3Modes::Both, bool calculateGlobals = false, bool relevantForTuning = true&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1LJFunctor.html">autopas::LJFunctor</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;::CudaFunctor </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classautopas_1_1CudaSoA.html">CudaSoA</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#aefa90c6362d865ad496e2d784be9d386">Particle::CudaDeviceArraysType</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>device_handle1</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classautopas_1_1CudaSoA.html">CudaSoA</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#aefa90c6362d865ad496e2d784be9d386">Particle::CudaDeviceArraysType</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>device_handle2</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>newton3</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p><a class="el" href="classautopas_1_1Functor.html" title="Functor class.">Functor</a> using Cuda on SoAs in device Memory. </p>
-<p class="">This <a class="el" href="classautopas_1_1Functor.html" title="Functor class.">Functor</a> calculates the pair-wise interactions between particles in the device_handle1 and device_handle2 on the GPU</p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">device_handle1</td><td>first soa in device memory </td></tr>
-    <tr><td class="paramname">device_handle2</td><td>second soa in device memory </td></tr>
-    <tr><td class="paramname">newton3</td><td>defines whether or whether not to use newton </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented from <a class="el" href="classautopas_1_1Functor.html#af1c23d46f76c8f1f448eb476acb4d434">autopas::Functor&lt; Particle, LJFunctor&lt; Particle, false, false, FunctorN3Modes::Both, false, true &gt; &gt;</a>.</p>
-
-</div>
-</div>
-<a id="a429515d2df082836e46edcf0d3def8b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a429515d2df082836e46edcf0d3def8b1">&#9670;&nbsp;</a></span>deviceSoAExtractor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , bool applyShift = false, bool useMixing = false, <a class="el" href="namespaceautopas.html#aae98cfb33c0ad2e9682bff91f985fcdb">FunctorN3Modes</a> useNewton3 = FunctorN3Modes::Both, bool calculateGlobals = false, bool relevantForTuning = true&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1LJFunctor.html">autopas::LJFunctor</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;::deviceSoAExtractor </td>
-          <td>(</td>
-          <td class="paramtype">::<a class="el" href="classautopas_1_1SoA.html">autopas::SoA</a>&lt; SoAArraysType &gt; &amp;&#160;</td>
-          <td class="paramname"><em>soa</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classautopas_1_1CudaSoA.html">CudaSoA</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#aefa90c6362d865ad496e2d784be9d386">Particle::CudaDeviceArraysType</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>device_handle</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Copies the data stored on the Cuda device back to the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> overwrites the data in the soa. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">soa</td><td>Structure of arrays where the data copied to. </td></tr>
-    <tr><td class="paramname">device_handle</td><td>soa in device memory where the data is loaded from </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a5e923450b4f2b672eed6b3dde22cf864"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5e923450b4f2b672eed6b3dde22cf864">&#9670;&nbsp;</a></span>deviceSoALoader()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , bool applyShift = false, bool useMixing = false, <a class="el" href="namespaceautopas.html#aae98cfb33c0ad2e9682bff91f985fcdb">FunctorN3Modes</a> useNewton3 = FunctorN3Modes::Both, bool calculateGlobals = false, bool relevantForTuning = true&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1LJFunctor.html">autopas::LJFunctor</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;::deviceSoALoader </td>
-          <td>(</td>
-          <td class="paramtype">::<a class="el" href="classautopas_1_1SoA.html">autopas::SoA</a>&lt; SoAArraysType &gt; &amp;&#160;</td>
-          <td class="paramname"><em>soa</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classautopas_1_1CudaSoA.html">CudaSoA</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#aefa90c6362d865ad496e2d784be9d386">Particle::CudaDeviceArraysType</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>device_handle</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Copies the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> data of the given cell to the Cuda device. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">soa</td><td>Structure of arrays where the data is loaded. </td></tr>
-    <tr><td class="paramname">device_handle</td><td>soa in device memory where the data is copied to </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="abe3c1ddd7608488473f55ec6124efefc"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abe3c1ddd7608488473f55ec6124efefc">&#9670;&nbsp;</a></span>endTraversal()</h2>
 
@@ -793,38 +526,6 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <p>Get attributes computed by this functor. </p>
 <dl class="section return"><dt>Returns</dt><dd>Attributes computed by this functor. </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>C++20: make this function virtual </dd></dl>
-
-</div>
-</div>
-<a id="aceead553bf5bc68dc4882d7d75871b93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aceead553bf5bc68dc4882d7d75871b93">&#9670;&nbsp;</a></span>getCudaWrapper()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , bool applyShift = false, bool useMixing = false, <a class="el" href="namespaceautopas.html#aae98cfb33c0ad2e9682bff91f985fcdb">FunctorN3Modes</a> useNewton3 = FunctorN3Modes::Both, bool calculateGlobals = false, bool relevantForTuning = true&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">CudaWrapperInterface&lt;SoAFloatPrecision&gt;* <a class="el" href="classautopas_1_1LJFunctor.html">autopas::LJFunctor</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;::getCudaWrapper </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Provides an interface for traversals to directly access Cuda Functions. </p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to CudaWrapper of the <a class="el" href="classautopas_1_1Functor.html" title="Functor class.">Functor</a> </dd></dl>
-
-<p>Reimplemented from <a class="el" href="classautopas_1_1Functor.html#a40de876e9705e9b58d2ff61da0850045">autopas::Functor&lt; Particle, LJFunctor&lt; Particle, false, false, FunctorN3Modes::Both, false, true &gt; &gt;</a>.</p>
 
 </div>
 </div>
@@ -1101,56 +802,6 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="a803772d69956b455537300f3d23d7b70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a803772d69956b455537300f3d23d7b70">&#9670;&nbsp;</a></span>isAppropriateClusterSize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , bool applyShift = false, bool useMixing = false, <a class="el" href="namespaceautopas.html#aae98cfb33c0ad2e9682bff91f985fcdb">FunctorN3Modes</a> useNewton3 = FunctorN3Modes::Both, bool calculateGlobals = false, bool relevantForTuning = true&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="classautopas_1_1LJFunctor.html">autopas::LJFunctor</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, applyShift, useMixing, useNewton3, calculateGlobals, relevantForTuning &gt;::isAppropriateClusterSize </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>clusterSize</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">DataLayoutOption::Value&#160;</td>
-          <td class="paramname"><em>dataLayout</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">final</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check whether the given clusterSize is appropriate and can be used by the functor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">clusterSize</td><td>The size of the clusters. </td></tr>
-    <tr><td class="paramname">dataLayout</td><td>The used data layout. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true, iff the cluster size is appropriate. </dd></dl>
-
-<p>Implements <a class="el" href="classautopas_1_1Functor.html#aa6613fe27906cc14dce84fe8f6f15afc">autopas::Functor&lt; Particle, LJFunctor&lt; Particle, false, false, FunctorN3Modes::Both, false, true &gt; &gt;</a>.</p>
-
-</div>
-</div>
 <a id="a8ba5205ab7abf19c9d3cbb2e81f89080"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8ba5205ab7abf19c9d3cbb2e81f89080">&#9670;&nbsp;</a></span>isRelevantForTuning()</h2>
 
@@ -1220,7 +871,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </div><div class="memdoc">
 
 <p>Sets the particle properties constants for this functor. </p>
-<p class="">This is only necessary if no particlePropertiesLibrary is used. If compiled with CUDA this function also loads the values to the GPU.</p>
+<p class="">This is only necessary if no particlePropertiesLibrary is used.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">epsilon24</td><td></td></tr>

@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-519d1e6</span>
+   &#160;<span id="projectnumber">0.1.0-f1fbb09</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -145,9 +145,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a661252a32096b7e0bd3d2d86ebf62cb8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VLCCellPairGeneratorFunctor.html#a661252a32096b7e0bd3d2d86ebf62cb8">allowsNonNewton3</a> () override</td></tr>
 <tr class="memdesc:a661252a32096b7e0bd3d2d86ebf62cb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specifies whether the functor is capable of non-Newton3-like functors.  <a href="classautopas_1_1VLCCellPairGeneratorFunctor.html#a661252a32096b7e0bd3d2d86ebf62cb8">More...</a><br /></td></tr>
 <tr class="separator:a661252a32096b7e0bd3d2d86ebf62cb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4406a37daf8216e3729bbbb9145e16f7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VLCCellPairGeneratorFunctor.html#a4406a37daf8216e3729bbbb9145e16f7">isAppropriateClusterSize</a> (unsigned int clusterSize, DataLayoutOption::Value dataLayout) const override</td></tr>
-<tr class="memdesc:a4406a37daf8216e3729bbbb9145e16f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether the given clusterSize is appropriate and can be used by the functor.  <a href="classautopas_1_1VLCCellPairGeneratorFunctor.html#a4406a37daf8216e3729bbbb9145e16f7">More...</a><br /></td></tr>
-<tr class="separator:a4406a37daf8216e3729bbbb9145e16f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8d0f22a2f36f48e883f4f75c4774e45"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VLCCellPairGeneratorFunctor.html#ab8d0f22a2f36f48e883f4f75c4774e45">AoSFunctor</a> (<a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &amp;i, <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &amp;j, bool newton3) override</td></tr>
 <tr class="memdesc:ab8d0f22a2f36f48e883f4f75c4774e45"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classautopas_1_1Functor.html" title="Functor class.">Functor</a> for arrays of structures (AoS).  <a href="classautopas_1_1VLCCellPairGeneratorFunctor.html#ab8d0f22a2f36f48e883f4f75c4774e45">More...</a><br /></td></tr>
 <tr class="separator:ab8d0f22a2f36f48e883f4f75c4774e45"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -170,30 +167,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afe9bd93fb2a6443a094ae567e605b3e5 inherit pub_methods_classautopas_1_1Functor"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Functor.html#afe9bd93fb2a6443a094ae567e605b3e5">SoAFunctorVerlet</a> (<a class="el" href="classautopas_1_1SoAView.html">SoAView</a>&lt; <a class="el" href="classautopas_1_1Functor.html#a99c0257aaf2adcdacf967c98c474a572">SoAArraysType</a> &gt; soa, const size_t indexFirst, const std::vector&lt; size_t, <a class="el" href="classautopas_1_1AlignedAllocator.html">autopas::AlignedAllocator</a>&lt; size_t &gt;&gt; &amp;neighborList, bool newton3)</td></tr>
 <tr class="memdesc:afe9bd93fb2a6443a094ae567e605b3e5 inherit pub_methods_classautopas_1_1Functor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functor for structure of arrays (SoA) for neighbor lists.  <a href="classautopas_1_1Functor.html#afe9bd93fb2a6443a094ae567e605b3e5">More...</a><br /></td></tr>
 <tr class="separator:afe9bd93fb2a6443a094ae567e605b3e5 inherit pub_methods_classautopas_1_1Functor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab3f2c6a46fec3512c8a6401bb71ebd09 inherit pub_methods_classautopas_1_1Functor"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Functor.html#ab3f2c6a46fec3512c8a6401bb71ebd09">CudaFunctor</a> (<a class="el" href="classautopas_1_1CudaSoA.html">CudaSoA</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#aefa90c6362d865ad496e2d784be9d386">Particle::CudaDeviceArraysType</a> &gt; &amp;device_handle, bool newton3)</td></tr>
-<tr class="memdesc:ab3f2c6a46fec3512c8a6401bb71ebd09 inherit pub_methods_classautopas_1_1Functor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functor using Cuda on SoA in device Memory.  <a href="classautopas_1_1Functor.html#ab3f2c6a46fec3512c8a6401bb71ebd09">More...</a><br /></td></tr>
-<tr class="separator:ab3f2c6a46fec3512c8a6401bb71ebd09 inherit pub_methods_classautopas_1_1Functor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1c23d46f76c8f1f448eb476acb4d434 inherit pub_methods_classautopas_1_1Functor"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Functor.html#af1c23d46f76c8f1f448eb476acb4d434">CudaFunctor</a> (<a class="el" href="classautopas_1_1CudaSoA.html">CudaSoA</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#aefa90c6362d865ad496e2d784be9d386">Particle::CudaDeviceArraysType</a> &gt; &amp;device_handle1, <a class="el" href="classautopas_1_1CudaSoA.html">CudaSoA</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#aefa90c6362d865ad496e2d784be9d386">Particle::CudaDeviceArraysType</a> &gt; &amp;device_handle2, bool newton3)</td></tr>
-<tr class="memdesc:af1c23d46f76c8f1f448eb476acb4d434 inherit pub_methods_classautopas_1_1Functor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functor using Cuda on SoAs in device Memory.  <a href="classautopas_1_1Functor.html#af1c23d46f76c8f1f448eb476acb4d434">More...</a><br /></td></tr>
-<tr class="separator:af1c23d46f76c8f1f448eb476acb4d434 inherit pub_methods_classautopas_1_1Functor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe3023227a10ede5213926b1f74873ed inherit pub_methods_classautopas_1_1Functor"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Functor.html#abe3023227a10ede5213926b1f74873ed">deviceSoALoader</a> (<a class="el" href="classautopas_1_1SoA.html">SoA</a>&lt; <a class="el" href="classautopas_1_1Functor.html#a99c0257aaf2adcdacf967c98c474a572">SoAArraysType</a> &gt; &amp;soa, <a class="el" href="classautopas_1_1CudaSoA.html">CudaSoA</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#aefa90c6362d865ad496e2d784be9d386">Particle::CudaDeviceArraysType</a> &gt; &amp;device_handle)</td></tr>
-<tr class="memdesc:abe3023227a10ede5213926b1f74873ed inherit pub_methods_classautopas_1_1Functor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the SoA data of the given cell to the Cuda device.  <a href="classautopas_1_1Functor.html#abe3023227a10ede5213926b1f74873ed">More...</a><br /></td></tr>
-<tr class="separator:abe3023227a10ede5213926b1f74873ed inherit pub_methods_classautopas_1_1Functor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a31195bfb50540f690e7cf4b3f751a567 inherit pub_methods_classautopas_1_1Functor"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Functor.html#a31195bfb50540f690e7cf4b3f751a567">deviceSoAExtractor</a> (<a class="el" href="classautopas_1_1SoA.html">SoA</a>&lt; <a class="el" href="classautopas_1_1Functor.html#a99c0257aaf2adcdacf967c98c474a572">SoAArraysType</a> &gt; &amp;soa, <a class="el" href="classautopas_1_1CudaSoA.html">CudaSoA</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#aefa90c6362d865ad496e2d784be9d386">Particle::CudaDeviceArraysType</a> &gt; &amp;device_handle)</td></tr>
-<tr class="memdesc:a31195bfb50540f690e7cf4b3f751a567 inherit pub_methods_classautopas_1_1Functor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the data stored on the Cuda device back to the SoA overwrites the data in the soa.  <a href="classautopas_1_1Functor.html#a31195bfb50540f690e7cf4b3f751a567">More...</a><br /></td></tr>
-<tr class="separator:a31195bfb50540f690e7cf4b3f751a567 inherit pub_methods_classautopas_1_1Functor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a38492402565dca539823229292b444 inherit pub_methods_classautopas_1_1Functor"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Functor.html#a3a38492402565dca539823229292b444">SoALoader</a> (<a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &amp;cell, <a class="el" href="classautopas_1_1SoA.html">SoA</a>&lt; <a class="el" href="classautopas_1_1Functor.html#a99c0257aaf2adcdacf967c98c474a572">SoAArraysType</a> &gt; &amp;soa, size_t offset)</td></tr>
 <tr class="memdesc:a3a38492402565dca539823229292b444 inherit pub_methods_classautopas_1_1Functor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the AoS data of the given cell in the given soa.  <a href="classautopas_1_1Functor.html#a3a38492402565dca539823229292b444">More...</a><br /></td></tr>
 <tr class="separator:a3a38492402565dca539823229292b444 inherit pub_methods_classautopas_1_1Functor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a700bc658a814f841416d30bf3eae04a5 inherit pub_methods_classautopas_1_1Functor"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Functor.html#a700bc658a814f841416d30bf3eae04a5">SoAExtractor</a> (<a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &amp;cell, <a class="el" href="classautopas_1_1SoA.html">SoA</a>&lt; <a class="el" href="classautopas_1_1Functor.html#a99c0257aaf2adcdacf967c98c474a572">SoAArraysType</a> &gt; &amp;soa, size_t offset)</td></tr>
 <tr class="memdesc:a700bc658a814f841416d30bf3eae04a5 inherit pub_methods_classautopas_1_1Functor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copies the data stored in the soa back into the cell.  <a href="classautopas_1_1Functor.html#a700bc658a814f841416d30bf3eae04a5">More...</a><br /></td></tr>
 <tr class="separator:a700bc658a814f841416d30bf3eae04a5 inherit pub_methods_classautopas_1_1Functor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40de876e9705e9b58d2ff61da0850045 inherit pub_methods_classautopas_1_1Functor"><td class="memItemLeft" align="right" valign="top">virtual CudaWrapperInterface&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#a2b258a66a0667ddffb4912865504e755">Particle::ParticleSoAFloatPrecision</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Functor.html#a40de876e9705e9b58d2ff61da0850045">getCudaWrapper</a> ()</td></tr>
-<tr class="memdesc:a40de876e9705e9b58d2ff61da0850045 inherit pub_methods_classautopas_1_1Functor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides an interface for traversals to directly access Cuda Functions.  <a href="classautopas_1_1Functor.html#a40de876e9705e9b58d2ff61da0850045">More...</a><br /></td></tr>
-<tr class="separator:a40de876e9705e9b58d2ff61da0850045 inherit pub_methods_classautopas_1_1Functor"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae37e71b69cbbdac29c0aca35c98ca8e0 inherit pub_methods_classautopas_1_1Functor"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; FunctorCudaSoA&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#a2b258a66a0667ddffb4912865504e755">Particle::ParticleSoAFloatPrecision</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Functor.html#ae37e71b69cbbdac29c0aca35c98ca8e0">createFunctorCudaSoA</a> (<a class="el" href="classautopas_1_1CudaSoA.html">CudaSoA</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#aefa90c6362d865ad496e2d784be9d386">Particle::CudaDeviceArraysType</a> &gt; &amp;device_handle)</td></tr>
-<tr class="memdesc:ae37e71b69cbbdac29c0aca35c98ca8e0 inherit pub_methods_classautopas_1_1Functor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a Cuda SoA object containing all the relevant pointers from the generic Cuda SoA.  <a href="classautopas_1_1Functor.html#ae37e71b69cbbdac29c0aca35c98ca8e0">More...</a><br /></td></tr>
-<tr class="separator:ae37e71b69cbbdac29c0aca35c98ca8e0 inherit pub_methods_classautopas_1_1Functor"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaa2af22908c3b6846a95a91a26e30093 inherit pub_methods_classautopas_1_1Functor"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Functor.html#aaa2af22908c3b6846a95a91a26e30093">getCutoff</a> () const</td></tr>
 <tr class="memdesc:aaa2af22908c3b6846a95a91a26e30093 inherit pub_methods_classautopas_1_1Functor"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the functor's cutoff.  <a href="classautopas_1_1Functor.html#aaa2af22908c3b6846a95a91a26e30093">More...</a><br /></td></tr>
 <tr class="separator:aaa2af22908c3b6846a95a91a26e30093 inherit pub_methods_classautopas_1_1Functor"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -509,56 +488,6 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <p>Get attributes needed for computation without N3 optimization. </p>
 <dl class="section return"><dt>Returns</dt><dd>Attributes needed for computation. </dd></dl>
 <dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>C++20: make this function virtual </dd></dl>
-
-</div>
-</div>
-<a id="a4406a37daf8216e3729bbbb9145e16f7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4406a37daf8216e3729bbbb9145e16f7">&#9670;&nbsp;</a></span>isAppropriateClusterSize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="classautopas_1_1VLCCellPairGeneratorFunctor.html">autopas::VLCCellPairGeneratorFunctor</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::isAppropriateClusterSize </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>clusterSize</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">DataLayoutOption::Value&#160;</td>
-          <td class="paramname"><em>dataLayout</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Check whether the given clusterSize is appropriate and can be used by the functor. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">clusterSize</td><td>The size of the clusters. </td></tr>
-    <tr><td class="paramname">dataLayout</td><td>The used data layout. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true, iff the cluster size is appropriate. </dd></dl>
-
-<p>Implements <a class="el" href="classautopas_1_1Functor.html#aa6613fe27906cc14dce84fe8f6f15afc">autopas::Functor&lt; Particle, VLCCellPairGeneratorFunctor&lt; Particle &gt; &gt;</a>.</p>
 
 </div>
 </div>

@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-519d1e6</span>
+   &#160;<span id="projectnumber">0.1.0-f1fbb09</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -128,42 +128,32 @@ $(function() {
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        _functor-&gt;SoALoader(cell, cell._particleSoABuffer, 0);</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;      }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <span class="keywordflow">case</span> DataLayoutOption::cuda: {</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        _functor-&gt;SoALoader(cell, cell._particleSoABuffer, 0);</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        _functor-&gt;deviceSoALoader(cell._particleSoABuffer, cell._particleSoABufferDevice);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      }</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    }</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  }</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> ParticleCell&gt;</div>
-<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="classautopas_1_1utils_1_1DataLayoutConverter.html#a63070357366b9cccb4b7c1043b8f51e5">   58</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classautopas_1_1utils_1_1DataLayoutConverter.html#a63070357366b9cccb4b7c1043b8f51e5">storeDataLayout</a>(<a class="code" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &amp;cell) {</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="keywordflow">switch</span> (dataLayout) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;      <span class="keywordflow">case</span> DataLayoutOption::aos: {</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;      }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;      <span class="keywordflow">case</span> DataLayoutOption::soa: {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        _functor-&gt;SoAExtractor(cell, cell._particleSoABuffer, 0);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;      }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;      <span class="keywordflow">case</span> DataLayoutOption::cuda: {</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        _functor-&gt;deviceSoAExtractor(cell._particleSoABuffer, cell._particleSoABufferDevice);</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        _functor-&gt;SoAExtractor(cell, cell._particleSoABuffer, 0);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">return</span>;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;      }</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;  }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;  FunctorSoaWrapper *_functor;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}  <span class="comment">// namespace autopas::utils</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    }</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;  }</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> ParticleCell&gt;</div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="classautopas_1_1utils_1_1DataLayoutConverter.html#a63070357366b9cccb4b7c1043b8f51e5">   53</a></span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classautopas_1_1utils_1_1DataLayoutConverter.html#a63070357366b9cccb4b7c1043b8f51e5">storeDataLayout</a>(<a class="code" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &amp;cell) {</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordflow">switch</span> (dataLayout) {</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;      <span class="keywordflow">case</span> DataLayoutOption::aos: {</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;      }</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;      <span class="keywordflow">case</span> DataLayoutOption::soa: {</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        _functor-&gt;SoAExtractor(cell, cell._particleSoABuffer, 0);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keywordflow">return</span>;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;      }</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    }</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;  }</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  FunctorSoaWrapper *_functor;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;}  <span class="comment">// namespace autopas::utils</span></div>
 <div class="ttc" id="aDataLayoutOption_8h_html"><div class="ttname"><a href="DataLayoutOption_8h.html">DataLayoutOption.h</a></div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleCell_html"><div class="ttname"><a href="classautopas_1_1ParticleCell.html">autopas::ParticleCell</a></div><div class="ttdoc">Class for Cells of Particles.</div><div class="ttdef"><b>Definition:</b> ParticleCell.h:48</div></div>
 <div class="ttc" id="aclassautopas_1_1utils_1_1DataLayoutConverter_html"><div class="ttname"><a href="classautopas_1_1utils_1_1DataLayoutConverter.html">autopas::utils::DataLayoutConverter</a></div><div class="ttdoc">This converts cells to the target data Layout using the given functor.</div><div class="ttdef"><b>Definition:</b> DataLayoutConverter.h:20</div></div>
 <div class="ttc" id="aclassautopas_1_1utils_1_1DataLayoutConverter_html_a1887a9e683485f6c440730e031e19d24"><div class="ttname"><a href="classautopas_1_1utils_1_1DataLayoutConverter.html#a1887a9e683485f6c440730e031e19d24">autopas::utils::DataLayoutConverter::DataLayoutConverter</a></div><div class="ttdeci">DataLayoutConverter(FunctorSoaWrapper *functor)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> DataLayoutConverter.h:27</div></div>
-<div class="ttc" id="aclassautopas_1_1utils_1_1DataLayoutConverter_html_a63070357366b9cccb4b7c1043b8f51e5"><div class="ttname"><a href="classautopas_1_1utils_1_1DataLayoutConverter.html#a63070357366b9cccb4b7c1043b8f51e5">autopas::utils::DataLayoutConverter::storeDataLayout</a></div><div class="ttdeci">void storeDataLayout(ParticleCell &amp;cell)</div><div class="ttdoc">converts the dataLayout to aos</div><div class="ttdef"><b>Definition:</b> DataLayoutConverter.h:58</div></div>
+<div class="ttc" id="aclassautopas_1_1utils_1_1DataLayoutConverter_html_a63070357366b9cccb4b7c1043b8f51e5"><div class="ttname"><a href="classautopas_1_1utils_1_1DataLayoutConverter.html#a63070357366b9cccb4b7c1043b8f51e5">autopas::utils::DataLayoutConverter::storeDataLayout</a></div><div class="ttdeci">void storeDataLayout(ParticleCell &amp;cell)</div><div class="ttdoc">converts the dataLayout to aos</div><div class="ttdef"><b>Definition:</b> DataLayoutConverter.h:53</div></div>
 <div class="ttc" id="aclassautopas_1_1utils_1_1DataLayoutConverter_html_ab55620ac36559c059c088ddff5c9e273"><div class="ttname"><a href="classautopas_1_1utils_1_1DataLayoutConverter.html#ab55620ac36559c059c088ddff5c9e273">autopas::utils::DataLayoutConverter::loadDataLayout</a></div><div class="ttdeci">void loadDataLayout(ParticleCell &amp;cell)</div><div class="ttdoc">loads the target dataLayout in a cell</div><div class="ttdef"><b>Definition:</b> DataLayoutConverter.h:35</div></div>
 <div class="ttc" id="anamespaceautopas_1_1utils_html"><div class="ttname"><a href="namespaceautopas_1_1utils.html">autopas::utils</a></div><div class="ttdoc">In this namespace some helper classes and functions can be found used inside of AutoPas.</div><div class="ttdef"><b>Definition:</b> namespaces.h:44</div></div>
 </div><!-- fragment --></div><!-- contents -->

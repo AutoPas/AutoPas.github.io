@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-519d1e6</span>
+   &#160;<span id="projectnumber">0.1.0-f1fbb09</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -109,7 +109,6 @@ $(function() {
 <code>#include &quot;<a class="el" href="ParticleCell_8h_source.html">autopas/cells/ParticleCell.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="SingleCellIterator_8h_source.html">autopas/iterators/SingleCellIterator.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="OwnershipState_8h_source.html">autopas/particles/OwnershipState.h</a>&quot;</code><br />
-<code>#include &quot;autopas/utils/CudaSoA.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="SoA_8h_source.html">autopas/utils/SoA.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="WrapOpenMP_8h_source.html">autopas/utils/WrapOpenMP.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -117,43 +116,38 @@ Include dependency graph for ReferenceParticleCell.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="ReferenceParticleCell_8h__incl.png" border="0" usemap="#aautopas_2cells_2ReferenceParticleCell_8h" alt=""/></div>
 <map name="aautopas_2cells_2ReferenceParticleCell_8h" id="aautopas_2cells_2ReferenceParticleCell_8h">
-<area shape="rect" title=" " alt="" coords="347,5,572,47"/>
-<area shape="rect" title=" " alt="" coords="7,95,71,121"/>
-<area shape="rect" title=" " alt="" coords="937,266,1000,293"/>
-<area shape="rect" href="ParticleCell_8h.html" title=" " alt="" coords="429,95,626,121"/>
-<area shape="rect" href="SingleCellIterator_8h.html" title=" " alt="" coords="217,169,395,211"/>
-<area shape="rect" href="OwnershipState_8h.html" title=" " alt="" coords="5,437,212,479"/>
-<area shape="rect" href="CudaSoA_8h_source.html" title=" " alt="" coords="701,95,881,121"/>
-<area shape="rect" href="SoA_8h.html" title=" " alt="" coords="1343,95,1490,121"/>
-<area shape="rect" href="WrapOpenMP_8h.html" title=" " alt="" coords="147,95,353,121"/>
-<area shape="rect" href="SingleCellIteratorWrapper_8h.html" title=" " alt="" coords="419,169,596,211"/>
-<area shape="rect" href="SingleCellIteratorInterface_8h.html" title=" " alt="" coords="324,259,501,300"/>
-<area shape="rect" href="ExceptionHandler_8h.html" title=" " alt="" coords="437,445,673,471"/>
-<area shape="rect" href="ParticleIteratorInterface_8h.html" title=" " alt="" coords="320,348,505,389"/>
-<area shape="rect" title=" " alt="" coords="1163,534,1228,561"/>
-<area shape="rect" href="Logger_8h.html" title=" " alt="" coords="476,527,635,568"/>
-<area shape="rect" title=" " alt="" coords="493,616,641,657"/>
-<area shape="rect" title=" " alt="" coords="666,616,807,657"/>
-<area shape="rect" title=" " alt="" coords="832,616,993,657"/>
-<area shape="rect" title=" " alt="" coords="173,616,321,657"/>
-<area shape="rect" title=" " alt="" coords="345,623,469,650"/>
-<area shape="rect" title=" " alt="" coords="69,623,149,650"/>
-<area shape="rect" title=" " alt="" coords="1337,355,1392,382"/>
-<area shape="rect" href="CudaSoAType_8h.html" title="Provides a struct to easily generate the desired SoAType." alt="" coords="620,177,829,203"/>
-<area shape="rect" href="CudaDeviceVector_8h.html" title=" " alt="" coords="591,259,779,300"/>
-<area shape="rect" href="CudaExceptionHandler_8h.html" title=" " alt="" coords="581,348,788,389"/>
-<area shape="rect" title=" " alt="" coords="726,445,849,471"/>
-<area shape="rect" title=" " alt="" coords="2043,177,2129,203"/>
-<area shape="rect" title=" " alt="" coords="1007,177,1117,203"/>
-<area shape="rect" title=" " alt="" coords="1142,177,1193,203"/>
-<area shape="rect" href="AlignedAllocator_8h.html" title=" " alt="" coords="1641,266,1869,293"/>
-<area shape="rect" href="SoAStorage_8h.html" title=" " alt="" coords="1318,177,1515,203"/>
-<area shape="rect" href="SoAType_8h.html" title="Provides a struct to easily generate the desired SoAType." alt="" coords="1590,177,1766,203"/>
-<area shape="rect" href="SoAView_8h.html" title=" " alt="" coords="1791,177,1968,203"/>
-<area shape="rect" title=" " alt="" coords="1726,355,1785,382"/>
-<area shape="rect" title=" " alt="" coords="1809,355,1859,382"/>
-<area shape="rect" title=" " alt="" coords="1591,355,1651,382"/>
-<area shape="rect" href="TupleUtils_8h.html" title=" " alt="" coords="1329,266,1515,293"/>
+<area shape="rect" title=" " alt="" coords="362,5,587,47"/>
+<area shape="rect" title=" " alt="" coords="5,102,69,129"/>
+<area shape="rect" title=" " alt="" coords="1254,281,1317,307"/>
+<area shape="rect" href="ParticleCell_8h.html" title=" " alt="" coords="376,102,573,129"/>
+<area shape="rect" href="SingleCellIterator_8h.html" title=" " alt="" coords="215,184,393,225"/>
+<area shape="rect" href="OwnershipState_8h.html" title=" " alt="" coords="94,95,301,136"/>
+<area shape="rect" href="SoA_8h.html" title=" " alt="" coords="1085,102,1232,129"/>
+<area shape="rect" href="WrapOpenMP_8h.html" title=" " alt="" coords="598,102,805,129"/>
+<area shape="rect" href="SingleCellIteratorWrapper_8h.html" title=" " alt="" coords="417,184,594,225"/>
+<area shape="rect" href="SingleCellIteratorInterface_8h.html" title=" " alt="" coords="211,273,389,315"/>
+<area shape="rect" href="ExceptionHandler_8h.html" title=" " alt="" coords="413,281,649,307"/>
+<area shape="rect" href="ParticleIteratorInterface_8h.html" title=" " alt="" coords="210,363,395,404"/>
+<area shape="rect" title=" " alt="" coords="618,370,683,397"/>
+<area shape="rect" href="Logger_8h.html" title=" " alt="" coords="435,363,594,404"/>
+<area shape="rect" title=" " alt="" coords="907,452,1055,493"/>
+<area shape="rect" title=" " alt="" coords="236,452,377,493"/>
+<area shape="rect" title=" " alt="" coords="402,452,563,493"/>
+<area shape="rect" title=" " alt="" coords="587,452,735,493"/>
+<area shape="rect" title=" " alt="" coords="759,459,883,486"/>
+<area shape="rect" title=" " alt="" coords="132,459,212,486"/>
+<area shape="rect" title=" " alt="" coords="1323,191,1408,218"/>
+<area shape="rect" title=" " alt="" coords="1433,191,1543,218"/>
+<area shape="rect" title=" " alt="" coords="1568,191,1619,218"/>
+<area shape="rect" title=" " alt="" coords="1311,370,1366,397"/>
+<area shape="rect" href="AlignedAllocator_8h.html" title=" " alt="" coords="673,281,901,307"/>
+<area shape="rect" href="SoAStorage_8h.html" title=" " alt="" coords="1693,191,1891,218"/>
+<area shape="rect" href="SoAType_8h.html" title="Provides a struct to easily generate the desired SoAType." alt="" coords="869,191,1045,218"/>
+<area shape="rect" href="SoAView_8h.html" title=" " alt="" coords="1070,191,1247,218"/>
+<area shape="rect" title=" " alt="" coords="792,370,851,397"/>
+<area shape="rect" title=" " alt="" coords="875,370,925,397"/>
+<area shape="rect" title=" " alt="" coords="707,370,767,397"/>
+<area shape="rect" href="TupleUtils_8h.html" title=" " alt="" coords="1455,281,1641,307"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
