@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-12c23fe</span>
+   &#160;<span id="projectnumber">0.1.0-4279391</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -128,11 +128,11 @@ $(function() {
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classautopas_1_1VLCSlicedBalancedTraversal.html#a9933ac8a8764048627a37b1dbdaa6c43">traverseParticlePairs</a>() <span class="keyword">override</span>;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classautopas_1_1VLCSlicedBalancedTraversal.html#ac5b488b5d98e5ff5827a1aa0fef6d072">   59</a></span>&#160;  [[nodiscard]] DataLayoutOption <a class="code" href="classautopas_1_1VLCSlicedBalancedTraversal.html#ac5b488b5d98e5ff5827a1aa0fef6d072">getDataLayout</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> dataLayout; }</div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="classautopas_1_1VLCSlicedBalancedTraversal.html#ac5b488b5d98e5ff5827a1aa0fef6d072">   59</a></span>&#160;  [[nodiscard]] <a class="code" href="classautopas_1_1options_1_1DataLayoutOption.html">DataLayoutOption</a> <a class="code" href="classautopas_1_1VLCSlicedBalancedTraversal.html#ac5b488b5d98e5ff5827a1aa0fef6d072">getDataLayout</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> dataLayout; }</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
 <div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="classautopas_1_1VLCSlicedBalancedTraversal.html#af86aa907dc049ff96d450f5b206d55c3">   61</a></span>&#160;  [[nodiscard]] <span class="keywordtype">bool</span> <a class="code" href="classautopas_1_1VLCSlicedBalancedTraversal.html#af86aa907dc049ff96d450f5b206d55c3">getUseNewton3</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> useNewton3; }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classautopas_1_1VLCSlicedBalancedTraversal.html#ac33b316a36dc434ae930e718e37ec855">   63</a></span>&#160;  [[nodiscard]] TraversalOption <a class="code" href="classautopas_1_1VLCSlicedBalancedTraversal.html#ac33b316a36dc434ae930e718e37ec855">getTraversalType</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="classautopas_1_1VLCSlicedBalancedTraversal.html#ac33b316a36dc434ae930e718e37ec855">   63</a></span>&#160;  [[nodiscard]] <a class="code" href="classautopas_1_1options_1_1TraversalOption.html">TraversalOption</a> <a class="code" href="classautopas_1_1VLCSlicedBalancedTraversal.html#ac33b316a36dc434ae930e718e37ec855">getTraversalType</a>()<span class="keyword"> const override </span>{</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordflow">switch</span> (typeOfList) {</div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;      <span class="keywordflow">case</span> (ContainerOption::verletListsCells):</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keywordflow">return</span> TraversalOption::vlc_sliced_balanced;</div>
@@ -140,7 +140,7 @@ $(function() {
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;        <span class="keywordflow">return</span> TraversalOption::vlp_sliced_balanced;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    }</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="comment">// should never be reached.</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> TraversalOption();</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classautopas_1_1options_1_1TraversalOption.html">TraversalOption</a>();</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  }</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
 <div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="classautopas_1_1VLCSlicedBalancedTraversal.html#a077372e45122649592e6c7509d14df48">   74</a></span>&#160;  [[nodiscard]] <span class="keywordtype">bool</span> <a class="code" href="classautopas_1_1VLCSlicedBalancedTraversal.html#a077372e45122649592e6c7509d14df48">isApplicable</a>()<span class="keyword"> const override </span>{</div>
@@ -185,8 +185,10 @@ $(function() {
 <div class="ttc" id="aclassautopas_1_1VLCSlicedBalancedTraversal_html_ac5b488b5d98e5ff5827a1aa0fef6d072"><div class="ttname"><a href="classautopas_1_1VLCSlicedBalancedTraversal.html#ac5b488b5d98e5ff5827a1aa0fef6d072">autopas::VLCSlicedBalancedTraversal::getDataLayout</a></div><div class="ttdeci">DataLayoutOption getDataLayout() const override</div><div class="ttdoc">Return the data layout option.</div><div class="ttdef"><b>Definition:</b> VLCSlicedBalancedTraversal.h:59</div></div>
 <div class="ttc" id="aclassautopas_1_1VLCSlicedBalancedTraversal_html_af86aa907dc049ff96d450f5b206d55c3"><div class="ttname"><a href="classautopas_1_1VLCSlicedBalancedTraversal.html#af86aa907dc049ff96d450f5b206d55c3">autopas::VLCSlicedBalancedTraversal::getUseNewton3</a></div><div class="ttdeci">bool getUseNewton3() const override</div><div class="ttdoc">Return whether the traversal uses newton 3.</div><div class="ttdef"><b>Definition:</b> VLCSlicedBalancedTraversal.h:61</div></div>
 <div class="ttc" id="aclassautopas_1_1VLCTraversalInterface_html"><div class="ttname"><a href="classautopas_1_1VLCTraversalInterface.html">autopas::VLCTraversalInterface</a></div><div class="ttdoc">This class provides the Traversal Interface for the verlet lists cells container.</div><div class="ttdef"><b>Definition:</b> VLCTraversalInterface.h:27</div></div>
+<div class="ttc" id="aclassautopas_1_1options_1_1DataLayoutOption_html"><div class="ttname"><a href="classautopas_1_1options_1_1DataLayoutOption.html">autopas::DataLayoutOption</a></div><div class="ttdoc">Class representing the traversal choices.</div><div class="ttdef"><b>Definition:</b> DataLayoutOption.h:18</div></div>
+<div class="ttc" id="aclassautopas_1_1options_1_1TraversalOption_html"><div class="ttname"><a href="classautopas_1_1options_1_1TraversalOption.html">autopas::TraversalOption</a></div><div class="ttdoc">Class representing the traversal choices.</div><div class="ttdef"><b>Definition:</b> TraversalOption.h:18</div></div>
 <div class="ttc" id="anamespaceautopas_1_1utils_1_1ThreeDimensionalMapping_html_a8d92b8e30d9eb33d3b6828989d9b5eb2"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ThreeDimensionalMapping.html#a8d92b8e30d9eb33d3b6828989d9b5eb2">autopas::utils::ThreeDimensionalMapping::threeToOneD</a></div><div class="ttdeci">constexpr T threeToOneD(T x, T y, T z, const std::array&lt; T, 3 &gt; &amp;dims)</div><div class="ttdoc">Convert a 3d index to a 1d index.</div><div class="ttdef"><b>Definition:</b> ThreeDimensionalMapping.h:29</div></div>
-<div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">This is the main namespace of AutoPas.</div><div class="ttdef"><b>Definition:</b> ParticleBase.h:22</div></div>
+<div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">Provide non-MPI versions of the needed MPI function calls.</div><div class="ttdef"><b>Definition:</b> AcquisitionFunctionOption.h:13</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

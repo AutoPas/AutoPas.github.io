@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-12c23fe</span>
+   &#160;<span id="projectnumber">0.1.0-4279391</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -109,6 +109,15 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ac931325b5f7f7f60a92264e9844427ab"><td class="memItemLeft" align="right" valign="top">static std::set&lt; <a class="el" href="classautopas_1_1LoadEstimatorOption.html">autopas::LoadEstimatorOption</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1loadEstimators.html#ac931325b5f7f7f60a92264e9844427ab">allCompatibleLoadEstimators</a> (<a class="el" href="classautopas_1_1options_1_1ContainerOption.html">autopas::ContainerOption</a> container)</td></tr>
+<tr class="memdesc:ac931325b5f7f7f60a92264e9844427ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns set of load estimators compatible with the container.  <a href="namespaceautopas_1_1loadEstimators.html#ac931325b5f7f7f60a92264e9844427ab">More...</a><br /></td></tr>
+<tr class="separator:ac931325b5f7f7f60a92264e9844427ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2350ca697b3704ede0e9d60e8ec7b3d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1loadEstimators.html#ae2350ca697b3704ede0e9d60e8ec7b3d">usesLoadEstimator</a> (<a class="el" href="classautopas_1_1options_1_1TraversalOption.html">autopas::TraversalOption</a> traversal)</td></tr>
+<tr class="memdesc:ae2350ca697b3704ede0e9d60e8ec7b3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns whether or not the given traversal uses load estimation.  <a href="namespaceautopas_1_1loadEstimators.html#ae2350ca697b3704ede0e9d60e8ec7b3d">More...</a><br /></td></tr>
+<tr class="separator:ae2350ca697b3704ede0e9d60e8ec7b3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21f90a25ad1c7c8fd50c67df3bcc27bf"><td class="memItemLeft" align="right" valign="top">static std::set&lt; <a class="el" href="classautopas_1_1LoadEstimatorOption.html">autopas::LoadEstimatorOption</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1loadEstimators.html#a21f90a25ad1c7c8fd50c67df3bcc27bf">getApplicableLoadEstimators</a> (<a class="el" href="classautopas_1_1options_1_1ContainerOption.html">autopas::ContainerOption</a> container, <a class="el" href="classautopas_1_1options_1_1TraversalOption.html">autopas::TraversalOption</a> traversal, const std::set&lt; <a class="el" href="classautopas_1_1LoadEstimatorOption.html">autopas::LoadEstimatorOption</a> &gt; allowedOptions)</td></tr>
+<tr class="memdesc:a21f90a25ad1c7c8fd50c67df3bcc27bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">If traversal uses load estimation, returns all load estimators in allowedOptions, that are compatible with the container, but always allows none if the intersection is empty.  <a href="namespaceautopas_1_1loadEstimators.html#a21f90a25ad1c7c8fd50c67df3bcc27bf">More...</a><br /></td></tr>
+<tr class="separator:a21f90a25ad1c7c8fd50c67df3bcc27bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a67ad8f1b1867ceb6cbe6421a9173c9cf"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; </td></tr>
 <tr class="memitem:a67ad8f1b1867ceb6cbe6421a9173c9cf"><td class="memTemplItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1loadEstimators.html#a67ad8f1b1867ceb6cbe6421a9173c9cf">squaredParticlesPerCell</a> (const std::vector&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; &amp;cells, const std::array&lt; unsigned long, 3 &gt; &amp;cellsPerDimension, const std::array&lt; unsigned long, 3 &gt; &amp;lowerCorner, const std::array&lt; unsigned long, 3 &gt; &amp;upperCorner)</td></tr>
 <tr class="memdesc:a67ad8f1b1867ceb6cbe6421a9173c9cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sums up the squared number of particles for all cells within region.  <a href="namespaceautopas_1_1loadEstimators.html#a67ad8f1b1867ceb6cbe6421a9173c9cf">More...</a><br /></td></tr>
@@ -125,15 +134,6 @@ Functions</h2></td></tr>
 <tr class="memitem:a66bd2049836cdbc995dfcc4f971db4aa"><td class="memTemplItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1loadEstimators.html#a66bd2049836cdbc995dfcc4f971db4aa">neighborListLength</a> (NeighborList &amp;neighborLists, const std::array&lt; unsigned long, 3 &gt; &amp;cellsPerDimension, const std::array&lt; unsigned long, 3 &gt; &amp;lowerCorner, const std::array&lt; unsigned long, 3 &gt; &amp;upperCorner)</td></tr>
 <tr class="memdesc:a66bd2049836cdbc995dfcc4f971db4aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sums up the lengths of the verlet neighbor lists of all particles within region.  <a href="namespaceautopas_1_1loadEstimators.html#a66bd2049836cdbc995dfcc4f971db4aa">More...</a><br /></td></tr>
 <tr class="separator:a66bd2049836cdbc995dfcc4f971db4aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac931325b5f7f7f60a92264e9844427ab"><td class="memItemLeft" align="right" valign="top">static std::set&lt; <a class="el" href="classautopas_1_1LoadEstimatorOption.html">autopas::LoadEstimatorOption</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1loadEstimators.html#ac931325b5f7f7f60a92264e9844427ab">allCompatibleLoadEstimators</a> (autopas::ContainerOption container)</td></tr>
-<tr class="memdesc:ac931325b5f7f7f60a92264e9844427ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns set of load estimators compatible with the container.  <a href="namespaceautopas_1_1loadEstimators.html#ac931325b5f7f7f60a92264e9844427ab">More...</a><br /></td></tr>
-<tr class="separator:ac931325b5f7f7f60a92264e9844427ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2350ca697b3704ede0e9d60e8ec7b3d"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1loadEstimators.html#ae2350ca697b3704ede0e9d60e8ec7b3d">usesLoadEstimator</a> (autopas::TraversalOption traversal)</td></tr>
-<tr class="memdesc:ae2350ca697b3704ede0e9d60e8ec7b3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns whether or not the given traversal uses load estimation.  <a href="namespaceautopas_1_1loadEstimators.html#ae2350ca697b3704ede0e9d60e8ec7b3d">More...</a><br /></td></tr>
-<tr class="separator:ae2350ca697b3704ede0e9d60e8ec7b3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21f90a25ad1c7c8fd50c67df3bcc27bf"><td class="memItemLeft" align="right" valign="top">static std::set&lt; <a class="el" href="classautopas_1_1LoadEstimatorOption.html">autopas::LoadEstimatorOption</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1loadEstimators.html#a21f90a25ad1c7c8fd50c67df3bcc27bf">getApplicableLoadEstimators</a> (autopas::ContainerOption container, autopas::TraversalOption traversal, const std::set&lt; <a class="el" href="classautopas_1_1LoadEstimatorOption.html">autopas::LoadEstimatorOption</a> &gt; allowedOptions)</td></tr>
-<tr class="memdesc:a21f90a25ad1c7c8fd50c67df3bcc27bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">If traversal uses load estimation, returns all load estimators in allowedOptions, that are compatible with the container, but always allows none if the intersection is empty.  <a href="namespaceautopas_1_1loadEstimators.html#a21f90a25ad1c7c8fd50c67df3bcc27bf">More...</a><br /></td></tr>
-<tr class="separator:a21f90a25ad1c7c8fd50c67df3bcc27bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p class="">Collection of functions for estimating the load required to update a specific region within a containers. </p>
@@ -150,7 +150,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static std::set&lt;<a class="el" href="classautopas_1_1LoadEstimatorOption.html">autopas::LoadEstimatorOption</a>&gt; autopas::loadEstimators::allCompatibleLoadEstimators </td>
           <td>(</td>
-          <td class="paramtype">autopas::ContainerOption&#160;</td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1options_1_1ContainerOption.html">autopas::ContainerOption</a>&#160;</td>
           <td class="paramname"><em>container</em></td><td>)</td>
           <td></td>
         </tr>
@@ -185,13 +185,13 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">static std::set&lt;<a class="el" href="classautopas_1_1LoadEstimatorOption.html">autopas::LoadEstimatorOption</a>&gt; autopas::loadEstimators::getApplicableLoadEstimators </td>
           <td>(</td>
-          <td class="paramtype">autopas::ContainerOption&#160;</td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1options_1_1ContainerOption.html">autopas::ContainerOption</a>&#160;</td>
           <td class="paramname"><em>container</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">autopas::TraversalOption&#160;</td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1options_1_1TraversalOption.html">autopas::TraversalOption</a>&#160;</td>
           <td class="paramname"><em>traversal</em>, </td>
         </tr>
         <tr>
@@ -426,7 +426,7 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
         <tr>
           <td class="memname">static bool autopas::loadEstimators::usesLoadEstimator </td>
           <td>(</td>
-          <td class="paramtype">autopas::TraversalOption&#160;</td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1options_1_1TraversalOption.html">autopas::TraversalOption</a>&#160;</td>
           <td class="paramname"><em>traversal</em></td><td>)</td>
           <td></td>
         </tr>

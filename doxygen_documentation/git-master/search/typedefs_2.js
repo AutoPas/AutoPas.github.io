@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['estimatorfunction_2483',['EstimatorFunction',['../classautopas_1_1BalancedTraversal.html#a1dd521e32c372a11307f670409f3efe8',1,'autopas::BalancedTraversal']]]
+  ['estimatorfunction_2484',['EstimatorFunction',['../classautopas_1_1BalancedTraversal.html#a1dd521e32c372a11307f670409f3efe8',1,'autopas::BalancedTraversal']]]
 ];
