@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-07abdf8</span>
+   &#160;<span id="projectnumber">0.1.0-bf15e75</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -105,6 +105,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;cstdlib&gt;</code><br />
+<code>#include &quot;TypeDefinitions.h&quot;</code><br />
 <code>#include &quot;autopas/AutoPasDecl.h&quot;</code><br />
 <code>#include &quot;autopas/utils/ArrayMath.h&quot;</code><br />
 <code>#include &quot;autopas/utils/WrapOpenMP.h&quot;</code><br />
@@ -113,11 +114,14 @@ Include dependency graph for Thermostat.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="Thermostat_8h__incl.png" border="0" usemap="#a_2github_2workspace_2examples_2md-flexible_2src_2Thermostat_8h" alt=""/></div>
 <map name="a_2github_2workspace_2examples_2md-flexible_2src_2Thermostat_8h" id="a_2github_2workspace_2examples_2md-flexible_2src_2Thermostat_8h">
-<area shape="rect" title=" " alt="" coords="176,5,391,47"/>
-<area shape="rect" title=" " alt="" coords="5,95,71,121"/>
-<area shape="rect" title=" " alt="" coords="95,95,266,121"/>
-<area shape="rect" title=" " alt="" coords="291,95,481,121"/>
-<area shape="rect" title=" " alt="" coords="506,95,714,121"/>
+<area shape="rect" title=" " alt="" coords="295,5,510,47"/>
+<area shape="rect" title=" " alt="" coords="69,95,134,121"/>
+<area shape="rect" href="TypeDefinitions_8h_source.html" title=" " alt="" coords="158,95,293,121"/>
+<area shape="rect" title=" " alt="" coords="317,95,488,121"/>
+<area shape="rect" title=" " alt="" coords="513,95,703,121"/>
+<area shape="rect" title=" " alt="" coords="728,95,936,121"/>
+<area shape="rect" title=" " alt="" coords="5,169,213,211"/>
+<area shape="rect" title=" " alt="" coords="237,169,445,211"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -125,8 +129,9 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="Thermostat_8h__dep__incl.png" border="0" usemap="#a_2github_2workspace_2examples_2md-flexible_2src_2Thermostat_8hdep" alt=""/></div>
 <map name="a_2github_2workspace_2examples_2md-flexible_2src_2Thermostat_8hdep" id="a_2github_2workspace_2examples_2md-flexible_2src_2Thermostat_8hdep">
-<area shape="rect" title=" " alt="" coords="10,5,225,47"/>
-<area shape="rect" href="Simulation_8cpp.html" title=" " alt="" coords="5,95,229,136"/>
+<area shape="rect" title=" " alt="" coords="130,5,345,47"/>
+<area shape="rect" href="Simulation_8cpp.html" title=" " alt="" coords="5,102,229,143"/>
+<area shape="rect" href="MDFlexConfig_8cpp.html" title=" " alt="" coords="253,95,465,151"/>
 </map>
 </div>
 </div>
@@ -135,14 +140,14 @@ This graph shows which files directly or indirectly include this file:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:namespaceThermostat"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceThermostat.html">Thermostat</a></td></tr>
-<tr class="memdesc:namespaceThermostat"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceThermostat.html" title="Thermostat to adjust the Temperature of the Simulation.">Thermostat</a> to adjust the Temperature of the <a class="el" href="classSimulation.html" title="The main simulation class.">Simulation</a>. <br /></td></tr>
+<tr class="memdesc:namespaceThermostat"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="namespaceThermostat.html" title="Thermostat to adjust the Temperature of the Simulation.">Thermostat</a> to adjust the Temperature of the <a class="el" href="classSimulation.html" title="Handles minimal initialization requriements for MD-Flexible simulations.">Simulation</a>. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a482803f5e2f8edbd12f306be4021e9c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceThermostat_1_1anonymous__namespace_02Thermostat_8h_03.html#a482803f5e2f8edbd12f306be4021e9c5">Thermostat::anonymous_namespace{Thermostat.h}::addMaxwellBoltzmannDistributedVelocity</a> (autopas::Particle &amp;p, const double averageVelocity, std::default_random_engine &amp;randomEngine, std::normal_distribution&lt; double &gt; &amp;normalDistribution)</td></tr>
-<tr class="memdesc:a482803f5e2f8edbd12f306be4021e9c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a random velocity according to the Maxwell-Boltzmann distribution to the particle.  <a href="namespaceThermostat_1_1anonymous__namespace_02Thermostat_8h_03.html#a482803f5e2f8edbd12f306be4021e9c5">More...</a><br /></td></tr>
-<tr class="separator:a482803f5e2f8edbd12f306be4021e9c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9dd1d0bd9c75e1364693e3635144e442"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceThermostat_1_1anonymous__namespace_02Thermostat_8h_03.html#a9dd1d0bd9c75e1364693e3635144e442">Thermostat::anonymous_namespace{Thermostat.h}::addMaxwellBoltzmannDistributedVelocity</a> (ParticleType &amp;p, const double averageVelocity, std::default_random_engine &amp;randomEngine, std::normal_distribution&lt; double &gt; &amp;normalDistribution)</td></tr>
+<tr class="memdesc:a9dd1d0bd9c75e1364693e3635144e442"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a random velocity according to the Maxwell-Boltzmann distribution to the particle.  <a href="namespaceThermostat_1_1anonymous__namespace_02Thermostat_8h_03.html#a9dd1d0bd9c75e1364693e3635144e442">More...</a><br /></td></tr>
+<tr class="separator:a9dd1d0bd9c75e1364693e3635144e442"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83ea5390e76f29f5df4e9c3f095548a3"><td class="memTemplParams" colspan="2">template&lt;class AutoPasTemplate , class ParticlePropertiesLibraryTemplate &gt; </td></tr>
 <tr class="memitem:a83ea5390e76f29f5df4e9c3f095548a3"><td class="memTemplItemLeft" align="right" valign="top">double&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceThermostat.html#a83ea5390e76f29f5df4e9c3f095548a3">Thermostat::calcTemperature</a> (const AutoPasTemplate &amp;autopas, ParticlePropertiesLibraryTemplate &amp;particlePropertiesLibrary)</td></tr>
 <tr class="memdesc:a83ea5390e76f29f5df4e9c3f095548a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates temperature of system.  <a href="namespaceThermostat.html#a83ea5390e76f29f5df4e9c3f095548a3">More...</a><br /></td></tr>

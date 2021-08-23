@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-07abdf8</span>
+   &#160;<span id="projectnumber">0.1.0-bf15e75</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -138,6 +138,9 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a7e9ddffebe1516b2f949e87b24f1e13b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#a7e9ddffebe1516b2f949e87b24f1e13b">MDFlexConfig</a> (int argc, char **argv)</td></tr>
+<tr class="memdesc:a7e9ddffebe1516b2f949e87b24f1e13b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classMDFlexConfig.html#a7e9ddffebe1516b2f949e87b24f1e13b">More...</a><br /></td></tr>
+<tr class="separator:a7e9ddffebe1516b2f949e87b24f1e13b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6be02496f1a6de0f90ccf1427a0cc0d1"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#a6be02496f1a6de0f90ccf1427a0cc0d1">to_string</a> () const</td></tr>
 <tr class="memdesc:a6be02496f1a6de0f90ccf1427a0cc0d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert the content of the config to a string representation.  <a href="classMDFlexConfig.html#a6be02496f1a6de0f90ccf1427a0cc0d1">More...</a><br /></td></tr>
 <tr class="separator:a6be02496f1a6de0f90ccf1427a0cc0d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -145,9 +148,19 @@ Public Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>calcSimulationBox</b> ()</td></tr>
 <tr class="memdesc:a16173a29af6a15eba0923a5ce73110e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks parsed Objects and determines the necessary size of the simulation box. <br /></td></tr>
 <tr class="separator:a16173a29af6a15eba0923a5ce73110e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e55be39bb92bd637295fee748f53622"><td class="memItemLeft" align="right" valign="top">std::vector&lt; ParticleType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#a2e55be39bb92bd637295fee748f53622">getParticles</a> ()</td></tr>
+<tr class="memdesc:a2e55be39bb92bd637295fee748f53622"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the particles generated based on the povided configuration file.  <a href="classMDFlexConfig.html#a2e55be39bb92bd637295fee748f53622">More...</a><br /></td></tr>
+<tr class="separator:a2e55be39bb92bd637295fee748f53622"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ae487b0be5c0baf8f2a0b27c54dbbe8"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; ParticlePropertiesLibraryType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#a0ae487b0be5c0baf8f2a0b27c54dbbe8">getParticlePropertiesLibrary</a> ()</td></tr>
+<tr class="memdesc:a0ae487b0be5c0baf8f2a0b27c54dbbe8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the ParticlePropertiesLibrary containing the properties of the particle types used in this simulation.  <a href="classMDFlexConfig.html#a0ae487b0be5c0baf8f2a0b27c54dbbe8">More...</a><br /></td></tr>
+<tr class="separator:a0ae487b0be5c0baf8f2a0b27c54dbbe8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41b6a9ecee8e21b37075c67d94992fb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#a41b6a9ecee8e21b37075c67d94992fb5">addParticleType</a> (unsigned long typeId, double epsilon, double sigma, double mass)</td></tr>
 <tr class="memdesc:a41b6a9ecee8e21b37075c67d94992fb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds parameters to all relevant particle property attributes and checks if the type already exists.  <a href="classMDFlexConfig.html#a41b6a9ecee8e21b37075c67d94992fb5">More...</a><br /></td></tr>
 <tr class="separator:a41b6a9ecee8e21b37075c67d94992fb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4729480b723538f64823b9d16b7c26f"><td class="memItemLeft" align="right" valign="top"><a id="ab4729480b723538f64823b9d16b7c26f" name="ab4729480b723538f64823b9d16b7c26f"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>flushParticles</b> ()</td></tr>
+<tr class="memdesc:ab4729480b723538f64823b9d16b7c26f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flushes the particles as they are not required anymore after initialization. <br /></td></tr>
+<tr class="separator:ab4729480b723538f64823b9d16b7c26f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4797aa0d3cf518c68ec21efb41aecad1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#a4797aa0d3cf518c68ec21efb41aecad1">globalForceIsZero</a> () const</td></tr>
 <tr class="memdesc:a4797aa0d3cf518c68ec21efb41aecad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience function testing if the global force contains only 0 entries.  <a href="classMDFlexConfig.html#a4797aa0d3cf518c68ec21efb41aecad1">More...</a><br /></td></tr>
 <tr class="separator:a4797aa0d3cf518c68ec21efb41aecad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -215,6 +228,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:adfe25b23b8431097b694915aa4de26b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMDFlexConfig_1_1MDFlexOption.html">MDFlexOption</a>&lt; autopas::ExtrapolationMethodOption, __LINE__ &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#adfe25b23b8431097b694915aa4de26b8">extrapolationMethodOption</a></td></tr>
 <tr class="memdesc:adfe25b23b8431097b694915aa4de26b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">extrapolationMethodOption  <a href="classMDFlexConfig.html#adfe25b23b8431097b694915aa4de26b8">More...</a><br /></td></tr>
 <tr class="separator:adfe25b23b8431097b694915aa4de26b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60a29f8928ea3c0230697c0e6052d203"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMDFlexConfig_1_1MDFlexOption.html">MDFlexOption</a>&lt; std::string, __LINE__ &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#a60a29f8928ea3c0230697c0e6052d203">vtkOutputFolder</a></td></tr>
+<tr class="memdesc:a60a29f8928ea3c0230697c0e6052d203"><td class="mdescLeft">&#160;</td><td class="mdescRight">vtkOutputFolder  <a href="classMDFlexConfig.html#a60a29f8928ea3c0230697c0e6052d203">More...</a><br /></td></tr>
+<tr class="separator:a60a29f8928ea3c0230697c0e6052d203"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ace840821266c4f6cd8de8303ec5b746f"><td class="memItemLeft" align="right" valign="top"><a id="ace840821266c4f6cd8de8303ec5b746f" name="ace840821266c4f6cd8de8303ec5b746f"></a>
 <a class="el" href="structMDFlexConfig_1_1MDFlexOption.html">MDFlexOption</a>&lt; std::string, __LINE__ &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>vtkFileName</b> {&quot;&quot;, &quot;vtk-filename&quot;, true, &quot;Basename for all VTK output files.&quot;}</td></tr>
 <tr class="memdesc:ace840821266c4f6cd8de8303ec5b746f"><td class="mdescLeft">&#160;</td><td class="mdescRight">vtkFileName <br /></td></tr>
@@ -262,7 +278,7 @@ Public Attributes</h2></td></tr>
 <tr class="memdesc:a87d674c94dda16a39fcf0e00c88da912"><td class="mdescLeft">&#160;</td><td class="mdescRight">dontMeasureFlops <br /></td></tr>
 <tr class="separator:a87d674c94dda16a39fcf0e00c88da912"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61bb5d9aad5c702c59112e3bcbf23eab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMDFlexConfig_1_1MDFlexOption.html">MDFlexOption</a>&lt; bool, __LINE__ &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#a61bb5d9aad5c702c59112e3bcbf23eab">dontCreateEndConfig</a></td></tr>
-<tr class="memdesc:a61bb5d9aad5c702c59112e3bcbf23eab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Omit the creation of a config file at the end of the <a class="el" href="classSimulation.html" title="The main simulation class.">Simulation</a>.  <a href="classMDFlexConfig.html#a61bb5d9aad5c702c59112e3bcbf23eab">More...</a><br /></td></tr>
+<tr class="memdesc:a61bb5d9aad5c702c59112e3bcbf23eab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Omit the creation of a config file at the end of the <a class="el" href="classSimulation.html" title="Handles minimal initialization requriements for MD-Flexible simulations.">Simulation</a>.  <a href="classMDFlexConfig.html#a61bb5d9aad5c702c59112e3bcbf23eab">More...</a><br /></td></tr>
 <tr class="separator:a61bb5d9aad5c702c59112e3bcbf23eab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa70b59778d3dbd4b272490cc91f37aaa"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMDFlexConfig_1_1MDFlexOption.html">MDFlexOption</a>&lt; bool, __LINE__ &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#aa70b59778d3dbd4b272490cc91f37aaa">dontShowProgressBar</a></td></tr>
 <tr class="memdesc:aa70b59778d3dbd4b272490cc91f37aaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Omit the output of the progress bar and progress information.  <a href="classMDFlexConfig.html#aa70b59778d3dbd4b272490cc91f37aaa">More...</a><br /></td></tr>
@@ -403,7 +419,45 @@ static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>va
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Class containing all necessary parameters for configuring a md-flexible simulation. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a7e9ddffebe1516b2f949e87b24f1e13b" name="a7e9ddffebe1516b2f949e87b24f1e13b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7e9ddffebe1516b2f949e87b24f1e13b">&#9670;&nbsp;</a></span>MDFlexConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">MDFlexConfig::MDFlexConfig </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>argc</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char **&#160;</td>
+          <td class="paramname"><em>argv</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">argc</td><td>the argument count of the arguments passed to the main function. </td></tr>
+    <tr><td class="paramname">argv</td><td>the argument vector passed to the main function. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a41b6a9ecee8e21b37075c67d94992fb5" name="a41b6a9ecee8e21b37075c67d94992fb5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a41b6a9ecee8e21b37075c67d94992fb5">&#9670;&nbsp;</a></span>addParticleType()</h2>
 
@@ -452,6 +506,62 @@ static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>va
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a0ae487b0be5c0baf8f2a0b27c54dbbe8" name="a0ae487b0be5c0baf8f2a0b27c54dbbe8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ae487b0be5c0baf8f2a0b27c54dbbe8">&#9670;&nbsp;</a></span>getParticlePropertiesLibrary()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::shared_ptr&lt;ParticlePropertiesLibraryType&gt; MDFlexConfig::getParticlePropertiesLibrary </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the ParticlePropertiesLibrary containing the properties of the particle types used in this simulation. </p>
+<dl class="section return"><dt>Returns</dt><dd>the ParticlePropertiesLibrary </dd></dl>
+
+</div>
+</div>
+<a id="a2e55be39bb92bd637295fee748f53622" name="a2e55be39bb92bd637295fee748f53622"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e55be39bb92bd637295fee748f53622">&#9670;&nbsp;</a></span>getParticles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;ParticleType&gt; MDFlexConfig::getParticles </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the particles generated based on the povided configuration file. </p>
+<dl class="section return"><dt>Returns</dt><dd>a vector containing the generated particles. </dd></dl>
 
 </div>
 </div>
@@ -747,7 +857,7 @@ static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>va
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
 <div class="line">      <span class="keyword">true</span>, <span class="stringliteral">&quot;no-end-config&quot;</span>, <span class="keyword">false</span>, <span class="stringliteral">&quot;Set to omit the creation of a yaml file at the end of a simulation.&quot;</span>}</div>
 </div><!-- fragment -->
-<p>Omit the creation of a config file at the end of the <a class="el" href="classSimulation.html" title="The main simulation class.">Simulation</a>. </p>
+<p>Omit the creation of a config file at the end of the <a class="el" href="classSimulation.html" title="Handles minimal initialization requriements for MD-Flexible simulations.">Simulation</a>. </p>
 <p >This starts with a "not" such that it can be used as a flag with a sane default. </p>
 
 </div>
@@ -1423,6 +1533,24 @@ static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>va
 
 </div>
 </div>
+<a id="a60a29f8928ea3c0230697c0e6052d203" name="a60a29f8928ea3c0230697c0e6052d203"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60a29f8928ea3c0230697c0e6052d203">&#9670;&nbsp;</a></span>vtkOutputFolder</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structMDFlexConfig_1_1MDFlexOption.html">MDFlexOption</a>&lt;std::string, __LINE__&gt; MDFlexConfig::vtkOutputFolder</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{<span class="stringliteral">&quot;output&quot;</span>, <span class="stringliteral">&quot;vtk-output-folder&quot;</span>, <span class="keyword">true</span>,</div>
+<div class="line">                                                      <span class="stringliteral">&quot;The location where the vtk output will be created.&quot;</span>}</div>
+</div><!-- fragment -->
+<p>vtkOutputFolder </p>
+
+</div>
+</div>
 <a id="a4386ee305557a388e14a736051c270f7" name="a4386ee305557a388e14a736051c270f7"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4386ee305557a388e14a736051c270f7">&#9670;&nbsp;</a></span>vtkWriteFrequency</h2>
 
@@ -1442,8 +1570,8 @@ static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>va
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/github/workspace/examples/md-flexible/src/parsing/<a class="el" href="MDFlexConfig_8h_source.html">MDFlexConfig.h</a></li>
-<li>/github/workspace/examples/md-flexible/src/parsing/<a class="el" href="MDFlexConfig_8cpp.html">MDFlexConfig.cpp</a></li>
+<li>/github/workspace/examples/md-flexible/src/configuration/<a class="el" href="MDFlexConfig_8h_source.html">MDFlexConfig.h</a></li>
+<li>/github/workspace/examples/md-flexible/src/configuration/<a class="el" href="MDFlexConfig_8cpp.html">MDFlexConfig.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

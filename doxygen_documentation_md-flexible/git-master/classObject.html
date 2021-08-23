@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-07abdf8</span>
+   &#160;<span id="projectnumber">0.1.0-bf15e75</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -108,7 +108,7 @@ $(function() {
 <p>Base class for describing objects made of particles.  
  <a href="classObject.html#details">More...</a></p>
 
-<p><code>#include &lt;<a class="el" href="Objects_8h_source.html">Objects.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Object_8h_source.html">Object.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for Object:</div>
 <div class="dyncontent">
@@ -135,12 +135,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae8fd9e779a8ec18502cb841248749237"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#ae8fd9e779a8ec18502cb841248749237">Object</a> (const std::array&lt; double, 3 &gt; &amp;velocity, unsigned long typeId, double epsilon, double sigma, double mass)</td></tr>
 <tr class="memdesc:ae8fd9e779a8ec18502cb841248749237"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor that should be used by inheriting types.  <a href="classObject.html#ae8fd9e779a8ec18502cb841248749237">More...</a><br /></td></tr>
 <tr class="separator:ae8fd9e779a8ec18502cb841248749237"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae676aac6ebf3ed1817ef31608f0d0221"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#ae676aac6ebf3ed1817ef31608f0d0221">generate</a> (autopas::AutoPas&lt; <a class="el" href="classObject.html#a0a607b052d4421a32b271f1b97175d9c">ParticleType</a> &gt; &amp;autopas) const =0</td></tr>
-<tr class="memdesc:ae676aac6ebf3ed1817ef31608f0d0221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the object in the given AutoPas container.  <a href="classObject.html#ae676aac6ebf3ed1817ef31608f0d0221">More...</a><br /></td></tr>
-<tr class="separator:ae676aac6ebf3ed1817ef31608f0d0221"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae5c897d983e2382cd0a47320c886574e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classObject.html#a0a607b052d4421a32b271f1b97175d9c">ParticleType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#ae5c897d983e2382cd0a47320c886574e">getDummyParticle</a> (const autopas::AutoPas&lt; <a class="el" href="classObject.html#a0a607b052d4421a32b271f1b97175d9c">ParticleType</a> &gt; &amp;autopas) const</td></tr>
-<tr class="memdesc:ae5c897d983e2382cd0a47320c886574e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a particle that acts as blueprint for all particles to be created for the object.  <a href="classObject.html#ae5c897d983e2382cd0a47320c886574e">More...</a><br /></td></tr>
-<tr class="separator:ae5c897d983e2382cd0a47320c886574e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a42b6fb29dbc25b1fdcc8d014b17f8dfc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#a42b6fb29dbc25b1fdcc8d014b17f8dfc">generate</a> (std::vector&lt; <a class="el" href="classObject.html#a0a607b052d4421a32b271f1b97175d9c">ParticleType</a> &gt; &amp;particles) const =0</td></tr>
+<tr class="memdesc:a42b6fb29dbc25b1fdcc8d014b17f8dfc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate the object in the given AutoPas container.  <a href="classObject.html#a42b6fb29dbc25b1fdcc8d014b17f8dfc">More...</a><br /></td></tr>
+<tr class="separator:a42b6fb29dbc25b1fdcc8d014b17f8dfc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a144e4dd7812dfa353fa5668646a9ee9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classObject.html#a0a607b052d4421a32b271f1b97175d9c">ParticleType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#a144e4dd7812dfa353fa5668646a9ee9b">getDummyParticle</a> (const size_t &amp;particleId) const</td></tr>
+<tr class="memdesc:a144e4dd7812dfa353fa5668646a9ee9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a particle that acts as blueprint for all particles to be created for the object.  <a href="classObject.html#a144e4dd7812dfa353fa5668646a9ee9b">More...</a><br /></td></tr>
+<tr class="separator:a144e4dd7812dfa353fa5668646a9ee9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5867ca4d6e824bb793b2fb8e4d05f8c9"><td class="memItemLeft" align="right" valign="top">const std::array&lt; double, 3 &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#a5867ca4d6e824bb793b2fb8e4d05f8c9">getVelocity</a> () const</td></tr>
 <tr class="memdesc:a5867ca4d6e824bb793b2fb8e4d05f8c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for Velocity.  <a href="classObject.html#a5867ca4d6e824bb793b2fb8e4d05f8c9">More...</a><br /></td></tr>
 <tr class="separator:a5867ca4d6e824bb793b2fb8e4d05f8c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -269,8 +269,8 @@ Friends</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ae676aac6ebf3ed1817ef31608f0d0221" name="ae676aac6ebf3ed1817ef31608f0d0221"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae676aac6ebf3ed1817ef31608f0d0221">&#9670;&nbsp;</a></span>generate()</h2>
+<a id="a42b6fb29dbc25b1fdcc8d014b17f8dfc" name="a42b6fb29dbc25b1fdcc8d014b17f8dfc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a42b6fb29dbc25b1fdcc8d014b17f8dfc">&#9670;&nbsp;</a></span>generate()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -281,8 +281,8 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname">virtual void Object::generate </td>
           <td>(</td>
-          <td class="paramtype">autopas::AutoPas&lt; <a class="el" href="classObject.html#a0a607b052d4421a32b271f1b97175d9c">ParticleType</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>autopas</em></td><td>)</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classObject.html#a0a607b052d4421a32b271f1b97175d9c">ParticleType</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>particles</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -294,15 +294,14 @@ Friends</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Generate the object in the given AutoPas container. </p>
-<dl class="section note"><dt>Note</dt><dd>Particle IDs for the new particles will start at the current value of autopas.getNumberOfParticles().</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">autopas</td><td></td></tr>
+    <tr><td class="paramname">particles</td><td>The container to which the new particles will be appended to. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classCubeClosestPacked.html#ab9485bd876b2e6c373f1a6ff38ed1128">CubeClosestPacked</a>, <a class="el" href="classCubeGauss.html#a84a5eb6899f03298d8a0d09bdc16ebf5">CubeGauss</a>, <a class="el" href="classCubeGrid.html#ad45c7f0b58abe71435b7ab3bcbcbee5b">CubeGrid</a>, <a class="el" href="classCubeUniform.html#a097f12d8c9700ea48f3fbff77d9f7472">CubeUniform</a>, and <a class="el" href="classSphere.html#a98bb99db21c4b2cddd64300d7997c08e">Sphere</a>.</p>
+<p>Implemented in <a class="el" href="classCubeClosestPacked.html#a8c98f998e6bda4238e93b0b712d2bc9c">CubeClosestPacked</a>, <a class="el" href="classCubeGauss.html#ad8b1ac4719d42ea4d8771a38591bf85a">CubeGauss</a>, <a class="el" href="classCubeGrid.html#ab721576e47eadbf6d9d9bfa04870149c">CubeGrid</a>, <a class="el" href="classCubeUniform.html#a05d13f589f8de967d314aa34da4a4841">CubeUniform</a>, and <a class="el" href="classSphere.html#a58c1baa31ed57fef9fc6bfecda5f2111">Sphere</a>.</p>
 
 </div>
 </div>
@@ -366,8 +365,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="ae5c897d983e2382cd0a47320c886574e" name="ae5c897d983e2382cd0a47320c886574e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae5c897d983e2382cd0a47320c886574e">&#9670;&nbsp;</a></span>getDummyParticle()</h2>
+<a id="a144e4dd7812dfa353fa5668646a9ee9b" name="a144e4dd7812dfa353fa5668646a9ee9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a144e4dd7812dfa353fa5668646a9ee9b">&#9670;&nbsp;</a></span>getDummyParticle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -378,8 +377,8 @@ Friends</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="classObject.html#a0a607b052d4421a32b271f1b97175d9c">ParticleType</a> Object::getDummyParticle </td>
           <td>(</td>
-          <td class="paramtype">const autopas::AutoPas&lt; <a class="el" href="classObject.html#a0a607b052d4421a32b271f1b97175d9c">ParticleType</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>autopas</em></td><td>)</td>
+          <td class="paramtype">const size_t &amp;&#160;</td>
+          <td class="paramname"><em>particleId</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -393,11 +392,11 @@ Friends</h2></td></tr>
 <p>Create a particle that acts as blueprint for all particles to be created for the object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">autopas</td><td></td></tr>
+    <tr><td class="paramname">particleId</td><td>Defines the id of the generated dummy particle. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a particle initialized with default values. </dd></dl>
 
 </div>
 </div>
@@ -595,7 +594,7 @@ Friends</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>/github/workspace/examples/md-flexible/src/Objects/<a class="el" href="Objects_8h_source.html">Objects.h</a></li>
+<li>/github/workspace/examples/md-flexible/src/configuration/objects/<a class="el" href="Object_8h_source.html">Object.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-07abdf8</span>
+   &#160;<span id="projectnumber">0.1.0-bf15e75</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -94,7 +94,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_d28a4824dc47e487b107a5db32ef43c4.html">examples</a></li><li class="navelem"><a class="el" href="dir_b4de35d03da195f9c11ceb40b47103fa.html">md-flexible</a></li><li class="navelem"><a class="el" href="dir_9fe9d0186c57da72ba4f4818de4024c9.html">src</a></li><li class="navelem"><a class="el" href="dir_8e5023335c6d80afeb9fe41ac1daf95f.html">Objects</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_d28a4824dc47e487b107a5db32ef43c4.html">examples</a></li><li class="navelem"><a class="el" href="dir_b4de35d03da195f9c11ceb40b47103fa.html">md-flexible</a></li><li class="navelem"><a class="el" href="dir_9fe9d0186c57da72ba4f4818de4024c9.html">src</a></li><li class="navelem"><a class="el" href="dir_9e4767c39da2a701330e913a51047cc7.html">configuration</a></li><li class="navelem"><a class="el" href="dir_e7b5e51c587088504ef958042c402d85.html">objects</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -104,7 +104,7 @@ $(function() {
 <a href="Sphere_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="Objects_8h.html">Objects.h</a>&quot;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="Object_8h.html">Object.h</a>&quot;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;autopas/utils/ArrayMath.h&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="classSphere.html">   14</a></span><span class="keyword">class </span><a class="code" href="classSphere.html">Sphere</a> : <span class="keyword">public</span> <a class="code" href="classObject.html">Object</a> {</div>
@@ -112,115 +112,117 @@ $(function() {
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="classSphere.html#a7c59fcfeb1b920705356eb722f3164d7">   27</a></span>  <a class="code" href="classSphere.html#a7c59fcfeb1b920705356eb722f3164d7">Sphere</a>(<span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;velocity, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> typeId, <span class="keywordtype">double</span> epsilon, <span class="keywordtype">double</span> sigma, <span class="keywordtype">double</span> mass,</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>         <span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;center, <span class="keywordtype">int</span> radius, <span class="keywordtype">double</span> particleSpacing)</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>      : <a class="code" href="classObject.html">Object</a>(velocity, typeId, epsilon, sigma, mass),</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        center(center),</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        radius(radius),</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        particleSpacing(particleSpacing) {}</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        _center(center),</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        _radius(radius),</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        _particleSpacing(particleSpacing) {}</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classSphere.html#a2b147012920e3d341194e7e99d7b6ee3">   38</a></span>  [[nodiscard]] <span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;<a class="code" href="classSphere.html#a2b147012920e3d341194e7e99d7b6ee3">getCenter</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> center; }</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classSphere.html#a2b147012920e3d341194e7e99d7b6ee3">   38</a></span>  [[nodiscard]] <span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;<a class="code" href="classSphere.html#a2b147012920e3d341194e7e99d7b6ee3">getCenter</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _center; }</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classSphere.html#a3d8593201abed340800ae0be54ba3225">   44</a></span>  [[nodiscard]] <span class="keywordtype">int</span> <a class="code" href="classSphere.html#a3d8593201abed340800ae0be54ba3225">getRadius</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> radius; }</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classSphere.html#a3d8593201abed340800ae0be54ba3225">   44</a></span>  [[nodiscard]] <span class="keywordtype">int</span> <a class="code" href="classSphere.html#a3d8593201abed340800ae0be54ba3225">getRadius</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _radius; }</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="classSphere.html#a88bce9e405af5391e35766c4484b2bf9">   46</a></span>  [[nodiscard]] <span class="keywordtype">double</span> <a class="code" href="classSphere.html#a88bce9e405af5391e35766c4484b2bf9">getParticleSpacing</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> particleSpacing; }</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="classSphere.html#a6344e987d4aea32f2a56a0c57922a624">   52</a></span>  <span class="keywordtype">void</span> <a class="code" href="classSphere.html#a6344e987d4aea32f2a56a0c57922a624">iteratePositions</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>(std::array&lt;double, 3&gt;)&gt; &amp;f)<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="comment">// generate regular grid for 1/8th of the sphere</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> z = 0; z &lt;= radius; ++z) {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt;= radius; ++y) {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt;= radius; ++x) {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>          <span class="comment">// position relative to the center</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>          std::array&lt;double, 3&gt; relativePos = {(double)x, (<span class="keywordtype">double</span>)y, (double)z};</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>          <span class="comment">// mirror to rest of sphere</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = -1; i &lt;= 1; i += 2) {</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = -1; k &lt;= 1; k += 2) {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>              <span class="keywordflow">for</span> (<span class="keywordtype">int</span> l = -1; l &lt;= 1; l += 2) {</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>                std::array&lt;double, 3&gt; mirrorMultipliers = {(double)i, (<span class="keywordtype">double</span>)k, (double)l};</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                <span class="comment">// position mirrored, scaled and absolute</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>                std::array&lt;double, 3&gt; posVector = autopas::utils::ArrayMath::add(</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>                    center, autopas::utils::ArrayMath::mulScalar(</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                                autopas::utils::ArrayMath::mul(relativePos, mirrorMultipliers), particleSpacing));</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                <span class="keywordtype">double</span> distFromCentersSquare =</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                    autopas::utils::ArrayMath::dot(autopas::utils::ArrayMath::sub(posVector, center),</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                                                   autopas::utils::ArrayMath::sub(posVector, center));</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                <span class="keyword">const</span> <span class="keyword">auto</span> r = (radius + 1) * particleSpacing;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                <span class="keyword">const</span> <span class="keyword">auto</span> rSquare = r * r;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                <span class="comment">// since the loops create a cubic grid only apply f for positions inside the sphere</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                <span class="keywordflow">if</span> (distFromCentersSquare &lt;= rSquare) {</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                  f(posVector);</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                }</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                <span class="comment">// avoid duplicates</span></div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                <span class="keywordflow">if</span> (z == 0) <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>              }</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>              <span class="keywordflow">if</span> (y == 0) <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>            }</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            <span class="keywordflow">if</span> (x == 0) <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>          }</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        }</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>      }</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  }</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classSphere.html#a6b3c660fa44f3d361fcbca11c2a30ad5">   90</a></span>  [[nodiscard]] <span class="keywordtype">size_t</span> <a class="code" href="classSphere.html#a6b3c660fa44f3d361fcbca11c2a30ad5">getParticlesTotal</a>()<span class="keyword"> const override </span>{</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="comment">// this should look different if the generator for spheres changes</span></div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keywordtype">int</span> counter = 0;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    <a class="code" href="classSphere.html#a6344e987d4aea32f2a56a0c57922a624">iteratePositions</a>([&amp;](<span class="keyword">auto</span> pos) { ++counter; });</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">return</span> counter;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  }</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="classSphere.html#aef289fc525679a609b7cef0fe080a45f">   97</a></span>  [[nodiscard]] std::array&lt;double, 3&gt; <a class="code" href="classSphere.html#aef289fc525679a609b7cef0fe080a45f">getBoxMin</a>()<span class="keyword"> const override </span>{</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">return</span> {center[0] - ((double)radius) * particleSpacing, center[1] - ((double)radius) * particleSpacing,</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>            center[2] - ((double)radius) * particleSpacing};</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  }</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno"><a class="line" href="classSphere.html#a67883a809fad12b7330af5a4d24624f4">  102</a></span>  [[nodiscard]] std::array&lt;double, 3&gt; <a class="code" href="classSphere.html#a67883a809fad12b7330af5a4d24624f4">getBoxMax</a>()<span class="keyword"> const override </span>{</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">return</span> {center[0] + ((double)radius) * particleSpacing, center[1] + ((double)radius) * particleSpacing,</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>            center[2] + ((double)radius) * particleSpacing};</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  }</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno"><a class="line" href="classSphere.html#a6edf320535a4b84b3c655cb7d4086747">  107</a></span>  [[nodiscard]] std::string <a class="code" href="classSphere.html#a6edf320535a4b84b3c655cb7d4086747">to_string</a>()<span class="keyword"> const override </span>{</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    std::ostringstream output;</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    output &lt;&lt; std::setw(<a class="code" href="classObject.html#a034f3a47565c082f819aedac7cbd1de2">_valueOffset</a>) &lt;&lt; std::left &lt;&lt; <span class="stringliteral">&quot;center&quot;</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>           &lt;&lt; <span class="stringliteral">&quot;:  &quot;</span> &lt;&lt; autopas::utils::ArrayUtils::to_string(center) &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>    output &lt;&lt; std::setw(<a class="code" href="classObject.html#a034f3a47565c082f819aedac7cbd1de2">_valueOffset</a>) &lt;&lt; std::left &lt;&lt; <span class="stringliteral">&quot;radius&quot;</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>           &lt;&lt; <span class="stringliteral">&quot;:  &quot;</span> &lt;&lt; radius &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    output &lt;&lt; std::setw(<a class="code" href="classObject.html#a034f3a47565c082f819aedac7cbd1de2">_valueOffset</a>) &lt;&lt; std::left &lt;&lt; <span class="stringliteral">&quot;particle-spacing&quot;</span></div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>           &lt;&lt; <span class="stringliteral">&quot;:  &quot;</span> &lt;&lt; particleSpacing &lt;&lt; std::endl;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    output &lt;&lt; <a class="code" href="classObject.html#a7eba5a6f4bb07aa82230781ca81354e3">Object::to_string</a>();</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">return</span> output.str();</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  }</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno"><a class="line" href="classSphere.html#a98bb99db21c4b2cddd64300d7997c08e">  120</a></span>  <span class="keywordtype">void</span> <a class="code" href="classSphere.html#a98bb99db21c4b2cddd64300d7997c08e">generate</a>(autopas::AutoPas&lt;ParticleType&gt; &amp;autopas)<span class="keyword"> const override </span>{</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <a class="code" href="classObject.html#a0a607b052d4421a32b271f1b97175d9c">ParticleType</a> dummyParticle = <a class="code" href="classObject.html#ae5c897d983e2382cd0a47320c886574e">getDummyParticle</a>(autopas);</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <a class="code" href="classSphere.html#a6344e987d4aea32f2a56a0c57922a624">iteratePositions</a>([&amp;](<span class="keyword">auto</span> pos) {</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>      dummyParticle.setR(pos);</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      autopas.addParticle(dummyParticle);</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>      dummyParticle.setID(dummyParticle.getID() + 1);</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    });</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  }</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  std::array&lt;double, 3&gt; center;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>  <span class="keywordtype">int</span> radius;</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  <span class="keywordtype">double</span> particleSpacing;</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>};</div>
-<div class="ttc" id="aObjects_8h_html"><div class="ttname"><a href="Objects_8h.html">Objects.h</a></div></div>
-<div class="ttc" id="aclassObject_html"><div class="ttname"><a href="classObject.html">Object</a></div><div class="ttdoc">Base class for describing objects made of particles.</div><div class="ttdef"><b>Definition:</b> Objects.h:20</div></div>
-<div class="ttc" id="aclassObject_html_a034f3a47565c082f819aedac7cbd1de2"><div class="ttname"><a href="classObject.html#a034f3a47565c082f819aedac7cbd1de2">Object::_valueOffset</a></div><div class="ttdeci">static constexpr size_t _valueOffset</div><div class="ttdoc">valueOffset of MDFlexConfig - expected indent</div><div class="ttdef"><b>Definition:</b> Objects.h:153</div></div>
-<div class="ttc" id="aclassObject_html_a0a607b052d4421a32b271f1b97175d9c"><div class="ttname"><a href="classObject.html#a0a607b052d4421a32b271f1b97175d9c">Object::ParticleType</a></div><div class="ttdeci">::ParticleType ParticleType</div><div class="ttdoc">Type of all particles generated.</div><div class="ttdef"><b>Definition:</b> Objects.h:25</div></div>
-<div class="ttc" id="aclassObject_html_a7eba5a6f4bb07aa82230781ca81354e3"><div class="ttname"><a href="classObject.html#a7eba5a6f4bb07aa82230781ca81354e3">Object::to_string</a></div><div class="ttdeci">virtual std::string to_string() const</div><div class="ttdoc">String description string of the object.</div><div class="ttdef"><b>Definition:</b> Objects.h:103</div></div>
-<div class="ttc" id="aclassObject_html_ae5c897d983e2382cd0a47320c886574e"><div class="ttname"><a href="classObject.html#ae5c897d983e2382cd0a47320c886574e">Object::getDummyParticle</a></div><div class="ttdeci">ParticleType getDummyParticle(const autopas::AutoPas&lt; ParticleType &gt; &amp;autopas) const</div><div class="ttdoc">Create a particle that acts as blueprint for all particles to be created for the object.</div><div class="ttdef"><b>Definition:</b> Objects.h:53</div></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classSphere.html#a88bce9e405af5391e35766c4484b2bf9">   50</a></span>  [[nodiscard]] <span class="keywordtype">double</span> <a class="code" href="classSphere.html#a88bce9e405af5391e35766c4484b2bf9">getParticleSpacing</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> _particleSpacing; }</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="classSphere.html#a6344e987d4aea32f2a56a0c57922a624">   56</a></span>  <span class="keywordtype">void</span> <a class="code" href="classSphere.html#a6344e987d4aea32f2a56a0c57922a624">iteratePositions</a>(<span class="keyword">const</span> std::function&lt;<span class="keywordtype">void</span>(std::array&lt;double, 3&gt;)&gt; &amp;f)<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="comment">// generate regular grid for 1/8th of the sphere</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> z = 0; z &lt;= _radius; ++z) {</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> y = 0; y &lt;= _radius; ++y) {</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        <span class="keywordflow">for</span> (<span class="keywordtype">int</span> x = 0; x &lt;= _radius; ++x) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>          <span class="comment">// position relative to the center</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>          std::array&lt;double, 3&gt; relativePos = {(double)x, (<span class="keywordtype">double</span>)y, (double)z};</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>          <span class="comment">// mirror to rest of sphere</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>          <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = -1; i &lt;= 1; i += 2) {</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            <span class="keywordflow">for</span> (<span class="keywordtype">int</span> k = -1; k &lt;= 1; k += 2) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>              <span class="keywordflow">for</span> (<span class="keywordtype">int</span> l = -1; l &lt;= 1; l += 2) {</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>                std::array&lt;double, 3&gt; mirrorMultipliers = {(double)i, (<span class="keywordtype">double</span>)k, (double)l};</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>                <span class="comment">// position mirrored, scaled and absolute</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                std::array&lt;double, 3&gt; posVector = autopas::utils::ArrayMath::add(</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                    _center, autopas::utils::ArrayMath::mulScalar(</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>                                 autopas::utils::ArrayMath::mul(relativePos, mirrorMultipliers), _particleSpacing));</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>                <span class="keywordtype">double</span> distFromCentersSquare =</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>                    autopas::utils::ArrayMath::dot(autopas::utils::ArrayMath::sub(posVector, _center),</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                                                   autopas::utils::ArrayMath::sub(posVector, _center));</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                <span class="keyword">const</span> <span class="keyword">auto</span> r = (_radius + 1) * _particleSpacing;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                <span class="keyword">const</span> <span class="keyword">auto</span> rSquare = r * r;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                <span class="comment">// since the loops create a cubic grid only apply f for positions inside the sphere</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>                <span class="keywordflow">if</span> (distFromCentersSquare &lt;= rSquare) {</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>                  f(posVector);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>                }</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>                <span class="comment">// avoid duplicates</span></div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>                <span class="keywordflow">if</span> (z == 0) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>              }</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>              <span class="keywordflow">if</span> (y == 0) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>            }</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>            <span class="keywordflow">if</span> (x == 0) <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>          }</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        }</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="classSphere.html#a6b3c660fa44f3d361fcbca11c2a30ad5">   98</a></span>  [[nodiscard]] <span class="keywordtype">size_t</span> <a class="code" href="classSphere.html#a6b3c660fa44f3d361fcbca11c2a30ad5">getParticlesTotal</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="comment">// this should look different if the generator for spheres changes</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordtype">int</span> counter = 0;</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    <a class="code" href="classSphere.html#a6344e987d4aea32f2a56a0c57922a624">iteratePositions</a>([&amp;](<span class="keyword">auto</span> pos) { ++counter; });</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordflow">return</span> counter;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  }</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno"><a class="line" href="classSphere.html#aef289fc525679a609b7cef0fe080a45f">  109</a></span>  [[nodiscard]] std::array&lt;double, 3&gt; <a class="code" href="classSphere.html#aef289fc525679a609b7cef0fe080a45f">getBoxMin</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">return</span> {_center[0] - ((double)_radius) * _particleSpacing, _center[1] - ((double)_radius) * _particleSpacing,</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            _center[2] - ((double)_radius) * _particleSpacing};</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  }</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno"><a class="line" href="classSphere.html#a67883a809fad12b7330af5a4d24624f4">  118</a></span>  [[nodiscard]] std::array&lt;double, 3&gt; <a class="code" href="classSphere.html#a67883a809fad12b7330af5a4d24624f4">getBoxMax</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordflow">return</span> {_center[0] + ((double)_radius) * _particleSpacing, _center[1] + ((double)_radius) * _particleSpacing,</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            _center[2] + ((double)_radius) * _particleSpacing};</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno"><a class="line" href="classSphere.html#a6edf320535a4b84b3c655cb7d4086747">  127</a></span>  [[nodiscard]] std::string <a class="code" href="classSphere.html#a6edf320535a4b84b3c655cb7d4086747">to_string</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    std::ostringstream output;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    output &lt;&lt; std::setw(<a class="code" href="classObject.html#a034f3a47565c082f819aedac7cbd1de2">_valueOffset</a>) &lt;&lt; std::left &lt;&lt; <span class="stringliteral">&quot;center&quot;</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>           &lt;&lt; <span class="stringliteral">&quot;:  &quot;</span> &lt;&lt; autopas::utils::ArrayUtils::to_string(_center) &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    output &lt;&lt; std::setw(<a class="code" href="classObject.html#a034f3a47565c082f819aedac7cbd1de2">_valueOffset</a>) &lt;&lt; std::left &lt;&lt; <span class="stringliteral">&quot;radius&quot;</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>           &lt;&lt; <span class="stringliteral">&quot;:  &quot;</span> &lt;&lt; _radius &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    output &lt;&lt; std::setw(<a class="code" href="classObject.html#a034f3a47565c082f819aedac7cbd1de2">_valueOffset</a>) &lt;&lt; std::left &lt;&lt; <span class="stringliteral">&quot;particle-spacing&quot;</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>           &lt;&lt; <span class="stringliteral">&quot;:  &quot;</span> &lt;&lt; _particleSpacing &lt;&lt; std::endl;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    output &lt;&lt; <a class="code" href="classObject.html#a7eba5a6f4bb07aa82230781ca81354e3">Object::to_string</a>();</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <span class="keywordflow">return</span> output.str();</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  }</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="classSphere.html#a58c1baa31ed57fef9fc6bfecda5f2111">  144</a></span>  <span class="keywordtype">void</span> <a class="code" href="classSphere.html#a58c1baa31ed57fef9fc6bfecda5f2111">generate</a>(std::vector&lt;ParticleType&gt; &amp;particles)<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    <a class="code" href="classObject.html#a0a607b052d4421a32b271f1b97175d9c">ParticleType</a> particle = <a class="code" href="classObject.html#a144e4dd7812dfa353fa5668646a9ee9b">getDummyParticle</a>(particles.size());</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <a class="code" href="classSphere.html#a6344e987d4aea32f2a56a0c57922a624">iteratePositions</a>([&amp;](<span class="keyword">const</span> <span class="keyword">auto</span> &amp;pos) {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>      particle.setR(pos);</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>      particles.push_back(particle);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>      particle.setID(particle.getID() + 1);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    });</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  }</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>  std::array&lt;double, 3&gt; _center;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  <span class="keywordtype">int</span> _radius;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  <span class="keywordtype">double</span> _particleSpacing;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>};</div>
+<div class="ttc" id="aObject_8h_html"><div class="ttname"><a href="Object_8h.html">Object.h</a></div></div>
+<div class="ttc" id="aclassObject_html"><div class="ttname"><a href="classObject.html">Object</a></div><div class="ttdoc">Base class for describing objects made of particles.</div><div class="ttdef"><b>Definition:</b> Object.h:20</div></div>
+<div class="ttc" id="aclassObject_html_a034f3a47565c082f819aedac7cbd1de2"><div class="ttname"><a href="classObject.html#a034f3a47565c082f819aedac7cbd1de2">Object::_valueOffset</a></div><div class="ttdeci">static constexpr size_t _valueOffset</div><div class="ttdoc">valueOffset of MDFlexConfig - expected indent</div><div class="ttdef"><b>Definition:</b> Object.h:153</div></div>
+<div class="ttc" id="aclassObject_html_a0a607b052d4421a32b271f1b97175d9c"><div class="ttname"><a href="classObject.html#a0a607b052d4421a32b271f1b97175d9c">Object::ParticleType</a></div><div class="ttdeci">::ParticleType ParticleType</div><div class="ttdoc">Type of all particles generated.</div><div class="ttdef"><b>Definition:</b> Object.h:25</div></div>
+<div class="ttc" id="aclassObject_html_a144e4dd7812dfa353fa5668646a9ee9b"><div class="ttname"><a href="classObject.html#a144e4dd7812dfa353fa5668646a9ee9b">Object::getDummyParticle</a></div><div class="ttdeci">ParticleType getDummyParticle(const size_t &amp;particleId) const</div><div class="ttdoc">Create a particle that acts as blueprint for all particles to be created for the object.</div><div class="ttdef"><b>Definition:</b> Object.h:51</div></div>
+<div class="ttc" id="aclassObject_html_a7eba5a6f4bb07aa82230781ca81354e3"><div class="ttname"><a href="classObject.html#a7eba5a6f4bb07aa82230781ca81354e3">Object::to_string</a></div><div class="ttdeci">virtual std::string to_string() const</div><div class="ttdoc">String description string of the object.</div><div class="ttdef"><b>Definition:</b> Object.h:103</div></div>
 <div class="ttc" id="aclassSphere_html"><div class="ttname"><a href="classSphere.html">Sphere</a></div><div class="ttdoc">Class describing a regular 3D spherical particle grid object.</div><div class="ttdef"><b>Definition:</b> Sphere.h:14</div></div>
 <div class="ttc" id="aclassSphere_html_a2b147012920e3d341194e7e99d7b6ee3"><div class="ttname"><a href="classSphere.html#a2b147012920e3d341194e7e99d7b6ee3">Sphere::getCenter</a></div><div class="ttdeci">const std::array&lt; double, 3 &gt; &amp; getCenter() const</div><div class="ttdoc">Getter for center of Sphere.</div><div class="ttdef"><b>Definition:</b> Sphere.h:38</div></div>
 <div class="ttc" id="aclassSphere_html_a3d8593201abed340800ae0be54ba3225"><div class="ttname"><a href="classSphere.html#a3d8593201abed340800ae0be54ba3225">Sphere::getRadius</a></div><div class="ttdeci">int getRadius() const</div><div class="ttdoc">Getter for radius in number of Particles of Sphere.</div><div class="ttdef"><b>Definition:</b> Sphere.h:44</div></div>
-<div class="ttc" id="aclassSphere_html_a6344e987d4aea32f2a56a0c57922a624"><div class="ttname"><a href="classSphere.html#a6344e987d4aea32f2a56a0c57922a624">Sphere::iteratePositions</a></div><div class="ttdeci">void iteratePositions(const std::function&lt; void(std::array&lt; double, 3 &gt;)&gt; &amp;f) const</div><div class="ttdoc">Call f for every point on the sphere where a particle should be.</div><div class="ttdef"><b>Definition:</b> Sphere.h:52</div></div>
-<div class="ttc" id="aclassSphere_html_a67883a809fad12b7330af5a4d24624f4"><div class="ttname"><a href="classSphere.html#a67883a809fad12b7330af5a4d24624f4">Sphere::getBoxMax</a></div><div class="ttdeci">std::array&lt; double, 3 &gt; getBoxMax() const override</div><div class="ttdoc">Getter for the highest x,y,z coordinates for Object.</div><div class="ttdef"><b>Definition:</b> Sphere.h:102</div></div>
-<div class="ttc" id="aclassSphere_html_a6b3c660fa44f3d361fcbca11c2a30ad5"><div class="ttname"><a href="classSphere.html#a6b3c660fa44f3d361fcbca11c2a30ad5">Sphere::getParticlesTotal</a></div><div class="ttdeci">size_t getParticlesTotal() const override</div><div class="ttdoc">Returns the total amount of Particles in the Object.</div><div class="ttdef"><b>Definition:</b> Sphere.h:90</div></div>
-<div class="ttc" id="aclassSphere_html_a6edf320535a4b84b3c655cb7d4086747"><div class="ttname"><a href="classSphere.html#a6edf320535a4b84b3c655cb7d4086747">Sphere::to_string</a></div><div class="ttdeci">std::string to_string() const override</div><div class="ttdoc">String description string of the object.</div><div class="ttdef"><b>Definition:</b> Sphere.h:107</div></div>
+<div class="ttc" id="aclassSphere_html_a58c1baa31ed57fef9fc6bfecda5f2111"><div class="ttname"><a href="classSphere.html#a58c1baa31ed57fef9fc6bfecda5f2111">Sphere::generate</a></div><div class="ttdeci">void generate(std::vector&lt; ParticleType &gt; &amp;particles) const override</div><div class="ttdoc">Generates the particles based on the configuration of the sphere object provided in the yaml file.</div><div class="ttdef"><b>Definition:</b> Sphere.h:144</div></div>
+<div class="ttc" id="aclassSphere_html_a6344e987d4aea32f2a56a0c57922a624"><div class="ttname"><a href="classSphere.html#a6344e987d4aea32f2a56a0c57922a624">Sphere::iteratePositions</a></div><div class="ttdeci">void iteratePositions(const std::function&lt; void(std::array&lt; double, 3 &gt;)&gt; &amp;f) const</div><div class="ttdoc">Call f for every point on the sphere where a particle should be.</div><div class="ttdef"><b>Definition:</b> Sphere.h:56</div></div>
+<div class="ttc" id="aclassSphere_html_a67883a809fad12b7330af5a4d24624f4"><div class="ttname"><a href="classSphere.html#a67883a809fad12b7330af5a4d24624f4">Sphere::getBoxMax</a></div><div class="ttdeci">std::array&lt; double, 3 &gt; getBoxMax() const override</div><div class="ttdoc">Returns the coordinates of box's the top right back corner.</div><div class="ttdef"><b>Definition:</b> Sphere.h:118</div></div>
+<div class="ttc" id="aclassSphere_html_a6b3c660fa44f3d361fcbca11c2a30ad5"><div class="ttname"><a href="classSphere.html#a6b3c660fa44f3d361fcbca11c2a30ad5">Sphere::getParticlesTotal</a></div><div class="ttdeci">size_t getParticlesTotal() const override</div><div class="ttdoc">Returns the total amount of particles which will be / have been generated.</div><div class="ttdef"><b>Definition:</b> Sphere.h:98</div></div>
+<div class="ttc" id="aclassSphere_html_a6edf320535a4b84b3c655cb7d4086747"><div class="ttname"><a href="classSphere.html#a6edf320535a4b84b3c655cb7d4086747">Sphere::to_string</a></div><div class="ttdeci">std::string to_string() const override</div><div class="ttdoc">Converts the object to a human readable string.</div><div class="ttdef"><b>Definition:</b> Sphere.h:127</div></div>
 <div class="ttc" id="aclassSphere_html_a7c59fcfeb1b920705356eb722f3164d7"><div class="ttname"><a href="classSphere.html#a7c59fcfeb1b920705356eb722f3164d7">Sphere::Sphere</a></div><div class="ttdeci">Sphere(const std::array&lt; double, 3 &gt; &amp;velocity, unsigned long typeId, double epsilon, double sigma, double mass, const std::array&lt; double, 3 &gt; &amp;center, int radius, double particleSpacing)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> Sphere.h:27</div></div>
-<div class="ttc" id="aclassSphere_html_a88bce9e405af5391e35766c4484b2bf9"><div class="ttname"><a href="classSphere.html#a88bce9e405af5391e35766c4484b2bf9">Sphere::getParticleSpacing</a></div><div class="ttdeci">double getParticleSpacing() const override</div><div class="ttdoc">Getter for ParticleSpacing.</div><div class="ttdef"><b>Definition:</b> Sphere.h:46</div></div>
-<div class="ttc" id="aclassSphere_html_a98bb99db21c4b2cddd64300d7997c08e"><div class="ttname"><a href="classSphere.html#a98bb99db21c4b2cddd64300d7997c08e">Sphere::generate</a></div><div class="ttdeci">void generate(autopas::AutoPas&lt; ParticleType &gt; &amp;autopas) const override</div><div class="ttdoc">Generate the object in the given AutoPas container.</div><div class="ttdef"><b>Definition:</b> Sphere.h:120</div></div>
-<div class="ttc" id="aclassSphere_html_aef289fc525679a609b7cef0fe080a45f"><div class="ttname"><a href="classSphere.html#aef289fc525679a609b7cef0fe080a45f">Sphere::getBoxMin</a></div><div class="ttdeci">std::array&lt; double, 3 &gt; getBoxMin() const override</div><div class="ttdoc">Getter for the smallest x,y,z coordinates for Object.</div><div class="ttdef"><b>Definition:</b> Sphere.h:97</div></div>
+<div class="ttc" id="aclassSphere_html_a88bce9e405af5391e35766c4484b2bf9"><div class="ttname"><a href="classSphere.html#a88bce9e405af5391e35766c4484b2bf9">Sphere::getParticleSpacing</a></div><div class="ttdeci">double getParticleSpacing() const override</div><div class="ttdoc">Returns the amount of space between each particle.</div><div class="ttdef"><b>Definition:</b> Sphere.h:50</div></div>
+<div class="ttc" id="aclassSphere_html_aef289fc525679a609b7cef0fe080a45f"><div class="ttname"><a href="classSphere.html#aef289fc525679a609b7cef0fe080a45f">Sphere::getBoxMin</a></div><div class="ttdeci">std::array&lt; double, 3 &gt; getBoxMin() const override</div><div class="ttdoc">Returns the coordinates of box's the bottom left front corner.</div><div class="ttdef"><b>Definition:</b> Sphere.h:109</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
