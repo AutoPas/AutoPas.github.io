@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-07abdf8</span>
+   &#160;<span id="projectnumber">0.1.0-bf15e75</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -328,9 +328,9 @@ $(function() {
 <div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span> </div>
 <div class="line"><a id="l00576" name="l00576"></a><span class="lineno"><a class="line" href="classautopas_1_1AutoPas.html#ab697923f0ec8411c69c5c49315870bcf">  576</a></span>  <span class="keywordtype">void</span> <a class="code" href="classautopas_1_1AutoPas.html#ab697923f0ec8411c69c5c49315870bcf">setMPIStrategy</a>(MPIStrategyOption mpiStrategyOption) { _mpiStrategyOption = mpiStrategyOption; }</div>
 <div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span> </div>
-<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span><span class="comment">// Only define the interface for the MPI communicator if AUTOPAS_INTERNODE_TUNING=ON</span></div>
-<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span><span class="comment">// The internal implementation will use _autopasMPICommunicator with WrapMPI regardless of AUTOPAS_INTERNODE_TUNING</span></div>
-<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span><span class="preprocessor">#if defined(AUTOPAS_INTERNODE_TUNING)</span></div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span><span class="comment">// Only define the interface for the MPI communicator if AUTOPAS_INCLUDE_MPI=ON</span></div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span><span class="comment">// The internal implementation will use _autopasMPICommunicator with WrapMPI regardless of AUTOPAS_INCLUDE_MPI</span></div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span><span class="preprocessor">#if defined(AUTOPAS_INCLUDE_MPI)</span></div>
 <div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>  <span class="keywordtype">void</span> setMPICommunicator(MPI_Comm comm) { _autopasMPICommunicator = comm; }</div>
 <div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span> </div>
 <div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>  MPI_Comm getMPICommunicator() { <span class="keywordflow">return</span> _autopasMPICommunicator; }</div>
@@ -383,7 +383,7 @@ $(function() {
 <div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span> </div>
 <div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>  std::unique_ptr&lt;autopas::AutoTuner&lt;Particle&gt;&gt; _autoTuner;</div>
 <div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span> </div>
-<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>  <a class="code" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> _autopasMPICommunicator{AUTOPAS_MPI_COMM_NULL};</div>
+<div class="line"><a id="l00734" name="l00734"></a><span class="lineno">  734</span>  <a class="code" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> _autopasMPICommunicator{<a class="code" href="WrapMPI_8h.html#a12d9603a886a214993b1571e5785129e">AUTOPAS_MPI_COMM_NULL</a>};</div>
 <div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span> </div>
 <div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>  <span class="keywordtype">bool</span> _externalMPICommunicator{<span class="keyword">false</span>};</div>
 <div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span> </div>
@@ -407,6 +407,7 @@ $(function() {
 <div class="ttc" id="aTraversalOption_8h_html"><div class="ttname"><a href="TraversalOption_8h.html">TraversalOption.h</a></div></div>
 <div class="ttc" id="aTuningStrategyOption_8h_html"><div class="ttname"><a href="TuningStrategyOption_8h.html">TuningStrategyOption.h</a></div></div>
 <div class="ttc" id="aWrapMPI_8h_html"><div class="ttname"><a href="WrapMPI_8h.html">WrapMPI.h</a></div></div>
+<div class="ttc" id="aWrapMPI_8h_html_a12d9603a886a214993b1571e5785129e"><div class="ttname"><a href="WrapMPI_8h.html#a12d9603a886a214993b1571e5785129e">AUTOPAS_MPI_COMM_NULL</a></div><div class="ttdeci">#define AUTOPAS_MPI_COMM_NULL</div><div class="ttdoc">Wrapper for MPI_COMM_NULL.</div><div class="ttdef"><b>Definition:</b> WrapMPI.h:81</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoPas_html"><div class="ttname"><a href="classautopas_1_1AutoPas.html">autopas::AutoPas</a></div><div class="ttdoc">The AutoPas class is intended to be the main point of Interaction for the user.</div><div class="ttdef"><b>Definition:</b> AutoPasDecl.h:44</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoPas_html_a0272e9c18ce69f07e98773d177fd7e48"><div class="ttname"><a href="classautopas_1_1AutoPas.html#a0272e9c18ce69f07e98773d177fd7e48">autopas::AutoPas::addParticle</a></div><div class="ttdeci">void addParticle(const Particle &amp;p)</div><div class="ttdoc">Adds a particle to the container.</div><div class="ttdef"><b>Definition:</b> AutoPasImpl.h:114</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoPas_html_a0471ddce20e31c1ce928f5aabdb2d4c9"><div class="ttname"><a href="classautopas_1_1AutoPas.html#a0471ddce20e31c1ce928f5aabdb2d4c9">autopas::AutoPas::setAllowedLoadEstimators</a></div><div class="ttdeci">void setAllowedLoadEstimators(const std::set&lt; LoadEstimatorOption &gt; &amp;allowedLoadEstimators)</div><div class="ttdoc">Set the list of allowed load estimation algorithms.</div><div class="ttdef"><b>Definition:</b> AutoPasDecl.h:487</div></div>
@@ -491,7 +492,7 @@ $(function() {
 <div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">This is the main namespace of AutoPas.</div><div class="ttdef"><b>Definition:</b> AutoPasDecl.h:27</div></div>
 <div class="ttc" id="anamespaceautopas_html_a1103977ab8f79d296cee5b0afa78dae2"><div class="ttname"><a href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">autopas::Particle</a></div><div class="ttdeci">ParticleFP64 Particle</div><div class="ttdoc">Alias for Particle with all variables in 64 bit precision.</div><div class="ttdef"><b>Definition:</b> Particle.h:25</div></div>
 <div class="ttc" id="anamespaceautopas_html_ab7d7e9a630b960c5bb1d4622504c7b1a"><div class="ttname"><a href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">autopas::AutoPas_MPI_Comm</a></div><div class="ttdeci">AutoPas_MPI_Comm</div><div class="ttdoc">Dummy for MPI_Comm.</div><div class="ttdef"><b>Definition:</b> WrapMPI.h:76</div></div>
-<div class="ttc" id="anamespaceautopas_html_aba95e417ebe83d07c596a1dd717bcb72"><div class="ttname"><a href="namespaceautopas.html#aba95e417ebe83d07c596a1dd717bcb72">autopas::AutoPas_MPI_Comm_free</a></div><div class="ttdeci">int AutoPas_MPI_Comm_free(AutoPas_MPI_Comm *comm)</div><div class="ttdoc">Wrapper for MPI_Comm_free.</div><div class="ttdef"><b>Definition:</b> WrapMPI.h:440</div></div>
+<div class="ttc" id="anamespaceautopas_html_aba95e417ebe83d07c596a1dd717bcb72"><div class="ttname"><a href="namespaceautopas.html#aba95e417ebe83d07c596a1dd717bcb72">autopas::AutoPas_MPI_Comm_free</a></div><div class="ttdeci">int AutoPas_MPI_Comm_free(AutoPas_MPI_Comm *comm)</div><div class="ttdoc">Wrapper for MPI_Comm_free.</div><div class="ttdef"><b>Definition:</b> WrapMPI.h:554</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

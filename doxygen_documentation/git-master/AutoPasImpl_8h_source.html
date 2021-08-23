@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-07abdf8</span>
+   &#160;<span id="projectnumber">0.1.0-bf15e75</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -160,8 +160,8 @@ $(function() {
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>               _numSamples, _verletRebuildFrequency);</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  }</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordflow">if</span> (_autopasMPICommunicator == AUTOPAS_MPI_COMM_NULL) {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code" href="namespaceautopas.html#aa31a6ea1b55d2d1da7dacd419cb3370e">AutoPas_MPI_Comm_dup</a>(AUTOPAS_MPI_COMM_WORLD, &amp;_autopasMPICommunicator);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordflow">if</span> (_autopasMPICommunicator == <a class="code" href="WrapMPI_8h.html#a12d9603a886a214993b1571e5785129e">AUTOPAS_MPI_COMM_NULL</a>) {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <a class="code" href="namespaceautopas.html#aa31a6ea1b55d2d1da7dacd419cb3370e">AutoPas_MPI_Comm_dup</a>(<a class="code" href="WrapMPI_8h.html#a9d1efef8943c9ef54637f850748b7190">AUTOPAS_MPI_COMM_WORLD</a>, &amp;_autopasMPICommunicator);</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    _externalMPICommunicator = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  }</div>
@@ -292,6 +292,8 @@ $(function() {
 <div class="ttc" id="aLogger_8h_html_ab5eef0a7030352f281056d3ee7f86575"><div class="ttname"><a href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a></div><div class="ttdeci">#define AutoPasLog(lvl, fmt,...)</div><div class="ttdoc">Macro for logging providing common meta information without filename.</div><div class="ttdef"><b>Definition:</b> Logger.h:43</div></div>
 <div class="ttc" id="aLogicHandler_8h_html"><div class="ttname"><a href="LogicHandler_8h.html">LogicHandler.h</a></div></div>
 <div class="ttc" id="aTuningStrategyFactory_8h_html"><div class="ttname"><a href="TuningStrategyFactory_8h.html">TuningStrategyFactory.h</a></div></div>
+<div class="ttc" id="aWrapMPI_8h_html_a12d9603a886a214993b1571e5785129e"><div class="ttname"><a href="WrapMPI_8h.html#a12d9603a886a214993b1571e5785129e">AUTOPAS_MPI_COMM_NULL</a></div><div class="ttdeci">#define AUTOPAS_MPI_COMM_NULL</div><div class="ttdoc">Wrapper for MPI_COMM_NULL.</div><div class="ttdef"><b>Definition:</b> WrapMPI.h:81</div></div>
+<div class="ttc" id="aWrapMPI_8h_html_a9d1efef8943c9ef54637f850748b7190"><div class="ttname"><a href="WrapMPI_8h.html#a9d1efef8943c9ef54637f850748b7190">AUTOPAS_MPI_COMM_WORLD</a></div><div class="ttdeci">#define AUTOPAS_MPI_COMM_WORLD</div><div class="ttdoc">Wrapper for MPI_COMM_WORLD.</div><div class="ttdef"><b>Definition:</b> WrapMPI.h:83</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoPas_html"><div class="ttname"><a href="classautopas_1_1AutoPas.html">autopas::AutoPas</a></div><div class="ttdoc">The AutoPas class is intended to be the main point of Interaction for the user.</div><div class="ttdef"><b>Definition:</b> AutoPasDecl.h:44</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoPas_html_a0272e9c18ce69f07e98773d177fd7e48"><div class="ttname"><a href="classautopas_1_1AutoPas.html#a0272e9c18ce69f07e98773d177fd7e48">autopas::AutoPas::addParticle</a></div><div class="ttdeci">void addParticle(const Particle &amp;p)</div><div class="ttdoc">Adds a particle to the container.</div><div class="ttdef"><b>Definition:</b> AutoPasImpl.h:114</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoPas_html_a2755886379ead512ce10fb36cb241c37"><div class="ttname"><a href="classautopas_1_1AutoPas.html#a2755886379ead512ce10fb36cb241c37">autopas::AutoPas::getBoxMin</a></div><div class="ttdeci">std::array&lt; double, 3 &gt; getBoxMin() const</div><div class="ttdoc">Get the lower corner of the container without the halo.</div><div class="ttdef"><b>Definition:</b> AutoPasImpl.h:181</div></div>
@@ -321,7 +323,7 @@ $(function() {
 <div class="ttc" id="aclassautopas_1_1ParticleIteratorWrapper_html"><div class="ttname"><a href="classautopas_1_1ParticleIteratorWrapper.html">autopas::ParticleIteratorWrapper</a></div><div class="ttdoc">ParticleIteratorWrapper class is the main class visible to the user to iterate over particles of the ...</div><div class="ttdef"><b>Definition:</b> ParticleIteratorWrapper.h:29</div></div>
 <div class="ttc" id="aclassautopas_1_1utils_1_1ExceptionHandler_html_ae61b9aac49a90a9ff86859c73005ee07"><div class="ttname"><a href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a></div><div class="ttdeci">static void exception(const Exception e)</div><div class="ttdoc">Handle an exception derived by std::exception.</div><div class="ttdef"><b>Definition:</b> ExceptionHandler.h:66</div></div>
 <div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">This is the main namespace of AutoPas.</div><div class="ttdef"><b>Definition:</b> AutoPasDecl.h:27</div></div>
-<div class="ttc" id="anamespaceautopas_html_aa31a6ea1b55d2d1da7dacd419cb3370e"><div class="ttname"><a href="namespaceautopas.html#aa31a6ea1b55d2d1da7dacd419cb3370e">autopas::AutoPas_MPI_Comm_dup</a></div><div class="ttdeci">int AutoPas_MPI_Comm_dup(AutoPas_MPI_Comm comm, AutoPas_MPI_Comm *newComm)</div><div class="ttdoc">Wrapper for MPI_Comm_dup.</div><div class="ttdef"><b>Definition:</b> WrapMPI.h:435</div></div>
+<div class="ttc" id="anamespaceautopas_html_aa31a6ea1b55d2d1da7dacd419cb3370e"><div class="ttname"><a href="namespaceautopas.html#aa31a6ea1b55d2d1da7dacd419cb3370e">autopas::AutoPas_MPI_Comm_dup</a></div><div class="ttdeci">int AutoPas_MPI_Comm_dup(AutoPas_MPI_Comm comm, AutoPas_MPI_Comm *newComm)</div><div class="ttdoc">Wrapper for MPI_Comm_dup.</div><div class="ttdef"><b>Definition:</b> WrapMPI.h:549</div></div>
 <div class="ttc" id="astructautopas_1_1InstanceCounter_html_a158fd3670a2eb70383019cdc0e2d605a"><div class="ttname"><a href="structautopas_1_1InstanceCounter.html#a158fd3670a2eb70383019cdc0e2d605a">autopas::InstanceCounter::count</a></div><div class="ttdeci">static unsigned int count</div><div class="ttdoc">Instance counter to help track the number of autopas instances.</div><div class="ttdef"><b>Definition:</b> InstanceCounter.h:18</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
