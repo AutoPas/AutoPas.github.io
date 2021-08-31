@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['selectorstrategy_493',['selectorStrategy',['../classMDFlexConfig.html#a78b9c86351d5a0a54b0df75b85436899',1,'MDFlexConfig']]],
-  ['sigmamap_494',['sigmaMap',['../classMDFlexConfig.html#acb1546b8ef90275179c0bc0f27f4b31f',1,'MDFlexConfig']]],
-  ['simulate_495',['simulate',['../structSimulation_1_1Timers.html#ae427cb72851db09d7082b074ea94ec47',1,'Simulation::Timers']]],
-  ['spherecenterstr_496',['sphereCenterStr',['../classMDFlexConfig.html#ac3bc989c14bbe85d14bf79428d186110',1,'MDFlexConfig']]],
-  ['sphereobjects_497',['sphereObjects',['../classMDFlexConfig.html#afbf51eac56ed442e57297dbb3005feb1',1,'MDFlexConfig']]],
-  ['sphereobjectsstr_498',['sphereObjectsStr',['../classMDFlexConfig.html#ace92d8a7f993647c41928c9855bc3014',1,'MDFlexConfig']]],
-  ['sphereradiusstr_499',['sphereRadiusStr',['../classMDFlexConfig.html#adfd4cd3c95f85ca56df952f472b4d944',1,'MDFlexConfig']]]
+  ['selectorstrategy_494',['selectorStrategy',['../classMDFlexConfig.html#a78b9c86351d5a0a54b0df75b85436899',1,'MDFlexConfig']]],
+  ['sigmamap_495',['sigmaMap',['../classMDFlexConfig.html#acb1546b8ef90275179c0bc0f27f4b31f',1,'MDFlexConfig']]],
+  ['simulate_496',['simulate',['../structSimulation_1_1Timers.html#ae427cb72851db09d7082b074ea94ec47',1,'Simulation::Timers']]],
+  ['spherecenterstr_497',['sphereCenterStr',['../classMDFlexConfig.html#ac3bc989c14bbe85d14bf79428d186110',1,'MDFlexConfig']]],
+  ['sphereobjects_498',['sphereObjects',['../classMDFlexConfig.html#afbf51eac56ed442e57297dbb3005feb1',1,'MDFlexConfig']]],
+  ['sphereobjectsstr_499',['sphereObjectsStr',['../classMDFlexConfig.html#ace92d8a7f993647c41928c9855bc3014',1,'MDFlexConfig']]],
+  ['sphereradiusstr_500',['sphereRadiusStr',['../classMDFlexConfig.html#adfd4cd3c95f85ca56df952f472b4d944',1,'MDFlexConfig']]],
+  ['subdividedimension_501',['subdivideDimension',['../classMDFlexConfig.html#aa454e332f10be4305b8c5939a22fcbd5',1,'MDFlexConfig']]]
 ];
