@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-3f35858</span>
+   &#160;<span id="projectnumber">0.1.0-683aa08</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -104,7 +104,15 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="MDFlexConfig_8h_source.html">MDFlexConfig.h</a>&quot;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;fstream&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;limits&gt;</code><br />
+<code>#include &lt;list&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;vector&gt;</code><br />
 <code>#include &quot;MDFlexParser.h&quot;</code><br />
+<code>#include &quot;autopas/utils/WrapMPI.h&quot;</code><br />
 <code>#include &quot;<a class="el" href="ParticleSerializationTools_8h_source.html">src/ParticleSerializationTools.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="Thermostat_8h_source.html">src/Thermostat.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
@@ -112,56 +120,56 @@ Include dependency graph for MDFlexConfig.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="MDFlexConfig_8cpp__incl.png" border="0" usemap="#a_2github_2workspace_2examples_2md-flexible_2src_2configuration_2MDFlexConfig_8cpp" alt=""/></div>
 <map name="a_2github_2workspace_2examples_2md-flexible_2src_2configuration_2MDFlexConfig_8cpp" id="a_2github_2workspace_2examples_2md-flexible_2src_2configuration_2MDFlexConfig_8cpp">
-<area shape="rect" title=" " alt="" coords="3289,5,3501,61"/>
-<area shape="rect" href="MDFlexConfig_8h.html" title=" " alt="" coords="2507,259,2633,285"/>
-<area shape="rect" href="MDFlexParser_8h_source.html" title=" " alt="" coords="2857,109,2979,136"/>
-<area shape="rect" href="ParticleSerializationTools_8h.html" title=" " alt="" coords="4175,333,4349,375"/>
-<area shape="rect" href="Thermostat_8h.html" title=" " alt="" coords="4373,341,4505,367"/>
-<area shape="rect" title=" " alt="" coords="4075,341,4151,367"/>
-<area shape="rect" title=" " alt="" coords="3621,341,3671,367"/>
-<area shape="rect" title=" " alt="" coords="3695,341,3738,367"/>
-<area shape="rect" title=" " alt="" coords="3763,341,3823,367"/>
-<area shape="rect" title=" " alt="" coords="3847,333,4050,375"/>
-<area shape="rect" title=" " alt="" coords="483,333,676,375"/>
-<area shape="rect" title=" " alt="" coords="701,333,906,375"/>
-<area shape="rect" title=" " alt="" coords="931,333,1148,375"/>
-<area shape="rect" title=" " alt="" coords="1173,333,1397,375"/>
-<area shape="rect" title=" " alt="" coords="1421,333,1631,375"/>
-<area shape="rect" title=" " alt="" coords="1655,341,1898,367"/>
-<area shape="rect" title=" " alt="" coords="1923,333,2105,375"/>
-<area shape="rect" title=" " alt="" coords="2130,333,2319,375"/>
-<area shape="rect" title=" " alt="" coords="2343,333,2570,375"/>
-<area shape="rect" title=" " alt="" coords="213,341,407,367"/>
-<area shape="rect" href="TypeDefinitions_8h_source.html" title=" " alt="" coords="3310,505,3467,531"/>
-<area shape="rect" href="CubeClosestPacked_8h.html" title=" " alt="" coords="2594,333,2775,375"/>
-<area shape="rect" href="CubeGauss_8h.html" title=" " alt="" coords="3210,333,3391,375"/>
-<area shape="rect" href="CubeGrid_8h.html" title=" " alt="" coords="2799,333,2981,375"/>
-<area shape="rect" href="CubeUniform_8h.html" title=" " alt="" coords="3415,333,3597,375"/>
-<area shape="rect" href="Sphere_8h.html" title=" " alt="" coords="3005,333,3186,375"/>
-<area shape="rect" title=" " alt="" coords="3169,587,3377,628"/>
-<area shape="rect" title=" " alt="" coords="3401,587,3609,628"/>
-<area shape="rect" title=" " alt="" coords="2649,423,2717,449"/>
-<area shape="rect" title=" " alt="" coords="2741,423,2828,449"/>
-<area shape="rect" href="Object_8h.html" title=" " alt="" coords="3131,423,3207,449"/>
-<area shape="rect" title=" " alt="" coords="3231,423,3421,449"/>
-<area shape="rect" title=" " alt="" coords="3786,505,3842,531"/>
-<area shape="rect" title=" " alt="" coords="3131,505,3206,531"/>
-<area shape="rect" title=" " alt="" coords="3572,505,3635,531"/>
-<area shape="rect" title=" " alt="" coords="4289,505,4459,531"/>
-<area shape="rect" title=" " alt="" coords="2853,423,2927,449"/>
-<area shape="rect" title=" " alt="" coords="3470,423,3542,449"/>
-<area shape="rect" href="CLIParser_8h.html" title=" " alt="" coords="2871,184,2965,211"/>
-<area shape="rect" href="ParserExitCodes_8h.html" title=" " alt="" coords="3121,259,3259,285"/>
-<area shape="rect" href="YamlParser_8h.html" title=" " alt="" coords="258,184,362,211"/>
-<area shape="rect" title=" " alt="" coords="2919,259,2992,285"/>
-<area shape="rect" title=" " alt="" coords="3017,259,3097,285"/>
-<area shape="rect" title=" " alt="" coords="2657,259,2843,285"/>
-<area shape="rect" title=" " alt="" coords="5,259,137,285"/>
-<area shape="rect" title=" " alt="" coords="3890,423,3949,449"/>
-<area shape="rect" href="ParticleAttributes_8h.html" title=" " alt="" coords="4023,423,4170,449"/>
-<area shape="rect" title=" " alt="" coords="3993,497,4200,539"/>
-<area shape="rect" title=" " alt="" coords="4477,423,4543,449"/>
-<area shape="rect" title=" " alt="" coords="4194,423,4402,449"/>
+<area shape="rect" title=" " alt="" coords="4176,5,4388,61"/>
+<area shape="rect" href="MDFlexConfig_8h.html" title=" " alt="" coords="2442,266,2567,293"/>
+<area shape="rect" title=" " alt="" coords="4156,512,4219,539"/>
+<area shape="rect" title=" " alt="" coords="4402,109,4487,136"/>
+<area shape="rect" title=" " alt="" coords="1816,266,1889,293"/>
+<area shape="rect" title=" " alt="" coords="1914,266,1994,293"/>
+<area shape="rect" title=" " alt="" coords="4511,109,4570,136"/>
+<area shape="rect" title=" " alt="" coords="4594,109,4637,136"/>
+<area shape="rect" title=" " alt="" coords="4275,355,4334,382"/>
+<area shape="rect" href="MDFlexParser_8h_source.html" title=" " alt="" coords="2443,109,2566,136"/>
+<area shape="rect" title=" " alt="" coords="4661,109,4841,136"/>
+<area shape="rect" href="ParticleSerializationTools_8h.html" title=" " alt="" coords="4101,259,4276,300"/>
+<area shape="rect" href="Thermostat_8h.html" title=" " alt="" coords="4017,355,4149,382"/>
+<area shape="rect" title=" " alt="" coords="5,355,81,382"/>
+<area shape="rect" title=" " alt="" coords="3589,355,3639,382"/>
+<area shape="rect" title=" " alt="" coords="106,355,149,382"/>
+<area shape="rect" title=" " alt="" coords="3933,355,3993,382"/>
+<area shape="rect" title=" " alt="" coords="173,348,375,389"/>
+<area shape="rect" title=" " alt="" coords="400,348,593,389"/>
+<area shape="rect" title=" " alt="" coords="618,348,823,389"/>
+<area shape="rect" title=" " alt="" coords="848,348,1065,389"/>
+<area shape="rect" title=" " alt="" coords="1090,348,1314,389"/>
+<area shape="rect" title=" " alt="" coords="1339,348,1548,389"/>
+<area shape="rect" title=" " alt="" coords="1573,355,1815,382"/>
+<area shape="rect" title=" " alt="" coords="1840,348,2023,389"/>
+<area shape="rect" title=" " alt="" coords="2047,348,2237,389"/>
+<area shape="rect" title=" " alt="" coords="2722,348,2949,389"/>
+<area shape="rect" title=" " alt="" coords="3663,355,3858,382"/>
+<area shape="rect" href="TypeDefinitions_8h_source.html" title=" " alt="" coords="3825,512,3982,539"/>
+<area shape="rect" href="CubeClosestPacked_8h.html" title=" " alt="" coords="2311,348,2493,389"/>
+<area shape="rect" href="CubeGauss_8h.html" title=" " alt="" coords="3178,348,3359,389"/>
+<area shape="rect" href="CubeGrid_8h.html" title=" " alt="" coords="2517,348,2698,389"/>
+<area shape="rect" href="CubeUniform_8h.html" title=" " alt="" coords="3383,348,3565,389"/>
+<area shape="rect" href="Sphere_8h.html" title=" " alt="" coords="2973,348,3154,389"/>
+<area shape="rect" title=" " alt="" coords="3683,587,3891,628"/>
+<area shape="rect" title=" " alt="" coords="3915,587,4123,628"/>
+<area shape="rect" title=" " alt="" coords="2367,437,2435,464"/>
+<area shape="rect" title=" " alt="" coords="2459,437,2545,464"/>
+<area shape="rect" href="Object_8h.html" title=" " alt="" coords="3177,437,3253,464"/>
+<area shape="rect" title=" " alt="" coords="3277,437,3468,464"/>
+<area shape="rect" title=" " alt="" coords="3333,512,3503,539"/>
+<area shape="rect" title=" " alt="" coords="2570,437,2645,464"/>
+<area shape="rect" title=" " alt="" coords="3493,437,3565,464"/>
+<area shape="rect" href="CLIParser_8h.html" title=" " alt="" coords="2147,184,2241,211"/>
+<area shape="rect" href="ParserExitCodes_8h.html" title=" " alt="" coords="2018,266,2157,293"/>
+<area shape="rect" href="YamlParser_8h.html" title=" " alt="" coords="3015,184,3119,211"/>
+<area shape="rect" title=" " alt="" coords="2231,266,2418,293"/>
+<area shape="rect" title=" " alt="" coords="3001,266,3133,293"/>
+<area shape="rect" title=" " alt="" coords="3723,437,3788,464"/>
+<area shape="rect" title=" " alt="" coords="3813,437,4021,464"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -174,6 +182,12 @@ Functions</h2></td></tr>
 <tr class="memitem:acbb44611df2b8611613997996bc31641"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02MDFlexConfig_8cpp_03.html#acbb44611df2b8611613997996bc31641">anonymous_namespace{MDFlexConfig.cpp}::findWord</a> (std::ifstream &amp;file, const std::string &amp;word)</td></tr>
 <tr class="memdesc:acbb44611df2b8611613997996bc31641"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches the file word by word and sets the file accessor directly behind the first found position.  <a href="namespaceanonymous__namespace_02MDFlexConfig_8cpp_03.html#acbb44611df2b8611613997996bc31641">More...</a><br /></td></tr>
 <tr class="separator:acbb44611df2b8611613997996bc31641"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dfba189329b37cbe409913d9c87c32c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02MDFlexConfig_8cpp_03.html#a0dfba189329b37cbe409913d9c87c32c">anonymous_namespace{MDFlexConfig.cpp}::checkpointWasCreatedWithEqualNumberOfRanks</a> (const std::string filename, const size_t communicatorSize, size_t &amp;checkpointCommunicatorSize)</td></tr>
+<tr class="memdesc:a0dfba189329b37cbe409913d9c87c32c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a checkpoint was created with the same number of ranks as available in the current simulation.  <a href="namespaceanonymous__namespace_02MDFlexConfig_8cpp_03.html#a0dfba189329b37cbe409913d9c87c32c">More...</a><br /></td></tr>
+<tr class="separator:a0dfba189329b37cbe409913d9c87c32c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae2d8713c0f7fdeb9ef3573d80c6bd89f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02MDFlexConfig_8cpp_03.html#ae2d8713c0f7fdeb9ef3573d80c6bd89f">anonymous_namespace{MDFlexConfig.cpp}::loadParticlesFromRankRecord</a> (const std::string &amp;filename, const std::string &amp;scenarioName, const size_t iteration, const size_t &amp;rank, std::vector&lt; ParticleType &gt; &amp;particles)</td></tr>
+<tr class="memdesc:ae2d8713c0f7fdeb9ef3573d80c6bd89f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the particles from a checkpoint written with a specific rank.  <a href="namespaceanonymous__namespace_02MDFlexConfig_8cpp_03.html#ae2d8713c0f7fdeb9ef3573d80c6bd89f">More...</a><br /></td></tr>
+<tr class="separator:ae2d8713c0f7fdeb9ef3573d80c6bd89f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>F. Gratl </dd></dl>
