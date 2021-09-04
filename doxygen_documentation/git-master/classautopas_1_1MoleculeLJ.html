@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-3f35858</span>
+   &#160;<span id="projectnumber">0.1.0-683aa08</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -138,19 +138,26 @@ Public Types</h2></td></tr>
 , <b>posY</b>
 , <br />
 &#160;&#160;<b>posZ</b>
-, <b>forceX</b>
+, <b>velocityX</b>
+, <b>velocityY</b>
+, <b>velocityZ</b>
+, <br />
+&#160;&#160;<b>forceX</b>
 , <b>forceY</b>
 , <b>forceZ</b>
+, <b>oldForceX</b>
 , <br />
-&#160;&#160;<b>typeId</b>
+&#160;&#160;<b>oldForceY</b>
+, <b>oldForceZ</b>
+, <b>typeId</b>
 , <b>ownershipState</b>
 <br />
  }</td></tr>
 <tr class="memdesc:a1f62b19f2918c37c8cb58d7ce8644160"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enums used as ids for accessing and creating a dynamically sized <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a>. <br /></td></tr>
 <tr class="separator:a1f62b19f2918c37c8cb58d7ce8644160"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6763e2de9bc22c6f74c8b0aa7540105b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1MoleculeLJ.html#a6763e2de9bc22c6f74c8b0aa7540105b">SoAArraysType</a> = typename <a class="el" href="structautopas_1_1utils_1_1SoAType.html">autopas::utils::SoAType</a>&lt; <a class="el" href="classautopas_1_1MoleculeLJ.html">MoleculeLJ</a>&lt; floatType &gt; *, size_t, floatType, floatType, floatType, floatType, floatType, floatType, size_t, <a class="el" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0">OwnershipState</a> &gt;::Type</td></tr>
-<tr class="memdesc:a6763e2de9bc22c6f74c8b0aa7540105b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type for the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> storage.  <a href="classautopas_1_1MoleculeLJ.html#a6763e2de9bc22c6f74c8b0aa7540105b">More...</a><br /></td></tr>
-<tr class="separator:a6763e2de9bc22c6f74c8b0aa7540105b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c7267747f94d9469ec31373969eb339"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1MoleculeLJ.html#a3c7267747f94d9469ec31373969eb339">SoAArraysType</a> = typename <a class="el" href="structautopas_1_1utils_1_1SoAType.html">autopas::utils::SoAType</a>&lt; <a class="el" href="classautopas_1_1MoleculeLJ.html">MoleculeLJ</a>&lt; floatType &gt; *, size_t, floatType, floatType, floatType, floatType, floatType, floatType, floatType, floatType, floatType, floatType, floatType, floatType, size_t, <a class="el" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0">OwnershipState</a> &gt;::Type</td></tr>
+<tr class="memdesc:a3c7267747f94d9469ec31373969eb339"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type for the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> storage.  <a href="classautopas_1_1MoleculeLJ.html#a3c7267747f94d9469ec31373969eb339">More...</a><br /></td></tr>
+<tr class="separator:a3c7267747f94d9469ec31373969eb339"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classautopas_1_1ParticleBase"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classautopas_1_1ParticleBase')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classautopas_1_1ParticleBase.html">autopas::ParticleBase&lt; floatType, idType &gt;</a></td></tr>
 <tr class="memitem:a7447b51b90746dd959be47998ee8ceca inherit pub_types_classautopas_1_1ParticleBase"><td class="memItemLeft" align="right" valign="top"><a id="a7447b51b90746dd959be47998ee8ceca" name="a7447b51b90746dd959be47998ee8ceca"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleBase.html#a7447b51b90746dd959be47998ee8ceca">AttributeNames</a> : int { <br />
 &#160;&#160;<b>ptr</b>
@@ -186,15 +193,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1447cb579050f2ebb8c9114223fd4b11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of lennard jones molecule with initialization of typeID.  <a href="classautopas_1_1MoleculeLJ.html#a1447cb579050f2ebb8c9114223fd4b11">More...</a><br /></td></tr>
 <tr class="separator:a1447cb579050f2ebb8c9114223fd4b11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6bd7fffd404944a7d7b8d27aea4091e"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="classautopas_1_1MoleculeLJ.html#a1f62b19f2918c37c8cb58d7ce8644160">AttributeNames</a> attribute, std::enable_if_t&lt; attribute==AttributeNames::ptr, bool &gt;  = true&gt; </td></tr>
-<tr class="memitem:aa6bd7fffd404944a7d7b8d27aea4091e"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::tuple_element&lt; attribute, <a class="el" href="classautopas_1_1MoleculeLJ.html#a6763e2de9bc22c6f74c8b0aa7540105b">SoAArraysType</a> &gt;::type::value_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1MoleculeLJ.html#aa6bd7fffd404944a7d7b8d27aea4091e">get</a> ()</td></tr>
+<tr class="memitem:aa6bd7fffd404944a7d7b8d27aea4091e"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::tuple_element&lt; attribute, <a class="el" href="classautopas_1_1MoleculeLJ.html#a3c7267747f94d9469ec31373969eb339">SoAArraysType</a> &gt;::type::value_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1MoleculeLJ.html#aa6bd7fffd404944a7d7b8d27aea4091e">get</a> ()</td></tr>
 <tr class="memdesc:aa6bd7fffd404944a7d7b8d27aea4091e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Non-const getter for the pointer of this object.  <a href="classautopas_1_1MoleculeLJ.html#aa6bd7fffd404944a7d7b8d27aea4091e">More...</a><br /></td></tr>
 <tr class="separator:aa6bd7fffd404944a7d7b8d27aea4091e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aaf0d9e58fe59da0b7a47ac83b1e76bad"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="classautopas_1_1MoleculeLJ.html#a1f62b19f2918c37c8cb58d7ce8644160">AttributeNames</a> attribute, std::enable_if_t&lt; attribute !=AttributeNames::ptr, bool &gt;  = true&gt; </td></tr>
-<tr class="memitem:aaf0d9e58fe59da0b7a47ac83b1e76bad"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::tuple_element&lt; attribute, <a class="el" href="classautopas_1_1MoleculeLJ.html#a6763e2de9bc22c6f74c8b0aa7540105b">SoAArraysType</a> &gt;::type::value_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1MoleculeLJ.html#aaf0d9e58fe59da0b7a47ac83b1e76bad">get</a> () const</td></tr>
+<tr class="memitem:aaf0d9e58fe59da0b7a47ac83b1e76bad"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::tuple_element&lt; attribute, <a class="el" href="classautopas_1_1MoleculeLJ.html#a3c7267747f94d9469ec31373969eb339">SoAArraysType</a> &gt;::type::value_type&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1MoleculeLJ.html#aaf0d9e58fe59da0b7a47ac83b1e76bad">get</a> () const</td></tr>
 <tr class="memdesc:aaf0d9e58fe59da0b7a47ac83b1e76bad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter, which allows access to an attribute using the corresponding attribute name (defined in AttributeNames).  <a href="classautopas_1_1MoleculeLJ.html#aaf0d9e58fe59da0b7a47ac83b1e76bad">More...</a><br /></td></tr>
 <tr class="separator:aaf0d9e58fe59da0b7a47ac83b1e76bad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a21cb77d72b10b90e8ad120e2d2311cae"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="classautopas_1_1MoleculeLJ.html#a1f62b19f2918c37c8cb58d7ce8644160">AttributeNames</a> attribute&gt; </td></tr>
-<tr class="memitem:a21cb77d72b10b90e8ad120e2d2311cae"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1MoleculeLJ.html#a21cb77d72b10b90e8ad120e2d2311cae">set</a> (typename std::tuple_element&lt; attribute, <a class="el" href="classautopas_1_1MoleculeLJ.html#a6763e2de9bc22c6f74c8b0aa7540105b">SoAArraysType</a> &gt;::type::value_type value)</td></tr>
+<tr class="memitem:a21cb77d72b10b90e8ad120e2d2311cae"><td class="memTemplItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1MoleculeLJ.html#a21cb77d72b10b90e8ad120e2d2311cae">set</a> (typename std::tuple_element&lt; attribute, <a class="el" href="classautopas_1_1MoleculeLJ.html#a3c7267747f94d9469ec31373969eb339">SoAArraysType</a> &gt;::type::value_type value)</td></tr>
 <tr class="memdesc:a21cb77d72b10b90e8ad120e2d2311cae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Setter, which allows set an attribute using the corresponding attribute name (defined in AttributeNames).  <a href="classautopas_1_1MoleculeLJ.html#a21cb77d72b10b90e8ad120e2d2311cae">More...</a><br /></td></tr>
 <tr class="separator:a21cb77d72b10b90e8ad120e2d2311cae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4d17f34002ffb62b7b3d21dfce6e8d9c"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1MoleculeLJ.html#a4d17f34002ffb62b7b3d21dfce6e8d9c">getOldF</a> () const</td></tr>
@@ -318,8 +325,8 @@ idType&#160;</td><td class="memItemRight" valign="bottom"><b>_id</b></td></tr>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename floatType = double&gt;<br />
 class autopas::MoleculeLJ&lt; floatType &gt;</div><p >Molecule class for the <a class="el" href="classautopas_1_1LJFunctor.html" title="A functor to handle lennard-jones interactions between two particles (molecules).">LJFunctor</a>. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a6763e2de9bc22c6f74c8b0aa7540105b" name="a6763e2de9bc22c6f74c8b0aa7540105b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6763e2de9bc22c6f74c8b0aa7540105b">&#9670;&nbsp;</a></span>SoAArraysType</h2>
+<a id="a3c7267747f94d9469ec31373969eb339" name="a3c7267747f94d9469ec31373969eb339"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3c7267747f94d9469ec31373969eb339">&#9670;&nbsp;</a></span>SoAArraysType</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -327,7 +334,7 @@ class autopas::MoleculeLJ&lt; floatType &gt;</div><p >Molecule class for the <a 
 template&lt;typename floatType  = double&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classautopas_1_1MoleculeLJ.html">autopas::MoleculeLJ</a>&lt; floatType &gt;::<a class="el" href="classautopas_1_1MoleculeLJ.html#a6763e2de9bc22c6f74c8b0aa7540105b">SoAArraysType</a> =  typename <a class="el" href="structautopas_1_1utils_1_1SoAType.html">autopas::utils::SoAType</a>&lt;<a class="el" href="classautopas_1_1MoleculeLJ.html">MoleculeLJ</a>&lt;floatType&gt; *, size_t , floatType , floatType , floatType , floatType , floatType , floatType , size_t , <a class="el" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0">OwnershipState</a> &gt;::Type</td>
+          <td class="memname">using <a class="el" href="classautopas_1_1MoleculeLJ.html">autopas::MoleculeLJ</a>&lt; floatType &gt;::<a class="el" href="classautopas_1_1MoleculeLJ.html#a3c7267747f94d9469ec31373969eb339">SoAArraysType</a> =  typename <a class="el" href="structautopas_1_1utils_1_1SoAType.html">autopas::utils::SoAType</a>&lt; <a class="el" href="classautopas_1_1MoleculeLJ.html">MoleculeLJ</a>&lt;floatType&gt; *, size_t , floatType , floatType , floatType , floatType , floatType , floatType , floatType , floatType , floatType , floatType , floatType , floatType , size_t , <a class="el" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0">OwnershipState</a> &gt;::Type</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -414,7 +421,7 @@ template&lt;<a class="el" href="classautopas_1_1MoleculeLJ.html#a1f62b19f2918c37
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr std::tuple_element&lt;attribute,<a class="el" href="classautopas_1_1MoleculeLJ.html#a6763e2de9bc22c6f74c8b0aa7540105b">SoAArraysType</a>&gt;::type::value_type <a class="el" href="classautopas_1_1MoleculeLJ.html">autopas::MoleculeLJ</a>&lt; floatType &gt;::get </td>
+          <td class="memname">constexpr std::tuple_element&lt;attribute,<a class="el" href="classautopas_1_1MoleculeLJ.html#a3c7267747f94d9469ec31373969eb339">SoAArraysType</a>&gt;::type::value_type <a class="el" href="classautopas_1_1MoleculeLJ.html">autopas::MoleculeLJ</a>&lt; floatType &gt;::get </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -452,7 +459,7 @@ template&lt;<a class="el" href="classautopas_1_1MoleculeLJ.html#a1f62b19f2918c37
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr std::tuple_element&lt;attribute,<a class="el" href="classautopas_1_1MoleculeLJ.html#a6763e2de9bc22c6f74c8b0aa7540105b">SoAArraysType</a>&gt;::type::value_type <a class="el" href="classautopas_1_1MoleculeLJ.html">autopas::MoleculeLJ</a>&lt; floatType &gt;::get </td>
+          <td class="memname">constexpr std::tuple_element&lt;attribute,<a class="el" href="classautopas_1_1MoleculeLJ.html#a3c7267747f94d9469ec31373969eb339">SoAArraysType</a>&gt;::type::value_type <a class="el" href="classautopas_1_1MoleculeLJ.html">autopas::MoleculeLJ</a>&lt; floatType &gt;::get </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -553,7 +560,7 @@ template&lt;<a class="el" href="classautopas_1_1MoleculeLJ.html#a1f62b19f2918c37
         <tr>
           <td class="memname">constexpr void <a class="el" href="classautopas_1_1MoleculeLJ.html">autopas::MoleculeLJ</a>&lt; floatType &gt;::set </td>
           <td>(</td>
-          <td class="paramtype">typename std::tuple_element&lt; attribute, <a class="el" href="classautopas_1_1MoleculeLJ.html#a6763e2de9bc22c6f74c8b0aa7540105b">SoAArraysType</a> &gt;::type::value_type&#160;</td>
+          <td class="paramtype">typename std::tuple_element&lt; attribute, <a class="el" href="classautopas_1_1MoleculeLJ.html#a3c7267747f94d9469ec31373969eb339">SoAArraysType</a> &gt;::type::value_type&#160;</td>
           <td class="paramname"><em>value</em></td><td>)</td>
           <td></td>
         </tr>
