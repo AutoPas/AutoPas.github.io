@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['name_499',['name',['../structMDFlexConfig_1_1MDFlexOption.html#a4ce8f2744c2b1666ff43732dca53e568',1,'MDFlexConfig::MDFlexOption']]],
-  ['newton3options_500',['newton3Options',['../classMDFlexConfig.html#af13a0d2da1676906e92af82b7c853fc3',1,'MDFlexConfig']]]
+  ['massmap_489',['massMap',['../classMDFlexConfig.html#a024cb74ac0f45460b8fb96371c45f4c3',1,'MDFlexConfig']]],
+  ['maxtuningphaseswithouttest_490',['maxTuningPhasesWithoutTest',['../classMDFlexConfig.html#a203f1f82f7407ab516d52baf3cbd320c',1,'MDFlexConfig']]],
+  ['migratingparticleexchange_491',['migratingParticleExchange',['../structSimulation_1_1Timers.html#a762a5eab0a564c762f1d9a6fe138c2d3',1,'Simulation::Timers']]],
+  ['mpistrategyoption_492',['mpiStrategyOption',['../classMDFlexConfig.html#a18ef39ae6ce14dc7492ec982fa124728',1,'MDFlexConfig']]]
 ];

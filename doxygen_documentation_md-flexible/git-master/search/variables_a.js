@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['massmap_496',['massMap',['../classMDFlexConfig.html#a024cb74ac0f45460b8fb96371c45f4c3',1,'MDFlexConfig']]],
-  ['maxtuningphaseswithouttest_497',['maxTuningPhasesWithoutTest',['../classMDFlexConfig.html#a203f1f82f7407ab516d52baf3cbd320c',1,'MDFlexConfig']]],
-  ['mpistrategyoption_498',['mpiStrategyOption',['../classMDFlexConfig.html#a18ef39ae6ce14dc7492ec982fa124728',1,'MDFlexConfig']]]
+  ['loadestimatoroptions_486',['loadEstimatorOptions',['../classMDFlexConfig.html#a10d0b4666955aff601312a6f5d4cf5b7',1,'MDFlexConfig']]],
+  ['logfilename_487',['logFileName',['../classMDFlexConfig.html#ae958917a9e73a51460169c384566aea2',1,'MDFlexConfig']]],
+  ['loglevel_488',['logLevel',['../classMDFlexConfig.html#a172d51f91a28c5362a9cba2af456220e',1,'MDFlexConfig']]]
 ];

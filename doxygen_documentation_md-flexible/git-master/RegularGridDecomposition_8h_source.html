@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-97088b9</span>
+   &#160;<span id="projectnumber">0.1.0-91e6db9</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -140,107 +140,110 @@ $(function() {
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="classRegularGridDecomposition.html#a406512951da076b7452836829b92c377">   96</a></span>  <span class="keyword">const</span> std::array&lt;int, 3&gt; <a class="code" href="classRegularGridDecomposition.html#a406512951da076b7452836829b92c377">getDomainId</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> _domainId; }</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keywordtype">bool</span> <a class="code" href="classRegularGridDecomposition.html#a5365f723981b2f8c7f01ff13d14cf012">isInsideLocalDomain</a>(<span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;coordinates) <span class="keyword">const override</span>;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  std::array&lt;int, 6&gt; <a class="code" href="classRegularGridDecomposition.html#af206777e55aeb670f7c8a33a396aed5b">getExtentOfSubdomain</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> subdomainIndex) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <span class="keywordtype">void</span> <a class="code" href="classRegularGridDecomposition.html#a6575cda5be80b6aca968557e03054350">exchangeHaloParticles</a>(<a class="code" href="classRegularGridDecomposition.html#a954a14e231dbfff839d0350e56c89945">SharedAutoPasContainer</a> &amp;autoPasContainer);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keywordtype">int</span> <a class="code" href="classRegularGridDecomposition.html#a5b2af0ed91f75cd0893c761cb3245638">getNumberOfSubdomains</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span> </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="keywordtype">bool</span> <a class="code" href="classRegularGridDecomposition.html#a5365f723981b2f8c7f01ff13d14cf012">isInsideLocalDomain</a>(<span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;coordinates) <span class="keyword">const override</span>;</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  std::array&lt;int, 6&gt; <a class="code" href="classRegularGridDecomposition.html#af206777e55aeb670f7c8a33a396aed5b">getExtentOfSubdomain</a>(<span class="keyword">const</span> <span class="keywordtype">int</span> subdomainIndex) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keywordtype">void</span> <a class="code" href="classRegularGridDecomposition.html#acd2cb63a3e62c47379f903ef667aa106">exchangeMigratingParticles</a>(<a class="code" href="classRegularGridDecomposition.html#a954a14e231dbfff839d0350e56c89945">SharedAutoPasContainer</a> &amp;autoPasContainer);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keywordtype">void</span> <a class="code" href="classRegularGridDecomposition.html#a6575cda5be80b6aca968557e03054350">exchangeHaloParticles</a>(<a class="code" href="classRegularGridDecomposition.html#a954a14e231dbfff839d0350e56c89945">SharedAutoPasContainer</a> &amp;autoPasContainer);</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> _neighbourCount = 6;</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> _dimensionCount = 3;</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  <span class="keywordtype">bool</span> _mpiIsEnabled;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  <span class="keywordtype">void</span> <a class="code" href="classRegularGridDecomposition.html#acd2cb63a3e62c47379f903ef667aa106">exchangeMigratingParticles</a>(<a class="code" href="classRegularGridDecomposition.html#a954a14e231dbfff839d0350e56c89945">SharedAutoPasContainer</a> &amp;autoPasContainer);</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>  <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> _neighbourCount = 6;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  <span class="keyword">static</span> constexpr <span class="keywordtype">int</span> _dimensionCount = 3;</div>
 <div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span> </div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>  <span class="keywordtype">int</span> _subdomainCount;</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  std::array&lt;double, 3&gt; _globalBoxMin;</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  std::array&lt;double, 3&gt; _globalBoxMax;</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>  std::array&lt;int, 3&gt; _decomposition;</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  autopas::AutoPas_MPI_Comm _communicator;</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span> </div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  <span class="keywordtype">double</span> _cutoffWidth;</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  <span class="keywordtype">double</span> _skinWidth;</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span> </div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>  <span class="keywordtype">int</span> _domainIndex;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>  <span class="keywordtype">bool</span> _mpiCommunicationNeeded;</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span> </div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  <span class="keywordtype">int</span> _subdomainCount;</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>  std::array&lt;double, 3&gt; _globalBoxMin;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  std::array&lt;double, 3&gt; _globalBoxMax;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  std::array&lt;int, 3&gt; _decomposition;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>  autopas::AutoPas_MPI_Comm _communicator;</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  <span class="keywordtype">double</span> _cutoffWidth;</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>  <span class="keywordtype">double</span> _skinWidth;</div>
 <div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>  std::array&lt;int, 3&gt; _domainId;</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  std::array&lt;int, 6&gt; _neighbourDomainIndices;</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  std::array&lt;double, 3&gt; _localBoxMin;</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  std::array&lt;double, 3&gt; _localBoxMax;</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  std::vector&lt;autopas::AutoPas_MPI_Request&gt; _sendRequests;</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  std::vector&lt;std::vector&lt;char&gt;&gt; _sendBuffers;</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>  <span class="keywordtype">void</span> initializeDecomposition();</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>  <span class="keywordtype">int</span> _domainIndex;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  std::array&lt;int, 3&gt; _domainId;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  std::array&lt;int, 6&gt; _neighbourDomainIndices;</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  std::array&lt;double, 3&gt; _localBoxMin;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  std::array&lt;double, 3&gt; _localBoxMax;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  std::vector&lt;autopas::AutoPas_MPI_Request&gt; _sendRequests;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>  std::vector&lt;std::vector&lt;char&gt;&gt; _sendBuffers;</div>
 <div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  <span class="keywordtype">void</span> initializeMPICommunicator();</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  <span class="keywordtype">void</span> initializeDecomposition();</div>
 <div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  <span class="keywordtype">void</span> initializeLocalDomain();</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  <span class="keywordtype">void</span> initializeMPICommunicator();</div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>  <span class="keywordtype">void</span> initializeGlobalBox(<span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;globalBoxMin, <span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;globalBoxMax);</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>  <span class="keywordtype">void</span> initializeLocalBox();</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  <span class="keywordtype">void</span> initializeLocalDomain();</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>  <span class="keywordtype">void</span> initializeGlobalBox(<span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;globalBoxMin, <span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;globalBoxMax);</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>  <span class="keywordtype">void</span> initializeNeighbourIds();</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>  <span class="keywordtype">void</span> initializeLocalBox();</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  <span class="keywordtype">void</span> updateLocalBox();</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> </div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  <span class="keywordtype">void</span> sendParticles(<span class="keyword">const</span> std::vector&lt;ParticleType&gt; &amp;particles, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;receiver);</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>  <span class="keywordtype">void</span> receiveParticles(std::vector&lt;ParticleType&gt; &amp;receivedParticles, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;source);</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>  <span class="keywordtype">void</span> receiveDataFromNeighbour(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;neighbour, std::vector&lt;char&gt; &amp;dataBuffer);</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  <span class="keywordtype">void</span> sendDataToNeighbour(std::vector&lt;char&gt; sendBuffer, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;neighbour);</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  <span class="keywordtype">void</span> sendAndReceiveParticlesLeftAndRight(std::vector&lt;ParticleType&gt; &amp;particlesToLeft,</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>                                           std::vector&lt;ParticleType&gt; &amp;particlesToRight, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;leftNeighbour,</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>                                           <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;rightNeighbour, std::vector&lt;ParticleType&gt; &amp;receivedParticles);</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span> </div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>  <span class="keywordtype">void</span> waitForSendRequests();</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>  <span class="keywordtype">void</span> collectHaloParticlesForLeftNeighbour(<a class="code" href="classRegularGridDecomposition.html#a954a14e231dbfff839d0350e56c89945">SharedAutoPasContainer</a> &amp;autoPasContainer, <span class="keyword">const</span> <span class="keywordtype">size_t</span> &amp;direction,</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>                                            std::vector&lt;ParticleType&gt; &amp;haloParticles);</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>  <span class="keywordtype">void</span> collectHaloParticlesForRightNeighbour(<a class="code" href="classRegularGridDecomposition.html#a954a14e231dbfff839d0350e56c89945">SharedAutoPasContainer</a> &amp;autoPasContainer, <span class="keyword">const</span> <span class="keywordtype">size_t</span> &amp;direction,</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>                                             std::vector&lt;ParticleType&gt; &amp;haloParticles);</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span> </div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>  <span class="keywordtype">void</span> categorizeParticlesIntoLeftAndRightNeighbour(<span class="keyword">const</span> std::vector&lt;ParticleType&gt; &amp;particles, <span class="keyword">const</span> <span class="keywordtype">size_t</span> &amp;direction,</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>                                                    std::vector&lt;ParticleType&gt; &amp;leftNeighbourParticles,</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>                                                    std::vector&lt;ParticleType&gt; &amp;rightNeighbourParticles,</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>                                                    std::vector&lt;ParticleType&gt; &amp;uncategorizedParticles);</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>};</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  <span class="keywordtype">void</span> initializeNeighbourIds();</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>  <span class="keywordtype">void</span> updateLocalBox();</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>  <span class="keywordtype">void</span> sendParticles(<span class="keyword">const</span> std::vector&lt;ParticleType&gt; &amp;particles, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;receiver);</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  <span class="keywordtype">void</span> receiveParticles(std::vector&lt;ParticleType&gt; &amp;receivedParticles, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;source);</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  <span class="keywordtype">void</span> receiveDataFromNeighbour(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;neighbour, std::vector&lt;char&gt; &amp;dataBuffer);</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  <span class="keywordtype">void</span> sendDataToNeighbour(std::vector&lt;char&gt; sendBuffer, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;neighbour);</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>  <span class="keywordtype">void</span> sendAndReceiveParticlesLeftAndRight(std::vector&lt;ParticleType&gt; &amp;particlesToLeft,</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>                                           std::vector&lt;ParticleType&gt; &amp;particlesToRight, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;leftNeighbour,</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>                                           <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;rightNeighbour, std::vector&lt;ParticleType&gt; &amp;receivedParticles);</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>  <span class="keywordtype">void</span> waitForSendRequests();</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span> </div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>  <span class="keywordtype">void</span> collectHaloParticlesForLeftNeighbour(<a class="code" href="classRegularGridDecomposition.html#a954a14e231dbfff839d0350e56c89945">SharedAutoPasContainer</a> &amp;autoPasContainer, <span class="keyword">const</span> <span class="keywordtype">size_t</span> &amp;direction,</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>                                            std::vector&lt;ParticleType&gt; &amp;haloParticles);</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>  <span class="keywordtype">void</span> collectHaloParticlesForRightNeighbour(<a class="code" href="classRegularGridDecomposition.html#a954a14e231dbfff839d0350e56c89945">SharedAutoPasContainer</a> &amp;autoPasContainer, <span class="keyword">const</span> <span class="keywordtype">size_t</span> &amp;direction,</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>                                             std::vector&lt;ParticleType&gt; &amp;haloParticles);</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>  <span class="keywordtype">void</span> categorizeParticlesIntoLeftAndRightNeighbour(<span class="keyword">const</span> std::vector&lt;ParticleType&gt; &amp;particles, <span class="keyword">const</span> <span class="keywordtype">size_t</span> &amp;direction,</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>                                                    std::vector&lt;ParticleType&gt; &amp;leftNeighbourParticles,</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>                                                    std::vector&lt;ParticleType&gt; &amp;rightNeighbourParticles,</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>                                                    std::vector&lt;ParticleType&gt; &amp;uncategorizedParticles);</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>};</div>
 <div class="ttc" id="aDomainDecomposition_8h_html"><div class="ttname"><a href="DomainDecomposition_8h.html">DomainDecomposition.h</a></div></div>
 <div class="ttc" id="aclassDomainDecomposition_html"><div class="ttname"><a href="classDomainDecomposition.html">DomainDecomposition</a></div><div class="ttdoc">An interface for domain decompositions which can be used in the simulation.</div><div class="ttdef"><b>Definition:</b> DomainDecomposition.h:13</div></div>
 <div class="ttc" id="aclassRegularGridDecomposition_html"><div class="ttname"><a href="classRegularGridDecomposition.html">RegularGridDecomposition</a></div><div class="ttdoc">This class can be used as a domain decomposition which divides the domain in equal sized rectangular ...</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.h:20</div></div>
 <div class="ttc" id="aclassRegularGridDecomposition_html_a11b47d5e5e8771dd2c712df63d2eb85a"><div class="ttname"><a href="classRegularGridDecomposition.html#a11b47d5e5e8771dd2c712df63d2eb85a">RegularGridDecomposition::getLocalBoxMin</a></div><div class="ttdeci">std::array&lt; double, 3 &gt; getLocalBoxMin() const override</div><div class="ttdoc">Returns the minimum coordinates of local domain.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.h:72</div></div>
 <div class="ttc" id="aclassRegularGridDecomposition_html_a229f77a9e327029aeaae702cbeb16e52"><div class="ttname"><a href="classRegularGridDecomposition.html#a229f77a9e327029aeaae702cbeb16e52">RegularGridDecomposition::getDecomposition</a></div><div class="ttdeci">std::array&lt; int, 3 &gt; getDecomposition() const</div><div class="ttdoc">Returns the number of domains in each dimension.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.h:84</div></div>
 <div class="ttc" id="aclassRegularGridDecomposition_html_a406512951da076b7452836829b92c377"><div class="ttname"><a href="classRegularGridDecomposition.html#a406512951da076b7452836829b92c377">RegularGridDecomposition::getDomainId</a></div><div class="ttdeci">const std::array&lt; int, 3 &gt; getDomainId() const</div><div class="ttdoc">Returns the current processes domain id.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.h:96</div></div>
-<div class="ttc" id="aclassRegularGridDecomposition_html_a5312249f4807c309ead1832cee2463d5"><div class="ttname"><a href="classRegularGridDecomposition.html#a5312249f4807c309ead1832cee2463d5">RegularGridDecomposition::update</a></div><div class="ttdeci">void update() override</div><div class="ttdoc">Used to update the domain to the current topology.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.cpp:57</div></div>
-<div class="ttc" id="aclassRegularGridDecomposition_html_a5365f723981b2f8c7f01ff13d14cf012"><div class="ttname"><a href="classRegularGridDecomposition.html#a5365f723981b2f8c7f01ff13d14cf012">RegularGridDecomposition::isInsideLocalDomain</a></div><div class="ttdeci">bool isInsideLocalDomain(const std::array&lt; double, 3 &gt; &amp;coordinates) const override</div><div class="ttdoc">Checks if the provided coordinates are located in the local domain.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.cpp:113</div></div>
-<div class="ttc" id="aclassRegularGridDecomposition_html_a5fb13b3f91b4a9194c026e02b47695f6"><div class="ttname"><a href="classRegularGridDecomposition.html#a5fb13b3f91b4a9194c026e02b47695f6">RegularGridDecomposition::~RegularGridDecomposition</a></div><div class="ttdeci">virtual ~RegularGridDecomposition()</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.cpp:55</div></div>
+<div class="ttc" id="aclassRegularGridDecomposition_html_a5312249f4807c309ead1832cee2463d5"><div class="ttname"><a href="classRegularGridDecomposition.html#a5312249f4807c309ead1832cee2463d5">RegularGridDecomposition::update</a></div><div class="ttdeci">void update() override</div><div class="ttdoc">Used to update the domain to the current topology.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.cpp:58</div></div>
+<div class="ttc" id="aclassRegularGridDecomposition_html_a5365f723981b2f8c7f01ff13d14cf012"><div class="ttname"><a href="classRegularGridDecomposition.html#a5365f723981b2f8c7f01ff13d14cf012">RegularGridDecomposition::isInsideLocalDomain</a></div><div class="ttdeci">bool isInsideLocalDomain(const std::array&lt; double, 3 &gt; &amp;coordinates) const override</div><div class="ttdoc">Checks if the provided coordinates are located in the local domain.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.cpp:114</div></div>
+<div class="ttc" id="aclassRegularGridDecomposition_html_a5b2af0ed91f75cd0893c761cb3245638"><div class="ttname"><a href="classRegularGridDecomposition.html#a5b2af0ed91f75cd0893c761cb3245638">RegularGridDecomposition::getNumberOfSubdomains</a></div><div class="ttdeci">int getNumberOfSubdomains() const</div><div class="ttdoc">Returns the number of subdomains in the simulation.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.cpp:54</div></div>
+<div class="ttc" id="aclassRegularGridDecomposition_html_a5fb13b3f91b4a9194c026e02b47695f6"><div class="ttname"><a href="classRegularGridDecomposition.html#a5fb13b3f91b4a9194c026e02b47695f6">RegularGridDecomposition::~RegularGridDecomposition</a></div><div class="ttdeci">virtual ~RegularGridDecomposition()</div><div class="ttdoc">Destructor.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.cpp:52</div></div>
 <div class="ttc" id="aclassRegularGridDecomposition_html_a64f294d0d3542ab2855550aa6f3c5024"><div class="ttname"><a href="classRegularGridDecomposition.html#a64f294d0d3542ab2855550aa6f3c5024">RegularGridDecomposition::getSubdomainCount</a></div><div class="ttdeci">int getSubdomainCount() const</div><div class="ttdoc">Returns the numnber of subdomains in the decomposition.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.h:90</div></div>
-<div class="ttc" id="aclassRegularGridDecomposition_html_a6575cda5be80b6aca968557e03054350"><div class="ttname"><a href="classRegularGridDecomposition.html#a6575cda5be80b6aca968557e03054350">RegularGridDecomposition::exchangeHaloParticles</a></div><div class="ttdeci">void exchangeHaloParticles(SharedAutoPasContainer &amp;autoPasContainer)</div><div class="ttdoc">Exchanges halo particles with all neighbours of the provided AutoPasContainer.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.cpp:121</div></div>
+<div class="ttc" id="aclassRegularGridDecomposition_html_a6575cda5be80b6aca968557e03054350"><div class="ttname"><a href="classRegularGridDecomposition.html#a6575cda5be80b6aca968557e03054350">RegularGridDecomposition::exchangeHaloParticles</a></div><div class="ttdeci">void exchangeHaloParticles(SharedAutoPasContainer &amp;autoPasContainer)</div><div class="ttdoc">Exchanges halo particles with all neighbours of the provided AutoPasContainer.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.cpp:122</div></div>
 <div class="ttc" id="aclassRegularGridDecomposition_html_a6aa8bbecae9ae9ef6ae4c70e7ef7388c"><div class="ttname"><a href="classRegularGridDecomposition.html#a6aa8bbecae9ae9ef6ae4c70e7ef7388c">RegularGridDecomposition::getGlobalBoxMin</a></div><div class="ttdeci">std::array&lt; double, 3 &gt; getGlobalBoxMin() const override</div><div class="ttdoc">Returns the minimum coordinates of global domain.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.h:60</div></div>
 <div class="ttc" id="aclassRegularGridDecomposition_html_a7e2f5b397cae4967b2592493f62f10c4"><div class="ttname"><a href="classRegularGridDecomposition.html#a7e2f5b397cae4967b2592493f62f10c4">RegularGridDecomposition::getGlobalBoxMax</a></div><div class="ttdeci">std::array&lt; double, 3 &gt; getGlobalBoxMax() const override</div><div class="ttdoc">Returns the maximum coordinates of global domain.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.h:66</div></div>
 <div class="ttc" id="aclassRegularGridDecomposition_html_a954a14e231dbfff839d0350e56c89945"><div class="ttname"><a href="classRegularGridDecomposition.html#a954a14e231dbfff839d0350e56c89945">RegularGridDecomposition::SharedAutoPasContainer</a></div><div class="ttdeci">std::shared_ptr&lt; autopas::AutoPas&lt; ParticleType &gt; &gt; SharedAutoPasContainer</div><div class="ttdoc">Type for the AutoPas container.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.h:42</div></div>
 <div class="ttc" id="aclassRegularGridDecomposition_html_a994956d11a8db57fa3c3fc5b85f799b5"><div class="ttname"><a href="classRegularGridDecomposition.html#a994956d11a8db57fa3c3fc5b85f799b5">RegularGridDecomposition::getDomainIndex</a></div><div class="ttdeci">int getDomainIndex() const override</div><div class="ttdoc">Returns the index of the local domain in the global domain context.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.h:54</div></div>
 <div class="ttc" id="aclassRegularGridDecomposition_html_ac6dc92cfe1f914e661d052a700eb0931"><div class="ttname"><a href="classRegularGridDecomposition.html#ac6dc92cfe1f914e661d052a700eb0931">RegularGridDecomposition::RegularGridDecomposition</a></div><div class="ttdeci">RegularGridDecomposition(const std::array&lt; double, 3 &gt; &amp;globalBoxMin, const std::array&lt; double, 3 &gt; &amp;globalBoxMax, const std::array&lt; bool, 3 &gt; &amp;subdivideDimension, const double &amp;cutoffWidth, const double &amp;skinWidth)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.cpp:19</div></div>
-<div class="ttc" id="aclassRegularGridDecomposition_html_acd2cb63a3e62c47379f903ef667aa106"><div class="ttname"><a href="classRegularGridDecomposition.html#acd2cb63a3e62c47379f903ef667aa106">RegularGridDecomposition::exchangeMigratingParticles</a></div><div class="ttdeci">void exchangeMigratingParticles(SharedAutoPasContainer &amp;autoPasContainer)</div><div class="ttdoc">Exchanges migrating particles with all neighbours of the provided AutoPasContainer.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.cpp:175</div></div>
+<div class="ttc" id="aclassRegularGridDecomposition_html_acd2cb63a3e62c47379f903ef667aa106"><div class="ttname"><a href="classRegularGridDecomposition.html#acd2cb63a3e62c47379f903ef667aa106">RegularGridDecomposition::exchangeMigratingParticles</a></div><div class="ttdeci">void exchangeMigratingParticles(SharedAutoPasContainer &amp;autoPasContainer)</div><div class="ttdoc">Exchanges migrating particles with all neighbours of the provided AutoPasContainer.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.cpp:176</div></div>
 <div class="ttc" id="aclassRegularGridDecomposition_html_ae2cea625b8182bebab27b0f3ca1b494f"><div class="ttname"><a href="classRegularGridDecomposition.html#ae2cea625b8182bebab27b0f3ca1b494f">RegularGridDecomposition::getLocalBoxMax</a></div><div class="ttdeci">std::array&lt; double, 3 &gt; getLocalBoxMax() const override</div><div class="ttdoc">Returns the maximum coordinates of local domain.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.h:78</div></div>
-<div class="ttc" id="aclassRegularGridDecomposition_html_af206777e55aeb670f7c8a33a396aed5b"><div class="ttname"><a href="classRegularGridDecomposition.html#af206777e55aeb670f7c8a33a396aed5b">RegularGridDecomposition::getExtentOfSubdomain</a></div><div class="ttdeci">std::array&lt; int, 6 &gt; getExtentOfSubdomain(const int subdomainIndex) const</div><div class="ttdoc">Calculates and returns the extent of the subdomain with inde subdomainIndex.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.cpp:117</div></div>
+<div class="ttc" id="aclassRegularGridDecomposition_html_af206777e55aeb670f7c8a33a396aed5b"><div class="ttname"><a href="classRegularGridDecomposition.html#af206777e55aeb670f7c8a33a396aed5b">RegularGridDecomposition::getExtentOfSubdomain</a></div><div class="ttdeci">std::array&lt; int, 6 &gt; getExtentOfSubdomain(const int subdomainIndex) const</div><div class="ttdoc">Calculates and returns the extent of the subdomain with inde subdomainIndex.</div><div class="ttdef"><b>Definition:</b> RegularGridDecomposition.cpp:118</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
