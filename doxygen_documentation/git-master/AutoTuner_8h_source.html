@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-c309fff</span>
+   &#160;<span id="projectnumber">2.0.0-510e7bb</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -175,322 +175,399 @@ $(function() {
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> PairwiseFunctor&gt;</div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  <span class="keywordtype">bool</span> <a class="code" href="classautopas_1_1AutoTuner.html#a2e1c8d255ca074528bcb10722ab351f6">configApplicable</a>(<span class="keyword">const</span> <a class="code" href="classautopas_1_1Configuration.html">Configuration</a> &amp;conf, PairwiseFunctor &amp;pairwiseFunctor);</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> PairwiseFunctor&gt;</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>  <span class="keywordtype">bool</span> <a class="code" href="classautopas_1_1AutoTuner.html#ae8c0c7bb9c214456a39e53bb60068b46">iteratePairwise</a>(PairwiseFunctor *f, <span class="keywordtype">bool</span> doListRebuild);</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span> </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="classautopas_1_1AutoTuner.html#a496785fcc3b9753b8d0237f261fb03c9">  159</a></span>  <span class="keywordtype">bool</span> <a class="code" href="classautopas_1_1AutoTuner.html#a496785fcc3b9753b8d0237f261fb03c9">willRebuild</a>() {</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="keywordflow">if</span> (_tuningStrategy-&gt;searchSpaceIsTrivial()) {</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    }</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordflow">return</span> _iterationsSinceTuning &gt;= _tuningInterval and _samples.size() &gt;= _maxSamples;</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  }</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>  [[nodiscard]] <span class="keyword">const</span> <a class="code" href="classautopas_1_1Configuration.html">Configuration</a> &amp;<a class="code" href="classautopas_1_1AutoTuner.html#a8974f05a652361ac9152846bb90d1dcd">getCurrentConfig</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>  <span class="keywordtype">void</span> addTimeMeasurement(<span class="keywordtype">long</span> time);</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>  <span class="keywordtype">void</span> selectCurrentContainer();</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> PairwiseFunctor, DataLayoutOption::Value dataLayout, <span class="keywordtype">bool</span> useNewton3, <span class="keywordtype">bool</span> inTuningPhase&gt;</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  <span class="keywordtype">void</span> iteratePairwiseTemplateHelper(PairwiseFunctor *f, <span class="keywordtype">bool</span> doListRebuild);</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> PairwiseFunctor&gt;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  <span class="keywordtype">bool</span> <a class="code" href="classautopas_1_1AutoTuner.html#a364157d9003743cc89841f1f42db3cc4">iteratePairwise</a>(PairwiseFunctor *f, <span class="keywordtype">bool</span> doListRebuild, std::vector&lt;Particle&gt; &amp;particleBuffer,</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                       std::vector&lt;Particle&gt; &amp;haloParticleBuffer);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno"><a class="line" href="classautopas_1_1AutoTuner.html#a496785fcc3b9753b8d0237f261fb03c9">  162</a></span>  <span class="keywordtype">bool</span> <a class="code" href="classautopas_1_1AutoTuner.html#a496785fcc3b9753b8d0237f261fb03c9">willRebuild</a>() {</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordflow">if</span> (_tuningStrategy-&gt;searchSpaceIsTrivial()) {</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>      <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    }</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="keywordflow">return</span> _iterationsSinceTuning &gt;= _tuningInterval and _samples.size() &gt;= _maxSamples;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  [[nodiscard]] <span class="keyword">const</span> <a class="code" href="classautopas_1_1Configuration.html">Configuration</a> &amp;<a class="code" href="classautopas_1_1AutoTuner.html#a8974f05a652361ac9152846bb90d1dcd">getCurrentConfig</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>  <span class="keywordtype">void</span> addTimeMeasurement(<span class="keywordtype">long</span> time);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  <span class="keywordtype">void</span> selectCurrentContainer();</div>
 <div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> PairwiseFunctor&gt;</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>  <span class="keywordtype">bool</span> tune(PairwiseFunctor &amp;pairwiseFunctor);</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  SelectorStrategyOption _selectorStrategy;</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  std::unique_ptr&lt;TuningStrategyInterface&gt; _tuningStrategy;</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  <span class="keywordtype">size_t</span> _iteration;</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>  <span class="keywordtype">size_t</span> _tuningInterval;</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>  <span class="keywordtype">size_t</span> _iterationsSinceTuning;</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>  <a class="code" href="classautopas_1_1ContainerSelector.html">ContainerSelector&lt;Particle&gt;</a> _containerSelector;</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  <span class="keywordtype">double</span> _verletSkin;</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _verletClusterSize;</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> _maxSamples;</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  std::vector&lt;long&gt; _samples;</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  std::map&lt;Configuration, std::vector&lt;std::pair&lt;size_t, long&gt;&gt;&gt; _evidence;</div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>  <a class="code" href="classautopas_1_1IterationLogger.html">IterationLogger</a> _iterationLogger;</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>  <a class="code" href="classautopas_1_1TuningResultLogger.html">TuningResultLogger</a> _tuningResultLogger;</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  <a class="code" href="classautopas_1_1TuningDataLogger.html">TuningDataLogger</a> _tuningDataLogger;</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>};</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span><span class="keywordtype">void</span> AutoTuner&lt;Particle&gt;::selectCurrentContainer() {</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>  <span class="keyword">auto</span> conf = _tuningStrategy-&gt;getCurrentConfiguration();</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>  _containerSelector.selectContainer(</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>      conf.container, ContainerSelectorInfo(conf.cellSizeFactor, _verletSkin, _verletClusterSize, conf.loadEstimator));</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>}</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno"><a class="line" href="classautopas_1_1AutoTuner.html#a14c0df601ace7cc97b52d47cf0cb76e6">  263</a></span><span class="keywordtype">void</span> <a class="code" href="classautopas_1_1AutoTuner.html#a14c0df601ace7cc97b52d47cf0cb76e6">AutoTuner&lt;Particle&gt;::forceRetune</a>() {</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>  _iterationsSinceTuning = _tuningInterval;</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>  _samples.resize(_maxSamples);</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>}</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span> </div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> PairwiseFunctor&gt;</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno"><a class="line" href="classautopas_1_1AutoTuner.html#ae8c0c7bb9c214456a39e53bb60068b46">  270</a></span><span class="keywordtype">bool</span> <a class="code" href="classautopas_1_1AutoTuner.html#ae8c0c7bb9c214456a39e53bb60068b46">AutoTuner&lt;Particle&gt;::iteratePairwise</a>(PairwiseFunctor *f, <span class="keywordtype">bool</span> doListRebuild) {</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  <span class="keywordtype">bool</span> isTuning = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>  <span class="comment">// tune if :</span></div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  <span class="comment">// - more than one config exists</span></div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>  <span class="comment">// - currently in tuning phase</span></div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>  <span class="comment">// - functor is relevant</span></div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>  <span class="keywordflow">if</span> ((not _tuningStrategy-&gt;searchSpaceIsTrivial()) and _iterationsSinceTuning &gt;= _tuningInterval and</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>      f-&gt;isRelevantForTuning()) {</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    isTuning = tune&lt;PairwiseFunctor&gt;(*f);</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    <span class="keywordflow">if</span> (not isTuning) {</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>      _iterationsSinceTuning = 0;</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    }</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>  }</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>  <span class="comment">// large case differentiation for data layout and newton 3</span></div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  <span class="keywordflow">switch</span> (_tuningStrategy-&gt;getCurrentConfiguration().dataLayout) {</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    <span class="keywordflow">case</span> DataLayoutOption::aos: {</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>      <span class="keywordflow">if</span> (_tuningStrategy-&gt;getCurrentConfiguration().newton3 == Newton3Option::enabled) {</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        <span class="keywordflow">if</span> (isTuning) {</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>          iteratePairwiseTemplateHelper&lt;PairwiseFunctor, DataLayoutOption::aos, <span class="comment">/*Newton3*/</span> <span class="keyword">true</span>,</div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>                                        <span class="comment">/*tuning*/</span> <span class="keyword">true</span>&gt;(f, doListRebuild);</div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>          iteratePairwiseTemplateHelper&lt;PairwiseFunctor, DataLayoutOption::aos, <span class="comment">/*Newton3*/</span> <span class="keyword">true</span>,</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>                                        <span class="comment">/*tuning*/</span> <span class="keyword">false</span>&gt;(f, doListRebuild);</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>        }</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        <span class="keywordflow">if</span> (isTuning) {</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>          iteratePairwiseTemplateHelper&lt;PairwiseFunctor, DataLayoutOption::aos, <span class="comment">/*Newton3*/</span> <span class="keyword">false</span>,</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>                                        <span class="comment">/*tuning*/</span> <span class="keyword">true</span>&gt;(f, doListRebuild);</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>          iteratePairwiseTemplateHelper&lt;PairwiseFunctor, DataLayoutOption::aos, <span class="comment">/*Newton3*/</span> <span class="keyword">false</span>,</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>                                        <span class="comment">/*tuning*/</span> <span class="keyword">false</span>&gt;(f, doListRebuild);</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>        }</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>      }</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    }</div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    <span class="keywordflow">case</span> DataLayoutOption::soa: {</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>      <span class="keywordflow">if</span> (_tuningStrategy-&gt;getCurrentConfiguration().newton3 == Newton3Option::enabled) {</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        <span class="keywordflow">if</span> (isTuning) {</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>          iteratePairwiseTemplateHelper&lt;PairwiseFunctor, DataLayoutOption::soa, <span class="comment">/*Newton3*/</span> <span class="keyword">true</span>,</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>                                        <span class="comment">/*tuning*/</span> <span class="keyword">true</span>&gt;(f, doListRebuild);</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>          iteratePairwiseTemplateHelper&lt;PairwiseFunctor, DataLayoutOption::soa, <span class="comment">/*Newton3*/</span> <span class="keyword">true</span>,</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>                                        <span class="comment">/*tuning*/</span> <span class="keyword">false</span>&gt;(f, doListRebuild);</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        }</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>        <span class="keywordflow">if</span> (isTuning) {</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>          iteratePairwiseTemplateHelper&lt;PairwiseFunctor, DataLayoutOption::soa, <span class="comment">/*Newton3*/</span> <span class="keyword">false</span>,</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>                                        <span class="comment">/*tuning*/</span> <span class="keyword">true</span>&gt;(f, doListRebuild);</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>          iteratePairwiseTemplateHelper&lt;PairwiseFunctor, DataLayoutOption::soa, <span class="comment">/*Newton3*/</span> <span class="keyword">false</span>,</div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>                                        <span class="comment">/*tuning*/</span> <span class="keyword">false</span>&gt;(f, doListRebuild);</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>        }</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>      }</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    }</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    <span class="keywordflow">default</span>:</div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>      <a class="code" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">utils::ExceptionHandler::exception</a>(<span class="stringliteral">&quot;AutoTuner: Unknown data layout : {}&quot;</span>,</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>                                         _tuningStrategy-&gt;getCurrentConfiguration().dataLayout);</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>  }</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span> </div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>  <span class="keywordflow">if</span> (f-&gt;isRelevantForTuning()) {</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    ++_iterationsSinceTuning;</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>    ++_iteration;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> PairwiseFunctor, DataLayoutOption::Value dataLayout, <span class="keywordtype">bool</span> useNewton3, <span class="keywordtype">bool</span> inTuningPhase&gt;</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  <span class="keywordtype">void</span> iteratePairwiseTemplateHelper(PairwiseFunctor *f, <span class="keywordtype">bool</span> doListRebuild, std::vector&lt;Particle&gt; &amp;particleBuffer,</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>                                     std::vector&lt;Particle&gt; &amp;haloParticleBuffer);</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> PairwiseFunctor&gt;</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  <span class="keywordtype">bool</span> tune(PairwiseFunctor &amp;pairwiseFunctor);</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>  SelectorStrategyOption _selectorStrategy;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  std::unique_ptr&lt;TuningStrategyInterface&gt; _tuningStrategy;</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  <span class="keywordtype">size_t</span> _iteration;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>  <span class="keywordtype">size_t</span> _tuningInterval;</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span> </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>  <span class="keywordtype">size_t</span> _iterationsSinceTuning;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>  <a class="code" href="classautopas_1_1ContainerSelector.html">ContainerSelector&lt;Particle&gt;</a> _containerSelector;</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span> </div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>  <span class="keywordtype">double</span> _verletSkin;</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _verletClusterSize;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>  <span class="keyword">const</span> <span class="keywordtype">size_t</span> _maxSamples;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>  std::vector&lt;long&gt; _samples;</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  std::map&lt;Configuration, std::vector&lt;std::pair&lt;size_t, long&gt;&gt;&gt; _evidence;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span> </div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>  <a class="code" href="classautopas_1_1IterationLogger.html">IterationLogger</a> _iterationLogger;</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>  <a class="code" href="classautopas_1_1TuningResultLogger.html">TuningResultLogger</a> _tuningResultLogger;</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>  <a class="code" href="classautopas_1_1TuningDataLogger.html">TuningDataLogger</a> _tuningDataLogger;</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>};</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span><span class="keywordtype">void</span> AutoTuner&lt;Particle&gt;::selectCurrentContainer() {</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>  <span class="keyword">auto</span> conf = _tuningStrategy-&gt;getCurrentConfiguration();</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>  _containerSelector.selectContainer(</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>      conf.container, ContainerSelectorInfo(conf.cellSizeFactor, _verletSkin, _verletClusterSize, conf.loadEstimator));</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>}</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno"><a class="line" href="classautopas_1_1AutoTuner.html#a14c0df601ace7cc97b52d47cf0cb76e6">  267</a></span><span class="keywordtype">void</span> <a class="code" href="classautopas_1_1AutoTuner.html#a14c0df601ace7cc97b52d47cf0cb76e6">AutoTuner&lt;Particle&gt;::forceRetune</a>() {</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>  _iterationsSinceTuning = _tuningInterval;</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>  _samples.resize(_maxSamples);</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>}</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> PairwiseFunctor&gt;</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno"><a class="line" href="classautopas_1_1AutoTuner.html#a364157d9003743cc89841f1f42db3cc4">  274</a></span><span class="keywordtype">bool</span> <a class="code" href="classautopas_1_1AutoTuner.html#a364157d9003743cc89841f1f42db3cc4">AutoTuner&lt;Particle&gt;::iteratePairwise</a>(PairwiseFunctor *f, <span class="keywordtype">bool</span> doListRebuild, std::vector&lt;Particle&gt; &amp;particleBuffer,</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>                                          std::vector&lt;Particle&gt; &amp;haloParticleBuffer) {</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>  <span class="keywordtype">bool</span> isTuning = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  <span class="comment">// tune if :</span></div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  <span class="comment">// - more than one config exists</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>  <span class="comment">// - currently in tuning phase</span></div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  <span class="comment">// - functor is relevant</span></div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  <span class="keywordflow">if</span> ((not _tuningStrategy-&gt;searchSpaceIsTrivial()) and _iterationsSinceTuning &gt;= _tuningInterval and</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>      f-&gt;isRelevantForTuning()) {</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    isTuning = tune&lt;PairwiseFunctor&gt;(*f);</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    <span class="keywordflow">if</span> (not isTuning) {</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>      _iterationsSinceTuning = 0;</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    }</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  }</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  <span class="comment">// large case differentiation for data layout and newton 3</span></div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>  <span class="keywordflow">switch</span> (_tuningStrategy-&gt;getCurrentConfiguration().dataLayout) {</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    <span class="keywordflow">case</span> DataLayoutOption::aos: {</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>      <span class="keywordflow">if</span> (_tuningStrategy-&gt;getCurrentConfiguration().newton3 == Newton3Option::enabled) {</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>        <span class="keywordflow">if</span> (isTuning) {</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>          iteratePairwiseTemplateHelper&lt;PairwiseFunctor, DataLayoutOption::aos, <span class="comment">/*Newton3*/</span> <span class="keyword">true</span>,</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>                                        <span class="comment">/*tuning*/</span> <span class="keyword">true</span>&gt;(f, doListRebuild, particleBuffer, haloParticleBuffer);</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>          iteratePairwiseTemplateHelper&lt;PairwiseFunctor, DataLayoutOption::aos, <span class="comment">/*Newton3*/</span> <span class="keyword">true</span>,</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>                                        <span class="comment">/*tuning*/</span> <span class="keyword">false</span>&gt;(f, doListRebuild, particleBuffer, haloParticleBuffer);</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        }</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        <span class="keywordflow">if</span> (isTuning) {</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>          iteratePairwiseTemplateHelper&lt;PairwiseFunctor, DataLayoutOption::aos, <span class="comment">/*Newton3*/</span> <span class="keyword">false</span>,</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>                                        <span class="comment">/*tuning*/</span> <span class="keyword">true</span>&gt;(f, doListRebuild, particleBuffer, haloParticleBuffer);</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>          iteratePairwiseTemplateHelper&lt;PairwiseFunctor, DataLayoutOption::aos, <span class="comment">/*Newton3*/</span> <span class="keyword">false</span>,</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>                                        <span class="comment">/*tuning*/</span> <span class="keyword">false</span>&gt;(f, doListRebuild, particleBuffer, haloParticleBuffer);</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        }</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>      }</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    }</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    <span class="keywordflow">case</span> DataLayoutOption::soa: {</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>      <span class="keywordflow">if</span> (_tuningStrategy-&gt;getCurrentConfiguration().newton3 == Newton3Option::enabled) {</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        <span class="keywordflow">if</span> (isTuning) {</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>          iteratePairwiseTemplateHelper&lt;PairwiseFunctor, DataLayoutOption::soa, <span class="comment">/*Newton3*/</span> <span class="keyword">true</span>,</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>                                        <span class="comment">/*tuning*/</span> <span class="keyword">true</span>&gt;(f, doListRebuild, particleBuffer, haloParticleBuffer);</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>          iteratePairwiseTemplateHelper&lt;PairwiseFunctor, DataLayoutOption::soa, <span class="comment">/*Newton3*/</span> <span class="keyword">true</span>,</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>                                        <span class="comment">/*tuning*/</span> <span class="keyword">false</span>&gt;(f, doListRebuild, particleBuffer, haloParticleBuffer);</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        }</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>        <span class="keywordflow">if</span> (isTuning) {</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>          iteratePairwiseTemplateHelper&lt;PairwiseFunctor, DataLayoutOption::soa, <span class="comment">/*Newton3*/</span> <span class="keyword">false</span>,</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>                                        <span class="comment">/*tuning*/</span> <span class="keyword">true</span>&gt;(f, doListRebuild, particleBuffer, haloParticleBuffer);</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>          iteratePairwiseTemplateHelper&lt;PairwiseFunctor, DataLayoutOption::soa, <span class="comment">/*Newton3*/</span> <span class="keyword">false</span>,</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>                                        <span class="comment">/*tuning*/</span> <span class="keyword">false</span>&gt;(f, doListRebuild, particleBuffer, haloParticleBuffer);</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>        }</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>      }</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    }</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>      <a class="code" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">utils::ExceptionHandler::exception</a>(<span class="stringliteral">&quot;AutoTuner: Unknown data layout : {}&quot;</span>,</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>                                         _tuningStrategy-&gt;getCurrentConfiguration().dataLayout);</div>
 <div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>  }</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>  <span class="keywordflow">return</span> isTuning;</div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>}</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span> </div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> PairwiseFunctor, DataLayoutOption::Value dataLayout, <span class="keywordtype">bool</span> useNewton3, <span class="keywordtype">bool</span> inTuningPhase&gt;</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span><span class="keywordtype">void</span> <a class="code" href="classautopas_1_1AutoTuner.html">AutoTuner&lt;Particle&gt;::iteratePairwiseTemplateHelper</a>(PairwiseFunctor *f, <span class="keywordtype">bool</span> doListRebuild) {</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>  <span class="keyword">auto</span> containerPtr = getContainer();</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>  <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(debug, <span class="stringliteral">&quot;Iterating with configuration: {} tuning: {}&quot;</span>,</div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>             _tuningStrategy-&gt;getCurrentConfiguration().toString(), inTuningPhase ? <span class="stringliteral">&quot;true&quot;</span> : <span class="stringliteral">&quot;false&quot;</span>);</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span> </div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>  <span class="keyword">auto</span> traversal = autopas::utils::withStaticCellType&lt;Particle&gt;(</div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>      containerPtr-&gt;getParticleCellTypeEnum(), [&amp;](<span class="keyword">auto</span> particleCellDummy) {</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>        return TraversalSelector&lt;decltype(particleCellDummy)&gt;::template generateTraversal&lt;PairwiseFunctor, dataLayout,</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>                                                                                          useNewton3&gt;(</div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>            _tuningStrategy-&gt;getCurrentConfiguration().traversal, *f, containerPtr-&gt;getTraversalSelectorInfo());</div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>      });</div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span> </div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>  <span class="keywordflow">if</span> (not traversal-&gt;isApplicable()) {</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>    <a class="code" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a>(</div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        <span class="stringliteral">&quot;Error: Trying to execute a traversal that is not applicable. Two common reasons:\n&quot;</span></div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>        <span class="stringliteral">&quot;1. The search space is trivial, but no traversals are applicable. \n&quot;</span></div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>        <span class="stringliteral">&quot;2. You are using multiple functors and one of the not first is not supporting all configuration options of &quot;</span></div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>        <span class="stringliteral">&quot;the first.\n&quot;</span></div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>        <span class="stringliteral">&quot;Config: {}\n&quot;</span></div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>        <span class="stringliteral">&quot;Current functor: {}&quot;</span>,</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>        _tuningStrategy-&gt;getCurrentConfiguration().toString(), <span class="keyword">typeid</span>(*f).name());</div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>  }</div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span> </div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>  <a class="code" href="classautopas_1_1utils_1_1Timer.html">autopas::utils::Timer</a> timerTotal;</div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>  <a class="code" href="classautopas_1_1utils_1_1Timer.html">autopas::utils::Timer</a> timerRebuild;</div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>  <a class="code" href="classautopas_1_1utils_1_1Timer.html">autopas::utils::Timer</a> timerIteratePairwise;</div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>  timerTotal.<a class="code" href="classautopas_1_1utils_1_1Timer.html#a040cff3f6c841eba94b7e7add9da52f0">start</a>();</div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span> </div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>  f-&gt;initTraversal();</div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>  <span class="keywordflow">if</span> (doListRebuild) {</div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>    timerRebuild.<a class="code" href="classautopas_1_1utils_1_1Timer.html#a040cff3f6c841eba94b7e7add9da52f0">start</a>();</div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>    containerPtr-&gt;rebuildNeighborLists(traversal.get());</div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>    timerRebuild.<a class="code" href="classautopas_1_1utils_1_1Timer.html#abb8c345153a37180b9e855dbb3e5a6b4">stop</a>();</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>  <span class="keywordflow">if</span> (f-&gt;isRelevantForTuning()) {</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>    ++_iterationsSinceTuning;</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>    ++_iteration;</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>  }</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>  <span class="keywordflow">return</span> isTuning;</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>}</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span> </div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span><span class="keyword">template</span> &lt;<span class="keywordtype">bool</span> newton3, <span class="keyword">class</span> Particle, <span class="keyword">class</span> T, <span class="keyword">class</span> PairwiseFunctor&gt;</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno"><a class="line" href="namespaceautopas.html#aff3ff9cd97d22a7f6d3bc7a54a549097">  357</a></span><span class="keywordtype">void</span> <a class="code" href="namespaceautopas.html#aff3ff9cd97d22a7f6d3bc7a54a549097">doRemainderTraversal</a>(PairwiseFunctor *f, T containerPtr, std::vector&lt;Particle&gt; &amp;particleBuffer,</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>                          std::vector&lt;Particle&gt; &amp;haloParticleBuffer) {</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>  <span class="comment">// 1. particleBuffer with all close particles in container</span></div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;&amp;p : particleBuffer) {</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>    <span class="keyword">auto</span> pos = p.getR();</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>    <span class="keyword">auto</span> <a class="code" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a6773f269095e231ccc164acbe6b466a2">min</a> = <a class="code" href="namespaceautopas_1_1utils_1_1ArrayMath.html#ad3be520e23e18d9a6d9def1b6bd17778">autopas::utils::ArrayMath::subScalar</a>(pos, containerPtr-&gt;getCutoff());</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>    <span class="keyword">auto</span> <a class="code" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a36fc1767ec3773f8843188a15b5e68f3">max</a> = <a class="code" href="namespaceautopas_1_1utils_1_1ArrayMath.html#ad699cdce0ba19a5f027f2781b67be5a0">autopas::utils::ArrayMath::addScalar</a>(pos, containerPtr-&gt;getCutoff());</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> iter2 = containerPtr-&gt;getRegionIterator(<a class="code" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a6773f269095e231ccc164acbe6b466a2">min</a>, <a class="code" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a36fc1767ec3773f8843188a15b5e68f3">max</a>, IteratorBehavior::ownedOrHalo); iter2.isValid();</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>         ++iter2) {</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>      <span class="keywordflow">if</span> (newton3) {</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>        f-&gt;AoSFunctor(p, *iter2, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>        f-&gt;AoSFunctor(p, *iter2, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>        f-&gt;AoSFunctor(*iter2, p, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>      }</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>    }</div>
 <div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>  }</div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>  timerIteratePairwise.<a class="code" href="classautopas_1_1utils_1_1Timer.html#a040cff3f6c841eba94b7e7add9da52f0">start</a>();</div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>  containerPtr-&gt;iteratePairwise(traversal.get());</div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>  timerIteratePairwise.<a class="code" href="classautopas_1_1utils_1_1Timer.html#abb8c345153a37180b9e855dbb3e5a6b4">stop</a>();</div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>  f-&gt;endTraversal(useNewton3);</div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span> </div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>  timerTotal.<a class="code" href="classautopas_1_1utils_1_1Timer.html#abb8c345153a37180b9e855dbb3e5a6b4">stop</a>();</div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span> </div>
-<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>  <span class="keywordflow">if</span> (doListRebuild) {</div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>    <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(debug, <span class="stringliteral">&quot;rebuildNeighborLists took {} nanoseconds&quot;</span>, timerRebuild.<a class="code" href="classautopas_1_1utils_1_1Timer.html#a1d07d1624bc4192abb0abd4e6e588e02">getTotalTime</a>());</div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>  }</div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>  <span class="comment">// TODO: Fix misleading output</span></div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>  <span class="comment">// actually this is the time for iteratePairwise + init/endTraversal + rebuildNeighborLists</span></div>
-<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>  <span class="comment">// this containing all of this has legacy reasons so that old plot scripts work</span></div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>  <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(debug, <span class="stringliteral">&quot;IteratePairwise took {} nanoseconds&quot;</span>, timerTotal.<a class="code" href="classautopas_1_1utils_1_1Timer.html#a1d07d1624bc4192abb0abd4e6e588e02">getTotalTime</a>());</div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span> </div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>  _iterationLogger.logIteration(getCurrentConfig(), _iteration, inTuningPhase, timerIteratePairwise.<a class="code" href="classautopas_1_1utils_1_1Timer.html#a1d07d1624bc4192abb0abd4e6e588e02">getTotalTime</a>(),</div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>                                timerRebuild.<a class="code" href="classautopas_1_1utils_1_1Timer.html#a1d07d1624bc4192abb0abd4e6e588e02">getTotalTime</a>(), timerTotal.<a class="code" href="classautopas_1_1utils_1_1Timer.html#a1d07d1624bc4192abb0abd4e6e588e02">getTotalTime</a>());</div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span> </div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>  <span class="comment">// if tuning execute with time measurements</span></div>
-<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>  <span class="keywordflow">if</span> (inTuningPhase) {</div>
-<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>    <span class="keywordflow">if</span> (f-&gt;isRelevantForTuning()) {</div>
-<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>      addTimeMeasurement(timerTotal.<a class="code" href="classautopas_1_1utils_1_1Timer.html#a1d07d1624bc4192abb0abd4e6e588e02">getTotalTime</a>());</div>
-<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>      <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(trace, <span class="stringliteral">&quot;Skipping adding of time measurement because functor is not marked relevant.&quot;</span>);</div>
-<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>    }</div>
-<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>  }</div>
-<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>}</div>
-<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span> </div>
-<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> PairwiseFunctor&gt;</div>
-<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span><span class="keywordtype">bool</span> AutoTuner&lt;Particle&gt;::tune(PairwiseFunctor &amp;pairwiseFunctor) {</div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>  <span class="keywordtype">bool</span> stillTuning = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span> </div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>  <span class="comment">// need more samples; keep current config</span></div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>  <span class="keywordflow">if</span> (_samples.size() &lt; _maxSamples) {</div>
-<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>    <span class="keywordflow">return</span> stillTuning;</div>
-<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>  }</div>
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>  utils::Timer tuningTimer;</div>
-<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>  tuningTimer.start();</div>
-<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>  <span class="comment">// first tuning iteration -&gt; reset to first config</span></div>
-<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>  <span class="keywordflow">if</span> (_iterationsSinceTuning == _tuningInterval) {</div>
-<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>    _tuningStrategy-&gt;reset(_iteration);</div>
-<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>  } <span class="keywordflow">else</span> {  <span class="comment">// enough samples -&gt; next config</span></div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>    stillTuning = _tuningStrategy-&gt;tune();</div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>  }</div>
-<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span> </div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>  <span class="comment">// repeat as long as traversals are not applicable or we run out of configs</span></div>
-<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>  <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
-<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>    <span class="keyword">auto</span> &amp;currentConfig = getCurrentConfig();</div>
-<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>    <span class="comment">// check if newton3 works with this functor and remove config if not</span></div>
-<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>    <span class="keywordflow">if</span> ((currentConfig.newton3 == Newton3Option::enabled and not pairwiseFunctor.allowsNewton3()) or</div>
-<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>        (currentConfig.newton3 == Newton3Option::disabled and not pairwiseFunctor.allowsNonNewton3())) {</div>
-<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>      <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(warn, <span class="stringliteral">&quot;Configuration with newton 3 {} called with a functor that does not support this!&quot;</span>,</div>
-<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>                 currentConfig.newton3.to_string());</div>
-<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span> </div>
-<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>      _tuningStrategy-&gt;removeN3Option(currentConfig.newton3);</div>
-<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>      <span class="keywordflow">if</span> (configApplicable(currentConfig, pairwiseFunctor)) {</div>
-<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>        <span class="comment">// we found a valid config!</span></div>
-<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>        <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>        <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(debug, <span class="stringliteral">&quot;Skip not applicable configuration {}&quot;</span>, currentConfig.toString());</div>
-<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>        stillTuning = _tuningStrategy-&gt;tune(<span class="keyword">true</span>);</div>
-<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>      }</div>
-<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>    }</div>
-<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>  }</div>
-<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>  <span class="comment">// samples should only be cleared if we are still tuning, see `if (_samples.size() &lt; _maxSamples)` from before.</span></div>
-<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>  <span class="keywordflow">if</span> (stillTuning) {</div>
-<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>    <span class="comment">// samples are no longer needed. Delete them here so willRebuild() works as expected.</span></div>
-<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>    _samples.clear();</div>
-<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>  }</div>
-<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>  tuningTimer.stop();</div>
-<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>  <span class="comment">// when a tuning result is found log it</span></div>
-<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>  <span class="keywordflow">if</span> (not stillTuning) {</div>
-<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>    <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(debug, <span class="stringliteral">&quot;Selected Configuration {}&quot;</span>, getCurrentConfig().toString());</div>
-<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>    _tuningResultLogger.logTuningResult(getCurrentConfig(), _iteration, tuningTimer.getTotalTime());</div>
-<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>  }</div>
-<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>  <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(debug, <span class="stringliteral">&quot;Tuning took {} ns.&quot;</span>, tuningTimer.getTotalTime());</div>
-<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>  _iterationLogger.logTimeTuning(tuningTimer.getTotalTime());</div>
-<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span> </div>
-<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>  selectCurrentContainer();</div>
-<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>  <span class="keywordflow">return</span> stillTuning;</div>
-<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>}</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span> </div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>  <span class="comment">// 2. haloParticleBuffer with owned, close particles in container</span></div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;&amp;p : haloParticleBuffer) {</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>    <span class="keyword">auto</span> pos = p.getR();</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>    <span class="keyword">auto</span> <a class="code" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a6773f269095e231ccc164acbe6b466a2">min</a> = <a class="code" href="namespaceautopas_1_1utils_1_1ArrayMath.html#ad3be520e23e18d9a6d9def1b6bd17778">autopas::utils::ArrayMath::subScalar</a>(pos, containerPtr-&gt;getCutoff());</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>    <span class="keyword">auto</span> <a class="code" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a36fc1767ec3773f8843188a15b5e68f3">max</a> = <a class="code" href="namespaceautopas_1_1utils_1_1ArrayMath.html#ad699cdce0ba19a5f027f2781b67be5a0">autopas::utils::ArrayMath::addScalar</a>(pos, containerPtr-&gt;getCutoff());</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> iter2 = containerPtr-&gt;getRegionIterator(<a class="code" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a6773f269095e231ccc164acbe6b466a2">min</a>, <a class="code" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a36fc1767ec3773f8843188a15b5e68f3">max</a>, IteratorBehavior::owned); iter2.isValid(); ++iter2) {</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>      <span class="keywordflow">if</span> (newton3) {</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>        f-&gt;AoSFunctor(p, *iter2, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>        <span class="comment">// Here, we do not need to interact p with *iter2, because p is a halo particle and an AoSFunctor call with an</span></div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>        <span class="comment">// halo particle as first argument has no effect if newton3 == false.</span></div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>        f-&gt;AoSFunctor(*iter2, p, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>      }</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>    }</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>  }</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span> </div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>  <span class="comment">// 3. particleBuffer with itself</span></div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; particleBuffer.size(); ++i) {</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>    <span class="keyword">auto</span> &amp;&amp;p1 = particleBuffer[i];</div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = i + 1; j &lt; particleBuffer.size(); ++j) {</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>      <span class="keywordflow">if</span> (i == j) {</div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>        <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>      }</div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>      <span class="keyword">auto</span> &amp;&amp;p2 = particleBuffer[j];</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>      <span class="keywordflow">if</span> (newton3) {</div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>        f-&gt;AoSFunctor(p1, p2, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>        f-&gt;AoSFunctor(p1, p2, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>        f-&gt;AoSFunctor(p2, p1, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>      }</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>    }</div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>  }</div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span> </div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>  <span class="comment">// 4. particleBuffer with haloParticleBuffer</span></div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; particleBuffer.size(); ++i) {</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>    <span class="keyword">auto</span> &amp;&amp;p1 = particleBuffer[i];</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; haloParticleBuffer.size(); ++j) {</div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>      <span class="keyword">auto</span> &amp;&amp;p2 = haloParticleBuffer[j];</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>      <span class="keywordflow">if</span> (newton3) {</div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>        f-&gt;AoSFunctor(p1, p2, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>        <span class="comment">// Here, we do not need to interact p2 with p1, because p2 is a halo particle and an AoSFunctor call with an</span></div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>        <span class="comment">// halo particle as first argument has no effect if newton3 == false.</span></div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>        f-&gt;AoSFunctor(p1, p2, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>      }</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>    }</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>  }</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span> </div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>  <span class="comment">// Note: haloParticleBuffer with itself is NOT needed, as interactions between halo particles are unneeded!</span></div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>}</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span> </div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> PairwiseFunctor, DataLayoutOption::Value dataLayout, <span class="keywordtype">bool</span> useNewton3, <span class="keywordtype">bool</span> inTuningPhase&gt;</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span><span class="keywordtype">void</span> AutoTuner&lt;Particle&gt;::iteratePairwiseTemplateHelper(PairwiseFunctor *f, <span class="keywordtype">bool</span> doListRebuild,</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>                                                        std::vector&lt;Particle&gt; &amp;particleBuffer,</div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>                                                        std::vector&lt;Particle&gt; &amp;haloParticleBuffer) {</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>  <span class="keyword">auto</span> containerPtr = getContainer();</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>  <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(debug, <span class="stringliteral">&quot;Iterating with configuration: {} tuning: {}&quot;</span>,</div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>             _tuningStrategy-&gt;getCurrentConfiguration().toString(), inTuningPhase ? <span class="stringliteral">&quot;true&quot;</span> : <span class="stringliteral">&quot;false&quot;</span>);</div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span> </div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>  <span class="keyword">auto</span> traversal = autopas::utils::withStaticCellType&lt;Particle&gt;(</div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>      containerPtr-&gt;getParticleCellTypeEnum(), [&amp;](<span class="keyword">auto</span> particleCellDummy) {</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>        return TraversalSelector&lt;decltype(particleCellDummy)&gt;::template generateTraversal&lt;PairwiseFunctor, dataLayout,</div>
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>                                                                                          useNewton3&gt;(</div>
+<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>            _tuningStrategy-&gt;getCurrentConfiguration().traversal, *f, containerPtr-&gt;getTraversalSelectorInfo());</div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>      });</div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span> </div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>  <span class="keywordflow">if</span> (not traversal-&gt;isApplicable()) {</div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>    <a class="code" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a>(</div>
+<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>        <span class="stringliteral">&quot;Error: Trying to execute a traversal that is not applicable. Two common reasons:\n&quot;</span></div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>        <span class="stringliteral">&quot;1. The search space is trivial, but no traversals are applicable. \n&quot;</span></div>
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>        <span class="stringliteral">&quot;2. You are using multiple functors and one of the not first is not supporting all configuration options of &quot;</span></div>
+<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>        <span class="stringliteral">&quot;the first.\n&quot;</span></div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>        <span class="stringliteral">&quot;Config: {}\n&quot;</span></div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>        <span class="stringliteral">&quot;Current functor: {}&quot;</span>,</div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>        _tuningStrategy-&gt;getCurrentConfiguration().toString(), <span class="keyword">typeid</span>(*f).name());</div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>  }</div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span> </div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>  <a class="code" href="classautopas_1_1utils_1_1Timer.html">autopas::utils::Timer</a> timerTotal;</div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>  <a class="code" href="classautopas_1_1utils_1_1Timer.html">autopas::utils::Timer</a> timerRebuild;</div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>  <a class="code" href="classautopas_1_1utils_1_1Timer.html">autopas::utils::Timer</a> timerIteratePairwise;</div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>  timerTotal.<a class="code" href="classautopas_1_1utils_1_1Timer.html#a040cff3f6c841eba94b7e7add9da52f0">start</a>();</div>
 <div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span> </div>
-<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
-<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> PairwiseFunctor&gt;</div>
-<div class="line"><a id="l00460" name="l00460"></a><span class="lineno"><a class="line" href="classautopas_1_1AutoTuner.html#a2e1c8d255ca074528bcb10722ab351f6">  460</a></span><span class="keywordtype">bool</span> <a class="code" href="classautopas_1_1AutoTuner.html#a2e1c8d255ca074528bcb10722ab351f6">AutoTuner&lt;Particle&gt;::configApplicable</a>(<span class="keyword">const</span> <a class="code" href="classautopas_1_1Configuration.html">Configuration</a> &amp;conf, PairwiseFunctor &amp;pairwiseFunctor) {</div>
-<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>  <span class="keyword">auto</span> allContainerTraversals = compatibleTraversals::allCompatibleTraversals(conf.<a class="code" href="classautopas_1_1Configuration.html#a6f60f44ea162cec7863f0d88237946b0">container</a>);</div>
-<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>  <span class="keywordflow">if</span> (allContainerTraversals.find(conf.<a class="code" href="classautopas_1_1Configuration.html#a064071ca0d7525b3b2c4a743306b545a">traversal</a>) == allContainerTraversals.end()) {</div>
-<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>    <span class="comment">// container and traversal mismatch</span></div>
-<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>  }</div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>  f-&gt;initTraversal();</div>
+<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>  <span class="keywordflow">if</span> (doListRebuild) {</div>
+<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>    timerRebuild.<a class="code" href="classautopas_1_1utils_1_1Timer.html#a040cff3f6c841eba94b7e7add9da52f0">start</a>();</div>
+<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>    containerPtr-&gt;rebuildNeighborLists(traversal.get());</div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>    timerRebuild.<a class="code" href="classautopas_1_1utils_1_1Timer.html#abb8c345153a37180b9e855dbb3e5a6b4">stop</a>();</div>
+<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>  }</div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>  timerIteratePairwise.<a class="code" href="classautopas_1_1utils_1_1Timer.html#a040cff3f6c841eba94b7e7add9da52f0">start</a>();</div>
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>  containerPtr-&gt;iteratePairwise(traversal.get());</div>
 <div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span> </div>
-<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>  _containerSelector.selectContainer(</div>
-<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>      conf.<a class="code" href="classautopas_1_1Configuration.html#a6f60f44ea162cec7863f0d88237946b0">container</a>, <a class="code" href="classautopas_1_1ContainerSelectorInfo.html">ContainerSelectorInfo</a>(conf.<a class="code" href="classautopas_1_1Configuration.html#a10fbd75bcde633f8441d93387c7f20b4">cellSizeFactor</a>, _verletSkin, _verletClusterSize, conf.<a class="code" href="classautopas_1_1Configuration.html#a00a76ca9f33ec89148117b540a3e88cb">loadEstimator</a>));</div>
-<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>  <span class="keyword">auto</span> traversalInfo = _containerSelector.getCurrentContainer()-&gt;getTraversalSelectorInfo();</div>
+<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>  doRemainderTraversal&lt;useNewton3&gt;(f, containerPtr, particleBuffer, haloParticleBuffer);</div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>  timerIteratePairwise.<a class="code" href="classautopas_1_1utils_1_1Timer.html#abb8c345153a37180b9e855dbb3e5a6b4">stop</a>();</div>
+<div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>  f-&gt;endTraversal(useNewton3);</div>
 <div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span> </div>
-<div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>  <span class="keyword">auto</span> containerPtr = getContainer();</div>
+<div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>  timerTotal.<a class="code" href="classautopas_1_1utils_1_1Timer.html#abb8c345153a37180b9e855dbb3e5a6b4">stop</a>();</div>
 <div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span> </div>
-<div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>  <span class="keywordflow">return</span> autopas::utils::withStaticCellType&lt;Particle&gt;(</div>
-<div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span>      containerPtr-&gt;getParticleCellTypeEnum(), [&amp;](<span class="keyword">auto</span> particleCellDummy) {</div>
-<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>        return TraversalSelector&lt;decltype(particleCellDummy)&gt;::template generateTraversal&lt;PairwiseFunctor&gt;(</div>
-<div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>                   conf.traversal, pairwiseFunctor, traversalInfo, conf.dataLayout, conf.newton3)</div>
-<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span>            -&gt;isApplicable();</div>
-<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span>      });</div>
-<div class="line"><a id="l00479" name="l00479"></a><span class="lineno">  479</span>}</div>
+<div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>  <span class="keywordflow">if</span> (doListRebuild) {</div>
+<div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span>    <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(debug, <span class="stringliteral">&quot;rebuildNeighborLists took {} nanoseconds&quot;</span>, timerRebuild.<a class="code" href="classautopas_1_1utils_1_1Timer.html#a1d07d1624bc4192abb0abd4e6e588e02">getTotalTime</a>());</div>
+<div class="line"><a id="l00475" name="l00475"></a><span class="lineno">  475</span>  }</div>
+<div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>  <span class="comment">// TODO: Fix misleading output</span></div>
+<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span>  <span class="comment">// actually this is the time for iteratePairwise + init/endTraversal + rebuildNeighborLists</span></div>
+<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span>  <span class="comment">// this containing all of this has legacy reasons so that old plot scripts work</span></div>
+<div class="line"><a id="l00479" name="l00479"></a><span class="lineno">  479</span>  <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(debug, <span class="stringliteral">&quot;IteratePairwise took {} nanoseconds&quot;</span>, timerTotal.<a class="code" href="classautopas_1_1utils_1_1Timer.html#a1d07d1624bc4192abb0abd4e6e588e02">getTotalTime</a>());</div>
 <div class="line"><a id="l00480" name="l00480"></a><span class="lineno">  480</span> </div>
-<div class="line"><a id="l00481" name="l00481"></a><span class="lineno">  481</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
-<div class="line"><a id="l00482" name="l00482"></a><span class="lineno"><a class="line" href="classautopas_1_1AutoTuner.html#a8974f05a652361ac9152846bb90d1dcd">  482</a></span><span class="keyword">const</span> <a class="code" href="classautopas_1_1Configuration.html">Configuration</a> &amp;<a class="code" href="classautopas_1_1AutoTuner.html#a8974f05a652361ac9152846bb90d1dcd">AutoTuner&lt;Particle&gt;::getCurrentConfig</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00483" name="l00483"></a><span class="lineno">  483</span>  <span class="keywordflow">return</span> _tuningStrategy-&gt;getCurrentConfiguration();</div>
-<div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span>}</div>
-<div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span> </div>
-<div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
-<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span><span class="keywordtype">void</span> <a class="code" href="classautopas_1_1AutoTuner.html">AutoTuner&lt;Particle&gt;::addTimeMeasurement</a>(<span class="keywordtype">long</span> time) {</div>
-<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;currentConfig = _tuningStrategy-&gt;getCurrentConfiguration();</div>
-<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span> </div>
-<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>  <span class="keywordflow">if</span> (_samples.size() &lt; _maxSamples) {</div>
-<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>    <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(trace, <span class="stringliteral">&quot;Adding sample.&quot;</span>);</div>
-<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>    _samples.push_back(time);</div>
-<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span>    <span class="comment">// if this was the last sample:</span></div>
-<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span>    <span class="keywordflow">if</span> (_samples.size() == _maxSamples) {</div>
-<div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>      <span class="keyword">auto</span> &amp;evidenceCurrentConfig = _evidence[currentConfig];</div>
-<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span> </div>
-<div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>      <span class="keyword">const</span> <span class="keyword">auto</span> reducedValue = <a class="code" href="namespaceautopas_1_1OptimumSelector.html#a90bbf5bf287768bd239e8f945c73be13">OptimumSelector::optimumValue</a>(_samples, _selectorStrategy);</div>
-<div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span>      evidenceCurrentConfig.emplace_back(_iteration, reducedValue);</div>
-<div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span> </div>
-<div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span>      <span class="comment">// smooth evidence to remove high outliers. If smoothing results in a higher value use the original value.</span></div>
-<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>      <span class="keyword">const</span> <span class="keyword">auto</span> smoothedValue = <a class="code" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a6773f269095e231ccc164acbe6b466a2">std::min</a>(reducedValue, <a class="code" href="namespaceautopas_1_1smoothing.html#a325b0a4d6449d3a1da0d0862c5951ce7">smoothing::smoothLastPoint</a>(evidenceCurrentConfig, 5));</div>
-<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span> </div>
-<div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span>      <span class="comment">// replace collected evidence with smoothed value to improve next smoothing</span></div>
-<div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span>      evidenceCurrentConfig.back().second = smoothedValue;</div>
-<div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span> </div>
-<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>      _tuningStrategy-&gt;addEvidence(smoothedValue, _iteration);</div>
-<div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span> </div>
-<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>      <span class="comment">// print config, times and reduced value</span></div>
-<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>      <span class="keywordflow">if</span> (<a class="code" href="classautopas_1_1Logger.html#ae6125241be21442ba2cd5eaa84a432c1">autopas::Logger::get</a>()-&gt;level() &lt;= autopas::Logger::LogLevel::debug) {</div>
-<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>        std::ostringstream ss;</div>
-<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>        <span class="comment">// print config</span></div>
-<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>        ss &lt;&lt; currentConfig.toString() &lt;&lt; <span class="stringliteral">&quot; : &quot;</span>;</div>
-<div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>        <span class="comment">// print all timings</span></div>
-<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>        ss &lt;&lt; <a class="code" href="namespaceautopas_1_1utils_1_1ArrayUtils.html#a0346f7b6c9ecf44ec6aa5f5c666d8c9a">utils::ArrayUtils::to_string</a>(_samples, <span class="stringliteral">&quot; &quot;</span>, {<span class="stringliteral">&quot;[ &quot;</span>, <span class="stringliteral">&quot; ]&quot;</span>});</div>
-<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>        ss &lt;&lt; <span class="stringliteral">&quot; Smoothed value: &quot;</span> &lt;&lt; smoothedValue;</div>
-<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>        <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(debug, <span class="stringliteral">&quot;Collected times for  {}&quot;</span>, ss.str());</div>
-<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>      }</div>
-<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>      _tuningDataLogger.logTuningData(currentConfig, _samples, _iteration, reducedValue, smoothedValue);</div>
-<div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>    }</div>
-<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>  }</div>
-<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>}</div>
-<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span>}  <span class="comment">// namespace autopas</span></div>
+<div class="line"><a id="l00481" name="l00481"></a><span class="lineno">  481</span>  _iterationLogger.logIteration(getCurrentConfig(), _iteration, inTuningPhase, timerIteratePairwise.<a class="code" href="classautopas_1_1utils_1_1Timer.html#a1d07d1624bc4192abb0abd4e6e588e02">getTotalTime</a>(),</div>
+<div class="line"><a id="l00482" name="l00482"></a><span class="lineno">  482</span>                                timerRebuild.<a class="code" href="classautopas_1_1utils_1_1Timer.html#a1d07d1624bc4192abb0abd4e6e588e02">getTotalTime</a>(), timerTotal.<a class="code" href="classautopas_1_1utils_1_1Timer.html#a1d07d1624bc4192abb0abd4e6e588e02">getTotalTime</a>());</div>
+<div class="line"><a id="l00483" name="l00483"></a><span class="lineno">  483</span> </div>
+<div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span>  <span class="comment">// if tuning execute with time measurements</span></div>
+<div class="line"><a id="l00485" name="l00485"></a><span class="lineno">  485</span>  <span class="keywordflow">if</span> (inTuningPhase) {</div>
+<div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span>    <span class="keywordflow">if</span> (f-&gt;isRelevantForTuning()) {</div>
+<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span>      addTimeMeasurement(timerTotal.<a class="code" href="classautopas_1_1utils_1_1Timer.html#a1d07d1624bc4192abb0abd4e6e588e02">getTotalTime</a>());</div>
+<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span>      <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(trace, <span class="stringliteral">&quot;Skipping adding of time measurement because functor is not marked relevant.&quot;</span>);</div>
+<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span>    }</div>
+<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span>  }</div>
+<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>}</div>
+<div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span> </div>
+<div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
+<div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> PairwiseFunctor&gt;</div>
+<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span><span class="keywordtype">bool</span> AutoTuner&lt;Particle&gt;::tune(PairwiseFunctor &amp;pairwiseFunctor) {</div>
+<div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>  <span class="keywordtype">bool</span> stillTuning = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span> </div>
+<div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span>  <span class="comment">// need more samples; keep current config</span></div>
+<div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span>  <span class="keywordflow">if</span> (_samples.size() &lt; _maxSamples) {</div>
+<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>    <span class="keywordflow">return</span> stillTuning;</div>
+<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span>  }</div>
+<div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span>  utils::Timer tuningTimer;</div>
+<div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span>  tuningTimer.start();</div>
+<div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span>  <span class="comment">// first tuning iteration -&gt; reset to first config</span></div>
+<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>  <span class="keywordflow">if</span> (_iterationsSinceTuning == _tuningInterval) {</div>
+<div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span>    _tuningStrategy-&gt;reset(_iteration);</div>
+<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>  } <span class="keywordflow">else</span> {  <span class="comment">// enough samples -&gt; next config</span></div>
+<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>    stillTuning = _tuningStrategy-&gt;tune();</div>
+<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>  }</div>
+<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span> </div>
+<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>  <span class="comment">// repeat as long as traversals are not applicable or we run out of configs</span></div>
+<div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>  <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>    <span class="keyword">auto</span> &amp;currentConfig = getCurrentConfig();</div>
+<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>    <span class="comment">// check if newton3 works with this functor and remove config if not</span></div>
+<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>    <span class="keywordflow">if</span> ((currentConfig.newton3 == Newton3Option::enabled and not pairwiseFunctor.allowsNewton3()) or</div>
+<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>        (currentConfig.newton3 == Newton3Option::disabled and not pairwiseFunctor.allowsNonNewton3())) {</div>
+<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>      <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(warn, <span class="stringliteral">&quot;Configuration with newton 3 {} called with a functor that does not support this!&quot;</span>,</div>
+<div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>                 currentConfig.newton3.to_string());</div>
+<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span> </div>
+<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>      _tuningStrategy-&gt;removeN3Option(currentConfig.newton3);</div>
+<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span>      <span class="keywordflow">if</span> (configApplicable(currentConfig, pairwiseFunctor)) {</div>
+<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span>        <span class="comment">// we found a valid config!</span></div>
+<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>        <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>        <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(debug, <span class="stringliteral">&quot;Skip not applicable configuration {}&quot;</span>, currentConfig.toString());</div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>        stillTuning = _tuningStrategy-&gt;tune(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>      }</div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>    }</div>
+<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>  }</div>
+<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>  <span class="comment">// samples should only be cleared if we are still tuning, see `if (_samples.size() &lt; _maxSamples)` from before.</span></div>
+<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>  <span class="keywordflow">if</span> (stillTuning) {</div>
+<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>    <span class="comment">// samples are no longer needed. Delete them here so willRebuild() works as expected.</span></div>
+<div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>    _samples.clear();</div>
+<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>  }</div>
+<div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span>  tuningTimer.stop();</div>
+<div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span>  <span class="comment">// when a tuning result is found log it</span></div>
+<div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span>  <span class="keywordflow">if</span> (not stillTuning) {</div>
+<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>    <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(debug, <span class="stringliteral">&quot;Selected Configuration {}&quot;</span>, getCurrentConfig().toString());</div>
+<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>    _tuningResultLogger.logTuningResult(getCurrentConfig(), _iteration, tuningTimer.getTotalTime());</div>
+<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>  }</div>
+<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>  <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(debug, <span class="stringliteral">&quot;Tuning took {} ns.&quot;</span>, tuningTimer.getTotalTime());</div>
+<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>  _iterationLogger.logTimeTuning(tuningTimer.getTotalTime());</div>
+<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span> </div>
+<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>  selectCurrentContainer();</div>
+<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>  <span class="keywordflow">return</span> stillTuning;</div>
+<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>}</div>
+<div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span> </div>
+<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
+<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> PairwiseFunctor&gt;</div>
+<div class="line"><a id="l00552" name="l00552"></a><span class="lineno"><a class="line" href="classautopas_1_1AutoTuner.html#a2e1c8d255ca074528bcb10722ab351f6">  552</a></span><span class="keywordtype">bool</span> <a class="code" href="classautopas_1_1AutoTuner.html#a2e1c8d255ca074528bcb10722ab351f6">AutoTuner&lt;Particle&gt;::configApplicable</a>(<span class="keyword">const</span> <a class="code" href="classautopas_1_1Configuration.html">Configuration</a> &amp;conf, PairwiseFunctor &amp;pairwiseFunctor) {</div>
+<div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>  <span class="keyword">auto</span> allContainerTraversals = compatibleTraversals::allCompatibleTraversals(conf.<a class="code" href="classautopas_1_1Configuration.html#a6f60f44ea162cec7863f0d88237946b0">container</a>);</div>
+<div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span>  <span class="keywordflow">if</span> (allContainerTraversals.find(conf.<a class="code" href="classautopas_1_1Configuration.html#a064071ca0d7525b3b2c4a743306b545a">traversal</a>) == allContainerTraversals.end()) {</div>
+<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>    <span class="comment">// container and traversal mismatch</span></div>
+<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>  }</div>
+<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span> </div>
+<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>  _containerSelector.selectContainer(</div>
+<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>      conf.<a class="code" href="classautopas_1_1Configuration.html#a6f60f44ea162cec7863f0d88237946b0">container</a>, <a class="code" href="classautopas_1_1ContainerSelectorInfo.html">ContainerSelectorInfo</a>(conf.<a class="code" href="classautopas_1_1Configuration.html#a10fbd75bcde633f8441d93387c7f20b4">cellSizeFactor</a>, _verletSkin, _verletClusterSize, conf.<a class="code" href="classautopas_1_1Configuration.html#a00a76ca9f33ec89148117b540a3e88cb">loadEstimator</a>));</div>
+<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>  <span class="keyword">auto</span> traversalInfo = _containerSelector.getCurrentContainer()-&gt;getTraversalSelectorInfo();</div>
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span> </div>
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>  <span class="keyword">auto</span> containerPtr = getContainer();</div>
+<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span> </div>
+<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>  <span class="keywordflow">return</span> autopas::utils::withStaticCellType&lt;Particle&gt;(</div>
+<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>      containerPtr-&gt;getParticleCellTypeEnum(), [&amp;](<span class="keyword">auto</span> particleCellDummy) {</div>
+<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>        return TraversalSelector&lt;decltype(particleCellDummy)&gt;::template generateTraversal&lt;PairwiseFunctor&gt;(</div>
+<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>                   conf.traversal, pairwiseFunctor, traversalInfo, conf.dataLayout, conf.newton3)</div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>            -&gt;isApplicable();</div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>      });</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>}</div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span> </div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno"><a class="line" href="classautopas_1_1AutoTuner.html#a8974f05a652361ac9152846bb90d1dcd">  574</a></span><span class="keyword">const</span> <a class="code" href="classautopas_1_1Configuration.html">Configuration</a> &amp;<a class="code" href="classautopas_1_1AutoTuner.html#a8974f05a652361ac9152846bb90d1dcd">AutoTuner&lt;Particle&gt;::getCurrentConfig</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>  <span class="keywordflow">return</span> _tuningStrategy-&gt;getCurrentConfiguration();</div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>}</div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span> </div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span><span class="keywordtype">void</span> <a class="code" href="classautopas_1_1AutoTuner.html">AutoTuner&lt;Particle&gt;::addTimeMeasurement</a>(<span class="keywordtype">long</span> time) {</div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;currentConfig = _tuningStrategy-&gt;getCurrentConfiguration();</div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span> </div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>  <span class="keywordflow">if</span> (_samples.size() &lt; _maxSamples) {</div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>    <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(trace, <span class="stringliteral">&quot;Adding sample.&quot;</span>);</div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>    _samples.push_back(time);</div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>    <span class="comment">// if this was the last sample:</span></div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>    <span class="keywordflow">if</span> (_samples.size() == _maxSamples) {</div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>      <span class="keyword">auto</span> &amp;evidenceCurrentConfig = _evidence[currentConfig];</div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span> </div>
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>      <span class="keyword">const</span> <span class="keyword">auto</span> reducedValue = <a class="code" href="namespaceautopas_1_1OptimumSelector.html#a90bbf5bf287768bd239e8f945c73be13">OptimumSelector::optimumValue</a>(_samples, _selectorStrategy);</div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>      evidenceCurrentConfig.emplace_back(_iteration, reducedValue);</div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span> </div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>      <span class="comment">// smooth evidence to remove high outliers. If smoothing results in a higher value use the original value.</span></div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span>      <span class="keyword">const</span> <span class="keyword">auto</span> smoothedValue = <a class="code" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a6773f269095e231ccc164acbe6b466a2">std::min</a>(reducedValue, <a class="code" href="namespaceautopas_1_1smoothing.html#a325b0a4d6449d3a1da0d0862c5951ce7">smoothing::smoothLastPoint</a>(evidenceCurrentConfig, 5));</div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span> </div>
+<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>      <span class="comment">// replace collected evidence with smoothed value to improve next smoothing</span></div>
+<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>      evidenceCurrentConfig.back().second = smoothedValue;</div>
+<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span> </div>
+<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>      _tuningStrategy-&gt;addEvidence(smoothedValue, _iteration);</div>
+<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span> </div>
+<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>      <span class="comment">// print config, times and reduced value</span></div>
+<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>      <span class="keywordflow">if</span> (<a class="code" href="classautopas_1_1Logger.html#ae6125241be21442ba2cd5eaa84a432c1">autopas::Logger::get</a>()-&gt;level() &lt;= autopas::Logger::LogLevel::debug) {</div>
+<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>        std::ostringstream ss;</div>
+<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>        <span class="comment">// print config</span></div>
+<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>        ss &lt;&lt; currentConfig.toString() &lt;&lt; <span class="stringliteral">&quot; : &quot;</span>;</div>
+<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>        <span class="comment">// print all timings</span></div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>        ss &lt;&lt; <a class="code" href="namespaceautopas_1_1utils_1_1ArrayUtils.html#a0346f7b6c9ecf44ec6aa5f5c666d8c9a">utils::ArrayUtils::to_string</a>(_samples, <span class="stringliteral">&quot; &quot;</span>, {<span class="stringliteral">&quot;[ &quot;</span>, <span class="stringliteral">&quot; ]&quot;</span>});</div>
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>        ss &lt;&lt; <span class="stringliteral">&quot; Smoothed value: &quot;</span> &lt;&lt; smoothedValue;</div>
+<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>        <a class="code" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(debug, <span class="stringliteral">&quot;Collected times for  {}&quot;</span>, ss.str());</div>
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>      }</div>
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>      _tuningDataLogger.logTuningData(currentConfig, _samples, _iteration, reducedValue, smoothedValue);</div>
+<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>    }</div>
+<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>  }</div>
+<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>}</div>
+<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>}  <span class="comment">// namespace autopas</span></div>
 <div class="ttc" id="aArrayUtils_8h_html"><div class="ttname"><a href="ArrayUtils_8h.html">ArrayUtils.h</a></div></div>
 <div class="ttc" id="aConfiguration_8h_html"><div class="ttname"><a href="Configuration_8h.html">Configuration.h</a></div></div>
 <div class="ttc" id="aContainerSelector_8h_html"><div class="ttname"><a href="ContainerSelector_8h.html">ContainerSelector.h</a></div></div>
@@ -508,15 +585,15 @@ $(function() {
 <div class="ttc" id="aTuningResultLogger_8h_html"><div class="ttname"><a href="TuningResultLogger_8h.html">TuningResultLogger.h</a></div></div>
 <div class="ttc" id="aTuningStrategyInterface_8h_html"><div class="ttname"><a href="TuningStrategyInterface_8h.html">TuningStrategyInterface.h</a></div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html"><div class="ttname"><a href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a></div><div class="ttdoc">Calls to the iteratePairwise() method are passed through this class for two reasons:</div><div class="ttdef"><b>Definition:</b> AutoTuner.h:47</div></div>
-<div class="ttc" id="aclassautopas_1_1AutoTuner_html_a14c0df601ace7cc97b52d47cf0cb76e6"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#a14c0df601ace7cc97b52d47cf0cb76e6">autopas::AutoTuner::forceRetune</a></div><div class="ttdeci">void forceRetune()</div><div class="ttdoc">Force the internal tuner to enter a new tuning phase upon the next call to iteratePairwise().</div><div class="ttdef"><b>Definition:</b> AutoTuner.h:263</div></div>
+<div class="ttc" id="aclassautopas_1_1AutoTuner_html_a14c0df601ace7cc97b52d47cf0cb76e6"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#a14c0df601ace7cc97b52d47cf0cb76e6">autopas::AutoTuner::forceRetune</a></div><div class="ttdeci">void forceRetune()</div><div class="ttdoc">Force the internal tuner to enter a new tuning phase upon the next call to iteratePairwise().</div><div class="ttdef"><b>Definition:</b> AutoTuner.h:267</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_a1afed7a8b2628d21d67ba51cc406c991"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#a1afed7a8b2628d21d67ba51cc406c991">autopas::AutoTuner::resizeBox</a></div><div class="ttdeci">void resizeBox(const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax)</div><div class="ttdoc">Pass values to the towards the actual container.</div><div class="ttdef"><b>Definition:</b> AutoTuner.h:101</div></div>
-<div class="ttc" id="aclassautopas_1_1AutoTuner_html_a2e1c8d255ca074528bcb10722ab351f6"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#a2e1c8d255ca074528bcb10722ab351f6">autopas::AutoTuner::configApplicable</a></div><div class="ttdeci">bool configApplicable(const Configuration &amp;conf, PairwiseFunctor &amp;pairwiseFunctor)</div><div class="ttdoc">Check if a configuration is applicable to the current domain with the given functor.</div><div class="ttdef"><b>Definition:</b> AutoTuner.h:460</div></div>
+<div class="ttc" id="aclassautopas_1_1AutoTuner_html_a2e1c8d255ca074528bcb10722ab351f6"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#a2e1c8d255ca074528bcb10722ab351f6">autopas::AutoTuner::configApplicable</a></div><div class="ttdeci">bool configApplicable(const Configuration &amp;conf, PairwiseFunctor &amp;pairwiseFunctor)</div><div class="ttdoc">Check if a configuration is applicable to the current domain with the given functor.</div><div class="ttdef"><b>Definition:</b> AutoTuner.h:552</div></div>
+<div class="ttc" id="aclassautopas_1_1AutoTuner_html_a364157d9003743cc89841f1f42db3cc4"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#a364157d9003743cc89841f1f42db3cc4">autopas::AutoTuner::iteratePairwise</a></div><div class="ttdeci">bool iteratePairwise(PairwiseFunctor *f, bool doListRebuild, std::vector&lt; Particle &gt; &amp;particleBuffer, std::vector&lt; Particle &gt; &amp;haloParticleBuffer)</div><div class="ttdoc">Whole tuning logic for one iteration.</div><div class="ttdef"><b>Definition:</b> AutoTuner.h:274</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_a38641e67aa5ea04114c2624cd8ca8feb"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#a38641e67aa5ea04114c2624cd8ca8feb">autopas::AutoTuner::getContainer</a></div><div class="ttdeci">std::shared_ptr&lt; const autopas::ParticleContainerInterface&lt; Particle &gt; &gt; getContainer() const</div><div class="ttdoc">Getter for the current container.</div><div class="ttdef"><b>Definition:</b> AutoTuner.h:122</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_a46931baa117531d89242da13595a3665"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#a46931baa117531d89242da13595a3665">autopas::AutoTuner::getContainer</a></div><div class="ttdeci">std::shared_ptr&lt; autopas::ParticleContainerInterface&lt; Particle &gt; &gt; getContainer()</div><div class="ttdoc">Getter for the current container.</div><div class="ttdef"><b>Definition:</b> AutoTuner.h:114</div></div>
-<div class="ttc" id="aclassautopas_1_1AutoTuner_html_a496785fcc3b9753b8d0237f261fb03c9"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#a496785fcc3b9753b8d0237f261fb03c9">autopas::AutoTuner::willRebuild</a></div><div class="ttdeci">bool willRebuild()</div><div class="ttdoc">Returns whether the configuration will be changed in the next iteration.</div><div class="ttdef"><b>Definition:</b> AutoTuner.h:159</div></div>
-<div class="ttc" id="aclassautopas_1_1AutoTuner_html_a8974f05a652361ac9152846bb90d1dcd"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#a8974f05a652361ac9152846bb90d1dcd">autopas::AutoTuner::getCurrentConfig</a></div><div class="ttdeci">const Configuration &amp; getCurrentConfig() const</div><div class="ttdoc">Get the currently selected configuration.</div><div class="ttdef"><b>Definition:</b> AutoTuner.h:482</div></div>
+<div class="ttc" id="aclassautopas_1_1AutoTuner_html_a496785fcc3b9753b8d0237f261fb03c9"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#a496785fcc3b9753b8d0237f261fb03c9">autopas::AutoTuner::willRebuild</a></div><div class="ttdeci">bool willRebuild()</div><div class="ttdoc">Returns whether the configuration will be changed in the next iteration.</div><div class="ttdef"><b>Definition:</b> AutoTuner.h:162</div></div>
+<div class="ttc" id="aclassautopas_1_1AutoTuner_html_a8974f05a652361ac9152846bb90d1dcd"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#a8974f05a652361ac9152846bb90d1dcd">autopas::AutoTuner::getCurrentConfig</a></div><div class="ttdeci">const Configuration &amp; getCurrentConfig() const</div><div class="ttdoc">Get the currently selected configuration.</div><div class="ttdef"><b>Definition:</b> AutoTuner.h:574</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_a92163468b7a80449dcd963bd42d62c67"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#a92163468b7a80449dcd963bd42d62c67">autopas::AutoTuner::operator=</a></div><div class="ttdeci">AutoTuner &amp; operator=(AutoTuner &amp;&amp;other) noexcept</div><div class="ttdoc">Move assignment operator.</div><div class="ttdef"><b>Definition:</b> AutoTuner.h:91</div></div>
-<div class="ttc" id="aclassautopas_1_1AutoTuner_html_ae8c0c7bb9c214456a39e53bb60068b46"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#ae8c0c7bb9c214456a39e53bb60068b46">autopas::AutoTuner::iteratePairwise</a></div><div class="ttdeci">bool iteratePairwise(PairwiseFunctor *f, bool doListRebuild)</div><div class="ttdoc">Whole tuning logic for one iteration.</div><div class="ttdef"><b>Definition:</b> AutoTuner.h:270</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_af45100e523e84af9661cec4ca895282d"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#af45100e523e84af9661cec4ca895282d">autopas::AutoTuner::AutoTuner</a></div><div class="ttdeci">AutoTuner(std::array&lt; double, 3 &gt; boxMin, std::array&lt; double, 3 &gt; boxMax, double cutoff, double verletSkin, unsigned int verletClusterSize, std::unique_ptr&lt; TuningStrategyInterface &gt; tuningStrategy, SelectorStrategyOption selectorStrategy, unsigned int tuningInterval, unsigned int maxSamples, const std::string &amp;outputSuffix=&quot;&quot;)</div><div class="ttdoc">Constructor for the AutoTuner that generates all configurations from the given options.</div><div class="ttdef"><b>Definition:</b> AutoTuner.h:62</div></div>
 <div class="ttc" id="aclassautopas_1_1Configuration_html"><div class="ttname"><a href="classautopas_1_1Configuration.html">autopas::Configuration</a></div><div class="ttdoc">Class containing multiple options that form an algorithm configuration for the pairwise iteration.</div><div class="ttdef"><b>Definition:</b> Configuration.h:23</div></div>
 <div class="ttc" id="aclassautopas_1_1Configuration_html_a00a76ca9f33ec89148117b540a3e88cb"><div class="ttname"><a href="classautopas_1_1Configuration.html#a00a76ca9f33ec89148117b540a3e88cb">autopas::Configuration::loadEstimator</a></div><div class="ttdeci">LoadEstimatorOption loadEstimator</div><div class="ttdoc">Load Estimator option.</div><div class="ttdef"><b>Definition:</b> Configuration.h:92</div></div>
@@ -536,9 +613,13 @@ $(function() {
 <div class="ttc" id="aclassautopas_1_1utils_1_1Timer_html_abb8c345153a37180b9e855dbb3e5a6b4"><div class="ttname"><a href="classautopas_1_1utils_1_1Timer.html#abb8c345153a37180b9e855dbb3e5a6b4">autopas::utils::Timer::stop</a></div><div class="ttdeci">long stop()</div><div class="ttdoc">Stops the timer and returns the time elapsed in nanoseconds since the last call to start.</div><div class="ttdef"><b>Definition:</b> Timer.cpp:25</div></div>
 <div class="ttc" id="anamespaceautopas_1_1OptimumSelector_html_a90bbf5bf287768bd239e8f945c73be13"><div class="ttname"><a href="namespaceautopas_1_1OptimumSelector.html#a90bbf5bf287768bd239e8f945c73be13">autopas::OptimumSelector::optimumValue</a></div><div class="ttdeci">long optimumValue(const std::vector&lt; long &gt; &amp;values, SelectorStrategyOption strategy)</div><div class="ttdoc">Optimal value according to passed strategy.</div><div class="ttdef"><b>Definition:</b> OptimumSelector.h:56</div></div>
 <div class="ttc" id="anamespaceautopas_1_1smoothing_html_a325b0a4d6449d3a1da0d0862c5951ce7"><div class="ttname"><a href="namespaceautopas_1_1smoothing.html#a325b0a4d6449d3a1da0d0862c5951ce7">autopas::smoothing::smoothLastPoint</a></div><div class="ttdeci">long smoothLastPoint(const std::vector&lt; std::pair&lt; size_t, long &gt;&gt; &amp;points, size_t pointsPerEstimation)</div><div class="ttdoc">Calculates the smoothed y value for the last point in the given points according to the LOESS algorit...</div><div class="ttdef"><b>Definition:</b> Smoothing.cpp:127</div></div>
+<div class="ttc" id="anamespaceautopas_1_1utils_1_1ArrayMath_html_a36fc1767ec3773f8843188a15b5e68f3"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ArrayMath.html#a36fc1767ec3773f8843188a15b5e68f3">autopas::utils::ArrayMath::max</a></div><div class="ttdeci">constexpr std::array&lt; T, SIZE &gt; max(const std::array&lt; T, SIZE &gt; &amp;a, const std::array&lt; T, SIZE &gt; &amp;b)</div><div class="ttdoc">Takes elementwise maximum and returns the result.</div><div class="ttdef"><b>Definition:</b> ArrayMath.h:77</div></div>
 <div class="ttc" id="anamespaceautopas_1_1utils_1_1ArrayMath_html_a6773f269095e231ccc164acbe6b466a2"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ArrayMath.html#a6773f269095e231ccc164acbe6b466a2">autopas::utils::ArrayMath::min</a></div><div class="ttdeci">constexpr std::array&lt; T, SIZE &gt; min(const std::array&lt; T, SIZE &gt; &amp;a, const std::array&lt; T, SIZE &gt; &amp;b)</div><div class="ttdoc">Takes elementwise minimum, returns the result.</div><div class="ttdef"><b>Definition:</b> ArrayMath.h:60</div></div>
+<div class="ttc" id="anamespaceautopas_1_1utils_1_1ArrayMath_html_ad3be520e23e18d9a6d9def1b6bd17778"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ArrayMath.html#ad3be520e23e18d9a6d9def1b6bd17778">autopas::utils::ArrayMath::subScalar</a></div><div class="ttdeci">constexpr std::array&lt; T, SIZE &gt; subScalar(const std::array&lt; T, SIZE &gt; &amp;a, T s)</div><div class="ttdoc">Subtracts a scalar s from each element of array a and returns the result.</div><div class="ttdef"><b>Definition:</b> ArrayMath.h:145</div></div>
+<div class="ttc" id="anamespaceautopas_1_1utils_1_1ArrayMath_html_ad699cdce0ba19a5f027f2781b67be5a0"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ArrayMath.html#ad699cdce0ba19a5f027f2781b67be5a0">autopas::utils::ArrayMath::addScalar</a></div><div class="ttdeci">constexpr std::array&lt; T, SIZE &gt; addScalar(const std::array&lt; T, SIZE &gt; &amp;a, T s)</div><div class="ttdoc">Adds a scalar s to each element of array a and returns the result.</div><div class="ttdef"><b>Definition:</b> ArrayMath.h:128</div></div>
 <div class="ttc" id="anamespaceautopas_1_1utils_1_1ArrayUtils_html_a0346f7b6c9ecf44ec6aa5f5c666d8c9a"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ArrayUtils.html#a0346f7b6c9ecf44ec6aa5f5c666d8c9a">autopas::utils::ArrayUtils::to_string</a></div><div class="ttdeci">std::string to_string(T &amp;&amp;a, const std::string &amp;delimiter=&quot;, &quot;, const std::array&lt; std::string, 2 &gt; &amp;surround={&quot;[&quot;, &quot;]&quot;})</div><div class="ttdoc">Generates a string representation of a container which fulfills the Container requirement (provide cb...</div><div class="ttdef"><b>Definition:</b> ArrayUtils.h:41</div></div>
 <div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">This is the main namespace of AutoPas.</div><div class="ttdef"><b>Definition:</b> AutoPasDecl.h:27</div></div>
+<div class="ttc" id="anamespaceautopas_html_aff3ff9cd97d22a7f6d3bc7a54a549097"><div class="ttname"><a href="namespaceautopas.html#aff3ff9cd97d22a7f6d3bc7a54a549097">autopas::doRemainderTraversal</a></div><div class="ttdeci">void doRemainderTraversal(PairwiseFunctor *f, T containerPtr, std::vector&lt; Particle &gt; &amp;particleBuffer, std::vector&lt; Particle &gt; &amp;haloParticleBuffer)</div><div class="ttdoc">Performs the remaining needed traversal for the additional particles.</div><div class="ttdef"><b>Definition:</b> AutoTuner.h:357</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

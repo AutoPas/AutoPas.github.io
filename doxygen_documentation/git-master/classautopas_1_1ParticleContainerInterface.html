@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">0.1.0-c309fff</span>
+   &#160;<span id="projectnumber">2.0.0-510e7bb</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -232,9 +232,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ParticleContainer
 <tr class="memitem:a2191ad8b6814478b7ccca24081468f99"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a2191ad8b6814478b7ccca24081468f99">getInteractionLength</a> () const =0</td></tr>
 <tr class="memdesc:a2191ad8b6814478b7ccca24081468f99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the interaction length (cutoff+skin) of the container.  <a href="classautopas_1_1ParticleContainerInterface.html#a2191ad8b6814478b7ccca24081468f99">More...</a><br /></td></tr>
 <tr class="separator:a2191ad8b6814478b7ccca24081468f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b0fa976987684f436e520baf403cbf3"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a9eb1026f766e31bf170af8634f180d1d">ParticleType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a3b0fa976987684f436e520baf403cbf3">updateContainer</a> ()=0</td></tr>
-<tr class="memdesc:a3b0fa976987684f436e520baf403cbf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the container.  <a href="classautopas_1_1ParticleContainerInterface.html#a3b0fa976987684f436e520baf403cbf3">More...</a><br /></td></tr>
-<tr class="separator:a3b0fa976987684f436e520baf403cbf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa70da31e4a1c8e1cdce8ec4058555018"><td class="memItemLeft" align="right" valign="top">virtual std::vector&lt; <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a9eb1026f766e31bf170af8634f180d1d">ParticleType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#aa70da31e4a1c8e1cdce8ec4058555018">updateContainer</a> (bool keepNeighborListsValid)=0</td></tr>
+<tr class="memdesc:aa70da31e4a1c8e1cdce8ec4058555018"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the container.  <a href="classautopas_1_1ParticleContainerInterface.html#aa70da31e4a1c8e1cdce8ec4058555018">More...</a><br /></td></tr>
+<tr class="separator:aa70da31e4a1c8e1cdce8ec4058555018"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0792166b79e13d3f310ba67bc7531432"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classautopas_1_1TraversalSelectorInfo.html">TraversalSelectorInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a0792166b79e13d3f310ba67bc7531432">getTraversalSelectorInfo</a> () const =0</td></tr>
 <tr class="memdesc:a0792166b79e13d3f310ba67bc7531432"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a traversal selector info for this container.  <a href="classautopas_1_1ParticleContainerInterface.html#a0792166b79e13d3f310ba67bc7531432">More...</a><br /></td></tr>
 <tr class="separator:a0792166b79e13d3f310ba67bc7531432"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -340,7 +340,7 @@ template&lt;bool checkInBox = true&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000010">Todo:</a></b></dt><dd>do we want a check of the particle not being too far away in here as well? </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000011">Todo:</a></b></dt><dd>do we want a check of the particle not being too far away in here as well? </dd></dl>
 
 </div>
 </div>
@@ -1377,8 +1377,8 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="a3b0fa976987684f436e520baf403cbf3" name="a3b0fa976987684f436e520baf403cbf3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b0fa976987684f436e520baf403cbf3">&#9670;&nbsp;</a></span>updateContainer()</h2>
+<a id="aa70da31e4a1c8e1cdce8ec4058555018" name="aa70da31e4a1c8e1cdce8ec4058555018"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa70da31e4a1c8e1cdce8ec4058555018">&#9670;&nbsp;</a></span>updateContainer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1391,7 +1391,8 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
         <tr>
           <td class="memname">virtual std::vector&lt;<a class="el" href="classautopas_1_1ParticleContainerInterface.html#a9eb1026f766e31bf170af8634f180d1d">ParticleType</a>&gt; <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::updateContainer </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>keepNeighborListsValid</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1403,9 +1404,15 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </div><div class="memdoc">
 
 <p>Updates the container. </p>
-<p >This deletes halo particles, resorts particles into appropriate cells and might remove particles from the container, if necessary. </p><dl class="section return"><dt>Returns</dt><dd>A vector of invalid particles that do not belong into the container. </dd></dl>
+<p >This deletes halo particles, resorts particles into appropriate cells and might remove particles from the container, if necessary. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">keepNeighborListsValid</td><td>Defines whether the neighbor lists have to be kept valid. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A vector of invalid particles that do not belong into the container. </dd></dl>
 
-<p>Implemented in <a class="el" href="classautopas_1_1DirectSum.html#a95059a30f6ecccb85e2a88591928f128">autopas::DirectSum&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#a16ee4ecfe4381d2d194f64804ba33d54">autopas::LinkedCells&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCellsReferences.html#af51d48ae8f3a2c9664a27702a47b9da5">autopas::LinkedCellsReferences&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#a20a91c3ea6893125aab1b4381274aa4e">autopas::VerletClusterLists&lt; Particle &gt;</a>, and <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a06a12429ccab628afa1be26e211c909a">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classautopas_1_1DirectSum.html#a7875d35b02e155566f147425eb4e7b65">autopas::DirectSum&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#ab32f23eff8e0965f472071f683ecdb66">autopas::LinkedCells&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCellsReferences.html#a1950ccd3d0bfa54073154ba3a7f208fa">autopas::LinkedCellsReferences&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#aa4d6d8963eb44c327ce1c62517e85c80">autopas::VerletClusterLists&lt; Particle &gt;</a>, and <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#af90e3baf5ac5f97d7c17c8e60a6e37a8">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>.</p>
 
 </div>
 </div>
