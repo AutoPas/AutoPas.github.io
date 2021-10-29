@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">2.0.0-8a948f6</span>
+   &#160;<span id="projectnumber">2.0.0-8b4b58d</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -171,6 +171,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1da048edb9a6bb15224955851cfd5bee"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1SingleCellIteratorWrapper.html">SingleCellIteratorWrapper</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, false &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#a1da048edb9a6bb15224955851cfd5bee">begin</a> () const override</td></tr>
 <tr class="memdesc:a1da048edb9a6bb15224955851cfd5bee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an iterator to the start of a <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a>.  <a href="classautopas_1_1ReferenceParticleCell.html#a1da048edb9a6bb15224955851cfd5bee">More...</a><br /></td></tr>
 <tr class="separator:a1da048edb9a6bb15224955851cfd5bee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c9b094539fb45b0939f66c8f438a826"><td class="memTemplParams" colspan="2">template&lt;typename Lambda &gt; </td></tr>
+<tr class="memitem:a7c9b094539fb45b0939f66c8f438a826"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#a7c9b094539fb45b0939f66c8f438a826">forEach</a> (Lambda forEachLambda, IteratorBehavior behavior)</td></tr>
+<tr class="memdesc:a7c9b094539fb45b0939f66c8f438a826"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes code for every particle in this cell as defined by lambda function.  <a href="classautopas_1_1ReferenceParticleCell.html#a7c9b094539fb45b0939f66c8f438a826">More...</a><br /></td></tr>
+<tr class="separator:a7c9b094539fb45b0939f66c8f438a826"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a022e875a70a8a26e64fb33dbccd7039b"><td class="memTemplParams" colspan="2">template&lt;typename Lambda &gt; </td></tr>
+<tr class="memitem:a022e875a70a8a26e64fb33dbccd7039b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#a022e875a70a8a26e64fb33dbccd7039b">forEach</a> (Lambda forEachLambda, const std::array&lt; double, 3 &gt; &amp;lowerCorner, const std::array&lt; double, 3 &gt; &amp;higherCorner, IteratorBehavior behavior)</td></tr>
+<tr class="memdesc:a022e875a70a8a26e64fb33dbccd7039b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes code for every particle in this cell as defined by lambda function.  <a href="classautopas_1_1ReferenceParticleCell.html#a022e875a70a8a26e64fb33dbccd7039b">More...</a><br /></td></tr>
+<tr class="separator:a022e875a70a8a26e64fb33dbccd7039b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9069eb2354aed29317d7a936d50517c9"><td class="memTemplParams" colspan="2">template&lt;typename Lambda , typename A &gt; </td></tr>
+<tr class="memitem:a9069eb2354aed29317d7a936d50517c9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#a9069eb2354aed29317d7a936d50517c9">reduce</a> (Lambda reduceLambda, A &amp;result, IteratorBehavior behavior)</td></tr>
+<tr class="memdesc:a9069eb2354aed29317d7a936d50517c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduce properties of particles as defined by a lambda function.  <a href="classautopas_1_1ReferenceParticleCell.html#a9069eb2354aed29317d7a936d50517c9">More...</a><br /></td></tr>
+<tr class="separator:a9069eb2354aed29317d7a936d50517c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfc746c67feb85cce9614a5deeb650b9"><td class="memTemplParams" colspan="2">template&lt;typename Lambda , typename A &gt; </td></tr>
+<tr class="memitem:adfc746c67feb85cce9614a5deeb650b9"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#adfc746c67feb85cce9614a5deeb650b9">reduce</a> (Lambda reduceLambda, A &amp;result, const std::array&lt; double, 3 &gt; &amp;lowerCorner, const std::array&lt; double, 3 &gt; &amp;higherCorner, IteratorBehavior behavior)</td></tr>
+<tr class="memdesc:adfc746c67feb85cce9614a5deeb650b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduce properties of particles as defined by a lambda function.  <a href="classautopas_1_1ReferenceParticleCell.html#adfc746c67feb85cce9614a5deeb650b9">More...</a><br /></td></tr>
+<tr class="separator:adfc746c67feb85cce9614a5deeb650b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7317a3beb578b246a8e3c2fab31338e"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#ab7317a3beb578b246a8e3c2fab31338e">numParticles</a> () const override</td></tr>
 <tr class="memdesc:ab7317a3beb578b246a8e3c2fab31338e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of particles stored in this cell.  <a href="classautopas_1_1ReferenceParticleCell.html#ab7317a3beb578b246a8e3c2fab31338e">More...</a><br /></td></tr>
 <tr class="separator:ab7317a3beb578b246a8e3c2fab31338e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -596,6 +612,130 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
+<a id="a022e875a70a8a26e64fb33dbccd7039b" name="a022e875a70a8a26e64fb33dbccd7039b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a022e875a70a8a26e64fb33dbccd7039b">&#9670;&nbsp;</a></span>forEach() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<div class="memtemplate">
+template&lt;typename Lambda &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1ReferenceParticleCell.html">autopas::ReferenceParticleCell</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::forEach </td>
+          <td>(</td>
+          <td class="paramtype">Lambda&#160;</td>
+          <td class="paramname"><em>forEachLambda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lowerCorner</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>higherCorner</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IteratorBehavior&#160;</td>
+          <td class="paramname"><em>behavior</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Executes code for every particle in this cell as defined by lambda function. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Lambda</td><td>(Particle &amp;p) -&gt; void </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">forEachLambda</td><td>code to be executed on particles </td></tr>
+    <tr><td class="paramname">lowerCorner</td><td>lower corner of bounding box </td></tr>
+    <tr><td class="paramname">higherCorner</td><td>higher corner of bounding box </td></tr>
+    <tr><td class="paramname">behavior</td><td>ownerships of particles that should be in-/excluded </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7c9b094539fb45b0939f66c8f438a826" name="a7c9b094539fb45b0939f66c8f438a826"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c9b094539fb45b0939f66c8f438a826">&#9670;&nbsp;</a></span>forEach() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<div class="memtemplate">
+template&lt;typename Lambda &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1ReferenceParticleCell.html">autopas::ReferenceParticleCell</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::forEach </td>
+          <td>(</td>
+          <td class="paramtype">Lambda&#160;</td>
+          <td class="paramname"><em>forEachLambda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IteratorBehavior&#160;</td>
+          <td class="paramname"><em>behavior</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Executes code for every particle in this cell as defined by lambda function. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Lambda</td><td>(Particle &amp;p) -&gt; void </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">forEachLambda</td><td>code to be executed on particles </td></tr>
+    <tr><td class="paramname">behavior</td><td>ownerships of particles that should be in-/excluded </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a702311c74838c5899fba26b329da9dc1" name="a702311c74838c5899fba26b329da9dc1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a702311c74838c5899fba26b329da9dc1">&#9670;&nbsp;</a></span>getCellLength()</h2>
 
@@ -795,6 +935,146 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Reference to the element </dd></dl>
+
+</div>
+</div>
+<a id="adfc746c67feb85cce9614a5deeb650b9" name="adfc746c67feb85cce9614a5deeb650b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfc746c67feb85cce9614a5deeb650b9">&#9670;&nbsp;</a></span>reduce() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<div class="memtemplate">
+template&lt;typename Lambda , typename A &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1ReferenceParticleCell.html">autopas::ReferenceParticleCell</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::reduce </td>
+          <td>(</td>
+          <td class="paramtype">Lambda&#160;</td>
+          <td class="paramname"><em>reduceLambda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">A &amp;&#160;</td>
+          <td class="paramname"><em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lowerCorner</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>higherCorner</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IteratorBehavior&#160;</td>
+          <td class="paramname"><em>behavior</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reduce properties of particles as defined by a lambda function. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Lambda</td><td>(Particle p, A initialValue) -&gt; void </td></tr>
+    <tr><td class="paramname">A</td><td>type of particle attribute to be reduced </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reduceLambda</td><td>code to reduce properties of particles </td></tr>
+    <tr><td class="paramname">result</td><td>reference to result of type A </td></tr>
+    <tr><td class="paramname">lowerCorner</td><td>lower corner of bounding box </td></tr>
+    <tr><td class="paramname">higherCorner</td><td>higher corner of bounding box </td></tr>
+    <tr><td class="paramname">behavior</td><td>ownerships of particles that should be in-/excluded </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9069eb2354aed29317d7a936d50517c9" name="a9069eb2354aed29317d7a936d50517c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9069eb2354aed29317d7a936d50517c9">&#9670;&nbsp;</a></span>reduce() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<div class="memtemplate">
+template&lt;typename Lambda , typename A &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1ReferenceParticleCell.html">autopas::ReferenceParticleCell</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::reduce </td>
+          <td>(</td>
+          <td class="paramtype">Lambda&#160;</td>
+          <td class="paramname"><em>reduceLambda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">A &amp;&#160;</td>
+          <td class="paramname"><em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IteratorBehavior&#160;</td>
+          <td class="paramname"><em>behavior</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reduce properties of particles as defined by a lambda function. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Lambda</td><td>(Particle p, A initialValue) -&gt; void </td></tr>
+    <tr><td class="paramname">A</td><td>type of particle attribute to be reduced </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reduceLambda</td><td>code to reduce properties of particles </td></tr>
+    <tr><td class="paramname">result</td><td>reference to result of type A </td></tr>
+    <tr><td class="paramname">behavior</td><td>ownerships of particles that should be in-/excluded </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
