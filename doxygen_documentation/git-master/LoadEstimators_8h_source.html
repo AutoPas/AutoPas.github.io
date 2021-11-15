@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">2.0.0-fc14f63</span>
+   &#160;<span id="projectnumber">2.0.0-b1513eb</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -160,7 +160,7 @@ $(function() {
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="namespaceautopas_1_1loadEstimators.html#a66bd2049836cdbc995dfcc4f971db4aa">   98</a></span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="namespaceautopas_1_1loadEstimators.html#a66bd2049836cdbc995dfcc4f971db4aa">neighborListLength</a>(NeighborList &amp;neighborLists, <span class="keyword">const</span> std::array&lt;unsigned long, 3&gt; &amp;cellsPerDimension,</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>                                 <span class="keyword">const</span> std::array&lt;unsigned long, 3&gt; &amp;lowerCorner,</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>                                 <span class="keyword">const</span> std::array&lt;unsigned long, 3&gt; &amp;upperCorner) {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keyword">auto</span> internalList = neighborLists.getAoSNeighborList();</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="keyword">auto</span> &amp;internalList = neighborLists.getAoSNeighborList();</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> sum = 0;</div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> x = lowerCorner[0]; x &lt;= upperCorner[0]; x++) {</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> y = lowerCorner[1]; y &lt;= upperCorner[1]; y++) {</div>
