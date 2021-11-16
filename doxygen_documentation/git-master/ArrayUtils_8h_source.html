@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">2.0.0-b1513eb</span>
+   &#160;<span id="projectnumber">2.0.0-d4369e9</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -118,26 +118,26 @@ $(function() {
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>}</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="namespaceautopas_1_1utils_1_1ArrayUtils.html#a0346f7b6c9ecf44ec6aa5f5c666d8c9a">   41</a></span>[[nodiscard]] std::string <a class="code" href="namespaceautopas_1_1utils_1_1ArrayUtils.html#a0346f7b6c9ecf44ec6aa5f5c666d8c9a">to_string</a>(T &amp;&amp;a, <span class="keyword">const</span> std::string &amp;delimiter = <span class="stringliteral">&quot;, &quot;</span>,</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                                    <span class="keyword">const</span> std::array&lt;std::string, 2&gt; &amp;surround = {<span class="stringliteral">&quot;[&quot;</span>, <span class="stringliteral">&quot;]&quot;</span>}) {</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keyword">auto</span> it = std::cbegin(a);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">const</span> <span class="keyword">auto</span> end = std::cend(a);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordflow">if</span> (it == end) {</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">return</span> surround[0] + surround[1];</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  }</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  std::ostringstream strStream;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  strStream &lt;&lt; surround[0] &lt;&lt; *it;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordflow">for</span> (++it; it != end; ++it) {</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    strStream &lt;&lt; delimiter &lt;&lt; *it;</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  }</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  strStream &lt;&lt; surround[1];</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordflow">return</span> strStream.str();</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}  <span class="comment">// namespace autopas::utils::ArrayUtils</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="namespaceautopas_1_1utils_1_1ArrayUtils.html#a0346f7b6c9ecf44ec6aa5f5c666d8c9a">   42</a></span>[[nodiscard]] std::string <a class="code" href="namespaceautopas_1_1utils_1_1ArrayUtils.html#a0346f7b6c9ecf44ec6aa5f5c666d8c9a">to_string</a>(T &amp;&amp;a, <span class="keyword">const</span> std::string &amp;delimiter = <span class="stringliteral">&quot;, &quot;</span>,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                                    <span class="keyword">const</span> std::array&lt;std::string, 2&gt; &amp;surround = {<span class="stringliteral">&quot;[&quot;</span>, <span class="stringliteral">&quot;]&quot;</span>}) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">auto</span> it = std::cbegin(a);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keyword">const</span> <span class="keyword">auto</span> end = std::cend(a);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keywordflow">if</span> (it == end) {</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordflow">return</span> surround[0] + surround[1];</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  }</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  std::ostringstream strStream;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  strStream &lt;&lt; std::boolalpha &lt;&lt; surround[0] &lt;&lt; *it;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordflow">for</span> (++it; it != end; ++it) {</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    strStream &lt;&lt; delimiter &lt;&lt; *it;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  }</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  strStream &lt;&lt; surround[1];</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordflow">return</span> strStream.str();</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}  <span class="comment">// namespace autopas::utils::ArrayUtils</span></div>
 <div class="ttc" id="anamespaceautopas_1_1utils_1_1ArrayUtils_html"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ArrayUtils.html">autopas::utils::ArrayUtils</a></div><div class="ttdoc">In this namespace some helper functions for std::array can be found.</div><div class="ttdef"><b>Definition:</b> namespaces.h:54</div></div>
-<div class="ttc" id="anamespaceautopas_1_1utils_1_1ArrayUtils_html_a0346f7b6c9ecf44ec6aa5f5c666d8c9a"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ArrayUtils.html#a0346f7b6c9ecf44ec6aa5f5c666d8c9a">autopas::utils::ArrayUtils::to_string</a></div><div class="ttdeci">std::string to_string(T &amp;&amp;a, const std::string &amp;delimiter=&quot;, &quot;, const std::array&lt; std::string, 2 &gt; &amp;surround={&quot;[&quot;, &quot;]&quot;})</div><div class="ttdoc">Generates a string representation of a container which fulfills the Container requirement (provide cb...</div><div class="ttdef"><b>Definition:</b> ArrayUtils.h:41</div></div>
+<div class="ttc" id="anamespaceautopas_1_1utils_1_1ArrayUtils_html_a0346f7b6c9ecf44ec6aa5f5c666d8c9a"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ArrayUtils.html#a0346f7b6c9ecf44ec6aa5f5c666d8c9a">autopas::utils::ArrayUtils::to_string</a></div><div class="ttdeci">std::string to_string(T &amp;&amp;a, const std::string &amp;delimiter=&quot;, &quot;, const std::array&lt; std::string, 2 &gt; &amp;surround={&quot;[&quot;, &quot;]&quot;})</div><div class="ttdoc">Generates a string representation of a container which fulfills the Container requirement (provide cb...</div><div class="ttdef"><b>Definition:</b> ArrayUtils.h:42</div></div>
 <div class="ttc" id="anamespaceautopas_1_1utils_1_1ArrayUtils_html_a9f72236dfdaceb64f03330e5ee95be80"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ArrayUtils.html#a9f72236dfdaceb64f03330e5ee95be80">autopas::utils::ArrayUtils::static_cast_array</a></div><div class="ttdeci">constexpr std::array&lt; output_t, SIZE &gt; static_cast_array(const std::array&lt; input_t, SIZE &gt; &amp;a)</div><div class="ttdoc">Creates a new array by performing an element-wise static_cast&lt;&gt;.</div><div class="ttdef"><b>Definition:</b> ArrayUtils.h:24</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
