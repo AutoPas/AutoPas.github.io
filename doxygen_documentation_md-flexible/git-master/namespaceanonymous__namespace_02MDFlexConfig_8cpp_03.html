@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">2.0.0-b1513eb</span>
+   &#160;<span id="projectnumber">2.0.0-d4369e9</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -109,59 +109,14 @@ Functions</h2></td></tr>
 <tr class="memitem:acbb44611df2b8611613997996bc31641"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02MDFlexConfig_8cpp_03.html#acbb44611df2b8611613997996bc31641">findWord</a> (std::ifstream &amp;file, const std::string &amp;word)</td></tr>
 <tr class="memdesc:acbb44611df2b8611613997996bc31641"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches the file word by word and sets the file accessor directly behind the first found position.  <a href="namespaceanonymous__namespace_02MDFlexConfig_8cpp_03.html#acbb44611df2b8611613997996bc31641">More...</a><br /></td></tr>
 <tr class="separator:acbb44611df2b8611613997996bc31641"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0dfba189329b37cbe409913d9c87c32c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02MDFlexConfig_8cpp_03.html#a0dfba189329b37cbe409913d9c87c32c">checkpointWasCreatedWithEqualNumberOfRanks</a> (const std::string filename, const size_t communicatorSize, size_t &amp;checkpointCommunicatorSize)</td></tr>
-<tr class="memdesc:a0dfba189329b37cbe409913d9c87c32c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if a checkpoint was created with the same number of ranks as available in the current simulation.  <a href="namespaceanonymous__namespace_02MDFlexConfig_8cpp_03.html#a0dfba189329b37cbe409913d9c87c32c">More...</a><br /></td></tr>
-<tr class="separator:a0dfba189329b37cbe409913d9c87c32c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2d8713c0f7fdeb9ef3573d80c6bd89f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02MDFlexConfig_8cpp_03.html#ae2d8713c0f7fdeb9ef3573d80c6bd89f">loadParticlesFromRankRecord</a> (const std::string &amp;filename, const std::string &amp;scenarioName, const size_t iteration, const size_t &amp;rank, std::vector&lt; ParticleType &gt; &amp;particles)</td></tr>
-<tr class="memdesc:ae2d8713c0f7fdeb9ef3573d80c6bd89f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the particles from a checkpoint written with a specific rank.  <a href="namespaceanonymous__namespace_02MDFlexConfig_8cpp_03.html#ae2d8713c0f7fdeb9ef3573d80c6bd89f">More...</a><br /></td></tr>
-<tr class="separator:ae2d8713c0f7fdeb9ef3573d80c6bd89f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a826419f4bccac1e024b9f8fc85d3022f"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02MDFlexConfig_8cpp_03.html#a826419f4bccac1e024b9f8fc85d3022f">getNumPiecesInCheckpoint</a> (const std::string &amp;filename)</td></tr>
+<tr class="memdesc:a826419f4bccac1e024b9f8fc85d3022f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Evaluates the number of pieces that the checkpoint contains.  <a href="namespaceanonymous__namespace_02MDFlexConfig_8cpp_03.html#a826419f4bccac1e024b9f8fc85d3022f">More...</a><br /></td></tr>
+<tr class="separator:a826419f4bccac1e024b9f8fc85d3022f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d5b31a1373a11a53541b94dd7a7e366"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceanonymous__namespace_02MDFlexConfig_8cpp_03.html#a3d5b31a1373a11a53541b94dd7a7e366">loadParticlesFromRankRecord</a> (std::string_view filename, const size_t &amp;rank, std::vector&lt; ParticleType &gt; &amp;particles)</td></tr>
+<tr class="memdesc:a3d5b31a1373a11a53541b94dd7a7e366"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the particles from a checkpoint written with a specific rank.  <a href="namespaceanonymous__namespace_02MDFlexConfig_8cpp_03.html#a3d5b31a1373a11a53541b94dd7a7e366">More...</a><br /></td></tr>
+<tr class="separator:a3d5b31a1373a11a53541b94dd7a7e366"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a0dfba189329b37cbe409913d9c87c32c" name="a0dfba189329b37cbe409913d9c87c32c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0dfba189329b37cbe409913d9c87c32c">&#9670;&nbsp;</a></span>checkpointWasCreatedWithEqualNumberOfRanks()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool anonymous_namespace{MDFlexConfig.cpp}::checkpointWasCreatedWithEqualNumberOfRanks </td>
-          <td>(</td>
-          <td class="paramtype">const std::string&#160;</td>
-          <td class="paramname"><em>filename</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const size_t&#160;</td>
-          <td class="paramname"><em>communicatorSize</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t &amp;&#160;</td>
-          <td class="paramname"><em>checkpointCommunicatorSize</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Checks if a checkpoint was created with the same number of ranks as available in the current simulation. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">filename</td><td>The name of the pvtu checkpoint file. </td></tr>
-    <tr><td class="paramname">communicatorSize</td><td>The size of the current communicator. </td></tr>
-    <tr><td class="paramname">checkpointCommunicatorSize</td><td>Used to store the communicator size during checkpoint creation. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if the checkpoint was created with the same number of ranks as available in the current communicator. false otherwise. </dd></dl>
-
-</div>
-</div>
 <a id="acbb44611df2b8611613997996bc31641" name="acbb44611df2b8611613997996bc31641"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acbb44611df2b8611613997996bc31641">&#9670;&nbsp;</a></span>findWord()</h2>
 
@@ -199,8 +154,36 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ae2d8713c0f7fdeb9ef3573d80c6bd89f" name="ae2d8713c0f7fdeb9ef3573d80c6bd89f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2d8713c0f7fdeb9ef3573d80c6bd89f">&#9670;&nbsp;</a></span>loadParticlesFromRankRecord()</h2>
+<a id="a826419f4bccac1e024b9f8fc85d3022f" name="a826419f4bccac1e024b9f8fc85d3022f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a826419f4bccac1e024b9f8fc85d3022f">&#9670;&nbsp;</a></span>getNumPiecesInCheckpoint()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t anonymous_namespace{MDFlexConfig.cpp}::getNumPiecesInCheckpoint </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>filename</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Evaluates the number of pieces that the checkpoint contains. </p>
+<p >This is the number of vtu files belonging to the pvtu. This is also the number of ranks that was used during the creation of the data file.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">filename</td><td>The name of the pvtu checkpoint file. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of pieces. </dd></dl>
+
+</div>
+</div>
+<a id="a3d5b31a1373a11a53541b94dd7a7e366" name="a3d5b31a1373a11a53541b94dd7a7e366"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d5b31a1373a11a53541b94dd7a7e366">&#9670;&nbsp;</a></span>loadParticlesFromRankRecord()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -208,20 +191,8 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">void anonymous_namespace{MDFlexConfig.cpp}::loadParticlesFromRankRecord </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramtype">std::string_view&#160;</td>
           <td class="paramname"><em>filename</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>scenarioName</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const size_t&#160;</td>
-          <td class="paramname"><em>iteration</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -247,8 +218,6 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">filename</td><td>The name of the pvtu file. </td></tr>
-    <tr><td class="paramname">scenarioName</td><td>The name of the scenario where the checkoint as been created. See <a class="el" href="classMDFlexConfig.html#ab5422d60c48efffb8598b39c0209e38b" title="checkpointScenarioName">MDFlexConfig::checkpointScenarioName</a> for more details. </td></tr>
-    <tr><td class="paramname">iteration</td><td>The iteration for which the checkpoint has been created. </td></tr>
     <tr><td class="paramname">rank</td><td>The rank which created the respective vtu file. </td></tr>
     <tr><td class="paramname">particles</td><td>Container for the particles recorded in the respective vts file. </td></tr>
   </table>
