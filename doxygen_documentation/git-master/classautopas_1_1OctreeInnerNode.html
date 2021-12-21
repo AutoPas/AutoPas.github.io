@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">2.0.0-a763946</span>
+   &#160;<span id="projectnumber">2.0.0-031bf2a</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -169,6 +169,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aac6cb71946d4be62c68755b70be741d3"><td class="memItemLeft" align="right" valign="top">std::set&lt; <a class="el" href="classautopas_1_1OctreeLeafNode.html">OctreeLeafNode</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1OctreeInnerNode.html#aac6cb71946d4be62c68755b70be741d3">getLeavesInRange</a> (std::array&lt; double, 3 &gt; min, std::array&lt; double, 3 &gt; max) override</td></tr>
 <tr class="memdesc:aac6cb71946d4be62c68755b70be741d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find all leaves below this subtree that are in the given range.  <a href="classautopas_1_1OctreeInnerNode.html#aac6cb71946d4be62c68755b70be741d3">More...</a><br /></td></tr>
 <tr class="separator:aac6cb71946d4be62c68755b70be741d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e19699dc23eec8d947dc8867364ec2c"><td class="memTemplParams" colspan="2">template&lt;typename Lambda &gt; </td></tr>
+<tr class="memitem:a9e19699dc23eec8d947dc8867364ec2c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1OctreeInnerNode.html#a9e19699dc23eec8d947dc8867364ec2c">forEach</a> (Lambda forEachLambda)</td></tr>
+<tr class="memdesc:a9e19699dc23eec8d947dc8867364ec2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the forEach lambda to each particle.  <a href="classautopas_1_1OctreeInnerNode.html#a9e19699dc23eec8d947dc8867364ec2c">More...</a><br /></td></tr>
+<tr class="separator:a9e19699dc23eec8d947dc8867364ec2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a683ef2ed56e0359c7c7b5b6d78a47d5f"><td class="memTemplParams" colspan="2">template&lt;typename Lambda , typename A &gt; </td></tr>
+<tr class="memitem:a683ef2ed56e0359c7c7b5b6d78a47d5f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1OctreeInnerNode.html#a683ef2ed56e0359c7c7b5b6d78a47d5f">reduce</a> (Lambda reduceLambda, A &amp;result)</td></tr>
+<tr class="memdesc:a683ef2ed56e0359c7c7b5b6d78a47d5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the reduce lambda to each particle.  <a href="classautopas_1_1OctreeInnerNode.html#a683ef2ed56e0359c7c7b5b6d78a47d5f">More...</a><br /></td></tr>
+<tr class="separator:a683ef2ed56e0359c7c7b5b6d78a47d5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abe4e493d86d971745d2e4892dfc63b09"><td class="memTemplParams" colspan="2">template&lt;typename Lambda &gt; </td></tr>
+<tr class="memitem:abe4e493d86d971745d2e4892dfc63b09"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1OctreeInnerNode.html#abe4e493d86d971745d2e4892dfc63b09">forEach</a> (Lambda forEachLambda, const std::array&lt; double, 3 &gt; &amp;lowerCorner, const std::array&lt; double, 3 &gt; &amp;higherCorner, IteratorBehavior behavior)</td></tr>
+<tr class="memdesc:abe4e493d86d971745d2e4892dfc63b09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the forEach lambda to each particle in the region.  <a href="classautopas_1_1OctreeInnerNode.html#abe4e493d86d971745d2e4892dfc63b09">More...</a><br /></td></tr>
+<tr class="separator:abe4e493d86d971745d2e4892dfc63b09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada0ba1dc17d26fba50c19db7ed52643c"><td class="memTemplParams" colspan="2">template&lt;typename Lambda , typename A &gt; </td></tr>
+<tr class="memitem:ada0ba1dc17d26fba50c19db7ed52643c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1OctreeInnerNode.html#ada0ba1dc17d26fba50c19db7ed52643c">reduce</a> (Lambda reduceLambda, A &amp;result, const std::array&lt; double, 3 &gt; &amp;lowerCorner, const std::array&lt; double, 3 &gt; &amp;higherCorner, IteratorBehavior behavior)</td></tr>
+<tr class="memdesc:ada0ba1dc17d26fba50c19db7ed52643c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply the reduce lambda to each particle in the region.  <a href="classautopas_1_1OctreeInnerNode.html#ada0ba1dc17d26fba50c19db7ed52643c">More...</a><br /></td></tr>
+<tr class="separator:ada0ba1dc17d26fba50c19db7ed52643c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classautopas_1_1OctreeNodeInterface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classautopas_1_1OctreeNodeInterface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classautopas_1_1OctreeNodeInterface.html">autopas::OctreeNodeInterface&lt; Particle &gt;</a></td></tr>
 <tr class="memitem:a5a2519cb7f6d5c2b661636612eebf101 inherit pub_methods_classautopas_1_1OctreeNodeInterface"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1OctreeNodeInterface.html#a5a2519cb7f6d5c2b661636612eebf101">OctreeNodeInterface</a> (const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax, <a class="el" href="classautopas_1_1OctreeNodeInterface.html">OctreeNodeInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; *parent, const int unsigned treeSplitThreshold, const double interactionLength, const double cellSizeFactor)</td></tr>
 <tr class="memdesc:a5a2519cb7f6d5c2b661636612eebf101 inherit pub_methods_classautopas_1_1OctreeNodeInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an octree node interface by initializing the given fields.  <a href="classautopas_1_1OctreeNodeInterface.html#a5a2519cb7f6d5c2b661636612eebf101">More...</a><br /></td></tr>
@@ -546,6 +562,119 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
+<a id="a9e19699dc23eec8d947dc8867364ec2c" name="a9e19699dc23eec8d947dc8867364ec2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e19699dc23eec8d947dc8867364ec2c">&#9670;&nbsp;</a></span>forEach() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<div class="memtemplate">
+template&lt;typename Lambda &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1OctreeInnerNode.html">autopas::OctreeInnerNode</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::forEach </td>
+          <td>(</td>
+          <td class="paramtype">Lambda&#160;</td>
+          <td class="paramname"><em>forEachLambda</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply the forEach lambda to each particle. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Lambda</td><td>Function type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">forEachLambda</td><td>Function to apply </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="abe4e493d86d971745d2e4892dfc63b09" name="abe4e493d86d971745d2e4892dfc63b09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abe4e493d86d971745d2e4892dfc63b09">&#9670;&nbsp;</a></span>forEach() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<div class="memtemplate">
+template&lt;typename Lambda &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1OctreeInnerNode.html">autopas::OctreeInnerNode</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::forEach </td>
+          <td>(</td>
+          <td class="paramtype">Lambda&#160;</td>
+          <td class="paramname"><em>forEachLambda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lowerCorner</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>higherCorner</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IteratorBehavior&#160;</td>
+          <td class="paramname"><em>behavior</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply the forEach lambda to each particle in the region. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Lambda</td><td>Function type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">forEachLambda</td><td>Function to apply </td></tr>
+    <tr><td class="paramname">lowerCorner</td><td>Lower corner of region </td></tr>
+    <tr><td class="paramname">higherCorner</td><td>Higher corner of region </td></tr>
+    <tr><td class="paramname">behavior</td><td>Parameter is only there to reuse functionality already implemented in <a class="el" href="classautopas_1_1FullParticleCell.html" title="This class handles the storage of particles in their full form.">FullParticleCell</a>, should be set to ownedOrHalo </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a523078e017d85cb74d69725613e253b8" name="a523078e017d85cb74d69725613e253b8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a523078e017d85cb74d69725613e253b8">&#9670;&nbsp;</a></span>getChild()</h2>
 
@@ -774,6 +903,139 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <dl class="section return"><dt>Returns</dt><dd>A std::unique_ptr to a newly created subtree or nullptr if the subtree did not change </dd></dl>
 
 <p>Implements <a class="el" href="classautopas_1_1OctreeNodeInterface.html#aa510a0dabcbbb11625875d3f6ef20343">autopas::OctreeNodeInterface&lt; Particle &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a683ef2ed56e0359c7c7b5b6d78a47d5f" name="a683ef2ed56e0359c7c7b5b6d78a47d5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a683ef2ed56e0359c7c7b5b6d78a47d5f">&#9670;&nbsp;</a></span>reduce() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<div class="memtemplate">
+template&lt;typename Lambda , typename A &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1OctreeInnerNode.html">autopas::OctreeInnerNode</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::reduce </td>
+          <td>(</td>
+          <td class="paramtype">Lambda&#160;</td>
+          <td class="paramname"><em>reduceLambda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">A &amp;&#160;</td>
+          <td class="paramname"><em>result</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply the reduce lambda to each particle. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Lambda</td><td>Function type </td></tr>
+    <tr><td class="paramname">A</td><td>Initial value type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reduceLambda</td><td>Function to apply </td></tr>
+    <tr><td class="paramname">result</td><td>Initial value </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ada0ba1dc17d26fba50c19db7ed52643c" name="ada0ba1dc17d26fba50c19db7ed52643c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada0ba1dc17d26fba50c19db7ed52643c">&#9670;&nbsp;</a></span>reduce() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<div class="memtemplate">
+template&lt;typename Lambda , typename A &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1OctreeInnerNode.html">autopas::OctreeInnerNode</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::reduce </td>
+          <td>(</td>
+          <td class="paramtype">Lambda&#160;</td>
+          <td class="paramname"><em>reduceLambda</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">A &amp;&#160;</td>
+          <td class="paramname"><em>result</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>lowerCorner</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>higherCorner</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">IteratorBehavior&#160;</td>
+          <td class="paramname"><em>behavior</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Apply the reduce lambda to each particle in the region. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Lambda</td><td>Function type </td></tr>
+    <tr><td class="paramname">A</td><td>Initial value type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reduceLambda</td><td>Function to apply </td></tr>
+    <tr><td class="paramname">result</td><td>Initial value </td></tr>
+    <tr><td class="paramname">lowerCorner</td><td>Lower corner of region </td></tr>
+    <tr><td class="paramname">higherCorner</td><td>Higher corner of region </td></tr>
+    <tr><td class="paramname">behavior</td><td>Parameter is only there to reuse functionality already implemented in <a class="el" href="classautopas_1_1FullParticleCell.html" title="This class handles the storage of particles in their full form.">FullParticleCell</a>, should be set to ownedOrHalo </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
