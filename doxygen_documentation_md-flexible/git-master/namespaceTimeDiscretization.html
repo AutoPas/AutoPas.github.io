@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">2.0.0-4da9368</span>
+   &#160;<span id="projectnumber">2.0.0-2b262a8</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -105,9 +105,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a7d0188b73c6f30c22a002000d157f9ea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTimeDiscretization.html#a7d0188b73c6f30c22a002000d157f9ea">calculatePositions</a> (autopas::AutoPas&lt; ParticleType &gt; &amp;autoPasContainer, const ParticlePropertiesLibraryType &amp;particlePropertiesLibrary, const double &amp;deltaT)</td></tr>
-<tr class="memdesc:a7d0188b73c6f30c22a002000d157f9ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate and update the position for every particle using the Störmer-Verlet Algorithm.  <a href="namespaceTimeDiscretization.html#a7d0188b73c6f30c22a002000d157f9ea">More...</a><br /></td></tr>
-<tr class="separator:a7d0188b73c6f30c22a002000d157f9ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae9e2f7cfbe14dd5bdce77de59ad66145"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTimeDiscretization.html#ae9e2f7cfbe14dd5bdce77de59ad66145">calculatePositions</a> (autopas::AutoPas&lt; ParticleType &gt; &amp;autoPasContainer, const ParticlePropertiesLibraryType &amp;particlePropertiesLibrary, const double &amp;deltaT, const std::array&lt; double, 3 &gt; &amp;globalForce)</td></tr>
+<tr class="memdesc:ae9e2f7cfbe14dd5bdce77de59ad66145"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate and update the position for every particle using the Störmer-Verlet Algorithm.  <a href="namespaceTimeDiscretization.html#ae9e2f7cfbe14dd5bdce77de59ad66145">More...</a><br /></td></tr>
+<tr class="separator:ae9e2f7cfbe14dd5bdce77de59ad66145"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad1f34076f8440c225e0d8dfe82672100"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceTimeDiscretization.html#ad1f34076f8440c225e0d8dfe82672100">calculateVelocities</a> (autopas::AutoPas&lt; ParticleType &gt; &amp;autoPasContainer, const ParticlePropertiesLibraryType &amp;particlePropertiesLibrary, const double &amp;deltaT)</td></tr>
 <tr class="memdesc:ad1f34076f8440c225e0d8dfe82672100"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate and update the velocity for every particle using the the Störmer-Verlet Algorithm.  <a href="namespaceTimeDiscretization.html#ad1f34076f8440c225e0d8dfe82672100">More...</a><br /></td></tr>
 <tr class="separator:ad1f34076f8440c225e0d8dfe82672100"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -115,8 +115,8 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Functions for updating velocities and positions as simulation time progresses. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a7d0188b73c6f30c22a002000d157f9ea" name="a7d0188b73c6f30c22a002000d157f9ea"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d0188b73c6f30c22a002000d157f9ea">&#9670;&nbsp;</a></span>calculatePositions()</h2>
+<a id="ae9e2f7cfbe14dd5bdce77de59ad66145" name="ae9e2f7cfbe14dd5bdce77de59ad66145"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae9e2f7cfbe14dd5bdce77de59ad66145">&#9670;&nbsp;</a></span>calculatePositions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -137,7 +137,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const double &amp;&#160;</td>
-          <td class="paramname"><em>deltaT</em>&#160;</td>
+          <td class="paramname"><em>deltaT</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>globalForce</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -153,6 +159,7 @@ Functions</h2></td></tr>
     <tr><td class="paramname">autoPasContainer</td><td>The container for which to update the positions. </td></tr>
     <tr><td class="paramname">particlePropertiesLibrary</td><td>The particle properties library for the particles in the container. </td></tr>
     <tr><td class="paramname">deltaT</td><td>The time step width. </td></tr>
+    <tr><td class="paramname">globalForce</td><td>Base force value to which every particle is reset. </td></tr>
   </table>
   </dd>
 </dl>
