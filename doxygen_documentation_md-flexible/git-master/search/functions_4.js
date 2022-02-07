@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['finalize_350',['finalize',['../classSimulation.html#aa49bdaf89bc48b8dbb5a8e88d6b74daa',1,'Simulation']]],
-  ['findword_351',['findWord',['../namespaceanonymous__namespace_02MDFlexConfig_8cpp_03.html#acbb44611df2b8611613997996bc31641',1,'anonymous_namespace{MDFlexConfig.cpp}']]],
-  ['flushparticles_352',['flushParticles',['../classMDFlexConfig.html#ab4729480b723538f64823b9d16b7c26f',1,'MDFlexConfig']]]
+  ['exchangehaloparticles_361',['exchangeHaloParticles',['../classRegularGridDecomposition.html#a6575cda5be80b6aca968557e03054350',1,'RegularGridDecomposition']]],
+  ['exchangemigratingparticles_362',['exchangeMigratingParticles',['../classRegularGridDecomposition.html#acd2cb63a3e62c47379f903ef667aa106',1,'RegularGridDecomposition']]]
 ];

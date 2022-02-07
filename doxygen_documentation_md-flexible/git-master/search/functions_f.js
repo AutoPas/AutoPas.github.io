@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wrappositionsaroundboundaries_411',['wrapPositionsAroundBoundaries',['../namespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03.html#a5b7a3a95ac8708b577a74a1ebaffb4f4',1,'BoundaryConditions::anonymous_namespace{BoundaryConditions.h}']]]
+  ['update_427',['update',['../classDomainDecomposition.html#afc8baea91962b2d332ebb07a05d7e97c',1,'DomainDecomposition::update()'],['../classRegularGridDecomposition.html#a5312249f4807c309ead1832cee2463d5',1,'RegularGridDecomposition::update()']]]
 ];
