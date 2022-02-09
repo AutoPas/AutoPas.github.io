@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">2.0.0-caf01f2</span>
+   &#160;<span id="projectnumber">2.0.0-e79a3de</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -172,6 +172,7 @@ Public Types</h2></td></tr>
 , <br />
 &#160;&#160;<a class="el" href="classautopas_1_1options_1_1TraversalOption.html#a581c23bd69741242b26363a84b5c0d44a8c45d3337ec1d82d4e4e60120bc41a25">vlp_sliced_balanced</a>
 , <a class="el" href="classautopas_1_1options_1_1TraversalOption.html#a581c23bd69741242b26363a84b5c0d44a810346b2328cba06e1baac7449ce3dd7">vlp_sliced_c02</a>
+, <a class="el" href="classautopas_1_1options_1_1TraversalOption.html#a581c23bd69741242b26363a84b5c0d44ac9532b5f9195955dbe5feedfe0e03413">vlp_c08</a>
 , <a class="el" href="classautopas_1_1options_1_1TraversalOption.html#a581c23bd69741242b26363a84b5c0d44adc19ac45bb8274d076c28f9ee60f3adb">vvl_as_built</a>
 <br />
  }</td></tr>
@@ -315,6 +316,9 @@ Static Public Member Functions</h2></td></tr>
 </td></tr>
 <tr><td class="fieldname"><a id="a581c23bd69741242b26363a84b5c0d44a810346b2328cba06e1baac7449ce3dd7" name="a581c23bd69741242b26363a84b5c0d44a810346b2328cba06e1baac7449ce3dd7"></a>vlp_sliced_c02&#160;</td><td class="fielddoc"><p ><a class="el" href="classautopas_1_1VLCSlicedC02Traversal.html" title="This class provides the colored sliced traversal.">VLCSlicedC02Traversal</a> : Equivalent to <a class="el" href="classautopas_1_1LCSlicedC02Traversal.html" title="This class provides the colored sliced traversal.">LCSlicedC02Traversal</a>. </p>
 <p >1D slicing with as many slices of minimal thickness as possible. No locks but two-way coloring of slices. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a581c23bd69741242b26363a84b5c0d44ac9532b5f9195955dbe5feedfe0e03413" name="a581c23bd69741242b26363a84b5c0d44ac9532b5f9195955dbe5feedfe0e03413"></a>vlp_c08&#160;</td><td class="fielddoc"><p ><a class="el" href="classautopas_1_1VLCCellPairC08Traversal.html" title="C08 traversal for VLCCellPairNeighborList.">VLCCellPairC08Traversal</a> : based on <a class="el" href="classautopas_1_1LCC08Traversal.html" title="This class provides the lc_c08 traversal.">LCC08Traversal</a>. </p>
+<p >The pairwise neighbor list allows access to the relevant pairs of interacting particles for each pair of cells, including the diagonal non-base pair of cells in the standard c08 step. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a581c23bd69741242b26363a84b5c0d44adc19ac45bb8274d076c28f9ee60f3adb" name="a581c23bd69741242b26363a84b5c0d44adc19ac45bb8274d076c28f9ee60f3adb"></a>vvl_as_built&#160;</td><td class="fielddoc"><p ><a class="el" href="classautopas_1_1VVLAsBuildTraversal.html" title="Traversal for VarVerletLists with VerletNeighborListAsBuild as neighbor list.">VVLAsBuildTraversal</a> : Track which thread built what neighbor list and schedule them the same way for the pairwise iteration. </p>
 <p >Provides some kind of load balancing if the force calculation is cheap but is sensitive to hardware fluctuations. </p>

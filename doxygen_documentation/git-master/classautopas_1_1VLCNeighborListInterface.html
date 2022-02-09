@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">2.0.0-caf01f2</span>
+   &#160;<span id="projectnumber">2.0.0-e79a3de</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -148,6 +148,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~VLCNeighborListIn
 <tr class="memitem:ac0bbf377bce4db2a8c7a5bc4eed0f1ee"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1VLCNeighborListInterface.html#ac0bbf377bce4db2a8c7a5bc4eed0f1ee">extractSoA</a> (TFunctor *f)</td></tr>
 <tr class="memdesc:ac0bbf377bce4db2a8c7a5bc4eed0f1ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Extracts cells from structure of arrays.  <a href="classautopas_1_1VLCNeighborListInterface.html#ac0bbf377bce4db2a8c7a5bc4eed0f1ee">More...</a><br /></td></tr>
 <tr class="separator:ac0bbf377bce4db2a8c7a5bc4eed0f1ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72a7c7b63d28ea6e733cdba89bac16dc"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VLCNeighborListInterface.html#a72a7c7b63d28ea6e733cdba89bac16dc">setUpTraversal</a> (<a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *traversal)=0</td></tr>
+<tr class="memdesc:a72a7c7b63d28ea6e733cdba89bac16dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Assigns the current traversal to the correct traversal interface.  <a href="classautopas_1_1VLCNeighborListInterface.html#a72a7c7b63d28ea6e733cdba89bac16dc">More...</a><br /></td></tr>
+<tr class="separator:a72a7c7b63d28ea6e733cdba89bac16dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -536,6 +539,44 @@ template&lt;class TFunctor &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>loaded structure of arrays </dd></dl>
+
+</div>
+</div>
+<a id="a72a7c7b63d28ea6e733cdba89bac16dc" name="a72a7c7b63d28ea6e733cdba89bac16dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72a7c7b63d28ea6e733cdba89bac16dc">&#9670;&nbsp;</a></span>setUpTraversal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classautopas_1_1VLCNeighborListInterface.html">autopas::VLCNeighborListInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::setUpTraversal </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *&#160;</td>
+          <td class="paramname"><em>traversal</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Assigns the current traversal to the correct traversal interface. </p>
+<p >The choice of traversal interface depends on the type(s) of neighbor list allowed to use the current traversal. Currently <a class="el" href="classautopas_1_1VLCCellPairTraversalInterface.html" title="Interface for traversals used with VLCCellPairNeighborList.">VLCCellPairTraversalInterface</a> handles the traversals allowed solely for <a class="el" href="classautopas_1_1VLCCellPairNeighborList.html" title="Neighbor list to be used with VerletListsCells container.">VLCCellPairNeighborList</a>, while <a class="el" href="classautopas_1_1VLCTraversalInterface.html" title="This class provides the Traversal Interface for the verlet lists cells container.">VLCTraversalInterface</a> handles the traversals allowed for both <a class="el" href="classautopas_1_1VLCCellPairNeighborList.html" title="Neighbor list to be used with VerletListsCells container.">VLCCellPairNeighborList</a> and <a class="el" href="classautopas_1_1VLCAllCellsNeighborList.html" title="Neighbor list to be used with VerletListsCells container.">VLCAllCellsNeighborList</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">traversal</td><td>the current traversal </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implemented in <a class="el" href="classautopas_1_1VLCAllCellsNeighborList.html#a8be14b9a58393882fb49bb1acc70d004">autopas::VLCAllCellsNeighborList&lt; Particle &gt;</a>, and <a class="el" href="classautopas_1_1VLCCellPairNeighborList.html#aa4fb2b3462ea6ddaf44bd1da9444d1df">autopas::VLCCellPairNeighborList&lt; Particle &gt;</a>.</p>
 
 </div>
 </div>

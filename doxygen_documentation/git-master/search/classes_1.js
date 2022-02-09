@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['balancedtraversal_1412',['BalancedTraversal',['../classautopas_1_1BalancedTraversal.html',1,'autopas']]],
-  ['bayesianclustersearch_1413',['BayesianClusterSearch',['../classautopas_1_1BayesianClusterSearch.html',1,'autopas']]],
-  ['bayesiansearch_1414',['BayesianSearch',['../classautopas_1_1BayesianSearch.html',1,'autopas']]]
+  ['balancedtraversal_1427',['BalancedTraversal',['../classautopas_1_1BalancedTraversal.html',1,'autopas']]],
+  ['bayesianclustersearch_1428',['BayesianClusterSearch',['../classautopas_1_1BayesianClusterSearch.html',1,'autopas']]],
+  ['bayesiansearch_1429',['BayesianSearch',['../classautopas_1_1BayesianSearch.html',1,'autopas']]]
 ];
