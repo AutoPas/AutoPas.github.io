@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">2.0.0-e79a3de</span>
+   &#160;<span id="projectnumber">2.0.0-1bc6c6a</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -112,9 +112,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af45100e523e84af9661cec4ca895282d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#af45100e523e84af9661cec4ca895282d">AutoTuner</a> (std::array&lt; double, 3 &gt; boxMin, std::array&lt; double, 3 &gt; boxMax, double cutoff, double verletSkin, unsigned int verletClusterSize, std::unique_ptr&lt; <a class="el" href="classautopas_1_1TuningStrategyInterface.html">TuningStrategyInterface</a> &gt; tuningStrategy, SelectorStrategyOption selectorStrategy, unsigned int tuningInterval, unsigned int maxSamples, const std::string &amp;outputSuffix=&quot;&quot;)</td></tr>
-<tr class="memdesc:af45100e523e84af9661cec4ca895282d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classautopas_1_1AutoTuner.html" title="Calls to the iteratePairwise() method are passed through this class for two reasons:">AutoTuner</a> that generates all configurations from the given options.  <a href="classautopas_1_1AutoTuner.html#af45100e523e84af9661cec4ca895282d">More...</a><br /></td></tr>
-<tr class="separator:af45100e523e84af9661cec4ca895282d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02a630b0fde871d1e3b14f383930332c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a02a630b0fde871d1e3b14f383930332c">AutoTuner</a> (std::array&lt; double, 3 &gt; boxMin, std::array&lt; double, 3 &gt; boxMax, double cutoff, double verletSkin, unsigned int verletClusterSize, std::unique_ptr&lt; <a class="el" href="classautopas_1_1TuningStrategyInterface.html">TuningStrategyInterface</a> &gt; tuningStrategy, SelectorStrategyOption selectorStrategy, unsigned int tuningInterval, unsigned int maxSamples, unsigned int rebuildFrequency, const std::string &amp;outputSuffix=&quot;&quot;)</td></tr>
+<tr class="memdesc:a02a630b0fde871d1e3b14f383930332c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classautopas_1_1AutoTuner.html" title="Calls to the iteratePairwise() method are passed through this class for two reasons:">AutoTuner</a> that generates all configurations from the given options.  <a href="classautopas_1_1AutoTuner.html#a02a630b0fde871d1e3b14f383930332c">More...</a><br /></td></tr>
+<tr class="separator:a02a630b0fde871d1e3b14f383930332c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a92163468b7a80449dcd963bd42d62c67"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1AutoTuner.html">AutoTuner</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a92163468b7a80449dcd963bd42d62c67">operator=</a> (<a class="el" href="classautopas_1_1AutoTuner.html">AutoTuner</a> &amp;&amp;other) noexcept</td></tr>
 <tr class="memdesc:a92163468b7a80449dcd963bd42d62c67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator.  <a href="classautopas_1_1AutoTuner.html#a92163468b7a80449dcd963bd42d62c67">More...</a><br /></td></tr>
 <tr class="separator:a92163468b7a80449dcd963bd42d62c67"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -161,8 +161,8 @@ class autopas::AutoTuner&lt; Particle &gt;</div><p >Calls to the <a class="el" h
   </dd>
 </dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af45100e523e84af9661cec4ca895282d" name="af45100e523e84af9661cec4ca895282d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af45100e523e84af9661cec4ca895282d">&#9670;&nbsp;</a></span>AutoTuner()</h2>
+<a id="a02a630b0fde871d1e3b14f383930332c" name="a02a630b0fde871d1e3b14f383930332c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02a630b0fde871d1e3b14f383930332c">&#9670;&nbsp;</a></span>AutoTuner()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -229,6 +229,12 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>rebuildFrequency</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>outputSuffix</em> = <code>&quot;&quot;</code>&#160;</td>
         </tr>
@@ -257,6 +263,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
     <tr><td class="paramname">selectorStrategy</td><td>Strategy for the configuration selection. </td></tr>
     <tr><td class="paramname">tuningInterval</td><td>Number of time steps after which the auto-tuner shall reevaluate all selections. </td></tr>
     <tr><td class="paramname">maxSamples</td><td>Number of samples that shall be collected for each combination. </td></tr>
+    <tr><td class="paramname">rebuildFrequency</td><td>The rebuild frequency this <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> instance uses. </td></tr>
     <tr><td class="paramname">outputSuffix</td><td>Suffix for all output files produced by this class. </td></tr>
   </table>
   </dd>

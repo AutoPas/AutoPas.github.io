@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">2.0.0-e79a3de</span>
+   &#160;<span id="projectnumber">2.0.0-1bc6c6a</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -119,9 +119,9 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~TuningDataLogger</b> ()</td></tr>
 <tr class="memdesc:a592be40947688226a689b912da9d6eb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor drops the logger from the spd registry. <br /></td></tr>
 <tr class="separator:a592be40947688226a689b912da9d6eb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fd007c041d06a17d03b522246eca48c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningDataLogger.html#a5fd007c041d06a17d03b522246eca48c">logTuningData</a> (const <a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a> &amp;configuration, const std::vector&lt; long &gt; &amp;samples, size_t iteration, long reducedValue, long smoothedVale)</td></tr>
-<tr class="memdesc:a5fd007c041d06a17d03b522246eca48c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log the result of a tuning phase.  <a href="classautopas_1_1TuningDataLogger.html#a5fd007c041d06a17d03b522246eca48c">More...</a><br /></td></tr>
-<tr class="separator:a5fd007c041d06a17d03b522246eca48c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a855f59ac1f8d5135b05390d551d20d8a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningDataLogger.html#a855f59ac1f8d5135b05390d551d20d8a">logTuningData</a> (const <a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a> &amp;configuration, const std::vector&lt; long &gt; &amp;samplesRebuildingNeighborLists, const std::vector&lt; long &gt; &amp;samplesNotRebuildingNeighborLists, size_t iteration, long reducedValue, long smoothedVale)</td></tr>
+<tr class="memdesc:a855f59ac1f8d5135b05390d551d20d8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log the result of a tuning phase.  <a href="classautopas_1_1TuningDataLogger.html#a855f59ac1f8d5135b05390d551d20d8a">More...</a><br /></td></tr>
+<tr class="separator:a855f59ac1f8d5135b05390d551d20d8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >Helper to log results of the tuning process to a csv file for easier analysis. </p>
@@ -174,8 +174,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a5fd007c041d06a17d03b522246eca48c" name="a5fd007c041d06a17d03b522246eca48c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fd007c041d06a17d03b522246eca48c">&#9670;&nbsp;</a></span>logTuningData()</h2>
+<a id="a855f59ac1f8d5135b05390d551d20d8a" name="a855f59ac1f8d5135b05390d551d20d8a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a855f59ac1f8d5135b05390d551d20d8a">&#9670;&nbsp;</a></span>logTuningData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -190,7 +190,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::vector&lt; long &gt; &amp;&#160;</td>
-          <td class="paramname"><em>samples</em>, </td>
+          <td class="paramname"><em>samplesRebuildingNeighborLists</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; long &gt; &amp;&#160;</td>
+          <td class="paramname"><em>samplesNotRebuildingNeighborLists</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -222,7 +228,8 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">configuration</td><td></td></tr>
-    <tr><td class="paramname">samples</td><td></td></tr>
+    <tr><td class="paramname">samplesRebuildingNeighborLists</td><td></td></tr>
+    <tr><td class="paramname">samplesNotRebuildingNeighborLists</td><td></td></tr>
     <tr><td class="paramname">iteration</td><td></td></tr>
     <tr><td class="paramname">reducedValue</td><td></td></tr>
     <tr><td class="paramname">smoothedVale</td><td></td></tr>

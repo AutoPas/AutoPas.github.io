@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">2.0.0-e79a3de</span>
+   &#160;<span id="projectnumber">2.0.0-1bc6c6a</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -165,14 +165,14 @@ $(function() {
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    _externalMPICommunicator = <span class="keyword">true</span>;</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  }</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  _autoTuner = std::make_unique&lt;autopas::AutoTuner&lt;Particle&gt;&gt;(</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      _boxMin, _boxMax, _cutoff, _verletSkin, _verletClusterSize,</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      std::move(TuningStrategyFactory::generateTuningStrategy(</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>          _tuningStrategyOption, _allowedContainers, *_allowedCellSizeFactors, _allowedTraversals,</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>          _allowedLoadEstimators, _allowedDataLayouts, _allowedNewton3Options, _maxEvidence, _relativeOptimumRange,</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>          _maxTuningPhasesWithoutTest, _relativeBlacklistRange, _evidenceFirstPrediction, _acquisitionFunctionOption,</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>          _extrapolationMethodOption, _outputSuffix, _mpiStrategyOption, _autopasMPICommunicator)),</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      _selectorStrategy, _tuningInterval, _numSamples, _outputSuffix);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keyword">auto</span> tuningStrategy = TuningStrategyFactory::generateTuningStrategy(</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      _tuningStrategyOption, _allowedContainers, *_allowedCellSizeFactors, _allowedTraversals, _allowedLoadEstimators,</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      _allowedDataLayouts, _allowedNewton3Options, _maxEvidence, _relativeOptimumRange, _maxTuningPhasesWithoutTest,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      _relativeBlacklistRange, _evidenceFirstPrediction, _acquisitionFunctionOption, _extrapolationMethodOption,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      _outputSuffix, _mpiStrategyOption, _autopasMPICommunicator);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  _autoTuner = std::make_unique&lt;autopas::AutoTuner&lt;Particle&gt;&gt;(</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>      _boxMin, _boxMax, _cutoff, _verletSkin, _verletClusterSize, std::move(tuningStrategy), _selectorStrategy,</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>      _tuningInterval, _numSamples, _verletRebuildFrequency, _outputSuffix);</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  _logicHandler =</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      std::make_unique&lt;std::remove_reference_t&lt;<span class="keyword">decltype</span>(*_logicHandler)&gt;&gt;(*(_autoTuner.get()), _verletRebuildFrequency);</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
@@ -296,7 +296,7 @@ $(function() {
 <div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>}</div>
 <div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
 <div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle&gt;</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span><span class="keyword">const</span> std::shared_ptr&lt;autopas::ParticleContainerInterface&lt;Particle&gt;&gt; AutoPas&lt;Particle&gt;::getContainer()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>std::shared_ptr&lt;const autopas::ParticleContainerInterface&lt;Particle&gt;&gt; AutoPas&lt;Particle&gt;::getContainer()<span class="keyword"> const </span>{</div>
 <div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  <span class="keywordflow">return</span> _autoTuner-&gt;getContainer();</div>
 <div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>}</div>
 <div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>

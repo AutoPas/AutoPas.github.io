@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">2.0.0-e79a3de</span>
+   &#160;<span id="projectnumber">2.0.0-1bc6c6a</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -116,7 +116,7 @@ $(function() {
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="namespaceautopas_1_1OptimumSelector.html#a02ae1d0d8520f1fd4f7552dc80125a4a">   26</a></span><span class="keyword">inline</span> <span class="keywordtype">long</span> <a class="code" href="namespaceautopas_1_1OptimumSelector.html#a02ae1d0d8520f1fd4f7552dc80125a4a">minValue</a>(<span class="keyword">const</span> std::vector&lt;long&gt; &amp;values) { <span class="keywordflow">return</span> *std::min_element(values.cbegin(), values.cend()); }</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="namespaceautopas_1_1OptimumSelector.html#ab45604996f8744939ab7bda276061fe2">   33</a></span><span class="keyword">inline</span> <span class="keywordtype">long</span> <a class="code" href="namespaceautopas_1_1OptimumSelector.html#ab45604996f8744939ab7bda276061fe2">meanValue</a>(<span class="keyword">const</span> std::vector&lt;long&gt; &amp;values) {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keywordflow">return</span> std::accumulate(values.cbegin(), values.cend(), 0l) / values.size();</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keywordflow">return</span> std::accumulate(values.cbegin(), values.cend(), 0l) / <span class="keyword">static_cast&lt;</span><span class="keywordtype">long</span><span class="keyword">&gt;</span>(values.size());</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="namespaceautopas_1_1OptimumSelector.html#a015e77a6b93ed4597fe2aa93fc5e2641">   42</a></span><span class="keyword">inline</span> <span class="keywordtype">long</span> <a class="code" href="namespaceautopas_1_1OptimumSelector.html#a015e77a6b93ed4597fe2aa93fc5e2641">medianValue</a>(std::vector&lt;long&gt; values) {</div>
@@ -127,25 +127,29 @@ $(function() {
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>}</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="namespaceautopas_1_1OptimumSelector.html#a90bbf5bf287768bd239e8f945c73be13">   56</a></span><span class="keyword">inline</span> <span class="keywordtype">long</span> <a class="code" href="namespaceautopas_1_1OptimumSelector.html#a90bbf5bf287768bd239e8f945c73be13">optimumValue</a>(<span class="keyword">const</span> std::vector&lt;long&gt; &amp;values, SelectorStrategyOption strategy) {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordflow">switch</span> (strategy) {</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">case</span> SelectorStrategyOption::fastestAbs: {</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      <span class="keywordflow">return</span> <a class="code" href="namespaceautopas_1_1OptimumSelector.html#a02ae1d0d8520f1fd4f7552dc80125a4a">minValue</a>(values);</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordflow">case</span> SelectorStrategyOption::fastestMean: {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      <span class="keywordflow">return</span> <a class="code" href="namespaceautopas_1_1OptimumSelector.html#ab45604996f8744939ab7bda276061fe2">meanValue</a>(values);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">case</span> SelectorStrategyOption::fastestMedian: {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      <span class="keywordflow">return</span> <a class="code" href="namespaceautopas_1_1OptimumSelector.html#a015e77a6b93ed4597fe2aa93fc5e2641">medianValue</a>(values);</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      <span class="comment">// no default to get appropriate compiler warnings</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  }</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <a class="code" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a>(<span class="stringliteral">&quot;OptionSelector: Unknown selector strategy {}!&quot;</span>, strategy);</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>}</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}  <span class="comment">// namespace autopas::OptimumSelector</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordflow">if</span> (values.empty()) {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordflow">return</span> 0l;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  }</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keywordflow">switch</span> (strategy) {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">case</span> SelectorStrategyOption::fastestAbs: {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>      <span class="keywordflow">return</span> <a class="code" href="namespaceautopas_1_1OptimumSelector.html#a02ae1d0d8520f1fd4f7552dc80125a4a">minValue</a>(values);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordflow">case</span> SelectorStrategyOption::fastestMean: {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      <span class="keywordflow">return</span> <a class="code" href="namespaceautopas_1_1OptimumSelector.html#ab45604996f8744939ab7bda276061fe2">meanValue</a>(values);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordflow">case</span> SelectorStrategyOption::fastestMedian: {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      <span class="keywordflow">return</span> <a class="code" href="namespaceautopas_1_1OptimumSelector.html#a015e77a6b93ed4597fe2aa93fc5e2641">medianValue</a>(values);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    }</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      <span class="comment">// no default to get appropriate compiler warnings</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  }</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <a class="code" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a>(<span class="stringliteral">&quot;OptionSelector: Unknown selector strategy {}!&quot;</span>, strategy);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>}</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>}  <span class="comment">// namespace autopas::OptimumSelector</span></div>
 <div class="ttc" id="aExceptionHandler_8h_html"><div class="ttname"><a href="ExceptionHandler_8h.html">ExceptionHandler.h</a></div></div>
 <div class="ttc" id="aSelectorStrategyOption_8h_html"><div class="ttname"><a href="SelectorStrategyOption_8h.html">SelectorStrategyOption.h</a></div></div>
 <div class="ttc" id="aclassautopas_1_1utils_1_1ExceptionHandler_html_ae61b9aac49a90a9ff86859c73005ee07"><div class="ttname"><a href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a></div><div class="ttdeci">static void exception(const Exception e)</div><div class="ttdoc">Handle an exception derived by std::exception.</div><div class="ttdef"><b>Definition:</b> ExceptionHandler.h:66</div></div>

@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">2.0.0-e79a3de</span>
+   &#160;<span id="projectnumber">2.0.0-1bc6c6a</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -116,19 +116,21 @@ $(function() {
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <a class="code" href="classautopas_1_1TuningDataLogger.html#a592be40947688226a689b912da9d6eb8">~TuningDataLogger</a>();</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keywordtype">void</span> <a class="code" href="classautopas_1_1TuningDataLogger.html#a5fd007c041d06a17d03b522246eca48c">logTuningData</a>(<span class="keyword">const</span> <a class="code" href="classautopas_1_1Configuration.html">autopas::Configuration</a> &amp;configuration, <span class="keyword">const</span> std::vector&lt;long&gt; &amp;samples, <span class="keywordtype">size_t</span> iteration,</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                     <span class="keywordtype">long</span> reducedValue, <span class="keywordtype">long</span> smoothedVale);</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  std::string _loggerName;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}  <span class="comment">// namespace autopas</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keywordtype">void</span> <a class="code" href="classautopas_1_1TuningDataLogger.html#a855f59ac1f8d5135b05390d551d20d8a">logTuningData</a>(<span class="keyword">const</span> <a class="code" href="classautopas_1_1Configuration.html">autopas::Configuration</a> &amp;configuration,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                     <span class="keyword">const</span> std::vector&lt;long&gt; &amp;samplesRebuildingNeighborLists,</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                     <span class="keyword">const</span> std::vector&lt;long&gt; &amp;samplesNotRebuildingNeighborLists, <span class="keywordtype">size_t</span> iteration, <span class="keywordtype">long</span> reducedValue,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                     <span class="keywordtype">long</span> smoothedVale);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  std::string _loggerName;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>};</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}  <span class="comment">// namespace autopas</span></div>
 <div class="ttc" id="aConfiguration_8h_html"><div class="ttname"><a href="Configuration_8h.html">Configuration.h</a></div></div>
 <div class="ttc" id="aclassautopas_1_1Configuration_html"><div class="ttname"><a href="classautopas_1_1Configuration.html">autopas::Configuration</a></div><div class="ttdoc">Class containing multiple options that form an algorithm configuration for the pairwise iteration.</div><div class="ttdef"><b>Definition:</b> Configuration.h:23</div></div>
 <div class="ttc" id="aclassautopas_1_1TuningDataLogger_html"><div class="ttname"><a href="classautopas_1_1TuningDataLogger.html">autopas::TuningDataLogger</a></div><div class="ttdoc">Helper to log results of the tuning process to a csv file for easier analysis.</div><div class="ttdef"><b>Definition:</b> TuningDataLogger.h:23</div></div>
 <div class="ttc" id="aclassautopas_1_1TuningDataLogger_html_a592be40947688226a689b912da9d6eb8"><div class="ttname"><a href="classautopas_1_1TuningDataLogger.html#a592be40947688226a689b912da9d6eb8">autopas::TuningDataLogger::~TuningDataLogger</a></div><div class="ttdeci">~TuningDataLogger()</div><div class="ttdoc">Destructor drops the logger from the spd registry.</div><div class="ttdef"><b>Definition:</b> TuningDataLogger.cpp:37</div></div>
-<div class="ttc" id="aclassautopas_1_1TuningDataLogger_html_a5fd007c041d06a17d03b522246eca48c"><div class="ttname"><a href="classautopas_1_1TuningDataLogger.html#a5fd007c041d06a17d03b522246eca48c">autopas::TuningDataLogger::logTuningData</a></div><div class="ttdeci">void logTuningData(const autopas::Configuration &amp;configuration, const std::vector&lt; long &gt; &amp;samples, size_t iteration, long reducedValue, long smoothedVale)</div><div class="ttdoc">Log the result of a tuning phase.</div><div class="ttdef"><b>Definition:</b> TuningDataLogger.cpp:43</div></div>
+<div class="ttc" id="aclassautopas_1_1TuningDataLogger_html_a855f59ac1f8d5135b05390d551d20d8a"><div class="ttname"><a href="classautopas_1_1TuningDataLogger.html#a855f59ac1f8d5135b05390d551d20d8a">autopas::TuningDataLogger::logTuningData</a></div><div class="ttdeci">void logTuningData(const autopas::Configuration &amp;configuration, const std::vector&lt; long &gt; &amp;samplesRebuildingNeighborLists, const std::vector&lt; long &gt; &amp;samplesNotRebuildingNeighborLists, size_t iteration, long reducedValue, long smoothedVale)</div><div class="ttdoc">Log the result of a tuning phase.</div><div class="ttdef"><b>Definition:</b> TuningDataLogger.cpp:43</div></div>
 <div class="ttc" id="aclassautopas_1_1TuningDataLogger_html_afd4f5c3ac98ea8cd871e8049e7b9dff9"><div class="ttname"><a href="classautopas_1_1TuningDataLogger.html#afd4f5c3ac98ea8cd871e8049e7b9dff9">autopas::TuningDataLogger::TuningDataLogger</a></div><div class="ttdeci">TuningDataLogger(size_t numSamples, const std::string &amp;outputSuffix=&quot;&quot;)</div><div class="ttdoc">Constructor initializes the logger and sets the output file name.</div><div class="ttdef"><b>Definition:</b> TuningDataLogger.cpp:11</div></div>
 <div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">This is the main namespace of AutoPas.</div><div class="ttdef"><b>Definition:</b> AutoPasDecl.h:29</div></div>
 </div><!-- fragment --></div><!-- contents -->
