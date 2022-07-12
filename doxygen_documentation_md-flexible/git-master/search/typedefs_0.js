@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['particletype_0',['ParticleType',['../classObject.html#a0a607b052d4421a32b271f1b97175d9c',1,'Object']]]
+  ['autopastype_0',['AutoPasType',['../classDomainDecomposition.html#a0f51a8395dafd64cd81208157cb4321f',1,'DomainDecomposition']]]
 ];

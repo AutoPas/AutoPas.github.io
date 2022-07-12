@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['value_0',['Value',['../classoptions_1_1BoundaryTypeOption.html#ac68d7559e0219e7081125346f5b943e4',1,'options::BoundaryTypeOption']]],
+  ['value_0',['Value',['../classLoadBalancerOption.html#a0a77a0197ffc9343a21cd0d78d31942d',1,'LoadBalancerOption::Value()'],['../classoptions_1_1BoundaryTypeOption.html#ac68d7559e0219e7081125346f5b943e4',1,'options::BoundaryTypeOption::Value()']]],
   ['value_1',['value',['../structMDFlexConfig_1_1MDFlexOption.html#ac786bffbb71a1f56981bcbac31384b1a',1,'MDFlexConfig::MDFlexOption']]],
   ['valueoffset_2',['valueOffset',['../classMDFlexConfig.html#a188a81b1c6f19ea2d3610fda3bf62f6c',1,'MDFlexConfig']]],
   ['velocitystr_3',['velocityStr',['../classMDFlexConfig.html#a1155e5348d84a61b09c512c4716fd51c',1,'MDFlexConfig']]],

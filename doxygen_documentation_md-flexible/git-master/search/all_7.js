@@ -1,7 +1,7 @@
 var searchData=
 [
   ['generate_0',['generate',['../classCubeGauss.html#ad8b1ac4719d42ea4d8771a38591bf85a',1,'CubeGauss::generate()'],['../classCubeGrid.html#ab721576e47eadbf6d9d9bfa04870149c',1,'CubeGrid::generate()'],['../classCubeUniform.html#a05d13f589f8de967d314aa34da4a4841',1,'CubeUniform::generate()'],['../classObject.html#a42b6fb29dbc25b1fdcc8d014b17f8dfc',1,'Object::generate()'],['../classSphere.html#a58c1baa31ed57fef9fc6bfecda5f2111',1,'Sphere::generate()'],['../classCubeClosestPacked.html#a8c98f998e6bda4238e93b0b712d2bc9c',1,'CubeClosestPacked::generate()']]],
-  ['generatedecomposition_1',['generateDecomposition',['../namespaceDomainTools.html#a8f9a0b697ac7947eb127901bd9c4e9bc',1,'DomainTools']]],
+  ['generatedecomposition_1',['generateDecomposition',['../namespaceDomainTools.html#a83fdcca2b9900ffa80c57e8cabbd53e2',1,'DomainTools']]],
   ['generatoroption_2',['generatorOption',['../classMDFlexConfig.html#a36e875a253310f7d97042fba7756fa0b',1,'MDFlexConfig']]],
   ['generatoroption_3',['GeneratorOption',['../classMDFlexConfig.html#a0d53d41bef4e9c36599e662185a704ae',1,'MDFlexConfig']]],
   ['getaccumulatedtail_4',['getAccumulatedTail',['../namespaceDomainTools.html#a9005c478c46f3db1ac2e6edf7e8db583',1,'DomainTools']]],
@@ -23,12 +23,12 @@ var searchData=
   ['getnumberofsubdomains_20',['getNumberOfSubdomains',['../classRegularGridDecomposition.html#a5b2af0ed91f75cd0893c761cb3245638',1,'RegularGridDecomposition']]],
   ['getnumpiecesincheckpoint_21',['getNumPiecesInCheckpoint',['../namespaceanonymous__namespace_02MDFlexConfig_8cpp_03.html#a826419f4bccac1e024b9f8fc85d3022f',1,'anonymous_namespace{MDFlexConfig.cpp}']]],
   ['getoptchar_22',['getoptChar',['../structMDFlexConfig_1_1MDFlexOption.html#a0cd859113e373d8afc984b93b6c2b661',1,'MDFlexConfig::MDFlexOption']]],
-  ['getoptionnames_23',['getOptionNames',['../classoptions_1_1BoundaryTypeOption.html#aa0cbb92c58927de6fe438df9f8977129',1,'options::BoundaryTypeOption']]],
+  ['getoptionnames_23',['getOptionNames',['../classoptions_1_1BoundaryTypeOption.html#aa0cbb92c58927de6fe438df9f8977129',1,'options::BoundaryTypeOption::getOptionNames()'],['../classLoadBalancerOption.html#a1efa1dc317c2d84373451671b6e6187e',1,'LoadBalancerOption::getOptionNames()']]],
   ['getparticlepropertieslibrary_24',['getParticlePropertiesLibrary',['../classMDFlexConfig.html#ae24db1a596d5d99bb19cdf1c0a316226',1,'MDFlexConfig']]],
   ['getparticles_25',['getParticles',['../classMDFlexConfig.html#aaa89cf9f7ea2744cb6f4157066dc437e',1,'MDFlexConfig']]],
   ['getparticlespacing_26',['getParticleSpacing',['../classCubeClosestPacked.html#a9a5271c94db252260d1b603b91e711c5',1,'CubeClosestPacked::getParticleSpacing()'],['../classCubeGrid.html#aa4f2e7ed39891ff795b1768728b916ba',1,'CubeGrid::getParticleSpacing()'],['../classObject.html#ae78efbdd4c94e05a306d21161219647a',1,'Object::getParticleSpacing()'],['../classSphere.html#a88bce9e405af5391e35766c4484b2bf9',1,'Sphere::getParticleSpacing()']]],
   ['getparticlesperdim_27',['getParticlesPerDim',['../classCubeGrid.html#a9618652f95658b93b09562caba434372',1,'CubeGrid']]],
-  ['getparticlestotal_28',['getParticlesTotal',['../classCubeUniform.html#a05e67c1f817524e0f06a67b277757259',1,'CubeUniform::getParticlesTotal()'],['../classSphere.html#a6b3c660fa44f3d361fcbca11c2a30ad5',1,'Sphere::getParticlesTotal()'],['../classObject.html#a93fa102c9a80290a77c9ca2a7dc1ced0',1,'Object::getParticlesTotal()'],['../classCubeGrid.html#a57069d61e0ff01593beb6c869e07444f',1,'CubeGrid::getParticlesTotal()'],['../classCubeGauss.html#afbc3e76d3666ee47e11c20a5fb324904',1,'CubeGauss::getParticlesTotal()']]],
+  ['getparticlestotal_28',['getParticlesTotal',['../classCubeGrid.html#a57069d61e0ff01593beb6c869e07444f',1,'CubeGrid::getParticlesTotal()'],['../classSphere.html#a6b3c660fa44f3d361fcbca11c2a30ad5',1,'Sphere::getParticlesTotal()'],['../classObject.html#a93fa102c9a80290a77c9ca2a7dc1ced0',1,'Object::getParticlesTotal()'],['../classCubeUniform.html#a05e67c1f817524e0f06a67b277757259',1,'CubeUniform::getParticlesTotal()'],['../classCubeGauss.html#afbc3e76d3666ee47e11c20a5fb324904',1,'CubeGauss::getParticlesTotal()']]],
   ['getradius_29',['getRadius',['../classSphere.html#a3d8593201abed340800ae0be54ba3225',1,'Sphere']]],
   ['getsubdomaincount_30',['getSubdomainCount',['../classRegularGridDecomposition.html#a64f294d0d3542ab2855550aa6f3c5024',1,'RegularGridDecomposition']]],
   ['getterminalwidth_31',['getTerminalWidth',['../namespaceanonymous__namespace_02Simulation_8cpp_03.html#add7fa1e786f7167071cf7008d4680f7f',1,'anonymous_namespace{Simulation.cpp}']]],

@@ -148,9 +148,12 @@ Checkpoints</h2>
 <p >MD-Flexible can be initialized through a previously written VTK file. For this pass the path to the <code>pvtu</code> file and make sure that the <code>vtu</code> files which it references are in the correct location.</p>
 <p >Please use only VTK files written by MD-Flexible since the parsing is rather strict. The VTK file only contains Information about all particles positions, velocities, forces and typeIDs. All other options, especially the simulation box size and particle properties (still) need to be set through a YAML file.</p>
 <h2><a class="anchor" id="autotoc_md10"></a>
+Load Balancing</h2>
+<p >MD-Flexible allows users to select between two load balancers: The Inverted Pressure method and ALL's Tensor method. The load balancer can be selected using the 'load-balancer' configuration option.</p>
+<h2><a class="anchor" id="autotoc_md11"></a>
 Command line Completions</h2>
 <p >md-flexible can generate a shell completions file with its latest options. Feel free to add completions for your favorite shell.</p>
-<h3><a class="anchor" id="autotoc_md11"></a>
+<h3><a class="anchor" id="autotoc_md12"></a>
 zsh</h3>
 <ol type="1">
 <li>Run: <div class="fragment"><div class="line">./md-flexible --zsh-completions</div>
@@ -161,7 +164,7 @@ zsh</h3>
 </div><!-- fragment --></li>
 <li>Reload your <code>zsh</code></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md12"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 Misc</h2>
 <ul>
 <li><code>tuning-phases</code> overwrites restrictions set by <code>iterations</code> </li>
