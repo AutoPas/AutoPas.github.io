@@ -16,8 +16,9 @@ var searchData=
   ['linkedcells_2eh_13',['LinkedCells.h',['../LinkedCells_8h.html',1,'']]],
   ['ljfunctor_2eh_14',['LJFunctor.h',['../LJFunctor_8h.html',1,'']]],
   ['ljfunctoravx_2eh_15',['LJFunctorAVX.h',['../LJFunctorAVX_8h.html',1,'']]],
-  ['loadestimatoroption_2eh_16',['LoadEstimatorOption.h',['../LoadEstimatorOption_8h.html',1,'']]],
-  ['loadestimators_2eh_17',['LoadEstimators.h',['../LoadEstimators_8h.html',1,'']]],
-  ['logger_2eh_18',['Logger.h',['../Logger_8h.html',1,'']]],
-  ['logichandler_2eh_19',['LogicHandler.h',['../LogicHandler_8h.html',1,'']]]
+  ['ljfunctorsve_2eh_16',['LJFunctorSVE.h',['../LJFunctorSVE_8h.html',1,'']]],
+  ['loadestimatoroption_2eh_17',['LoadEstimatorOption.h',['../LoadEstimatorOption_8h.html',1,'']]],
+  ['loadestimators_2eh_18',['LoadEstimators.h',['../LoadEstimators_8h.html',1,'']]],
+  ['logger_2eh_19',['Logger.h',['../Logger_8h.html',1,'']]],
+  ['logichandler_2eh_20',['LogicHandler.h',['../LogicHandler_8h.html',1,'']]]
 ];

@@ -19,7 +19,8 @@ var searchData=
   ['linkedcellsreferences_16',['LinkedCellsReferences',['../classautopas_1_1LinkedCellsReferences.html',1,'autopas']]],
   ['ljfunctor_17',['LJFunctor',['../classautopas_1_1LJFunctor.html',1,'autopas']]],
   ['ljfunctoravx_18',['LJFunctorAVX',['../classautopas_1_1LJFunctorAVX.html',1,'autopas']]],
-  ['loadestimatoroption_19',['LoadEstimatorOption',['../classautopas_1_1LoadEstimatorOption.html',1,'autopas']]],
-  ['logger_20',['Logger',['../classautopas_1_1Logger.html',1,'autopas']]],
-  ['logichandler_21',['LogicHandler',['../classautopas_1_1LogicHandler.html',1,'autopas']]]
+  ['ljfunctorsve_19',['LJFunctorSVE',['../classautopas_1_1LJFunctorSVE.html',1,'autopas']]],
+  ['loadestimatoroption_20',['LoadEstimatorOption',['../classautopas_1_1LoadEstimatorOption.html',1,'autopas']]],
+  ['logger_21',['Logger',['../classautopas_1_1Logger.html',1,'autopas']]],
+  ['logichandler_22',['LogicHandler',['../classautopas_1_1LogicHandler.html',1,'autopas']]]
 ];
