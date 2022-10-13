@@ -542,353 +542,352 @@ $(function() {
 <div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span>  }</div>
 <div class="line"><a id="l00493" name="l00493"></a><span class="lineno">  493</span> </div>
 <div class="line"><a id="l00494" name="l00494"></a><span class="lineno">  494</span>  <span class="keyword">template</span> &lt;<span class="keywordtype">bool</span> newton3, <span class="keywordtype">bool</span> indexed&gt;</div>
-<div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>  <span class="keyword">inline</span> <span class="keywordtype">void</span> SoAKernel(<span class="keyword">const</span> <span class="keywordtype">size_t</span> j, <span class="keyword">const</span> <span class="keywordtype">bool</span> ownedStateIisOwned, <span class="keyword">const</span> int64_t *<span class="keyword">const</span> __restrict ownedStatePtr2,</div>
-<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>                        <span class="keyword">const</span> svfloat64_t &amp;x1, <span class="keyword">const</span> svfloat64_t &amp;y1, <span class="keyword">const</span> svfloat64_t &amp;z1,</div>
-<div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>                        <span class="keyword">const</span> <span class="keywordtype">double</span> *<span class="keyword">const</span> __restrict x2ptr, <span class="keyword">const</span> <span class="keywordtype">double</span> *<span class="keyword">const</span> __restrict y2ptr,</div>
-<div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span>                        <span class="keyword">const</span> <span class="keywordtype">double</span> *<span class="keyword">const</span> __restrict z2ptr, <span class="keywordtype">double</span> *<span class="keyword">const</span> __restrict fx2ptr,</div>
-<div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span>                        <span class="keywordtype">double</span> *<span class="keyword">const</span> __restrict fy2ptr, <span class="keywordtype">double</span> *<span class="keyword">const</span> __restrict fz2ptr,</div>
-<div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span>                        <span class="keyword">const</span> <span class="keywordtype">size_t</span> *<span class="keyword">const</span> typeID1ptr, <span class="keyword">const</span> <span class="keywordtype">size_t</span> *<span class="keyword">const</span> typeID2ptr, svfloat64_t &amp;fxacc,</div>
-<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>                        svfloat64_t &amp;fyacc, svfloat64_t &amp;fzacc, svfloat64_t &amp;virialSumX, svfloat64_t &amp;virialSumY,</div>
-<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span>                        svfloat64_t &amp;virialSumZ, svfloat64_t &amp;upotSum,</div>
+<div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>  <span class="comment">// FCC needs to be forced to inline this function. Otherwise a dramatic loss in performance can be observed.</span></div>
+<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>  __attribute__((always_inline)) <span class="keyword">inline</span> <span class="keywordtype">void</span> SoAKernel(</div>
+<div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>      <span class="keyword">const</span> <span class="keywordtype">size_t</span> j, <span class="keyword">const</span> <span class="keywordtype">bool</span> ownedStateIisOwned, <span class="keyword">const</span> int64_t *<span class="keyword">const</span> __restrict ownedStatePtr2,</div>
+<div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span>      <span class="keyword">const</span> svfloat64_t &amp;x1, <span class="keyword">const</span> svfloat64_t &amp;y1, <span class="keyword">const</span> svfloat64_t &amp;z1, <span class="keyword">const</span> <span class="keywordtype">double</span> *<span class="keyword">const</span> __restrict x2ptr,</div>
+<div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span>      <span class="keyword">const</span> <span class="keywordtype">double</span> *<span class="keyword">const</span> __restrict y2ptr, <span class="keyword">const</span> <span class="keywordtype">double</span> *<span class="keyword">const</span> __restrict z2ptr, <span class="keywordtype">double</span> *<span class="keyword">const</span> __restrict fx2ptr,</div>
+<div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span>      <span class="keywordtype">double</span> *<span class="keyword">const</span> __restrict fy2ptr, <span class="keywordtype">double</span> *<span class="keyword">const</span> __restrict fz2ptr, <span class="keyword">const</span> <span class="keywordtype">size_t</span> *<span class="keyword">const</span> typeID1ptr,</div>
+<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span>      <span class="keyword">const</span> <span class="keywordtype">size_t</span> *<span class="keyword">const</span> typeID2ptr, svfloat64_t &amp;fxacc, svfloat64_t &amp;fyacc, svfloat64_t &amp;fzacc,</div>
+<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span>      svfloat64_t &amp;virialSumX, svfloat64_t &amp;virialSumY, svfloat64_t &amp;virialSumZ, svfloat64_t &amp;upotSum,</div>
 <div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span> </div>
-<div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span>                        <span class="keyword">const</span> svbool_t &amp;pg_1, <span class="keyword">const</span> svuint64_t &amp;index_1, <span class="keyword">const</span> svbool_t &amp;pg_2,</div>
-<div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span>                        <span class="keyword">const</span> svuint64_t &amp;index_2, <span class="keyword">const</span> svbool_t &amp;pg_3, <span class="keyword">const</span> svuint64_t &amp;index_3,</div>
-<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>                        <span class="keyword">const</span> svbool_t &amp;pg_4, <span class="keyword">const</span> svuint64_t &amp;index_4</div>
-<div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span> </div>
-<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>  ) {</div>
-<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>    svfloat64_t drx_1;</div>
-<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>    svfloat64_t dry_1;</div>
-<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>    svfloat64_t drz_1;</div>
-<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>    svfloat64_t dr2_1;</div>
-<div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>    svint64_t ownedStateJ_1;</div>
-<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>    <span class="keyword">const</span> svbool_t pgC_1 = distCalc&lt;indexed&gt;(j, index_1, x1, y1, z1, pg_1, ownedStatePtr2, x2ptr, y2ptr, z2ptr, drx_1,</div>
-<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>                                             dry_1, drz_1, dr2_1, ownedStateJ_1);</div>
-<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span> </div>
-<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>    svfloat64_t drx_2;</div>
-<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>    svfloat64_t dry_2;</div>
-<div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>    svfloat64_t drz_2;</div>
-<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>    svfloat64_t dr2_2;</div>
-<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>    svint64_t ownedStateJ_2;</div>
-<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span>    <span class="keyword">const</span> svbool_t pgC_2 = distCalc&lt;indexed&gt;(j + svlen(x1), index_2, x1, y1, z1, pg_2, ownedStatePtr2, x2ptr, y2ptr,</div>
-<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span>                                             z2ptr, drx_2, dry_2, drz_2, dr2_2, ownedStateJ_2);</div>
-<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span> </div>
-<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>    svfloat64_t drx_3;</div>
-<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>    svfloat64_t dry_3;</div>
-<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>    svfloat64_t drz_3;</div>
-<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>    svfloat64_t dr2_3;</div>
-<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>    svint64_t ownedStateJ_3;</div>
-<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>    <span class="keyword">const</span> svbool_t pgC_3 = distCalc&lt;indexed&gt;(j + svlen(x1) * 2, index_3, x1, y1, z1, pg_3, ownedStatePtr2, x2ptr, y2ptr,</div>
-<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>                                             z2ptr, drx_3, dry_3, drz_3, dr2_3, ownedStateJ_3);</div>
-<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span> </div>
-<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>    svfloat64_t drx_4;</div>
-<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>    svfloat64_t dry_4;</div>
-<div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>    svfloat64_t drz_4;</div>
-<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>    svfloat64_t dr2_4;</div>
-<div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span>    svint64_t ownedStateJ_4;</div>
-<div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span>    <span class="keyword">const</span> svbool_t pgC_4 = distCalc&lt;indexed&gt;(j + svlen(x1) * 3, index_4, x1, y1, z1, pg_4, ownedStatePtr2, x2ptr, y2ptr,</div>
-<div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span>                                             z2ptr, drx_4, dry_4, drz_4, dr2_4, ownedStateJ_4);</div>
-<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span> </div>
-<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> continue_1 = svptest_any(svptrue_b64(), pgC_1);</div>
-<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> continue_2 = svptest_any(svptrue_b64(), pgC_2);</div>
-<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> continue_3 = svptest_any(svptrue_b64(), pgC_3);</div>
-<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> continue_4 = svptest_any(svptrue_b64(), pgC_4);</div>
-<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span> </div>
-<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>    svfloat64_t epsilon24s_1;</div>
-<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>    svfloat64_t shift6s_1;</div>
-<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>    svfloat64_t lj6_1;</div>
-<div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span>    svfloat64_t fac_1;</div>
-<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span>    <span class="keywordflow">if</span> (continue_1)</div>
-<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span>      lennardJones&lt;indexed&gt;(index_1, typeID1ptr, typeID2ptr, pgC_1, dr2_1, epsilon24s_1, shift6s_1, lj6_1, fac_1);</div>
-<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span> </div>
-<div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>    svfloat64_t epsilon24s_2;</div>
-<div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span>    svfloat64_t shift6s_2;</div>
-<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>    svfloat64_t lj6_2;</div>
-<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>    svfloat64_t fac_2;</div>
-<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>    <span class="keywordflow">if</span> (continue_2)</div>
-<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span>      lennardJones&lt;indexed&gt;(index_2, typeID1ptr, typeID2ptr, pgC_2, dr2_2, epsilon24s_2, shift6s_2, lj6_2, fac_2);</div>
-<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span> </div>
-<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>    svfloat64_t epsilon24s_3;</div>
-<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>    svfloat64_t shift6s_3;</div>
-<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>    svfloat64_t lj6_3;</div>
-<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>    svfloat64_t fac_3;</div>
-<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>    <span class="keywordflow">if</span> (continue_3)</div>
-<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span>      lennardJones&lt;indexed&gt;(index_3, typeID1ptr, typeID2ptr, pgC_3, dr2_3, epsilon24s_3, shift6s_3, lj6_3, fac_3);</div>
-<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span> </div>
-<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>    svfloat64_t epsilon24s_4;</div>
-<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>    svfloat64_t shift6s_4;</div>
-<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>    svfloat64_t lj6_4;</div>
-<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>    svfloat64_t fac_4;</div>
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>    <span class="keywordflow">if</span> (continue_4)</div>
-<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>      lennardJones&lt;indexed&gt;(index_4, typeID1ptr, typeID2ptr, pgC_4, dr2_4, epsilon24s_4, shift6s_4, lj6_4, fac_4);</div>
-<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span> </div>
-<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>    <span class="keywordflow">if</span> (continue_1)</div>
-<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>      applyForces&lt;newton3, indexed&gt;(j, index_1, ownedStateIisOwned, fx2ptr, fy2ptr, fz2ptr, fxacc, fyacc, fzacc,</div>
-<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>                                    virialSumX, virialSumY, virialSumZ, upotSum, drx_1, dry_1, drz_1, x2ptr, y2ptr,</div>
-<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>                                    z2ptr, ownedStateJ_1, pgC_1, epsilon24s_1, shift6s_1, lj6_1, fac_1);</div>
-<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>    <span class="keywordflow">if</span> (continue_2)</div>
-<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>      applyForces&lt;newton3, indexed&gt;(j + svlen(x1), index_2, ownedStateIisOwned, fx2ptr, fy2ptr, fz2ptr, fxacc, fyacc,</div>
-<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>                                    fzacc, virialSumX, virialSumY, virialSumZ, upotSum, drx_2, dry_2, drz_2, x2ptr,</div>
-<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span>                                    y2ptr, z2ptr, ownedStateJ_2, pgC_2, epsilon24s_2, shift6s_2, lj6_2, fac_2);</div>
-<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span> </div>
-<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>    <span class="keywordflow">if</span> (continue_3)</div>
-<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>      applyForces&lt;newton3, indexed&gt;(j + svlen(x1) * 2, index_3, ownedStateIisOwned, fx2ptr, fy2ptr, fz2ptr, fxacc,</div>
-<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>                                    fyacc, fzacc, virialSumX, virialSumY, virialSumZ, upotSum, drx_3, dry_3, drz_3,</div>
-<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span>                                    x2ptr, y2ptr, z2ptr, ownedStateJ_3, pgC_3, epsilon24s_3, shift6s_3, lj6_3, fac_3);</div>
-<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span> </div>
-<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>    <span class="keywordflow">if</span> (continue_4)</div>
-<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>      applyForces&lt;newton3, indexed&gt;(j + svlen(x1) * 3, index_4, ownedStateIisOwned, fx2ptr, fy2ptr, fz2ptr, fxacc,</div>
-<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>                                    fyacc, fzacc, virialSumX, virialSumY, virialSumZ, upotSum, drx_4, dry_4, drz_4,</div>
-<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>                                    x2ptr, y2ptr, z2ptr, ownedStateJ_4, pgC_4, epsilon24s_4, shift6s_4, lj6_4, fac_4);</div>
-<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>  }</div>
-<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span> </div>
-<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>  <span class="comment">// clang-format off</span></div>
-<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span><span class="comment"></span>  <span class="comment">// clang-format on</span></div>
-<div class="line"><a id="l00603" name="l00603"></a><span class="lineno"><a class="line" href="classautopas_1_1LJFunctorSVE.html#a7f25b329f70ae82a64b86d1ab897cb74">  603</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1LJFunctorSVE.html#a7f25b329f70ae82a64b86d1ab897cb74">SoAFunctorVerlet</a>(<a class="code hl_class" href="classautopas_1_1SoAView.html">SoAView&lt;SoAArraysType&gt;</a> soa, <span class="keyword">const</span> <span class="keywordtype">size_t</span> indexFirst,</div>
-<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>                        <span class="keyword">const</span> std::vector&lt;<span class="keywordtype">size_t</span>, <a class="code hl_class" href="classautopas_1_1AlignedAllocator.html">autopas::AlignedAllocator&lt;size_t&gt;</a>&gt; &amp;neighborList,</div>
-<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>                        <span class="keywordtype">bool</span> newton3) <span class="keyword">final</span> {</div>
-<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>    <span class="keywordflow">if</span> (soa.<a class="code hl_function" href="classautopas_1_1SoAView.html#a793106e808c419d86d7527fd930268a1">getNumberOfParticles</a>() == 0 or neighborList.empty()) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>    <span class="keywordflow">if</span> (newton3) {</div>
-<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>      SoAFunctorVerletImpl&lt;true&gt;(soa, indexFirst, neighborList);</div>
-<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>      SoAFunctorVerletImpl&lt;false&gt;(soa, indexFirst, neighborList);</div>
-<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>    }</div>
-<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>  }</div>
-<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span> </div>
-<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>  <span class="keyword">template</span> &lt;<span class="keywordtype">bool</span> newton3&gt;</div>
-<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>  <span class="keywordtype">void</span> SoAFunctorVerletImpl(<a class="code hl_class" href="classautopas_1_1SoAView.html">SoAView&lt;SoAArraysType&gt;</a> soa, <span class="keyword">const</span> <span class="keywordtype">size_t</span> indexFirst,</div>
-<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span>                            <span class="keyword">const</span> std::vector&lt;<span class="keywordtype">size_t</span>, <a class="code hl_class" href="classautopas_1_1AlignedAllocator.html">autopas::AlignedAllocator&lt;size_t&gt;</a>&gt; &amp;neighborList) {</div>
-<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span><span class="preprocessor">#ifdef __ARM_FEATURE_SVE</span></div>
-<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict ownedStatePtr = soa.template begin&lt;Particle::AttributeNames::ownershipState&gt;();</div>
-<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>    <span class="keywordflow">if</span> (ownedStatePtr[indexFirst] == <a class="code hl_enumvalue" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a275876e34cf609db118f3d84b799a790">OwnershipState::dummy</a>) {</div>
-<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>    }</div>
-<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict xptr = soa.template begin&lt;Particle::AttributeNames::posX&gt;();</div>
-<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict yptr = soa.template begin&lt;Particle::AttributeNames::posY&gt;();</div>
-<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict zptr = soa.template begin&lt;Particle::AttributeNames::posZ&gt;();</div>
-<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span> </div>
-<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>    <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict fxptr = soa.template begin&lt;Particle::AttributeNames::forceX&gt;();</div>
-<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>    <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict fyptr = soa.template begin&lt;Particle::AttributeNames::forceY&gt;();</div>
-<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>    <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict fzptr = soa.template begin&lt;Particle::AttributeNames::forceZ&gt;();</div>
-<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span> </div>
-<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict typeIDptr = soa.template begin&lt;Particle::AttributeNames::typeId&gt;();</div>
-<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span> </div>
-<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>    <span class="comment">// accumulators</span></div>
-<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>    svfloat64_t virialSumX = svdup_f64(0.0);</div>
-<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>    svfloat64_t virialSumY = svdup_f64(0.0);</div>
-<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>    svfloat64_t virialSumZ = svdup_f64(0.0);</div>
-<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>    svfloat64_t upotSum = svdup_f64(0.0);</div>
-<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span> </div>
-<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>    svfloat64_t fxacc = svdup_f64(0.0);</div>
-<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>    svfloat64_t fyacc = svdup_f64(0.0);</div>
-<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>    svfloat64_t fzacc = svdup_f64(0.0);</div>
-<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span> </div>
-<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>    <span class="comment">// broadcast particle 1</span></div>
-<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>    <span class="keyword">const</span> <span class="keyword">auto</span> x1 = svdup_f64(xptr[indexFirst]);</div>
-<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>    <span class="keyword">const</span> <span class="keyword">auto</span> y1 = svdup_f64(yptr[indexFirst]);</div>
-<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>    <span class="keyword">const</span> <span class="keyword">auto</span> z1 = svdup_f64(zptr[indexFirst]);</div>
-<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span> </div>
-<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>    svbool_t pg_1;</div>
-<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> ownedStatePtr2 = <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span>int64_t *<span class="keyword">&gt;</span>(ownedStatePtr);</div>
-<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>    <span class="keywordtype">size_t</span> j = 0;</div>
-<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>    <span class="keywordflow">for</span> (; j &lt; neighborList.size(); j += svlen(x1)) {</div>
-<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>      pg_1 = svwhilelt_b64(j, neighborList.size());</div>
-<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>      <span class="keyword">const</span> svuint64_t index_1 = svld1(pg_1, &amp;neighborList[j]);</div>
-<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span> </div>
-<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>      svfloat64_t drx_1;</div>
-<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>      svfloat64_t dry_1;</div>
-<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>      svfloat64_t drz_1;</div>
-<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>      svfloat64_t dr2_1;</div>
-<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>      svint64_t ownedStateJ_1;</div>
-<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>      <span class="keyword">const</span> svbool_t pgC_1 = distCalc&lt;true&gt;(0, index_1, x1, y1, z1, pg_1, ownedStatePtr2, xptr, yptr, zptr, drx_1,</div>
-<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>                                            dry_1, drz_1, dr2_1, ownedStateJ_1);</div>
-<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span> </div>
-<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>      <span class="keyword">const</span> <span class="keywordtype">bool</span> continue_1 = svptest_any(svptrue_b64(), pgC_1);</div>
-<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>      svfloat64_t epsilon24s_1;</div>
-<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>      svfloat64_t shift6s_1;</div>
-<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>      svfloat64_t lj6_1;</div>
-<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>      svfloat64_t fac_1;</div>
-<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>      <span class="keywordflow">if</span> (continue_1)</div>
-<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>        lennardJones&lt;true&gt;(index_1, typeIDptr, typeIDptr, pgC_1, dr2_1, epsilon24s_1, shift6s_1, lj6_1, fac_1);</div>
-<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span> </div>
-<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>      <span class="keywordflow">if</span> (continue_1)</div>
-<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>        applyForces&lt;newton3, true&gt;(0, index_1, ownedStatePtr[indexFirst] == <a class="code hl_enumvalue" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a8f9a4c5fe0824547590a3fc568f5c7c7">OwnershipState::owned</a>, fxptr, fyptr, fzptr,</div>
-<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>                                   fxacc, fyacc, fzacc, virialSumX, virialSumY, virialSumZ, upotSum, drx_1, dry_1,</div>
-<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>                                   drz_1, xptr, yptr, zptr, ownedStateJ_1, pgC_1, epsilon24s_1, shift6s_1, lj6_1,</div>
-<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>                                   fac_1);</div>
-<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>    }</div>
-<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span> </div>
-<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>    fxptr[indexFirst] += svaddv_f64(svptrue_b64(), fxacc);</div>
-<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span>    fyptr[indexFirst] += svaddv_f64(svptrue_b64(), fyacc);</div>
-<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>    fzptr[indexFirst] += svaddv_f64(svptrue_b64(), fzacc);</div>
-<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span> </div>
-<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (calculateGlobals) {</div>
-<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>      <span class="keyword">const</span> <span class="keywordtype">int</span> threadnum = <a class="code hl_function" href="namespaceautopas.html#ac3917775976f91c4251e72887dc1876e">autopas_get_thread_num</a>();</div>
-<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>      <span class="comment">// we have duplicated calculations, i.e., we calculate interactions multiple times, so we have to take care</span></div>
-<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>      <span class="comment">// that we do not add the energy multiple times!</span></div>
-<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>      <span class="keywordtype">double</span> energyfactor = 1.;</div>
-<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (newton3) {</div>
-<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>        energyfactor *= 0.5;  <span class="comment">// we count the energies partly to one of the two cells!</span></div>
-<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>      }</div>
-<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span> </div>
-<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>      _aosThreadData[threadnum].upotSum += svaddv_f64(svptrue_b64(), upotSum) * energyfactor;</div>
-<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>      _aosThreadData[threadnum].virialSum[0] += svaddv_f64(svptrue_b64(), virialSumX) * energyfactor;</div>
-<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>      _aosThreadData[threadnum].virialSum[1] += svaddv_f64(svptrue_b64(), virialSumY) * energyfactor;</div>
-<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span>      _aosThreadData[threadnum].virialSum[2] += svaddv_f64(svptrue_b64(), virialSumZ) * energyfactor;</div>
-<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>    }</div>
-<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span>  }</div>
-<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span> </div>
-<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00703" name="l00703"></a><span class="lineno"><a class="line" href="classautopas_1_1LJFunctorSVE.html#a72427fb4a5cac7f7a2bf6bcef916700f">  703</a></span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="classautopas_1_1LJFunctorSVE.html#a72427fb4a5cac7f7a2bf6bcef916700f">getNeededAttr</a>() {</div>
-<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>    <span class="keywordflow">return</span> std::array&lt;typename Particle::AttributeNames, 9&gt;{</div>
-<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>        Particle::AttributeNames::id,     Particle::AttributeNames::posX,   Particle::AttributeNames::posY,</div>
-<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>        Particle::AttributeNames::posZ,   Particle::AttributeNames::forceX, Particle::AttributeNames::forceY,</div>
-<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>        Particle::AttributeNames::forceZ, Particle::AttributeNames::typeId, Particle::AttributeNames::ownershipState};</div>
-<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>  }</div>
-<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span> </div>
-<div class="line"><a id="l00713" name="l00713"></a><span class="lineno"><a class="line" href="classautopas_1_1LJFunctorSVE.html#afde072c3214d09ead0188977ecd056eb">  713</a></span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="classautopas_1_1LJFunctorSVE.html#afde072c3214d09ead0188977ecd056eb">getNeededAttr</a>(std::false_type) {</div>
-<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>    <span class="keywordflow">return</span> std::array&lt;typename Particle::AttributeNames, 6&gt;{</div>
-<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>        Particle::AttributeNames::id,   Particle::AttributeNames::posX,   Particle::AttributeNames::posY,</div>
-<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>        Particle::AttributeNames::posZ, Particle::AttributeNames::typeId, Particle::AttributeNames::ownershipState};</div>
-<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>  }</div>
-<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span> </div>
-<div class="line"><a id="l00722" name="l00722"></a><span class="lineno"><a class="line" href="classautopas_1_1LJFunctorSVE.html#a6870bcc3fb8d33b61fda5c21e583b223">  722</a></span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="classautopas_1_1LJFunctorSVE.html#a6870bcc3fb8d33b61fda5c21e583b223">getComputedAttr</a>() {</div>
-<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>    <span class="keywordflow">return</span> std::array&lt;typename Particle::AttributeNames, 3&gt;{</div>
-<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>        Particle::AttributeNames::forceX, Particle::AttributeNames::forceY, Particle::AttributeNames::forceZ};</div>
-<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span>  }</div>
-<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span> </div>
-<div class="line"><a id="l00731" name="l00731"></a><span class="lineno"><a class="line" href="classautopas_1_1LJFunctorSVE.html#a846b555be0b406e0702b297988bc4a51">  731</a></span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classautopas_1_1LJFunctorSVE.html#a846b555be0b406e0702b297988bc4a51">getMixing</a>() { <span class="keywordflow">return</span> useMixing; }</div>
-<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span> </div>
-<div class="line"><a id="l00739" name="l00739"></a><span class="lineno"><a class="line" href="classautopas_1_1LJFunctorSVE.html#ac6fafc820d24b2c4278f19550faa1df9">  739</a></span>  <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code hl_function" href="classautopas_1_1LJFunctorSVE.html#ac6fafc820d24b2c4278f19550faa1df9">getNumFlopsPerKernelCall</a>() {</div>
-<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>    <span class="comment">// Kernel: 12 = 1 (inverse R squared) + 8 (compute scale) + 3 (apply</span></div>
-<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>    <span class="comment">// scale) sum Forces: 6 (forces) kernel total = 12 + 6 = 18</span></div>
-<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>    <span class="keywordflow">return</span> 18ul;</div>
-<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span>  }</div>
-<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span> </div>
-<div class="line"><a id="l00749" name="l00749"></a><span class="lineno"><a class="line" href="classautopas_1_1LJFunctorSVE.html#a724dffb724d5162b67e692ac50684397">  749</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1LJFunctorSVE.html#a724dffb724d5162b67e692ac50684397">initTraversal</a>() final {</div>
-<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>    _upotSum = 0.;</div>
-<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>    _virialSum = {0., 0., 0.};</div>
-<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>    _postProcessed = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; _aosThreadData.size(); ++i) {</div>
-<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>      _aosThreadData[i].setZero();</div>
-<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>    }</div>
-<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span>  }</div>
-<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span> </div>
-<div class="line"><a id="l00762" name="l00762"></a><span class="lineno"><a class="line" href="classautopas_1_1LJFunctorSVE.html#a5b49e07aa4be3e2c717a00ca20671d34">  762</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1LJFunctorSVE.html#a5b49e07aa4be3e2c717a00ca20671d34">endTraversal</a>(<span class="keywordtype">bool</span> newton3) <span class="keyword">final</span> {</div>
-<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>    <span class="keywordflow">if</span> (_postProcessed) {</div>
-<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>      <span class="keywordflow">throw</span> <a class="code hl_class" href="classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html">utils::ExceptionHandler::AutoPasException</a>(</div>
-<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>          <span class="stringliteral">&quot;Already postprocessed, endTraversal(bool newton3) was called twice without calling initTraversal().&quot;</span>);</div>
-<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>    }</div>
-<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span> </div>
-<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>    <span class="keywordflow">if</span> (calculateGlobals) {</div>
-<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; _aosThreadData.size(); ++i) {</div>
-<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>        _upotSum += _aosThreadData[i].upotSum;</div>
-<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>        _virialSum = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a6bf0078e3026f8051e7377c581859ac3">utils::ArrayMath::add</a>(_virialSum, _aosThreadData[i].virialSum);</div>
-<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>      }</div>
-<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>      <span class="keywordflow">if</span> (not newton3) {</div>
-<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span>        <span class="comment">// if the newton3 optimization is disabled we have added every energy contribution twice, so we divide by 2</span></div>
-<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>        <span class="comment">// here.</span></div>
-<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>        _upotSum *= 0.5;</div>
-<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span>        _virialSum = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a6634f9d050c47d36c214cb5c4c0c873a">utils::ArrayMath::mulScalar</a>(_virialSum, 0.5);</div>
-<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span>      }</div>
-<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span>      <span class="comment">// we have always calculated 6*upot, so we divide by 6 here!</span></div>
-<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>      _upotSum /= 6.;</div>
-<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>      _postProcessed = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>    }</div>
-<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>  }</div>
-<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span> </div>
-<div class="line"><a id="l00789" name="l00789"></a><span class="lineno"><a class="line" href="classautopas_1_1LJFunctorSVE.html#a0b45935e2469b05c83c7f10f8efcfcfb">  789</a></span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classautopas_1_1LJFunctorSVE.html#a0b45935e2469b05c83c7f10f8efcfcfb">getUpot</a>() {</div>
-<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>    <span class="keywordflow">if</span> (not calculateGlobals) {</div>
-<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>      <span class="keywordflow">throw</span> <a class="code hl_class" href="classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html">utils::ExceptionHandler::AutoPasException</a>(</div>
-<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>          <span class="stringliteral">&quot;Trying to get upot even though calculateGlobals is false. If you want this functor to calculate global &quot;</span></div>
-<div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>          <span class="stringliteral">&quot;values, please specify calculateGlobals to be true.&quot;</span>);</div>
-<div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span>    }</div>
-<div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span>    <span class="keywordflow">if</span> (not _postProcessed) {</div>
-<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span>      <span class="keywordflow">throw</span> <a class="code hl_class" href="classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html">utils::ExceptionHandler::AutoPasException</a>(<span class="stringliteral">&quot;Cannot get upot, because endTraversal was not called.&quot;</span>);</div>
-<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span>    }</div>
-<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span>    <span class="keywordflow">return</span> _upotSum;</div>
-<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span>  }</div>
-<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span> </div>
-<div class="line"><a id="l00805" name="l00805"></a><span class="lineno"><a class="line" href="classautopas_1_1LJFunctorSVE.html#a72675c60c7aaf697b4c1234fb0b3bce2">  805</a></span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classautopas_1_1LJFunctorSVE.html#a72675c60c7aaf697b4c1234fb0b3bce2">getVirial</a>() {</div>
-<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>    <span class="keywordflow">if</span> (not calculateGlobals) {</div>
-<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>      <span class="keywordflow">throw</span> <a class="code hl_class" href="classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html">utils::ExceptionHandler::AutoPasException</a>(</div>
-<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>          <span class="stringliteral">&quot;Trying to get virial even though calculateGlobals is false. If you want this functor to calculate global &quot;</span></div>
-<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>          <span class="stringliteral">&quot;values, please specify calculateGlobals to be true.&quot;</span>);</div>
-<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>    }</div>
-<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>    <span class="keywordflow">if</span> (not _postProcessed) {</div>
-<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>      <span class="keywordflow">throw</span> <a class="code hl_class" href="classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html">utils::ExceptionHandler::AutoPasException</a>(<span class="stringliteral">&quot;Cannot get virial, because endTraversal was not called.&quot;</span>);</div>
-<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>    }</div>
-<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span>    <span class="keywordflow">return</span> _virialSum[0] + _virialSum[1] + _virialSum[2];</div>
-<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span>  }</div>
-<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span> </div>
-<div class="line"><a id="l00825" name="l00825"></a><span class="lineno"><a class="line" href="classautopas_1_1LJFunctorSVE.html#a27b3fb9a8d59ad970d6e04f7c5fbafec">  825</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1LJFunctorSVE.html#a27b3fb9a8d59ad970d6e04f7c5fbafec">setParticleProperties</a>(<span class="keywordtype">double</span> epsilon24, <span class="keywordtype">double</span> sigmaSquare) {</div>
-<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span><span class="preprocessor">#ifdef __ARM_FEATURE_SVE</span></div>
-<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>    _epsilon24 = epsilon24;</div>
-<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>    _sigmaSquare = sigmaSquare;</div>
-<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (applyShift) {</div>
-<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>      _shift6 = <a class="code hl_function" href="classParticlePropertiesLibrary.html#ab81affa570460a247fc4e49058b7da9a">ParticlePropertiesLibrary&lt;double, size_t&gt;::calcShift6</a>(epsilon24, sigmaSquare, _cutoffsquare);</div>
-<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span>      _shift6 = 0.0;</div>
-<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span>    }</div>
-<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span> </div>
-<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span>    _epsilon24AoS = epsilon24;</div>
-<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span>    _sigmaSquareAoS = sigmaSquare;</div>
-<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (applyShift) {</div>
-<div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span>      _shift6AoS = <a class="code hl_function" href="classParticlePropertiesLibrary.html#ab81affa570460a247fc4e49058b7da9a">ParticlePropertiesLibrary&lt;double, size_t&gt;::calcShift6</a>(epsilon24, sigmaSquare, _cutoffsquareAoS);</div>
-<div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>      _shift6AoS = 0.;</div>
-<div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span>    }</div>
-<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>  }</div>
-<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span> </div>
-<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span>  <span class="keyword">class </span>AoSThreadData {</div>
-<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>   <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>    AoSThreadData() : virialSum{0., 0., 0.}, upotSum{0.} {}</div>
-<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>    <span class="keywordtype">void</span> setZero() {</div>
-<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>      virialSum = {0., 0., 0.};</div>
-<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>      upotSum = 0.;</div>
-<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>    }</div>
-<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span> </div>
-<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>    <span class="comment">// variables</span></div>
-<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>    std::array&lt;double, 3&gt; virialSum;</div>
-<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>    <span class="keywordtype">double</span> upotSum;</div>
-<div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span> </div>
-<div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>   <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>    <span class="comment">// dummy parameter to get the right size (64 bytes)</span></div>
-<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span>    [[maybe_unused]] <span class="keywordtype">double</span> _remainingTo64[4]{};</div>
-<div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span>  };</div>
-<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>  <span class="comment">// make sure of the size of AoSThreadData</span></div>
-<div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span>  <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>(AoSThreadData) % 64 == 0, <span class="stringliteral">&quot;AoSThreadData has wrong size&quot;</span>);</div>
-<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span> </div>
-<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span><span class="preprocessor">#ifdef __ARM_FEATURE_SVE</span></div>
-<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> _cutoffsquare{};</div>
-<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span>  <span class="keywordtype">double</span> _shift6{0.};</div>
-<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>  <span class="keywordtype">double</span> _epsilon24{0.};</div>
-<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>  <span class="keywordtype">double</span> _sigmaSquare{0.};</div>
-<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span> </div>
-<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> _cutoffsquareAoS;</div>
-<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>  <span class="keywordtype">double</span> _epsilon24AoS{0.}, _sigmaSquareAoS{0.}, _shift6AoS{0.};</div>
-<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span> </div>
-<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>  <a class="code hl_class" href="classParticlePropertiesLibrary.html">ParticlePropertiesLibrary&lt;double, size_t&gt;</a> *_PPLibrary = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span> </div>
-<div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span>  <span class="comment">// sum of the potential energy, only calculated if calculateGlobals is true</span></div>
-<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span>  <span class="keywordtype">double</span> _upotSum{0.};</div>
-<div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span> </div>
-<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span>  <span class="comment">// sum of the virial, only calculated if calculateGlobals is true</span></div>
-<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>  std::array&lt;double, 3&gt; _virialSum{0., 0., 0.};</div>
-<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span> </div>
-<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span>  <span class="comment">// thread buffer for aos</span></div>
-<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>  std::vector&lt;AoSThreadData&gt; _aosThreadData{};</div>
-<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span> </div>
-<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span>  <span class="comment">// defines whether or whether not the global values are already preprocessed</span></div>
-<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span>  <span class="keywordtype">bool</span> _postProcessed{<span class="keyword">false</span>};</div>
-<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span>};</div>
-<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span>}  <span class="comment">// namespace autopas</span></div>
+<div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span>      <span class="keyword">const</span> svbool_t &amp;pg_1, <span class="keyword">const</span> svuint64_t &amp;index_1, <span class="keyword">const</span> svbool_t &amp;pg_2, <span class="keyword">const</span> svuint64_t &amp;index_2,</div>
+<div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span>      <span class="keyword">const</span> svbool_t &amp;pg_3, <span class="keyword">const</span> svuint64_t &amp;index_3, <span class="keyword">const</span> svbool_t &amp;pg_4, <span class="keyword">const</span> svuint64_t &amp;index_4</div>
+<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span> </div>
+<div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span>  ) {</div>
+<div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>    svfloat64_t drx_1;</div>
+<div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>    svfloat64_t dry_1;</div>
+<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>    svfloat64_t drz_1;</div>
+<div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>    svfloat64_t dr2_1;</div>
+<div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>    svint64_t ownedStateJ_1;</div>
+<div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>    <span class="keyword">const</span> svbool_t pgC_1 = distCalc&lt;indexed&gt;(j, index_1, x1, y1, z1, pg_1, ownedStatePtr2, x2ptr, y2ptr, z2ptr, drx_1,</div>
+<div class="line"><a id="l00514" name="l00514"></a><span class="lineno">  514</span>                                             dry_1, drz_1, dr2_1, ownedStateJ_1);</div>
+<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span> </div>
+<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>    svfloat64_t drx_2;</div>
+<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>    svfloat64_t dry_2;</div>
+<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>    svfloat64_t drz_2;</div>
+<div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>    svfloat64_t dr2_2;</div>
+<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>    svint64_t ownedStateJ_2;</div>
+<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>    <span class="keyword">const</span> svbool_t pgC_2 = distCalc&lt;indexed&gt;(j + svlen(x1), index_2, x1, y1, z1, pg_2, ownedStatePtr2, x2ptr, y2ptr,</div>
+<div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span>                                             z2ptr, drx_2, dry_2, drz_2, dr2_2, ownedStateJ_2);</div>
+<div class="line"><a id="l00523" name="l00523"></a><span class="lineno">  523</span> </div>
+<div class="line"><a id="l00524" name="l00524"></a><span class="lineno">  524</span>    svfloat64_t drx_3;</div>
+<div class="line"><a id="l00525" name="l00525"></a><span class="lineno">  525</span>    svfloat64_t dry_3;</div>
+<div class="line"><a id="l00526" name="l00526"></a><span class="lineno">  526</span>    svfloat64_t drz_3;</div>
+<div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>    svfloat64_t dr2_3;</div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>    svint64_t ownedStateJ_3;</div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>    <span class="keyword">const</span> svbool_t pgC_3 = distCalc&lt;indexed&gt;(j + svlen(x1) * 2, index_3, x1, y1, z1, pg_3, ownedStatePtr2, x2ptr, y2ptr,</div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>                                             z2ptr, drx_3, dry_3, drz_3, dr2_3, ownedStateJ_3);</div>
+<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span> </div>
+<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>    svfloat64_t drx_4;</div>
+<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>    svfloat64_t dry_4;</div>
+<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>    svfloat64_t drz_4;</div>
+<div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>    svfloat64_t dr2_4;</div>
+<div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span>    svint64_t ownedStateJ_4;</div>
+<div class="line"><a id="l00537" name="l00537"></a><span class="lineno">  537</span>    <span class="keyword">const</span> svbool_t pgC_4 = distCalc&lt;indexed&gt;(j + svlen(x1) * 3, index_4, x1, y1, z1, pg_4, ownedStatePtr2, x2ptr, y2ptr,</div>
+<div class="line"><a id="l00538" name="l00538"></a><span class="lineno">  538</span>                                             z2ptr, drx_4, dry_4, drz_4, dr2_4, ownedStateJ_4);</div>
+<div class="line"><a id="l00539" name="l00539"></a><span class="lineno">  539</span> </div>
+<div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> continue_1 = svptest_any(svptrue_b64(), pgC_1);</div>
+<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> continue_2 = svptest_any(svptrue_b64(), pgC_2);</div>
+<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> continue_3 = svptest_any(svptrue_b64(), pgC_3);</div>
+<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>    <span class="keyword">const</span> <span class="keywordtype">bool</span> continue_4 = svptest_any(svptrue_b64(), pgC_4);</div>
+<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span> </div>
+<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>    svfloat64_t epsilon24s_1;</div>
+<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>    svfloat64_t shift6s_1;</div>
+<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>    svfloat64_t lj6_1;</div>
+<div class="line"><a id="l00548" name="l00548"></a><span class="lineno">  548</span>    svfloat64_t fac_1;</div>
+<div class="line"><a id="l00549" name="l00549"></a><span class="lineno">  549</span>    <span class="keywordflow">if</span> (continue_1)</div>
+<div class="line"><a id="l00550" name="l00550"></a><span class="lineno">  550</span>      lennardJones&lt;indexed&gt;(index_1, typeID1ptr, typeID2ptr, pgC_1, dr2_1, epsilon24s_1, shift6s_1, lj6_1, fac_1);</div>
+<div class="line"><a id="l00551" name="l00551"></a><span class="lineno">  551</span> </div>
+<div class="line"><a id="l00552" name="l00552"></a><span class="lineno">  552</span>    svfloat64_t epsilon24s_2;</div>
+<div class="line"><a id="l00553" name="l00553"></a><span class="lineno">  553</span>    svfloat64_t shift6s_2;</div>
+<div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span>    svfloat64_t lj6_2;</div>
+<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span>    svfloat64_t fac_2;</div>
+<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span>    <span class="keywordflow">if</span> (continue_2)</div>
+<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span>      lennardJones&lt;indexed&gt;(index_2, typeID1ptr, typeID2ptr, pgC_2, dr2_2, epsilon24s_2, shift6s_2, lj6_2, fac_2);</div>
+<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span> </div>
+<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span>    svfloat64_t epsilon24s_3;</div>
+<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span>    svfloat64_t shift6s_3;</div>
+<div class="line"><a id="l00561" name="l00561"></a><span class="lineno">  561</span>    svfloat64_t lj6_3;</div>
+<div class="line"><a id="l00562" name="l00562"></a><span class="lineno">  562</span>    svfloat64_t fac_3;</div>
+<div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span>    <span class="keywordflow">if</span> (continue_3)</div>
+<div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span>      lennardJones&lt;indexed&gt;(index_3, typeID1ptr, typeID2ptr, pgC_3, dr2_3, epsilon24s_3, shift6s_3, lj6_3, fac_3);</div>
+<div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span> </div>
+<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>    svfloat64_t epsilon24s_4;</div>
+<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>    svfloat64_t shift6s_4;</div>
+<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span>    svfloat64_t lj6_4;</div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span>    svfloat64_t fac_4;</div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span>    <span class="keywordflow">if</span> (continue_4)</div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>      lennardJones&lt;indexed&gt;(index_4, typeID1ptr, typeID2ptr, pgC_4, dr2_4, epsilon24s_4, shift6s_4, lj6_4, fac_4);</div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span> </div>
+<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span>    <span class="keywordflow">if</span> (continue_1)</div>
+<div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span>      applyForces&lt;newton3, indexed&gt;(j, index_1, ownedStateIisOwned, fx2ptr, fy2ptr, fz2ptr, fxacc, fyacc, fzacc,</div>
+<div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span>                                    virialSumX, virialSumY, virialSumZ, upotSum, drx_1, dry_1, drz_1, x2ptr, y2ptr,</div>
+<div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>                                    z2ptr, ownedStateJ_1, pgC_1, epsilon24s_1, shift6s_1, lj6_1, fac_1);</div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>    <span class="keywordflow">if</span> (continue_2)</div>
+<div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>      applyForces&lt;newton3, indexed&gt;(j + svlen(x1), index_2, ownedStateIisOwned, fx2ptr, fy2ptr, fz2ptr, fxacc, fyacc,</div>
+<div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span>                                    fzacc, virialSumX, virialSumY, virialSumZ, upotSum, drx_2, dry_2, drz_2, x2ptr,</div>
+<div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span>                                    y2ptr, z2ptr, ownedStateJ_2, pgC_2, epsilon24s_2, shift6s_2, lj6_2, fac_2);</div>
+<div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span> </div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>    <span class="keywordflow">if</span> (continue_3)</div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>      applyForces&lt;newton3, indexed&gt;(j + svlen(x1) * 2, index_3, ownedStateIisOwned, fx2ptr, fy2ptr, fz2ptr, fxacc,</div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>                                    fyacc, fzacc, virialSumX, virialSumY, virialSumZ, upotSum, drx_3, dry_3, drz_3,</div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>                                    x2ptr, y2ptr, z2ptr, ownedStateJ_3, pgC_3, epsilon24s_3, shift6s_3, lj6_3, fac_3);</div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span> </div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span>    <span class="keywordflow">if</span> (continue_4)</div>
+<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span>      applyForces&lt;newton3, indexed&gt;(j + svlen(x1) * 3, index_4, ownedStateIisOwned, fx2ptr, fy2ptr, fz2ptr, fxacc,</div>
+<div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>                                    fyacc, fzacc, virialSumX, virialSumY, virialSumZ, upotSum, drx_4, dry_4, drz_4,</div>
+<div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>                                    x2ptr, y2ptr, z2ptr, ownedStateJ_4, pgC_4, epsilon24s_4, shift6s_4, lj6_4, fac_4);</div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>  }</div>
+<div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span> </div>
+<div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span>  <span class="comment">// clang-format off</span></div>
+<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span><span class="comment"></span>  <span class="comment">// clang-format on</span></div>
+<div class="line"><a id="l00602" name="l00602"></a><span class="lineno"><a class="line" href="classautopas_1_1LJFunctorSVE.html#a7f25b329f70ae82a64b86d1ab897cb74">  602</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1LJFunctorSVE.html#a7f25b329f70ae82a64b86d1ab897cb74">SoAFunctorVerlet</a>(<a class="code hl_class" href="classautopas_1_1SoAView.html">SoAView&lt;SoAArraysType&gt;</a> soa, <span class="keyword">const</span> <span class="keywordtype">size_t</span> indexFirst,</div>
+<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>                        <span class="keyword">const</span> std::vector&lt;<span class="keywordtype">size_t</span>, <a class="code hl_class" href="classautopas_1_1AlignedAllocator.html">autopas::AlignedAllocator&lt;size_t&gt;</a>&gt; &amp;neighborList,</div>
+<div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span>                        <span class="keywordtype">bool</span> newton3) <span class="keyword">final</span> {</div>
+<div class="line"><a id="l00605" name="l00605"></a><span class="lineno">  605</span>    <span class="keywordflow">if</span> (soa.<a class="code hl_function" href="classautopas_1_1SoAView.html#a793106e808c419d86d7527fd930268a1">getNumberOfParticles</a>() == 0 or neighborList.empty()) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span>    <span class="keywordflow">if</span> (newton3) {</div>
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno">  607</span>      SoAFunctorVerletImpl&lt;true&gt;(soa, indexFirst, neighborList);</div>
+<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>      SoAFunctorVerletImpl&lt;false&gt;(soa, indexFirst, neighborList);</div>
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>    }</div>
+<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>  }</div>
+<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span> </div>
+<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>  <span class="keyword">template</span> &lt;<span class="keywordtype">bool</span> newton3&gt;</div>
+<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>  <span class="keywordtype">void</span> SoAFunctorVerletImpl(<a class="code hl_class" href="classautopas_1_1SoAView.html">SoAView&lt;SoAArraysType&gt;</a> soa, <span class="keyword">const</span> <span class="keywordtype">size_t</span> indexFirst,</div>
+<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>                            <span class="keyword">const</span> std::vector&lt;<span class="keywordtype">size_t</span>, <a class="code hl_class" href="classautopas_1_1AlignedAllocator.html">autopas::AlignedAllocator&lt;size_t&gt;</a>&gt; &amp;neighborList) {</div>
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span><span class="preprocessor">#ifdef __ARM_FEATURE_SVE</span></div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict ownedStatePtr = soa.template begin&lt;Particle::AttributeNames::ownershipState&gt;();</div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>    <span class="keywordflow">if</span> (ownedStatePtr[indexFirst] == <a class="code hl_enumvalue" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a275876e34cf609db118f3d84b799a790">OwnershipState::dummy</a>) {</div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>    }</div>
+<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict xptr = soa.template begin&lt;Particle::AttributeNames::posX&gt;();</div>
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict yptr = soa.template begin&lt;Particle::AttributeNames::posY&gt;();</div>
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict zptr = soa.template begin&lt;Particle::AttributeNames::posZ&gt;();</div>
+<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span> </div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>    <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict fxptr = soa.template begin&lt;Particle::AttributeNames::forceX&gt;();</div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>    <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict fyptr = soa.template begin&lt;Particle::AttributeNames::forceY&gt;();</div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>    <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict fzptr = soa.template begin&lt;Particle::AttributeNames::forceZ&gt;();</div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span> </div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict typeIDptr = soa.template begin&lt;Particle::AttributeNames::typeId&gt;();</div>
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span> </div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>    <span class="comment">// accumulators</span></div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>    svfloat64_t virialSumX = svdup_f64(0.0);</div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>    svfloat64_t virialSumY = svdup_f64(0.0);</div>
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>    svfloat64_t virialSumZ = svdup_f64(0.0);</div>
+<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>    svfloat64_t upotSum = svdup_f64(0.0);</div>
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span> </div>
+<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>    svfloat64_t fxacc = svdup_f64(0.0);</div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>    svfloat64_t fyacc = svdup_f64(0.0);</div>
+<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>    svfloat64_t fzacc = svdup_f64(0.0);</div>
+<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span> </div>
+<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>    <span class="comment">// broadcast particle 1</span></div>
+<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>    <span class="keyword">const</span> <span class="keyword">auto</span> x1 = svdup_f64(xptr[indexFirst]);</div>
+<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>    <span class="keyword">const</span> <span class="keyword">auto</span> y1 = svdup_f64(yptr[indexFirst]);</div>
+<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>    <span class="keyword">const</span> <span class="keyword">auto</span> z1 = svdup_f64(zptr[indexFirst]);</div>
+<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span> </div>
+<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>    svbool_t pg_1;</div>
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> ownedStatePtr2 = <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span>int64_t *<span class="keyword">&gt;</span>(ownedStatePtr);</div>
+<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>    <span class="keywordtype">size_t</span> j = 0;</div>
+<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>    <span class="keywordflow">for</span> (; j &lt; neighborList.size(); j += svlen(x1)) {</div>
+<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>      pg_1 = svwhilelt_b64(j, neighborList.size());</div>
+<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>      <span class="keyword">const</span> svuint64_t index_1 = svld1(pg_1, &amp;neighborList[j]);</div>
+<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span> </div>
+<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>      svfloat64_t drx_1;</div>
+<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>      svfloat64_t dry_1;</div>
+<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>      svfloat64_t drz_1;</div>
+<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>      svfloat64_t dr2_1;</div>
+<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>      svint64_t ownedStateJ_1;</div>
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>      <span class="keyword">const</span> svbool_t pgC_1 = distCalc&lt;true&gt;(0, index_1, x1, y1, z1, pg_1, ownedStatePtr2, xptr, yptr, zptr, drx_1,</div>
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>                                            dry_1, drz_1, dr2_1, ownedStateJ_1);</div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span> </div>
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>      <span class="keyword">const</span> <span class="keywordtype">bool</span> continue_1 = svptest_any(svptrue_b64(), pgC_1);</div>
+<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>      svfloat64_t epsilon24s_1;</div>
+<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>      svfloat64_t shift6s_1;</div>
+<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>      svfloat64_t lj6_1;</div>
+<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>      svfloat64_t fac_1;</div>
+<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>      <span class="keywordflow">if</span> (continue_1)</div>
+<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>        lennardJones&lt;true&gt;(index_1, typeIDptr, typeIDptr, pgC_1, dr2_1, epsilon24s_1, shift6s_1, lj6_1, fac_1);</div>
+<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span> </div>
+<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>      <span class="keywordflow">if</span> (continue_1)</div>
+<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>        applyForces&lt;newton3, true&gt;(0, index_1, ownedStatePtr[indexFirst] == <a class="code hl_enumvalue" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a8f9a4c5fe0824547590a3fc568f5c7c7">OwnershipState::owned</a>, fxptr, fyptr, fzptr,</div>
+<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>                                   fxacc, fyacc, fzacc, virialSumX, virialSumY, virialSumZ, upotSum, drx_1, dry_1,</div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>                                   drz_1, xptr, yptr, zptr, ownedStateJ_1, pgC_1, epsilon24s_1, shift6s_1, lj6_1,</div>
+<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>                                   fac_1);</div>
+<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>    }</div>
+<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span> </div>
+<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>    fxptr[indexFirst] += svaddv_f64(svptrue_b64(), fxacc);</div>
+<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>    fyptr[indexFirst] += svaddv_f64(svptrue_b64(), fyacc);</div>
+<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span>    fzptr[indexFirst] += svaddv_f64(svptrue_b64(), fzacc);</div>
+<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span> </div>
+<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (calculateGlobals) {</div>
+<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>      <span class="keyword">const</span> <span class="keywordtype">int</span> threadnum = <a class="code hl_function" href="namespaceautopas.html#ac3917775976f91c4251e72887dc1876e">autopas_get_thread_num</a>();</div>
+<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>      <span class="comment">// we have duplicated calculations, i.e., we calculate interactions multiple times, so we have to take care</span></div>
+<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>      <span class="comment">// that we do not add the energy multiple times!</span></div>
+<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>      <span class="keywordtype">double</span> energyfactor = 1.;</div>
+<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (newton3) {</div>
+<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>        energyfactor *= 0.5;  <span class="comment">// we count the energies partly to one of the two cells!</span></div>
+<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>      }</div>
+<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span> </div>
+<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>      _aosThreadData[threadnum].upotSum += svaddv_f64(svptrue_b64(), upotSum) * energyfactor;</div>
+<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>      _aosThreadData[threadnum].virialSum[0] += svaddv_f64(svptrue_b64(), virialSumX) * energyfactor;</div>
+<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>      _aosThreadData[threadnum].virialSum[1] += svaddv_f64(svptrue_b64(), virialSumY) * energyfactor;</div>
+<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>      _aosThreadData[threadnum].virialSum[2] += svaddv_f64(svptrue_b64(), virialSumZ) * energyfactor;</div>
+<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span>    }</div>
+<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span>  }</div>
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span> </div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno"><a class="line" href="classautopas_1_1LJFunctorSVE.html#a72427fb4a5cac7f7a2bf6bcef916700f">  702</a></span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="classautopas_1_1LJFunctorSVE.html#a72427fb4a5cac7f7a2bf6bcef916700f">getNeededAttr</a>() {</div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>    <span class="keywordflow">return</span> std::array&lt;typename Particle::AttributeNames, 9&gt;{</div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>        Particle::AttributeNames::id,     Particle::AttributeNames::posX,   Particle::AttributeNames::posY,</div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>        Particle::AttributeNames::posZ,   Particle::AttributeNames::forceX, Particle::AttributeNames::forceY,</div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>        Particle::AttributeNames::forceZ, Particle::AttributeNames::typeId, Particle::AttributeNames::ownershipState};</div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>  }</div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span> </div>
+<div class="line"><a id="l00712" name="l00712"></a><span class="lineno"><a class="line" href="classautopas_1_1LJFunctorSVE.html#afde072c3214d09ead0188977ecd056eb">  712</a></span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="classautopas_1_1LJFunctorSVE.html#afde072c3214d09ead0188977ecd056eb">getNeededAttr</a>(std::false_type) {</div>
+<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span>    <span class="keywordflow">return</span> std::array&lt;typename Particle::AttributeNames, 6&gt;{</div>
+<div class="line"><a id="l00714" name="l00714"></a><span class="lineno">  714</span>        Particle::AttributeNames::id,   Particle::AttributeNames::posX,   Particle::AttributeNames::posY,</div>
+<div class="line"><a id="l00715" name="l00715"></a><span class="lineno">  715</span>        Particle::AttributeNames::posZ, Particle::AttributeNames::typeId, Particle::AttributeNames::ownershipState};</div>
+<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>  }</div>
+<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span> </div>
+<div class="line"><a id="l00721" name="l00721"></a><span class="lineno"><a class="line" href="classautopas_1_1LJFunctorSVE.html#a6870bcc3fb8d33b61fda5c21e583b223">  721</a></span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="classautopas_1_1LJFunctorSVE.html#a6870bcc3fb8d33b61fda5c21e583b223">getComputedAttr</a>() {</div>
+<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span>    <span class="keywordflow">return</span> std::array&lt;typename Particle::AttributeNames, 3&gt;{</div>
+<div class="line"><a id="l00723" name="l00723"></a><span class="lineno">  723</span>        Particle::AttributeNames::forceX, Particle::AttributeNames::forceY, Particle::AttributeNames::forceZ};</div>
+<div class="line"><a id="l00724" name="l00724"></a><span class="lineno">  724</span>  }</div>
+<div class="line"><a id="l00725" name="l00725"></a><span class="lineno">  725</span> </div>
+<div class="line"><a id="l00730" name="l00730"></a><span class="lineno"><a class="line" href="classautopas_1_1LJFunctorSVE.html#a846b555be0b406e0702b297988bc4a51">  730</a></span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classautopas_1_1LJFunctorSVE.html#a846b555be0b406e0702b297988bc4a51">getMixing</a>() { <span class="keywordflow">return</span> useMixing; }</div>
+<div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span> </div>
+<div class="line"><a id="l00738" name="l00738"></a><span class="lineno"><a class="line" href="classautopas_1_1LJFunctorSVE.html#ac6fafc820d24b2c4278f19550faa1df9">  738</a></span>  <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code hl_function" href="classautopas_1_1LJFunctorSVE.html#ac6fafc820d24b2c4278f19550faa1df9">getNumFlopsPerKernelCall</a>() {</div>
+<div class="line"><a id="l00739" name="l00739"></a><span class="lineno">  739</span>    <span class="comment">// Kernel: 12 = 1 (inverse R squared) + 8 (compute scale) + 3 (apply</span></div>
+<div class="line"><a id="l00740" name="l00740"></a><span class="lineno">  740</span>    <span class="comment">// scale) sum Forces: 6 (forces) kernel total = 12 + 6 = 18</span></div>
+<div class="line"><a id="l00741" name="l00741"></a><span class="lineno">  741</span>    <span class="keywordflow">return</span> 18ul;</div>
+<div class="line"><a id="l00742" name="l00742"></a><span class="lineno">  742</span>  }</div>
+<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span> </div>
+<div class="line"><a id="l00748" name="l00748"></a><span class="lineno"><a class="line" href="classautopas_1_1LJFunctorSVE.html#a724dffb724d5162b67e692ac50684397">  748</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1LJFunctorSVE.html#a724dffb724d5162b67e692ac50684397">initTraversal</a>() final {</div>
+<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>    _upotSum = 0.;</div>
+<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>    _virialSum = {0., 0., 0.};</div>
+<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>    _postProcessed = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; _aosThreadData.size(); ++i) {</div>
+<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>      _aosThreadData[i].setZero();</div>
+<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span>    }</div>
+<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span>  }</div>
+<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span> </div>
+<div class="line"><a id="l00761" name="l00761"></a><span class="lineno"><a class="line" href="classautopas_1_1LJFunctorSVE.html#a5b49e07aa4be3e2c717a00ca20671d34">  761</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1LJFunctorSVE.html#a5b49e07aa4be3e2c717a00ca20671d34">endTraversal</a>(<span class="keywordtype">bool</span> newton3) <span class="keyword">final</span> {</div>
+<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span>    <span class="keywordflow">if</span> (_postProcessed) {</div>
+<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>      <span class="keywordflow">throw</span> <a class="code hl_class" href="classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html">utils::ExceptionHandler::AutoPasException</a>(</div>
+<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>          <span class="stringliteral">&quot;Already postprocessed, endTraversal(bool newton3) was called twice without calling initTraversal().&quot;</span>);</div>
+<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>    }</div>
+<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span> </div>
+<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span>    <span class="keywordflow">if</span> (calculateGlobals) {</div>
+<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; _aosThreadData.size(); ++i) {</div>
+<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span>        _upotSum += _aosThreadData[i].upotSum;</div>
+<div class="line"><a id="l00770" name="l00770"></a><span class="lineno">  770</span>        _virialSum = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a6bf0078e3026f8051e7377c581859ac3">utils::ArrayMath::add</a>(_virialSum, _aosThreadData[i].virialSum);</div>
+<div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>      }</div>
+<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>      <span class="keywordflow">if</span> (not newton3) {</div>
+<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>        <span class="comment">// if the newton3 optimization is disabled we have added every energy contribution twice, so we divide by 2</span></div>
+<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span>        <span class="comment">// here.</span></div>
+<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>        _upotSum *= 0.5;</div>
+<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>        _virialSum = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a6634f9d050c47d36c214cb5c4c0c873a">utils::ArrayMath::mulScalar</a>(_virialSum, 0.5);</div>
+<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span>      }</div>
+<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span>      <span class="comment">// we have always calculated 6*upot, so we divide by 6 here!</span></div>
+<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span>      _upotSum /= 6.;</div>
+<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>      _postProcessed = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>    }</div>
+<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>  }</div>
+<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span> </div>
+<div class="line"><a id="l00788" name="l00788"></a><span class="lineno"><a class="line" href="classautopas_1_1LJFunctorSVE.html#a0b45935e2469b05c83c7f10f8efcfcfb">  788</a></span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classautopas_1_1LJFunctorSVE.html#a0b45935e2469b05c83c7f10f8efcfcfb">getUpot</a>() {</div>
+<div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>    <span class="keywordflow">if</span> (not calculateGlobals) {</div>
+<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>      <span class="keywordflow">throw</span> <a class="code hl_class" href="classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html">utils::ExceptionHandler::AutoPasException</a>(</div>
+<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>          <span class="stringliteral">&quot;Trying to get upot even though calculateGlobals is false. If you want this functor to calculate global &quot;</span></div>
+<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>          <span class="stringliteral">&quot;values, please specify calculateGlobals to be true.&quot;</span>);</div>
+<div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>    }</div>
+<div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span>    <span class="keywordflow">if</span> (not _postProcessed) {</div>
+<div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span>      <span class="keywordflow">throw</span> <a class="code hl_class" href="classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html">utils::ExceptionHandler::AutoPasException</a>(<span class="stringliteral">&quot;Cannot get upot, because endTraversal was not called.&quot;</span>);</div>
+<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span>    }</div>
+<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span>    <span class="keywordflow">return</span> _upotSum;</div>
+<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span>  }</div>
+<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span> </div>
+<div class="line"><a id="l00804" name="l00804"></a><span class="lineno"><a class="line" href="classautopas_1_1LJFunctorSVE.html#a72675c60c7aaf697b4c1234fb0b3bce2">  804</a></span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classautopas_1_1LJFunctorSVE.html#a72675c60c7aaf697b4c1234fb0b3bce2">getVirial</a>() {</div>
+<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span>    <span class="keywordflow">if</span> (not calculateGlobals) {</div>
+<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>      <span class="keywordflow">throw</span> <a class="code hl_class" href="classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html">utils::ExceptionHandler::AutoPasException</a>(</div>
+<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>          <span class="stringliteral">&quot;Trying to get virial even though calculateGlobals is false. If you want this functor to calculate global &quot;</span></div>
+<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>          <span class="stringliteral">&quot;values, please specify calculateGlobals to be true.&quot;</span>);</div>
+<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>    }</div>
+<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>    <span class="keywordflow">if</span> (not _postProcessed) {</div>
+<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>      <span class="keywordflow">throw</span> <a class="code hl_class" href="classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html">utils::ExceptionHandler::AutoPasException</a>(<span class="stringliteral">&quot;Cannot get virial, because endTraversal was not called.&quot;</span>);</div>
+<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>    }</div>
+<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>    <span class="keywordflow">return</span> _virialSum[0] + _virialSum[1] + _virialSum[2];</div>
+<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span>  }</div>
+<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span> </div>
+<div class="line"><a id="l00824" name="l00824"></a><span class="lineno"><a class="line" href="classautopas_1_1LJFunctorSVE.html#a27b3fb9a8d59ad970d6e04f7c5fbafec">  824</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1LJFunctorSVE.html#a27b3fb9a8d59ad970d6e04f7c5fbafec">setParticleProperties</a>(<span class="keywordtype">double</span> epsilon24, <span class="keywordtype">double</span> sigmaSquare) {</div>
+<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span><span class="preprocessor">#ifdef __ARM_FEATURE_SVE</span></div>
+<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>    _epsilon24 = epsilon24;</div>
+<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>    _sigmaSquare = sigmaSquare;</div>
+<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (applyShift) {</div>
+<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>      _shift6 = <a class="code hl_function" href="classParticlePropertiesLibrary.html#ab81affa570460a247fc4e49058b7da9a">ParticlePropertiesLibrary&lt;double, size_t&gt;::calcShift6</a>(epsilon24, sigmaSquare, _cutoffsquare);</div>
+<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span>      _shift6 = 0.0;</div>
+<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span>    }</div>
+<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span> </div>
+<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span>    _epsilon24AoS = epsilon24;</div>
+<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span>    _sigmaSquareAoS = sigmaSquare;</div>
+<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (applyShift) {</div>
+<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>      _shift6AoS = <a class="code hl_function" href="classParticlePropertiesLibrary.html#ab81affa570460a247fc4e49058b7da9a">ParticlePropertiesLibrary&lt;double, size_t&gt;::calcShift6</a>(epsilon24, sigmaSquare, _cutoffsquareAoS);</div>
+<div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span>      _shift6AoS = 0.;</div>
+<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>    }</div>
+<div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span>  }</div>
+<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span> </div>
+<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span>  <span class="keyword">class </span>AoSThreadData {</div>
+<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span>   <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>    AoSThreadData() : virialSum{0., 0., 0.}, upotSum{0.} {}</div>
+<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>    <span class="keywordtype">void</span> setZero() {</div>
+<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>      virialSum = {0., 0., 0.};</div>
+<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>      upotSum = 0.;</div>
+<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>    }</div>
+<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span> </div>
+<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>    <span class="comment">// variables</span></div>
+<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>    std::array&lt;double, 3&gt; virialSum;</div>
+<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>    <span class="keywordtype">double</span> upotSum;</div>
+<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span> </div>
+<div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>   <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>    <span class="comment">// dummy parameter to get the right size (64 bytes)</span></div>
+<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>    [[maybe_unused]] <span class="keywordtype">double</span> _remainingTo64[4]{};</div>
+<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span>  };</div>
+<div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span>  <span class="comment">// make sure of the size of AoSThreadData</span></div>
+<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>  <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>(AoSThreadData) % 64 == 0, <span class="stringliteral">&quot;AoSThreadData has wrong size&quot;</span>);</div>
+<div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span> </div>
+<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span><span class="preprocessor">#ifdef __ARM_FEATURE_SVE</span></div>
+<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> _cutoffsquare{};</div>
+<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span>  <span class="keywordtype">double</span> _shift6{0.};</div>
+<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span>  <span class="keywordtype">double</span> _epsilon24{0.};</div>
+<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>  <span class="keywordtype">double</span> _sigmaSquare{0.};</div>
+<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span> </div>
+<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> _cutoffsquareAoS;</div>
+<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>  <span class="keywordtype">double</span> _epsilon24AoS{0.}, _sigmaSquareAoS{0.}, _shift6AoS{0.};</div>
+<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span> </div>
+<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>  <a class="code hl_class" href="classParticlePropertiesLibrary.html">ParticlePropertiesLibrary&lt;double, size_t&gt;</a> *_PPLibrary = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span> </div>
+<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>  <span class="comment">// sum of the potential energy, only calculated if calculateGlobals is true</span></div>
+<div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span>  <span class="keywordtype">double</span> _upotSum{0.};</div>
+<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span> </div>
+<div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span>  <span class="comment">// sum of the virial, only calculated if calculateGlobals is true</span></div>
+<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span>  std::array&lt;double, 3&gt; _virialSum{0., 0., 0.};</div>
+<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span> </div>
+<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>  <span class="comment">// thread buffer for aos</span></div>
+<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span>  std::vector&lt;AoSThreadData&gt; _aosThreadData{};</div>
+<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span> </div>
+<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span>  <span class="comment">// defines whether or whether not the global values are already preprocessed</span></div>
+<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span>  <span class="keywordtype">bool</span> _postProcessed{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span>};</div>
+<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span>}  <span class="comment">// namespace autopas</span></div>
 <div class="ttc" id="aAlignedAllocator_8h_html"><div class="ttname"><a href="AlignedAllocator_8h.html">AlignedAllocator.h</a></div></div>
 <div class="ttc" id="aArrayMath_8h_html"><div class="ttname"><a href="ArrayMath_8h.html">ArrayMath.h</a></div></div>
 <div class="ttc" id="aFunctor_8h_html"><div class="ttname"><a href="Functor_8h.html">Functor.h</a></div></div>
@@ -907,26 +906,26 @@ $(function() {
 <div class="ttc" id="aclassautopas_1_1Functor_html"><div class="ttname"><a href="classautopas_1_1Functor.html">autopas::Functor</a></div><div class="ttdoc">Functor class.</div><div class="ttdef"><b>Definition:</b> Functor.h:43</div></div>
 <div class="ttc" id="aclassautopas_1_1Functor_html_ae72cd156a183c29c07770f1878ea5a8b"><div class="ttname"><a href="classautopas_1_1Functor.html#ae72cd156a183c29c07770f1878ea5a8b">autopas::Functor&lt; Particle, LJFunctorSVE&lt; Particle, false, false, FunctorN3Modes::Both, false, true &gt; &gt;::Functor</a></div><div class="ttdeci">Functor(double cutoff)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> Functor.h:58</div></div>
 <div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html">autopas::LJFunctorSVE</a></div><div class="ttdoc">A functor to handle lennard-jones interactions between two particles (molecules).</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:46</div></div>
-<div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a0b45935e2469b05c83c7f10f8efcfcfb"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a0b45935e2469b05c83c7f10f8efcfcfb">autopas::LJFunctorSVE::getUpot</a></div><div class="ttdeci">double getUpot()</div><div class="ttdoc">Get the potential Energy.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:789</div></div>
-<div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a27b3fb9a8d59ad970d6e04f7c5fbafec"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a27b3fb9a8d59ad970d6e04f7c5fbafec">autopas::LJFunctorSVE::setParticleProperties</a></div><div class="ttdeci">void setParticleProperties(double epsilon24, double sigmaSquare)</div><div class="ttdoc">Sets the particle properties constants for this functor.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:825</div></div>
+<div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a0b45935e2469b05c83c7f10f8efcfcfb"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a0b45935e2469b05c83c7f10f8efcfcfb">autopas::LJFunctorSVE::getUpot</a></div><div class="ttdeci">double getUpot()</div><div class="ttdoc">Get the potential Energy.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:788</div></div>
+<div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a27b3fb9a8d59ad970d6e04f7c5fbafec"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a27b3fb9a8d59ad970d6e04f7c5fbafec">autopas::LJFunctorSVE::setParticleProperties</a></div><div class="ttdeci">void setParticleProperties(double epsilon24, double sigmaSquare)</div><div class="ttdoc">Sets the particle properties constants for this functor.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:824</div></div>
 <div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a2f1121f96810e2d8ea9e835e6ae0d836"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a2f1121f96810e2d8ea9e835e6ae0d836">autopas::LJFunctorSVE::LJFunctorSVE</a></div><div class="ttdeci">LJFunctorSVE()=delete</div><div class="ttdoc">Deleted default constructor.</div></div>
-<div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a5b49e07aa4be3e2c717a00ca20671d34"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a5b49e07aa4be3e2c717a00ca20671d34">autopas::LJFunctorSVE::endTraversal</a></div><div class="ttdeci">void endTraversal(bool newton3) final</div><div class="ttdoc">Accumulates global values, e.g.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:762</div></div>
+<div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a5b49e07aa4be3e2c717a00ca20671d34"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a5b49e07aa4be3e2c717a00ca20671d34">autopas::LJFunctorSVE::endTraversal</a></div><div class="ttdeci">void endTraversal(bool newton3) final</div><div class="ttdoc">Accumulates global values, e.g.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:761</div></div>
 <div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a613eb1e57e6d3892235d14aaf5694fd1"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a613eb1e57e6d3892235d14aaf5694fd1">autopas::LJFunctorSVE::isRelevantForTuning</a></div><div class="ttdeci">bool isRelevantForTuning() final</div><div class="ttdoc">Specifies whether the functor should be considered for the auto-tuning process.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:111</div></div>
-<div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a6870bcc3fb8d33b61fda5c21e583b223"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a6870bcc3fb8d33b61fda5c21e583b223">autopas::LJFunctorSVE::getComputedAttr</a></div><div class="ttdeci">static constexpr auto getComputedAttr()</div><div class="ttdoc">Get attributes computed by this functor.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:722</div></div>
+<div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a6870bcc3fb8d33b61fda5c21e583b223"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a6870bcc3fb8d33b61fda5c21e583b223">autopas::LJFunctorSVE::getComputedAttr</a></div><div class="ttdeci">static constexpr auto getComputedAttr()</div><div class="ttdoc">Get attributes computed by this functor.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:721</div></div>
 <div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a697c4b121cba07ab7d673e99aa3d2ee2"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a697c4b121cba07ab7d673e99aa3d2ee2">autopas::LJFunctorSVE::allowsNonNewton3</a></div><div class="ttdeci">bool allowsNonNewton3() final</div><div class="ttdoc">Specifies whether the functor is capable of non-Newton3-like functors.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:115</div></div>
-<div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a72427fb4a5cac7f7a2bf6bcef916700f"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a72427fb4a5cac7f7a2bf6bcef916700f">autopas::LJFunctorSVE::getNeededAttr</a></div><div class="ttdeci">static constexpr auto getNeededAttr()</div><div class="ttdoc">Get attributes needed for computation.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:703</div></div>
-<div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a724dffb724d5162b67e692ac50684397"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a724dffb724d5162b67e692ac50684397">autopas::LJFunctorSVE::initTraversal</a></div><div class="ttdeci">void initTraversal() final</div><div class="ttdoc">Reset the global values.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:749</div></div>
-<div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a72675c60c7aaf697b4c1234fb0b3bce2"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a72675c60c7aaf697b4c1234fb0b3bce2">autopas::LJFunctorSVE::getVirial</a></div><div class="ttdeci">double getVirial()</div><div class="ttdoc">Get the virial.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:805</div></div>
-<div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a7f25b329f70ae82a64b86d1ab897cb74"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a7f25b329f70ae82a64b86d1ab897cb74">autopas::LJFunctorSVE::SoAFunctorVerlet</a></div><div class="ttdeci">void SoAFunctorVerlet(SoAView&lt; SoAArraysType &gt; soa, const size_t indexFirst, const std::vector&lt; size_t, autopas::AlignedAllocator&lt; size_t &gt; &gt; &amp;neighborList, bool newton3) final</div><div class="ttdoc">Functor for structure of arrays (SoA) for neighbor lists.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:603</div></div>
-<div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a846b555be0b406e0702b297988bc4a51"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a846b555be0b406e0702b297988bc4a51">autopas::LJFunctorSVE::getMixing</a></div><div class="ttdeci">static constexpr bool getMixing()</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:731</div></div>
+<div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a72427fb4a5cac7f7a2bf6bcef916700f"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a72427fb4a5cac7f7a2bf6bcef916700f">autopas::LJFunctorSVE::getNeededAttr</a></div><div class="ttdeci">static constexpr auto getNeededAttr()</div><div class="ttdoc">Get attributes needed for computation.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:702</div></div>
+<div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a724dffb724d5162b67e692ac50684397"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a724dffb724d5162b67e692ac50684397">autopas::LJFunctorSVE::initTraversal</a></div><div class="ttdeci">void initTraversal() final</div><div class="ttdoc">Reset the global values.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:748</div></div>
+<div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a72675c60c7aaf697b4c1234fb0b3bce2"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a72675c60c7aaf697b4c1234fb0b3bce2">autopas::LJFunctorSVE::getVirial</a></div><div class="ttdeci">double getVirial()</div><div class="ttdoc">Get the virial.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:804</div></div>
+<div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a7f25b329f70ae82a64b86d1ab897cb74"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a7f25b329f70ae82a64b86d1ab897cb74">autopas::LJFunctorSVE::SoAFunctorVerlet</a></div><div class="ttdeci">void SoAFunctorVerlet(SoAView&lt; SoAArraysType &gt; soa, const size_t indexFirst, const std::vector&lt; size_t, autopas::AlignedAllocator&lt; size_t &gt; &gt; &amp;neighborList, bool newton3) final</div><div class="ttdoc">Functor for structure of arrays (SoA) for neighbor lists.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:602</div></div>
+<div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a846b555be0b406e0702b297988bc4a51"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a846b555be0b406e0702b297988bc4a51">autopas::LJFunctorSVE::getMixing</a></div><div class="ttdeci">static constexpr bool getMixing()</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:730</div></div>
 <div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a89ffeb352ca39bd9098ab1995eed9697"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a89ffeb352ca39bd9098ab1995eed9697">autopas::LJFunctorSVE::SoAFunctorPair</a></div><div class="ttdeci">void SoAFunctorPair(SoAView&lt; SoAArraysType &gt; soa1, SoAView&lt; SoAArraysType &gt; soa2, const bool newton3) final</div><div class="ttdoc">Functor for structure of arrays (SoA)</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:191</div></div>
 <div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a8c1707583380a03984cda46068c8c309"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a8c1707583380a03984cda46068c8c309">autopas::LJFunctorSVE::LJFunctorSVE</a></div><div class="ttdeci">LJFunctorSVE(double cutoff)</div><div class="ttdoc">Constructor for Functor with mixing disabled.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:91</div></div>
 <div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a8d1e55d3ab185d796ec248298eddebde"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a8d1e55d3ab185d796ec248298eddebde">autopas::LJFunctorSVE::SoAFunctorSingle</a></div><div class="ttdeci">void SoAFunctorSingle(SoAView&lt; SoAArraysType &gt; soa, bool newton3) final</div><div class="ttdoc">Functor for structure of arrays (SoA)</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:178</div></div>
 <div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_a9a910be28179529109a3d8bc15d10fbe"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#a9a910be28179529109a3d8bc15d10fbe">autopas::LJFunctorSVE::AoSFunctor</a></div><div class="ttdeci">void AoSFunctor(Particle &amp;i, Particle &amp;j, bool newton3) final</div><div class="ttdoc">Functor for arrays of structures (AoS).</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:119</div></div>
 <div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_aafd40e0ff3a38e49af6871c084685b45"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#aafd40e0ff3a38e49af6871c084685b45">autopas::LJFunctorSVE::LJFunctorSVE</a></div><div class="ttdeci">LJFunctorSVE(double cutoff, ParticlePropertiesLibrary&lt; double, size_t &gt; &amp;particlePropertiesLibrary)</div><div class="ttdoc">Constructor for Functor with mixing active.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:103</div></div>
-<div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_ac6fafc820d24b2c4278f19550faa1df9"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#ac6fafc820d24b2c4278f19550faa1df9">autopas::LJFunctorSVE::getNumFlopsPerKernelCall</a></div><div class="ttdeci">static unsigned long getNumFlopsPerKernelCall()</div><div class="ttdoc">Get the number of flops used per kernel call.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:739</div></div>
+<div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_ac6fafc820d24b2c4278f19550faa1df9"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#ac6fafc820d24b2c4278f19550faa1df9">autopas::LJFunctorSVE::getNumFlopsPerKernelCall</a></div><div class="ttdeci">static unsigned long getNumFlopsPerKernelCall()</div><div class="ttdoc">Get the number of flops used per kernel call.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:738</div></div>
 <div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_af5a162235f35169a89a0a4b1fc4f43ac"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#af5a162235f35169a89a0a4b1fc4f43ac">autopas::LJFunctorSVE::allowsNewton3</a></div><div class="ttdeci">bool allowsNewton3() final</div><div class="ttdoc">Specifies whether the functor is capable of Newton3-like functors.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:113</div></div>
-<div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_afde072c3214d09ead0188977ecd056eb"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#afde072c3214d09ead0188977ecd056eb">autopas::LJFunctorSVE::getNeededAttr</a></div><div class="ttdeci">static constexpr auto getNeededAttr(std::false_type)</div><div class="ttdoc">Get attributes needed for computation without N3 optimization.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:713</div></div>
+<div class="ttc" id="aclassautopas_1_1LJFunctorSVE_html_afde072c3214d09ead0188977ecd056eb"><div class="ttname"><a href="classautopas_1_1LJFunctorSVE.html#afde072c3214d09ead0188977ecd056eb">autopas::LJFunctorSVE::getNeededAttr</a></div><div class="ttdeci">static constexpr auto getNeededAttr(std::false_type)</div><div class="ttdoc">Get attributes needed for computation without N3 optimization.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:712</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleBase_html"><div class="ttname"><a href="classautopas_1_1ParticleBase.html">autopas::ParticleBase</a></div><div class="ttdoc">Minimal definition of a basic particle.</div><div class="ttdef"><b>Definition:</b> ParticleBase.h:32</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleBase_html_a5edc300640c4ece1b7cd14dbe3633c18"><div class="ttname"><a href="classautopas_1_1ParticleBase.html#a5edc300640c4ece1b7cd14dbe3633c18">autopas::ParticleBase::SoAArraysType</a></div><div class="ttdeci">typename autopas::utils::SoAType&lt; ParticleBase&lt; floatType, idType &gt; *, idType, floatType, floatType, floatType, floatType, floatType, floatType, OwnershipState &gt;::Type SoAArraysType</div><div class="ttdoc">The type for the soa storage.</div><div class="ttdef"><b>Definition:</b> ParticleBase.h:245</div></div>
 <div class="ttc" id="aclassautopas_1_1SoAView_html"><div class="ttname"><a href="classautopas_1_1SoAView.html">autopas::SoAView</a></div><div class="ttdoc">View on a fixed part of a SoA between a start index and an end index.</div><div class="ttdef"><b>Definition:</b> SoAView.h:23</div></div>
