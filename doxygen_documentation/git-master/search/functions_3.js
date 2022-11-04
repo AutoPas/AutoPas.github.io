@@ -14,7 +14,7 @@ var searchData=
   ['deserialize_11',['deserialize',['../classautopas_1_1sph_1_1SPHParticle.html#ae2bb174bd8b1d2f33b5a4cc7943ca962',1,'autopas::sph::SPHParticle']]],
   ['deserializeconfiguration_12',['deserializeConfiguration',['../namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a75462779d95074a5b62c797a45bd8fc1',1,'autopas::utils::AutoPasConfigurationCommunicator']]],
   ['destroy_13',['destroy',['../classautopas_1_1AlignedAllocator.html#aac304a3b36e63dd7b1fdb755970af1f5',1,'autopas::AlignedAllocator']]],
-  ['directsum_14',['DirectSum',['../classautopas_1_1DirectSum.html#a1f6efdbe28635a02a0f4fdf6d4968c9c',1,'autopas::DirectSum']]],
+  ['directsum_14',['DirectSum',['../classautopas_1_1DirectSum.html#a1872e4b41133591f3d427c9913db9636',1,'autopas::DirectSum']]],
   ['dirtysize_15',['dirtySize',['../classParticleVector.html#ad04b62ea4323cdd6ee9711b10dd2c4b1',1,'ParticleVector']]],
   ['distributeconfigurations_16',['distributeConfigurations',['../namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a6f3329214580d2fd3a89b313b7d80323',1,'autopas::utils::AutoPasConfigurationCommunicator']]],
   ['distributeranksinbuckets_17',['distributeRanksInBuckets',['../namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#ab3e8b8d82bc7ec37105b3a12e10a58d4',1,'autopas::utils::AutoPasConfigurationCommunicator']]],
