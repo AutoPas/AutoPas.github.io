@@ -6,7 +6,7 @@ var searchData=
   ['velocityupdate_3',['velocityUpdate',['../structSimulation_1_1Timers.html#ab37f626dd6be0a88b2b821f2915d78bb',1,'Simulation::Timers']]],
   ['verletclustersize_4',['verletClusterSize',['../classMDFlexConfig.html#a1fa81c417ef52e47aa20757b64371cc0',1,'MDFlexConfig']]],
   ['verletrebuildfrequency_5',['verletRebuildFrequency',['../classMDFlexConfig.html#a941d7a47c7e72a78ad0cbd7448923de8',1,'MDFlexConfig']]],
-  ['verletskinradius_6',['verletSkinRadius',['../classMDFlexConfig.html#ada358b5f901036e050590651267e273d',1,'MDFlexConfig']]],
+  ['verletskinradiuspertimestep_6',['verletSkinRadiusPerTimestep',['../classMDFlexConfig.html#a76137c72f2f7846763e35827c90bbe9c',1,'MDFlexConfig']]],
   ['vtk_7',['vtk',['../structSimulation_1_1Timers.html#ad3580ca8f612ad67ed212f20c963acf1',1,'Simulation::Timers']]],
   ['vtkfilename_8',['vtkFileName',['../classMDFlexConfig.html#ace840821266c4f6cd8de8303ec5b746f',1,'MDFlexConfig']]],
   ['vtkoutputfolder_9',['vtkOutputFolder',['../classMDFlexConfig.html#a60a29f8928ea3c0230697c0e6052d203',1,'MDFlexConfig']]],
