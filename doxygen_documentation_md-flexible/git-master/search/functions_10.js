@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['_7edomaindecomposition_414',['~DomainDecomposition',['../classDomainDecomposition.html#a4c75d3c2cdfd7bab6d7ce907024c218f',1,'DomainDecomposition']]],
-  ['_7eparallelvtkwriter_415',['~ParallelVtkWriter',['../classParallelVtkWriter.html#aa788d33dc3f33d1364bfdedd696d5520',1,'ParallelVtkWriter']]],
-  ['_7eregulargriddecomposition_416',['~RegularGridDecomposition',['../classRegularGridDecomposition.html#a5fb13b3f91b4a9194c026e02b47695f6',1,'RegularGridDecomposition']]],
-  ['_7esimulation_417',['~Simulation',['../classSimulation.html#aabcfa929f9e6622346ece569f0229a91',1,'Simulation']]]
+  ['waitforsendrequests_0',['waitForSendRequests',['../classParticleCommunicator.html#a863c20744b6a155f58ebdc250452c9a3',1,'ParticleCommunicator']]],
+  ['wrappositionsaroundboundaries_1',['wrapPositionsAroundBoundaries',['../namespaceBoundaryConditions_1_1anonymous__namespace_02BoundaryConditions_8h_03.html#a5b7a3a95ac8708b577a74a1ebaffb4f4',1,'BoundaryConditions::anonymous_namespace{BoundaryConditions.h}']]]
 ];

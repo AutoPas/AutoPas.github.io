@@ -4,7 +4,7 @@ var searchData=
   ['_5fconfiguration_1',['_configuration',['../classSimulation.html#af43a495b3bfed4453ccf885137200b7f',1,'Simulation']]],
   ['_5fcreatevtkfiles_2',['_createVtkFiles',['../classSimulation.html#ab87e6fc953d99e1fff60d3fd5a6578bf',1,'Simulation']]],
   ['_5fepsilon_3',['_epsilon',['../classObject.html#a7570fb19ea3ecbab0acdecf5f0447be1',1,'Object']]],
-  ['_5ffloatstringprecision_4',['_floatStringPrecision',['../classSimulation.html#a22125eb8a33e587d1d4647f146835809',1,'Simulation']]],
+  ['_5ffloatstringprecision_4',['_floatStringPrecision',['../classSimulation.html#a7dcaa423874ae99e1bd5f5400bdfa3c0',1,'Simulation']]],
   ['_5fhomogeneity_5',['_homogeneity',['../classSimulation.html#a88b26e40945e114d77997e6bfb305707',1,'Simulation']]],
   ['_5fiteration_6',['_iteration',['../classSimulation.html#aec6b3d58a474947f6a27ee1682a63ca2',1,'Simulation']]],
   ['_5flogfile_7',['_logFile',['../classSimulation.html#afeb40b492081ac3b96dae3d20e91d944',1,'Simulation']]],
