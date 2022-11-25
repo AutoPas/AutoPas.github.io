@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">2.0.0-b540736</span>
+   &#160;<span id="projectnumber">2.0.0-678b8e2</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -113,8 +113,6 @@ $(function() {
 <div class="textblock"><code>#include &quot;<a class="el" href="Simulation_8h_source.html">Simulation.h</a>&quot;</code><br />
 <code>#include &quot;TypeDefinitions.h&quot;</code><br />
 <code>#include &quot;autopas/AutoPasDecl.h&quot;</code><br />
-<code>#include &quot;autopas/molecularDynamics/LJFunctor.h&quot;</code><br />
-<code>#include &quot;autopas/molecularDynamics/LJFunctorAVX.h&quot;</code><br />
 <code>#include &quot;autopas/pairwiseFunctors/FlopCounterFunctor.h&quot;</code><br />
 <code>#include &quot;autopas/utils/SimilarityFunctions.h&quot;</code><br />
 <code>#include &quot;autopas/utils/WrapMPI.h&quot;</code><br />
@@ -130,56 +128,56 @@ Include dependency graph for Simulation.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="Simulation_8cpp__incl.png" border="0" usemap="#a_2github_2workspace_2examples_2md-flexible_2src_2Simulation_8cpp" alt=""/></div>
 <map name="a_2github_2workspace_2examples_2md-flexible_2src_2Simulation_8cpp" id="a_2github_2workspace_2examples_2md-flexible_2src_2Simulation_8cpp">
-<area shape="rect" title=" " alt="" coords="3119,5,3343,45"/>
-<area shape="rect" href="Simulation_8h.html" title=" " alt="" coords="2148,101,2252,126"/>
-<area shape="rect" title=" " alt="" coords="1696,181,1776,207"/>
-<area shape="rect" title=" " alt="" coords="4653,438,4824,463"/>
-<area shape="rect" href="TypeDefinitions_8h_source.html" title=" " alt="" coords="147,438,304,463"/>
-<area shape="rect" title=" " alt="" coords="2845,350,3025,375"/>
-<area shape="rect" href="MDFlexConfig_8h.html" title=" " alt="" coords="2535,343,2719,383"/>
-<area shape="rect" title=" " alt="" coords="2895,93,3103,133"/>
-<area shape="rect" title=" " alt="" coords="3127,93,3335,133"/>
-<area shape="rect" title=" " alt="" coords="3359,93,3547,133"/>
-<area shape="rect" title=" " alt="" coords="3572,93,3745,133"/>
-<area shape="rect" title=" " alt="" coords="3769,101,3857,126"/>
-<area shape="rect" title=" " alt="" coords="3881,101,3956,126"/>
-<area shape="rect" href="Thermostat_8h.html" title=" " alt="" coords="3939,262,4048,287"/>
-<area shape="rect" href="TimeDiscretization_8h.html" title=" " alt="" coords="2555,262,2712,287"/>
-<area shape="rect" title=" " alt="" coords="4863,101,5084,126"/>
-<area shape="rect" title=" " alt="" coords="1902,181,1973,207"/>
-<area shape="rect" title=" " alt="" coords="2023,350,2100,375"/>
-<area shape="rect" title=" " alt="" coords="1901,262,1960,287"/>
-<area shape="rect" title=" " alt="" coords="2239,181,2294,207"/>
-<area shape="rect" href="ParallelVtkWriter_8h.html" title=" " alt="" coords="2049,181,2215,207"/>
-<area shape="rect" href="RegularGridDecomposition_8h.html" title=" " alt="" coords="2132,255,2345,295"/>
-<area shape="rect" href="DomainDecomposition_8h.html" title=" " alt="" coords="2277,350,2459,375"/>
-<area shape="rect" title=" " alt="" coords="5,519,213,559"/>
-<area shape="rect" title=" " alt="" coords="237,519,445,559"/>
-<area shape="rect" href="BoundaryTypeOption_8h.html" title=" " alt="" coords="328,431,517,471"/>
-<area shape="rect" title=" " alt="" coords="4187,438,4263,463"/>
-<area shape="rect" title=" " alt="" coords="4288,438,4339,463"/>
-<area shape="rect" title=" " alt="" coords="1780,526,1823,551"/>
-<area shape="rect" title=" " alt="" coords="4363,438,4423,463"/>
-<area shape="rect" title=" " alt="" coords="541,431,744,471"/>
-<area shape="rect" title=" " alt="" coords="769,431,962,471"/>
-<area shape="rect" title=" " alt="" coords="987,431,1192,471"/>
-<area shape="rect" title=" " alt="" coords="1217,431,1434,471"/>
-<area shape="rect" title=" " alt="" coords="1459,431,1683,471"/>
-<area shape="rect" title=" " alt="" coords="1707,431,1917,471"/>
-<area shape="rect" title=" " alt="" coords="1941,438,2184,463"/>
-<area shape="rect" title=" " alt="" coords="2209,431,2391,471"/>
-<area shape="rect" title=" " alt="" coords="2416,431,2605,471"/>
-<area shape="rect" title=" " alt="" coords="2629,431,2856,471"/>
-<area shape="rect" title=" " alt="" coords="2880,438,3075,463"/>
-<area shape="rect" href="CubeClosestPacked_8h.html" title=" " alt="" coords="4448,431,4629,471"/>
-<area shape="rect" href="CubeGauss_8h.html" title=" " alt="" coords="3149,431,3331,471"/>
-<area shape="rect" href="CubeGrid_8h.html" title=" " alt="" coords="3355,431,3536,471"/>
-<area shape="rect" href="CubeUniform_8h.html" title=" " alt="" coords="3560,431,3741,471"/>
-<area shape="rect" href="Sphere_8h.html" title=" " alt="" coords="3765,431,3947,471"/>
-<area shape="rect" href="LoadBalancerOption_8h.html" title=" " alt="" coords="3971,431,4163,471"/>
-<area shape="rect" title=" " alt="" coords="3658,526,3849,551"/>
-<area shape="rect" title=" " alt="" coords="3881,350,3946,375"/>
-<area shape="rect" title=" " alt="" coords="3971,350,4179,375"/>
+<area shape="rect" title=" " alt="" coords="1191,5,1415,45"/>
+<area shape="rect" href="Simulation_8h.html" title=" " alt="" coords="495,101,599,126"/>
+<area shape="rect" title=" " alt="" coords="43,181,123,207"/>
+<area shape="rect" title=" " alt="" coords="627,438,797,463"/>
+<area shape="rect" href="TypeDefinitions_8h_source.html" title=" " alt="" coords="445,438,603,463"/>
+<area shape="rect" title=" " alt="" coords="793,350,973,375"/>
+<area shape="rect" href="MDFlexConfig_8h.html" title=" " alt="" coords="2576,343,2760,383"/>
+<area shape="rect" title=" " alt="" coords="1209,93,1397,133"/>
+<area shape="rect" title=" " alt="" coords="1421,93,1595,133"/>
+<area shape="rect" title=" " alt="" coords="1619,101,1707,126"/>
+<area shape="rect" title=" " alt="" coords="1731,101,1805,126"/>
+<area shape="rect" href="Thermostat_8h.html" title=" " alt="" coords="1065,262,1175,287"/>
+<area shape="rect" href="TimeDiscretization_8h.html" title=" " alt="" coords="1665,262,1823,287"/>
+<area shape="rect" title=" " alt="" coords="1981,101,2203,126"/>
+<area shape="rect" title=" " alt="" coords="249,181,319,207"/>
+<area shape="rect" title=" " alt="" coords="280,350,357,375"/>
+<area shape="rect" title=" " alt="" coords="248,262,307,287"/>
+<area shape="rect" title=" " alt="" coords="586,181,641,207"/>
+<area shape="rect" href="ParallelVtkWriter_8h.html" title=" " alt="" coords="395,181,562,207"/>
+<area shape="rect" href="RegularGridDecomposition_8h.html" title=" " alt="" coords="592,255,805,295"/>
+<area shape="rect" href="DomainDecomposition_8h.html" title=" " alt="" coords="433,350,615,375"/>
+<area shape="rect" title=" " alt="" coords="432,262,517,287"/>
+<area shape="rect" title=" " alt="" coords="265,438,321,463"/>
+<area shape="rect" title=" " alt="" coords="304,519,512,559"/>
+<area shape="rect" title=" " alt="" coords="536,519,744,559"/>
+<area shape="rect" href="BoundaryTypeOption_8h.html" title=" " alt="" coords="821,431,1011,471"/>
+<area shape="rect" title=" " alt="" coords="4299,438,4375,463"/>
+<area shape="rect" title=" " alt="" coords="4400,438,4451,463"/>
+<area shape="rect" title=" " alt="" coords="960,526,1003,551"/>
+<area shape="rect" title=" " alt="" coords="4681,438,4741,463"/>
+<area shape="rect" title=" " alt="" coords="4765,431,4968,471"/>
+<area shape="rect" title=" " alt="" coords="1137,431,1330,471"/>
+<area shape="rect" title=" " alt="" coords="1355,431,1560,471"/>
+<area shape="rect" title=" " alt="" coords="1585,431,1802,471"/>
+<area shape="rect" title=" " alt="" coords="1827,431,2051,471"/>
+<area shape="rect" title=" " alt="" coords="2075,431,2285,471"/>
+<area shape="rect" title=" " alt="" coords="2309,438,2552,463"/>
+<area shape="rect" title=" " alt="" coords="2577,431,2759,471"/>
+<area shape="rect" title=" " alt="" coords="2784,431,2973,471"/>
+<area shape="rect" title=" " alt="" coords="2997,431,3224,471"/>
+<area shape="rect" title=" " alt="" coords="3248,438,3443,463"/>
+<area shape="rect" href="CubeClosestPacked_8h.html" title=" " alt="" coords="4475,431,4656,471"/>
+<area shape="rect" href="CubeGauss_8h.html" title=" " alt="" coords="4992,431,5173,471"/>
+<area shape="rect" href="CubeGrid_8h.html" title=" " alt="" coords="3467,431,3648,471"/>
+<area shape="rect" href="CubeUniform_8h.html" title=" " alt="" coords="3672,431,3853,471"/>
+<area shape="rect" href="Sphere_8h.html" title=" " alt="" coords="3877,431,4059,471"/>
+<area shape="rect" href="LoadBalancerOption_8h.html" title=" " alt="" coords="4083,431,4275,471"/>
+<area shape="rect" title=" " alt="" coords="3770,526,3961,551"/>
+<area shape="rect" title=" " alt="" coords="1331,350,1397,375"/>
+<area shape="rect" title=" " alt="" coords="1099,350,1307,375"/>
 </map>
 </div>
 </div><table class="memberdecls">
