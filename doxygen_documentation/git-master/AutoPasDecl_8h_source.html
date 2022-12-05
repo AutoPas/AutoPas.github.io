@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">2.0.0-de45e52</span>
+   &#160;<span id="projectnumber">2.0.0-ae6c8f2</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -489,63 +489,62 @@ $(function() {
 <div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span> </div>
 <div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>  std::shared_ptr&lt;const autopas::ParticleContainerInterface&lt;Particle&gt;&gt; getContainer() <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span> </div>
-<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>  std::array&lt;double, 3&gt; _boxMin{0, 0, 0};</div>
-<div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span>  std::array&lt;double, 3&gt; _boxMax{0, 0, 0};</div>
-<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span>  <span class="keywordtype">double</span> _cutoff{1.0};</div>
-<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>  <span class="keywordtype">double</span> _verletSkinPerTimestep{0.01};</div>
-<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _verletRebuildFrequency{20};</div>
-<div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _verletClusterSize{4};</div>
-<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _tuningInterval{5000};</div>
-<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _numSamples{3};</div>
-<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _maxEvidence{10};</div>
-<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span>  <span class="keywordtype">double</span> _relativeOptimumRange{1.2};</div>
-<div class="line"><a id="l00900" name="l00900"></a><span class="lineno">  900</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _maxTuningPhasesWithoutTest{5};</div>
-<div class="line"><a id="l00905" name="l00905"></a><span class="lineno">  905</span>  <span class="keywordtype">double</span> _relativeBlacklistRange{0};</div>
-<div class="line"><a id="l00910" name="l00910"></a><span class="lineno">  910</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _evidenceFirstPrediction{3};</div>
-<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span>  AcquisitionFunctionOption _acquisitionFunctionOption{AcquisitionFunctionOption::upperConfidenceBound};</div>
-<div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span> </div>
-<div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span>  ExtrapolationMethodOption _extrapolationMethodOption{ExtrapolationMethodOption::linearRegression};</div>
-<div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span> </div>
-<div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span>  TuningStrategyOption _tuningStrategyOption{TuningStrategyOption::fullSearch};</div>
-<div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span> </div>
-<div class="line"><a id="l00933" name="l00933"></a><span class="lineno">  933</span>  SelectorStrategyOption _selectorStrategy{SelectorStrategyOption::fastestAbs};</div>
-<div class="line"><a id="l00934" name="l00934"></a><span class="lineno">  934</span> </div>
-<div class="line"><a id="l00939" name="l00939"></a><span class="lineno">  939</span>  std::set&lt;ContainerOption&gt; _allowedContainers{ContainerOption::getMostOptions()};</div>
-<div class="line"><a id="l00940" name="l00940"></a><span class="lineno">  940</span> </div>
-<div class="line"><a id="l00945" name="l00945"></a><span class="lineno">  945</span>  std::set&lt;TraversalOption&gt; _allowedTraversals{TraversalOption::getMostOptions()};</div>
-<div class="line"><a id="l00946" name="l00946"></a><span class="lineno">  946</span> </div>
-<div class="line"><a id="l00951" name="l00951"></a><span class="lineno">  951</span>  std::set&lt;DataLayoutOption&gt; _allowedDataLayouts{DataLayoutOption::getMostOptions()};</div>
-<div class="line"><a id="l00952" name="l00952"></a><span class="lineno">  952</span> </div>
-<div class="line"><a id="l00956" name="l00956"></a><span class="lineno">  956</span>  std::set&lt;Newton3Option&gt; _allowedNewton3Options{Newton3Option::getMostOptions()};</div>
-<div class="line"><a id="l00957" name="l00957"></a><span class="lineno">  957</span> </div>
-<div class="line"><a id="l00961" name="l00961"></a><span class="lineno">  961</span>  MPIStrategyOption _mpiStrategyOption{MPIStrategyOption::noMPI};</div>
-<div class="line"><a id="l00962" name="l00962"></a><span class="lineno">  962</span> </div>
-<div class="line"><a id="l00967" name="l00967"></a><span class="lineno">  967</span>  <span class="keywordtype">double</span> _mpiTuningMaxDifferenceForBucket{0.3};</div>
-<div class="line"><a id="l00968" name="l00968"></a><span class="lineno">  968</span> </div>
-<div class="line"><a id="l00972" name="l00972"></a><span class="lineno">  972</span>  <span class="keywordtype">double</span> _mpiTuningWeightForMaxDensity{0.0};</div>
-<div class="line"><a id="l00973" name="l00973"></a><span class="lineno">  973</span> </div>
-<div class="line"><a id="l00977" name="l00977"></a><span class="lineno">  977</span>  std::unique_ptr&lt;NumberSet&lt;double&gt;&gt; _allowedCellSizeFactors{</div>
-<div class="line"><a id="l00978" name="l00978"></a><span class="lineno">  978</span>      std::make_unique&lt;NumberSetFinite&lt;double&gt;&gt;(std::set&lt;double&gt;({1.}))};</div>
-<div class="line"><a id="l00979" name="l00979"></a><span class="lineno">  979</span> </div>
-<div class="line"><a id="l00980" name="l00980"></a><span class="lineno">  980</span><span class="comment">  /***</span></div>
-<div class="line"><a id="l00981" name="l00981"></a><span class="lineno">  981</span><span class="comment">   * Load estimation algorithm to be used for efficient parallelisation (only relevant for LCSlicedBalancedTraversal and</span></div>
-<div class="line"><a id="l00982" name="l00982"></a><span class="lineno">  982</span><span class="comment">   * VLCSlicedBalancedTraversal).</span></div>
-<div class="line"><a id="l00983" name="l00983"></a><span class="lineno">  983</span><span class="comment">   */</span></div>
-<div class="line"><a id="l00984" name="l00984"></a><span class="lineno">  984</span>  std::set&lt;LoadEstimatorOption&gt; _allowedLoadEstimators{LoadEstimatorOption::getAllOptions()};</div>
-<div class="line"><a id="l00985" name="l00985"></a><span class="lineno">  985</span> </div>
-<div class="line"><a id="l00989" name="l00989"></a><span class="lineno">  989</span>  std::unique_ptr&lt;autopas::LogicHandler&lt;Particle&gt;&gt; _logicHandler;</div>
-<div class="line"><a id="l00990" name="l00990"></a><span class="lineno">  990</span> </div>
-<div class="line"><a id="l00994" name="l00994"></a><span class="lineno">  994</span>  std::unique_ptr&lt;autopas::AutoTuner&lt;Particle&gt;&gt; _autoTuner;</div>
-<div class="line"><a id="l00995" name="l00995"></a><span class="lineno">  995</span> </div>
-<div class="line"><a id="l00999" name="l00999"></a><span class="lineno">  999</span>  <a class="code hl_enumeration" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> _autopasMPICommunicator{<a class="code hl_define" href="WrapMPI_8h.html#a12d9603a886a214993b1571e5785129e">AUTOPAS_MPI_COMM_NULL</a>};</div>
-<div class="line"><a id="l01000" name="l01000"></a><span class="lineno"> 1000</span> </div>
-<div class="line"><a id="l01004" name="l01004"></a><span class="lineno"> 1004</span>  <span class="keywordtype">bool</span> _externalMPICommunicator{<span class="keyword">false</span>};</div>
-<div class="line"><a id="l01005" name="l01005"></a><span class="lineno"> 1005</span> </div>
-<div class="line"><a id="l01010" name="l01010"></a><span class="lineno"> 1010</span>  std::string _outputSuffix{<span class="stringliteral">&quot;&quot;</span>};</div>
-<div class="line"><a id="l01011" name="l01011"></a><span class="lineno"> 1011</span> </div>
-<div class="line"><a id="l01012" name="l01012"></a><span class="lineno"> 1012</span>};  <span class="comment">// class AutoPas</span></div>
-<div class="line"><a id="l01013" name="l01013"></a><span class="lineno"> 1013</span>}  <span class="comment">// namespace autopas</span></div>
+<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>  std::array&lt;double, 3&gt; _boxMin{0, 0, 0};</div>
+<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span>  std::array&lt;double, 3&gt; _boxMax{0, 0, 0};</div>
+<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>  <span class="keywordtype">double</span> _cutoff{1.0};</div>
+<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>  <span class="keywordtype">double</span> _verletSkinPerTimestep{0.01};</div>
+<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _verletRebuildFrequency{20};</div>
+<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _verletClusterSize{4};</div>
+<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _tuningInterval{5000};</div>
+<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _numSamples{3};</div>
+<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _maxEvidence{10};</div>
+<div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span>  <span class="keywordtype">double</span> _relativeOptimumRange{1.2};</div>
+<div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _maxTuningPhasesWithoutTest{5};</div>
+<div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span>  <span class="keywordtype">double</span> _relativeBlacklistRange{0};</div>
+<div class="line"><a id="l00909" name="l00909"></a><span class="lineno">  909</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _evidenceFirstPrediction{3};</div>
+<div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span>  AcquisitionFunctionOption _acquisitionFunctionOption{AcquisitionFunctionOption::upperConfidenceBound};</div>
+<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span> </div>
+<div class="line"><a id="l00920" name="l00920"></a><span class="lineno">  920</span>  ExtrapolationMethodOption _extrapolationMethodOption{ExtrapolationMethodOption::linearRegression};</div>
+<div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span> </div>
+<div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span>  TuningStrategyOption _tuningStrategyOption{TuningStrategyOption::fullSearch};</div>
+<div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span> </div>
+<div class="line"><a id="l00932" name="l00932"></a><span class="lineno">  932</span>  SelectorStrategyOption _selectorStrategy{SelectorStrategyOption::fastestAbs};</div>
+<div class="line"><a id="l00933" name="l00933"></a><span class="lineno">  933</span> </div>
+<div class="line"><a id="l00938" name="l00938"></a><span class="lineno">  938</span>  std::set&lt;ContainerOption&gt; _allowedContainers{ContainerOption::getMostOptions()};</div>
+<div class="line"><a id="l00939" name="l00939"></a><span class="lineno">  939</span> </div>
+<div class="line"><a id="l00944" name="l00944"></a><span class="lineno">  944</span>  std::set&lt;TraversalOption&gt; _allowedTraversals{TraversalOption::getMostOptions()};</div>
+<div class="line"><a id="l00945" name="l00945"></a><span class="lineno">  945</span> </div>
+<div class="line"><a id="l00950" name="l00950"></a><span class="lineno">  950</span>  std::set&lt;DataLayoutOption&gt; _allowedDataLayouts{DataLayoutOption::getMostOptions()};</div>
+<div class="line"><a id="l00951" name="l00951"></a><span class="lineno">  951</span> </div>
+<div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span>  std::set&lt;Newton3Option&gt; _allowedNewton3Options{Newton3Option::getMostOptions()};</div>
+<div class="line"><a id="l00956" name="l00956"></a><span class="lineno">  956</span> </div>
+<div class="line"><a id="l00960" name="l00960"></a><span class="lineno">  960</span>  MPIStrategyOption _mpiStrategyOption{MPIStrategyOption::noMPI};</div>
+<div class="line"><a id="l00961" name="l00961"></a><span class="lineno">  961</span> </div>
+<div class="line"><a id="l00966" name="l00966"></a><span class="lineno">  966</span>  <span class="keywordtype">double</span> _mpiTuningMaxDifferenceForBucket{0.3};</div>
+<div class="line"><a id="l00967" name="l00967"></a><span class="lineno">  967</span> </div>
+<div class="line"><a id="l00971" name="l00971"></a><span class="lineno">  971</span>  <span class="keywordtype">double</span> _mpiTuningWeightForMaxDensity{0.0};</div>
+<div class="line"><a id="l00972" name="l00972"></a><span class="lineno">  972</span> </div>
+<div class="line"><a id="l00976" name="l00976"></a><span class="lineno">  976</span>  std::unique_ptr&lt;NumberSet&lt;double&gt;&gt; _allowedCellSizeFactors{</div>
+<div class="line"><a id="l00977" name="l00977"></a><span class="lineno">  977</span>      std::make_unique&lt;NumberSetFinite&lt;double&gt;&gt;(std::set&lt;double&gt;({1.}))};</div>
+<div class="line"><a id="l00978" name="l00978"></a><span class="lineno">  978</span> </div>
+<div class="line"><a id="l00979" name="l00979"></a><span class="lineno">  979</span><span class="comment">  /***</span></div>
+<div class="line"><a id="l00980" name="l00980"></a><span class="lineno">  980</span><span class="comment">   * Load estimation algorithm to be used for efficient parallelisation (only relevant for LCSlicedBalancedTraversal and</span></div>
+<div class="line"><a id="l00981" name="l00981"></a><span class="lineno">  981</span><span class="comment">   * VLCSlicedBalancedTraversal).</span></div>
+<div class="line"><a id="l00982" name="l00982"></a><span class="lineno">  982</span><span class="comment">   */</span></div>
+<div class="line"><a id="l00983" name="l00983"></a><span class="lineno">  983</span>  std::set&lt;LoadEstimatorOption&gt; _allowedLoadEstimators{LoadEstimatorOption::getAllOptions()};</div>
+<div class="line"><a id="l00984" name="l00984"></a><span class="lineno">  984</span> </div>
+<div class="line"><a id="l00988" name="l00988"></a><span class="lineno">  988</span>  std::unique_ptr&lt;autopas::LogicHandler&lt;Particle&gt;&gt; _logicHandler;</div>
+<div class="line"><a id="l00989" name="l00989"></a><span class="lineno">  989</span> </div>
+<div class="line"><a id="l00993" name="l00993"></a><span class="lineno">  993</span>  std::unique_ptr&lt;autopas::AutoTuner&lt;Particle&gt;&gt; _autoTuner;</div>
+<div class="line"><a id="l00994" name="l00994"></a><span class="lineno">  994</span> </div>
+<div class="line"><a id="l00998" name="l00998"></a><span class="lineno">  998</span>  <a class="code hl_enumeration" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> _autopasMPICommunicator{<a class="code hl_define" href="WrapMPI_8h.html#a12d9603a886a214993b1571e5785129e">AUTOPAS_MPI_COMM_NULL</a>};</div>
+<div class="line"><a id="l00999" name="l00999"></a><span class="lineno">  999</span> </div>
+<div class="line"><a id="l01003" name="l01003"></a><span class="lineno"> 1003</span>  <span class="keywordtype">bool</span> _externalMPICommunicator{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l01004" name="l01004"></a><span class="lineno"> 1004</span> </div>
+<div class="line"><a id="l01009" name="l01009"></a><span class="lineno"> 1009</span>  std::string _outputSuffix{<span class="stringliteral">&quot;&quot;</span>};</div>
+<div class="line"><a id="l01010" name="l01010"></a><span class="lineno"> 1010</span> </div>
+<div class="line"><a id="l01011" name="l01011"></a><span class="lineno"> 1011</span>};  <span class="comment">// class AutoPas</span></div>
+<div class="line"><a id="l01012" name="l01012"></a><span class="lineno"> 1012</span>}  <span class="comment">// namespace autopas</span></div>
 <div class="ttc" id="aAcquisitionFunctionOption_8h_html"><div class="ttname"><a href="AcquisitionFunctionOption_8h.html">AcquisitionFunctionOption.h</a></div></div>
 <div class="ttc" id="aConfiguration_8h_html"><div class="ttname"><a href="Configuration_8h.html">Configuration.h</a></div></div>
 <div class="ttc" id="aContainerOption_8h_html"><div class="ttname"><a href="ContainerOption_8h.html">ContainerOption.h</a></div></div>
