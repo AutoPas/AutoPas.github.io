@@ -10,11 +10,12 @@ var searchData=
   ['simulation_7',['Simulation',['../classSimulation.html#a4d1702e6d0341d01688df11ad1491394',1,'Simulation::Simulation()'],['../classSimulation.html',1,'Simulation']]],
   ['simulation_2ecpp_8',['Simulation.cpp',['../Simulation_8cpp.html',1,'']]],
   ['simulation_2eh_9',['Simulation.h',['../Simulation_8h.html',1,'']]],
-  ['sphere_10',['Sphere',['../classSphere.html#a7c59fcfeb1b920705356eb722f3164d7',1,'Sphere::Sphere()'],['../classSphere.html',1,'Sphere']]],
-  ['sphere_2eh_11',['Sphere.h',['../Sphere_8h.html',1,'']]],
-  ['spherecenterstr_12',['sphereCenterStr',['../classMDFlexConfig.html#ac3bc989c14bbe85d14bf79428d186110',1,'MDFlexConfig']]],
-  ['sphereobjects_13',['sphereObjects',['../classMDFlexConfig.html#afbf51eac56ed442e57297dbb3005feb1',1,'MDFlexConfig']]],
-  ['sphereobjectsstr_14',['sphereObjectsStr',['../classMDFlexConfig.html#ace92d8a7f993647c41928c9855bc3014',1,'MDFlexConfig']]],
-  ['sphereradiusstr_15',['sphereRadiusStr',['../classMDFlexConfig.html#adfd4cd3c95f85ca56df952f472b4d944',1,'MDFlexConfig']]],
-  ['subdividedimension_16',['subdivideDimension',['../classMDFlexConfig.html#aa454e332f10be4305b8c5939a22fcbd5',1,'MDFlexConfig']]]
+  ['sixthrootoftwo_10',['sixthRootOfTwo',['../namespaceanonymous__namespace_02RegularGridDecomposition_8h_03.html#a8bee503d7b9a33f9bda87f4e2820b41f',1,'anonymous_namespace{RegularGridDecomposition.h}']]],
+  ['sphere_11',['Sphere',['../classSphere.html#a7c59fcfeb1b920705356eb722f3164d7',1,'Sphere::Sphere()'],['../classSphere.html',1,'Sphere']]],
+  ['sphere_2eh_12',['Sphere.h',['../Sphere_8h.html',1,'']]],
+  ['spherecenterstr_13',['sphereCenterStr',['../classMDFlexConfig.html#ac3bc989c14bbe85d14bf79428d186110',1,'MDFlexConfig']]],
+  ['sphereobjects_14',['sphereObjects',['../classMDFlexConfig.html#afbf51eac56ed442e57297dbb3005feb1',1,'MDFlexConfig']]],
+  ['sphereobjectsstr_15',['sphereObjectsStr',['../classMDFlexConfig.html#ace92d8a7f993647c41928c9855bc3014',1,'MDFlexConfig']]],
+  ['sphereradiusstr_16',['sphereRadiusStr',['../classMDFlexConfig.html#adfd4cd3c95f85ca56df952f472b4d944',1,'MDFlexConfig']]],
+  ['subdividedimension_17',['subdivideDimension',['../classMDFlexConfig.html#aa454e332f10be4305b8c5939a22fcbd5',1,'MDFlexConfig']]]
 ];

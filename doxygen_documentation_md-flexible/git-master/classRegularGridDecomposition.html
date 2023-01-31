@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">2.0.0-387f676</span>
+   &#160;<span id="projectnumber">2.0.0-1a439dc</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -182,9 +182,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aacc9b702339dd1e40f6ad1a6706592fa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegularGridDecomposition.html#aacc9b702339dd1e40f6ad1a6706592fa">exchangeMigratingParticles</a> (<a class="el" href="classDomainDecomposition.html#a0f51a8395dafd64cd81208157cb4321f">AutoPasType</a> &amp;autoPasContainer, std::vector&lt; ParticleType &gt; &amp;emigrants)</td></tr>
 <tr class="memdesc:aacc9b702339dd1e40f6ad1a6706592fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exchanges migrating particles with all neighbors of the provided AutoPasContainer.  <a href="classRegularGridDecomposition.html#aacc9b702339dd1e40f6ad1a6706592fa">More...</a><br /></td></tr>
 <tr class="separator:aacc9b702339dd1e40f6ad1a6706592fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abdd383f7da04dbd9ee7479faf265fd88"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegularGridDecomposition.html#abdd383f7da04dbd9ee7479faf265fd88">reflectParticlesAtBoundaries</a> (<a class="el" href="classDomainDecomposition.html#a0f51a8395dafd64cd81208157cb4321f">AutoPasType</a> &amp;autoPasContainer)</td></tr>
-<tr class="memdesc:abdd383f7da04dbd9ee7479faf265fd88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reflects particles within a reflective skin along the inside of a boundary.  <a href="classRegularGridDecomposition.html#abdd383f7da04dbd9ee7479faf265fd88">More...</a><br /></td></tr>
-<tr class="separator:abdd383f7da04dbd9ee7479faf265fd88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a395d343d2af97f31c9797a96a1b2674c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classRegularGridDecomposition.html#a395d343d2af97f31c9797a96a1b2674c">reflectParticlesAtBoundaries</a> (<a class="el" href="classDomainDecomposition.html#a0f51a8395dafd64cd81208157cb4321f">AutoPasType</a> &amp;autoPasContainer, ParticlePropertiesLibraryType &amp;PPL)</td></tr>
+<tr class="memdesc:a395d343d2af97f31c9797a96a1b2674c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reflects particles within a reflective skin along the inside of a boundary.  <a href="classRegularGridDecomposition.html#a395d343d2af97f31c9797a96a1b2674c">More...</a><br /></td></tr>
+<tr class="separator:a395d343d2af97f31c9797a96a1b2674c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classDomainDecomposition"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classDomainDecomposition')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classDomainDecomposition.html">DomainDecomposition</a></td></tr>
 <tr class="memitem:a4c75d3c2cdfd7bab6d7ce907024c218f inherit pub_methods_classDomainDecomposition"><td class="memItemLeft" align="right" valign="top"><a id="a4c75d3c2cdfd7bab6d7ce907024c218f" name="a4c75d3c2cdfd7bab6d7ce907024c218f"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~DomainDecomposition</b> ()=default</td></tr>
@@ -640,8 +640,8 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>AutoPasType</b> = au
 
 </div>
 </div>
-<a id="abdd383f7da04dbd9ee7479faf265fd88" name="abdd383f7da04dbd9ee7479faf265fd88"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abdd383f7da04dbd9ee7479faf265fd88">&#9670;&#160;</a></span>reflectParticlesAtBoundaries()</h2>
+<a id="a395d343d2af97f31c9797a96a1b2674c" name="a395d343d2af97f31c9797a96a1b2674c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a395d343d2af97f31c9797a96a1b2674c">&#9670;&#160;</a></span>reflectParticlesAtBoundaries()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -650,16 +650,28 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>AutoPasType</b> = au
           <td class="memname">void RegularGridDecomposition::reflectParticlesAtBoundaries </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classDomainDecomposition.html#a0f51a8395dafd64cd81208157cb4321f">AutoPasType</a> &amp;&#160;</td>
-          <td class="paramname"><em>autoPasContainer</em></td><td>)</td>
+          <td class="paramname"><em>autoPasContainer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">ParticlePropertiesLibraryType &amp;&#160;</td>
+          <td class="paramname"><em>PPL</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Reflects particles within a reflective skin along the inside of a boundary. </p>
+<p >Particle reflection occurs by interacting the particle with particle mirrored onto the other side of the boundary. Iteraction occurs using the AoS variant of the chosen functor. Particle reflection only occurs if the particle would experience a repulsive effect (i.e. is within the 6th root of sigma from the border).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">autoPasContainer</td><td>The container, where the migrating particles originate from. </td></tr>
+    <tr><td class="paramname">PPL</td><td>Particle Properties Library (needed to get particle's sigma) </td></tr>
   </table>
   </dd>
 </dl>
