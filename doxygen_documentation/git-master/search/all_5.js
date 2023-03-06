@@ -41,5 +41,5 @@ var searchData=
   ['dssequentialtraversal_2eh_38',['DSSequentialTraversal.h',['../DSSequentialTraversal_8h.html',1,'']]],
   ['dstraversalinterface_39',['DSTraversalInterface',['../classautopas_1_1DSTraversalInterface.html',1,'autopas']]],
   ['dstraversalinterface_2eh_40',['DSTraversalInterface.h',['../DSTraversalInterface_8h.html',1,'']]],
-  ['dummy_41',['dummy',['../classautopas_1_1options_1_1IteratorBehavior.html#a0a837e939fb797fc79a34a27a88d7927a7a7a4c1bb809ab0ed75b95f3933406fb',1,'autopas::options::IteratorBehavior::dummy()'],['../namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a275876e34cf609db118f3d84b799a790',1,'autopas::dummy()']]]
+  ['dummy_41',['dummy',['../classautopas_1_1options_1_1IteratorBehavior.html#a0a837e939fb797fc79a34a27a88d7927a7a7a4c1bb809ab0ed75b95f3933406fb',1,'autopas::options::IteratorBehavior::dummy'],['../namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a275876e34cf609db118f3d84b799a790',1,'autopas::dummy']]]
 ];
