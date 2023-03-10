@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">2.0.0-45f3dcd</span>
+   &#160;<span id="projectnumber">2.0.0-b6460e5</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -160,9 +160,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a55539ad3e76e5763a33229387f22644b"><td class="memItemLeft" align="right" valign="top">virtual std::array&lt; double, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#a55539ad3e76e5763a33229387f22644b">getBoxMax</a> () const =0</td></tr>
 <tr class="memdesc:a55539ad3e76e5763a33229387f22644b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the highest x,y,z coordinates for <a class="el" href="classObject.html" title="Base class for describing objects made of particles.">Object</a>.  <br /></td></tr>
 <tr class="separator:a55539ad3e76e5763a33229387f22644b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a93fa102c9a80290a77c9ca2a7dc1ced0"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#a93fa102c9a80290a77c9ca2a7dc1ced0">getParticlesTotal</a> () const</td></tr>
-<tr class="memdesc:a93fa102c9a80290a77c9ca2a7dc1ced0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total amount of Particles in the <a class="el" href="classObject.html" title="Base class for describing objects made of particles.">Object</a>.  <br /></td></tr>
-<tr class="separator:a93fa102c9a80290a77c9ca2a7dc1ced0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a5c5c32ee11e79436e45596dda75685"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#a6a5c5c32ee11e79436e45596dda75685">getParticlesTotal</a> () const =0</td></tr>
+<tr class="memdesc:a6a5c5c32ee11e79436e45596dda75685"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the total amount of Particles in the <a class="el" href="classObject.html" title="Base class for describing objects made of particles.">Object</a>.  <br /></td></tr>
+<tr class="separator:a6a5c5c32ee11e79436e45596dda75685"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae78efbdd4c94e05a306d21161219647a"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classObject.html#ae78efbdd4c94e05a306d21161219647a">getParticleSpacing</a> () const</td></tr>
 <tr class="memdesc:ae78efbdd4c94e05a306d21161219647a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for ParticleSpacing.  <br /></td></tr>
 <tr class="separator:ae78efbdd4c94e05a306d21161219647a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -437,8 +437,8 @@ Friends</h2></td></tr>
 
 </div>
 </div>
-<a id="a93fa102c9a80290a77c9ca2a7dc1ced0" name="a93fa102c9a80290a77c9ca2a7dc1ced0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a93fa102c9a80290a77c9ca2a7dc1ced0">&#9670;&#160;</a></span>getParticlesTotal()</h2>
+<a id="a6a5c5c32ee11e79436e45596dda75685" name="a6a5c5c32ee11e79436e45596dda75685"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a5c5c32ee11e79436e45596dda75685">&#9670;&#160;</a></span>getParticlesTotal()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -455,7 +455,7 @@ Friends</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -463,7 +463,7 @@ Friends</h2></td></tr>
 <p>Returns the total amount of Particles in the <a class="el" href="classObject.html" title="Base class for describing objects made of particles.">Object</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>ParticlesTotal </dd></dl>
 
-<p>Reimplemented in <a class="el" href="classCubeGauss.html#afbc3e76d3666ee47e11c20a5fb324904">CubeGauss</a>, <a class="el" href="classCubeGrid.html#a57069d61e0ff01593beb6c869e07444f">CubeGrid</a>, <a class="el" href="classCubeUniform.html#a05e67c1f817524e0f06a67b277757259">CubeUniform</a>, and <a class="el" href="classSphere.html#a6b3c660fa44f3d361fcbca11c2a30ad5">Sphere</a>.</p>
+<p>Implemented in <a class="el" href="classCubeClosestPacked.html#acfca9fbcab357ab2fc7bbc5c153efa8e">CubeClosestPacked</a>, <a class="el" href="classCubeGauss.html#afbc3e76d3666ee47e11c20a5fb324904">CubeGauss</a>, <a class="el" href="classCubeGrid.html#a57069d61e0ff01593beb6c869e07444f">CubeGrid</a>, <a class="el" href="classCubeUniform.html#a05e67c1f817524e0f06a67b277757259">CubeUniform</a>, and <a class="el" href="classSphere.html#a6b3c660fa44f3d361fcbca11c2a30ad5">Sphere</a>.</p>
 
 </div>
 </div>
