@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">2.0.0-b6460e5</span>
+   &#160;<span id="projectnumber">2.0.0-ab14c13</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -229,11 +229,13 @@ $(function() {
 <div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
 <div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="keywordtype">double</span> sigmoid(<span class="keywordtype">double</span> x);</div>
 <div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>Eigen::VectorXd makeVectorXd(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;elements);</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>Eigen::VectorXi makeVectorXi(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;elements);</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>}  <span class="comment">// namespace autopas::utils::Math</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="keywordtype">bool</span> isNear(<span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b, <span class="keywordtype">double</span> relativeDifference = 1e-9);</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>Eigen::VectorXd makeVectorXd(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;elements);</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>Eigen::VectorXi makeVectorXi(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;elements);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>}  <span class="comment">// namespace autopas::utils::Math</span></div>
 <div class="ttc" id="aMath_8h_html_a249e593c429798c23e22db04c8f2bb37"><div class="ttname"><a href="Math_8h.html#a249e593c429798c23e22db04c8f2bb37">autopas::utils::Math::safeAdd</a></div><div class="ttdeci">Int_t safeAdd(const Int_t &amp;a, const Int_t &amp;b, const Int_t &amp;valUnderflow=std::numeric_limits&lt; Int_t &gt;::min(), const Int_t &amp;valOverflow=std::numeric_limits&lt; Int_t &gt;::max())</div><div class="ttdoc">Addition function for integer types that is safe against over and underflow.</div><div class="ttdef"><b>Definition:</b> Math.h:31</div></div>
 <div class="ttc" id="aMath_8h_html_a3dc3f17108daa1bf9ed13971891b56db"><div class="ttname"><a href="Math_8h.html#a3dc3f17108daa1bf9ed13971891b56db">autopas::utils::Math::safeSub</a></div><div class="ttdeci">Int_t safeSub(const Int_t &amp;a, const Int_t &amp;b, const Int_t &amp;valUnderflow=std::numeric_limits&lt; Int_t &gt;::min(), const Int_t &amp;valOverflow=std::numeric_limits&lt; Int_t &gt;::max())</div><div class="ttdoc">Subtraction function for integer types that is safe against over and underflow.</div><div class="ttdef"><b>Definition:</b> Math.h:84</div></div>
 <div class="ttc" id="aMath_8h_html_a85e3c9dd73675a457f11e9311726caf3"><div class="ttname"><a href="Math_8h.html#a85e3c9dd73675a457f11e9311726caf3">autopas::utils::Math::safeMul</a></div><div class="ttdeci">Int_t safeMul(const Int_t &amp;a, const Int_t &amp;b, const Int_t &amp;valUnderflow=std::numeric_limits&lt; Int_t &gt;::min(), const Int_t &amp;valOverflow=std::numeric_limits&lt; Int_t &gt;::max())</div><div class="ttdoc">Multiplication function for integer types that is safe against over and underflow.</div><div class="ttdef"><b>Definition:</b> Math.h:137</div></div>
