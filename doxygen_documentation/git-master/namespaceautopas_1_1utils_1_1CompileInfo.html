@@ -101,36 +101,56 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fd30cd1efecaf93be567ddc5e3f81b58.html">autopas</a></li><li class="navelem"><a class="el" href="dir_3f3ec7e38fd6b6ef03106173a0bd914a.html">utils</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespaceautopas.html">autopas</a></li><li class="navelem"><a class="el" href="namespaceautopas_1_1utils.html">utils</a></li><li class="navelem"><a class="el" href="namespaceautopas_1_1utils_1_1CompileInfo.html">CompileInfo</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
-  <div class="headertitle"><div class="title">TupleUtils.h</div></div>
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">autopas::utils::CompileInfo Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="TupleUtils_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;tuple&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceautopas_1_1utils_1_1TupleUtils.html">autopas::utils::TupleUtils</a> {</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> F&gt;</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="namespaceautopas_1_1utils_1_1TupleUtils.html#a63430b206450d8a9b37e629b0b917acc">   22</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceautopas_1_1utils_1_1TupleUtils.html#a63430b206450d8a9b37e629b0b917acc">for_each</a>(T &amp;&amp;tuple, F &amp;&amp;f) {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  std::apply(</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>      <span class="comment">// function that takes all elements of the tuple as variadic argument</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      [&amp;](<span class="keyword">auto</span> &amp;... t) {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="comment">// unpack the tuple using a fold (... op pack) with op as the comma operator to apply a lambda on every element</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="comment">// This will cause problems if anyone overloads the comma operator for elements of tuple!</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        (..., f(t));</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>      },</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      tuple);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>}</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}  <span class="comment">// namespace autopas::utils::TupleUtils</span></div>
-<div class="ttc" id="anamespaceautopas_1_1utils_1_1TupleUtils_html"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1TupleUtils.html">autopas::utils::TupleUtils</a></div><div class="ttdoc">In this namespace some helper functions for std::tuple can be found.</div><div class="ttdef"><b>Definition:</b> namespaces.h:75</div></div>
-<div class="ttc" id="anamespaceautopas_1_1utils_1_1TupleUtils_html_a63430b206450d8a9b37e629b0b917acc"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1TupleUtils.html#a63430b206450d8a9b37e629b0b917acc">autopas::utils::TupleUtils::for_each</a></div><div class="ttdeci">void for_each(T &amp;&amp;tuple, F &amp;&amp;f)</div><div class="ttdoc">Applies a function f on every element of the tuple.</div><div class="ttdef"><b>Definition:</b> TupleUtils.h:22</div></div>
-</div><!-- fragment --></div><!-- contents -->
+
+<p>Namespace for functions that provide information about what the code was compiled with.  
+<a href="namespaceautopas_1_1utils_1_1CompileInfo.html#details">More...</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a1da725975c957c252931f8b28dc2f26e"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1CompileInfo.html#a1da725975c957c252931f8b28dc2f26e">getCompilerInfo</a> ()</td></tr>
+<tr class="memdesc:a1da725975c957c252931f8b28dc2f26e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get name and version number of a list of known compilers.  <br /></td></tr>
+<tr class="separator:a1da725975c957c252931f8b28dc2f26e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Namespace for functions that provide information about what the code was compiled with. </p>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a1da725975c957c252931f8b28dc2f26e" name="a1da725975c957c252931f8b28dc2f26e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1da725975c957c252931f8b28dc2f26e">&#9670;&#160;</a></span>getCompilerInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string autopas::utils::CompileInfo::getCompilerInfo </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get name and version number of a list of known compilers. </p>
+<p>Currently known compilers:</p><ul>
+<li>clang</li>
+<li>gcc</li>
+<li>icpc</li>
+<li>icpx</li>
+<li>fcc (trad and clang mode) <dl class="section return"><dt>Returns</dt><dd>String : "Name Version.Number" </dd></dl>
+</li>
+</ul>
+
+</div>
+</div>
+</div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
