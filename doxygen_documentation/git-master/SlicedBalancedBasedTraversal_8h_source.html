@@ -52,7 +52,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname"><a href="https://autopas.github.io/"><img style="height: 56px;" alt="AutoPas" src="AutoPasLogo_Large.svg"/></a>
-   &#160;<span id="projectnumber">2.0.0-4290597</span>
+   &#160;<span id="projectnumber">2.0.0</span>
    </div>
   </td>
      <td style="float:right"><div id="githublink"><a href="https://github.com/AutoPas/AutoPas"><img border="0" alt="GitHub" src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" height="56px"></a></div></td>
@@ -231,7 +231,7 @@ $(function() {
 <div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>      std::string loadStr;</div>
 <div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>      <span class="keyword">auto</span> lastLoad = 0;</div>
 <div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>      totalThickness = 0;</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> t : this-&gt;_sliceThickness) {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> t : this-&gt;<a class="code hl_variable" href="classautopas_1_1SlicedBasedTraversal.html#ac3f8c122cc6e2656d1840cd05cf2f354">_sliceThickness</a>) {</div>
 <div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        thicknessStr += std::to_string(t) + <span class="stringliteral">&quot;, &quot;</span>;</div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        totalThickness += t;</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        loadStr += std::to_string(loads[totalThickness - 1] - lastLoad) + <span class="stringliteral">&quot;, &quot;</span>;</div>
@@ -244,7 +244,7 @@ $(function() {
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordflow">if</span> (spaciallyForward) {</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>      <span class="comment">// decreases last _sliceThickness by _overlapLongestAxis to account for the way we handle base cells</span></div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>      this-&gt;_sliceThickness.back() -= this-&gt;<a class="code hl_variable" href="classautopas_1_1SlicedBasedTraversal.html#a8782704ab465359c169863a83c1b4cd1">_overlapLongestAxis</a>;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>      this-&gt;<a class="code hl_variable" href="classautopas_1_1SlicedBasedTraversal.html#ac3f8c122cc6e2656d1840cd05cf2f354">_sliceThickness</a>.back() -= this-&gt;<a class="code hl_variable" href="classautopas_1_1SlicedBasedTraversal.html#a8782704ab465359c169863a83c1b4cd1">_overlapLongestAxis</a>;</div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    }</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  }</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>};</div>
