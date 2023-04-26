@@ -116,13 +116,462 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a45258f128e73d9e1dadb04f81bdcbda9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a45258f128e73d9e1dadb04f81bdcbda9"><td class="memTemplItemLeft" align="right" valign="top">std::string&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMDFlexParser_1_1YamlParser.html#a45258f128e73d9e1dadb04f81bdcbda9">typeToStr</a> ()</td></tr>
+<tr class="memdesc:a45258f128e73d9e1dadb04f81bdcbda9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a string representation of types used in particle objects.  <br /></td></tr>
+<tr class="separator:a45258f128e73d9e1dadb04f81bdcbda9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02e9d5df09f9ecd54af9cff4a9c5de55"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMDFlexParser_1_1YamlParser.html#a02e9d5df09f9ecd54af9cff4a9c5de55">parseYamlFile</a> (<a class="el" href="classMDFlexConfig.html">MDFlexConfig</a> &amp;config)</td></tr>
 <tr class="memdesc:a02e9d5df09f9ecd54af9cff4a9c5de55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the Input for the simulation from the Yaml File specified in the configuration.  <br /></td></tr>
 <tr class="separator:a02e9d5df09f9ecd54af9cff4a9c5de55"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1da39d6d17595bde8384c0abeb1b161"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMDFlexParser_1_1YamlParser.html#ad1da39d6d17595bde8384c0abeb1b161">parseSequenceOneElementExpected</a> (const YAML::Node node, const std::string &amp;errMsg)</td></tr>
+<tr class="memdesc:ad1da39d6d17595bde8384c0abeb1b161"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses an input where exactly one option is expected and throws an error if a sequence of multiple options is given.  <br /></td></tr>
+<tr class="separator:ad1da39d6d17595bde8384c0abeb1b161"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72dfa8d26bc24f09c276afc165d3adcb"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMDFlexParser_1_1YamlParser.html#a72dfa8d26bc24f09c276afc165d3adcb">makeErrorMsg</a> (const YAML::Mark &amp;mark, const std::string &amp;key, const std::string &amp;errorMsg, const std::string &amp;expected, const std::string &amp;description)</td></tr>
+<tr class="memdesc:a72dfa8d26bc24f09c276afc165d3adcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an error message for all non-object-keys.  <br /></td></tr>
+<tr class="separator:a72dfa8d26bc24f09c276afc165d3adcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04e36e2ae39f4663c5f25d01ab19f769"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a04e36e2ae39f4663c5f25d01ab19f769"><td class="memTemplItemLeft" align="right" valign="top">const T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMDFlexParser_1_1YamlParser.html#a04e36e2ae39f4663c5f25d01ab19f769">parseObjectValueSingle</a> (const YAML::Node node, const std::string &amp;key, std::vector&lt; std::string &gt; &amp;objectErrors)</td></tr>
+<tr class="memdesc:a04e36e2ae39f4663c5f25d01ab19f769"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the scalar value of a key in a Object-Node of a YAML-config.  <br /></td></tr>
+<tr class="separator:a04e36e2ae39f4663c5f25d01ab19f769"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38dcb437c8a938c29399469751aa01da"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t S&gt; </td></tr>
+<tr class="memitem:a38dcb437c8a938c29399469751aa01da"><td class="memTemplItemLeft" align="right" valign="top">const std::array&lt; T, S &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMDFlexParser_1_1YamlParser.html#a38dcb437c8a938c29399469751aa01da">parseObjectValueSequence</a> (const YAML::Node node, const std::string &amp;key, std::vector&lt; std::string &gt; &amp;objectErrors)</td></tr>
+<tr class="memdesc:a38dcb437c8a938c29399469751aa01da"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the sequence value of a key in a Object-Node of a YAML-config.  <br /></td></tr>
+<tr class="separator:a38dcb437c8a938c29399469751aa01da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afe1af1691484c1fd0b5ac9f7f5eb9440"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classCubeGrid.html">CubeGrid</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMDFlexParser_1_1YamlParser.html#afe1af1691484c1fd0b5ac9f7f5eb9440">parseCubeGridObject</a> (const <a class="el" href="classMDFlexConfig.html">MDFlexConfig</a> &amp;config, const YAML::Node node, std::vector&lt; std::string &gt; &amp;objectErrors)</td></tr>
+<tr class="memdesc:afe1af1691484c1fd0b5ac9f7f5eb9440"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a CubeGrid-Object from a CubeGrid-Yaml-Node.  <br /></td></tr>
+<tr class="separator:afe1af1691484c1fd0b5ac9f7f5eb9440"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a541c10ee192fd9a473359c44051d074d"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classCubeUniform.html">CubeUniform</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMDFlexParser_1_1YamlParser.html#a541c10ee192fd9a473359c44051d074d">parseCubeUniformObject</a> (const <a class="el" href="classMDFlexConfig.html">MDFlexConfig</a> &amp;config, const YAML::Node node, std::vector&lt; std::string &gt; &amp;objectErrors)</td></tr>
+<tr class="memdesc:a541c10ee192fd9a473359c44051d074d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a CubeUniform-Object from a CubeUniform-Yaml-Node.  <br /></td></tr>
+<tr class="separator:a541c10ee192fd9a473359c44051d074d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b1f8980f86487d2477e5bcc92f1299f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classCubeGauss.html">CubeGauss</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMDFlexParser_1_1YamlParser.html#a1b1f8980f86487d2477e5bcc92f1299f">parseCubeGaussObject</a> (const <a class="el" href="classMDFlexConfig.html">MDFlexConfig</a> &amp;config, const YAML::Node node, std::vector&lt; std::string &gt; &amp;objectErrors)</td></tr>
+<tr class="memdesc:a1b1f8980f86487d2477e5bcc92f1299f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a CubeGauss-Object from a CubeGauss-Yaml-Node.  <br /></td></tr>
+<tr class="separator:a1b1f8980f86487d2477e5bcc92f1299f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a40ec7902fa5f6cb96fb09afe8b592912"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classSphere.html">Sphere</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMDFlexParser_1_1YamlParser.html#a40ec7902fa5f6cb96fb09afe8b592912">parseSphereObject</a> (const <a class="el" href="classMDFlexConfig.html">MDFlexConfig</a> &amp;config, const YAML::Node node, std::vector&lt; std::string &gt; &amp;objectErrors)</td></tr>
+<tr class="memdesc:a40ec7902fa5f6cb96fb09afe8b592912"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a Sphere-Object from a Sphere-Yaml-Node.  <br /></td></tr>
+<tr class="separator:a40ec7902fa5f6cb96fb09afe8b592912"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa93391e78d98ebe316371ca231027f85"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classCubeClosestPacked.html">CubeClosestPacked</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMDFlexParser_1_1YamlParser.html#aa93391e78d98ebe316371ca231027f85">parseCubeClosestPacked</a> (const <a class="el" href="classMDFlexConfig.html">MDFlexConfig</a> &amp;config, const YAML::Node node, std::vector&lt; std::string &gt; &amp;objectErrors)</td></tr>
+<tr class="memdesc:aa93391e78d98ebe316371ca231027f85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses a CubeClosestPacked-Object from a CubeClosestPacked-Yaml-Node.  <br /></td></tr>
+<tr class="separator:aa93391e78d98ebe316371ca231027f85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Parser for input through YAML files. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a72dfa8d26bc24f09c276afc165d3adcb" name="a72dfa8d26bc24f09c276afc165d3adcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72dfa8d26bc24f09c276afc165d3adcb">&#9670;&#160;</a></span>makeErrorMsg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string MDFlexParser::YamlParser::makeErrorMsg </td>
+          <td>(</td>
+          <td class="paramtype">const YAML::Mark &amp;&#160;</td>
+          <td class="paramname"><em>mark</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>errorMsg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>expected</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>description</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates an error message for all non-object-keys. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mark</td><td>The Yaml-Mark for printing line- and column number </td></tr>
+    <tr><td class="paramname">key</td><td>The key that caused the error </td></tr>
+    <tr><td class="paramname">errorMsg</td><td>Message thrown by an exception in yaml-cpp, in the parser, or in AutoPas </td></tr>
+    <tr><td class="paramname">expected</td><td>The expected value of the key </td></tr>
+    <tr><td class="paramname">description</td><td>The parameter description of the key </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String representation of the parsed node </dd></dl>
+
+</div>
+</div>
+<a id="aa93391e78d98ebe316371ca231027f85" name="aa93391e78d98ebe316371ca231027f85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa93391e78d98ebe316371ca231027f85">&#9670;&#160;</a></span>parseCubeClosestPacked()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classCubeClosestPacked.html">CubeClosestPacked</a> MDFlexParser::YamlParser::parseCubeClosestPacked </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMDFlexConfig.html">MDFlexConfig</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const YAML::Node&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>objectErrors</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parses a CubeClosestPacked-Object from a CubeClosestPacked-Yaml-Node. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config</td><td>configuration where the input is stored. </td></tr>
+    <tr><td class="paramname">node</td><td>root-YAML-node of an <a class="el" href="classObject.html" title="Base class for describing objects made of particles.">Object</a>. </td></tr>
+    <tr><td class="paramname">objectErrors</td><td>Vector to store all errors during parsing of one object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Particles from the CubeClosestPacked-Generator. </dd></dl>
+
+</div>
+</div>
+<a id="a1b1f8980f86487d2477e5bcc92f1299f" name="a1b1f8980f86487d2477e5bcc92f1299f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b1f8980f86487d2477e5bcc92f1299f">&#9670;&#160;</a></span>parseCubeGaussObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classCubeGauss.html">CubeGauss</a> MDFlexParser::YamlParser::parseCubeGaussObject </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMDFlexConfig.html">MDFlexConfig</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const YAML::Node&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>objectErrors</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parses a CubeGauss-Object from a CubeGauss-Yaml-Node. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config</td><td>configuration where the input is stored. </td></tr>
+    <tr><td class="paramname">node</td><td>root-YAML-node of an <a class="el" href="classObject.html" title="Base class for describing objects made of particles.">Object</a>. </td></tr>
+    <tr><td class="paramname">objectErrors</td><td>Vector to store all errors during parsing of one object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Particles from the CubeGauss-Generator. </dd></dl>
+
+</div>
+</div>
+<a id="afe1af1691484c1fd0b5ac9f7f5eb9440" name="afe1af1691484c1fd0b5ac9f7f5eb9440"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe1af1691484c1fd0b5ac9f7f5eb9440">&#9670;&#160;</a></span>parseCubeGridObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classCubeGrid.html">CubeGrid</a> MDFlexParser::YamlParser::parseCubeGridObject </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMDFlexConfig.html">MDFlexConfig</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const YAML::Node&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>objectErrors</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parses a CubeGrid-Object from a CubeGrid-Yaml-Node. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config</td><td>configuration where the input is stored. </td></tr>
+    <tr><td class="paramname">node</td><td>root-YAML-node of an <a class="el" href="classObject.html" title="Base class for describing objects made of particles.">Object</a>. </td></tr>
+    <tr><td class="paramname">objectErrors</td><td>Vector to store all errors during parsing of one object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Particles from the CubeGrid-Generator. </dd></dl>
+
+</div>
+</div>
+<a id="a541c10ee192fd9a473359c44051d074d" name="a541c10ee192fd9a473359c44051d074d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a541c10ee192fd9a473359c44051d074d">&#9670;&#160;</a></span>parseCubeUniformObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classCubeUniform.html">CubeUniform</a> MDFlexParser::YamlParser::parseCubeUniformObject </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMDFlexConfig.html">MDFlexConfig</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const YAML::Node&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>objectErrors</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parses a CubeUniform-Object from a CubeUniform-Yaml-Node. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config</td><td>configuration where the input is stored. </td></tr>
+    <tr><td class="paramname">node</td><td>root-YAML-node of an <a class="el" href="classObject.html" title="Base class for describing objects made of particles.">Object</a>. </td></tr>
+    <tr><td class="paramname">objectErrors</td><td>Vector to store all errors during parsing of one object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Particles from the CubeUniform-Generator. </dd></dl>
+
+</div>
+</div>
+<a id="a38dcb437c8a938c29399469751aa01da" name="a38dcb437c8a938c29399469751aa01da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38dcb437c8a938c29399469751aa01da">&#9670;&#160;</a></span>parseObjectValueSequence()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t S&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::array&lt; T, S &gt; MDFlexParser::YamlParser::parseObjectValueSequence </td>
+          <td>(</td>
+          <td class="paramtype">const YAML::Node&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>objectErrors</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parses the sequence value of a key in a Object-Node of a YAML-config. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>root-YAML-node of an <a class="el" href="classObject.html" title="Base class for describing objects made of particles.">Object</a>. </td></tr>
+    <tr><td class="paramname">key</td><td>The key to parse. </td></tr>
+    <tr><td class="paramname">objectErrors</td><td>Vector to store all errors during parsing of one object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Parsed value of key. Throws a runtime_error if key could not be parsed. </dd></dl>
+
+</div>
+</div>
+<a id="a04e36e2ae39f4663c5f25d01ab19f769" name="a04e36e2ae39f4663c5f25d01ab19f769"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04e36e2ae39f4663c5f25d01ab19f769">&#9670;&#160;</a></span>parseObjectValueSingle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const T MDFlexParser::YamlParser::parseObjectValueSingle </td>
+          <td>(</td>
+          <td class="paramtype">const YAML::Node&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>objectErrors</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parses the scalar value of a key in a Object-Node of a YAML-config. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>root-YAML-node of an <a class="el" href="classObject.html" title="Base class for describing objects made of particles.">Object</a>. </td></tr>
+    <tr><td class="paramname">key</td><td>The key to parse. </td></tr>
+    <tr><td class="paramname">objectErrors</td><td>Vector to store all errors during parsing of one object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Parsed value of key. Throws a runtime_error if key could not be parsed. </dd></dl>
+
+</div>
+</div>
+<a id="ad1da39d6d17595bde8384c0abeb1b161" name="ad1da39d6d17595bde8384c0abeb1b161"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1da39d6d17595bde8384c0abeb1b161">&#9670;&#160;</a></span>parseSequenceOneElementExpected()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::string MDFlexParser::YamlParser::parseSequenceOneElementExpected </td>
+          <td>(</td>
+          <td class="paramtype">const YAML::Node&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>errMsg</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parses an input where exactly one option is expected and throws an error if a sequence of multiple options is given. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">node</td><td>The current YAML::Node, that should be parsed </td></tr>
+    <tr><td class="paramname">errMsg</td><td>The error message thrown if multiple options are passed </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>String representation of the parsed node </dd></dl>
+
+</div>
+</div>
+<a id="a40ec7902fa5f6cb96fb09afe8b592912" name="a40ec7902fa5f6cb96fb09afe8b592912"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a40ec7902fa5f6cb96fb09afe8b592912">&#9670;&#160;</a></span>parseSphereObject()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classSphere.html">Sphere</a> MDFlexParser::YamlParser::parseSphereObject </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classMDFlexConfig.html">MDFlexConfig</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const YAML::Node&#160;</td>
+          <td class="paramname"><em>node</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>objectErrors</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Parses a Sphere-Object from a Sphere-Yaml-Node. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">config</td><td>configuration where the input is stored. </td></tr>
+    <tr><td class="paramname">node</td><td>root-YAML-node of an <a class="el" href="classObject.html" title="Base class for describing objects made of particles.">Object</a>. </td></tr>
+    <tr><td class="paramname">objectErrors</td><td>Vector to store all errors during parsing of one object </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Particles from the Sphere-Generator. </dd></dl>
+
+</div>
+</div>
 <a id="a02e9d5df09f9ecd54af9cff4a9c5de55" name="a02e9d5df09f9ecd54af9cff4a9c5de55"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a02e9d5df09f9ecd54af9cff4a9c5de55">&#9670;&#160;</a></span>parseYamlFile()</h2>
 
@@ -147,7 +596,28 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>false if any errors occurred during parsing. </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>FIXME: at the moment false is never returned and the parser just ungracefully crashes. </dd></dl>
+
+</div>
+</div>
+<a id="a45258f128e73d9e1dadb04f81bdcbda9" name="a45258f128e73d9e1dadb04f81bdcbda9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45258f128e73d9e1dadb04f81bdcbda9">&#9670;&#160;</a></span>typeToStr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string MDFlexParser::YamlParser::typeToStr </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Creates a string representation of types used in particle objects. </p>
+<dl class="section return"><dt>Returns</dt><dd>String representation of type </dd></dl>
 
 </div>
 </div>
