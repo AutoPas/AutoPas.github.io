@@ -333,138 +333,142 @@ $(function() {
 <div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ParticleCell, <span class="keyword">class</span> PairwiseFunctor, DataLayoutOption::Value dataLayout, <span class="keywordtype">bool</span> useNewton3&gt;</div>
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span><span class="keyword">inline</span> <span class="keywordtype">void</span> LCC04SoACellHandler&lt;ParticleCell, PairwiseFunctor, dataLayout, useNewton3&gt;::computeOffsets(</div>
 <div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    std::array&lt;unsigned long, 3&gt; cellsPerDimension) {</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>  <span class="keyword">using </span>std::make_pair;</div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span> </div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>  std::vector&lt;std::vector&lt;std::pair&lt;unsigned long, unsigned long&gt;&gt;&gt; cellPairOffsets;</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span> </div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>  <span class="comment">// @TODO: Replace following lines with vector to support asymmetric cells</span></div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> ov1 = _overlap[0] + 1;</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> ov1_squared = ov1 * ov1;</div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span> </div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>  _baseOffsets.resize(ov1);</div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span> </div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>  std::array&lt;unsigned long, 3&gt; overlap_1 = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ArrayMath.html#aa12b6c2e8793f6e5d18ad763f6330f51">utils::ArrayMath::addScalar</a>(_overlap, 1ul);</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span> </div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>  std::vector&lt;unsigned long&gt; cellOffsets;</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>  cellOffsets.reserve(overlap_1[0] * overlap_1[1] * overlap_1[2]);</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span> </div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>  cellPairOffsets.clear();</div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>  cellPairOffsets.resize(overlap_1[0]);</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span> </div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>  <span class="keyword">const</span> <span class="keyword">auto</span> interactionLengthSquare(this-&gt;_interactionLength * this-&gt;_interactionLength);</div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span> </div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> x = 0ul; x &lt;= _overlap[0]; ++x) {</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> y = 0ul; y &lt;= _overlap[1]; ++y) {</div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>      _baseOffsets[x].push_back(<a class="code hl_function" href="namespaceautopas_1_1utils_1_1ThreeDimensionalMapping.html#a8d92b8e30d9eb33d3b6828989d9b5eb2">utils::ThreeDimensionalMapping::threeToOneD</a>(x, y, 0ul, cellsPerDimension));</div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>      <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> z = 0ul; z &lt;= _overlap[2]; ++z) {</div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>        cellOffsets.push_back(<a class="code hl_function" href="namespaceautopas_1_1utils_1_1ThreeDimensionalMapping.html#a8d92b8e30d9eb33d3b6828989d9b5eb2">utils::ThreeDimensionalMapping::threeToOneD</a>(x, y, z, cellsPerDimension));</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>      }</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>    }</div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>  }</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> x = 0ul; x &lt;= _overlap[0]; ++x) {</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> y = 0ul; y &lt;= _overlap[1]; ++y) {</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>      <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> z = 0ul; z &lt;= _overlap[2]; ++z) {</div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>        <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> offset = cellOffsets[ov1_squared * x + ov1 * y];</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>        <span class="comment">// origin</span></div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>        {</div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>          <span class="comment">// check whether cell is within cutoff radius</span></div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>          <span class="keyword">auto</span> distVec = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ArrayMath.html#ad705b42c3a5eee0ef4efc9f73bd84b6d">utils::ArrayMath::mul</a>({std::max(0.0, x - 1.0), std::max(0.0, y - 1.0), std::max(0.0, z - 1.0)},</div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>                                               _cellLength);</div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>          <span class="keyword">const</span> <span class="keyword">auto</span> distSquare = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a1d321ba1191121f73334c284d1e72e72">utils::ArrayMath::dot</a>(distVec, distVec);</div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>          <span class="keywordflow">if</span> (distSquare &lt;= interactionLengthSquare) {</div>
-<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>            cellPairOffsets[x].push_back(make_pair(cellOffsets[z], offset));</div>
-<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>          }</div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>        }</div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>        <span class="comment">// back left</span></div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>        <span class="keywordflow">if</span> (y != _overlap[1] and z != 0) {</div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>          <span class="comment">// check whether cell is within cutoff radius</span></div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>          <span class="keyword">auto</span> distVec = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ArrayMath.html#ad705b42c3a5eee0ef4efc9f73bd84b6d">utils::ArrayMath::mul</a>(</div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>              {std::max(0.0, x - 1.0), std::max(0.0, _overlap[1] - y - 1.0), std::max(0.0, z - 1.0)}, _cellLength);</div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>          <span class="keyword">const</span> <span class="keyword">auto</span> distSquare = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a1d321ba1191121f73334c284d1e72e72">utils::ArrayMath::dot</a>(distVec, distVec);</div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>          <span class="keywordflow">if</span> (distSquare &lt;= interactionLengthSquare) {</div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>            cellPairOffsets[x].push_back(make_pair(cellOffsets[ov1_squared - ov1 + z], offset));</div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>          }</div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>        }</div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>        <span class="comment">// front right</span></div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>        <span class="keywordflow">if</span> (x != _overlap[0] and (y != 0 or z != 0)) {</div>
-<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>          <span class="comment">// check whether cell is within cutoff radius</span></div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>          <span class="keyword">auto</span> distVec = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ArrayMath.html#ad705b42c3a5eee0ef4efc9f73bd84b6d">utils::ArrayMath::mul</a>(</div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>              {std::max(0.0, _overlap[0] - x - 1.0), std::max(0.0, y - 1.0), std::max(0.0, z - 1.0)}, _cellLength);</div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>          <span class="keyword">const</span> <span class="keyword">auto</span> distSquare = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a1d321ba1191121f73334c284d1e72e72">utils::ArrayMath::dot</a>(distVec, distVec);</div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>          <span class="keywordflow">if</span> (distSquare &lt;= interactionLengthSquare) {</div>
-<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>            cellPairOffsets[x].push_back(make_pair(cellOffsets[ov1_squared * _overlap[0] + z], offset));</div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>          }</div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>        }</div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>        <span class="comment">// back right</span></div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>        <span class="keywordflow">if</span> (y != _overlap[1] and x != _overlap[0] and z != 0) {</div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>          <span class="comment">// check whether cell is within cutoff radius</span></div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>          <span class="keyword">auto</span> distVec = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ArrayMath.html#ad705b42c3a5eee0ef4efc9f73bd84b6d">utils::ArrayMath::mul</a>(</div>
-<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>              {std::max(0.0, _overlap[0] - x - 1.0), std::max(0.0, _overlap[1] - y - 1.0), std::max(0.0, z - 1.0)},</div>
-<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>              _cellLength);</div>
-<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>          <span class="keyword">const</span> <span class="keyword">auto</span> distSquare = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a1d321ba1191121f73334c284d1e72e72">utils::ArrayMath::dot</a>(distVec, distVec);</div>
-<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>          <span class="keywordflow">if</span> (distSquare &lt;= interactionLengthSquare) {</div>
-<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>            cellPairOffsets[x].push_back(make_pair(cellOffsets[ov1_squared * ov1 - ov1 + z], offset));</div>
-<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>          }</div>
-<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>        }</div>
-<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>      }</div>
-<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>    }</div>
-<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>  }</div>
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>  setupIntervals(cellPairOffsets);</div>
-<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>}</div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span> </div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ParticleCell, <span class="keyword">class</span> PairwiseFunctor, DataLayoutOption::Value dataLayout, <span class="keywordtype">bool</span> useNewton3&gt;</div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span><span class="keyword">inline</span> <span class="keywordtype">void</span> LCC04SoACellHandler&lt;ParticleCell, PairwiseFunctor, dataLayout, useNewton3&gt;::setupIntervals(</div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>    std::vector&lt;std::vector&lt;std::pair&lt;unsigned long, unsigned long&gt;&gt;&gt; &amp;cellPairOffsets) {</div>
-<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>  <span class="comment">// Create intervals</span></div>
-<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> numStripes = cellPairOffsets.size();</div>
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>  _offsets.resize(numStripes);</div>
-<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span> </div>
-<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>  <span class="comment">// iterate over all stripes</span></div>
-<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> i = 0; i &lt; numStripes; ++i) {</div>
-<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>    <span class="keyword">auto</span> &amp;currentStripe = cellPairOffsets[i];</div>
-<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>    <span class="comment">// Sort</span></div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>    std::stable_sort(currentStripe.begin(), currentStripe.end(),</div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>                     [](<span class="keyword">const</span> <span class="keyword">auto</span> &amp;a, <span class="keyword">const</span> <span class="keyword">auto</span> &amp;b) -&gt; <span class="keywordtype">bool</span> { return a.first &lt; b.first; });</div>
-<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span> </div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>    <span class="comment">// Collect intervals</span></div>
-<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> current = currentStripe.front().first;</div>
-<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> startID =</div>
-<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>        std::distance(_baseOffsets[i].begin(),</div>
-<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>                      std::find(_baseOffsets[i].begin(), _baseOffsets[i].end(), currentStripe.front().second));</div>
-<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> endID = startID;</div>
-<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> j = 0; j &lt; currentStripe.size(); j++) {</div>
-<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>      <span class="keywordflow">if</span> (current != currentStripe[j].first) {</div>
-<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>        <span class="keyword">auto</span> interval = std::make_pair(startID, endID);</div>
-<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>        _offsets[i].push_back(std::make_pair(current, interval));</div>
-<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>        startID = std::distance(_baseOffsets[i].begin(),</div>
-<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>                                std::find(_baseOffsets[i].begin(), _baseOffsets[i].end(), currentStripe[j].second));</div>
-<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>        endID = startID;</div>
-<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>        current = currentStripe[j].first;</div>
-<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>      }</div>
-<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>      endID++;</div>
-<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>    }</div>
-<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>    <span class="comment">// last interval</span></div>
-<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>    <span class="keyword">auto</span> interval = std::make_pair(startID, endID);</div>
-<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>    _offsets[i].push_back(std::make_pair(current, interval));</div>
-<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>  }</div>
-<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>}</div>
-<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span> </div>
-<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ParticleCell, <span class="keyword">class</span> PairwiseFunctor, DataLayoutOption::Value dataLayout, <span class="keywordtype">bool</span> useNewton3&gt;</div>
-<div class="line"><a id="l00444" name="l00444"></a><span class="lineno"><a class="line" href="classautopas_1_1LCC04SoACellHandler.html#a6e37450c694ab10da14e5d8b14c83321">  444</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1LCC04SoACellHandler.html#a6e37450c694ab10da14e5d8b14c83321">LCC04SoACellHandler&lt;ParticleCell, PairwiseFunctor, dataLayout, useNewton3&gt;::resizeBuffers</a>() {</div>
-<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>  <span class="keyword">const</span> <span class="keyword">auto</span> numThreads = <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(<a class="code hl_function" href="namespaceautopas.html#a385797c464a683f32da2d4a43ab53220">autopas_get_max_threads</a>());</div>
-<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span>  <span class="keywordflow">if</span> (_combinationSlices.size() != numThreads) {</div>
-<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>    _combinationSlices.resize(numThreads);</div>
-<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>    <span class="keyword">const</span> <span class="keyword">auto</span> cellOffsetsSize = _overlap[0] + 1;</div>
-<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>    std::for_each(_combinationSlices.begin(), _combinationSlices.end(),</div>
-<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>                  [cellOffsetsSize](<span class="keyword">auto</span> &amp;e) { e.resize(cellOffsetsSize); });</div>
-<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>    _combinationSlicesOffsets.resize(numThreads);</div>
-<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>    std::for_each(_combinationSlicesOffsets.begin(), _combinationSlicesOffsets.end(),</div>
-<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>                  [cellOffsetsSize](<span class="keyword">auto</span> &amp;e) { e.resize(cellOffsetsSize); });</div>
-<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>    _currentSlices.resize(numThreads * _cacheOffset);</div>
-<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>  }</div>
-<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>}</div>
-<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span> </div>
-<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>}  <span class="comment">// namespace autopas</span></div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>  <span class="keyword">using namespace </span>autopas::utils::ArrayMath::literals;</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>  <span class="keyword">using </span>std::make_pair;</div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span> </div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>  std::vector&lt;std::vector&lt;std::pair&lt;unsigned long, unsigned long&gt;&gt;&gt; cellPairOffsets;</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span> </div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>  <span class="comment">// @TODO: Replace following lines with vector to support asymmetric cells</span></div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> ov1 = _overlap[0] + 1;</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> ov1_squared = ov1 * ov1;</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>  _baseOffsets.resize(ov1);</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span> </div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>  <span class="keyword">const</span> std::array&lt;unsigned long, 3&gt; overlap_1 = _overlap + 1ul;</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span> </div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>  std::vector&lt;unsigned long&gt; cellOffsets;</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>  cellOffsets.reserve(overlap_1[0] * overlap_1[1] * overlap_1[2]);</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span> </div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>  cellPairOffsets.clear();</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>  cellPairOffsets.resize(overlap_1[0]);</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span> </div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>  <span class="keyword">const</span> <span class="keyword">auto</span> interactionLengthSquare(this-&gt;_interactionLength * this-&gt;_interactionLength);</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span> </div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> x = 0ul; x &lt;= _overlap[0]; ++x) {</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> y = 0ul; y &lt;= _overlap[1]; ++y) {</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>      _baseOffsets[x].push_back(<a class="code hl_function" href="namespaceautopas_1_1utils_1_1ThreeDimensionalMapping.html#a8d92b8e30d9eb33d3b6828989d9b5eb2">utils::ThreeDimensionalMapping::threeToOneD</a>(x, y, 0ul, cellsPerDimension));</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>      <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> z = 0ul; z &lt;= _overlap[2]; ++z) {</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>        cellOffsets.push_back(<a class="code hl_function" href="namespaceautopas_1_1utils_1_1ThreeDimensionalMapping.html#a8d92b8e30d9eb33d3b6828989d9b5eb2">utils::ThreeDimensionalMapping::threeToOneD</a>(x, y, z, cellsPerDimension));</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>      }</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>    }</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>  }</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> x = 0ul; x &lt;= _overlap[0]; ++x) {</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> y = 0ul; y &lt;= _overlap[1]; ++y) {</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>      <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> z = 0ul; z &lt;= _overlap[2]; ++z) {</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>        <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> offset = cellOffsets[ov1_squared * x + ov1 * y];</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>        <span class="comment">// origin</span></div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>        {</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>          <span class="comment">// check whether cell is within cutoff radius</span></div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>          <span class="keyword">const</span> <span class="keyword">auto</span> distVec =</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>              std::array&lt;double, 3&gt;{std::max(0.0, x - 1.0), std::max(0.0, y - 1.0), std::max(0.0, z - 1.0)} *</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>              _cellLength;</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>          <span class="keyword">const</span> <span class="keyword">auto</span> distSquare = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a1d321ba1191121f73334c284d1e72e72">utils::ArrayMath::dot</a>(distVec, distVec);</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>          <span class="keywordflow">if</span> (distSquare &lt;= interactionLengthSquare) {</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>            cellPairOffsets[x].push_back(make_pair(cellOffsets[z], offset));</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>          }</div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>        }</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>        <span class="comment">// back left</span></div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>        <span class="keywordflow">if</span> (y != _overlap[1] and z != 0) {</div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>          <span class="comment">// check whether cell is within cutoff radius</span></div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>          <span class="keyword">const</span> <span class="keyword">auto</span> distVec = std::array&lt;double, 3&gt;{std::max(0.0, x - 1.0), std::max(0.0, _overlap[1] - y - 1.0),</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>                                                     std::max(0.0, z - 1.0)} *</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>                               _cellLength;</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>          <span class="keyword">const</span> <span class="keyword">auto</span> distSquare = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a1d321ba1191121f73334c284d1e72e72">utils::ArrayMath::dot</a>(distVec, distVec);</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>          <span class="keywordflow">if</span> (distSquare &lt;= interactionLengthSquare) {</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>            cellPairOffsets[x].push_back(make_pair(cellOffsets[ov1_squared - ov1 + z], offset));</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>          }</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>        }</div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>        <span class="comment">// front right</span></div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>        <span class="keywordflow">if</span> (x != _overlap[0] and (y != 0 or z != 0)) {</div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>          <span class="comment">// check whether cell is within cutoff radius</span></div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>          <span class="keyword">const</span> <span class="keyword">auto</span> distVec = std::array&lt;double, 3&gt;{std::max(0.0, _overlap[0] - x - 1.0), std::max(0.0, y - 1.0),</div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>                                                     std::max(0.0, z - 1.0)} *</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>                               _cellLength;</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>          <span class="keyword">const</span> <span class="keyword">auto</span> distSquare = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a1d321ba1191121f73334c284d1e72e72">utils::ArrayMath::dot</a>(distVec, distVec);</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>          <span class="keywordflow">if</span> (distSquare &lt;= interactionLengthSquare) {</div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>            cellPairOffsets[x].push_back(make_pair(cellOffsets[ov1_squared * _overlap[0] + z], offset));</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>          }</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>        }</div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>        <span class="comment">// back right</span></div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>        <span class="keywordflow">if</span> (y != _overlap[1] and x != _overlap[0] and z != 0) {</div>
+<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>          <span class="comment">// check whether cell is within cutoff radius</span></div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>          <span class="keyword">const</span> <span class="keyword">auto</span> distVec = std::array&lt;double, 3&gt;{std::max(0.0, _overlap[0] - x - 1.0),</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>                                                     std::max(0.0, _overlap[1] - y - 1.0), std::max(0.0, z - 1.0)} *</div>
+<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>                               _cellLength;</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>          <span class="keyword">const</span> <span class="keyword">auto</span> distSquare = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a1d321ba1191121f73334c284d1e72e72">utils::ArrayMath::dot</a>(distVec, distVec);</div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>          <span class="keywordflow">if</span> (distSquare &lt;= interactionLengthSquare) {</div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>            cellPairOffsets[x].push_back(make_pair(cellOffsets[ov1_squared * ov1 - ov1 + z], offset));</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>          }</div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>        }</div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>      }</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>    }</div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>  }</div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>  setupIntervals(cellPairOffsets);</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>}</div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span> </div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ParticleCell, <span class="keyword">class</span> PairwiseFunctor, DataLayoutOption::Value dataLayout, <span class="keywordtype">bool</span> useNewton3&gt;</div>
+<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_class" href="classautopas_1_1LCC04SoACellHandler.html">LCC04SoACellHandler&lt;ParticleCell, PairwiseFunctor, dataLayout, useNewton3&gt;::setupIntervals</a>(</div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>    std::vector&lt;std::vector&lt;std::pair&lt;unsigned long, unsigned long&gt;&gt;&gt; &amp;cellPairOffsets) {</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>  <span class="comment">// Create intervals</span></div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> numStripes = cellPairOffsets.size();</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>  _offsets.resize(numStripes);</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span> </div>
+<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>  <span class="comment">// iterate over all stripes</span></div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> i = 0; i &lt; numStripes; ++i) {</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>    <span class="keyword">auto</span> &amp;currentStripe = cellPairOffsets[i];</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>    <span class="comment">// Sort</span></div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>    std::stable_sort(currentStripe.begin(), currentStripe.end(),</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>                     [](<span class="keyword">const</span> <span class="keyword">auto</span> &amp;a, <span class="keyword">const</span> <span class="keyword">auto</span> &amp;b) -&gt; <span class="keywordtype">bool</span> { return a.first &lt; b.first; });</div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span> </div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>    <span class="comment">// Collect intervals</span></div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> current = currentStripe.front().first;</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> startID =</div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>        std::distance(_baseOffsets[i].begin(),</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>                      std::find(_baseOffsets[i].begin(), _baseOffsets[i].end(), currentStripe.front().second));</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> endID = startID;</div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> j = 0; j &lt; currentStripe.size(); j++) {</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>      <span class="keywordflow">if</span> (current != currentStripe[j].first) {</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span>        <span class="keyword">auto</span> interval = std::make_pair(startID, endID);</div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>        _offsets[i].push_back(std::make_pair(current, interval));</div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>        startID = std::distance(_baseOffsets[i].begin(),</div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>                                std::find(_baseOffsets[i].begin(), _baseOffsets[i].end(), currentStripe[j].second));</div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>        endID = startID;</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span>        current = currentStripe[j].first;</div>
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span>      }</div>
+<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>      endID++;</div>
+<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>    }</div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>    <span class="comment">// last interval</span></div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>    <span class="keyword">auto</span> interval = std::make_pair(startID, endID);</div>
+<div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span>    _offsets[i].push_back(std::make_pair(current, interval));</div>
+<div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>  }</div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>}</div>
+<div class="line"><a id="l00446" name="l00446"></a><span class="lineno">  446</span> </div>
+<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ParticleCell, <span class="keyword">class</span> PairwiseFunctor, DataLayoutOption::Value dataLayout, <span class="keywordtype">bool</span> useNewton3&gt;</div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno"><a class="line" href="classautopas_1_1LCC04SoACellHandler.html#a6e37450c694ab10da14e5d8b14c83321">  448</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1LCC04SoACellHandler.html#a6e37450c694ab10da14e5d8b14c83321">LCC04SoACellHandler&lt;ParticleCell, PairwiseFunctor, dataLayout, useNewton3&gt;::resizeBuffers</a>() {</div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>  <span class="keyword">const</span> <span class="keyword">auto</span> numThreads = <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(<a class="code hl_function" href="namespaceautopas.html#a385797c464a683f32da2d4a43ab53220">autopas_get_max_threads</a>());</div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>  <span class="keywordflow">if</span> (_combinationSlices.size() != numThreads) {</div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>    _combinationSlices.resize(numThreads);</div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>    <span class="keyword">const</span> <span class="keyword">auto</span> cellOffsetsSize = _overlap[0] + 1;</div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>    std::for_each(_combinationSlices.begin(), _combinationSlices.end(),</div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span>                  [cellOffsetsSize](<span class="keyword">auto</span> &amp;e) { e.resize(cellOffsetsSize); });</div>
+<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>    _combinationSlicesOffsets.resize(numThreads);</div>
+<div class="line"><a id="l00456" name="l00456"></a><span class="lineno">  456</span>    std::for_each(_combinationSlicesOffsets.begin(), _combinationSlicesOffsets.end(),</div>
+<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>                  [cellOffsetsSize](<span class="keyword">auto</span> &amp;e) { e.resize(cellOffsetsSize); });</div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>    _currentSlices.resize(numThreads * _cacheOffset);</div>
+<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>  }</div>
+<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>}</div>
+<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span> </div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>}  <span class="comment">// namespace autopas</span></div>
 <div class="ttc" id="aAlignedAllocator_8h_html"><div class="ttname"><a href="AlignedAllocator_8h.html">AlignedAllocator.h</a></div></div>
 <div class="ttc" id="aArrayMath_8h_html"><div class="ttname"><a href="ArrayMath_8h.html">ArrayMath.h</a></div></div>
 <div class="ttc" id="aCellPairTraversal_8h_html"><div class="ttname"><a href="CellPairTraversal_8h.html">CellPairTraversal.h</a></div></div>
@@ -473,13 +477,11 @@ $(function() {
 <div class="ttc" id="aWrapOpenMP_8h_html"><div class="ttname"><a href="WrapOpenMP_8h.html">WrapOpenMP.h</a></div></div>
 <div class="ttc" id="aclassautopas_1_1LCC04SoACellHandler_html"><div class="ttname"><a href="classautopas_1_1LCC04SoACellHandler.html">autopas::LCC04SoACellHandler</a></div><div class="ttdoc">This class provides the base for traversals using the c08 base step, but rather use 4 instead of 8 co...</div><div class="ttdef"><b>Definition:</b> LCC04SoACellHandler.h:32</div></div>
 <div class="ttc" id="aclassautopas_1_1LCC04SoACellHandler_html_a31e4c39c83fc92713d8c47aa5cd1e67a"><div class="ttname"><a href="classautopas_1_1LCC04SoACellHandler.html#a31e4c39c83fc92713d8c47aa5cd1e67a">autopas::LCC04SoACellHandler::processBaseCell</a></div><div class="ttdeci">void processBaseCell(std::vector&lt; ParticleCell &gt; &amp;cells, unsigned long x, unsigned long y, unsigned long z)</div><div class="ttdoc">Computes one interaction for each spacial direction based on the lower left frontal corner of a 2x2x2...</div><div class="ttdef"><b>Definition:</b> LCC04SoACellHandler.h:171</div></div>
-<div class="ttc" id="aclassautopas_1_1LCC04SoACellHandler_html_a6e37450c694ab10da14e5d8b14c83321"><div class="ttname"><a href="classautopas_1_1LCC04SoACellHandler.html#a6e37450c694ab10da14e5d8b14c83321">autopas::LCC04SoACellHandler::resizeBuffers</a></div><div class="ttdeci">void resizeBuffers()</div><div class="ttdoc">Resize all buffers to match the current number of threads.</div><div class="ttdef"><b>Definition:</b> LCC04SoACellHandler.h:444</div></div>
+<div class="ttc" id="aclassautopas_1_1LCC04SoACellHandler_html_a6e37450c694ab10da14e5d8b14c83321"><div class="ttname"><a href="classautopas_1_1LCC04SoACellHandler.html#a6e37450c694ab10da14e5d8b14c83321">autopas::LCC04SoACellHandler::resizeBuffers</a></div><div class="ttdeci">void resizeBuffers()</div><div class="ttdoc">Resize all buffers to match the current number of threads.</div><div class="ttdef"><b>Definition:</b> LCC04SoACellHandler.h:448</div></div>
 <div class="ttc" id="aclassautopas_1_1LCC04SoACellHandler_html_af8e54b0faaf8f2eee855db47149e3f0f"><div class="ttname"><a href="classautopas_1_1LCC04SoACellHandler.html#af8e54b0faaf8f2eee855db47149e3f0f">autopas::LCC04SoACellHandler::LCC04SoACellHandler</a></div><div class="ttdeci">LCC04SoACellHandler(PairwiseFunctor *pairwiseFunctor, std::array&lt; unsigned long, 3 &gt; cellsPerDimension, const double interactionLength, const std::array&lt; double, 3 &gt; &amp;cellLength, const std::array&lt; unsigned long, 3 &gt; &amp;overlap={1ul, 1ul, 1ul})</div><div class="ttdoc">Constructor of the c04 traversal with combined SoA buffers.</div><div class="ttdef"><b>Definition:</b> LCC04SoACellHandler.h:42</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleCell_html"><div class="ttname"><a href="classautopas_1_1ParticleCell.html">autopas::ParticleCell</a></div><div class="ttdoc">Class for Cells of Particles.</div><div class="ttdef"><b>Definition:</b> ParticleCell.h:49</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleCell_html_afebac875a53fe79875cafd7e7849f030"><div class="ttname"><a href="classautopas_1_1ParticleCell.html#afebac875a53fe79875cafd7e7849f030">autopas::ParticleCell::numParticles</a></div><div class="ttdeci">virtual unsigned long numParticles() const =0</div><div class="ttdoc">Get the number of particles stored in this cell.</div></div>
 <div class="ttc" id="anamespaceautopas_1_1utils_1_1ArrayMath_html_a1d321ba1191121f73334c284d1e72e72"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ArrayMath.html#a1d321ba1191121f73334c284d1e72e72">autopas::utils::ArrayMath::dot</a></div><div class="ttdeci">constexpr T dot(const std::array&lt; T, SIZE &gt; &amp;a, const std::array&lt; T, SIZE &gt; &amp;b)</div><div class="ttdoc">Generates the dot product of two arrays.</div><div class="ttdef"><b>Definition:</b> ArrayMath.h:196</div></div>
-<div class="ttc" id="anamespaceautopas_1_1utils_1_1ArrayMath_html_aa12b6c2e8793f6e5d18ad763f6330f51"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ArrayMath.html#aa12b6c2e8793f6e5d18ad763f6330f51">autopas::utils::ArrayMath::addScalar</a></div><div class="ttdeci">constexpr std::array&lt; T, SIZE &gt; addScalar(const std::array&lt; T, SIZE &gt; &amp;a, T s)</div><div class="ttdoc">Adds a scalar s to each element of array a and returns the result.</div><div class="ttdef"><b>Definition:</b> ArrayMath.h:128</div></div>
-<div class="ttc" id="anamespaceautopas_1_1utils_1_1ArrayMath_html_ad705b42c3a5eee0ef4efc9f73bd84b6d"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ArrayMath.html#ad705b42c3a5eee0ef4efc9f73bd84b6d">autopas::utils::ArrayMath::mul</a></div><div class="ttdeci">constexpr std::array&lt; T, SIZE &gt; mul(const std::array&lt; T, SIZE &gt; &amp;a, const std::array&lt; T, SIZE &gt; &amp;b)</div><div class="ttdoc">Multiplies two array's element wise and returns the result.</div><div class="ttdef"><b>Definition:</b> ArrayMath.h:94</div></div>
 <div class="ttc" id="anamespaceautopas_1_1utils_1_1ThreeDimensionalMapping_html_a695d7461713f9c1ad63a1df22fbc29ed"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ThreeDimensionalMapping.html#a695d7461713f9c1ad63a1df22fbc29ed">autopas::utils::ThreeDimensionalMapping::oneToThreeD</a></div><div class="ttdeci">constexpr std::array&lt; T, 3 &gt; oneToThreeD(T ind, const std::array&lt; T, 3 &gt; &amp;dims)</div><div class="ttdoc">Convert a 1d index to a 3d index.</div><div class="ttdef"><b>Definition:</b> ThreeDimensionalMapping.h:55</div></div>
 <div class="ttc" id="anamespaceautopas_1_1utils_1_1ThreeDimensionalMapping_html_a8d92b8e30d9eb33d3b6828989d9b5eb2"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ThreeDimensionalMapping.html#a8d92b8e30d9eb33d3b6828989d9b5eb2">autopas::utils::ThreeDimensionalMapping::threeToOneD</a></div><div class="ttdeci">constexpr T threeToOneD(T x, T y, T z, const std::array&lt; T, 3 &gt; &amp;dims)</div><div class="ttdoc">Convert a 3d index to a 1d index.</div><div class="ttdef"><b>Definition:</b> ThreeDimensionalMapping.h:29</div></div>
 <div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">This is the main namespace of AutoPas.</div><div class="ttdef"><b>Definition:</b> AutoPasDecl.h:29</div></div>
