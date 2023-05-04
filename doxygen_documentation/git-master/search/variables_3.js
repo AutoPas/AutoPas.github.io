@@ -6,5 +6,5 @@ var searchData=
   ['delimitersrgx_3',['delimitersRgx',['../namespaceautopas_1_1utils_1_1StringUtils.html#a845cf6ebe1f5e042e5555ddc1deda7b5',1,'autopas::utils::StringUtils']]],
   ['delimitersrgxinv_4',['delimitersRgxInv',['../namespaceautopas_1_1utils_1_1StringUtils.html#a0670eb52ca9659a3fba439f787594b92',1,'autopas::utils::StringUtils']]],
   ['dims_5',['dims',['../classautopas_1_1TraversalSelectorInfo.html#a3ca1d12c89d38153b5ad7add77066fc1',1,'autopas::TraversalSelectorInfo']]],
-  ['dimscales_6',['dimScales',['../structautopas_1_1GaussianHyperparameters.html#aaa3d77ed807d584c7e8dcea67e76e295',1,'autopas::GaussianHyperparameters']]]
+  ['dimscales_6',['dimScales',['../classautopas_1_1GaussianHyperparameters.html#aaa3d77ed807d584c7e8dcea67e76e295',1,'autopas::GaussianHyperparameters']]]
 ];

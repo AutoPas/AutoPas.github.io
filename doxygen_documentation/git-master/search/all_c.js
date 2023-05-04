@@ -10,7 +10,7 @@ var searchData=
   ['math_2eh_7',['Math.h',['../Math_8h.html',1,'']]],
   ['max_8',['max',['../namespaceautopas_1_1utils_1_1ArrayMath.html#a73ce77f8252a862b4bcf3a75a4da10f3',1,'autopas::utils::ArrayMath']]],
   ['max_5fsize_9',['max_size',['../classautopas_1_1AlignedAllocator.html#aa3424bc69e10fc0bcc53779155ebb28c',1,'autopas::AlignedAllocator']]],
-  ['mean_10',['mean',['../structautopas_1_1GaussianHyperparameters.html#adc5f286f5f22857a98acccb06de057a1',1,'autopas::GaussianHyperparameters']]],
+  ['mean_10',['mean',['../classautopas_1_1GaussianHyperparameters.html#adc5f286f5f22857a98acccb06de057a1',1,'autopas::GaussianHyperparameters']]],
   ['meanvalue_11',['meanValue',['../namespaceautopas_1_1OptimumSelector.html#ab45604996f8744939ab7bda276061fe2',1,'autopas::OptimumSelector']]],
   ['medianvalue_12',['medianValue',['../namespaceautopas_1_1OptimumSelector.html#a026bccf03fed7ad4ae1d87ea22cb8f3b',1,'autopas::OptimumSelector']]],
   ['memoryprofiler_2ecpp_13',['MemoryProfiler.cpp',['../MemoryProfiler_8cpp.html',1,'']]],

@@ -8,5 +8,5 @@ var searchData=
   ['commonfacetable_5',['commonFaceTable',['../namespaceautopas_1_1octree_1_1anonymous__namespace_02OctreeDirection_8h_03.html#a3e0e5519ed36c7befc0e06559f5fd259',1,'autopas::octree::anonymous_namespace{OctreeDirection.h}']]],
   ['container_6',['container',['../classautopas_1_1Configuration.html#a6f60f44ea162cec7863f0d88237946b0',1,'autopas::Configuration']]],
   ['count_7',['count',['../structautopas_1_1InstanceCounter.html#a158fd3670a2eb70383019cdc0e2d605a',1,'autopas::InstanceCounter::count'],['../structautopas_1_1AutoPas__MPI__Status.html#a02243c4223248fcfdb8b756fed425c75',1,'autopas::AutoPas_MPI_Status::count']]],
-  ['covmatinv_8',['covMatInv',['../structautopas_1_1GaussianHyperparameters.html#a832cea054b701bfe727547caedd91344',1,'autopas::GaussianHyperparameters']]]
+  ['covmatinv_8',['covMatInv',['../classautopas_1_1GaussianHyperparameters.html#a832cea054b701bfe727547caedd91344',1,'autopas::GaussianHyperparameters']]]
 ];

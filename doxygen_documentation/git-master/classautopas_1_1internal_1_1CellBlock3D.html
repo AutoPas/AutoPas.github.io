@@ -176,6 +176,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad9ffefd880c6462fc47ee7ce46ba5f47"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#ad9ffefd880c6462fc47ee7ce46ba5f47">getCell</a> (const std::array&lt; <a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#ad837de4f8de338cd50a3cbc6f95569a7">index_t</a>, 3 &gt; &amp;index3d) const</td></tr>
 <tr class="memdesc:ad9ffefd880c6462fc47ee7ce46ba5f47"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a> of a specified 3d index  <br /></td></tr>
 <tr class="separator:ad9ffefd880c6462fc47ee7ce46ba5f47"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9df3a383c1421f607f9ed463638d0653"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#a9df3a383c1421f607f9ed463638d0653">reserve</a> (size_t numParticles)</td></tr>
+<tr class="memdesc:a9df3a383c1421f607f9ed463638d0653"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserve memory for a given number of particles.  <br /></td></tr>
+<tr class="separator:a9df3a383c1421f607f9ed463638d0653"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ee68c1df81e86c3eedf9384451df0ca"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#a9ee68c1df81e86c3eedf9384451df0ca">rebuild</a> (std::vector&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; &amp;vec, const std::array&lt; double, 3 &gt; &amp;bMin, const std::array&lt; double, 3 &gt; &amp;bMax, double interactionLength, double cellSizeFactor)</td></tr>
 <tr class="memdesc:a9ee68c1df81e86c3eedf9384451df0ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">rebuild the cellblock.  <br /></td></tr>
 <tr class="separator:a9ee68c1df81e86c3eedf9384451df0ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -189,7 +192,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af834b2b9e4d4e773ee798da55c79646f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the lower and upper corner of the cell at the 3d index index3d.  <br /></td></tr>
 <tr class="separator:af834b2b9e4d4e773ee798da55c79646f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afcfb9db81e466a9c46e23238be9100e9"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#ad837de4f8de338cd50a3cbc6f95569a7">index_t</a>, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#afcfb9db81e466a9c46e23238be9100e9">get3DIndexOfPosition</a> (const std::array&lt; double, 3 &gt; &amp;pos) const</td></tr>
-<tr class="memdesc:afcfb9db81e466a9c46e23238be9100e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the 3d index of the cellblock for a given position  <br /></td></tr>
+<tr class="memdesc:afcfb9db81e466a9c46e23238be9100e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the 3d index of the cellblock for a given position.  <br /></td></tr>
 <tr class="separator:afcfb9db81e466a9c46e23238be9100e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70b55e790bc60441e31d9bf335e266c3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#ad837de4f8de338cd50a3cbc6f95569a7">index_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#a70b55e790bc60441e31d9bf335e266c3">get1DIndexOfPosition</a> (const std::array&lt; double, 3 &gt; &amp;pos) const</td></tr>
 <tr class="memdesc:a70b55e790bc60441e31d9bf335e266c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the 1d index of the cellblock for a given position  <br /></td></tr>
@@ -219,6 +222,15 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clearHaloCells</b> ()
 <tr class="memitem:ae92df86a808ba4f8a7ea83380115bc4a"><td class="memItemLeft" align="right" valign="top">const std::array&lt; double, 3 &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#ae92df86a808ba4f8a7ea83380115bc4a">getCellLength</a> () const</td></tr>
 <tr class="memdesc:ae92df86a808ba4f8a7ea83380115bc4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the cell lengths.  <br /></td></tr>
 <tr class="separator:ae92df86a808ba4f8a7ea83380115bc4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a787748e4cfb71d9c5c34b0abcd81a655"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#ad837de4f8de338cd50a3cbc6f95569a7">index_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#a787748e4cfb71d9c5c34b0abcd81a655">getNumCells</a> () const</td></tr>
+<tr class="memdesc:a787748e4cfb71d9c5c34b0abcd81a655"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of cells in this block.  <br /></td></tr>
+<tr class="separator:a787748e4cfb71d9c5c34b0abcd81a655"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a467f7dcf152286c70fdf717234e60620"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#ad837de4f8de338cd50a3cbc6f95569a7">index_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#a467f7dcf152286c70fdf717234e60620">getFirstOwnedCellIndex</a> () const</td></tr>
+<tr class="memdesc:a467f7dcf152286c70fdf717234e60620"><td class="mdescLeft">&#160;</td><td class="mdescRight">1D id of the first cell that is not in the halo.  <br /></td></tr>
+<tr class="separator:a467f7dcf152286c70fdf717234e60620"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0ebf33c5916b4832c6907cab2e656e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#ad837de4f8de338cd50a3cbc6f95569a7">index_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#af0ebf33c5916b4832c6907cab2e656e4">getLastOwnedCellIndex</a> () const</td></tr>
+<tr class="memdesc:af0ebf33c5916b4832c6907cab2e656e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">1D id of the last cell before there are only halo cells left.  <br /></td></tr>
+<tr class="separator:af0ebf33c5916b4832c6907cab2e656e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classautopas_1_1internal_1_1CellBorderAndFlagManager"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classautopas_1_1internal_1_1CellBorderAndFlagManager')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classautopas_1_1internal_1_1CellBorderAndFlagManager.html">autopas::internal::CellBorderAndFlagManager</a></td></tr>
 <tr class="memitem:aae6daff8ba7a4c400d1cf81231eb38c5 inherit pub_methods_classautopas_1_1internal_1_1CellBorderAndFlagManager"><td class="memItemLeft" align="right" valign="top"><a id="aae6daff8ba7a4c400d1cf81231eb38c5" name="aae6daff8ba7a4c400d1cf81231eb38c5"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~CellBorderAndFlagManager</b> ()=default</td></tr>
@@ -480,7 +492,8 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 </table>
 </div><div class="memdoc">
 
-<p>get the 3d index of the cellblock for a given position </p>
+<p>Get the 3d index of the cellblock for a given position. </p>
+<dl class="section note"><dt>Note</dt><dd>If pos is outside the domain the returned 3d index is also outside the domain.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pos</td><td>the position </td></tr>
@@ -488,7 +501,6 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the 3d index </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>when the border and flag manager is there </dd></dl>
 
 </div>
 </div>
@@ -757,6 +769,7 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 </div><div class="memdoc">
 
 <p>Get the containing cell of a specified position. </p>
+<dl class="section note"><dt>Note</dt><dd>If pos is outside the domain vector-&gt;operator[]() will trigger undefined behavior.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">pos</td><td>the position for which the cell is needed </td></tr>
@@ -764,6 +777,25 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>cell at the given position </dd></dl>
+
+</div>
+</div>
+<a id="a467f7dcf152286c70fdf717234e60620" name="a467f7dcf152286c70fdf717234e60620"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a467f7dcf152286c70fdf717234e60620">&#9670;&#160;</a></span>getFirstOwnedCellIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html">CellBlock3D</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt;<a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#ad837de4f8de338cd50a3cbc6f95569a7">::index_t</a> <a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html">autopas::internal::CellBlock3D</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt;::getFirstOwnedCellIndex</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>1D id of the first cell that is not in the halo. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -827,6 +859,25 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 
 </div>
 </div>
+<a id="af0ebf33c5916b4832c6907cab2e656e4" name="af0ebf33c5916b4832c6907cab2e656e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0ebf33c5916b4832c6907cab2e656e4">&#9670;&#160;</a></span>getLastOwnedCellIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html">CellBlock3D</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt;<a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#ad837de4f8de338cd50a3cbc6f95569a7">::index_t</a> <a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html">autopas::internal::CellBlock3D</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt;::getLastOwnedCellIndex</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>1D id of the last cell before there are only halo cells left. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 <a id="a6f62229b693084abae7793c215687391" name="a6f62229b693084abae7793c215687391"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6f62229b693084abae7793c215687391">&#9670;&#160;</a></span>getNearbyHaloCells()</h2>
 
@@ -872,6 +923,25 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>a container of references to nearby halo cells </dd></dl>
+
+</div>
+</div>
+<a id="a787748e4cfb71d9c5c34b0abcd81a655" name="a787748e4cfb71d9c5c34b0abcd81a655"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a787748e4cfb71d9c5c34b0abcd81a655">&#9670;&#160;</a></span>getNumCells()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html">CellBlock3D</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt;<a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html#ad837de4f8de338cd50a3cbc6f95569a7">::index_t</a> <a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html">autopas::internal::CellBlock3D</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt;::getNumCells</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the number of cells in this block. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -1017,6 +1087,34 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
     <tr><td class="paramname">bMax</td><td>new higher corner of the cellblock </td></tr>
     <tr><td class="paramname">interactionLength</td><td>max. radius of interaction between particles </td></tr>
     <tr><td class="paramname">cellSizeFactor</td><td>cell size factor relative to interactionLength </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9df3a383c1421f607f9ed463638d0653" name="a9df3a383c1421f607f9ed463638d0653"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9df3a383c1421f607f9ed463638d0653">&#9670;&#160;</a></span>reserve()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1internal_1_1CellBlock3D.html">autopas::internal::CellBlock3D</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt;::reserve </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>numParticles</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reserve memory for a given number of particles. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numParticles</td><td>Particles incl. halo particles. </td></tr>
   </table>
   </dd>
 </dl>

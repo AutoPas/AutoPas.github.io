@@ -129,9 +129,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abfd09c8ab6367e8b19c875d75629effd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1IterationLogger.html#abfd09c8ab6367e8b19c875d75629effd">logTimeTuning</a> (long timeTuning)</td></tr>
 <tr class="memdesc:abfd09c8ab6367e8b19c875d75629effd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log the tuning time to the loggers buffer.  <br /></td></tr>
 <tr class="separator:abfd09c8ab6367e8b19c875d75629effd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40208909f90e55ecc4b15a8c39f7886c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1IterationLogger.html#a40208909f90e55ecc4b15a8c39f7886c">logIteration</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;configuration, size_t iteration, bool inTuningPhase, long timeIteratePairwise, long timeRebuildNeighborLists, long timeWholeIteration)</td></tr>
-<tr class="memdesc:a40208909f90e55ecc4b15a8c39f7886c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log the given arguments and the internal buffer to the csv file.  <br /></td></tr>
-<tr class="separator:a40208909f90e55ecc4b15a8c39f7886c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac491e7c136fa72ef0a3d35a7c7968665"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1IterationLogger.html#ac491e7c136fa72ef0a3d35a7c7968665">logIteration</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;configuration, size_t iteration, bool inTuningPhase, long timeIteratePairwise, long timeRemainderTraversal, long timeRebuildNeighborLists, long timeIteratePairwiseTotal)</td></tr>
+<tr class="memdesc:ac491e7c136fa72ef0a3d35a7c7968665"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log the given arguments and the internal buffer to the csv file.  <br /></td></tr>
+<tr class="separator:ac491e7c136fa72ef0a3d35a7c7968665"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper to log performance data of <a class="el" href="classautopas_1_1AutoPas.html#aa4f698155519b2dc75f7a4ec800b3763" title="Function to iterate over all pairs of particles in the container.">AutoPas::iteratePairwise()</a> to a csv file for easier analysis. </p>
@@ -173,8 +173,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a40208909f90e55ecc4b15a8c39f7886c" name="a40208909f90e55ecc4b15a8c39f7886c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40208909f90e55ecc4b15a8c39f7886c">&#9670;&#160;</a></span>logIteration()</h2>
+<a id="ac491e7c136fa72ef0a3d35a7c7968665" name="ac491e7c136fa72ef0a3d35a7c7968665"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac491e7c136fa72ef0a3d35a7c7968665">&#9670;&#160;</a></span>logIteration()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -207,13 +207,19 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>timeRemainderTraversal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
           <td class="paramname"><em>timeRebuildNeighborLists</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">long&#160;</td>
-          <td class="paramname"><em>timeWholeIteration</em>&#160;</td>
+          <td class="paramname"><em>timeIteratePairwiseTotal</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -229,9 +235,10 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">configuration</td><td></td></tr>
     <tr><td class="paramname">iteration</td><td></td></tr>
     <tr><td class="paramname">inTuningPhase</td><td></td></tr>
-    <tr><td class="paramname">timeIteratePairwise</td><td></td></tr>
-    <tr><td class="paramname">timeRebuildNeighborLists</td><td></td></tr>
-    <tr><td class="paramname">timeWholeIteration</td><td></td></tr>
+    <tr><td class="paramname">timeIteratePairwise</td><td>Time for Container::iteratePairwise(). </td></tr>
+    <tr><td class="paramname">timeRemainderTraversal</td><td>Time for AutoTuner::doRemainderTraversal(). </td></tr>
+    <tr><td class="paramname">timeRebuildNeighborLists</td><td>Time for Container::rebuildNeighborLists(). </td></tr>
+    <tr><td class="paramname">timeIteratePairwiseTotal</td><td>Time for <a class="el" href="classautopas_1_1AutoTuner.html#a700ec55dacbd4436bb5c4fcab4f4bb94" title="Whole tuning logic for one iteration.">AutoTuner::iteratePairwise()</a>. This is slightly more than the sum of the above. Additional steps, only included in this timer are e.g. <a class="el" href="classautopas_1_1Functor.html#ad6c1b28af683bb01929229948553b211" title="This function is called at the start of each traversal.">Functor::initTraversal()</a> and <a class="el" href="classautopas_1_1Functor.html#aeec8a9f9e96ee72098d72a97cc28773f" title="This function is called at the end of each traversal.">Functor::endTraversal()</a>. </td></tr>
   </table>
   </dd>
 </dl>

@@ -3,7 +3,7 @@ var searchData=
   ['w_0',['W',['../classautopas_1_1sph_1_1SPHKernels.html#a9179c132b44571bb96ff76310fac7fb9',1,'autopas::sph::SPHKernels::W(const std::array&lt; double, 3 &gt; dr, const double h)'],['../classautopas_1_1sph_1_1SPHKernels.html#af8a3e4f756fb9f607b23c87b79edf7b2',1,'autopas::sph::SPHKernels::W(const double dr2, const double h)']]],
   ['wasserstein2_1',['wasserstein2',['../classautopas_1_1GaussianCluster.html#aa27fe3fde2aa4a672513bc2546bc8977a2886c50cac69f50d1a3a478086c7fac8',1,'autopas::GaussianCluster']]],
   ['weightfunction_2',['WeightFunction',['../classautopas_1_1GaussianCluster.html#aa27fe3fde2aa4a672513bc2546bc8977',1,'autopas::GaussianCluster']]],
-  ['weights_3',['weights',['../structautopas_1_1GaussianHyperparameters.html#aadd1d0fb1ab3a1deec50c7866ab5fcff',1,'autopas::GaussianHyperparameters']]],
+  ['weights_3',['weights',['../classautopas_1_1GaussianHyperparameters.html#aadd1d0fb1ab3a1deec50c7866ab5fcff',1,'autopas::GaussianHyperparameters']]],
   ['what_4',['what',['../classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html#af7a5b11a31149368c39c86bd221fb10d',1,'autopas::utils::ExceptionHandler::AutoPasException']]],
   ['willrebuild_5',['willRebuild',['../classautopas_1_1AutoTuner.html#a496785fcc3b9753b8d0237f261fb03c9',1,'autopas::AutoTuner']]],
   ['withstaticbool_6',['withStaticBool',['../namespaceautopas_1_1utils.html#ad25131c9e42fb62233cf624a3c09d248',1,'autopas::utils']]],
