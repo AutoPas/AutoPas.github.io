@@ -112,10 +112,14 @@ $(function() {
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="LJFunctor_8h.html">autopas/molecularDynamics/LJFunctor.h</a>&quot;</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="LJFunctorAVX_8h.html">autopas/molecularDynamics/LJFunctorAVX.h</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="LJFunctorSVE_8h.html">autopas/molecularDynamics/LJFunctorSVE.h</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="MoleculeLJ_8h.html">autopas/molecularDynamics/MoleculeLJ.h</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="ParticlePropertiesLibrary_8h.html">autopas/molecularDynamics/ParticlePropertiesLibrary.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#ifdef __AVX__</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="LJFunctorAVX_8h.html">autopas/molecularDynamics/LJFunctorAVX.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#ifdef __ARM_FEATURE_SVE</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="LJFunctorSVE_8h.html">autopas/molecularDynamics/LJFunctorSVE.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="MoleculeLJ_8h.html">autopas/molecularDynamics/MoleculeLJ.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="ParticlePropertiesLibrary_8h.html">autopas/molecularDynamics/ParticlePropertiesLibrary.h</a>&quot;</span></div>
 <div class="ttc" id="aLJFunctorAVX_8h_html"><div class="ttname"><a href="LJFunctorAVX_8h.html">LJFunctorAVX.h</a></div></div>
 <div class="ttc" id="aLJFunctorSVE_8h_html"><div class="ttname"><a href="LJFunctorSVE_8h.html">LJFunctorSVE.h</a></div></div>
 <div class="ttc" id="aLJFunctor_8h_html"><div class="ttname"><a href="LJFunctor_8h.html">LJFunctor.h</a></div></div>
