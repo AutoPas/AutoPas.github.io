@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['w_0',['W',['../classautopas_1_1sph_1_1SPHKernels.html#a9179c132b44571bb96ff76310fac7fb9',1,'autopas::sph::SPHKernels::W(const std::array&lt; double, 3 &gt; dr, const double h)'],['../classautopas_1_1sph_1_1SPHKernels.html#af8a3e4f756fb9f607b23c87b79edf7b2',1,'autopas::sph::SPHKernels::W(const double dr2, const double h)']]],
+  ['w_0',['W',['../classautopas_1_1sph_1_1SPHKernels.html#a60a32d6c6f7cf199641ad0a0574c7ff4',1,'autopas::sph::SPHKernels::W(const std::array&lt; double, 3 &gt; &amp;dr, const double h)'],['../classautopas_1_1sph_1_1SPHKernels.html#af8a3e4f756fb9f607b23c87b79edf7b2',1,'autopas::sph::SPHKernels::W(const double dr2, const double h)']]],
   ['wasserstein2_1',['wasserstein2',['../classautopas_1_1GaussianCluster.html#aa27fe3fde2aa4a672513bc2546bc8977a2886c50cac69f50d1a3a478086c7fac8',1,'autopas::GaussianCluster']]],
   ['weightfunction_2',['WeightFunction',['../classautopas_1_1GaussianCluster.html#aa27fe3fde2aa4a672513bc2546bc8977',1,'autopas::GaussianCluster']]],
   ['weights_3',['weights',['../classautopas_1_1GaussianHyperparameters.html#aadd1d0fb1ab3a1deec50c7866ab5fcff',1,'autopas::GaussianHyperparameters']]],
@@ -13,5 +13,5 @@ var searchData=
   ['wrapmpi_2eh_10',['WrapMPI.h',['../WrapMPI_8h.html',1,'']]],
   ['wrapopenmp_2eh_11',['WrapOpenMP.h',['../WrapOpenMP_8h.html',1,'']]],
   ['write_12',['write',['../classautopas_1_1SoA.html#a50beadba8e8d2c44ac42888e9a9cd73f',1,'autopas::SoA']]],
-  ['writemultiple_13',['writeMultiple',['../classautopas_1_1SoA.html#a03ab8960a78b1f807f1b855b567308d5',1,'autopas::SoA::writeMultiple(size_t particleId, const ValueArrayType &amp;values)'],['../classautopas_1_1SoA.html#a90b4e2d97f7d734bc04cd5d97987d58b',1,'autopas::SoA::writeMultiple(size_t particleId, std::array&lt; double, N &gt; values)']]]
+  ['writemultiple_13',['writeMultiple',['../classautopas_1_1SoA.html#a03ab8960a78b1f807f1b855b567308d5',1,'autopas::SoA::writeMultiple(size_t particleId, const ValueArrayType &amp;values)'],['../classautopas_1_1SoA.html#a7bac349263884d8d6bf37b6539498b25',1,'autopas::SoA::writeMultiple(size_t particleId, const std::array&lt; double, N &gt; &amp;values)']]]
 ];

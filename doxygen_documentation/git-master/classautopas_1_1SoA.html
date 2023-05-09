@@ -163,10 +163,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a03ab8960a78b1f807f1b855b567308d5"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1SoA.html#a03ab8960a78b1f807f1b855b567308d5">writeMultiple</a> (size_t particleId, const ValueArrayType &amp;values)</td></tr>
 <tr class="memdesc:a03ab8960a78b1f807f1b855b567308d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes or updates values of attributes for a specific particle.  <br /></td></tr>
 <tr class="separator:a03ab8960a78b1f807f1b855b567308d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a90b4e2d97f7d734bc04cd5d97987d58b"><td class="memTemplParams" colspan="2">template&lt;int... attributes, size_t N = sizeof...(attributes)&gt; </td></tr>
-<tr class="memitem:a90b4e2d97f7d734bc04cd5d97987d58b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1SoA.html#a90b4e2d97f7d734bc04cd5d97987d58b">writeMultiple</a> (size_t particleId, std::array&lt; double, N &gt; values)</td></tr>
-<tr class="memdesc:a90b4e2d97f7d734bc04cd5d97987d58b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialized version to pass arrays without specifying it directly.  <br /></td></tr>
-<tr class="separator:a90b4e2d97f7d734bc04cd5d97987d58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bac349263884d8d6bf37b6539498b25"><td class="memTemplParams" colspan="2">template&lt;int... attributes, size_t N = sizeof...(attributes)&gt; </td></tr>
+<tr class="memitem:a7bac349263884d8d6bf37b6539498b25"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1SoA.html#a7bac349263884d8d6bf37b6539498b25">writeMultiple</a> (size_t particleId, const std::array&lt; double, N &gt; &amp;values)</td></tr>
+<tr class="memdesc:a7bac349263884d8d6bf37b6539498b25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Specialized version to pass arrays without specifying it directly.  <br /></td></tr>
+<tr class="separator:a7bac349263884d8d6bf37b6539498b25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a70cdaa6b0863fc227fbc9408e4b26bb4"><td class="memTemplParams" colspan="2">template&lt;int... attributes&gt; </td></tr>
 <tr class="memitem:a70cdaa6b0863fc227fbc9408e4b26bb4"><td class="memTemplItemLeft" align="right" valign="top">std::array&lt; double, sizeof...(attributes)&gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1SoA.html#a70cdaa6b0863fc227fbc9408e4b26bb4">readMultiple</a> (size_t particleId) const</td></tr>
 <tr class="memdesc:a70cdaa6b0863fc227fbc9408e4b26bb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads from all given attribute arrays at position <code>particleId</code>.  <br /></td></tr>
@@ -784,8 +784,64 @@ template&lt;int attribute, class ValueType &gt; </div>
 
 </div>
 </div>
+<a id="a7bac349263884d8d6bf37b6539498b25" name="a7bac349263884d8d6bf37b6539498b25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bac349263884d8d6bf37b6539498b25">&#9670;&#160;</a></span>writeMultiple() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class SoAArraysType &gt; </div>
+<div class="memtemplate">
+template&lt;int... attributes, size_t N = sizeof...(attributes)&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1SoA.html">autopas::SoA</a>&lt; SoAArraysType &gt;::writeMultiple </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>particleId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; double, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>values</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Specialized version to pass arrays without specifying it directly. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">attributes</td><td></td></tr>
+    <tr><td class="paramname">N</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particleId</td><td></td></tr>
+    <tr><td class="paramname">values</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a03ab8960a78b1f807f1b855b567308d5" name="a03ab8960a78b1f807f1b855b567308d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a03ab8960a78b1f807f1b855b567308d5">&#9670;&#160;</a></span>writeMultiple() <span class="overload">[1/2]</span></h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a03ab8960a78b1f807f1b855b567308d5">&#9670;&#160;</a></span>writeMultiple() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -834,62 +890,6 @@ template&lt;int... attributes, class ValueArrayType &gt; </div>
   <table class="params">
     <tr><td class="paramname">particleId</td><td>Particle to update. </td></tr>
     <tr><td class="paramname">values</td><td>New value. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a90b4e2d97f7d734bc04cd5d97987d58b" name="a90b4e2d97f7d734bc04cd5d97987d58b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a90b4e2d97f7d734bc04cd5d97987d58b">&#9670;&#160;</a></span>writeMultiple() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class SoAArraysType &gt; </div>
-<div class="memtemplate">
-template&lt;int... attributes, size_t N = sizeof...(attributes)&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1SoA.html">autopas::SoA</a>&lt; SoAArraysType &gt;::writeMultiple </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>particleId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::array&lt; double, N &gt;&#160;</td>
-          <td class="paramname"><em>values</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Specialized version to pass arrays without specifying it directly. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">attributes</td><td></td></tr>
-    <tr><td class="paramname">N</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">particleId</td><td></td></tr>
-    <tr><td class="paramname">values</td><td></td></tr>
   </table>
   </dd>
 </dl>

@@ -24,7 +24,7 @@ var searchData=
   ['destroy_21',['destroy',['../classautopas_1_1AlignedAllocator.html#aac304a3b36e63dd7b1fdb755970af1f5',1,'autopas::AlignedAllocator']]],
   ['dims_22',['dims',['../classautopas_1_1TraversalSelectorInfo.html#a3ca1d12c89d38153b5ad7add77066fc1',1,'autopas::TraversalSelectorInfo']]],
   ['dimscales_23',['dimScales',['../classautopas_1_1GaussianHyperparameters.html#aaa3d77ed807d584c7e8dcea67e76e295',1,'autopas::GaussianHyperparameters']]],
-  ['directsum_24',['DirectSum',['../classautopas_1_1DirectSum.html',1,'autopas::DirectSum&lt; Particle &gt;'],['../classautopas_1_1DirectSum.html#a1872e4b41133591f3d427c9913db9636',1,'autopas::DirectSum::DirectSum()']]],
+  ['directsum_24',['DirectSum',['../classautopas_1_1DirectSum.html',1,'autopas::DirectSum&lt; Particle &gt;'],['../classautopas_1_1DirectSum.html#acaa99625393cf9f7cff209601b8b77e5',1,'autopas::DirectSum::DirectSum()']]],
   ['directsum_25',['directSum',['../classautopas_1_1options_1_1ContainerOption.html#a16b80e72223e48e127689234cafa302fae82da021b57f2ad601e487ca22e4b56e',1,'autopas::options::ContainerOption']]],
   ['directsum_2eh_26',['DirectSum.h',['../DirectSum_8h.html',1,'']]],
   ['dirtysize_27',['dirtySize',['../classParticleVector.html#ad04b62ea4323cdd6ee9711b10dd2c4b1',1,'ParticleVector']]],
