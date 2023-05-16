@@ -161,7 +161,7 @@ $(function() {
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ParticleCell, <span class="keyword">class</span> PairwiseFunctor, DataLayoutOption::Value dataLayout, <span class="keywordtype">bool</span> useNewton3&gt;</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keyword">inline</span> <span class="keywordtype">void</span> LCC18Traversal&lt;ParticleCell, PairwiseFunctor, dataLayout, useNewton3&gt;::computeOffsets() {</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  _cellOffsets.resize(2 * this-&gt;_overlap[1] + 1, std::vector&lt;offsetArray_t&gt;(2 * this-&gt;_overlap[0] + 1));</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="keyword">const</span> std::array&lt;long, 3&gt; _overlap_s = utils::ArrayUtils::static_cast_array&lt;long&gt;(this-&gt;_overlap);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="keyword">const</span> std::array&lt;long, 3&gt; _overlap_s = utils::ArrayUtils::static_cast_copy_array&lt;long&gt;(this-&gt;_overlap);</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <span class="keyword">const</span> <span class="keyword">auto</span> interactionLengthSquare(this-&gt;_interactionLength * this-&gt;_interactionLength);</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
@@ -169,7 +169,7 @@ $(function() {
 <div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordflow">for</span> (<span class="keywordtype">long</span> y = -_overlap_s[1]; y &lt;= _overlap_s[1]; ++y) {</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>      <span class="keywordflow">for</span> (<span class="keywordtype">long</span> x = -_overlap_s[0]; x &lt;= _overlap_s[0]; ++x) {</div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keyword">const</span> <span class="keywordtype">long</span> offset = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ThreeDimensionalMapping.html#a8d92b8e30d9eb33d3b6828989d9b5eb2">utils::ThreeDimensionalMapping::threeToOneD</a>(</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            x, y, z, utils::ArrayUtils::static_cast_array&lt;long&gt;(this-&gt;_cellsPerDimension));</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>            x, y, z, utils::ArrayUtils::static_cast_copy_array&lt;long&gt;(this-&gt;_cellsPerDimension));</div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordflow">if</span> (offset &lt; 0l) {</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>          <span class="keywordflow">continue</span>;</div>
