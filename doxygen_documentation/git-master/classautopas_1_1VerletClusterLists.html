@@ -206,6 +206,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa01918ad43ab0768b187d11ebefe82de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1TraversalSelectorInfo.html">TraversalSelectorInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletClusterLists.html#aa01918ad43ab0768b187d11ebefe82de">getTraversalSelectorInfo</a> () const override</td></tr>
 <tr class="memdesc:aa01918ad43ab0768b187d11ebefe82de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a traversal selector info for this container.  <br /></td></tr>
 <tr class="separator:aa01918ad43ab0768b187d11ebefe82de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ec4d6109552488aff15f3a0214a57cd"><td class="memTemplParams" colspan="2">template&lt;bool modifiable, bool regionIter&gt; </td></tr>
+<tr class="memitem:a3ec4d6109552488aff15f3a0214a57cd"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletClusterLists.html#a3ec4d6109552488aff15f3a0214a57cd">additionalVectorsEmpty</a> (typename <a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, modifiable, regionIter &gt;::ParticleVecType *additionalVectors) const</td></tr>
+<tr class="memdesc:a3ec4d6109552488aff15f3a0214a57cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for <a class="el" href="classautopas_1_1VerletClusterLists.html#a4ec3eb7ab9f2b0afbcb1de85cef31b9a" title="Iterate over all particles using for(auto iter = container.begin(); iter.isValid(); ++iter) .">begin()</a> and <a class="el" href="classautopas_1_1VerletClusterLists.html#a5616f0f10c9d62147da14905be919f70" title="Iterate over all particles in a specified region for(auto iter = container.getRegionIterator(lowCorne...">getRegionIterator()</a> to check if the passed additionalVectors are empty.  <br /></td></tr>
+<tr class="separator:a3ec4d6109552488aff15f3a0214a57cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed8bc1f2baae4aec0d3452cfe668c486"><td class="memTemplParams" colspan="2">template&lt;bool regionIter&gt; </td></tr>
+<tr class="memitem:aed8bc1f2baae4aec0d3452cfe668c486"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletClusterLists.html#aed8bc1f2baae4aec0d3452cfe668c486">appendBuffersFromParticlesToAdd</a> (typename <a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, true, regionIter &gt;::ParticleVecType &amp;additionalVectorsToPass)</td></tr>
+<tr class="memdesc:aed8bc1f2baae4aec0d3452cfe668c486"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for <a class="el" href="classautopas_1_1VerletClusterLists.html#a4ec3eb7ab9f2b0afbcb1de85cef31b9a" title="Iterate over all particles using for(auto iter = container.begin(); iter.isValid(); ++iter) .">begin()</a> and <a class="el" href="classautopas_1_1VerletClusterLists.html#a5616f0f10c9d62147da14905be919f70" title="Iterate over all particles in a specified region for(auto iter = container.getRegionIterator(lowCorne...">getRegionIterator()</a> that merges all buffers from _particlesToAdd into a single buffer.  <br /></td></tr>
+<tr class="separator:aed8bc1f2baae4aec0d3452cfe668c486"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf0a18d508dc0fc629ea7cf1cb0f03b6"><td class="memTemplParams" colspan="2">template&lt;bool regionIter&gt; </td></tr>
+<tr class="memitem:abf0a18d508dc0fc629ea7cf1cb0f03b6"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletClusterLists.html#abf0a18d508dc0fc629ea7cf1cb0f03b6">appendBuffersFromParticlesToAdd</a> (typename <a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, false, regionIter &gt;::ParticleVecType &amp;additionalVectorsToPass) const</td></tr>
+<tr class="memdesc:abf0a18d508dc0fc629ea7cf1cb0f03b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for <a class="el" href="classautopas_1_1VerletClusterLists.html#a4ec3eb7ab9f2b0afbcb1de85cef31b9a" title="Iterate over all particles using for(auto iter = container.begin(); iter.isValid(); ++iter) .">begin()</a> and <a class="el" href="classautopas_1_1VerletClusterLists.html#a5616f0f10c9d62147da14905be919f70" title="Iterate over all particles in a specified region for(auto iter = container.getRegionIterator(lowCorne...">getRegionIterator()</a> that merges all buffers from _particlesToAdd into a single buffer note: const version.  <br /></td></tr>
+<tr class="separator:abf0a18d508dc0fc629ea7cf1cb0f03b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4ec3eb7ab9f2b0afbcb1de85cef31b9a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, true, false &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletClusterLists.html#a4ec3eb7ab9f2b0afbcb1de85cef31b9a">begin</a> (IteratorBehavior behavior=autopas::IteratorBehavior::ownedOrHalo, typename <a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, true, false &gt;::ParticleVecType *additionalVectors=nullptr) override</td></tr>
 <tr class="memdesc:a4ec3eb7ab9f2b0afbcb1de85cef31b9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all particles using for(auto iter = container.begin(); iter.isValid(); ++iter) .    <br /></td></tr>
 <tr class="separator:a4ec3eb7ab9f2b0afbcb1de85cef31b9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -527,6 +539,8 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>ParticleType</b> = <
 class autopas::VerletClusterLists&lt; Particle &gt;</div><p>Particles are divided into clusters. </p>
 <p>The <a class="el" href="classautopas_1_1VerletClusterLists.html" title="Particles are divided into clusters.">VerletClusterLists</a> class uses neighborhood lists for each cluster to calculate pairwise interactions of particles. It is optimized for a constant, i.e. particle independent, cutoff radius of the interaction.</p>
 <p>This Container does (currently?) not make use of the cellSizeFactor.</p>
+<p>The _particlesToAdd buffer structure is (currently) still necessary, even if the <a class="el" href="classautopas_1_1LogicHandler.html" title="The LogicHandler takes care of the containers s.t.">LogicHandler</a> basically holds the same buffer structure. In principle, moving the particles directly into one of the towers would be possible, since particles are moved from <a class="el" href="classautopas_1_1LogicHandler.html" title="The LogicHandler takes care of the containers s.t.">LogicHandler</a> to VCL only in a rebuild iteration. However, storing the particles in a tower (e.g. tower0) is only possible very inefficiently, since several threads would write to this buffer at the same time. Even if we could add the particles to tower0 efficiently, there are still problems in <a class="el" href="classautopas_1_1VerletClusterLists.html#a5616f0f10c9d62147da14905be919f70" title="Iterate over all particles in a specified region for(auto iter = container.getRegionIterator(lowCorne...">getRegionIterator()</a>, because this function is executed between the addition of particles and the actual rebuild. <a class="el" href="classautopas_1_1VerletClusterLists.html#a5616f0f10c9d62147da14905be919f70" title="Iterate over all particles in a specified region for(auto iter = container.getRegionIterator(lowCorne...">getRegionIterator()</a> expects that all particles are already sorted correctly into the towers (if we do not use _particlesToAdd).</p>
+<p>In the current solution, we can make use of the fact that _particlesToAdd only contains particles in a rebuild-iteration and the additionalVectors only contain particles in a non-rebuild-iteration. This means that we can save expensive buffer allocations in <a class="el" href="classautopas_1_1VerletClusterLists.html#a4ec3eb7ab9f2b0afbcb1de85cef31b9a" title="Iterate over all particles using for(auto iter = container.begin(); iter.isValid(); ++iter) .">begin()</a> and <a class="el" href="classautopas_1_1VerletClusterLists.html#a5616f0f10c9d62147da14905be919f70" title="Iterate over all particles in a specified region for(auto iter = container.getRegionIterator(lowCorne...">getRegionIterator()</a> in valid container-status iterations, by just passing the additionalVectors instead of concatenating them with _particlesToAdd.</p>
 <dl class="section note"><dt>Note</dt><dd>See VerletClusterListsRebuilder for the layout of the towers and clusters.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -657,6 +671,54 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
+<a id="a3ec4d6109552488aff15f3a0214a57cd" name="a3ec4d6109552488aff15f3a0214a57cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ec4d6109552488aff15f3a0214a57cd">&#9670;&#160;</a></span>additionalVectorsEmpty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<div class="memtemplate">
+template&lt;bool modifiable, bool regionIter&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classautopas_1_1VerletClusterLists.html">autopas::VerletClusterLists</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::additionalVectorsEmpty </td>
+          <td>(</td>
+          <td class="paramtype">typename <a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, modifiable, regionIter &gt;::ParticleVecType *&#160;</td>
+          <td class="paramname"><em>additionalVectors</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Helper function for <a class="el" href="classautopas_1_1VerletClusterLists.html#a4ec3eb7ab9f2b0afbcb1de85cef31b9a" title="Iterate over all particles using for(auto iter = container.begin(); iter.isValid(); ++iter) .">begin()</a> and <a class="el" href="classautopas_1_1VerletClusterLists.html#a5616f0f10c9d62147da14905be919f70" title="Iterate over all particles in a specified region for(auto iter = container.getRegionIterator(lowCorne...">getRegionIterator()</a> to check if the passed additionalVectors are empty. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">modifiable</td><td></td></tr>
+    <tr><td class="paramname">regionIter</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">additionalVectors</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true iff all passed vectors are empty </dd>
+<dd>
+false iff at least one buffer from the passed vectors is not empty </dd></dl>
+
+</div>
+</div>
 <a id="a1288e9fb3e19d4264bacc99b92136315" name="a1288e9fb3e19d4264bacc99b92136315"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1288e9fb3e19d4264bacc99b92136315">&#9670;&#160;</a></span>addParticleImpl()</h2>
 
@@ -684,7 +746,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </div><div class="memdoc">
 
 <p>Adds the given particle to the container. </p>
-<p>rebuildVerletLists() has to be called to have it actually sorted in. </p><dl class="params"><dt>Parameters</dt><dd>
+<p><a class="el" href="classautopas_1_1VerletClusterLists.html#ac9b47293fe3fd32afd144bc32b6668a0" title="Rebuild the towers and the clusters.">rebuildTowersAndClusters()</a> has to be called to have it actually sorted in. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p</td><td>The particle to add. </td></tr>
   </table>
@@ -692,6 +754,94 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </dl>
 
 <p>Implements <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a100b349232598152913d4c2ecfffc3c1">autopas::ParticleContainerInterface&lt; Particle &gt;</a>.</p>
+
+</div>
+</div>
+<a id="abf0a18d508dc0fc629ea7cf1cb0f03b6" name="abf0a18d508dc0fc629ea7cf1cb0f03b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf0a18d508dc0fc629ea7cf1cb0f03b6">&#9670;&#160;</a></span>appendBuffersFromParticlesToAdd() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<div class="memtemplate">
+template&lt;bool regionIter&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1VerletClusterLists.html">autopas::VerletClusterLists</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::appendBuffersFromParticlesToAdd </td>
+          <td>(</td>
+          <td class="paramtype">typename <a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, false, regionIter &gt;::ParticleVecType &amp;&#160;</td>
+          <td class="paramname"><em>additionalVectorsToPass</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Helper function for <a class="el" href="classautopas_1_1VerletClusterLists.html#a4ec3eb7ab9f2b0afbcb1de85cef31b9a" title="Iterate over all particles using for(auto iter = container.begin(); iter.isValid(); ++iter) .">begin()</a> and <a class="el" href="classautopas_1_1VerletClusterLists.html#a5616f0f10c9d62147da14905be919f70" title="Iterate over all particles in a specified region for(auto iter = container.getRegionIterator(lowCorne...">getRegionIterator()</a> that merges all buffers from _particlesToAdd into a single buffer note: const version. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">regionIter</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">additionalVectorsToPass</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aed8bc1f2baae4aec0d3452cfe668c486" name="aed8bc1f2baae4aec0d3452cfe668c486"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed8bc1f2baae4aec0d3452cfe668c486">&#9670;&#160;</a></span>appendBuffersFromParticlesToAdd() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<div class="memtemplate">
+template&lt;bool regionIter&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1VerletClusterLists.html">autopas::VerletClusterLists</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::appendBuffersFromParticlesToAdd </td>
+          <td>(</td>
+          <td class="paramtype">typename <a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, true, regionIter &gt;::ParticleVecType &amp;&#160;</td>
+          <td class="paramname"><em>additionalVectorsToPass</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Helper function for <a class="el" href="classautopas_1_1VerletClusterLists.html#a4ec3eb7ab9f2b0afbcb1de85cef31b9a" title="Iterate over all particles using for(auto iter = container.begin(); iter.isValid(); ++iter) .">begin()</a> and <a class="el" href="classautopas_1_1VerletClusterLists.html#a5616f0f10c9d62147da14905be919f70" title="Iterate over all particles in a specified region for(auto iter = container.getRegionIterator(lowCorne...">getRegionIterator()</a> that merges all buffers from _particlesToAdd into a single buffer. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">regionIter</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">additionalVectorsToPass</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -741,9 +891,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Iterator to the first particle.   </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>const version. </dd>
-<dd>
-This function additionally iterates over the _particlesToAdd vector if the tower-structure isn't valid. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>const version. </dd></dl>
 
 <p>Implements <a class="el" href="classautopas_1_1ParticleContainerInterface.html#aa3d789b9ff0340a621d6d868937be162">autopas::ParticleContainerInterface&lt; Particle &gt;</a>.</p>
 
@@ -2039,9 +2187,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Iterator to iterate over all particles in a specific region.   </dd></dl>
-<dl class="section note"><dt>Note</dt><dd>const version. </dd>
-<dd>
-This function additionally iterates over _particlesToAdd if the container structure isn't valid. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>const version. </dd></dl>
 
 <p>Implements <a class="el" href="classautopas_1_1ParticleContainerInterface.html#ad205a0ca53c65e2a5fdfca929d424bf3">autopas::ParticleContainerInterface&lt; Particle &gt;</a>.</p>
 
