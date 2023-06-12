@@ -179,7 +179,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ae420ca4b5a519e60d795b25e36215ae0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the global values.  <br /></td></tr>
 <tr class="separator:ae420ca4b5a519e60d795b25e36215ae0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abe3c1ddd7608488473f55ec6124efefc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LJFunctor.html#abe3c1ddd7608488473f55ec6124efefc">endTraversal</a> (bool newton3) final</td></tr>
-<tr class="memdesc:abe3c1ddd7608488473f55ec6124efefc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Postprocesses global values, e.g.  <br /></td></tr>
+<tr class="memdesc:abe3c1ddd7608488473f55ec6124efefc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accumulates global values, e.g.  <br /></td></tr>
 <tr class="separator:abe3c1ddd7608488473f55ec6124efefc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab96c0a17d3253f141eedbffa20afbb13"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LJFunctor.html#ab96c0a17d3253f141eedbffa20afbb13">getUpot</a> ()</td></tr>
 <tr class="memdesc:ab96c0a17d3253f141eedbffa20afbb13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the potential Energy.  <br /></td></tr>
@@ -522,8 +522,8 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </table>
 </div><div class="memdoc">
 
-<p>Postprocesses global values, e.g. </p>
-<p>upot and virial </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Accumulates global values, e.g. </p>
+<p>upot and virial. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">newton3</td><td></td></tr>
   </table>
@@ -1016,7 +1016,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">soa</td><td>Structure of arrays </td></tr>
-    <tr><td class="paramname">newton3</td><td>defines whether or whether not to use newton 3   This functor will always do a newton3 like traversal of the soa. However, it still needs to know about newton3 to correctly add up the global values. </td></tr>
+    <tr><td class="paramname">newton3</td><td>defines whether or whether not to use newton 3   This functor always uses a newton3 like traversal. </td></tr>
   </table>
   </dd>
 </dl>

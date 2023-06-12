@@ -190,7 +190,8 @@ Custom Functors</h2>
 Definition</h3>
 <p>Important parts to implement:</p><ul>
 <li>Actual force calculations: <code>AoSFunctor()</code> and all Versions of <code>SoAFunctor*()</code></li>
-<li>Newton3 characteristics of the force: <code>allowsNewton3()</code> and <code>allowsNonNewton3()</code></li>
+<li>Newton3 characteristics of the force: <code>allowsNewton3()</code>, <code>allowsNonNewton3()</code></li>
+<li>The calculation of the globals (potential energy, virial) must be implemented in a way so functor calls with newton3 enabled and newton3 disabled within one iteration are possible.</li>
 <li>Input and output variables of the force calculation via: <code>getComputedAttr()</code> and <code>getNeededAttr()</code></li>
 </ul>
 <h3><a class="anchor" id="autotoc_md13"></a>
