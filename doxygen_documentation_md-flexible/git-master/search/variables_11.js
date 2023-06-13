@@ -7,7 +7,8 @@ var searchData=
   ['traversaloptions_4',['traversalOptions',['../classMDFlexConfig.html#a83b6854029e48119ba9dac35fc01bf4b',1,'MDFlexConfig']]],
   ['tuninginterval_5',['tuningInterval',['../classMDFlexConfig.html#ad83b8cdea5ce2bdd4d37688b6456c7ec',1,'MDFlexConfig']]],
   ['tuningmaxevidence_6',['tuningMaxEvidence',['../classMDFlexConfig.html#a1b01604920edb5ebf04049c1c3de1de1',1,'MDFlexConfig']]],
-  ['tuningphases_7',['tuningPhases',['../classMDFlexConfig.html#a64accd5dcd5fc6da5daebdb3ba64335f',1,'MDFlexConfig']]],
-  ['tuningsamples_8',['tuningSamples',['../classMDFlexConfig.html#aaf414c67d6877238e90bed93d1d9a125',1,'MDFlexConfig']]],
-  ['tuningstrategyoption_9',['tuningStrategyOption',['../classMDFlexConfig.html#a00f13558442f8f1f6ac45a1c5a58ea51',1,'MDFlexConfig']]]
+  ['tuningmetricoption_7',['tuningMetricOption',['../classMDFlexConfig.html#a4ca5eded42212928693a77130c57bf16',1,'MDFlexConfig']]],
+  ['tuningphases_8',['tuningPhases',['../classMDFlexConfig.html#a64accd5dcd5fc6da5daebdb3ba64335f',1,'MDFlexConfig']]],
+  ['tuningsamples_9',['tuningSamples',['../classMDFlexConfig.html#aaf414c67d6877238e90bed93d1d9a125',1,'MDFlexConfig']]],
+  ['tuningstrategyoption_10',['tuningStrategyOption',['../classMDFlexConfig.html#a00f13558442f8f1f6ac45a1c5a58ea51',1,'MDFlexConfig']]]
 ];
