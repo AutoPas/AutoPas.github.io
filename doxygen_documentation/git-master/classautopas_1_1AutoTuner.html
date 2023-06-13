@@ -129,9 +129,9 @@ Inheritance diagram for autopas::AutoTuner&lt; Particle &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5967494f1c9a2b892a8a39e6719510e1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a5967494f1c9a2b892a8a39e6719510e1">AutoTuner</a> (const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax, double cutoff, double verletSkinPerTimestep, unsigned int verletClusterSize, std::unique_ptr&lt; <a class="el" href="classautopas_1_1TuningStrategyInterface.html">TuningStrategyInterface</a> &gt; tuningStrategy, double MPITuningMaxDifferenceForBucket, double MPITuningWeightForMaxDensity, SelectorStrategyOption selectorStrategy, unsigned int tuningInterval, unsigned int maxSamples, unsigned int rebuildFrequency, const std::string &amp;outputSuffix=&quot;&quot;)</td></tr>
-<tr class="memdesc:a5967494f1c9a2b892a8a39e6719510e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classautopas_1_1AutoTuner.html" title="Calls to the iteratePairwise() method are passed through this class for two reasons:">AutoTuner</a> that generates all configurations from the given options.  <br /></td></tr>
-<tr class="separator:a5967494f1c9a2b892a8a39e6719510e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a815bdf002ee7b8c69d28cb65ed330a0d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a815bdf002ee7b8c69d28cb65ed330a0d">AutoTuner</a> (const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax, double cutoff, double verletSkinPerTimestep, unsigned int verletClusterSize, std::unique_ptr&lt; <a class="el" href="classautopas_1_1TuningStrategyInterface.html">TuningStrategyInterface</a> &gt; tuningStrategy, double MPITuningMaxDifferenceForBucket, double MPITuningWeightForMaxDensity, SelectorStrategyOption selectorStrategy, <a class="el" href="classautopas_1_1TuningMetricOption.html">TuningMetricOption</a> tuningMetric, unsigned int tuningInterval, unsigned int maxSamples, unsigned int rebuildFrequency, const std::string &amp;outputSuffix=&quot;&quot;)</td></tr>
+<tr class="memdesc:a815bdf002ee7b8c69d28cb65ed330a0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classautopas_1_1AutoTuner.html" title="Calls to the iteratePairwise() method are passed through this class for two reasons:">AutoTuner</a> that generates all configurations from the given options.  <br /></td></tr>
+<tr class="separator:a815bdf002ee7b8c69d28cb65ed330a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a248ddc4d7428705cdc09c4158b43d9fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1AutoTuner.html">AutoTuner</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a248ddc4d7428705cdc09c4158b43d9fc">operator=</a> (<a class="el" href="classautopas_1_1AutoTuner.html">AutoTuner</a> &amp;&amp;other) noexcept</td></tr>
 <tr class="memdesc:a248ddc4d7428705cdc09c4158b43d9fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator.  <br /></td></tr>
 <tr class="separator:a248ddc4d7428705cdc09c4158b43d9fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,8 +181,8 @@ class autopas::AutoTuner&lt; Particle &gt;</div><p>Calls to the <a class="el" hr
   </dd>
 </dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a5967494f1c9a2b892a8a39e6719510e1" name="a5967494f1c9a2b892a8a39e6719510e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5967494f1c9a2b892a8a39e6719510e1">&#9670;&#160;</a></span>AutoTuner()</h2>
+<a id="a815bdf002ee7b8c69d28cb65ed330a0d" name="a815bdf002ee7b8c69d28cb65ed330a0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a815bdf002ee7b8c69d28cb65ed330a0d">&#9670;&#160;</a></span>AutoTuner()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -249,6 +249,12 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1TuningMetricOption.html">TuningMetricOption</a>&#160;</td>
+          <td class="paramname"><em>tuningMetric</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>tuningInterval</em>, </td>
         </tr>
@@ -296,6 +302,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
     <tr><td class="paramname">MPITuningWeightForMaxDensity</td><td>For MPI-tuning: Weight for maxDensity in the calculation for bucket distribution. </td></tr>
     <tr><td class="paramname">selectorStrategy</td><td>Strategy for the configuration selection. </td></tr>
     <tr><td class="paramname">tuningInterval</td><td>Number of time steps after which the auto-tuner shall reevaluate all selections. </td></tr>
+    <tr><td class="paramname">tuningMetric</td><td>Metric used to rate configurations (time or energy). </td></tr>
     <tr><td class="paramname">maxSamples</td><td>Number of samples that shall be collected for each combination. </td></tr>
     <tr><td class="paramname">rebuildFrequency</td><td>The rebuild frequency this <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> instance uses. </td></tr>
     <tr><td class="paramname">outputSuffix</td><td>Suffix for all output files produced by this class. </td></tr>
@@ -498,7 +505,7 @@ template&lt;class PairwiseFunctor &gt; </div>
 <li>Instantiation of the traversal to be used.</li>
 <li>Actual pairwise iteration for application of the functor.</li>
 <li>Management of tuning phases and calls to tune() if necessary.</li>
-<li>Measurement of timings and calls to addTimeMeasurement() if necessary.</li>
+<li>Measurement of timings/energies and calls to addMeasurement() if necessary.</li>
 <li>Calls to _iterationLogger if necessary.</li>
 </ul>
 <dl class="section note"><dt>Note</dt><dd>Buffers need to have at least one (empty) cell. They must not be empty.</dd></dl>

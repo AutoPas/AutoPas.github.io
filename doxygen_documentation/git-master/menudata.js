@@ -164,6 +164,7 @@ var menudata={children:[
 {text:"p",url:"functions_eval.html#index_p"},
 {text:"r",url:"functions_eval.html#index_r"},
 {text:"s",url:"functions_eval.html#index_s"},
+{text:"t",url:"functions_eval.html#index_t"},
 {text:"v",url:"functions_eval.html#index_v"},
 {text:"w",url:"functions_eval.html#index_w"}]},
 {text:"Related Symbols",url:"functions_rela.html"}]}]},

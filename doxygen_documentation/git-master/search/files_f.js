@@ -10,11 +10,12 @@ var searchData=
   ['trivialhash_2eh_7',['TrivialHash.h',['../TrivialHash_8h.html',1,'']]],
   ['tuningdatalogger_2ecpp_8',['TuningDataLogger.cpp',['../TuningDataLogger_8cpp.html',1,'']]],
   ['tuningdatalogger_2eh_9',['TuningDataLogger.h',['../TuningDataLogger_8h.html',1,'']]],
-  ['tuningresultlogger_2ecpp_10',['TuningResultLogger.cpp',['../TuningResultLogger_8cpp.html',1,'']]],
-  ['tuningresultlogger_2eh_11',['TuningResultLogger.h',['../TuningResultLogger_8h.html',1,'']]],
-  ['tuningstrategyfactory_2ecpp_12',['TuningStrategyFactory.cpp',['../TuningStrategyFactory_8cpp.html',1,'']]],
-  ['tuningstrategyfactory_2eh_13',['TuningStrategyFactory.h',['../TuningStrategyFactory_8h.html',1,'']]],
-  ['tuningstrategyinterface_2eh_14',['TuningStrategyInterface.h',['../TuningStrategyInterface_8h.html',1,'']]],
-  ['tuningstrategyoption_2eh_15',['TuningStrategyOption.h',['../TuningStrategyOption_8h.html',1,'']]],
-  ['tupleutils_2eh_16',['TupleUtils.h',['../TupleUtils_8h.html',1,'']]]
+  ['tuningmetricoption_2eh_10',['TuningMetricOption.h',['../TuningMetricOption_8h.html',1,'']]],
+  ['tuningresultlogger_2ecpp_11',['TuningResultLogger.cpp',['../TuningResultLogger_8cpp.html',1,'']]],
+  ['tuningresultlogger_2eh_12',['TuningResultLogger.h',['../TuningResultLogger_8h.html',1,'']]],
+  ['tuningstrategyfactory_2ecpp_13',['TuningStrategyFactory.cpp',['../TuningStrategyFactory_8cpp.html',1,'']]],
+  ['tuningstrategyfactory_2eh_14',['TuningStrategyFactory.h',['../TuningStrategyFactory_8h.html',1,'']]],
+  ['tuningstrategyinterface_2eh_15',['TuningStrategyInterface.h',['../TuningStrategyInterface_8h.html',1,'']]],
+  ['tuningstrategyoption_2eh_16',['TuningStrategyOption.h',['../TuningStrategyOption_8h.html',1,'']]],
+  ['tupleutils_2eh_17',['TupleUtils.h',['../TupleUtils_8h.html',1,'']]]
 ];
