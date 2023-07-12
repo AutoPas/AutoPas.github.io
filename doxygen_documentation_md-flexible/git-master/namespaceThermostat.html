@@ -167,7 +167,11 @@ template&lt;class AutoPasTemplate , class ParticlePropertiesLibraryTemplate &gt;
 </div><div class="memdoc">
 
 <p>Adds brownian motion to the given system. </p>
-<p>If useCurrentTemp is set to true the factor of the brownian motion is calculated per particle based on its mass and the system's temperature. Otherwise a constant factor of 0.1 is used. Set this to false if the system is initialized without velocities.</p>
+<p>This is achieved by each degree-of-freedom for the Kinetic Energy being sampled via the normal distribution and scaled appropriately, as determined by the equipartition theorem.</p>
+<p>For multi-site MD we assume that the kinetic energy of the system can be split equally into translational and rotational kinetic energies.</p>
+<p>For translational velocity, each degree-of-freedom is sampled via the normal distribution and scaled equally, dependant on the temperature and mass.</p>
+<p>For angular velocity, each degree-of-freedom is sampled via the normal distribution and scaled dependent on the temperature and the corresponding component of the diagonalized Moment-Of-Inertia.</p>
+<p>In all cases, we assume a Boltzmann constant of 1.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">AutoPasTemplate</td><td>Type of AutoPas <a class="el" href="classObject.html" title="Base class for describing objects made of particles.">Object</a> (no pointer) </td></tr>
@@ -227,7 +231,7 @@ template&lt;class AutoPasTemplate , class ParticlePropertiesLibraryTemplate &gt;
 </div><div class="memdoc">
 
 <p>Scales velocity of particles towards a given temperature. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
+<p>For Multi-site simulations, angular velocity is also scaled. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">AutoPasTemplate</td><td>Type of AutoPas <a class="el" href="classObject.html" title="Base class for describing objects made of particles.">Object</a> (no pointer) </td></tr>
     <tr><td class="paramname">ParticlePropertiesLibraryTemplate</td><td>Type of ParticlePropertiesLibrary <a class="el" href="classObject.html" title="Base class for describing objects made of particles.">Object</a> (no pointer) </td></tr>
@@ -322,7 +326,10 @@ template&lt;class AutoPasTemplate , class ParticlePropertiesLibraryTemplate &gt;
 </div><div class="memdoc">
 
 <p>Calculates temperature of system, for each component separately. </p>
-<p>Assuming dimension-less units and Boltzmann constant = 1. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+<p>Kinetic Energy for each molecule is 1/2 * mass * dot(vel, vel) + 1/2 Sum_{0 &lt;= i &lt; 3} MoI_i * angVel_i^2 where MoI is the diagonal Moment of Inertia. This formula comes from Rapport, The Art of MD, equation (8.2.34).</p>
+<p>The second term is only applied for Multi-Site MD.</p>
+<p>Assuming dimension-less units and Boltzmann constant = 1.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">AutoPasTemplate</td><td>Type of AutoPas <a class="el" href="classObject.html" title="Base class for describing objects made of particles.">Object</a> (no pointer) </td></tr>
     <tr><td class="paramname">ParticlePropertiesLibraryTemplate</td><td>Type of ParticlePropertiesLibrary <a class="el" href="classObject.html" title="Base class for describing objects made of particles.">Object</a> (no pointer) </td></tr>

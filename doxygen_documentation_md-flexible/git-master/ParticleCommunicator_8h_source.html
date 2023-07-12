@@ -114,7 +114,7 @@ $(function() {
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;autopas/utils/WrapMPI.h&quot;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;src/TypeDefinitions.h&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="TypeDefinitions_8h.html">src/TypeDefinitions.h</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="classParticleCommunicator.html">   16</a></span><span class="keyword">class </span><a class="code hl_class" href="classParticleCommunicator.html">ParticleCommunicator</a> {</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> <span class="keyword">public</span>:</div>
@@ -135,10 +135,11 @@ $(function() {
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
 <div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  std::vector&lt;std::vector&lt;char&gt;&gt; _sendBuffers;</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keywordtype">void</span> sendDataToNeighbour(<span class="keyword">const</span> std::vector&lt;char&gt; &amp;sendBuffer, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;neighbour);</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keywordtype">void</span> sendDataToNeighbor(<span class="keyword">const</span> std::vector&lt;char&gt; &amp;sendBuffer, <span class="keyword">const</span> <span class="keywordtype">int</span> &amp;neighbor);</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordtype">void</span> receiveDataFromNeighbour(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;neighbour, std::vector&lt;char&gt; &amp;dataBuffer);</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordtype">void</span> receiveDataFromNeighbor(<span class="keyword">const</span> <span class="keywordtype">int</span> &amp;neighbor, std::vector&lt;char&gt; &amp;dataBuffer);</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>};</div>
+<div class="ttc" id="aTypeDefinitions_8h_html"><div class="ttname"><a href="TypeDefinitions_8h.html">TypeDefinitions.h</a></div></div>
 <div class="ttc" id="aclassParticleCommunicator_html"><div class="ttname"><a href="classParticleCommunicator.html">ParticleCommunicator</a></div><div class="ttdoc">Provides tools to communicate particles between MPI ranks.</div><div class="ttdef"><b>Definition:</b> ParticleCommunicator.h:16</div></div>
 <div class="ttc" id="aclassParticleCommunicator_html_a4db5e40b3412f4568687b0a1e006f003"><div class="ttname"><a href="classParticleCommunicator.html#a4db5e40b3412f4568687b0a1e006f003">ParticleCommunicator::receiveParticles</a></div><div class="ttdeci">void receiveParticles(std::vector&lt; ParticleType &gt; &amp;receivedParticles, const int &amp;source)</div><div class="ttdoc">Receives particles sent by a sender.</div><div class="ttdef"><b>Definition:</b> ParticleCommunicator.cpp:25</div></div>
 <div class="ttc" id="aclassParticleCommunicator_html_a863c20744b6a155f58ebdc250452c9a3"><div class="ttname"><a href="classParticleCommunicator.html#a863c20744b6a155f58ebdc250452c9a3">ParticleCommunicator::waitForSendRequests</a></div><div class="ttdeci">void waitForSendRequests()</div><div class="ttdoc">Waits for all send requests to be finished.</div><div class="ttdef"><b>Definition:</b> ParticleCommunicator.cpp:35</div></div>

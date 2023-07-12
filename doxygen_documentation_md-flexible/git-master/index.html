@@ -113,22 +113,30 @@ Documentation</h1>
 <li><code>make doc_doxygen_md-flexible</code></li>
 </ul>
 <h1><a class="anchor" id="autotoc_md2"></a>
+MD-flexible modes</h1>
+<p>MD-flexible supports two types of particle simulation: single-site and multi-site Molecular Dynamics simulations. Single-Site MD supports simple MD simulations using only single-site Lennard-Jones molecules. Multi-Site MD supports molecules formed from fixed rigid bodies of LJ sites. The different modes can be toggled at compile time (see below) and requires slightly different input files (see <code>AllOptions.yaml</code>).</p>
+<h1><a class="anchor" id="autotoc_md3"></a>
 Compiling</h1>
 <p>To build MD-Flexible execute the following from the AutoPas root folder: </p><div class="fragment"><div class="line">mkdir build &amp;&amp; cd $_</div>
 <div class="line">cmake ..</div>
 <div class="line">make md-flexible</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md4"></a>
+Compiling with different md-flexible modes</h2>
+<p>To compile md-flexible in single-site MD mode, set <code>MD_FLEXIBLE_MODE</code> to <code>SINGLE-SITE</code> via <code>cmake</code>: </p><div class="fragment"><div class="line">cmake -DMD_FLEXIBLE_MODE=SINGLE-SITE ..</div>
+</div><!-- fragment --><p> Alternatively, md-flexible can be compiled in multi-site MD mode, by setting <code>MD_FLEXIBLE_MODE</code> to <code>MULTI-SITE</code> via <code>cmake</code>: </p><div class="fragment"><div class="line">cmake -DMD_FLEXIBLE_MODE=MULTI-SITE ..</div>
+</div><!-- fragment --><p>By default, md-flexible is compiled in single-site MD mode.</p>
+<h2><a class="anchor" id="autotoc_md5"></a>
 Compiling with MPI</h2>
 <p>To use the MPI parallelization of md-flexible activate <code>MD_FLEXIBLE_USE_MPI</code> via <code>cmake</code>: </p><div class="fragment"><div class="line">cmake -DMD_FLEXIBLE_USE_MPI=ON ..</div>
 <div class="line">Using this option does not guarantee that MPI will be used. There are some additional requirements:</div>
 <div class="line">* MPI is installed</div>
 <div class="line">* mpirun is called with more than 1 process</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md4"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md6"></a>
 Testing</h1>
 <p>Simple tests can be run via: </p><div class="fragment"><div class="line">make mdFlexTests</div>
 <div class="line">ctest -R mdFlexTests</div>
 </div><!-- fragment --><p> To run Tests with MPI enabled: </p><div class="fragment"><div class="line">mpiexec -np 4 ./examples/md-flexible/tests/mdFlexTests</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md5"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md7"></a>
 Usage</h1>
 <p>When starting md-flexible without any arguments a default simulation with most AutoPas options active is run and it's configuration printed. From there you can change any AutoPas options or change the simulation.</p>
 <p>For all available arguments and options see: </p><div class="fragment"><div class="line">examples/md-flexible/md-flexible --help</div>
@@ -136,31 +144,31 @@ Usage</h1>
 <div class="line">./md-flexible --yaml-filename fallingDrop.yaml</div>
 </div><!-- fragment --><p>To execute md-flexible using MPI run the following command in the build directory: </p><div class="fragment"><div class="line">mpirun -np 4 ./examples/md-flexible/md-flexible --yaml-filename ./examples/md-flexible/fallingDrop.yaml</div>
 </div><!-- fragment --><p> The number 4 can be exchanged by any number assuming the hardware supports the selected number of processes.</p>
-<h2><a class="anchor" id="autotoc_md6"></a>
+<h2><a class="anchor" id="autotoc_md8"></a>
 Input</h2>
 <p>MD-Flexible accepts input via command line arguments and YAML files. When given both, any command line options will overwrite their YAML counterparts.</p>
 <p>The keywords for the YAML file are the same as for the command line input. However, since there are options that can only be defined through the YAML file there is also the file <a href="https://github.com/AutoPas/AutoPas/blob/master/examples/md-flexible/input/AllOptions.yaml"><code>input/AllOptions.yaml</code></a> to be used as a reference.</p>
 <p>Additionally, that options that require a list of choices also accept the keyword <code>all</code> to enable all, even discouraged choices.</p>
-<h3><a class="anchor" id="autotoc_md7"></a>
+<h3><a class="anchor" id="autotoc_md9"></a>
 Object generators</h3>
 <p>To quickly set up scenarios md-flexible provides a couple of object generators that create 3D shapes filled with particles. From the command line only one generator can be used at a time, however when using a YAML file one can use as an arbitrary amount of generators. In YAML files it is also possible to generate multiple objects from the same generator as one specifies the objects directly. For a list of all possible objects and their descriptions see <a href="https://autopas.github.io/doxygen_documentation_md-flexible/git-master/dir_8e5023335c6d80afeb9fe41ac1daf95f.html"><code>src/Objects</code></a>. For examples how to define and configure each object see <a href="https://github.com/AutoPas/AutoPas/blob/master/examples/md-flexible/input/AllOptions.yaml"><code>input/AllOptions.yaml</code></a>.</p>
-<h2><a class="anchor" id="autotoc_md8"></a>
+<h2><a class="anchor" id="autotoc_md10"></a>
 Output</h2>
 <ul>
 <li>After every execution, a configuration YAML file is generated. It is possible to use this file as input for a new simulation.</li>
 <li>You can generate vtk output by providing a vtk-filename (see help for details). The output contains two different vtk files. One for visualizing the particles another for the visualization of the subdomains of the domain decomposition. The cells contain additional information about the configuration of the AutoPas container responsible for simulating the cell. To visualize the particle records load the .pvtu files in ParaView. To visualize the cells of the decomposition load the .pvts files in ParaView.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md11"></a>
 Checkpoints</h2>
 <p>MD-Flexible can be initialized through a previously written VTK file. For this pass the path to the <code>pvtu</code> file and make sure that the <code>vtu</code> files which it references are in the correct location.</p>
 <p>Please use only VTK files written by MD-Flexible since the parsing is rather strict. The VTK file only contains Information about all particles positions, velocities, forces and typeIDs. All other options, especially the simulation box size and particle properties (still) need to be set through a YAML file.</p>
-<h2><a class="anchor" id="autotoc_md10"></a>
+<h2><a class="anchor" id="autotoc_md12"></a>
 Load Balancing</h2>
 <p>MD-Flexible allows users to select between two load balancers: The Inverted Pressure method and ALL's Tensor method. The load balancer can be selected using the 'load-balancer' configuration option.</p>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 Command line Completions</h2>
 <p>md-flexible can generate a shell completions file with its latest options. Feel free to add completions for your favorite shell.</p>
-<h3><a class="anchor" id="autotoc_md12"></a>
+<h3><a class="anchor" id="autotoc_md14"></a>
 zsh</h3>
 <ol type="1">
 <li>Run: <div class="fragment"><div class="line">./md-flexible --zsh-completions</div>
@@ -171,7 +179,7 @@ zsh</h3>
 </div><!-- fragment --></li>
 <li>Reload your <code>zsh</code></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md13"></a>
+<h2><a class="anchor" id="autotoc_md15"></a>
 Misc</h2>
 <ul>
 <li><code>tuning-phases</code> overwrites restrictions set by <code>iterations</code> </li>

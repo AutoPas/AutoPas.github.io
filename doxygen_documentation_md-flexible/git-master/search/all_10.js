@@ -1,21 +1,15 @@
 var searchData=
 [
-  ['selectorstrategy_0',['selectorStrategy',['../classMDFlexConfig.html#a78b9c86351d5a0a54b0df75b85436899',1,'MDFlexConfig']]],
-  ['sendparticles_1',['sendParticles',['../classParticleCommunicator.html#af7f47fa1ef88ad76e80eb98c8e8aa520',1,'ParticleCommunicator']]],
-  ['serializeattribute_2',['serializeAttribute',['../namespaceanonymous__namespace_02ParticleSerializationTools_8cpp_03.html#a21180f854df166ac0078f01f3fc60221',1,'anonymous_namespace{ParticleSerializationTools.cpp}']]],
-  ['serializeparticle_3',['serializeParticle',['../namespaceParticleSerializationTools.html#a9f055667832b00dfb5f7a9d6cee9d85b',1,'ParticleSerializationTools']]],
-  ['serializeparticleimpl_4',['serializeParticleImpl',['../namespaceanonymous__namespace_02ParticleSerializationTools_8cpp_03.html#a1e33f20b74f1e0b87c75869a42a8072f',1,'anonymous_namespace{ParticleSerializationTools.cpp}']]],
-  ['sigmamap_5',['sigmaMap',['../classMDFlexConfig.html#acb1546b8ef90275179c0bc0f27f4b31f',1,'MDFlexConfig']]],
-  ['simulate_6',['simulate',['../structSimulation_1_1Timers.html#ae427cb72851db09d7082b074ea94ec47',1,'Simulation::Timers']]],
-  ['simulation_7',['Simulation',['../classSimulation.html#a4d1702e6d0341d01688df11ad1491394',1,'Simulation::Simulation()'],['../classSimulation.html',1,'Simulation']]],
-  ['simulation_2ecpp_8',['Simulation.cpp',['../Simulation_8cpp.html',1,'']]],
-  ['simulation_2eh_9',['Simulation.h',['../Simulation_8h.html',1,'']]],
-  ['sixthrootoftwo_10',['sixthRootOfTwo',['../namespaceanonymous__namespace_02RegularGridDecomposition_8h_03.html#a8bee503d7b9a33f9bda87f4e2820b41f',1,'anonymous_namespace{RegularGridDecomposition.h}']]],
-  ['sphere_11',['Sphere',['../classSphere.html#a7c59fcfeb1b920705356eb722f3164d7',1,'Sphere::Sphere()'],['../classSphere.html',1,'Sphere']]],
-  ['sphere_2eh_12',['Sphere.h',['../Sphere_8h.html',1,'']]],
-  ['spherecenterstr_13',['sphereCenterStr',['../classMDFlexConfig.html#ac3bc989c14bbe85d14bf79428d186110',1,'MDFlexConfig']]],
-  ['sphereobjects_14',['sphereObjects',['../classMDFlexConfig.html#afbf51eac56ed442e57297dbb3005feb1',1,'MDFlexConfig']]],
-  ['sphereobjectsstr_15',['sphereObjectsStr',['../classMDFlexConfig.html#ace92d8a7f993647c41928c9855bc3014',1,'MDFlexConfig']]],
-  ['sphereradiusstr_16',['sphereRadiusStr',['../classMDFlexConfig.html#adfd4cd3c95f85ca56df952f472b4d944',1,'MDFlexConfig']]],
-  ['subdividedimension_17',['subdivideDimension',['../classMDFlexConfig.html#aa454e332f10be4305b8c5939a22fcbd5',1,'MDFlexConfig']]]
+  ['readpayload_0',['readPayload',['../namespaceanonymous__namespace_02MDFlexConfig_8cpp_03.html#afb3ad66d7707f1b428ca38c2d76ef5c1',1,'anonymous_namespace{MDFlexConfig.cpp}']]],
+  ['receiveparticles_1',['receiveParticles',['../classParticleCommunicator.html#a4db5e40b3412f4568687b0a1e006f003',1,'ParticleCommunicator']]],
+  ['recordtimestep_2',['recordTimestep',['../classParallelVtkWriter.html#a7310f6abbb9324023368402107065f39',1,'ParallelVtkWriter']]],
+  ['reflective_3',['reflective',['../classoptions_1_1BoundaryTypeOption.html#ac68d7559e0219e7081125346f5b943e4a43e6061ffc740bfe29e7ba5a2ccecfd9',1,'options::BoundaryTypeOption']]],
+  ['reflectparticlesatboundaries_4',['reflectParticlesAtBoundaries',['../structSimulation_1_1Timers.html#a8f75496c5894c37e5c79cd0abe175ffe',1,'Simulation::Timers::reflectParticlesAtBoundaries'],['../classRegularGridDecomposition.html#a395d343d2af97f31c9797a96a1b2674c',1,'RegularGridDecomposition::reflectParticlesAtBoundaries()']]],
+  ['regulargriddecomposition_5',['RegularGridDecomposition',['../classRegularGridDecomposition.html',1,'RegularGridDecomposition'],['../classRegularGridDecomposition.html#ac23170838c6f265b24241fa70866a5d8',1,'RegularGridDecomposition::RegularGridDecomposition()']]],
+  ['regulargriddecomposition_2ecpp_6',['RegularGridDecomposition.cpp',['../RegularGridDecomposition_8cpp.html',1,'']]],
+  ['regulargriddecomposition_2eh_7',['RegularGridDecomposition.h',['../RegularGridDecomposition_8h.html',1,'']]],
+  ['relativeblacklistrange_8',['relativeBlacklistRange',['../classMDFlexConfig.html#a68e1aa665a475efdc16942f2b6a8e5ad',1,'MDFlexConfig']]],
+  ['relativeoptimumrange_9',['relativeOptimumRange',['../classMDFlexConfig.html#ab4b7267c40a73106754dbcdc358f0aac',1,'MDFlexConfig']]],
+  ['requiresargument_10',['requiresArgument',['../structMDFlexConfig_1_1MDFlexOption.html#a60f3c8ec4f17918a72e405ad655fcb9d',1,'MDFlexConfig::MDFlexOption']]],
+  ['run_11',['run',['../classSimulation.html#ae5c367f87c0b5dc9740bc6d00e44e72c',1,'Simulation']]]
 ];
