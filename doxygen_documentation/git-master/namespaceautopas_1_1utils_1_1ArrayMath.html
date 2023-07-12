@@ -160,6 +160,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a1d321ba1191121f73334c284d1e72e72"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a1d321ba1191121f73334c284d1e72e72">dot</a> (const std::array&lt; T, SIZE &gt; &amp;a, const std::array&lt; T, SIZE &gt; &amp;b)</td></tr>
 <tr class="memdesc:a1d321ba1191121f73334c284d1e72e72"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the dot product of two arrays.  <br /></td></tr>
 <tr class="separator:a1d321ba1191121f73334c284d1e72e72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad65fefda5f2732535e45580652ec8440"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ad65fefda5f2732535e45580652ec8440"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::array&lt; T, 3 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#ad65fefda5f2732535e45580652ec8440">cross</a> (const std::array&lt; T, 3 &gt; &amp;a, const std::array&lt; T, 3 &gt; &amp;b)</td></tr>
+<tr class="memdesc:ad65fefda5f2732535e45580652ec8440"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates the cross product of two arrays of 3 floats.  <br /></td></tr>
+<tr class="separator:ad65fefda5f2732535e45580652ec8440"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37ada6b2f945c391f00ae6f34bc390ca"><td class="memTemplParams" colspan="2">template&lt;class T , std::size_t SIZE&gt; </td></tr>
 <tr class="memitem:a37ada6b2f945c391f00ae6f34bc390ca"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a37ada6b2f945c391f00ae6f34bc390ca">L2Norm</a> (const std::array&lt; T, SIZE &gt; &amp;a)</td></tr>
 <tr class="memdesc:a37ada6b2f945c391f00ae6f34bc390ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the L2Norm / Euclidean norm.  <br /></td></tr>
@@ -180,6 +184,18 @@ Functions</h2></td></tr>
 <tr class="memitem:ae2a906d18b78456713c4c3314295615a"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::array&lt; T, SIZE &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#ae2a906d18b78456713c4c3314295615a">normalize</a> (const std::array&lt; T, SIZE &gt; &amp;a)</td></tr>
 <tr class="memdesc:ae2a906d18b78456713c4c3314295615a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a normalized array (|a| = 1).  <br /></td></tr>
 <tr class="separator:ae2a906d18b78456713c4c3314295615a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae888fe0a6d12d0c50dd15565dfe8db32"><td class="memTemplParams" colspan="2">template&lt;class T , std::size_t SIZE&gt; </td></tr>
+<tr class="memitem:ae888fe0a6d12d0c50dd15565dfe8db32"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#ae888fe0a6d12d0c50dd15565dfe8db32">isNear</a> (const std::array&lt; T, SIZE &gt; &amp;a, const std::array&lt; T, SIZE &gt; &amp;b, double relativeDifference=1e-9)</td></tr>
+<tr class="memdesc:ae888fe0a6d12d0c50dd15565dfe8db32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if arrays are elementwise relatively near each other.  <br /></td></tr>
+<tr class="separator:ae888fe0a6d12d0c50dd15565dfe8db32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23632edad7d5b168948b8f2f3de1d957"><td class="memTemplParams" colspan="2">template&lt;class T , std::size_t SIZE&gt; </td></tr>
+<tr class="memitem:a23632edad7d5b168948b8f2f3de1d957"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a23632edad7d5b168948b8f2f3de1d957">isNear</a> (const std::vector&lt; std::array&lt; T, SIZE &gt; &gt; &amp;a, const std::vector&lt; std::array&lt; T, SIZE &gt; &gt; &amp;b, double relativeDifference=1e-9)</td></tr>
+<tr class="memdesc:a23632edad7d5b168948b8f2f3de1d957"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if vectors of arrays are elementwise relatively near each other.  <br /></td></tr>
+<tr class="separator:a23632edad7d5b168948b8f2f3de1d957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad860470ac5e53ca77c9be8401bfc5b40"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:ad860470ac5e53ca77c9be8401bfc5b40"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#ad860470ac5e53ca77c9be8401bfc5b40">isEqual</a> (const std::vector&lt; T &gt; &amp;a, const std::vector&lt; T &gt; &amp;b)</td></tr>
+<tr class="memdesc:ad860470ac5e53ca77c9be8401bfc5b40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if vectors are elementwise equal to each other.  <br /></td></tr>
+<tr class="separator:ad860470ac5e53ca77c9be8401bfc5b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa8418c5bcc6b14766db887509cdfb2d"><td class="memTemplParams" colspan="2">template&lt;class T , std::size_t SIZE&gt; </td></tr>
 <tr class="memitem:afa8418c5bcc6b14766db887509cdfb2d"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::array&lt; T, SIZE &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#afa8418c5bcc6b14766db887509cdfb2d">operator+</a> (const std::array&lt; T, SIZE &gt; &amp;a, const std::array&lt; T, SIZE &gt; &amp;b)</td></tr>
 <tr class="memdesc:afa8418c5bcc6b14766db887509cdfb2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds two arrays, returns the result.  <br /></td></tr>
@@ -438,6 +454,60 @@ template&lt;class T , std::size_t SIZE&gt; </div>
 
 </div>
 </div>
+<a id="ad65fefda5f2732535e45580652ec8440" name="ad65fefda5f2732535e45580652ec8440"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad65fefda5f2732535e45580652ec8440">&#9670;&#160;</a></span>cross()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::array&lt; T, 3 &gt; autopas::utils::ArrayMath::cross </td>
+          <td>(</td>
+          <td class="paramtype">const std::array&lt; T, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; T, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generates the cross product of two arrays of 3 floats. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>floating point type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>3D vector (denoted by array of 3 floats) </td></tr>
+    <tr><td class="paramname">b</td><td>3D vector (denoted by array of 3 floats) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>cross product a x b </dd></dl>
+
+</div>
+</div>
 <a id="a56ac611834159e2addeecb2d0a5b32e9" name="a56ac611834159e2addeecb2d0a5b32e9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a56ac611834159e2addeecb2d0a5b32e9">&#9670;&#160;</a></span>div()</h2>
 
@@ -545,6 +615,160 @@ template&lt;class T , std::size_t SIZE&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>dot product of a and b </dd></dl>
+
+</div>
+</div>
+<a id="ad860470ac5e53ca77c9be8401bfc5b40" name="ad860470ac5e53ca77c9be8401bfc5b40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad860470ac5e53ca77c9be8401bfc5b40">&#9670;&#160;</a></span>isEqual()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool autopas::utils::ArrayMath::isEqual </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns true if vectors are elementwise equal to each other. </p>
+<p>Also returns false if vectors are of different sizes. Should only be used with an integer type. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>integer type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>input vector </td></tr>
+    <tr><td class="paramname">b</td><td>input vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="ae888fe0a6d12d0c50dd15565dfe8db32" name="ae888fe0a6d12d0c50dd15565dfe8db32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae888fe0a6d12d0c50dd15565dfe8db32">&#9670;&#160;</a></span>isNear() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , std::size_t SIZE&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool autopas::utils::ArrayMath::isNear </td>
+          <td>(</td>
+          <td class="paramtype">const std::array&lt; T, SIZE &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; T, SIZE &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>relativeDifference</em> = <code>1e-9</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns true if arrays are elementwise relatively near each other. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>floating point type </td></tr>
+    <tr><td class="paramname">SIZE</td><td>size of the array </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>input array </td></tr>
+    <tr><td class="paramname">b</td><td>input array </td></tr>
+    <tr><td class="paramname">relativeDifference</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a23632edad7d5b168948b8f2f3de1d957" name="a23632edad7d5b168948b8f2f3de1d957"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23632edad7d5b168948b8f2f3de1d957">&#9670;&#160;</a></span>isNear() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , std::size_t SIZE&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool autopas::utils::ArrayMath::isNear </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::array&lt; T, SIZE &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::array&lt; T, SIZE &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>relativeDifference</em> = <code>1e-9</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns true if vectors of arrays are elementwise relatively near each other. </p>
+<p>Also returns false if vectors are of different sizes. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>floating point type </td></tr>
+    <tr><td class="paramname">SIZE</td><td>size of the array </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>input vector of arrays </td></tr>
+    <tr><td class="paramname">b</td><td>input vector of arrays </td></tr>
+    <tr><td class="paramname">relativeDifference</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>

@@ -106,12 +106,14 @@ $(function() {
 <div class="contents">
 <div class="textblock"><dl class="reflist">
 <dt>Member <a class="el" href="namespaceautopas.html#ac64a70a137851f9fe1941487cfc42e52">autopas::DEFAULT_CACHE_LINE_SIZE</a>  </dt>
-<dd><a class="anchor" id="_todo000022"></a>C++17: replace value by std::hardware_destructive_interference_size not yet possible: as of 27.06.2019 this(P0154R1) is in neither libstc++ (gnu) nor libc++ (clang)  </dd>
-<dt>Class <a class="el" href="classautopas_1_1FlopCounterFunctor.html">autopas::FlopCounterFunctor&lt; Particle &gt;</a>  </dt>
-<dd><a class="anchor" id="_todo000016"></a>this class currently is limited to the following case:<ul>
+<dd><a class="anchor" id="_todo000021"></a>C++17: replace value by std::hardware_destructive_interference_size not yet possible: as of 27.06.2019 this(P0154R1) is in neither libstc++ (gnu) nor libc++ (clang)  </dd>
+<dt>Class <a class="el" href="classautopas_1_1FlopCounterFunctor.html">autopas::FlopCounterFunctor&lt; Particle, ForceFunctorType &gt;</a>  </dt>
+<dd><p class="startdd"><a class="anchor" id="_todo000016"></a>this class currently is limited to the following case:</p><ul>
 <li>constant cutoff radius</li>
-<li>constant amount of floating point operations for one kernel call (distance &lt; cutoff)  </li>
+<li>cases where cutoff is determined with a single distance calculation between two positions ( the notable case where this doesn't hold is in a CoM-to-site style <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> <a class="el" href="classautopas_1_1Functor.html" title="Functor class.">Functor</a> for multi-site molecules ) </li>
 </ul>
+<p class="interdd"></p>
+<p class="enddd">: we may want the possibility of doing this faster in cases where the number of flops per kernel call is constant  </p>
 </dd>
 <dt>Member <a class="el" href="classautopas_1_1Functor.html#af16cac0f8edfefca2f9ad98785cd5aab">autopas::Functor&lt; Particle, CRTP_T &gt;::getComputedAttr</a>  ()</dt>
 <dd><a class="anchor" id="_todo000019"></a>C++20: make this function virtual  </dd>
@@ -141,12 +143,10 @@ $(function() {
 <dd><p class="startdd"><a class="anchor" id="_todo000002"></a>reserve to numSlices before push_back </p>
 <p class="enddd"><a class="anchor" id="_todo000003"></a>: use <a class="el" href="namespaceautopas_1_1utils_1_1ArrayUtils.html#a353d1a956b9ed8708e116817ef734222" title="Generates a string representation of a container which fulfills the Container requirement (provide cb...">autopas::utils::ArrayUtils::to_string()</a>  </p>
 </dd>
-<dt>Member <a class="el" href="classautopas_1_1sph_1_1SPHCalcHydroForceFunctor.html#ac8e99797986ac0b4bf145606779237fb">autopas::sph::SPHCalcHydroForceFunctor&lt; Particle &gt;::getNumFlopsPerKernelCall</a>  ()</dt>
-<dd><a class="anchor" id="_todo000021"></a>return correct flopcount  </dd>
 <dt>Member <a class="el" href="classautopas_1_1utils_1_1SoAStorage.html#a32ede55b59cbe6e9245f948e47c749c6">autopas::utils::SoAStorage&lt; SoAArraysType &gt;::apply</a>  (FunctorT func)</dt>
-<dd><a class="anchor" id="_todo000023"></a>c++20: replace with expansion statement: <code>for... (auto&amp; elem : tup) {}</code>  </dd>
+<dd><a class="anchor" id="_todo000022"></a>c++20: replace with expansion statement: <code>for... (auto&amp; elem : tup) {}</code>  </dd>
 <dt>Member <a class="el" href="namespaceautopas_1_1utils.html#a74ac3a54f767df5861d59cb241c635e3">autopas::utils::withStaticCellType</a>  (<a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8" title="The ParticleCell Type as an Enum.">autopas::CellType</a> cellType, F &amp;&amp;func)</dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000024"></a>c++20 change to explicit template for templates. </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000023"></a>c++20 change to explicit template for templates. </p>
 <p class="interdd"></p>
 <p class="enddd">function calls also have to be changed to  </p>
 </dd>
@@ -155,7 +155,9 @@ $(function() {
 <dt>Class <a class="el" href="classautopas_1_1VerletListHelpers_1_1VerletListValidityCheckerFunctor.html">autopas::VerletListHelpers&lt; Particle &gt;::VerletListValidityCheckerFunctor</a>  </dt>
 <dd><a class="anchor" id="_todo000013"></a>: <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a>?  </dd>
 <dt>Member <a class="el" href="classautopas_1_1VerletLists.html#a6503a9ab7723e166a6b9e007a0fdf974">autopas::VerletLists&lt; Particle &gt;::updateVerletListsAoS</a>  (bool useNewton3)</dt>
-<dd><a class="anchor" id="_todo000014"></a>autotune traversal </dd>
+<dd><a class="anchor" id="_todo000014"></a>autotune traversal  </dd>
+<dt>Member <a class="el" href="classsphLib_1_1SPHCalcHydroForceFunctor.html#aad330e56bc85f3544bf9e3b9d2eb4be3">sphLib::SPHCalcHydroForceFunctor&lt; Particle &gt;::getNumFlopsPerKernelCall</a>  ()</dt>
+<dd><a class="anchor" id="_todo000024"></a>return correct flopcount </dd>
 </dl>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
