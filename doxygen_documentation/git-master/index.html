@@ -223,7 +223,7 @@ Iterating Through Particles</h2>
 <div class="line">}</div>
 </div><!-- fragment --><p>Both <code>begin()</code> and <code>getRegionIterator()</code> can also take the additional parameter <code>IteratorBehavior</code>, which indicates over which particles the iteration should be performed. See <a href="https://autopas.github.io/doxygen_documentation/git-master/namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42">autopas::IteratorBehavior</a> for possible options and details. The default parameter is <code>ownedOrHalo</code>, which is also used for range-based for loops.</p>
 <p>Analogously to <code>begin()</code>, <code>cbegin()</code> is also defined, which guarantees to return a <code>const_iterator</code>.</p>
-<p>Iterators are not guaranteed to be valid after particle insertion. However, particle deletion while iterating is supported via <code>autoPas.deleteParticle(iterator)</code>. After deletion the <code>++</code> operator has to be called: </p><div class="fragment"><div class="line"><span class="preprocessor">#pragma omp parallel</span></div>
+<p>Iterators are not guaranteed to be valid after particle insertion (see <a href="https://github.com/AutoPas/AutoPas/issues/766">Issue #766</a> for details). However, particle deletion while iterating is supported via <code>autoPas.deleteParticle(iterator)</code>. After deletion the <code>++</code> operator has to be called: </p><div class="fragment"><div class="line"><span class="preprocessor">#pragma omp parallel</span></div>
 <div class="line"><span class="keywordflow">for</span>(<span class="keyword">auto</span> iter = autoPas.getIterator(); iter != autoPas.end(); ++iter) {</div>
 <div class="line">  autoPas.deleteParticle(iterator);</div>
 <div class="line">}</div>

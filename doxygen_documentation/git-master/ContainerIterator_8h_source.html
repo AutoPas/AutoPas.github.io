@@ -304,91 +304,87 @@ $(function() {
 <div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>      <span class="comment">// if getParticle told us that the container doesn&#39;t have a particle in the first vector for our thread...</span></div>
 <div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>      <span class="keywordflow">if</span> (_currentParticle == <span class="keyword">nullptr</span> and not _additionalVectors.empty()) {</div>
 <div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>        <span class="comment">// determine which additional vector this thread should start to iterate</span></div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>        <span class="comment">// we invert the assignment of threads to additional vectors because if there are more threads than cells</span></div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        <span class="comment">// these surplus threads can then directly start with the additional vectors</span></div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        _currentVectorIndex = (_behavior &amp; IteratorBehavior::forceSequential)</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>                                  ? 0</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>                                  : <a class="code hl_function" href="namespaceautopas.html#a0bcb9c71d0158db0bd7464764e3e5b39">autopas_get_num_threads</a>() - 1 - <a class="code hl_function" href="namespaceautopas.html#ac3917775976f91c4251e72887dc1876e">autopas_get_thread_num</a>();</div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>        _currentParticleIndex = 0;</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>        _iteratingAdditionalVectors = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>        <span class="comment">// Case: nothing left in the container and no additional vectors to iterate</span></div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>        <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>      }</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    }</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>    <span class="comment">// no &quot;else&quot; here because the first case might trigger the second if we reached the end of the container</span></div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>    <span class="keywordflow">if</span> (_iteratingAdditionalVectors) {</div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>      <span class="comment">// check all vectors ...</span></div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>      <span class="keywordflow">for</span> (; _currentVectorIndex &lt; _additionalVectors.size(); _currentVectorIndex += _vectorIndexOffset) {</div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>        <span class="comment">// ... and all particles within the vector ...</span></div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>        <span class="keywordflow">for</span> (; _currentParticleIndex &lt; _additionalVectors[_currentVectorIndex]-&gt;size(); ++_currentParticleIndex) {</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>          _currentParticle = &amp;(_additionalVectors[_currentVectorIndex]-&gt;operator[](_currentParticleIndex));</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>          <span class="comment">// ... until we find a particle that satisfies our requirements.</span></div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>          <span class="keywordflow">if</span> (containerIteratorUtils::particleFulfillsIteratorRequirements&lt;regionIter&gt;(*_currentParticle, _behavior,</div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>                                                                                       _regionMin, _regionMax)) {</div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>          }</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>        }</div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>        _currentParticleIndex = 0;</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>      }</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>    }</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>    <span class="comment">// if we reach this point there is no satisfying particle left neither in the container nor the additional vectors.</span></div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>    _currentParticle = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>    _currentParticleIndex = std::numeric_limits&lt;<span class="keyword">decltype</span>(_currentParticleIndex)&gt;::max();</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>    _currentVectorIndex = std::numeric_limits&lt;<span class="keyword">decltype</span>(_currentVectorIndex)&gt;::max();</div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>  }</div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span> </div>
-<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>  <span class="keywordtype">void</span> deleteCurrentParticle() {</div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>    <span class="keywordflow">if</span> (_iteratingAdditionalVectors) {</div>
-<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>      <span class="comment">// the current particle address needs to be between start and end of the current vector</span></div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>      <span class="comment">// otherwise it is from the previous vector</span></div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>      <span class="keyword">auto</span> &amp;currentVector = *_additionalVectors[_currentVectorIndex];</div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>      <span class="comment">// swap-delete</span></div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>      *_currentParticle = currentVector.back();</div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>      currentVector.pop_back();</div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>      <span class="comment">// make sure _currentParticle always points to a valid particle if there is one.</span></div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>      <span class="keywordflow">if</span> (currentVector.empty() or not containerIteratorUtils::particleFulfillsIteratorRequirements&lt;regionIter&gt;(</div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>                                       *_currentParticle, _behavior, _regionMin, _regionMax)) {</div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>        this-&gt;<a class="code hl_function" href="classautopas_1_1ContainerIterator.html#a528cd7fb2f7b07dcaa2a03c224d5a3d6">operator++</a>();</div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>      }</div>
-<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>      <span class="keyword">const</span> <span class="keyword">auto</span> indicesValid = _container-&gt;deleteParticle(_currentVectorIndex, _currentParticleIndex);</div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>      <span class="comment">// Edge cases:</span></div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>      <span class="keywordflow">if</span> (not indicesValid) {</div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>        <span class="comment">// CASE: the indices and thus the pointer are invalid now</span></div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>        _currentVectorIndex = (_behavior &amp; IteratorBehavior::forceSequential) ? 0 : <a class="code hl_function" href="namespaceautopas.html#ac3917775976f91c4251e72887dc1876e">autopas_get_thread_num</a>();</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        _currentParticleIndex = 0;</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        _iteratingAdditionalVectors = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>        <span class="comment">// Case: nothing left in the container and no additional vectors to iterate</span></div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>      }</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    }</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>    <span class="comment">// no &quot;else&quot; here because the first case might trigger the second if we reached the end of the container</span></div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>    <span class="keywordflow">if</span> (_iteratingAdditionalVectors) {</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>      <span class="comment">// check all vectors ...</span></div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>      <span class="keywordflow">for</span> (; _currentVectorIndex &lt; _additionalVectors.size(); _currentVectorIndex += _vectorIndexOffset) {</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>        <span class="comment">// ... and all particles within the vector ...</span></div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>        <span class="keywordflow">for</span> (; _currentParticleIndex &lt; _additionalVectors[_currentVectorIndex]-&gt;size(); ++_currentParticleIndex) {</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>          _currentParticle = &amp;(_additionalVectors[_currentVectorIndex]-&gt;operator[](_currentParticleIndex));</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>          <span class="comment">// ... until we find a particle that satisfies our requirements.</span></div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>          <span class="keywordflow">if</span> (containerIteratorUtils::particleFulfillsIteratorRequirements&lt;regionIter&gt;(*_currentParticle, _behavior,</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>                                                                                       _regionMin, _regionMax)) {</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>          }</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>        }</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>        _currentParticleIndex = 0;</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>      }</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>    }</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>    <span class="comment">// if we reach this point there is no satisfying particle left neither in the container nor the additional vectors.</span></div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>    _currentParticle = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>    _currentParticleIndex = std::numeric_limits&lt;<span class="keyword">decltype</span>(_currentParticleIndex)&gt;::max();</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>    _currentVectorIndex = std::numeric_limits&lt;<span class="keyword">decltype</span>(_currentVectorIndex)&gt;::max();</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>  }</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span> </div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>  <span class="keywordtype">void</span> deleteCurrentParticle() {</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>    <span class="keywordflow">if</span> (_iteratingAdditionalVectors) {</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>      <span class="comment">// the current particle address needs to be between start and end of the current vector</span></div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>      <span class="comment">// otherwise it is from the previous vector</span></div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>      <span class="keyword">auto</span> &amp;currentVector = *_additionalVectors[_currentVectorIndex];</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>      <span class="comment">// swap-delete</span></div>
+<div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>      *_currentParticle = currentVector.back();</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>      currentVector.pop_back();</div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>      <span class="comment">// make sure _currentParticle always points to a valid particle if there is one.</span></div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>      <span class="keywordflow">if</span> (currentVector.empty() or not containerIteratorUtils::particleFulfillsIteratorRequirements&lt;regionIter&gt;(</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>                                       *_currentParticle, _behavior, _regionMin, _regionMax)) {</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>        this-&gt;<a class="code hl_function" href="classautopas_1_1ContainerIterator.html#a528cd7fb2f7b07dcaa2a03c224d5a3d6">operator++</a>();</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>      }</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>      <span class="keyword">const</span> <span class="keyword">auto</span> indicesValid = _container-&gt;deleteParticle(_currentVectorIndex, _currentParticleIndex);</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>      <span class="comment">// Edge cases:</span></div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>      <span class="keywordflow">if</span> (not indicesValid) {</div>
+<div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>        <span class="comment">// CASE: the indices and thus the pointer are invalid now</span></div>
+<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>        this-&gt;<a class="code hl_function" href="classautopas_1_1ContainerIterator.html#a528cd7fb2f7b07dcaa2a03c224d5a3d6">operator++</a>();</div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (not containerIteratorUtils::particleFulfillsIteratorRequirements&lt;regionIter&gt;(</div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>                     *_currentParticle, _behavior, _regionMin, _regionMax)) {</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>        <span class="comment">// CASE: the particle was swapped and now the pointer points at something uninteresting</span></div>
 <div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>        this-&gt;<a class="code hl_function" href="classautopas_1_1ContainerIterator.html#a528cd7fb2f7b07dcaa2a03c224d5a3d6">operator++</a>();</div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (not containerIteratorUtils::particleFulfillsIteratorRequirements&lt;regionIter&gt;(</div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>                     *_currentParticle, _behavior, _regionMin, _regionMax)) {</div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>        <span class="comment">// CASE: the particle was swapped and now the pointer points at something uninteresting</span></div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>        this-&gt;<a class="code hl_function" href="classautopas_1_1ContainerIterator.html#a528cd7fb2f7b07dcaa2a03c224d5a3d6">operator++</a>();</div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>      }</div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>    }</div>
-<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>    <span class="comment">// move the current index back so that the next ++ points again to the same particle.</span></div>
-<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span>    --_currentParticleIndex;</div>
-<div class="line"><a id="l00395" name="l00395"></a><span class="lineno">  395</span>  }</div>
-<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span> </div>
-<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>  <a class="code hl_typedef" href="classautopas_1_1ContainerIterator.html#a0e683011c43d5827227b0795f8dcc51d">ContainerType</a> *_container;</div>
-<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span> </div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>  IteratorBehavior _behavior;</div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span> </div>
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>  <span class="keywordtype">bool</span> _iteratingAdditionalVectors{<span class="keyword">false</span>};</div>
-<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span> </div>
-<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>  <a class="code hl_typedef" href="classautopas_1_1ContainerIterator.html#aa831a5ad6f29f19e79e0c515763b2592">ParticleVecType</a> _additionalVectors;</div>
-<div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span> </div>
-<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>  <a class="code hl_typedef" href="classautopas_1_1ContainerIterator.html#a0f8386920b171dd8a33584deef28d961">ParticleType</a> *_currentParticle = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span> </div>
-<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>  <span class="keywordtype">size_t</span> _currentVectorIndex{};</div>
-<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span> </div>
-<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>  <span class="keywordtype">size_t</span> _vectorIndexOffset{};</div>
-<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span> </div>
-<div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>  <span class="keywordtype">size_t</span> _currentParticleIndex{0};</div>
-<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span> </div>
-<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>  <span class="keyword">struct </span>empty {};</div>
-<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>  <span class="keyword">using </span>RegionCornerT = std::conditional_t&lt;regionIter, std::array&lt;double, 3&gt;, empty&gt;;</div>
-<div class="line"><a id="l00455" name="l00455"></a><span class="lineno">  455</span>  [[no_unique_address]] RegionCornerT _regionMin{};</div>
-<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span>  [[no_unique_address]] RegionCornerT _regionMax{};</div>
-<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>};</div>
-<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span>}  <span class="comment">// namespace autopas</span></div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>      }</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>    }</div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>    <span class="comment">// move the current index back so that the next ++ points again to the same particle.</span></div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>    --_currentParticleIndex;</div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>  }</div>
+<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span> </div>
+<div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>  <a class="code hl_typedef" href="classautopas_1_1ContainerIterator.html#a0e683011c43d5827227b0795f8dcc51d">ContainerType</a> *_container;</div>
+<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span> </div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>  IteratorBehavior _behavior;</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span> </div>
+<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>  <span class="keywordtype">bool</span> _iteratingAdditionalVectors{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span> </div>
+<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>  <a class="code hl_typedef" href="classautopas_1_1ContainerIterator.html#aa831a5ad6f29f19e79e0c515763b2592">ParticleVecType</a> _additionalVectors;</div>
+<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span> </div>
+<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>  <a class="code hl_typedef" href="classautopas_1_1ContainerIterator.html#a0f8386920b171dd8a33584deef28d961">ParticleType</a> *_currentParticle = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span> </div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>  <span class="keywordtype">size_t</span> _currentVectorIndex{};</div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span> </div>
+<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>  <span class="keywordtype">size_t</span> _vectorIndexOffset{};</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span> </div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>  <span class="keywordtype">size_t</span> _currentParticleIndex{0};</div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span> </div>
+<div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>  <span class="keyword">struct </span>empty {};</div>
+<div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>  <span class="keyword">using </span>RegionCornerT = std::conditional_t&lt;regionIter, std::array&lt;double, 3&gt;, empty&gt;;</div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>  [[no_unique_address]] RegionCornerT _regionMin{};</div>
+<div class="line"><a id="l00457" name="l00457"></a><span class="lineno">  457</span>  [[no_unique_address]] RegionCornerT _regionMax{};</div>
+<div class="line"><a id="l00458" name="l00458"></a><span class="lineno">  458</span>};</div>
+<div class="line"><a id="l00459" name="l00459"></a><span class="lineno">  459</span>}  <span class="comment">// namespace autopas</span></div>
 <div class="ttc" id="aArrayMath_8h_html"><div class="ttname"><a href="ArrayMath_8h.html">ArrayMath.h</a></div></div>
 <div class="ttc" id="aIteratorBehavior_8h_html"><div class="ttname"><a href="IteratorBehavior_8h.html">IteratorBehavior.h</a></div></div>
 <div class="ttc" id="aParticleContainerInterface_8h_html"><div class="ttname"><a href="ParticleContainerInterface_8h.html">ParticleContainerInterface.h</a></div></div>
