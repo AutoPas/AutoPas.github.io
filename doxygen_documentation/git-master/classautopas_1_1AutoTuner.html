@@ -129,9 +129,9 @@ Inheritance diagram for autopas::AutoTuner&lt; Particle &gt;:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a815bdf002ee7b8c69d28cb65ed330a0d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a815bdf002ee7b8c69d28cb65ed330a0d">AutoTuner</a> (const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax, double cutoff, double verletSkinPerTimestep, unsigned int verletClusterSize, std::unique_ptr&lt; <a class="el" href="classautopas_1_1TuningStrategyInterface.html">TuningStrategyInterface</a> &gt; tuningStrategy, double MPITuningMaxDifferenceForBucket, double MPITuningWeightForMaxDensity, SelectorStrategyOption selectorStrategy, <a class="el" href="classautopas_1_1TuningMetricOption.html">TuningMetricOption</a> tuningMetric, unsigned int tuningInterval, unsigned int maxSamples, unsigned int rebuildFrequency, const std::string &amp;outputSuffix=&quot;&quot;)</td></tr>
-<tr class="memdesc:a815bdf002ee7b8c69d28cb65ed330a0d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classautopas_1_1AutoTuner.html" title="Calls to the iteratePairwise() method are passed through this class for two reasons:">AutoTuner</a> that generates all configurations from the given options.  <br /></td></tr>
-<tr class="separator:a815bdf002ee7b8c69d28cb65ed330a0d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4db8c282ee34e1fb853123a66f25e97e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a4db8c282ee34e1fb853123a66f25e97e">AutoTuner</a> (const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax, double cutoff, double verletSkinPerTimestep, unsigned int verletClusterSize, std::unique_ptr&lt; <a class="el" href="classautopas_1_1TuningStrategyInterface.html">TuningStrategyInterface</a> &gt; tuningStrategy, double MPITuningMaxDifferenceForBucket, double MPITuningWeightForMaxDensity, SelectorStrategyOption selectorStrategy, <a class="el" href="classautopas_1_1TuningMetricOption.html">TuningMetricOption</a> tuningMetric, unsigned int tuningInterval, unsigned int maxSamples, unsigned int rebuildFrequency, const std::string &amp;outputSuffix=&quot;&quot;, bool useTuningStrategyLoggerProxy=false)</td></tr>
+<tr class="memdesc:a4db8c282ee34e1fb853123a66f25e97e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classautopas_1_1AutoTuner.html" title="Calls to the iteratePairwise() method are passed through this class for two reasons:">AutoTuner</a> that generates all configurations from the given options.  <br /></td></tr>
+<tr class="separator:a4db8c282ee34e1fb853123a66f25e97e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a248ddc4d7428705cdc09c4158b43d9fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1AutoTuner.html">AutoTuner</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a248ddc4d7428705cdc09c4158b43d9fc">operator=</a> (<a class="el" href="classautopas_1_1AutoTuner.html">AutoTuner</a> &amp;&amp;other) noexcept</td></tr>
 <tr class="memdesc:a248ddc4d7428705cdc09c4158b43d9fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator.  <br /></td></tr>
 <tr class="separator:a248ddc4d7428705cdc09c4158b43d9fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -181,8 +181,8 @@ class autopas::AutoTuner&lt; Particle &gt;</div><p>Calls to the <a class="el" hr
   </dd>
 </dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a815bdf002ee7b8c69d28cb65ed330a0d" name="a815bdf002ee7b8c69d28cb65ed330a0d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a815bdf002ee7b8c69d28cb65ed330a0d">&#9670;&#160;</a></span>AutoTuner()</h2>
+<a id="a4db8c282ee34e1fb853123a66f25e97e" name="a4db8c282ee34e1fb853123a66f25e97e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4db8c282ee34e1fb853123a66f25e97e">&#9670;&#160;</a></span>AutoTuner()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -274,7 +274,13 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>outputSuffix</em> = <code>&quot;&quot;</code>&#160;</td>
+          <td class="paramname"><em>outputSuffix</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>useTuningStrategyLoggerProxy</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -306,6 +312,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
     <tr><td class="paramname">maxSamples</td><td>Number of samples that shall be collected for each combination. </td></tr>
     <tr><td class="paramname">rebuildFrequency</td><td>The rebuild frequency this <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> instance uses. </td></tr>
     <tr><td class="paramname">outputSuffix</td><td>Suffix for all output files produced by this class. </td></tr>
+    <tr><td class="paramname">useTuningStrategyLoggerProxy</td><td>Whether to use the tuning strategy logger proxy to log tuning information. </td></tr>
   </table>
   </dd>
 </dl>

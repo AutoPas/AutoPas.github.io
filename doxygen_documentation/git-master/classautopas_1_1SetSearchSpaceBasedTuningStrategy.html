@@ -124,13 +124,15 @@ Inheritance diagram for autopas::SetSearchSpaceBasedTuningStrategy:</div>
 <div class="dyncontent">
 <div class="center"><img src="classautopas_1_1SetSearchSpaceBasedTuningStrategy__inherit__graph.png" border="0" usemap="#aautopas_1_1SetSearchSpaceBasedTuningStrategy_inherit__map" alt="Inheritance graph"/></div>
 <map name="aautopas_1_1SetSearchSpaceBasedTuningStrategy_inherit__map" id="aautopas_1_1SetSearchSpaceBasedTuningStrategy_inherit__map">
-<area shape="rect" title="Super class for tuning strategies with a set based search space." alt="" coords="63,79,289,119"/>
-<area shape="rect" href="classautopas_1_1FullSearch.html" title="Exhaustive full search of the search space by testing every applicable configuration and then selecti..." alt="" coords="5,167,155,192"/>
-<area shape="poly" title=" " alt="" coords="144,129,96,168,93,164,141,125"/>
-<area shape="rect" href="classautopas_1_1PredictiveTuning.html" title="In every tuning phase, this strategy makes a prediction about the run time for every configuration." alt="" coords="179,167,368,192"/>
-<area shape="poly" title=" " alt="" coords="212,125,260,164,257,168,208,129"/>
-<area shape="rect" href="classautopas_1_1TuningStrategyInterface.html" title="Interface for tuning strategies for the auto tuner." alt="" coords="57,5,295,31"/>
-<area shape="poly" title=" " alt="" coords="179,44,179,79,173,79,173,44"/>
+<area shape="rect" title="Super class for tuning strategies with a set based search space." alt="" coords="85,79,311,119"/>
+<area shape="rect" href="classautopas_1_1FullSearch.html" title="Exhaustive full search of the search space by testing every applicable configuration and then selecti..." alt="" coords="27,167,177,192"/>
+<area shape="poly" title=" " alt="" coords="166,129,118,168,115,164,163,125"/>
+<area shape="rect" href="classautopas_1_1PredictiveTuning.html" title="In every tuning phase, this strategy makes a prediction about the run time for every configuration." alt="" coords="201,167,390,192"/>
+<area shape="poly" title=" " alt="" coords="234,125,282,164,279,168,230,129"/>
+<area shape="rect" href="classautopas_1_1TuningStrategyInterface.html" title="Interface for tuning strategies for the auto tuner." alt="" coords="79,5,317,31"/>
+<area shape="poly" title=" " alt="" coords="201,44,201,79,195,79,195,44"/>
+<area shape="rect" href="classautopas_1_1RuleBasedTuning.html" title="A tuning strategy that uses information collected live from the domain to exclude configurations that..." alt="" coords="5,240,199,265"/>
+<area shape="poly" title=" " alt="" coords="105,206,105,240,99,240,99,206"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
@@ -186,6 +188,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab99606a2347aa3dbb9533120e535c2a8 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#ab99606a2347aa3dbb9533120e535c2a8">reset</a> (size_t iteration)=0</td></tr>
 <tr class="memdesc:ab99606a2347aa3dbb9533120e535c2a8 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset all internal parameters to the beginning of a new tuning cycle.  <br /></td></tr>
 <tr class="separator:ab99606a2347aa3dbb9533120e535c2a8 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c0bc535436e8aa6a8b25b6f1b50b5e2 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a7c0bc535436e8aa6a8b25b6f1b50b5e2">needsLiveInfo</a> () const</td></tr>
+<tr class="memdesc:a7c0bc535436e8aa6a8b25b6f1b50b5e2 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this tuning strategy wants to get a <a class="el" href="classautopas_1_1LiveInfo.html" title="This class is able to gather and store important information for a tuning phase from a container and ...">LiveInfo</a> object passed before a new tuning phase.  <br /></td></tr>
+<tr class="separator:a7c0bc535436e8aa6a8b25b6f1b50b5e2 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cb1ba7e258aa647bc0a442a1982f8f8 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a9cb1ba7e258aa647bc0a442a1982f8f8">receiveLiveInfo</a> (const <a class="el" href="classautopas_1_1LiveInfo.html">LiveInfo</a> &amp;info)</td></tr>
+<tr class="memdesc:a9cb1ba7e258aa647bc0a442a1982f8f8 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual method that subclasses can override to receive the <a class="el" href="classautopas_1_1LiveInfo.html" title="This class is able to gather and store important information for a tuning phase from a container and ...">LiveInfo</a> object before a tuning phase if they return true in <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a7c0bc535436e8aa6a8b25b6f1b50b5e2" title="Returns whether this tuning strategy wants to get a LiveInfo object passed before a new tuning phase.">needsLiveInfo()</a>.  <br /></td></tr>
+<tr class="separator:a9cb1ba7e258aa647bc0a442a1982f8f8 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a29e0e33c2dcc9169625d02d7a26d1d66 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual std::set&lt; ContainerOption &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a29e0e33c2dcc9169625d02d7a26d1d66">getAllowedContainerOptions</a> () const =0</td></tr>
 <tr class="memdesc:a29e0e33c2dcc9169625d02d7a26d1d66 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all container options the strategy might choose.  <br /></td></tr>
 <tr class="separator:a29e0e33c2dcc9169625d02d7a26d1d66 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>

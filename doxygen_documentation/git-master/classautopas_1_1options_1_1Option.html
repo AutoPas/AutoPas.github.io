@@ -172,9 +172,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1a6768cbb43214c27add4f386f7c4de2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1Option.html#a1a6768cbb43214c27add4f386f7c4de2">operator bool</a> ()=delete</td></tr>
 <tr class="memdesc:a1a6768cbb43214c27add4f386f7c4de2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Prevents cast to bool by deleting the conversion operator.  <br /></td></tr>
 <tr class="separator:a1a6768cbb43214c27add4f386f7c4de2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae65415d6b5bb89139341952feea8a0df"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1Option.html#ae65415d6b5bb89139341952feea8a0df">to_string</a> () const</td></tr>
-<tr class="memdesc:ae65415d6b5bb89139341952feea8a0df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an <a class="el" href="classautopas_1_1options_1_1Option.html" title="Base class for autopas options.">Option</a> object to its respective string representation.  <br /></td></tr>
-<tr class="separator:ae65415d6b5bb89139341952feea8a0df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afdb748ce517d02a2063e9e7402e55679"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1Option.html#afdb748ce517d02a2063e9e7402e55679">to_string</a> (bool fixedLength=false) const</td></tr>
+<tr class="memdesc:afdb748ce517d02a2063e9e7402e55679"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts an <a class="el" href="classautopas_1_1options_1_1Option.html" title="Base class for autopas options.">Option</a> object to its respective string representation.  <br /></td></tr>
+<tr class="separator:afdb748ce517d02a2063e9e7402e55679"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -184,6 +184,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ad1a4e7ba219c71262720b5329c724853"><td class="memItemLeft" align="right" valign="top">static std::set&lt; actualOption &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1Option.html#ad1a4e7ba219c71262720b5329c724853">getMostOptions</a> ()</td></tr>
 <tr class="memdesc:ad1a4e7ba219c71262720b5329c724853"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a way to iterate over the possible options minus those that are very unlikely to be on interest.  <br /></td></tr>
 <tr class="separator:ad1a4e7ba219c71262720b5329c724853"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76611bf0e09246050ee32e874451b087"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1Option.html#a76611bf0e09246050ee32e874451b087">maxStringLength</a> ()</td></tr>
+<tr class="memdesc:a76611bf0e09246050ee32e874451b087"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of characters in the string representation of the longest option.  <br /></td></tr>
+<tr class="separator:a76611bf0e09246050ee32e874451b087"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ddf6c5f9f6caf94f1c7949c0dabfa56"><td class="memItemLeft" align="right" valign="top">static std::set&lt; actualOption &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1Option.html#a8ddf6c5f9f6caf94f1c7949c0dabfa56">parseOptions</a> (const std::string &amp;optionsString)</td></tr>
 <tr class="memdesc:a8ddf6c5f9f6caf94f1c7949c0dabfa56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string of options to a set of enums.  <br /></td></tr>
 <tr class="separator:a8ddf6c5f9f6caf94f1c7949c0dabfa56"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -197,6 +200,9 @@ Friends</h2></td></tr>
 <tr class="memitem:a2309c8e585f3bf9bb1908a1a2453f3c7"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1Option.html#a2309c8e585f3bf9bb1908a1a2453f3c7">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classautopas_1_1options_1_1Option.html">Option</a> &amp;option)</td></tr>
 <tr class="memdesc:a2309c8e585f3bf9bb1908a1a2453f3c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream operator.  <br /></td></tr>
 <tr class="separator:a2309c8e585f3bf9bb1908a1a2453f3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec3f5afc7b56283d04c00f85dfbe1018"><td class="memItemLeft" align="right" valign="top">std::istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1Option.html#aec3f5afc7b56283d04c00f85dfbe1018">operator&gt;&gt;</a> (std::istream &amp;in, actualOption &amp;option)</td></tr>
+<tr class="memdesc:aec3f5afc7b56283d04c00f85dfbe1018"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream extraction operator.  <br /></td></tr>
+<tr class="separator:aec3f5afc7b56283d04c00f85dfbe1018"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename actualOption&gt;<br />
@@ -266,6 +272,36 @@ template&lt;typename actualOption &gt; </div>
 <p>Provides a way to iterate over the possible options minus those that are very unlikely to be on interest. </p>
 <dl class="section note"><dt>Note</dt><dd>This function is meant to provide sane defaults. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a76611bf0e09246050ee32e874451b087" name="a76611bf0e09246050ee32e874451b087"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76611bf0e09246050ee32e874451b087">&#9670;&#160;</a></span>maxStringLength()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename actualOption &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static size_t <a class="el" href="classautopas_1_1options_1_1Option.html">autopas::options::Option</a>&lt; actualOption &gt;::maxStringLength </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of characters in the string representation of the longest option. </p>
+<p>Useful for pretty output. </p><dl class="section return"><dt>Returns</dt><dd>the number of characters in the string representation of the longest option. </dd></dl>
 
 </div>
 </div>
@@ -385,8 +421,8 @@ template&lt;typename actualOption &gt; </div>
 
 </div>
 </div>
-<a id="ae65415d6b5bb89139341952feea8a0df" name="ae65415d6b5bb89139341952feea8a0df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae65415d6b5bb89139341952feea8a0df">&#9670;&#160;</a></span>to_string()</h2>
+<a id="afdb748ce517d02a2063e9e7402e55679" name="afdb748ce517d02a2063e9e7402e55679"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afdb748ce517d02a2063e9e7402e55679">&#9670;&#160;</a></span>to_string()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -399,7 +435,8 @@ template&lt;typename actualOption &gt; </div>
         <tr>
           <td class="memname">std::string <a class="el" href="classautopas_1_1options_1_1Option.html">autopas::options::Option</a>&lt; actualOption &gt;::to_string </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>fixedLength</em> = <code>false</code></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -411,6 +448,12 @@ template&lt;typename actualOption &gt; </div>
 </div><div class="memdoc">
 
 <p>Converts an <a class="el" href="classautopas_1_1options_1_1Option.html" title="Base class for autopas options.">Option</a> object to its respective string representation. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">fixedLength</td><td>Whether result should be filled up with spaces to the length of the longest option. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd>The string representation or "Unknown Option (&lt;IntValue&gt;)". </dd></dl>
 
 </div>
@@ -456,6 +499,54 @@ template&lt;typename actualOption &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">os</td><td></td></tr>
+    <tr><td class="paramname">option</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="aec3f5afc7b56283d04c00f85dfbe1018" name="aec3f5afc7b56283d04c00f85dfbe1018"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec3f5afc7b56283d04c00f85dfbe1018">&#9670;&#160;</a></span>operator&gt;&gt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename actualOption &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::istream &amp; operator&gt;&gt; </td>
+          <td>(</td>
+          <td class="paramtype">std::istream &amp;&#160;</td>
+          <td class="paramname"><em>in</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">actualOption&lt; actualOption &gt; &amp;&#160;</td>
+          <td class="paramname"><em>option</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stream extraction operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">in</td><td></td></tr>
     <tr><td class="paramname">option</td><td></td></tr>
   </table>
   </dd>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['weightfunction_0',['WeightFunction',['../classautopas_1_1GaussianCluster.html#aa27fe3fde2aa4a672513bc2546bc8977',1,'autopas::GaussianCluster']]]
+  ['type_0',['Type',['../namespaceautopas.html#af7ac3614f0c9b42bab1d8c1a3703431a',1,'autopas']]]
 ];

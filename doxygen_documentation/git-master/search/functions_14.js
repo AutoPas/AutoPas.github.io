@@ -8,5 +8,9 @@ var searchData=
   ['withstaticcontainertype_5',['withStaticContainerType',['../namespaceautopas.html#a98ccb2981c37b612e59b17091777466c',1,'autopas']]],
   ['withstaticnodetype_6',['withStaticNodeType',['../namespaceautopas.html#a33680e349f2dce06ddcb72829f51f2ad',1,'autopas']]],
   ['write_7',['write',['../classautopas_1_1SoA.html#a50beadba8e8d2c44ac42888e9a9cd73f',1,'autopas::SoA']]],
-  ['writemultiple_8',['writeMultiple',['../classautopas_1_1SoA.html#a03ab8960a78b1f807f1b855b567308d5',1,'autopas::SoA::writeMultiple(size_t particleId, const ValueArrayType &amp;values)'],['../classautopas_1_1SoA.html#a7bac349263884d8d6bf37b6539498b25',1,'autopas::SoA::writeMultiple(size_t particleId, const std::array&lt; double, N &gt; &amp;values)']]]
+  ['writeevidence_8',['writeEvidence',['../namespaceautopas_1_1tuningLogEntry.html#af961b9b867936307d79c20c32279bc12',1,'autopas::tuningLogEntry']]],
+  ['writeliveinfo_9',['writeLiveInfo',['../namespaceautopas_1_1tuningLogEntry.html#abc32a12435f43c516497e6b91197a80c',1,'autopas::tuningLogEntry']]],
+  ['writemultiple_10',['writeMultiple',['../classautopas_1_1SoA.html#a03ab8960a78b1f807f1b855b567308d5',1,'autopas::SoA::writeMultiple(size_t particleId, const ValueArrayType &amp;values)'],['../classautopas_1_1SoA.html#a7bac349263884d8d6bf37b6539498b25',1,'autopas::SoA::writeMultiple(size_t particleId, const std::array&lt; double, N &gt; &amp;values)']]],
+  ['writereset_11',['writeReset',['../namespaceautopas_1_1tuningLogEntry.html#a7d67c42856cc73ccba9142ddbbbf0606',1,'autopas::tuningLogEntry']]],
+  ['writetune_12',['writeTune',['../namespaceautopas_1_1tuningLogEntry.html#a67fdeaefc58fb44ff33486d75bd928c9',1,'autopas::tuningLogEntry']]]
 ];

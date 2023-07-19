@@ -6,5 +6,6 @@ var searchData=
   ['randomsearch_2eh_3',['RandomSearch.h',['../RandomSearch_8h.html',1,'']]],
   ['raplmeter_2ecpp_4',['RaplMeter.cpp',['../RaplMeter_8cpp.html',1,'']]],
   ['raplmeter_2eh_5',['RaplMeter.h',['../RaplMeter_8h.html',1,'']]],
-  ['referenceparticlecell_2eh_6',['ReferenceParticleCell.h',['../ReferenceParticleCell_8h.html',1,'']]]
+  ['referenceparticlecell_2eh_6',['ReferenceParticleCell.h',['../ReferenceParticleCell_8h.html',1,'']]],
+  ['rulebasedtuning_2eh_7',['RuleBasedTuning.h',['../RuleBasedTuning_8h.html',1,'']]]
 ];

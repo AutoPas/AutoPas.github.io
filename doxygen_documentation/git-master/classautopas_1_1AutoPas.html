@@ -460,6 +460,12 @@ highCorner);iter.isValid();++iter)    <br /></td></tr>
 <tr class="memitem:a7fda177450646c9ce68a9bb3174cbd10"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a7fda177450646c9ce68a9bb3174cbd10">setOutputSuffix</a> (const std::string &amp;suffix)</td></tr>
 <tr class="memdesc:a7fda177450646c9ce68a9bb3174cbd10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Suffix for all output files produced by this instance of <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a>, e.g.  <br /></td></tr>
 <tr class="separator:a7fda177450646c9ce68a9bb3174cbd10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2a27d7789a683f146beb493d48b162ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a2a27d7789a683f146beb493d48b162ba">setUseTuningLogger</a> (bool useTuningLogger)</td></tr>
+<tr class="memdesc:a2a27d7789a683f146beb493d48b162ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set if the tuning information should be logged to a file.  <br /></td></tr>
+<tr class="separator:a2a27d7789a683f146beb493d48b162ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0a8ef13cae8b9ab887e64c66d3f751d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#ad0a8ef13cae8b9ab887e64c66d3f751d">setRuleFileName</a> (const std::string &amp;ruleFileName)</td></tr>
+<tr class="memdesc:ad0a8ef13cae8b9ab887e64c66d3f751d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set rule file name for the <a class="el" href="classautopas_1_1RuleBasedTuning.html" title="A tuning strategy that uses information collected live from the domain to exclude configurations that...">RuleBasedTuning</a>.  <br /></td></tr>
+<tr class="separator:ad0a8ef13cae8b9ab887e64c66d3f751d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>&gt;<br />
@@ -4096,6 +4102,42 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
+<a id="ad0a8ef13cae8b9ab887e64c66d3f751d" name="ad0a8ef13cae8b9ab887e64c66d3f751d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0a8ef13cae8b9ab887e64c66d3f751d">&#9670;&#160;</a></span>setRuleFileName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::setRuleFileName </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>ruleFileName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set rule file name for the <a class="el" href="classautopas_1_1RuleBasedTuning.html" title="A tuning strategy that uses information collected live from the domain to exclude configurations that...">RuleBasedTuning</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">ruleFileName</td><td>The name of the rule file to use during rule based tuning. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a97025f02d6e74c6668b8dda38a7f1f0e" name="a97025f02d6e74c6668b8dda38a7f1f0e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a97025f02d6e74c6668b8dda38a7f1f0e">&#9670;&#160;</a></span>setSelectorStrategy()</h2>
 
@@ -4234,6 +4276,42 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <p>For possible tuning strategy choices see <a class="el" href="classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4" title="Possible choices for the auto tuner.">options::TuningStrategyOption::Value</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tuningStrategyOption</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2a27d7789a683f146beb493d48b162ba" name="a2a27d7789a683f146beb493d48b162ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2a27d7789a683f146beb493d48b162ba">&#9670;&#160;</a></span>setUseTuningLogger()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::setUseTuningLogger </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>useTuningLogger</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set if the tuning information should be logged to a file. </p>
+<p>It can then be replayed to test other tuning strategies. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">useTuningLogger</td><td></td></tr>
   </table>
   </dd>
 </dl>
