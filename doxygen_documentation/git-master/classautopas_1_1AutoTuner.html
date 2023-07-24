@@ -141,12 +141,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a14c0df601ace7cc97b52d47cf0cb76e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a14c0df601ace7cc97b52d47cf0cb76e6">forceRetune</a> ()</td></tr>
 <tr class="memdesc:a14c0df601ace7cc97b52d47cf0cb76e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Force the internal tuner to enter a new tuning phase upon the next call to <a class="el" href="classautopas_1_1AutoTuner.html#a700ec55dacbd4436bb5c4fcab4f4bb94" title="Whole tuning logic for one iteration.">iteratePairwise()</a>.    <br /></td></tr>
 <tr class="separator:a14c0df601ace7cc97b52d47cf0cb76e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ad684d48a6457baaae6aefb18db0832"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a7ad684d48a6457baaae6aefb18db0832">getContainer</a> ()</td></tr>
-<tr class="memdesc:a7ad684d48a6457baaae6aefb18db0832"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the current container.  <br /></td></tr>
-<tr class="separator:a7ad684d48a6457baaae6aefb18db0832"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e54c4e0e32be9fbfc9dae8751187948"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; const <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a1e54c4e0e32be9fbfc9dae8751187948">getContainer</a> () const</td></tr>
-<tr class="memdesc:a1e54c4e0e32be9fbfc9dae8751187948"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the current container.  <br /></td></tr>
-<tr class="separator:a1e54c4e0e32be9fbfc9dae8751187948"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55daab1532e06c13fd1729bca0a9991b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a55daab1532e06c13fd1729bca0a9991b">getContainer</a> ()</td></tr>
+<tr class="memdesc:a55daab1532e06c13fd1729bca0a9991b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the current container.  <br /></td></tr>
+<tr class="separator:a55daab1532e06c13fd1729bca0a9991b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a548543a1f55a3a45fe0f0c8aca326067"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a548543a1f55a3a45fe0f0c8aca326067">getContainer</a> () const</td></tr>
+<tr class="memdesc:a548543a1f55a3a45fe0f0c8aca326067"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the current container.  <br /></td></tr>
+<tr class="separator:a548543a1f55a3a45fe0f0c8aca326067"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e1c8d255ca074528bcb10722ab351f6"><td class="memTemplParams" colspan="2">template&lt;class PairwiseFunctor &gt; </td></tr>
 <tr class="memitem:a2e1c8d255ca074528bcb10722ab351f6"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a2e1c8d255ca074528bcb10722ab351f6">configApplicable</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;conf, PairwiseFunctor &amp;pairwiseFunctor)</td></tr>
 <tr class="memdesc:a2e1c8d255ca074528bcb10722ab351f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a configuration is applicable to the current domain with the given functor.  <br /></td></tr>
@@ -176,7 +176,6 @@ class autopas::AutoTuner&lt; Particle &gt;</div><p>Calls to the <a class="el" hr
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Particle</td><td></td></tr>
-    <tr><td class="paramname"><a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a></td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -386,8 +385,8 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="a7ad684d48a6457baaae6aefb18db0832" name="a7ad684d48a6457baaae6aefb18db0832"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ad684d48a6457baaae6aefb18db0832">&#9670;&#160;</a></span>getContainer() <span class="overload">[1/2]</span></h2>
+<a id="a55daab1532e06c13fd1729bca0a9991b" name="a55daab1532e06c13fd1729bca0a9991b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55daab1532e06c13fd1729bca0a9991b">&#9670;&#160;</a></span>getContainer() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -398,7 +397,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &gt; <a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getContainer </td>
+          <td class="memname"><a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp; <a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getContainer </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -416,8 +415,8 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="a1e54c4e0e32be9fbfc9dae8751187948" name="a1e54c4e0e32be9fbfc9dae8751187948"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e54c4e0e32be9fbfc9dae8751187948">&#9670;&#160;</a></span>getContainer() <span class="overload">[2/2]</span></h2>
+<a id="a548543a1f55a3a45fe0f0c8aca326067" name="a548543a1f55a3a45fe0f0c8aca326067"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a548543a1f55a3a45fe0f0c8aca326067">&#9670;&#160;</a></span>getContainer() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -428,7 +427,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::shared_ptr&lt; const <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &gt; <a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getContainer </td>
+          <td class="memname">const <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp; <a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getContainer </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
