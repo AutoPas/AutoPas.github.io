@@ -8,6 +8,5 @@ var searchData=
   ['autopas_5fmpi_5fstatus_5',['AutoPas_MPI_Status',['../structautopas_1_1AutoPas__MPI__Status.html',1,'autopas']]],
   ['autopasexception_6',['AutoPasException',['../classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html',1,'autopas::utils::ExceptionHandler']]],
   ['autopaslock_7',['AutoPasLock',['../classautopas_1_1AutoPasLock.html',1,'autopas']]],
-  ['autotuner_8',['AutoTuner',['../classautopas_1_1AutoTuner.html',1,'autopas']]],
-  ['autotuner_3c_20autopas_3a_3aparticlebase_20_3e_9',['AutoTuner&lt; autopas::ParticleBase &gt;',['../classautopas_1_1AutoTuner.html',1,'autopas']]]
+  ['autotuner_8',['AutoTuner',['../classautopas_1_1AutoTuner.html',1,'autopas']]]
 ];

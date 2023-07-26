@@ -292,15 +292,21 @@ This graph shows which files directly or indirectly include this file:</div>
 <area shape="poly" title=" " alt="" coords="591,144,616,187,612,190,587,147"/>
 <area shape="rect" href="MPIParallelizedStrategy_8cpp.html" title=" " alt="" coords="753,181,1013,221"/>
 <area shape="poly" title=" " alt="" coords="654,134,816,179,814,184,652,140"/>
-<area shape="rect" href="AutoPasImpl_8h.html" title="Contains all the missing implementations from AutoPasDecl.h that cannot be implemented there because ..." alt="" coords="535,343,706,368"/>
-<area shape="poly" title=" " alt="" coords="605,226,588,258,584,276,586,294,598,320,613,341,608,344,593,322,581,295,579,276,583,257,600,224"/>
+<area shape="rect" href="AutoPasDecl_8h.html" title=" " alt="" coords="350,269,521,295"/>
+<area shape="poly" title=" " alt="" coords="582,222,463,272,461,267,580,217"/>
+<area shape="rect" href="AutoPasImpl_8h.html" title="Contains all the missing implementations from AutoPasDecl.h that cannot be implemented there because ..." alt="" coords="473,343,643,368"/>
+<area shape="poly" title=" " alt="" coords="609,227,587,270,563,343,558,341,582,268,604,225"/>
 <area shape="rect" href="LogicHandler_8h.html" title=" " alt="" coords="596,269,771,295"/>
 <area shape="poly" title=" " alt="" coords="640,223,676,267,672,271,636,226"/>
-<area shape="rect" href="AutoPasInstantiations_8cpp.html" title="Contains a explicit template instantiation so that they are not generated on a test&#45;by&#45;test basis." alt="" coords="313,416,659,471"/>
-<area shape="poly" title=" " alt="" coords="593,378,528,418,526,414,590,373"/>
-<area shape="rect" href="AutoPas_8h.html" title="Main include file for the AutoPas library." alt="" coords="684,431,827,456"/>
-<area shape="poly" title=" " alt="" coords="652,373,738,428,736,433,649,378"/>
-<area shape="poly" title=" " alt="" coords="666,307,633,344,629,341,662,303"/>
+<area shape="rect" href="AutoTuner_8cpp.html" title=" " alt="" coords="795,269,1027,295"/>
+<area shape="poly" title=" " alt="" coords="677,215,870,267,868,272,675,220"/>
+<area shape="rect" href="AutoPas_8h.html" title="Main include file for the AutoPas library." alt="" coords="364,431,507,456"/>
+<area shape="poly" title=" " alt="" coords="438,308,438,430,433,430,433,308"/>
+<area shape="poly" title=" " alt="" coords="468,299,539,340,537,345,465,304"/>
+<area shape="poly" title=" " alt="" coords="531,378,454,433,450,428,528,374"/>
+<area shape="rect" href="AutoPasInstantiations_8cpp.html" title="Contains a explicit template instantiation so that they are not generated on a test&#45;by&#45;test basis." alt="" coords="531,416,878,471"/>
+<area shape="poly" title=" " alt="" coords="591,373,661,414,659,418,588,377"/>
+<area shape="poly" title=" " alt="" coords="653,304,580,345,577,340,650,299"/>
 </map>
 </div>
 </div>
@@ -336,10 +342,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a6f3329214580d2fd3a89b313b7d80323"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a6f3329214580d2fd3a89b313b7d80323">autopas::utils::AutoPasConfigurationCommunicator::distributeConfigurations</a> (std::set&lt; ContainerOption &gt; &amp;containerOptions, <a class="el" href="classautopas_1_1NumberSet.html">NumberSet</a>&lt; double &gt; &amp;cellSizeFactors, std::set&lt; TraversalOption &gt; &amp;traversalOptions, std::set&lt; <a class="el" href="classautopas_1_1LoadEstimatorOption.html">LoadEstimatorOption</a> &gt; &amp;loadEstimatorOptions, std::set&lt; DataLayoutOption &gt; &amp;dataLayoutOptions, std::set&lt; Newton3Option &gt; &amp;newton3Options, int rank, int commSize)</td></tr>
 <tr class="memdesc:a6f3329214580d2fd3a89b313b7d80323"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distributes the provided configurations globally for equal work loads.  <br /></td></tr>
 <tr class="separator:a6f3329214580d2fd3a89b313b7d80323"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40eb2f87e6d064aa40d3236b3d8b82eb"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </td></tr>
-<tr class="memitem:a40eb2f87e6d064aa40d3236b3d8b82eb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a40eb2f87e6d064aa40d3236b3d8b82eb">autopas::utils::AutoPasConfigurationCommunicator::distributeRanksInBuckets</a> (<a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> comm, <a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> *bucket, const <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp;container, const std::pair&lt; double, double &gt; smoothedHomogeneityAndMaxDensity, double MPITuningMaxDifferenceForBucket, double MPITuningWeightForMaxDensity)</td></tr>
-<tr class="memdesc:a40eb2f87e6d064aa40d3236b3d8b82eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distribute ranks in buckets, which contain only ranks with similar scenarios.  <br /></td></tr>
-<tr class="separator:a40eb2f87e6d064aa40d3236b3d8b82eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ba4781c350999d684411bf9cf98ec18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a4ba4781c350999d684411bf9cf98ec18">autopas::utils::AutoPasConfigurationCommunicator::distributeRanksInBuckets</a> (<a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> comm, <a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> *bucket, const std::pair&lt; double, double &gt; &amp;smoothedHomogeneityAndMaxDensity, double MPITuningMaxDifferenceForBucket, double MPITuningWeightForMaxDensity)</td></tr>
+<tr class="memdesc:a4ba4781c350999d684411bf9cf98ec18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distribute ranks in buckets, which contain only ranks with similar scenarios.  <br /></td></tr>
+<tr class="separator:a4ba4781c350999d684411bf9cf98ec18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11a58c54f714bebe9f8b5c6e2f5d75c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a25f5d4ce2fb56f3335224811047a9222">SerializedConfiguration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a11a58c54f714bebe9f8b5c6e2f5d75c2">autopas::utils::AutoPasConfigurationCommunicator::serializeConfiguration</a> (<a class="el" href="classautopas_1_1Configuration.html">Configuration</a> configuration)</td></tr>
 <tr class="memdesc:a11a58c54f714bebe9f8b5c6e2f5d75c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes a configuration object for communication via MPI.  <br /></td></tr>
 <tr class="separator:a11a58c54f714bebe9f8b5c6e2f5d75c2"><td class="memSeparator" colspan="2">&#160;</td></tr>

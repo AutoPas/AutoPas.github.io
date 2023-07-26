@@ -25,5 +25,6 @@ var searchData=
   ['ljmultisitefunctor_22',['LJMultisiteFunctor',['../classmdLib_1_1LJMultisiteFunctor.html',1,'mdLib']]],
   ['loadestimatoroption_23',['LoadEstimatorOption',['../classautopas_1_1LoadEstimatorOption.html',1,'autopas']]],
   ['logger_24',['Logger',['../classautopas_1_1Logger.html',1,'autopas']]],
-  ['logichandler_25',['LogicHandler',['../classautopas_1_1LogicHandler.html',1,'autopas']]]
+  ['logichandler_25',['LogicHandler',['../classautopas_1_1LogicHandler.html',1,'autopas']]],
+  ['logichandlerinfo_26',['LogicHandlerInfo',['../classautopas_1_1LogicHandlerInfo.html',1,'autopas']]]
 ];

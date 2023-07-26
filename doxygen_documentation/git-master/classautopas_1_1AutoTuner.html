@@ -108,122 +108,87 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classautopas_1_1AutoTuner-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">autopas::AutoTuner&lt; Particle &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">autopas::AutoTuner Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Calls to the <a class="el" href="classautopas_1_1AutoTuner.html#a700ec55dacbd4436bb5c4fcab4f4bb94" title="Whole tuning logic for one iteration.">iteratePairwise()</a> method are passed through this class for two reasons:  
+<p>Calls to the iteratePairwise() method are passed through this class for two reasons:  
  <a href="classautopas_1_1AutoTuner.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="AutoTuner_8h_source.html">AutoTuner.h</a>&gt;</code></p>
-<div class="dynheader">
-Inheritance diagram for autopas::AutoTuner&lt; Particle &gt;:</div>
-<div class="dyncontent">
-<div class="center"><img src="classautopas_1_1AutoTuner__inherit__graph.png" border="0" usemap="#aautopas_1_1AutoTuner_3_01Particle_01_4_inherit__map" alt="Inheritance graph"/></div>
-<map name="aautopas_1_1AutoTuner_3_01Particle_01_4_inherit__map" id="aautopas_1_1AutoTuner_3_01Particle_01_4_inherit__map">
-<area shape="rect" title="Calls to the iteratePairwise() method are passed through this class for two reasons:" alt="" coords="28,5,175,45"/>
-<area shape="rect" href="classautopas_1_1AutoTuner.html" title=" " alt="" coords="5,108,197,148"/>
-<area shape="poly" title=" " alt="" coords="104,59,104,108,99,108,99,59"/>
-</map>
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a4db8c282ee34e1fb853123a66f25e97e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a4db8c282ee34e1fb853123a66f25e97e">AutoTuner</a> (const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax, double cutoff, double verletSkinPerTimestep, unsigned int verletClusterSize, std::unique_ptr&lt; <a class="el" href="classautopas_1_1TuningStrategyInterface.html">TuningStrategyInterface</a> &gt; tuningStrategy, double MPITuningMaxDifferenceForBucket, double MPITuningWeightForMaxDensity, SelectorStrategyOption selectorStrategy, <a class="el" href="classautopas_1_1TuningMetricOption.html">TuningMetricOption</a> tuningMetric, unsigned int tuningInterval, unsigned int maxSamples, unsigned int rebuildFrequency, const std::string &amp;outputSuffix=&quot;&quot;, bool useTuningStrategyLoggerProxy=false)</td></tr>
-<tr class="memdesc:a4db8c282ee34e1fb853123a66f25e97e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classautopas_1_1AutoTuner.html" title="Calls to the iteratePairwise() method are passed through this class for two reasons:">AutoTuner</a> that generates all configurations from the given options.  <br /></td></tr>
-<tr class="separator:a4db8c282ee34e1fb853123a66f25e97e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a248ddc4d7428705cdc09c4158b43d9fc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1AutoTuner.html">AutoTuner</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a248ddc4d7428705cdc09c4158b43d9fc">operator=</a> (<a class="el" href="classautopas_1_1AutoTuner.html">AutoTuner</a> &amp;&amp;other) noexcept</td></tr>
-<tr class="memdesc:a248ddc4d7428705cdc09c4158b43d9fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator.  <br /></td></tr>
-<tr class="separator:a248ddc4d7428705cdc09c4158b43d9fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1afed7a8b2628d21d67ba51cc406c991"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a1afed7a8b2628d21d67ba51cc406c991">resizeBox</a> (const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax)</td></tr>
-<tr class="memdesc:a1afed7a8b2628d21d67ba51cc406c991"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass values to the towards the actual container.  <br /></td></tr>
-<tr class="separator:a1afed7a8b2628d21d67ba51cc406c991"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a14c0df601ace7cc97b52d47cf0cb76e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a14c0df601ace7cc97b52d47cf0cb76e6">forceRetune</a> ()</td></tr>
-<tr class="memdesc:a14c0df601ace7cc97b52d47cf0cb76e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Force the internal tuner to enter a new tuning phase upon the next call to <a class="el" href="classautopas_1_1AutoTuner.html#a700ec55dacbd4436bb5c4fcab4f4bb94" title="Whole tuning logic for one iteration.">iteratePairwise()</a>.    <br /></td></tr>
-<tr class="separator:a14c0df601ace7cc97b52d47cf0cb76e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55daab1532e06c13fd1729bca0a9991b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a55daab1532e06c13fd1729bca0a9991b">getContainer</a> ()</td></tr>
-<tr class="memdesc:a55daab1532e06c13fd1729bca0a9991b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the current container.  <br /></td></tr>
-<tr class="separator:a55daab1532e06c13fd1729bca0a9991b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a548543a1f55a3a45fe0f0c8aca326067"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a548543a1f55a3a45fe0f0c8aca326067">getContainer</a> () const</td></tr>
-<tr class="memdesc:a548543a1f55a3a45fe0f0c8aca326067"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the current container.  <br /></td></tr>
-<tr class="separator:a548543a1f55a3a45fe0f0c8aca326067"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e1c8d255ca074528bcb10722ab351f6"><td class="memTemplParams" colspan="2">template&lt;class PairwiseFunctor &gt; </td></tr>
-<tr class="memitem:a2e1c8d255ca074528bcb10722ab351f6"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a2e1c8d255ca074528bcb10722ab351f6">configApplicable</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;conf, PairwiseFunctor &amp;pairwiseFunctor)</td></tr>
-<tr class="memdesc:a2e1c8d255ca074528bcb10722ab351f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if a configuration is applicable to the current domain with the given functor.  <br /></td></tr>
-<tr class="separator:a2e1c8d255ca074528bcb10722ab351f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a700ec55dacbd4436bb5c4fcab4f4bb94"><td class="memTemplParams" colspan="2">template&lt;class PairwiseFunctor &gt; </td></tr>
-<tr class="memitem:a700ec55dacbd4436bb5c4fcab4f4bb94"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a700ec55dacbd4436bb5c4fcab4f4bb94">iteratePairwise</a> (PairwiseFunctor *f, bool doListRebuild, std::vector&lt; <a class="el" href="classautopas_1_1FullParticleCell.html">FullParticleCell</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &gt; &amp;particleBuffers, std::vector&lt; <a class="el" href="classautopas_1_1FullParticleCell.html">FullParticleCell</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &gt; &amp;haloParticleBuffers)</td></tr>
-<tr class="memdesc:a700ec55dacbd4436bb5c4fcab4f4bb94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whole tuning logic for one iteration.  <br /></td></tr>
-<tr class="separator:a700ec55dacbd4436bb5c4fcab4f4bb94"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a496785fcc3b9753b8d0237f261fb03c9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a496785fcc3b9753b8d0237f261fb03c9">willRebuild</a> ()</td></tr>
-<tr class="memdesc:a496785fcc3b9753b8d0237f261fb03c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the configuration will be changed in the next iteration.  <br /></td></tr>
-<tr class="separator:a496785fcc3b9753b8d0237f261fb03c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8974f05a652361ac9152846bb90d1dcd"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a8974f05a652361ac9152846bb90d1dcd">getCurrentConfig</a> () const</td></tr>
-<tr class="memdesc:a8974f05a652361ac9152846bb90d1dcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the currently selected configuration.  <br /></td></tr>
-<tr class="separator:a8974f05a652361ac9152846bb90d1dcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55359aba8f7b832b807862b9f1c76235"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a55359aba8f7b832b807862b9f1c76235">searchSpaceIsTrivial</a> ()</td></tr>
-<tr class="memdesc:a55359aba8f7b832b807862b9f1c76235"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the container specified by the TuningStrategy.  <br /></td></tr>
-<tr class="separator:a55359aba8f7b832b807862b9f1c76235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45117baf80dd488e5b45c6387971d479"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a45117baf80dd488e5b45c6387971d479">AutoTuner</a> (std::unique_ptr&lt; <a class="el" href="classautopas_1_1TuningStrategyInterface.html">TuningStrategyInterface</a> &gt; tuningStrategy, double MPITuningMaxDifferenceForBucket, double MPITuningWeightForMaxDensity, SelectorStrategyOption selectorStrategy, <a class="el" href="classautopas_1_1TuningMetricOption.html">TuningMetricOption</a> tuningMetric, unsigned int tuningInterval, unsigned int maxSamples, unsigned int rebuildFrequency, const std::string &amp;outputSuffix=&quot;&quot;, bool useTuningStrategyLoggerProxy=false)</td></tr>
+<tr class="memdesc:a45117baf80dd488e5b45c6387971d479"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classautopas_1_1AutoTuner.html" title="Calls to the iteratePairwise() method are passed through this class for two reasons:">AutoTuner</a> that generates all configurations from the given options.  <br /></td></tr>
+<tr class="separator:a45117baf80dd488e5b45c6387971d479"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27de7b1ab9f73c877eb316b79a4e63db"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1AutoTuner.html">AutoTuner</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a27de7b1ab9f73c877eb316b79a4e63db">operator=</a> (<a class="el" href="classautopas_1_1AutoTuner.html">AutoTuner</a> &amp;&amp;other) noexcept</td></tr>
+<tr class="memdesc:a27de7b1ab9f73c877eb316b79a4e63db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator.  <br /></td></tr>
+<tr class="separator:a27de7b1ab9f73c877eb316b79a4e63db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed4b05aace993e15acdf69b4f0946ccc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#aed4b05aace993e15acdf69b4f0946ccc">forceRetune</a> ()</td></tr>
+<tr class="memdesc:aed4b05aace993e15acdf69b4f0946ccc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Force the internal tuner to enter a new tuning phase upon the next call to iteratePairwise().    <br /></td></tr>
+<tr class="separator:aed4b05aace993e15acdf69b4f0946ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad32ae92cfca4094bbf612c821867f874"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1TuningStrategyInterface.html">TuningStrategyInterface</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#ad32ae92cfca4094bbf612c821867f874">getTuningStrategy</a> () const</td></tr>
+<tr class="memdesc:ad32ae92cfca4094bbf612c821867f874"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter to a modifiable reference to the current tuning strategy.  <br /></td></tr>
+<tr class="separator:ad32ae92cfca4094bbf612c821867f874"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae067e7ec72d47901218da725b136f58b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classautopas_1_1TuningMetricOption.html">TuningMetricOption</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#ae067e7ec72d47901218da725b136f58b">getTuningMetric</a> () const</td></tr>
+<tr class="memdesc:ae067e7ec72d47901218da725b136f58b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the primary metric for tuning.  <br /></td></tr>
+<tr class="separator:ae067e7ec72d47901218da725b136f58b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a957ef6006e2e962f6f909b5798850ff3"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; bool, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a957ef6006e2e962f6f909b5798850ff3">prepareIteration</a> ()</td></tr>
+<tr class="memdesc:a957ef6006e2e962f6f909b5798850ff3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines what live infos are needed and resets the strategy upon the start of a new tuning phase.  <br /></td></tr>
+<tr class="separator:a957ef6006e2e962f6f909b5798850ff3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43cf92b0c523b38f782b681f91dde5a1"><td class="memItemLeft" align="right" valign="top"><a id="a43cf92b0c523b38f782b681f91dde5a1" name="a43cf92b0c523b38f782b681f91dde5a1"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>bumpIterationCounters</b> ()</td></tr>
+<tr class="memdesc:a43cf92b0c523b38f782b681f91dde5a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increase internal iteration counters by one. <br /></td></tr>
+<tr class="separator:a43cf92b0c523b38f782b681f91dde5a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a796da93e86a1678f995acd6819e34e9e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a796da93e86a1678f995acd6819e34e9e">willRebuildNeighborLists</a> () const</td></tr>
+<tr class="memdesc:a796da93e86a1678f995acd6819e34e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether rebuildNeighborLists() will be triggered in the next call to iteratePairwise().  <br /></td></tr>
+<tr class="separator:a796da93e86a1678f995acd6819e34e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad8c778b2db88b8c7cfcbd4417b33ed5f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#ad8c778b2db88b8c7cfcbd4417b33ed5f">getCurrentConfig</a> () const</td></tr>
+<tr class="memdesc:ad8c778b2db88b8c7cfcbd4417b33ed5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the currently selected configuration.  <br /></td></tr>
+<tr class="separator:ad8c778b2db88b8c7cfcbd4417b33ed5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38a705e04679b24fbd0de7def40e38d1"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a38a705e04679b24fbd0de7def40e38d1">getNextConfig</a> ()</td></tr>
+<tr class="memdesc:a38a705e04679b24fbd0de7def40e38d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ask the tuner for the next configuration to use.  <br /></td></tr>
+<tr class="separator:a38a705e04679b24fbd0de7def40e38d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8f05fb22f0b00eaea592e4fa89ecf85"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#aa8f05fb22f0b00eaea592e4fa89ecf85">rejectConfig</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;rejectedConfig, bool indefinitely)</td></tr>
+<tr class="memdesc:aa8f05fb22f0b00eaea592e4fa89ecf85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell the tuner that the given config is not applicable.  <br /></td></tr>
+<tr class="separator:aa8f05fb22f0b00eaea592e4fa89ecf85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeb0fd6600946e958e55f385222d2bbe3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#aeb0fd6600946e958e55f385222d2bbe3">searchSpaceIsTrivial</a> ()</td></tr>
+<tr class="memdesc:aeb0fd6600946e958e55f385222d2bbe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize the container specified by the TuningStrategy.  <br /></td></tr>
+<tr class="separator:aeb0fd6600946e958e55f385222d2bbe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8116631f0a85dfaea46e42a0511bace4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a8116631f0a85dfaea46e42a0511bace4">logIteration</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;conf, bool tuningIteration, long tuningTime)</td></tr>
+<tr class="memdesc:a8116631f0a85dfaea46e42a0511bace4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log the collected data and if we are at the end of a tuning phase the result to files.  <br /></td></tr>
+<tr class="separator:a8116631f0a85dfaea46e42a0511bace4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c0c30c81b4a96e2783c84a2d51c384d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a7c0c30c81b4a96e2783c84a2d51c384d">resetEnergy</a> ()</td></tr>
+<tr class="memdesc:a7c0c30c81b4a96e2783c84a2d51c384d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset the rapl meter to prepare for a new measurement.  <br /></td></tr>
+<tr class="separator:a7c0c30c81b4a96e2783c84a2d51c384d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a071591bc54c4a76ae1bd6a08bd6de8b7"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; double, double, double, long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a071591bc54c4a76ae1bd6a08bd6de8b7">sampleEnergy</a> ()</td></tr>
+<tr class="memdesc:a071591bc54c4a76ae1bd6a08bd6de8b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take an energy measurement.  <br /></td></tr>
+<tr class="separator:a071591bc54c4a76ae1bd6a08bd6de8b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa33a8e72dd043a9872ff9f51415fcf0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#aaa33a8e72dd043a9872ff9f51415fcf0">addMeasurement</a> (long sample, bool neighborListRebuilt)</td></tr>
+<tr class="memdesc:aaa33a8e72dd043a9872ff9f51415fcf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the runtime of a given traversal.  <br /></td></tr>
+<tr class="separator:aaa33a8e72dd043a9872ff9f51415fcf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a411e32258a3a23b30787e5a636fc523a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a411e32258a3a23b30787e5a636fc523a">addHomogeneityAndMaxDensity</a> (double homogeneity, double maxDensity, long time)</td></tr>
+<tr class="memdesc:a411e32258a3a23b30787e5a636fc523a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds measurements of homogeneity and maximal density to the vector of measurements.  <br /></td></tr>
+<tr class="separator:a411e32258a3a23b30787e5a636fc523a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>&gt;<br />
-class autopas::AutoTuner&lt; Particle &gt;</div><p>Calls to the <a class="el" href="classautopas_1_1AutoTuner.html#a700ec55dacbd4436bb5c4fcab4f4bb94" title="Whole tuning logic for one iteration.">iteratePairwise()</a> method are passed through this class for two reasons: </p>
+<div class="textblock"><p>Calls to the iteratePairwise() method are passed through this class for two reasons: </p>
 <ol type="1">
 <li>Measuring time of the iteration.</li>
 <li>Selecting an appropriate configuration for the pairwise iteration.</li>
 </ol>
-<p>The tuner can be in one of two states. If it currently should look for a new optimum, it is in the so-called tuning phase. During a tuning phase, for each <a class="el" href="classautopas_1_1Configuration.html" title="Class containing multiple options that form an algorithm configuration for the pairwise iteration.">Configuration</a>, multiple measurements can be taken, which are called samples. To reduce noise, the samples for one configuration are then condensed to one value for the current tuning phase, called evidence. The evidences are handed on to a tuningStrategy, which selects a) what <a class="el" href="classautopas_1_1Configuration.html" title="Class containing multiple options that form an algorithm configuration for the pairwise iteration.">Configuration</a> to test next and b) which configuration is the best in this tuning phase. If it should not look for a new optimum it is not in a tuning phase.</p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Particle</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+<p>The tuner can be in one of two states. If it currently should look for a new optimum, it is in the so-called tuning phase. During a tuning phase, for each <a class="el" href="classautopas_1_1Configuration.html" title="Class containing multiple options that form an algorithm configuration for the pairwise iteration.">Configuration</a>, multiple measurements can be taken, which are called samples. To reduce noise, the samples for one configuration are then condensed to one value for the current tuning phase, called evidence. The evidences are handed on to a tuningStrategy, which selects a) what <a class="el" href="classautopas_1_1Configuration.html" title="Class containing multiple options that form an algorithm configuration for the pairwise iteration.">Configuration</a> to test next and b) which configuration is the best in this tuning phase. If it should not look for a new optimum it is not in a tuning phase. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a4db8c282ee34e1fb853123a66f25e97e" name="a4db8c282ee34e1fb853123a66f25e97e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4db8c282ee34e1fb853123a66f25e97e">&#9670;&#160;</a></span>AutoTuner()</h2>
+<a id="a45117baf80dd488e5b45c6387971d479" name="a45117baf80dd488e5b45c6387971d479"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45117baf80dd488e5b45c6387971d479">&#9670;&#160;</a></span>AutoTuner()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::AutoTuner </td>
+          <td class="memname">autopas::AutoTuner::AutoTuner </td>
           <td>(</td>
-          <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>boxMin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>boxMax</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>cutoff</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>verletSkinPerTimestep</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>verletClusterSize</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">std::unique_ptr&lt; <a class="el" href="classautopas_1_1TuningStrategyInterface.html">TuningStrategyInterface</a> &gt;&#160;</td>
           <td class="paramname"><em>tuningStrategy</em>, </td>
         </tr>
@@ -287,27 +252,17 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Constructor for the <a class="el" href="classautopas_1_1AutoTuner.html" title="Calls to the iteratePairwise() method are passed through this class for two reasons:">AutoTuner</a> that generates all configurations from the given options. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">boxMin</td><td>Lower corner of the container. </td></tr>
-    <tr><td class="paramname">boxMax</td><td>Upper corner of the container. </td></tr>
-    <tr><td class="paramname">cutoff</td><td>Cutoff radius to be used in this container. </td></tr>
-    <tr><td class="paramname">verletSkinPerTimestep</td><td>Length added to the cutoff for the Verlet lists' skin. </td></tr>
-    <tr><td class="paramname">verletClusterSize</td><td>Number of particles in a cluster to use in verlet list. </td></tr>
     <tr><td class="paramname">tuningStrategy</td><td>Object implementing the modelling and exploration of a search space. </td></tr>
     <tr><td class="paramname">MPITuningMaxDifferenceForBucket</td><td>For MPI-tuning: Maximum of the relative difference in the comparison metric for two ranks which exchange their tuning information. </td></tr>
     <tr><td class="paramname">MPITuningWeightForMaxDensity</td><td>For MPI-tuning: Weight for maxDensity in the calculation for bucket distribution. </td></tr>
     <tr><td class="paramname">selectorStrategy</td><td>Strategy for the configuration selection. </td></tr>
-    <tr><td class="paramname">tuningInterval</td><td>Number of time steps after which the auto-tuner shall reevaluate all selections. </td></tr>
     <tr><td class="paramname">tuningMetric</td><td>Metric used to rate configurations (time or energy). </td></tr>
+    <tr><td class="paramname">tuningInterval</td><td>Number of time steps after which the auto-tuner shall reevaluate all selections. </td></tr>
     <tr><td class="paramname">maxSamples</td><td>Number of samples that shall be collected for each combination. </td></tr>
     <tr><td class="paramname">rebuildFrequency</td><td>The rebuild frequency this <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> instance uses. </td></tr>
     <tr><td class="paramname">outputSuffix</td><td>Suffix for all output files produced by this class. </td></tr>
@@ -319,27 +274,29 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2e1c8d255ca074528bcb10722ab351f6" name="a2e1c8d255ca074528bcb10722ab351f6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e1c8d255ca074528bcb10722ab351f6">&#9670;&#160;</a></span>configApplicable()</h2>
+<a id="a411e32258a3a23b30787e5a636fc523a" name="a411e32258a3a23b30787e5a636fc523a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a411e32258a3a23b30787e5a636fc523a">&#9670;&#160;</a></span>addHomogeneityAndMaxDensity()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
-<div class="memtemplate">
-template&lt;class PairwiseFunctor &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::configApplicable </td>
+          <td class="memname">void autopas::AutoTuner::addHomogeneityAndMaxDensity </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;&#160;</td>
-          <td class="paramname"><em>conf</em>, </td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>homogeneity</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">PairwiseFunctor &amp;&#160;</td>
-          <td class="paramname"><em>pairwiseFunctor</em>&#160;</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>maxDensity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>time</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -349,85 +306,126 @@ template&lt;class PairwiseFunctor &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Check if a configuration is applicable to the current domain with the given functor. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">PairwiseFunctor</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Adds measurements of homogeneity and maximal density to the vector of measurements. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">conf</td><td></td></tr>
-    <tr><td class="paramname">pairwiseFunctor</td><td></td></tr>
+    <tr><td class="paramname">homogeneity</td><td></td></tr>
+    <tr><td class="paramname">maxDensity</td><td></td></tr>
+    <tr><td class="paramname">time</td><td>Time it took to obtain these measurements. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
-<a id="a14c0df601ace7cc97b52d47cf0cb76e6" name="a14c0df601ace7cc97b52d47cf0cb76e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a14c0df601ace7cc97b52d47cf0cb76e6">&#9670;&#160;</a></span>forceRetune()</h2>
+<a id="aaa33a8e72dd043a9872ff9f51415fcf0" name="aaa33a8e72dd043a9872ff9f51415fcf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa33a8e72dd043a9872ff9f51415fcf0">&#9670;&#160;</a></span>addMeasurement()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::forceRetune</td>
+          <td class="memname">void autopas::AutoTuner::addMeasurement </td>
+          <td>(</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>sample</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>neighborListRebuilt</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Force the internal tuner to enter a new tuning phase upon the next call to <a class="el" href="classautopas_1_1AutoTuner.html#a700ec55dacbd4436bb5c4fcab4f4bb94" title="Whole tuning logic for one iteration.">iteratePairwise()</a>.   </p>
+<p>Save the runtime of a given traversal. </p>
+<p>Samples are collected and reduced to one single value according to _selectorStrategy. Only then the value is passed on to the tuning strategy. This function expects that samples of the same configuration are taken consecutively. The sample argument is a long because std::chrono::duration::count returns a long.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sample</td><td></td></tr>
+    <tr><td class="paramname">neighborListRebuilt</td><td>If the neighbor list as been rebuilt during the given time. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="a55daab1532e06c13fd1729bca0a9991b" name="a55daab1532e06c13fd1729bca0a9991b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55daab1532e06c13fd1729bca0a9991b">&#9670;&#160;</a></span>getContainer() <span class="overload">[1/2]</span></h2>
+<a id="aed4b05aace993e15acdf69b4f0946ccc" name="aed4b05aace993e15acdf69b4f0946ccc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed4b05aace993e15acdf69b4f0946ccc">&#9670;&#160;</a></span>forceRetune()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp; <a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getContainer </td>
+          <td class="memname">void autopas::AutoTuner::forceRetune </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Getter for the current container. </p>
-<dl class="section return"><dt>Returns</dt><dd>Smart pointer to the current container. </dd></dl>
+<p>Force the internal tuner to enter a new tuning phase upon the next call to iteratePairwise().   </p>
 
 </div>
 </div>
-<a id="a548543a1f55a3a45fe0f0c8aca326067" name="a548543a1f55a3a45fe0f0c8aca326067"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a548543a1f55a3a45fe0f0c8aca326067">&#9670;&#160;</a></span>getContainer() <span class="overload">[2/2]</span></h2>
+<a id="ad8c778b2db88b8c7cfcbd4417b33ed5f" name="ad8c778b2db88b8c7cfcbd4417b33ed5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8c778b2db88b8c7cfcbd4417b33ed5f">&#9670;&#160;</a></span>getCurrentConfig()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp; autopas::AutoTuner::getCurrentConfig </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the currently selected configuration. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a38a705e04679b24fbd0de7def40e38d1" name="a38a705e04679b24fbd0de7def40e38d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38a705e04679b24fbd0de7def40e38d1">&#9670;&#160;</a></span>getNextConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::tuple&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a>, bool &gt; autopas::AutoTuner::getNextConfig </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Ask the tuner for the next configuration to use. </p>
+<p>This either returns the already selected config or triggers a step of the tuning process. </p><dl class="section return"><dt>Returns</dt><dd>Tuple&lt;Next configuration to use, still tuning&gt;. </dd></dl>
+
+</div>
+</div>
+<a id="ae067e7ec72d47901218da725b136f58b" name="ae067e7ec72d47901218da725b136f58b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae067e7ec72d47901218da725b136f58b">&#9670;&#160;</a></span>getTuningMetric()</h2>
+
+<div class="memitem">
+<div class="memproto">
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp; <a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getContainer </td>
+          <td class="memname">const <a class="el" href="classautopas_1_1TuningMetricOption.html">TuningMetricOption</a> &amp; autopas::AutoTuner::getTuningMetric </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -440,63 +438,62 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </table>
 </div><div class="memdoc">
 
-<p>Getter for the current container. </p>
-<dl class="section return"><dt>Returns</dt><dd>Smart pointer to the current container. </dd></dl>
-
-</div>
-</div>
-<a id="a8974f05a652361ac9152846bb90d1dcd" name="a8974f05a652361ac9152846bb90d1dcd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8974f05a652361ac9152846bb90d1dcd">&#9670;&#160;</a></span>getCurrentConfig()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp; <a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getCurrentConfig</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get the currently selected configuration. </p>
+<p>Getter for the primary metric for tuning. </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
-<a id="a700ec55dacbd4436bb5c4fcab4f4bb94" name="a700ec55dacbd4436bb5c4fcab4f4bb94"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a700ec55dacbd4436bb5c4fcab4f4bb94">&#9670;&#160;</a></span>iteratePairwise()</h2>
+<a id="ad32ae92cfca4094bbf612c821867f874" name="ad32ae92cfca4094bbf612c821867f874"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad32ae92cfca4094bbf612c821867f874">&#9670;&#160;</a></span>getTuningStrategy()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
-<div class="memtemplate">
-template&lt;class PairwiseFunctor &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::iteratePairwise </td>
+          <td class="memname"><a class="el" href="classautopas_1_1TuningStrategyInterface.html">TuningStrategyInterface</a> &amp; autopas::AutoTuner::getTuningStrategy </td>
           <td>(</td>
-          <td class="paramtype">PairwiseFunctor *&#160;</td>
-          <td class="paramname"><em>f</em>, </td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter to a modifiable reference to the current tuning strategy. </p>
+<dl class="section return"><dt>Returns</dt><dd>Non-const reference to the underlying tuning strategy. </dd></dl>
+
+</div>
+</div>
+<a id="a8116631f0a85dfaea46e42a0511bace4" name="a8116631f0a85dfaea46e42a0511bace4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8116631f0a85dfaea46e42a0511bace4">&#9670;&#160;</a></span>logIteration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void autopas::AutoTuner::logIteration </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;&#160;</td>
+          <td class="paramname"><em>conf</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>doListRebuild</em>, </td>
+          <td class="paramname"><em>tuningIteration</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="classautopas_1_1FullParticleCell.html">FullParticleCell</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &gt; &amp;&#160;</td>
-          <td class="paramname"><em>particleBuffers</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="classautopas_1_1FullParticleCell.html">FullParticleCell</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &gt; &amp;&#160;</td>
-          <td class="paramname"><em>haloParticleBuffers</em>&#160;</td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>tuningTime</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -506,56 +503,38 @@ template&lt;class PairwiseFunctor &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Whole tuning logic for one iteration. </p>
-<p>This function covers:</p><ul>
-<li>Instantiation of the traversal to be used.</li>
-<li>Actual pairwise iteration for application of the functor.</li>
-<li>Management of tuning phases and calls to tune() if necessary.</li>
-<li>Measurement of timings/energies and calls to addMeasurement() if necessary.</li>
-<li>Calls to _iterationLogger if necessary.</li>
-</ul>
-<dl class="section note"><dt>Note</dt><dd>Buffers need to have at least one (empty) cell. They must not be empty.</dd></dl>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">PairwiseFunctor</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Log the collected data and if we are at the end of a tuning phase the result to files. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">f</td><td><a class="el" href="classautopas_1_1Functor.html" title="Functor class.">Functor</a> that describes the pair-potential. </td></tr>
-    <tr><td class="paramname">doListRebuild</td><td>Indicates whether or not the verlet lists should be rebuild. </td></tr>
-    <tr><td class="paramname">particleBuffers</td><td>A buffer of additional particles to consider. </td></tr>
-    <tr><td class="paramname">haloParticleBuffers</td><td>A buffer of additional halo particles to consider. </td></tr>
+    <tr><td class="paramname">conf</td><td></td></tr>
+    <tr><td class="paramname">tuningIteration</td><td></td></tr>
+    <tr><td class="paramname">tuningTime</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>true if this was a tuning iteration. </dd></dl>
 
 </div>
 </div>
-<a id="a248ddc4d7428705cdc09c4158b43d9fc" name="a248ddc4d7428705cdc09c4158b43d9fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a248ddc4d7428705cdc09c4158b43d9fc">&#9670;&#160;</a></span>operator=()</h2>
+<a id="a27de7b1ab9f73c877eb316b79a4e63db" name="a27de7b1ab9f73c877eb316b79a4e63db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27de7b1ab9f73c877eb316b79a4e63db">&#9670;&#160;</a></span>operator=()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1AutoTuner.html">AutoTuner</a> &amp; <a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::operator= </td>
+          <td class="memname"><a class="el" href="classautopas_1_1AutoTuner.html">AutoTuner</a> &amp; autopas::AutoTuner::operator= </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classautopas_1_1AutoTuner.html">AutoTuner</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp;&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1AutoTuner.html">AutoTuner</a> &amp;&amp;&#160;</td>
           <td class="paramname"><em>other</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -571,28 +550,55 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="a1afed7a8b2628d21d67ba51cc406c991" name="a1afed7a8b2628d21d67ba51cc406c991"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1afed7a8b2628d21d67ba51cc406c991">&#9670;&#160;</a></span>resizeBox()</h2>
+<a id="a957ef6006e2e962f6f909b5798850ff3" name="a957ef6006e2e962f6f909b5798850ff3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a957ef6006e2e962f6f909b5798850ff3">&#9670;&#160;</a></span>prepareIteration()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::resizeBox </td>
+          <td class="memname">std::tuple&lt; bool, bool &gt; autopas::AutoTuner::prepareIteration </td>
           <td>(</td>
-          <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>boxMin</em>, </td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Determines what live infos are needed and resets the strategy upon the start of a new tuning phase. </p>
+<dl class="section note"><dt>Note</dt><dd>The live info is not gathered here because then we would need</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Tuple indicating what is needed before the next call to tune: tuple&lt;liveInfo, homogeneity&gt; </dd></dl>
+
+</div>
+</div>
+<a id="aa8f05fb22f0b00eaea592e4fa89ecf85" name="aa8f05fb22f0b00eaea592e4fa89ecf85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8f05fb22f0b00eaea592e4fa89ecf85">&#9670;&#160;</a></span>rejectConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::tuple&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a>, bool &gt; autopas::AutoTuner::rejectConfig </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;&#160;</td>
+          <td class="paramname"><em>rejectedConfig</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>boxMax</em>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>indefinitely</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -607,27 +613,72 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </table>
 </div><div class="memdoc">
 
-<p>Pass values to the towards the actual container. </p>
+<p>Tell the tuner that the given config is not applicable. </p>
+<p>Since this operation might change the suggestion what configuration to try next, this next suggestion is returned.</p>
+<dl class="section note"><dt>Note</dt><dd>The applicability checking logic was moved out of the tuner because it needed the container, thus raising the compile complexity.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">boxMin</td><td></td></tr>
-    <tr><td class="paramname">boxMax</td><td></td></tr>
+    <tr><td class="paramname">rejectedConfig</td><td></td></tr>
+    <tr><td class="paramname">indefinitely</td><td>Whether the given config should be completely removed from the search space (aka rejected indefinitely). </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>Tuple&lt;Next configuration to use, still tuning&gt;. </dd></dl>
 
 </div>
 </div>
-<a id="a55359aba8f7b832b807862b9f1c76235" name="a55359aba8f7b832b807862b9f1c76235"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55359aba8f7b832b807862b9f1c76235">&#9670;&#160;</a></span>searchSpaceIsTrivial()</h2>
+<a id="a7c0c30c81b4a96e2783c84a2d51c384d" name="a7c0c30c81b4a96e2783c84a2d51c384d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c0c30c81b4a96e2783c84a2d51c384d">&#9670;&#160;</a></span>resetEnergy()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::searchSpaceIsTrivial</td>
+          <td class="memname">bool autopas::AutoTuner::resetEnergy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reset the rapl meter to prepare for a new measurement. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if energy measurements are possible on this system. </dd></dl>
+<p>very unlikely to happen, as check was performed at initialisation of autotuner but may occur if permissions are changed during runtime.</p>
+
+</div>
+</div>
+<a id="a071591bc54c4a76ae1bd6a08bd6de8b7" name="a071591bc54c4a76ae1bd6a08bd6de8b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a071591bc54c4a76ae1bd6a08bd6de8b7">&#9670;&#160;</a></span>sampleEnergy()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::tuple&lt; double, double, double, long &gt; autopas::AutoTuner::sampleEnergy </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Take an energy measurement. </p>
+<dl class="section return"><dt>Returns</dt><dd>Tuple&lt;PsysEnergy, PkgEnergy, RamEnergy, TotalEnergy&gt; </dd></dl>
+
+</div>
+</div>
+<a id="aeb0fd6600946e958e55f385222d2bbe3" name="aeb0fd6600946e958e55f385222d2bbe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeb0fd6600946e958e55f385222d2bbe3">&#9670;&#160;</a></span>searchSpaceIsTrivial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool autopas::AutoTuner::searchSpaceIsTrivial </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -638,40 +689,30 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="a496785fcc3b9753b8d0237f261fb03c9" name="a496785fcc3b9753b8d0237f261fb03c9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a496785fcc3b9753b8d0237f261fb03c9">&#9670;&#160;</a></span>willRebuild()</h2>
+<a id="a796da93e86a1678f995acd6819e34e9e" name="a796da93e86a1678f995acd6819e34e9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a796da93e86a1678f995acd6819e34e9e">&#9670;&#160;</a></span>willRebuildNeighborLists()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::willRebuild </td>
+          <td class="memname">bool autopas::AutoTuner::willRebuildNeighborLists </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p>Returns whether the configuration will be changed in the next iteration. </p>
-<p>This does does not necessarily mean that the container will change.</p>
-<dl class="section return"><dt>Returns</dt><dd>True if the next <a class="el" href="classautopas_1_1AutoTuner.html#a700ec55dacbd4436bb5c4fcab4f4bb94" title="Whole tuning logic for one iteration.">iteratePairwise()</a> call uses a different configuration. False otherwise. </dd></dl>
+<p>Returns whether rebuildNeighborLists() will be triggered in the next call to iteratePairwise(). </p>
+<p>This might also indicate a container change.</p>
+<dl class="section return"><dt>Returns</dt><dd>True if the the current iteration counters indicate a rebuild in the next iteration. </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>autopas/<a class="el" href="AutoPasDecl_8h_source.html">AutoPasDecl.h</a></li>
 <li>autopas/selectors/<a class="el" href="AutoTuner_8h_source.html">AutoTuner.h</a></li>
+<li>autopas/selectors/<a class="el" href="AutoTuner_8cpp.html">AutoTuner.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

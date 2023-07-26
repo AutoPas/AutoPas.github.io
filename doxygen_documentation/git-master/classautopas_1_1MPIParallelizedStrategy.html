@@ -157,10 +157,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a18ed8ece913d4c3de29cc02fcce1abf9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1MPIParallelizedStrategy.html#a18ed8ece913d4c3de29cc02fcce1abf9">reset</a> (size_t iteration) override</td></tr>
 <tr class="memdesc:a18ed8ece913d4c3de29cc02fcce1abf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset all internal parameters to the beginning of a new tuning cycle.  <br /></td></tr>
 <tr class="separator:a18ed8ece913d4c3de29cc02fcce1abf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada093ca467ef89140a6f9fbfa7f3f4ba"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </td></tr>
-<tr class="memitem:ada093ca467ef89140a6f9fbfa7f3f4ba"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1MPIParallelizedStrategy.html#ada093ca467ef89140a6f9fbfa7f3f4ba">reset</a> (size_t iteration, <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp;container, const std::pair&lt; double, double &gt; smoothedHomogeneityAndMaxDensity, double MPITuningMaxDifferenceForBucket, double MPITuningWeightForMaxDensity)</td></tr>
-<tr class="memdesc:ada093ca467ef89140a6f9fbfa7f3f4ba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset all internal parameters to the beginning of a new tuning cycle.  <br /></td></tr>
-<tr class="separator:ada093ca467ef89140a6f9fbfa7f3f4ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22939db71788fae7b2187abc0b57ba08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1MPIParallelizedStrategy.html#a22939db71788fae7b2187abc0b57ba08">reset</a> (size_t iteration, const std::pair&lt; double, double &gt; smoothedHomogeneityAndMaxDensity, double MPITuningMaxDifferenceForBucket, double MPITuningWeightForMaxDensity)</td></tr>
+<tr class="memdesc:a22939db71788fae7b2187abc0b57ba08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset all internal parameters to the beginning of a new tuning cycle.  <br /></td></tr>
+<tr class="separator:a22939db71788fae7b2187abc0b57ba08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adceb16e487a872f21395fadd687bbad4"><td class="memItemLeft" align="right" valign="top">std::set&lt; ContainerOption &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1MPIParallelizedStrategy.html#adceb16e487a872f21395fadd687bbad4">getAllowedContainerOptions</a> () const override</td></tr>
 <tr class="memdesc:adceb16e487a872f21395fadd687bbad4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all container options the strategy might choose.  <br /></td></tr>
 <tr class="separator:adceb16e487a872f21395fadd687bbad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -510,13 +509,11 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ada093ca467ef89140a6f9fbfa7f3f4ba" name="ada093ca467ef89140a6f9fbfa7f3f4ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada093ca467ef89140a6f9fbfa7f3f4ba">&#9670;&#160;</a></span>reset() <span class="overload">[2/2]</span></h2>
+<a id="a22939db71788fae7b2187abc0b57ba08" name="a22939db71788fae7b2187abc0b57ba08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22939db71788fae7b2187abc0b57ba08">&#9670;&#160;</a></span>reset() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -526,12 +523,6 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>iteration</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>container</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -565,16 +556,9 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </div><div class="memdoc">
 
 <p>Reset all internal parameters to the beginning of a new tuning cycle. </p>
-<p>Also distribute ranks in buckets for MPI tuning </p><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Particle</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Also distribute ranks in buckets for MPI tuning </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">iteration</td><td>Gives the current iteration to the tuning strategy. </td></tr>
-    <tr><td class="paramname">container</td><td>container of current simulation </td></tr>
     <tr><td class="paramname">smoothedHomogeneityAndMaxDensity</td><td>[homogeneity, maxDensity] smoothed over last 10 iterations. </td></tr>
     <tr><td class="paramname">MPITuningMaxDifferenceForBucket</td><td>For MPI-tuning: Maximum of the relative difference in the comparison metric for two ranks which exchange their tuning information. </td></tr>
     <tr><td class="paramname">MPITuningWeightForMaxDensity</td><td>For MPI-tuning: Weight for maxDensity in the calculation for bucket distribution. </td></tr>

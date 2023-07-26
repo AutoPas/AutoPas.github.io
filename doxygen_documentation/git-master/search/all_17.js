@@ -5,7 +5,7 @@ var searchData=
   ['weightfunction_2',['WeightFunction',['../classautopas_1_1GaussianCluster.html#aa27fe3fde2aa4a672513bc2546bc8977',1,'autopas::GaussianCluster']]],
   ['weights_3',['weights',['../classautopas_1_1GaussianHyperparameters.html#aadd1d0fb1ab3a1deec50c7866ab5fcff',1,'autopas::GaussianHyperparameters']]],
   ['what_4',['what',['../classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html#af7a5b11a31149368c39c86bd221fb10d',1,'autopas::utils::ExceptionHandler::AutoPasException']]],
-  ['willrebuild_5',['willRebuild',['../classautopas_1_1AutoTuner.html#a496785fcc3b9753b8d0237f261fb03c9',1,'autopas::AutoTuner']]],
+  ['willrebuildneighborlists_5',['willRebuildNeighborLists',['../classautopas_1_1AutoTuner.html#a796da93e86a1678f995acd6819e34e9e',1,'autopas::AutoTuner']]],
   ['withstaticbool_6',['withStaticBool',['../namespaceautopas_1_1utils.html#ad25131c9e42fb62233cf624a3c09d248',1,'autopas::utils']]],
   ['withstaticcelltype_7',['withStaticCellType',['../namespaceautopas_1_1utils.html#a74ac3a54f767df5861d59cb241c635e3',1,'autopas::utils']]],
   ['withstaticcontainertype_8',['withStaticContainerType',['../namespaceautopas.html#a8816a6b8973bb0edcfb9758c97ca5ebd',1,'autopas']]],

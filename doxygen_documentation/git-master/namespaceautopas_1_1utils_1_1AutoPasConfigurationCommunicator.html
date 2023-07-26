@@ -141,14 +141,13 @@ Functions</h2></td></tr>
 <tr class="memitem:a75462779d95074a5b62c797a45bd8fc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1Configuration.html">Configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a75462779d95074a5b62c797a45bd8fc1">deserializeConfiguration</a> (<a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a25f5d4ce2fb56f3335224811047a9222">SerializedConfiguration</a> config)</td></tr>
 <tr class="memdesc:a75462779d95074a5b62c797a45bd8fc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recreates a <a class="el" href="classautopas_1_1Configuration.html" title="Class containing multiple options that form an algorithm configuration for the pairwise iteration.">Configuration</a> object from the object obtained by _serializeConfiguration.  <br /></td></tr>
 <tr class="separator:a75462779d95074a5b62c797a45bd8fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ba4781c350999d684411bf9cf98ec18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a4ba4781c350999d684411bf9cf98ec18">distributeRanksInBuckets</a> (<a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> comm, <a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> *bucket, const std::pair&lt; double, double &gt; &amp;smoothedHomogeneityAndMaxDensity, double MPITuningMaxDifferenceForBucket, double MPITuningWeightForMaxDensity)</td></tr>
+<tr class="memdesc:a4ba4781c350999d684411bf9cf98ec18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distribute ranks in buckets, which contain only ranks with similar scenarios.  <br /></td></tr>
+<tr class="separator:a4ba4781c350999d684411bf9cf98ec18"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27e3d65881109ff863efc845fbd53eed"><td class="memTemplParams" colspan="2">template&lt;typename TOption &gt; </td></tr>
 <tr class="memitem:a27e3d65881109ff863efc845fbd53eed"><td class="memTemplItemLeft" align="right" valign="top">std::byte&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a27e3d65881109ff863efc845fbd53eed">castToByte</a> (TOption option)</td></tr>
 <tr class="memdesc:a27e3d65881109ff863efc845fbd53eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simply a shorter way of static_casting from Option to std::byte.  <br /></td></tr>
 <tr class="separator:a27e3d65881109ff863efc845fbd53eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a40eb2f87e6d064aa40d3236b3d8b82eb"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </td></tr>
-<tr class="memitem:a40eb2f87e6d064aa40d3236b3d8b82eb"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a40eb2f87e6d064aa40d3236b3d8b82eb">distributeRanksInBuckets</a> (<a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> comm, <a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> *bucket, const <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp;container, const std::pair&lt; double, double &gt; smoothedHomogeneityAndMaxDensity, double MPITuningMaxDifferenceForBucket, double MPITuningWeightForMaxDensity)</td></tr>
-<tr class="memdesc:a40eb2f87e6d064aa40d3236b3d8b82eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distribute ranks in buckets, which contain only ranks with similar scenarios.  <br /></td></tr>
-<tr class="separator:a40eb2f87e6d064aa40d3236b3d8b82eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Provides several functions for handling configurations among mpi ranks. </p>
@@ -321,13 +320,11 @@ template&lt;typename TOption &gt; </div>
 
 </div>
 </div>
-<a id="a40eb2f87e6d064aa40d3236b3d8b82eb" name="a40eb2f87e6d064aa40d3236b3d8b82eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a40eb2f87e6d064aa40d3236b3d8b82eb">&#9670;&#160;</a></span>distributeRanksInBuckets()</h2>
+<a id="a4ba4781c350999d684411bf9cf98ec18" name="a4ba4781c350999d684411bf9cf98ec18"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ba4781c350999d684411bf9cf98ec18">&#9670;&#160;</a></span>distributeRanksInBuckets()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">void autopas::utils::AutoPasConfigurationCommunicator::distributeRanksInBuckets </td>
@@ -344,13 +341,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>container</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const std::pair&lt; double, double &gt;&#160;</td>
+          <td class="paramtype">const std::pair&lt; double, double &gt; &amp;&#160;</td>
           <td class="paramname"><em>smoothedHomogeneityAndMaxDensity</em>, </td>
         </tr>
         <tr>
@@ -374,17 +365,10 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </div><div class="memdoc">
 
 <p>Distribute ranks in buckets, which contain only ranks with similar scenarios. </p>
-<p>Each bucket then has its own search space. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">Particle</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Each bucket then has its own search space. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">comm</td><td>MPI communicator </td></tr>
     <tr><td class="paramname">bucket</td><td>new MPI communicator for its bucket </td></tr>
-    <tr><td class="paramname">container</td><td>container of current simulation </td></tr>
     <tr><td class="paramname">smoothedHomogeneityAndMaxDensity</td><td>[homogeneity, maxDensity] smoothed over last 10 iterations. </td></tr>
     <tr><td class="paramname">MPITuningMaxDifferenceForBucket</td><td>For MPI-tuning: Maximum of the relative difference in the comparison metric for two ranks which exchange their tuning information. </td></tr>
     <tr><td class="paramname">MPITuningWeightForMaxDensity</td><td>For MPI-tuning: Weight for maxDensity in the calculation for bucket distribution. </td></tr>

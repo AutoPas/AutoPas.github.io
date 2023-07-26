@@ -23,5 +23,6 @@ var searchData=
   ['loadestimatoroption_2eh_20',['LoadEstimatorOption.h',['../LoadEstimatorOption_8h.html',1,'']]],
   ['loadestimators_2eh_21',['LoadEstimators.h',['../LoadEstimators_8h.html',1,'']]],
   ['logger_2eh_22',['Logger.h',['../Logger_8h.html',1,'']]],
-  ['logichandler_2eh_23',['LogicHandler.h',['../LogicHandler_8h.html',1,'']]]
+  ['logichandler_2eh_23',['LogicHandler.h',['../LogicHandler_8h.html',1,'']]],
+  ['logichandlerinfo_2eh_24',['LogicHandlerInfo.h',['../LogicHandlerInfo_8h.html',1,'']]]
 ];

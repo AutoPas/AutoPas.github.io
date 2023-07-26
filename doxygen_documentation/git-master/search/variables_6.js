@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['greater_0',['greater',['../structautopas_1_1rule__syntax_1_1ConfigurationOrder.html#a0abc62ea9a2393b73733e6d810f8251c',1,'autopas::rule_syntax::ConfigurationOrder']]]
+  ['faces_0',['faces',['../namespaceautopas_1_1octree_1_1Tables.html#a6709d8152c425b54839d9bf824bbd9f5',1,'autopas::octree::Tables']]],
+  ['featurespacedims_1',['featureSpaceDims',['../classautopas_1_1FeatureVector.html#a7863ed914f97672374b062ab8566ef59',1,'autopas::FeatureVector']]]
 ];
