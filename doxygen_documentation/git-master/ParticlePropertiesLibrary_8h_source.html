@@ -145,7 +145,7 @@ $(function() {
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        WARN,</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>        <span class="stringliteral">&quot;ParticlePropertiesLibrary::getNumberRegisteredMolTypes(): trying to get the number of registered multi-site&quot;</span></div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="stringliteral">&quot;molecule types when md-flexible has been compiled without support for multi-site molecules. Please compile &quot;</span></div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="stringliteral">&quot;with the CMake argument &#39;-D MD_FLEXIBLE_USE_MULTI_SITE=ON&#39;.&quot;</span>);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <span class="stringliteral">&quot;with the CMake argument &#39;-DMD_FLEXIBLE_MODE=MULTISITE&#39;.&quot;</span>);</div>
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">return</span> _numRegisteredMolTypes;</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  }</div>
@@ -238,8 +238,8 @@ $(function() {
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="preprocessor">#if MD_FLEXIBLE_MODE == SINGLESITE</span></div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>  <a class="code hl_define" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(WARN,</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>             <span class="stringliteral">&quot;ParticlePropertiesLibrary::addMolType(): trying to register a multi-site molecule type when md-flexible &quot;</span></div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>             <span class="stringliteral">&quot;has been compiled without support for multi-site molecules. Please compile with the CMake argument &#39;-D &quot;</span></div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>             <span class="stringliteral">&quot;MD_FLEXIBLE_USE_MULTI_SITE=ON&#39;.&quot;</span>);</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>             <span class="stringliteral">&quot;has been compiled without support for multi-site molecules. Please compile with the CMake argument &quot;</span></div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>             <span class="stringliteral">&quot;&#39;-DMD_FLEXIBLE_MODE=MULTISITE&#39;.&quot;</span>);</div>
 <div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>  <span class="keywordflow">if</span> (_numRegisteredMolTypes != molId) {</div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    <a class="code hl_function" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a>(</div>
@@ -328,7 +328,7 @@ $(function() {
 <div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>  <a class="code hl_define" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(WARN,</div>
 <div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>             <span class="stringliteral">&quot;ParticlePropertiesLibrary::getMomentOfInertia(): trying to get the Moment of Inertia of a multi-site &quot;</span></div>
 <div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>             <span class="stringliteral">&quot;molecule type when md-flexible has been compiled without support for multi-site molecules. Please &quot;</span></div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>             <span class="stringliteral">&quot;compile with the CMake argument &#39;-D MD_FLEXIBLE_USE_MULTI_SITE=ON&#39;.&quot;</span>);</div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>             <span class="stringliteral">&quot;compile with the CMake argument &#39;-DMD_FLEXIBLE_MODE=MULTISITE&#39;.&quot;</span>);</div>
 <div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>  <span class="keywordflow">return</span> _momentOfInertias[i];</div>
 <div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span>}</div>
@@ -339,7 +339,7 @@ $(function() {
 <div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>  <a class="code hl_define" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(WARN,</div>
 <div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>             <span class="stringliteral">&quot;ParticlePropertiesLibrary::getSitePositions(): trying to get the site positions of a multi-site molecule &quot;</span></div>
 <div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>             <span class="stringliteral">&quot;type when md-flexible has been compiled without support for multi-site molecules. Please compile with &quot;</span></div>
-<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>             <span class="stringliteral">&quot;the CMake argument &#39;-D MD_FLEXIBLE_USE_MULTI_SITE=ON&#39;.&quot;</span>);</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>             <span class="stringliteral">&quot;the CMake argument &#39;-DMD_FLEXIBLE_MODE=MULTISITE&#39;.&quot;</span>);</div>
 <div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>  <span class="keywordflow">return</span> _relativeSitePositions[i];</div>
 <div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>}</div>
@@ -350,7 +350,7 @@ $(function() {
 <div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>  <a class="code hl_define" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(WARN,</div>
 <div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>             <span class="stringliteral">&quot;ParticlePropertiesLibrary::getSiteTypes(): trying to get the site types of a multi-site molecule type &quot;</span></div>
 <div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>             <span class="stringliteral">&quot;when md-flexible has been compiled without support for multi-site molecules. Please compile with the &quot;</span></div>
-<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>             <span class="stringliteral">&quot;CMake argument &#39;-D MD_FLEXIBLE_USE_MULTI_SITE=ON&#39;.&quot;</span>);</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>             <span class="stringliteral">&quot;CMake argument &#39;-DMD_FLEXIBLE_MODE=MULTISITE&#39;.&quot;</span>);</div>
 <div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>  <span class="keywordflow">return</span> _siteIds[i];</div>
 <div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span>}</div>
@@ -371,7 +371,7 @@ $(function() {
 <div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>  <a class="code hl_define" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(WARN,</div>
 <div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>             <span class="stringliteral">&quot;ParticlePropertiesLibrary::getNumSites(): trying to get the number of sites of a multi-site molecule &quot;</span></div>
 <div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>             <span class="stringliteral">&quot;type when md-flexible has been compiled without support for multi-site molecules. Please compile with &quot;</span></div>
-<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>             <span class="stringliteral">&quot;the CMake argument &#39;-D MD_FLEXIBLE_USE_MULTI_SITE=ON&#39;.&quot;</span>);</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>             <span class="stringliteral">&quot;the CMake argument &#39;-DMD_FLEXIBLE_MODE=MULTISITE&#39;.&quot;</span>);</div>
 <div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>  <span class="keywordflow">return</span> _numSites[i];</div>
 <div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>}</div>
@@ -382,7 +382,7 @@ $(function() {
 <div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span>  <a class="code hl_define" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(WARN,</div>
 <div class="line"><a id="l00440" name="l00440"></a><span class="lineno">  440</span>             <span class="stringliteral">&quot;ParticlePropertiesLibrary::getNumSites(): trying to get the number of sites of a multi-site molecule &quot;</span></div>
 <div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>             <span class="stringliteral">&quot;type when md-flexible has been compiled without support for multi-site molecules. Please compile with &quot;</span></div>
-<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>             <span class="stringliteral">&quot;the CMake argument &#39;-D MD_FLEXIBLE_USE_MULTI_SITE=ON&#39;.&quot;</span>);</div>
+<div class="line"><a id="l00442" name="l00442"></a><span class="lineno">  442</span>             <span class="stringliteral">&quot;the CMake argument &#39;-DMD_FLEXIBLE_MODE=MULTISITE&#39;.&quot;</span>);</div>
 <div class="line"><a id="l00443" name="l00443"></a><span class="lineno">  443</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00444" name="l00444"></a><span class="lineno">  444</span>  <span class="keywordflow">return</span> _moleculesLargestSigma[i];</div>
 <div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>}</div>
