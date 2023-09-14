@@ -10,5 +10,5 @@ var searchData=
   ['tuningmetricoption_7',['tuningMetricOption',['../classMDFlexConfig.html#a4ca5eded42212928693a77130c57bf16',1,'MDFlexConfig']]],
   ['tuningphases_8',['tuningPhases',['../classMDFlexConfig.html#a64accd5dcd5fc6da5daebdb3ba64335f',1,'MDFlexConfig']]],
   ['tuningsamples_9',['tuningSamples',['../classMDFlexConfig.html#aaf414c67d6877238e90bed93d1d9a125',1,'MDFlexConfig']]],
-  ['tuningstrategyoption_10',['tuningStrategyOption',['../classMDFlexConfig.html#a00f13558442f8f1f6ac45a1c5a58ea51',1,'MDFlexConfig']]]
+  ['tuningstrategyoptions_10',['tuningStrategyOptions',['../classMDFlexConfig.html#a66ff3883eafee2b15b8667c740a2a4e6',1,'MDFlexConfig']]]
 ];

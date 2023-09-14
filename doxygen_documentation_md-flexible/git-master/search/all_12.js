@@ -19,7 +19,7 @@ var searchData=
   ['tuningmetricoption_16',['tuningMetricOption',['../classMDFlexConfig.html#a4ca5eded42212928693a77130c57bf16',1,'MDFlexConfig']]],
   ['tuningphases_17',['tuningPhases',['../classMDFlexConfig.html#a64accd5dcd5fc6da5daebdb3ba64335f',1,'MDFlexConfig']]],
   ['tuningsamples_18',['tuningSamples',['../classMDFlexConfig.html#aaf414c67d6877238e90bed93d1d9a125',1,'MDFlexConfig']]],
-  ['tuningstrategyoption_19',['tuningStrategyOption',['../classMDFlexConfig.html#a00f13558442f8f1f6ac45a1c5a58ea51',1,'MDFlexConfig']]],
+  ['tuningstrategyoptions_19',['tuningStrategyOptions',['../classMDFlexConfig.html#a66ff3883eafee2b15b8667c740a2a4e6',1,'MDFlexConfig']]],
   ['typedefinitions_2eh_20',['TypeDefinitions.h',['../TypeDefinitions_8h.html',1,'']]],
   ['typetostr_21',['typeToStr',['../namespaceMDFlexParser_1_1YamlParser.html#a45258f128e73d9e1dadb04f81bdcbda9',1,'MDFlexParser::YamlParser']]]
 ];
