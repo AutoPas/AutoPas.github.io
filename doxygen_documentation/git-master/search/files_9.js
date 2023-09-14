@@ -9,7 +9,6 @@ var searchData=
   ['moleculelj_2eh_6',['MoleculeLJ.h',['../MoleculeLJ_8h.html',1,'']]],
   ['mpiparallelizedstrategy_2ecpp_7',['MPIParallelizedStrategy.cpp',['../MPIParallelizedStrategy_8cpp.html',1,'']]],
   ['mpiparallelizedstrategy_2eh_8',['MPIParallelizedStrategy.h',['../MPIParallelizedStrategy_8h.html',1,'']]],
-  ['mpistrategyoption_2eh_9',['MPIStrategyOption.h',['../MPIStrategyOption_8h.html',1,'']]],
-  ['multisitemoleculelj_2ecpp_10',['MultisiteMoleculeLJ.cpp',['../MultisiteMoleculeLJ_8cpp.html',1,'']]],
-  ['multisitemoleculelj_2eh_11',['MultisiteMoleculeLJ.h',['../MultisiteMoleculeLJ_8h.html',1,'']]]
+  ['multisitemoleculelj_2ecpp_9',['MultisiteMoleculeLJ.cpp',['../MultisiteMoleculeLJ_8cpp.html',1,'']]],
+  ['multisitemoleculelj_2eh_10',['MultisiteMoleculeLJ.h',['../MultisiteMoleculeLJ_8h.html',1,'']]]
 ];

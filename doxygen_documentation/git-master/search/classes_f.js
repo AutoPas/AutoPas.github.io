@@ -10,8 +10,9 @@ var searchData=
   ['tuningdatalogger_7',['TuningDataLogger',['../classautopas_1_1TuningDataLogger.html',1,'autopas']]],
   ['tuningmetricoption_8',['TuningMetricOption',['../classautopas_1_1TuningMetricOption.html',1,'autopas']]],
   ['tuningresultlogger_9',['TuningResultLogger',['../classautopas_1_1TuningResultLogger.html',1,'autopas']]],
-  ['tuningstrategyinterface_10',['TuningStrategyInterface',['../classautopas_1_1TuningStrategyInterface.html',1,'autopas']]],
-  ['tuningstrategyloggerwrapper_11',['TuningStrategyLoggerWrapper',['../classautopas_1_1TuningStrategyLoggerWrapper.html',1,'autopas']]],
-  ['tuningstrategylogreplayer_12',['TuningStrategyLogReplayer',['../classautopas_1_1TuningStrategyLogReplayer.html',1,'autopas']]],
-  ['tuningstrategyoption_13',['TuningStrategyOption',['../classautopas_1_1options_1_1TuningStrategyOption.html',1,'autopas::options']]]
+  ['tuningstrategyfactoryinfo_10',['TuningStrategyFactoryInfo',['../structautopas_1_1TuningStrategyFactoryInfo.html',1,'autopas']]],
+  ['tuningstrategyinterface_11',['TuningStrategyInterface',['../classautopas_1_1TuningStrategyInterface.html',1,'autopas']]],
+  ['tuningstrategylogger_12',['TuningStrategyLogger',['../classautopas_1_1TuningStrategyLogger.html',1,'autopas']]],
+  ['tuningstrategylogreplayer_13',['TuningStrategyLogReplayer',['../classautopas_1_1TuningStrategyLogReplayer.html',1,'autopas']]],
+  ['tuningstrategyoption_14',['TuningStrategyOption',['../classautopas_1_1options_1_1TuningStrategyOption.html',1,'autopas::options']]]
 ];

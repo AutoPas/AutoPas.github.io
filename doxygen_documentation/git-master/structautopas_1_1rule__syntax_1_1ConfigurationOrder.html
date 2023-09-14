@@ -161,6 +161,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab204a6bf6cc953e5bc589ba17a34e32f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structautopas_1_1rule__syntax_1_1ConfigurationOrder.html#ab204a6bf6cc953e5bc589ba17a34e32f">ConfigurationOrder</a> ()=default</td></tr>
 <tr class="memdesc:ab204a6bf6cc953e5bc589ba17a34e32f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a configuration order that says all configurations are better than all configurations.  <br /></td></tr>
 <tr class="separator:ab204a6bf6cc953e5bc589ba17a34e32f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36bd78a41cf20b7f209ccbd3383ec23f"><td class="memItemLeft" align="right" valign="top"><a id="a36bd78a41cf20b7f209ccbd3383ec23f" name="a36bd78a41cf20b7f209ccbd3383ec23f"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>~ConfigurationOrder</b> () override=default</td></tr>
+<tr class="memdesc:a36bd78a41cf20b7f209ccbd3383ec23f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor. <br /></td></tr>
+<tr class="separator:a36bd78a41cf20b7f209ccbd3383ec23f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac5065fe22403082010f816037cf9be2e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structautopas_1_1rule__syntax_1_1ConfigurationOrder.html#ac5065fe22403082010f816037cf9be2e">ConfigurationOrder</a> (<a class="el" href="structautopas_1_1ConfigurationPattern.html">ConfigurationPattern</a> <a class="el" href="structautopas_1_1rule__syntax_1_1ConfigurationOrder.html#a0abc62ea9a2393b73733e6d810f8251c">greater</a>, <a class="el" href="structautopas_1_1ConfigurationPattern.html">ConfigurationPattern</a> <a class="el" href="structautopas_1_1rule__syntax_1_1ConfigurationOrder.html#a97c5304a5d4262c56a55f801feb205f4">smaller</a>, std::vector&lt; <a class="el" href="structautopas_1_1rule__syntax_1_1ConfigurationOrder.html#a731deb007aba62f9059f4e4baeed0566">SameProperty</a> &gt; same={})</td></tr>
 <tr class="memdesc:ac5065fe22403082010f816037cf9be2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a configuration order.  <br /></td></tr>
 <tr class="separator:ac5065fe22403082010f816037cf9be2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -233,9 +237,6 @@ std::vector&lt; <a class="el" href="structautopas_1_1rule__syntax_1_1Configurati
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">autopas::rule_syntax::ConfigurationOrder::ConfigurationOrder </td>
@@ -261,11 +262,6 @@ std::vector&lt; <a class="el" href="structautopas_1_1rule__syntax_1_1Configurati
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Construct a configuration order. </p>
@@ -333,9 +329,6 @@ std::vector&lt; <a class="el" href="structautopas_1_1rule__syntax_1_1Configurati
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">bool autopas::rule_syntax::ConfigurationOrder::haveEqualSameProperties </td>
@@ -355,11 +348,6 @@ std::vector&lt; <a class="el" href="structautopas_1_1rule__syntax_1_1Configurati
           <td></td><td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>Checks if two configurations have the equal same properties as required by this configuration order. </p>
@@ -379,9 +367,6 @@ std::vector&lt; <a class="el" href="structautopas_1_1rule__syntax_1_1Configurati
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">std::string autopas::rule_syntax::ConfigurationOrder::toString </td>
@@ -390,19 +375,14 @@ std::vector&lt; <a class="el" href="structautopas_1_1rule__syntax_1_1Configurati
           <td> const</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <dl class="section return"><dt>Returns</dt><dd>A string describing this order. </dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
-<li>autopas/selectors/tuningStrategy/ruleBasedTuning/<a class="el" href="RuleBasedProgramTree_8h_source.html">RuleBasedProgramTree.h</a></li>
-<li>autopas/selectors/tuningStrategy/ruleBasedTuning/RuleBasedProgramTree.cpp</li>
+<li>autopas/tuning/tuningStrategy/ruleBasedTuning/<a class="el" href="RuleBasedProgramTree_8h_source.html">RuleBasedProgramTree.h</a></li>
+<li>autopas/tuning/tuningStrategy/ruleBasedTuning/RuleBasedProgramTree.cpp</li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

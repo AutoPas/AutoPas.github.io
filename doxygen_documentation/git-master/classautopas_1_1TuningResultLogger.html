@@ -126,9 +126,9 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~TuningResultLogger</b> ()</td></tr>
 <tr class="memdesc:a0f88cbc4af512485f0ed81ab7d0e12a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor drops the logger from the spd registry. <br /></td></tr>
 <tr class="separator:a0f88cbc4af512485f0ed81ab7d0e12a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa367f0909ccc8cd25d2076b71e843d4b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningResultLogger.html#aa367f0909ccc8cd25d2076b71e843d4b">logTuningResult</a> (const <a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a> &amp;configuration, size_t iteration, long timeTuning)</td></tr>
-<tr class="memdesc:aa367f0909ccc8cd25d2076b71e843d4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log the result of a tuning phase.  <br /></td></tr>
-<tr class="separator:aa367f0909ccc8cd25d2076b71e843d4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a721a193d495fadd5ade0cad0f4f1a81b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningResultLogger.html#a721a193d495fadd5ade0cad0f4f1a81b">logTuningResult</a> (const <a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a> &amp;configuration, size_t iteration, long timeTuning, long optimumPerformance)</td></tr>
+<tr class="memdesc:a721a193d495fadd5ade0cad0f4f1a81b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log the result of a tuning phase.  <br /></td></tr>
+<tr class="separator:a721a193d495fadd5ade0cad0f4f1a81b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper to log results of the tuning process to a csv file for easier analysis. </p>
@@ -170,8 +170,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aa367f0909ccc8cd25d2076b71e843d4b" name="aa367f0909ccc8cd25d2076b71e843d4b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa367f0909ccc8cd25d2076b71e843d4b">&#9670;&#160;</a></span>logTuningResult()</h2>
+<a id="a721a193d495fadd5ade0cad0f4f1a81b" name="a721a193d495fadd5ade0cad0f4f1a81b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a721a193d495fadd5ade0cad0f4f1a81b">&#9670;&#160;</a></span>logTuningResult()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -192,7 +192,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">long&#160;</td>
-          <td class="paramname"><em>timeTuning</em>&#160;</td>
+          <td class="paramname"><em>timeTuning</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>optimumPerformance</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -208,6 +214,7 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">configuration</td><td></td></tr>
     <tr><td class="paramname">iteration</td><td></td></tr>
     <tr><td class="paramname">timeTuning</td><td></td></tr>
+    <tr><td class="paramname">optimumPerformance</td><td>Performance of the best configuration </td></tr>
   </table>
   </dd>
 </dl>

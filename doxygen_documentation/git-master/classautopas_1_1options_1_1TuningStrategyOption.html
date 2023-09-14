@@ -146,14 +146,19 @@ Collaboration diagram for autopas::options::TuningStrategyOption:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:a04571989e3098ecfedeb774aad1f9af4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4">Value</a> { <br />
-&#160;&#160;<a class="el" href="classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4ae3de72e246f63041a5df81e5a9b27bfa">randomSearch</a>
+&#160;&#160;<a class="el" href="classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4abc017bb88ce68d738a099305d7010711">tuningStrategyLogger</a>
+, <a class="el" href="classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4ae3de72e246f63041a5df81e5a9b27bfa">randomSearch</a>
 , <a class="el" href="classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4ad42ba736aeaba29a778f30b55ead58d3">fullSearch</a>
 , <a class="el" href="classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4a11e6b9dcb7b7b2f589bbda34cef16921">bayesianSearch</a>
-, <a class="el" href="classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4a1575b248f9daece58f7167e5fe0d75dd">bayesianClusterSearch</a>
 , <br />
-&#160;&#160;<a class="el" href="classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4aa7e0bcbfbe69fb3148c570be0eb78e3e">activeHarmony</a>
+&#160;&#160;<a class="el" href="classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4a1575b248f9daece58f7167e5fe0d75dd">bayesianClusterSearch</a>
+, <a class="el" href="classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4aa7e0bcbfbe69fb3148c570be0eb78e3e">activeHarmony</a>
 , <a class="el" href="classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4a99433dd6fbbb59032915d9c222abf372">predictiveTuning</a>
 , <a class="el" href="classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4a116ef369350f6404c9926f3eafcf33ac">ruleBasedTuning</a>
+, <br />
+&#160;&#160;<a class="el" href="classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4a48547c36744b318aaad19f612849f7ec">slowConfigFilter</a>
+, <a class="el" href="classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4a4f9a536ea75aabd823fd9f10d909ecf5">mpiDivideAndConquer</a>
+, <a class="el" href="classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4a2e2e1f0ba6269b45d23e48d3034ddbe1">sortByName</a>
 <br />
  }</td></tr>
 <tr class="memdesc:a04571989e3098ecfedeb774aad1f9af4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Possible choices for the auto tuner.  <a href="classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4">More...</a><br /></td></tr>
@@ -197,9 +202,9 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a76611bf0e09246050ee32e874451b087 inherit pub_static_methods_classautopas_1_1options_1_1Option"><td class="memItemLeft" align="right" valign="top">static size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1Option.html#a76611bf0e09246050ee32e874451b087">maxStringLength</a> ()</td></tr>
 <tr class="memdesc:a76611bf0e09246050ee32e874451b087 inherit pub_static_methods_classautopas_1_1options_1_1Option"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of characters in the string representation of the longest option.  <br /></td></tr>
 <tr class="separator:a76611bf0e09246050ee32e874451b087 inherit pub_static_methods_classautopas_1_1options_1_1Option"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8ddf6c5f9f6caf94f1c7949c0dabfa56 inherit pub_static_methods_classautopas_1_1options_1_1Option"><td class="memItemLeft" align="right" valign="top">static std::set&lt; <a class="el" href="classautopas_1_1options_1_1TuningStrategyOption.html">TuningStrategyOption</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1Option.html#a8ddf6c5f9f6caf94f1c7949c0dabfa56">parseOptions</a> (const std::string &amp;optionsString)</td></tr>
-<tr class="memdesc:a8ddf6c5f9f6caf94f1c7949c0dabfa56 inherit pub_static_methods_classautopas_1_1options_1_1Option"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string of options to a set of enums.  <br /></td></tr>
-<tr class="separator:a8ddf6c5f9f6caf94f1c7949c0dabfa56 inherit pub_static_methods_classautopas_1_1options_1_1Option"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1553c621ae356ef42806c13342731b26 inherit pub_static_methods_classautopas_1_1options_1_1Option"><td class="memItemLeft" align="right" valign="top">static OutputContainer&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1Option.html#a1553c621ae356ef42806c13342731b26">parseOptions</a> (const std::string &amp;optionsString)</td></tr>
+<tr class="memdesc:a1553c621ae356ef42806c13342731b26 inherit pub_static_methods_classautopas_1_1options_1_1Option"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string of options to a set of enums.  <br /></td></tr>
+<tr class="separator:a1553c621ae356ef42806c13342731b26 inherit pub_static_methods_classautopas_1_1options_1_1Option"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae389f5ad1c240658378ccbb86ec121de inherit pub_static_methods_classautopas_1_1options_1_1Option"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classautopas_1_1options_1_1TuningStrategyOption.html">TuningStrategyOption</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1Option.html#ae389f5ad1c240658378ccbb86ec121de">parseOptionExact</a> (const std::string &amp;optionString)</td></tr>
 <tr class="memdesc:ae389f5ad1c240658378ccbb86ec121de inherit pub_static_methods_classautopas_1_1options_1_1Option"><td class="mdescLeft">&#160;</td><td class="mdescRight">Converts a string to an enum.  <br /></td></tr>
 <tr class="separator:ae389f5ad1c240658378ccbb86ec121de inherit pub_static_methods_classautopas_1_1options_1_1Option"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -221,9 +226,12 @@ Static Public Member Functions</h2></td></tr>
 
 <p>Possible choices for the auto tuner. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a04571989e3098ecfedeb774aad1f9af4ae3de72e246f63041a5df81e5a9b27bfa" name="a04571989e3098ecfedeb774aad1f9af4ae3de72e246f63041a5df81e5a9b27bfa"></a>randomSearch&#160;</td><td class="fielddoc"><p><a class="el" href="classautopas_1_1Random.html" title="Class for random algorithms.">Random</a> test configurations and select the best. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a04571989e3098ecfedeb774aad1f9af4abc017bb88ce68d738a099305d7010711" name="a04571989e3098ecfedeb774aad1f9af4abc017bb88ce68d738a099305d7010711"></a>tuningStrategyLogger&#160;</td><td class="fielddoc"><p><a class="el" href="classautopas_1_1Logger.html" title="Logger class to provide interface to basic functions of the logger.">Logger</a> for Tuning Strategy activity. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a04571989e3098ecfedeb774aad1f9af4ae3de72e246f63041a5df81e5a9b27bfa" name="a04571989e3098ecfedeb774aad1f9af4ae3de72e246f63041a5df81e5a9b27bfa"></a>randomSearch&#160;</td><td class="fielddoc"><p><a class="el" href="classautopas_1_1Random.html" title="Class for random algorithms.">Random</a> test configurations and select the best. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a04571989e3098ecfedeb774aad1f9af4ad42ba736aeaba29a778f30b55ead58d3" name="a04571989e3098ecfedeb774aad1f9af4ad42ba736aeaba29a778f30b55ead58d3"></a>fullSearch&#160;</td><td class="fielddoc"><p>Tests all allowed configurations and select the best. </p>
+<p>Technically this is no tuning strategy anymore, but the option still exists for compatibility reasons. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a04571989e3098ecfedeb774aad1f9af4a11e6b9dcb7b7b2f589bbda34cef16921" name="a04571989e3098ecfedeb774aad1f9af4a11e6b9dcb7b7b2f589bbda34cef16921"></a>bayesianSearch&#160;</td><td class="fielddoc"><p>Predict the configuration which will yield the most information if tested next. </p>
 </td></tr>
@@ -235,6 +243,12 @@ Static Public Member Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="a04571989e3098ecfedeb774aad1f9af4a99433dd6fbbb59032915d9c222abf372" name="a04571989e3098ecfedeb774aad1f9af4a99433dd6fbbb59032915d9c222abf372"></a>predictiveTuning&#160;</td><td class="fielddoc"><p>Predicts performance of all configurations based on previous tuning phases, tests those which are in the optimum range, and selects the best. </p>
 </td></tr>
 <tr><td class="fieldname"><a id="a04571989e3098ecfedeb774aad1f9af4a116ef369350f6404c9926f3eafcf33ac" name="a04571989e3098ecfedeb774aad1f9af4a116ef369350f6404c9926f3eafcf33ac"></a>ruleBasedTuning&#160;</td><td class="fielddoc"><p>Applies predefined rules to dynamically exclude configurations from tuning that are expected to perform worse than others in the next tuning phase. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a04571989e3098ecfedeb774aad1f9af4a48547c36744b318aaad19f612849f7ec" name="a04571989e3098ecfedeb774aad1f9af4a48547c36744b318aaad19f612849f7ec"></a>slowConfigFilter&#160;</td><td class="fielddoc"><p>Dynamic blacklist that throws out configurations that perform poorly. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a04571989e3098ecfedeb774aad1f9af4a4f9a536ea75aabd823fd9f10d909ecf5" name="a04571989e3098ecfedeb774aad1f9af4a4f9a536ea75aabd823fd9f10d909ecf5"></a>mpiDivideAndConquer&#160;</td><td class="fielddoc"><p>Spread the current configuration queue over all similar mpi ranks, thus parallelizing the search for the optimum. </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a04571989e3098ecfedeb774aad1f9af4a2e2e1f0ba6269b45d23e48d3034ddbe1" name="a04571989e3098ecfedeb774aad1f9af4a2e2e1f0ba6269b45d23e48d3034ddbe1"></a>sortByName&#160;</td><td class="fielddoc"><p>Sort the queue by Name (=Configuration::operator&lt;()) to minimize container conversion overhead. </p>
 </td></tr>
 </table>
 

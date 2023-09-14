@@ -17,11 +17,12 @@ var searchData=
   ['tuningresultlogger_2eh_14',['TuningResultLogger.h',['../TuningResultLogger_8h.html',1,'']]],
   ['tuningstrategyfactory_2ecpp_15',['TuningStrategyFactory.cpp',['../TuningStrategyFactory_8cpp.html',1,'']]],
   ['tuningstrategyfactory_2eh_16',['TuningStrategyFactory.h',['../TuningStrategyFactory_8h.html',1,'']]],
-  ['tuningstrategyinterface_2eh_17',['TuningStrategyInterface.h',['../TuningStrategyInterface_8h.html',1,'']]],
-  ['tuningstrategyloggerwrapper_2ecpp_18',['TuningStrategyLoggerWrapper.cpp',['../TuningStrategyLoggerWrapper_8cpp.html',1,'']]],
-  ['tuningstrategyloggerwrapper_2eh_19',['TuningStrategyLoggerWrapper.h',['../TuningStrategyLoggerWrapper_8h.html',1,'']]],
-  ['tuningstrategylogreplayer_2ecpp_20',['TuningStrategyLogReplayer.cpp',['../TuningStrategyLogReplayer_8cpp.html',1,'']]],
-  ['tuningstrategylogreplayer_2eh_21',['TuningStrategyLogReplayer.h',['../TuningStrategyLogReplayer_8h.html',1,'']]],
-  ['tuningstrategyoption_2eh_22',['TuningStrategyOption.h',['../TuningStrategyOption_8h.html',1,'']]],
-  ['tupleutils_2eh_23',['TupleUtils.h',['../TupleUtils_8h.html',1,'']]]
+  ['tuningstrategyfactoryinfo_2eh_17',['TuningStrategyFactoryInfo.h',['../TuningStrategyFactoryInfo_8h.html',1,'']]],
+  ['tuningstrategyinterface_2eh_18',['TuningStrategyInterface.h',['../TuningStrategyInterface_8h.html',1,'']]],
+  ['tuningstrategylogger_2ecpp_19',['TuningStrategyLogger.cpp',['../TuningStrategyLogger_8cpp.html',1,'']]],
+  ['tuningstrategylogger_2eh_20',['TuningStrategyLogger.h',['../TuningStrategyLogger_8h.html',1,'']]],
+  ['tuningstrategylogreplayer_2ecpp_21',['TuningStrategyLogReplayer.cpp',['../TuningStrategyLogReplayer_8cpp.html',1,'']]],
+  ['tuningstrategylogreplayer_2eh_22',['TuningStrategyLogReplayer.h',['../TuningStrategyLogReplayer_8h.html',1,'']]],
+  ['tuningstrategyoption_2eh_23',['TuningStrategyOption.h',['../TuningStrategyOption_8h.html',1,'']]],
+  ['tupleutils_2eh_24',['TupleUtils.h',['../TupleUtils_8h.html',1,'']]]
 ];

@@ -101,7 +101,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fd30cd1efecaf93be567ddc5e3f81b58.html">autopas</a></li><li class="navelem"><a class="el" href="dir_54280e803701a0d1ec3990049e6af513.html">selectors</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_fd30cd1efecaf93be567ddc5e3f81b58.html">autopas</a></li><li class="navelem"><a class="el" href="dir_1383fda221468e86310f84ca4d306e1b.html">tuning</a></li><li class="navelem"><a class="el" href="dir_7cdec8b4e2fd05e0c0e4d2da690a7f9c.html">utils</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -115,13 +115,16 @@ $(function() {
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;tuple&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceautopas_1_1smoothing.html">autopas::smoothing</a> {</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="Evidence_8h.html">autopas/tuning/searchSpace/Evidence.h</a>&quot;</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keywordtype">long</span> <a class="code hl_function" href="namespaceautopas_1_1smoothing.html#ac2b0e4987584be4f0d1920c7a98e61c0">smoothLastPoint</a>(<span class="keyword">const</span> std::vector&lt;std::pair&lt;size_t, long&gt;&gt; &amp;points, <span class="keywordtype">size_t</span> pointsPerEstimation);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>}  <span class="comment">// namespace autopas::smoothing</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceautopas_1_1smoothing.html">autopas::smoothing</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keywordtype">long</span> <a class="code hl_function" href="namespaceautopas_1_1smoothing.html#a8e1482d338061fabc91f4fc33ed3f0c5">smoothLastPoint</a>(<span class="keyword">const</span> std::vector&lt;Evidence&gt; &amp;points, <span class="keywordtype">size_t</span> pointsPerEstimation);</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>}  <span class="comment">// namespace autopas::smoothing</span></div>
+<div class="ttc" id="aEvidence_8h_html"><div class="ttname"><a href="Evidence_8h.html">Evidence.h</a></div></div>
 <div class="ttc" id="anamespaceautopas_1_1smoothing_html"><div class="ttname"><a href="namespaceautopas_1_1smoothing.html">autopas::smoothing</a></div><div class="ttdoc">Algorithms for creating a smooth function through a series of points.</div><div class="ttdef"><b>Definition:</b> namespaces.h:31</div></div>
-<div class="ttc" id="anamespaceautopas_1_1smoothing_html_ac2b0e4987584be4f0d1920c7a98e61c0"><div class="ttname"><a href="namespaceautopas_1_1smoothing.html#ac2b0e4987584be4f0d1920c7a98e61c0">autopas::smoothing::smoothLastPoint</a></div><div class="ttdeci">long smoothLastPoint(const std::vector&lt; std::pair&lt; size_t, long &gt; &gt; &amp;points, size_t pointsPerEstimation)</div><div class="ttdoc">Calculates the smoothed y value for the last point in the given points according to the LOESS algorit...</div><div class="ttdef"><b>Definition:</b> Smoothing.cpp:127</div></div>
+<div class="ttc" id="anamespaceautopas_1_1smoothing_html_a8e1482d338061fabc91f4fc33ed3f0c5"><div class="ttname"><a href="namespaceautopas_1_1smoothing.html#a8e1482d338061fabc91f4fc33ed3f0c5">autopas::smoothing::smoothLastPoint</a></div><div class="ttdeci">long smoothLastPoint(const std::vector&lt; Evidence &gt; &amp;points, size_t pointsPerEstimation)</div><div class="ttdoc">Calculates the smoothed y value for the last point in the given points according to the LOESS algorit...</div><div class="ttdef"><b>Definition:</b> Smoothing.cpp:128</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

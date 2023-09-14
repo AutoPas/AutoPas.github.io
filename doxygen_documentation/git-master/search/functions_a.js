@@ -13,9 +13,9 @@ var searchData=
   ['medianvalue_10',['medianValue',['../namespaceautopas_1_1OptimumSelector.html#a026bccf03fed7ad4ae1d87ea22cb8f3b',1,'autopas::OptimumSelector']]],
   ['min_11',['min',['../namespaceautopas_1_1utils_1_1ArrayMath.html#ac436f87e073ba2274c659b8062e60448',1,'autopas::utils::ArrayMath']]],
   ['minvalue_12',['minValue',['../namespaceautopas_1_1OptimumSelector.html#a02ae1d0d8520f1fd4f7552dc80125a4a',1,'autopas::OptimumSelector']]],
-  ['moleculelj_13',['MoleculeLJ',['../classmdLib_1_1MoleculeLJ.html#ae3c3e0fb608700e8e2d422cb7eb2bee4',1,'mdLib::MoleculeLJ']]],
-  ['mpiparallelizedstrategy_14',['MPIParallelizedStrategy',['../classautopas_1_1MPIParallelizedStrategy.html#aac11285c1e9e08b77a4bce75ee02c0eb',1,'autopas::MPIParallelizedStrategy']]],
-  ['mpistrategyoption_15',['MPIStrategyOption',['../classautopas_1_1options_1_1MPIStrategyOption.html#aeaaff7778cdfc296adf871ad960071d6',1,'autopas::options::MPIStrategyOption::MPIStrategyOption()=default'],['../classautopas_1_1options_1_1MPIStrategyOption.html#a621050ce98fc0dc42e2e69df0cf58cbe',1,'autopas::options::MPIStrategyOption::MPIStrategyOption(Value option)']]],
+  ['modifylastevidence_13',['modifyLastEvidence',['../classautopas_1_1EvidenceCollection.html#a2a331df173df3268c5c4b89430e4d49e',1,'autopas::EvidenceCollection']]],
+  ['moleculelj_14',['MoleculeLJ',['../classmdLib_1_1MoleculeLJ.html#ae3c3e0fb608700e8e2d422cb7eb2bee4',1,'mdLib::MoleculeLJ']]],
+  ['mpiparallelizedstrategy_15',['MPIParallelizedStrategy',['../classautopas_1_1MPIParallelizedStrategy.html#a4b8693082b4cdb66eecda1014379a760',1,'autopas::MPIParallelizedStrategy']]],
   ['mul_16',['mul',['../namespaceautopas_1_1utils_1_1ArrayMath.html#ad705b42c3a5eee0ef4efc9f73bd84b6d',1,'autopas::utils::ArrayMath']]],
   ['mulscalar_17',['mulScalar',['../namespaceautopas_1_1utils_1_1ArrayMath.html#a6634f9d050c47d36c214cb5c4c0c873a',1,'autopas::utils::ArrayMath']]],
   ['multisitemoleculelj_18',['MultisiteMoleculeLJ',['../classmdLib_1_1MultisiteMoleculeLJ.html#ad567663785ea7db7dc6eb8fd36130316',1,'mdLib::MultisiteMoleculeLJ']]]

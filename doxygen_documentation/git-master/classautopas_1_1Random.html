@@ -155,10 +155,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aeb8a163c6780327123f8eb5dd0f75d78"><td class="memItemLeft" align="right" valign="top">std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Random.html#aeb8a163c6780327123f8eb5dd0f75d78">uniformSample</a> (size_t min, size_t max, size_t n)</td></tr>
 <tr class="memdesc:aeb8a163c6780327123f8eb5dd0f75d78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sample n points from the set {min;min+1;...;max}.  <br /></td></tr>
 <tr class="separator:aeb8a163c6780327123f8eb5dd0f75d78"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a23939ded36281884555ec9209a398efe"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
-<tr class="memitem:a23939ded36281884555ec9209a398efe"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1Random.html#a23939ded36281884555ec9209a398efe">pickRandom</a> (std::set&lt; T &gt; pool)</td></tr>
-<tr class="memdesc:a23939ded36281884555ec9209a398efe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a uniformly random object from the given set.  <br /></td></tr>
-<tr class="separator:a23939ded36281884555ec9209a398efe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae281f872123ad79abc1921e595304eaa"><td class="memTemplParams" colspan="2">template&lt;class Container &gt; </td></tr>
+<tr class="memitem:ae281f872123ad79abc1921e595304eaa"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1Random.html#ae281f872123ad79abc1921e595304eaa">pickRandom</a> (const Container &amp;pool)</td></tr>
+<tr class="memdesc:ae281f872123ad79abc1921e595304eaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a uniformly randomly selected object from the given container.  <br /></td></tr>
+<tr class="separator:ae281f872123ad79abc1921e595304eaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65abe71b21b1e94d8a2ef18db34b37ed"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:a65abe71b21b1e94d8a2ef18db34b37ed"><td class="memTemplItemLeft" align="right" valign="top">std::set&lt; T &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1Random.html#a65abe71b21b1e94d8a2ef18db34b37ed">randomSubset</a> (std::set&lt; T &gt; pool, size_t n)</td></tr>
 <tr class="memdesc:a65abe71b21b1e94d8a2ef18db34b37ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pick up to n random elements from the set.  <br /></td></tr>
@@ -271,21 +271,21 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a23939ded36281884555ec9209a398efe" name="a23939ded36281884555ec9209a398efe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a23939ded36281884555ec9209a398efe">&#9670;&#160;</a></span>pickRandom()</h2>
+<a id="ae281f872123ad79abc1921e595304eaa" name="ae281f872123ad79abc1921e595304eaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae281f872123ad79abc1921e595304eaa">&#9670;&#160;</a></span>pickRandom()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T &gt; </div>
+template&lt;class Container &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">T autopas::Random::pickRandom </td>
+          <td class="memname">auto autopas::Random::pickRandom </td>
           <td>(</td>
-          <td class="paramtype">std::set&lt; T &gt;&#160;</td>
+          <td class="paramtype">const Container &amp;&#160;</td>
           <td class="paramname"><em>pool</em></td><td>)</td>
           <td></td>
         </tr>
@@ -297,14 +297,21 @@ template&lt;class T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Get a uniformly random object from the given set. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">pool</td><td>set </td></tr>
+<p>Get a uniformly randomly selected object from the given container. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Container</td><td>Type of the container. Must support std::begin(). </td></tr>
+    <tr><td class="paramname">Elem</td><td>Type of the elements in the container. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>random element </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pool</td><td>Container from which to select an element. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Randomly selected element. </dd></dl>
 
 </div>
 </div>

@@ -142,73 +142,55 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aee7ea256229ff1f82887edc949d59c3d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#aee7ea256229ff1f82887edc949d59c3d">BayesianClusterSearch</a> (const std::set&lt; ContainerOption &gt; &amp;allowedContainerOptions=ContainerOption::getAllOptions(), const <a class="el" href="classautopas_1_1NumberSet.html">NumberSet</a>&lt; double &gt; &amp;allowedCellSizeFactors=<a class="el" href="classautopas_1_1NumberInterval.html">NumberInterval</a>&lt; double &gt;(1., 2.), const std::set&lt; TraversalOption &gt; &amp;allowedTraversalOptions=TraversalOption::getAllOptions(), const std::set&lt; <a class="el" href="classautopas_1_1LoadEstimatorOption.html">LoadEstimatorOption</a> &gt; &amp;allowedLoadEstimatorOptions=LoadEstimatorOption::getAllOptions(), const std::set&lt; DataLayoutOption &gt; &amp;allowedDataLayoutOptions=DataLayoutOption::getAllOptions(), const std::set&lt; Newton3Option &gt; &amp;allowedNewton3Options=Newton3Option::getAllOptions(), size_t maxEvidence=10, AcquisitionFunctionOption predAcqFunction=AcquisitionFunctionOption::upperConfidenceBound, const std::string &amp;outputSuffix=&quot;&quot;, size_t predNumLHSamples=50, unsigned long seed=std::random_device()())</td></tr>
 <tr class="memdesc:aee7ea256229ff1f82887edc949d59c3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
 <tr class="separator:aee7ea256229ff1f82887edc949d59c3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a031c67977f8d8ce168014b46c2db5c54"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#a031c67977f8d8ce168014b46c2db5c54">getCurrentConfiguration</a> () const override</td></tr>
-<tr class="memdesc:a031c67977f8d8ce168014b46c2db5c54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the currently selected configuration object.  <br /></td></tr>
-<tr class="separator:a031c67977f8d8ce168014b46c2db5c54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8994cbfdf78f845881b0e27e62806688"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#a8994cbfdf78f845881b0e27e62806688">removeN3Option</a> (Newton3Option badNewton3Option) override</td></tr>
-<tr class="memdesc:a8994cbfdf78f845881b0e27e62806688"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all configurations with the given newton 3 option from the search space.  <br /></td></tr>
-<tr class="separator:a8994cbfdf78f845881b0e27e62806688"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2f788c6f5f6f7a6f71a7400e83978c96"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#a2f788c6f5f6f7a6f71a7400e83978c96">addEvidence</a> (long time, size_t iteration) override</td></tr>
-<tr class="memdesc:a2f788c6f5f6f7a6f71a7400e83978c96"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store empirically collected information for the current configuration.  <br /></td></tr>
-<tr class="separator:a2f788c6f5f6f7a6f71a7400e83978c96"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a949c1dfe17af79b7c162b896815f56"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#a6a949c1dfe17af79b7c162b896815f56">getEvidence</a> (<a class="el" href="classautopas_1_1Configuration.html">Configuration</a> configuration) const override</td></tr>
-<tr class="memdesc:a6a949c1dfe17af79b7c162b896815f56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the stored time for the given configuration.  <br /></td></tr>
-<tr class="separator:a6a949c1dfe17af79b7c162b896815f56"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48ebab86a371bef74a2fc998b2df47b8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#a48ebab86a371bef74a2fc998b2df47b8">reset</a> (size_t iteration) override</td></tr>
-<tr class="memdesc:a48ebab86a371bef74a2fc998b2df47b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset all internal parameters to the beginning of a new tuning cycle.  <br /></td></tr>
-<tr class="separator:a48ebab86a371bef74a2fc998b2df47b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a66f1eb8445f51d3dea21c3523cb4687c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#a66f1eb8445f51d3dea21c3523cb4687c">tune</a> (bool currentInvalid=false) override</td></tr>
-<tr class="memdesc:a66f1eb8445f51d3dea21c3523cb4687c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selects the next configuration to test or the optimum.  <br /></td></tr>
-<tr class="separator:a66f1eb8445f51d3dea21c3523cb4687c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae79664e6b2c102af3a9660ed77ec6d19"><td class="memItemLeft" align="right" valign="top">std::set&lt; ContainerOption &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#ae79664e6b2c102af3a9660ed77ec6d19">getAllowedContainerOptions</a> () const override</td></tr>
-<tr class="memdesc:ae79664e6b2c102af3a9660ed77ec6d19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all container options the strategy might choose.  <br /></td></tr>
-<tr class="separator:ae79664e6b2c102af3a9660ed77ec6d19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acb5a52c36279039b9096f78ff95b851a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#acb5a52c36279039b9096f78ff95b851a">searchSpaceIsTrivial</a> () const override</td></tr>
-<tr class="memdesc:acb5a52c36279039b9096f78ff95b851a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether the search space collapsed to only one option.  <br /></td></tr>
-<tr class="separator:acb5a52c36279039b9096f78ff95b851a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60d42a0f10654b43d4256adaf0f4c87e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#a60d42a0f10654b43d4256adaf0f4c87e">searchSpaceIsEmpty</a> () const override</td></tr>
-<tr class="memdesc:a60d42a0f10654b43d4256adaf0f4c87e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether the search space collapsed to be empty.  <br /></td></tr>
-<tr class="separator:a60d42a0f10654b43d4256adaf0f4c87e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a58d93175bc6f5263e95e96853a577344"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#a58d93175bc6f5263e95e96853a577344">smoothedHomogeneityAndMaxDensityNeeded</a> () const override</td></tr>
-<tr class="memdesc:a58d93175bc6f5263e95e96853a577344"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether the strategy needs smoothed values of homogeneity and max density.  <br /></td></tr>
-<tr class="separator:a58d93175bc6f5263e95e96853a577344"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9064a63c7983c94bfd2cf2496713646"><td class="memItemLeft" align="right" valign="top">TuningStrategyOption&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#aa9064a63c7983c94bfd2cf2496713646">getOptionType</a> () override</td></tr>
+<tr class="memdesc:aa9064a63c7983c94bfd2cf2496713646"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get this object's associated TuningStrategyOption type.  <br /></td></tr>
+<tr class="separator:aa9064a63c7983c94bfd2cf2496713646"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6d54481bcc28df5f821fda53390a93f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#a6d54481bcc28df5f821fda53390a93f0">addEvidence</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;configuration, const <a class="el" href="classautopas_1_1Evidence.html">Evidence</a> &amp;evidence) override</td></tr>
+<tr class="memdesc:a6d54481bcc28df5f821fda53390a93f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies the strategy about empirically collected information for the given configuration.  <br /></td></tr>
+<tr class="separator:a6d54481bcc28df5f821fda53390a93f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a519868de05380b674d27d0c08bf23bea"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#a519868de05380b674d27d0c08bf23bea">reset</a> (size_t iteration, size_t tuningPhase, std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;configQueue, const <a class="el" href="classautopas_1_1EvidenceCollection.html">autopas::EvidenceCollection</a> &amp;evidenceCollection) override</td></tr>
+<tr class="memdesc:a519868de05380b674d27d0c08bf23bea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset all internal parameters to the beginning of a new tuning phase.  <br /></td></tr>
+<tr class="separator:a519868de05380b674d27d0c08bf23bea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0f0822a764f4053c283eabea1f06d972"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#a0f0822a764f4053c283eabea1f06d972">optimizeSuggestions</a> (std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;configQueue, const <a class="el" href="classautopas_1_1EvidenceCollection.html">EvidenceCollection</a> &amp;evidence) override</td></tr>
+<tr class="memdesc:a0f0822a764f4053c283eabea1f06d972"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimizes the queue of configurations to process.  <br /></td></tr>
+<tr class="separator:a0f0822a764f4053c283eabea1f06d972"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0debb27adbe13634bd910e7e7a8c84fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#a0debb27adbe13634bd910e7e7a8c84fc">rejectConfiguration</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;configuration, bool indefinitely) override</td></tr>
+<tr class="memdesc:a0debb27adbe13634bd910e7e7a8c84fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify the strategy about a configuration that is (currently) invalid and thus can potentially be dropped from some internal storage.  <br /></td></tr>
+<tr class="separator:a0debb27adbe13634bd910e7e7a8c84fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0158d25d113d37ed6455a2af2a1e263"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#ad0158d25d113d37ed6455a2af2a1e263">searchSpaceIsEmpty</a> () const</td></tr>
+<tr class="memdesc:ad0158d25d113d37ed6455a2af2a1e263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate if the search space is empty.  <br /></td></tr>
+<tr class="separator:ad0158d25d113d37ed6455a2af2a1e263"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5f46ba5f94ad69ecb866bf0ffb33c2d3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#a5f46ba5f94ad69ecb866bf0ffb33c2d3">needsSmoothedHomogeneityAndMaxDensity</a> () const override</td></tr>
+<tr class="memdesc:a5f46ba5f94ad69ecb866bf0ffb33c2d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether the strategy needs smoothed values of homogeneity and max density.  <br /></td></tr>
+<tr class="separator:a5f46ba5f94ad69ecb866bf0ffb33c2d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classautopas_1_1TuningStrategyInterface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classautopas_1_1TuningStrategyInterface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classautopas_1_1TuningStrategyInterface.html">autopas::TuningStrategyInterface</a></td></tr>
-<tr class="memitem:a48d8d1002d39a2ad8a45e02bbd949968 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a48d8d1002d39a2ad8a45e02bbd949968">addEvidence</a> (long time, size_t iteration)=0</td></tr>
-<tr class="memdesc:a48d8d1002d39a2ad8a45e02bbd949968 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Store empirically collected information for the current configuration.  <br /></td></tr>
-<tr class="separator:a48d8d1002d39a2ad8a45e02bbd949968 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0bf8cb8457787a21e909609830efa74e inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a0bf8cb8457787a21e909609830efa74e">getEvidence</a> (<a class="el" href="classautopas_1_1Configuration.html">Configuration</a> configuration) const =0</td></tr>
-<tr class="memdesc:a0bf8cb8457787a21e909609830efa74e inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the stored time for the given configuration.  <br /></td></tr>
-<tr class="separator:a0bf8cb8457787a21e909609830efa74e inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a862d68f458e756c6784b03bae695e6b6 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a862d68f458e756c6784b03bae695e6b6">getCurrentConfiguration</a> () const =0</td></tr>
-<tr class="memdesc:a862d68f458e756c6784b03bae695e6b6 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the currently selected configuration object.  <br /></td></tr>
-<tr class="separator:a862d68f458e756c6784b03bae695e6b6 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af60548952077645122cde5b8668ab1b7 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#af60548952077645122cde5b8668ab1b7">tune</a> (bool currentInvalid=false)=0</td></tr>
-<tr class="memdesc:af60548952077645122cde5b8668ab1b7 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Selects the next configuration to test or the optimum.  <br /></td></tr>
-<tr class="separator:af60548952077645122cde5b8668ab1b7 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab99606a2347aa3dbb9533120e535c2a8 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#ab99606a2347aa3dbb9533120e535c2a8">reset</a> (size_t iteration)=0</td></tr>
-<tr class="memdesc:ab99606a2347aa3dbb9533120e535c2a8 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset all internal parameters to the beginning of a new tuning cycle.  <br /></td></tr>
-<tr class="separator:ab99606a2347aa3dbb9533120e535c2a8 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adf71fe578648ddf3bdec60dd9a016def inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual TuningStrategyOption&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#adf71fe578648ddf3bdec60dd9a016def">getOptionType</a> ()=0</td></tr>
+<tr class="memdesc:adf71fe578648ddf3bdec60dd9a016def inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get this object's associated TuningStrategyOption type.  <br /></td></tr>
+<tr class="separator:adf71fe578648ddf3bdec60dd9a016def inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e2e11a52988f7c4d67eccf353335b61 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a0e2e11a52988f7c4d67eccf353335b61">addEvidence</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;configuration, const <a class="el" href="classautopas_1_1Evidence.html">Evidence</a> &amp;evidence)</td></tr>
+<tr class="memdesc:a0e2e11a52988f7c4d67eccf353335b61 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies the strategy about empirically collected information for the given configuration.  <br /></td></tr>
+<tr class="separator:a0e2e11a52988f7c4d67eccf353335b61 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45e766b635dea87edc8e81fa85af0f41 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a45e766b635dea87edc8e81fa85af0f41">optimizeSuggestions</a> (std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;configQueue, const <a class="el" href="classautopas_1_1EvidenceCollection.html">EvidenceCollection</a> &amp;evidenceCollection)=0</td></tr>
+<tr class="memdesc:a45e766b635dea87edc8e81fa85af0f41 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimizes the queue of configurations to process.  <br /></td></tr>
+<tr class="separator:a45e766b635dea87edc8e81fa85af0f41 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7e9b4f910967a9a9251939ceaec3e755 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a7e9b4f910967a9a9251939ceaec3e755">reset</a> (size_t iteration, size_t tuningPhase, std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;configQueue, const <a class="el" href="classautopas_1_1EvidenceCollection.html">autopas::EvidenceCollection</a> &amp;evidenceCollection)=0</td></tr>
+<tr class="memdesc:a7e9b4f910967a9a9251939ceaec3e755 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset all internal parameters to the beginning of a new tuning phase.  <br /></td></tr>
+<tr class="separator:a7e9b4f910967a9a9251939ceaec3e755 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c0bc535436e8aa6a8b25b6f1b50b5e2 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a7c0bc535436e8aa6a8b25b6f1b50b5e2">needsLiveInfo</a> () const</td></tr>
 <tr class="memdesc:a7c0bc535436e8aa6a8b25b6f1b50b5e2 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this tuning strategy wants to get a <a class="el" href="classautopas_1_1LiveInfo.html" title="This class is able to gather and store important information for a tuning phase from a container and ...">LiveInfo</a> object passed before a new tuning phase.  <br /></td></tr>
 <tr class="separator:a7c0bc535436e8aa6a8b25b6f1b50b5e2 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9cb1ba7e258aa647bc0a442a1982f8f8 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a9cb1ba7e258aa647bc0a442a1982f8f8">receiveLiveInfo</a> (const <a class="el" href="classautopas_1_1LiveInfo.html">LiveInfo</a> &amp;info)</td></tr>
 <tr class="memdesc:a9cb1ba7e258aa647bc0a442a1982f8f8 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual method that subclasses can override to receive the <a class="el" href="classautopas_1_1LiveInfo.html" title="This class is able to gather and store important information for a tuning phase from a container and ...">LiveInfo</a> object before a tuning phase if they return true in <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a7c0bc535436e8aa6a8b25b6f1b50b5e2" title="Returns whether this tuning strategy wants to get a LiveInfo object passed before a new tuning phase.">needsLiveInfo()</a>.  <br /></td></tr>
 <tr class="separator:a9cb1ba7e258aa647bc0a442a1982f8f8 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a29e0e33c2dcc9169625d02d7a26d1d66 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual std::set&lt; ContainerOption &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a29e0e33c2dcc9169625d02d7a26d1d66">getAllowedContainerOptions</a> () const =0</td></tr>
-<tr class="memdesc:a29e0e33c2dcc9169625d02d7a26d1d66 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns all container options the strategy might choose.  <br /></td></tr>
-<tr class="separator:a29e0e33c2dcc9169625d02d7a26d1d66 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a62c578f105a43e428b95f20708bdda4d inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a62c578f105a43e428b95f20708bdda4d">removeN3Option</a> (Newton3Option)=0</td></tr>
-<tr class="memdesc:a62c578f105a43e428b95f20708bdda4d inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes all configurations with the given newton 3 option from the search space.  <br /></td></tr>
-<tr class="separator:a62c578f105a43e428b95f20708bdda4d inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac4874e1f3c68085145fddec052b3a043 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#ac4874e1f3c68085145fddec052b3a043">searchSpaceIsTrivial</a> () const =0</td></tr>
-<tr class="memdesc:ac4874e1f3c68085145fddec052b3a043 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether the search space collapsed to only one option.  <br /></td></tr>
-<tr class="separator:ac4874e1f3c68085145fddec052b3a043 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4978bcb57333575905a113fa1acf7bcb inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a4978bcb57333575905a113fa1acf7bcb">searchSpaceIsEmpty</a> () const =0</td></tr>
-<tr class="memdesc:a4978bcb57333575905a113fa1acf7bcb inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether the search space collapsed to be empty.  <br /></td></tr>
-<tr class="separator:a4978bcb57333575905a113fa1acf7bcb inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60c3e0abf87498fe9d8c1c2d3f157b53 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a60c3e0abf87498fe9d8c1c2d3f157b53">smoothedHomogeneityAndMaxDensityNeeded</a> () const =0</td></tr>
-<tr class="memdesc:a60c3e0abf87498fe9d8c1c2d3f157b53 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether the strategy needs smoothed values of homogeneity and max density.  <br /></td></tr>
-<tr class="separator:a60c3e0abf87498fe9d8c1c2d3f157b53 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cc2e5b8444200e7429fd7dd457fc13f inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a3cc2e5b8444200e7429fd7dd457fc13f">rejectConfiguration</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;configuration, bool indefinitely)</td></tr>
+<tr class="memdesc:a3cc2e5b8444200e7429fd7dd457fc13f inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify the strategy about a configuration that is (currently) invalid and thus can potentially be dropped from some internal storage.  <br /></td></tr>
+<tr class="separator:a3cc2e5b8444200e7429fd7dd457fc13f inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55f14f8d8fd82e945783a3715452d99f inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a55f14f8d8fd82e945783a3715452d99f">needsSmoothedHomogeneityAndMaxDensity</a> () const</td></tr>
+<tr class="memdesc:a55f14f8d8fd82e945783a3715452d99f inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether the strategy needs smoothed values of homogeneity and max density.  <br /></td></tr>
+<tr class="separator:a55f14f8d8fd82e945783a3715452d99f inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f063297e8df6c7903651232b372573c inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a3f063297e8df6c7903651232b372573c">receiveSmoothedHomogeneityAndMaxDensity</a> (double homogeneity, double maxDensity)</td></tr>
+<tr class="memdesc:a3f063297e8df6c7903651232b372573c inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to pass smoothed homogeneity and the maximal density to the tuning strategy.  <br /></td></tr>
+<tr class="separator:a3f063297e8df6c7903651232b372573c inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Assume that the stochastic distribution of the execution time while fixing discrete variables corresponds to a Gaussian Process. </p>
@@ -323,8 +305,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2f788c6f5f6f7a6f71a7400e83978c96" name="a2f788c6f5f6f7a6f71a7400e83978c96"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2f788c6f5f6f7a6f71a7400e83978c96">&#9670;&#160;</a></span>addEvidence()</h2>
+<a id="a6d54481bcc28df5f821fda53390a93f0" name="a6d54481bcc28df5f821fda53390a93f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d54481bcc28df5f821fda53390a93f0">&#9670;&#160;</a></span>addEvidence()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -335,14 +317,14 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void autopas::BayesianClusterSearch::addEvidence </td>
           <td>(</td>
-          <td class="paramtype">long&#160;</td>
-          <td class="paramname"><em>time</em>, </td>
+          <td class="paramtype">const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;&#160;</td>
+          <td class="paramname"><em>configuration</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>iteration</em>&#160;</td>
+          <td class="paramtype">const <a class="el" href="classautopas_1_1Evidence.html">Evidence</a> &amp;&#160;</td>
+          <td class="paramname"><em>evidence</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -357,21 +339,23 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Store empirically collected information for the current configuration. </p>
+<p>Notifies the strategy about empirically collected information for the given configuration. </p>
+<p>All evidence is stored centrally in the <a class="el" href="classautopas_1_1AutoTuner.html" title="This class manages all logic related to the auto tuning mechanic.">AutoTuner</a> and its <a class="el" href="classautopas_1_1EvidenceCollection.html" title="Class to manage all evidence.">EvidenceCollection</a> is passed to the tuning strategies during optimization.</p>
+<p>Implementing this function is only necessary if the tuning strategy processes evidence differently than <a class="el" href="classautopas_1_1EvidenceCollection.html" title="Class to manage all evidence.">EvidenceCollection</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">time</td><td>Measured traversal time. </td></tr>
-    <tr><td class="paramname">iteration</td><td>Number of the las iteration of this evidence as counted by <a class="el" href="classautopas_1_1AutoTuner.html" title="Calls to the iteratePairwise() method are passed through this class for two reasons:">AutoTuner</a>. </td></tr>
+    <tr><td class="paramname">configuration</td><td><a class="el" href="classautopas_1_1Configuration.html" title="Class containing multiple options that form an algorithm configuration for the pairwise iteration.">Configuration</a> used to obtain the evidence. </td></tr>
+    <tr><td class="paramname">evidence</td><td>Measurement and when it was taken. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a48d8d1002d39a2ad8a45e02bbd949968">autopas::TuningStrategyInterface</a>.</p>
+<p>Reimplemented from <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a0e2e11a52988f7c4d67eccf353335b61">autopas::TuningStrategyInterface</a>.</p>
 
 </div>
 </div>
-<a id="ae79664e6b2c102af3a9660ed77ec6d19" name="ae79664e6b2c102af3a9660ed77ec6d19"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae79664e6b2c102af3a9660ed77ec6d19">&#9670;&#160;</a></span>getAllowedContainerOptions()</h2>
+<a id="aa9064a63c7983c94bfd2cf2496713646" name="aa9064a63c7983c94bfd2cf2496713646"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9064a63c7983c94bfd2cf2496713646">&#9670;&#160;</a></span>getOptionType()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -380,106 +364,8 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::set&lt; autopas::ContainerOption &gt; autopas::BayesianClusterSearch::getAllowedContainerOptions </td>
+          <td class="memname">autopas::TuningStrategyOption autopas::BayesianClusterSearch::getOptionType </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns all container options the strategy might choose. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-<p>Implements <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a29e0e33c2dcc9169625d02d7a26d1d66">autopas::TuningStrategyInterface</a>.</p>
-
-</div>
-</div>
-<a id="a031c67977f8d8ce168014b46c2db5c54" name="a031c67977f8d8ce168014b46c2db5c54"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a031c67977f8d8ce168014b46c2db5c54">&#9670;&#160;</a></span>getCurrentConfiguration()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const <a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a> &amp; autopas::BayesianClusterSearch::getCurrentConfiguration </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the currently selected configuration object. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-<p>Implements <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a862d68f458e756c6784b03bae695e6b6">autopas::TuningStrategyInterface</a>.</p>
-
-</div>
-</div>
-<a id="a6a949c1dfe17af79b7c162b896815f56" name="a6a949c1dfe17af79b7c162b896815f56"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a949c1dfe17af79b7c162b896815f56">&#9670;&#160;</a></span>getEvidence()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">long autopas::BayesianClusterSearch::getEvidence </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classautopas_1_1Configuration.html">Configuration</a>&#160;</td>
-          <td class="paramname"><em>configuration</em></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the stored time for the given configuration. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">configuration</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-<p>Implements <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a0bf8cb8457787a21e909609830efa74e">autopas::TuningStrategyInterface</a>.</p>
-
-</div>
-</div>
-<a id="a8994cbfdf78f845881b0e27e62806688" name="a8994cbfdf78f845881b0e27e62806688"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8994cbfdf78f845881b0e27e62806688">&#9670;&#160;</a></span>removeN3Option()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void autopas::BayesianClusterSearch::removeN3Option </td>
-          <td>(</td>
-          <td class="paramtype">Newton3Option&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
@@ -491,15 +377,15 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Removes all configurations with the given newton 3 option from the search space. </p>
-<p>If the current configuration is removed, it is set to the next not-removed one. </p>
+<p>Get this object's associated TuningStrategyOption type. </p>
+<dl class="section return"><dt>Returns</dt><dd>TuningStrategyOption </dd></dl>
 
-<p>Implements <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a62c578f105a43e428b95f20708bdda4d">autopas::TuningStrategyInterface</a>.</p>
+<p>Implements <a class="el" href="classautopas_1_1TuningStrategyInterface.html#adf71fe578648ddf3bdec60dd9a016def">autopas::TuningStrategyInterface</a>.</p>
 
 </div>
 </div>
-<a id="a48ebab86a371bef74a2fc998b2df47b8" name="a48ebab86a371bef74a2fc998b2df47b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a48ebab86a371bef74a2fc998b2df47b8">&#9670;&#160;</a></span>reset()</h2>
+<a id="a5f46ba5f94ad69ecb866bf0ffb33c2d3" name="a5f46ba5f94ad69ecb866bf0ffb33c2d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5f46ba5f94ad69ecb866bf0ffb33c2d3">&#9670;&#160;</a></span>needsSmoothedHomogeneityAndMaxDensity()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -508,103 +394,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void autopas::BayesianClusterSearch::reset </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>iteration</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Reset all internal parameters to the beginning of a new tuning cycle. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">iteration</td><td>Gives the current iteration to the tuning strategy. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implements <a class="el" href="classautopas_1_1TuningStrategyInterface.html#ab99606a2347aa3dbb9533120e535c2a8">autopas::TuningStrategyInterface</a>.</p>
-
-</div>
-</div>
-<a id="a60d42a0f10654b43d4256adaf0f4c87e" name="a60d42a0f10654b43d4256adaf0f4c87e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a60d42a0f10654b43d4256adaf0f4c87e">&#9670;&#160;</a></span>searchSpaceIsEmpty()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool autopas::BayesianClusterSearch::searchSpaceIsEmpty </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Indicate whether the search space collapsed to be empty. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-<p>Implements <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a4978bcb57333575905a113fa1acf7bcb">autopas::TuningStrategyInterface</a>.</p>
-
-</div>
-</div>
-<a id="acb5a52c36279039b9096f78ff95b851a" name="acb5a52c36279039b9096f78ff95b851a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb5a52c36279039b9096f78ff95b851a">&#9670;&#160;</a></span>searchSpaceIsTrivial()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool autopas::BayesianClusterSearch::searchSpaceIsTrivial </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Indicate whether the search space collapsed to only one option. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-<p>Implements <a class="el" href="classautopas_1_1TuningStrategyInterface.html#ac4874e1f3c68085145fddec052b3a043">autopas::TuningStrategyInterface</a>.</p>
-
-</div>
-</div>
-<a id="a58d93175bc6f5263e95e96853a577344" name="a58d93175bc6f5263e95e96853a577344"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a58d93175bc6f5263e95e96853a577344">&#9670;&#160;</a></span>smoothedHomogeneityAndMaxDensityNeeded()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool autopas::BayesianClusterSearch::smoothedHomogeneityAndMaxDensityNeeded </td>
+          <td class="memname">bool autopas::BayesianClusterSearch::needsSmoothedHomogeneityAndMaxDensity </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -620,12 +410,12 @@ Public Member Functions</h2></td></tr>
 <p>Indicate whether the strategy needs smoothed values of homogeneity and max density. </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p>Implements <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a60c3e0abf87498fe9d8c1c2d3f157b53">autopas::TuningStrategyInterface</a>.</p>
+<p>Reimplemented from <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a55f14f8d8fd82e945783a3715452d99f">autopas::TuningStrategyInterface</a>.</p>
 
 </div>
 </div>
-<a id="a66f1eb8445f51d3dea21c3523cb4687c" name="a66f1eb8445f51d3dea21c3523cb4687c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a66f1eb8445f51d3dea21c3523cb4687c">&#9670;&#160;</a></span>tune()</h2>
+<a id="a0f0822a764f4053c283eabea1f06d972" name="a0f0822a764f4053c283eabea1f06d972"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0f0822a764f4053c283eabea1f06d972">&#9670;&#160;</a></span>optimizeSuggestions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -634,11 +424,21 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool autopas::BayesianClusterSearch::tune </td>
+          <td class="memname">void autopas::BayesianClusterSearch::optimizeSuggestions </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>currentInvalid</em> = <code>false</code></td><td>)</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>configQueue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const <a class="el" href="classautopas_1_1EvidenceCollection.html">EvidenceCollection</a> &amp;&#160;</td>
+          <td class="paramname"><em>evidenceCollection</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -648,23 +448,152 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Selects the next configuration to test or the optimum. </p>
-<p>A bool is returned indicating whether more tuning steps are required (=true) or the optimum was found (=false). The new configuration can be obtained by getCurrentConfiguration. It is the configuration which is either the next configuration to test (=true) or the optimum (=false).</p>
+<p>Optimizes the queue of configurations to process. </p>
+<p>This function is called once before each iteration in a tuning phase so all tuning strategies can give their input on which configuration to try next. This is done by reordering configQueue so that the next configuration to try is at the end (FIFO).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">currentInvalid</td><td>Tells the <a class="el" href="classautopas_1_1BayesianClusterSearch.html#a66f1eb8445f51d3dea21c3523cb4687c" title="Selects the next configuration to test or the optimum.">tune()</a> function that the currently selected configuration is invalid. This can be used to avoid getting stuck in an invalid optimum. </td></tr>
+    <tr><td class="paramname">configQueue</td><td>Queue of configurations to be tested. The tuning strategy should edit this queue. </td></tr>
+    <tr><td class="paramname">evidenceCollection</td><td>All collected evidence until now. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>false iff new configuration is the selected optimum. </dd></dl>
 
-<p>Implements <a class="el" href="classautopas_1_1TuningStrategyInterface.html#af60548952077645122cde5b8668ab1b7">autopas::TuningStrategyInterface</a>.</p>
+<p>Implements <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a45e766b635dea87edc8e81fa85af0f41">autopas::TuningStrategyInterface</a>.</p>
+
+</div>
+</div>
+<a id="a0debb27adbe13634bd910e7e7a8c84fc" name="a0debb27adbe13634bd910e7e7a8c84fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0debb27adbe13634bd910e7e7a8c84fc">&#9670;&#160;</a></span>rejectConfiguration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void autopas::BayesianClusterSearch::rejectConfiguration </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;&#160;</td>
+          <td class="paramname"><em>configuration</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>indefinitely</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Notify the strategy about a configuration that is (currently) invalid and thus can potentially be dropped from some internal storage. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">configuration</td><td></td></tr>
+    <tr><td class="paramname">indefinitely</td><td>Whether the given configuration will never be valid </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented from <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a3cc2e5b8444200e7429fd7dd457fc13f">autopas::TuningStrategyInterface</a>.</p>
+
+</div>
+</div>
+<a id="a519868de05380b674d27d0c08bf23bea" name="a519868de05380b674d27d0c08bf23bea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a519868de05380b674d27d0c08bf23bea">&#9670;&#160;</a></span>reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void autopas::BayesianClusterSearch::reset </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>iteration</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>tuningPhase</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>configQueue</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classautopas_1_1EvidenceCollection.html">autopas::EvidenceCollection</a> &amp;&#160;</td>
+          <td class="paramname"><em>evidenceCollection</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reset all internal parameters to the beginning of a new tuning phase. </p>
+<p>This can also mean to reorder the configQueue to some initially expected state.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">iteration</td><td>Gives the current iteration to the tuning strategy. </td></tr>
+    <tr><td class="paramname">tuningPhase</td><td>Gives the current tuning phase to the tuning strategy. </td></tr>
+    <tr><td class="paramname">configQueue</td><td>Queue of configurations to be tested. The tuning strategy should edit this queue. </td></tr>
+    <tr><td class="paramname">evidenceCollection</td><td>All collected evidence until now. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a7e9b4f910967a9a9251939ceaec3e755">autopas::TuningStrategyInterface</a>.</p>
+
+</div>
+</div>
+<a id="ad0158d25d113d37ed6455a2af2a1e263" name="ad0158d25d113d37ed6455a2af2a1e263"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0158d25d113d37ed6455a2af2a1e263">&#9670;&#160;</a></span>searchSpaceIsEmpty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool autopas::BayesianClusterSearch::searchSpaceIsEmpty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicate if the search space is empty. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>autopas/selectors/tuningStrategy/<a class="el" href="BayesianClusterSearch_8h_source.html">BayesianClusterSearch.h</a></li>
-<li>autopas/selectors/tuningStrategy/<a class="el" href="BayesianClusterSearch_8cpp.html">BayesianClusterSearch.cpp</a></li>
+<li>autopas/tuning/tuningStrategy/<a class="el" href="BayesianClusterSearch_8h_source.html">BayesianClusterSearch.h</a></li>
+<li>autopas/tuning/tuningStrategy/<a class="el" href="BayesianClusterSearch_8cpp.html">BayesianClusterSearch.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

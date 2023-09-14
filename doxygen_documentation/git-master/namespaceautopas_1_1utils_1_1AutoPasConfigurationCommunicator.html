@@ -132,18 +132,27 @@ Functions</h2></td></tr>
 <tr class="memitem:a6f3329214580d2fd3a89b313b7d80323"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a6f3329214580d2fd3a89b313b7d80323">distributeConfigurations</a> (std::set&lt; ContainerOption &gt; &amp;containerOptions, <a class="el" href="classautopas_1_1NumberSet.html">NumberSet</a>&lt; double &gt; &amp;cellSizeFactors, std::set&lt; TraversalOption &gt; &amp;traversalOptions, std::set&lt; <a class="el" href="classautopas_1_1LoadEstimatorOption.html">LoadEstimatorOption</a> &gt; &amp;loadEstimatorOptions, std::set&lt; DataLayoutOption &gt; &amp;dataLayoutOptions, std::set&lt; Newton3Option &gt; &amp;newton3Options, int rank, int commSize)</td></tr>
 <tr class="memdesc:a6f3329214580d2fd3a89b313b7d80323"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distributes the provided configurations globally for equal work loads.  <br /></td></tr>
 <tr class="separator:a6f3329214580d2fd3a89b313b7d80323"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6557bedbea54abd44a43aa8a60081008"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1Configuration.html">Configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a6557bedbea54abd44a43aa8a60081008">optimizeConfiguration</a> (<a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> comm, <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> localOptimalConfig, size_t localOptimalTime)</td></tr>
-<tr class="memdesc:a6557bedbea54abd44a43aa8a60081008"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles communication to select the globally best configuration.  <br /></td></tr>
-<tr class="separator:a6557bedbea54abd44a43aa8a60081008"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04eb20f31c3a1ebae57f0ff5b26c2bcb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1Configuration.html">Configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a04eb20f31c3a1ebae57f0ff5b26c2bcb">findGloballyBestConfiguration</a> (<a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> comm, <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> localOptimalConfig, long localOptimalTime)</td></tr>
+<tr class="memdesc:a04eb20f31c3a1ebae57f0ff5b26c2bcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles communication to select the globally best configuration.  <br /></td></tr>
+<tr class="separator:a04eb20f31c3a1ebae57f0ff5b26c2bcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11a58c54f714bebe9f8b5c6e2f5d75c2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a25f5d4ce2fb56f3335224811047a9222">SerializedConfiguration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a11a58c54f714bebe9f8b5c6e2f5d75c2">serializeConfiguration</a> (<a class="el" href="classautopas_1_1Configuration.html">Configuration</a> configuration)</td></tr>
 <tr class="memdesc:a11a58c54f714bebe9f8b5c6e2f5d75c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serializes a configuration object for communication via MPI.  <br /></td></tr>
 <tr class="separator:a11a58c54f714bebe9f8b5c6e2f5d75c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7cbeed1273f3477594d94830ad0a142"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::byte &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#ad7cbeed1273f3477594d94830ad0a142">serializeConfigurations</a> (const std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;configurations)</td></tr>
+<tr class="memdesc:ad7cbeed1273f3477594d94830ad0a142"><td class="mdescLeft">&#160;</td><td class="mdescRight">Serialize a vector of configuration objects into a vector of bytes via <a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a11a58c54f714bebe9f8b5c6e2f5d75c2" title="Serializes a configuration object for communication via MPI.">serializeConfiguration()</a>.  <br /></td></tr>
+<tr class="separator:ad7cbeed1273f3477594d94830ad0a142"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a75462779d95074a5b62c797a45bd8fc1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1Configuration.html">Configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a75462779d95074a5b62c797a45bd8fc1">deserializeConfiguration</a> (<a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a25f5d4ce2fb56f3335224811047a9222">SerializedConfiguration</a> config)</td></tr>
 <tr class="memdesc:a75462779d95074a5b62c797a45bd8fc1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Recreates a <a class="el" href="classautopas_1_1Configuration.html" title="Class containing multiple options that form an algorithm configuration for the pairwise iteration.">Configuration</a> object from the object obtained by _serializeConfiguration.  <br /></td></tr>
 <tr class="separator:a75462779d95074a5b62c797a45bd8fc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ba4781c350999d684411bf9cf98ec18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a4ba4781c350999d684411bf9cf98ec18">distributeRanksInBuckets</a> (<a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> comm, <a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> *bucket, const std::pair&lt; double, double &gt; &amp;smoothedHomogeneityAndMaxDensity, double MPITuningMaxDifferenceForBucket, double MPITuningWeightForMaxDensity)</td></tr>
-<tr class="memdesc:a4ba4781c350999d684411bf9cf98ec18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distribute ranks in buckets, which contain only ranks with similar scenarios.  <br /></td></tr>
-<tr class="separator:a4ba4781c350999d684411bf9cf98ec18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bfdcfaab93b8ad8f82cff883e95b5a4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a5bfdcfaab93b8ad8f82cff883e95b5a4">deserializeConfigurations</a> (const std::vector&lt; std::byte &gt; &amp;configurationsSerialized)</td></tr>
+<tr class="memdesc:a5bfdcfaab93b8ad8f82cff883e95b5a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserialize a vector of bytes into a vector of configurations.  <br /></td></tr>
+<tr class="separator:a5bfdcfaab93b8ad8f82cff883e95b5a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a828e16104000d1148eb64fcf23ca0eed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a828e16104000d1148eb64fcf23ca0eed">distributeRanksInBuckets</a> (<a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> comm, <a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> *bucket, double smoothedHomogeneity, double maxDensity, double MPITuningMaxDifferenceForBucket, double MPITuningWeightForMaxDensity)</td></tr>
+<tr class="memdesc:a828e16104000d1148eb64fcf23ca0eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distribute ranks in buckets, which contain only ranks with similar scenarios.  <br /></td></tr>
+<tr class="separator:a828e16104000d1148eb64fcf23ca0eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11f0b76390f13141a4c9e4d0ed0529e7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a11f0b76390f13141a4c9e4d0ed0529e7">gatherConfigurations</a> (<a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> comm, const std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;localConfigurations, int root)</td></tr>
+<tr class="memdesc:a11f0b76390f13141a4c9e4d0ed0529e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gather the configuration vectors of all ranks in the communicator into one vector at the root process.  <br /></td></tr>
+<tr class="separator:a11f0b76390f13141a4c9e4d0ed0529e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a27e3d65881109ff863efc845fbd53eed"><td class="memTemplParams" colspan="2">template&lt;typename TOption &gt; </td></tr>
 <tr class="memitem:a27e3d65881109ff863efc845fbd53eed"><td class="memTemplItemLeft" align="right" valign="top">std::byte&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a27e3d65881109ff863efc845fbd53eed">castToByte</a> (TOption option)</td></tr>
 <tr class="memdesc:a27e3d65881109ff863efc845fbd53eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simply a shorter way of static_casting from Option to std::byte.  <br /></td></tr>
@@ -241,6 +250,33 @@ template&lt;typename TOption &gt; </div>
 
 </div>
 </div>
+<a id="a5bfdcfaab93b8ad8f82cff883e95b5a4" name="a5bfdcfaab93b8ad8f82cff883e95b5a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bfdcfaab93b8ad8f82cff883e95b5a4">&#9670;&#160;</a></span>deserializeConfigurations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; autopas::utils::AutoPasConfigurationCommunicator::deserializeConfigurations </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::byte &gt; &amp;&#160;</td>
+          <td class="paramname"><em>configurationsSerialized</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Deserialize a vector of bytes into a vector of configurations. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">configurationsSerialized</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 <a id="a6f3329214580d2fd3a89b313b7d80323" name="a6f3329214580d2fd3a89b313b7d80323"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6f3329214580d2fd3a89b313b7d80323">&#9670;&#160;</a></span>distributeConfigurations()</h2>
 
@@ -320,8 +356,8 @@ template&lt;typename TOption &gt; </div>
 
 </div>
 </div>
-<a id="a4ba4781c350999d684411bf9cf98ec18" name="a4ba4781c350999d684411bf9cf98ec18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ba4781c350999d684411bf9cf98ec18">&#9670;&#160;</a></span>distributeRanksInBuckets()</h2>
+<a id="a828e16104000d1148eb64fcf23ca0eed" name="a828e16104000d1148eb64fcf23ca0eed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a828e16104000d1148eb64fcf23ca0eed">&#9670;&#160;</a></span>distributeRanksInBuckets()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -341,8 +377,14 @@ template&lt;typename TOption &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::pair&lt; double, double &gt; &amp;&#160;</td>
-          <td class="paramname"><em>smoothedHomogeneityAndMaxDensity</em>, </td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>smoothedHomogeneity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>maxDensity</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -365,16 +407,109 @@ template&lt;typename TOption &gt; </div>
 </div><div class="memdoc">
 
 <p>Distribute ranks in buckets, which contain only ranks with similar scenarios. </p>
-<p>Each bucket then has its own search space. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Each bucket then has its own search space.</p>
+<p>If negative (=invalid) values for homogeneity or density are passed, every rank gets its own bucket.</p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">comm</td><td>MPI communicator </td></tr>
     <tr><td class="paramname">bucket</td><td>new MPI communicator for its bucket </td></tr>
-    <tr><td class="paramname">smoothedHomogeneityAndMaxDensity</td><td>[homogeneity, maxDensity] smoothed over last 10 iterations. </td></tr>
+    <tr><td class="paramname">smoothedHomogeneity</td><td>homogeneity smoothed over last 10 iterations. </td></tr>
+    <tr><td class="paramname">maxDensity</td><td>maxDensity smoothed over last 10 iterations. </td></tr>
     <tr><td class="paramname">MPITuningMaxDifferenceForBucket</td><td>For MPI-tuning: Maximum of the relative difference in the comparison metric for two ranks which exchange their tuning information. </td></tr>
     <tr><td class="paramname">MPITuningWeightForMaxDensity</td><td>For MPI-tuning: Weight for maxDensity in the calculation for bucket distribution. </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a04eb20f31c3a1ebae57f0ff5b26c2bcb" name="a04eb20f31c3a1ebae57f0ff5b26c2bcb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04eb20f31c3a1ebae57f0ff5b26c2bcb">&#9670;&#160;</a></span>findGloballyBestConfiguration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classautopas_1_1Configuration.html">Configuration</a> autopas::utils::AutoPasConfigurationCommunicator::findGloballyBestConfiguration </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a>&#160;</td>
+          <td class="paramname"><em>comm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1Configuration.html">Configuration</a>&#160;</td>
+          <td class="paramname"><em>localOptimalConfig</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>localOptimalTime</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handles communication to select the globally best configuration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comm</td><td>The communicator used for sending and receiving the optimal configuration. </td></tr>
+    <tr><td class="paramname">localOptimalConfig</td><td>The locally optimal configuration to be compared with others. </td></tr>
+    <tr><td class="paramname">localOptimalTime</td><td>The time measured for localOptimalConfig. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The globally optimal configuration. </dd></dl>
+
+</div>
+</div>
+<a id="a11f0b76390f13141a4c9e4d0ed0529e7" name="a11f0b76390f13141a4c9e4d0ed0529e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11f0b76390f13141a4c9e4d0ed0529e7">&#9670;&#160;</a></span>gatherConfigurations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; autopas::utils::AutoPasConfigurationCommunicator::gatherConfigurations </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a>&#160;</td>
+          <td class="paramname"><em>comm</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>localConfigurations</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>root</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Gather the configuration vectors of all ranks in the communicator into one vector at the root process. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">comm</td><td></td></tr>
+    <tr><td class="paramname">localConfigurations</td><td></td></tr>
+    <tr><td class="paramname">root</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Combined vector of configurations </dd></dl>
 
 </div>
 </div>
@@ -530,51 +665,6 @@ template&lt;typename TOption &gt; </div>
 
 </div>
 </div>
-<a id="a6557bedbea54abd44a43aa8a60081008" name="a6557bedbea54abd44a43aa8a60081008"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6557bedbea54abd44a43aa8a60081008">&#9670;&#160;</a></span>optimizeConfiguration()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1Configuration.html">Configuration</a> autopas::utils::AutoPasConfigurationCommunicator::optimizeConfiguration </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a>&#160;</td>
-          <td class="paramname"><em>comm</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classautopas_1_1Configuration.html">Configuration</a>&#160;</td>
-          <td class="paramname"><em>localOptimalConfig</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>localOptimalTime</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Handles communication to select the globally best configuration. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">comm</td><td>The communicator used for sending and receiving the optimal configuration. </td></tr>
-    <tr><td class="paramname">localOptimalConfig</td><td>The locally optimal configuration to be compared with others. </td></tr>
-    <tr><td class="paramname">localOptimalTime</td><td>The time measured for localOptimalConfig. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>The globally optimal configuration. </dd></dl>
-
-</div>
-</div>
 <a id="a11a58c54f714bebe9f8b5c6e2f5d75c2" name="a11a58c54f714bebe9f8b5c6e2f5d75c2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a11a58c54f714bebe9f8b5c6e2f5d75c2">&#9670;&#160;</a></span>serializeConfiguration()</h2>
 
@@ -599,6 +689,33 @@ template&lt;typename TOption &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>The serialization </dd></dl>
+
+</div>
+</div>
+<a id="ad7cbeed1273f3477594d94830ad0a142" name="ad7cbeed1273f3477594d94830ad0a142"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7cbeed1273f3477594d94830ad0a142">&#9670;&#160;</a></span>serializeConfigurations()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::byte &gt; autopas::utils::AutoPasConfigurationCommunicator::serializeConfigurations </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>configurations</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Serialize a vector of configuration objects into a vector of bytes via <a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a11a58c54f714bebe9f8b5c6e2f5d75c2" title="Serializes a configuration object for communication via MPI.">serializeConfiguration()</a>. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">configurations</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Concatenated byte representations of configurations. </dd></dl>
 
 </div>
 </div>
