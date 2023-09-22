@@ -119,10 +119,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a534e7cbab40c45b81cbea148f1fa7a22"><td class="memItemLeft" align="right" valign="top"><a id="a534e7cbab40c45b81cbea148f1fa7a22" name="a534e7cbab40c45b81cbea148f1fa7a22"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>init</b> ()</td></tr>
-<tr class="memdesc:a534e7cbab40c45b81cbea148f1fa7a22"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialisation may fail, so moved out of constructor <br /></td></tr>
-<tr class="separator:a534e7cbab40c45b81cbea148f1fa7a22"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1cb5e76bb2eed7199d196a83226cbc21"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#a1cb5e76bb2eed7199d196a83226cbc21">init</a> ()</td></tr>
+<tr class="memdesc:a1cb5e76bb2eed7199d196a83226cbc21"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialisation may fail, so moved out of constructor Note: This functios returns an error message instead of throwing an exception if initialization is not possible.  <br /></td></tr>
+<tr class="separator:a1cb5e76bb2eed7199d196a83226cbc21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa16c3dad7c6e0d52edb44b73cc43ebce"><td class="memItemLeft" align="right" valign="top"><a id="aa16c3dad7c6e0d52edb44b73cc43ebce" name="aa16c3dad7c6e0d52edb44b73cc43ebce"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> ()</td></tr>
 <tr class="memdesc:aa16c3dad7c6e0d52edb44b73cc43ebce"><td class="mdescLeft">&#160;</td><td class="mdescRight">reset perf file descriptors to start new measurement <br /></td></tr>
@@ -249,6 +248,26 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>sample</b> ()</td></t
 <p>return energy measurement for tuning purposes. </p>
 <p>Depending on which perf counters are available this may return psys, or a sum of pkg and ram. Note that the units used here are not consistent across different systems. The scaling is skipped for this purpose, as the <a class="el" href="classautopas_1_1AutoTuner.html" title="This class manages all logic related to the auto tuning mechanic.">AutoTuner</a> expects long values as opposed to doubles and rounding the scaled value seems like the inferior option as well as unnecessary given that the values provided by the powercap framework already have the correct type. The getters for pkg, cores, ram and psys provide scaled values for comparisons between different systems.</p>
 <dl class="section return"><dt>Returns</dt><dd>unscaled energy </dd></dl>
+
+</div>
+</div>
+<a id="a1cb5e76bb2eed7199d196a83226cbc21" name="a1cb5e76bb2eed7199d196a83226cbc21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1cb5e76bb2eed7199d196a83226cbc21">&#9670;&#160;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string autopas::utils::RaplMeter::init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>initialisation may fail, so moved out of constructor Note: This functios returns an error message instead of throwing an exception if initialization is not possible. </p>
+<p>This way debuggers don't break on the start of every autopas initialization if we are not interested in energy measurement. </p><dl class="section return"><dt>Returns</dt><dd>Error message. The error is message is empty on success </dd></dl>
 
 </div>
 </div>
