@@ -191,7 +191,7 @@ $(function() {
 <div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>    <span class="comment">// Generate a map from pointer to particle index in the SoA. This works, because during loadSoA&quot;()&quot; the particles</span></div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>    <span class="comment">// are loaded in the same order.</span></div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    std::unordered_map&lt;Particle *, size_t&gt; _aos2soaMap;</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    _aos2soaMap.reserve(_baseLinkedCells-&gt;getNumberOfParticles());</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>    _aos2soaMap.reserve(_baseLinkedCells-&gt;size());</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>    <span class="keywordtype">size_t</span> i = 0;</div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    <span class="comment">// needs to iterate also over dummies!</span></div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> iter = _baseLinkedCells-&gt;begin(IteratorBehavior::ownedOrHaloOrDummy); iter.isValid(); ++iter, ++i) {</div>
@@ -232,7 +232,7 @@ $(function() {
 <div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="keywordtype">size_t</span> offset = 0;</div>
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;cell : _baseLinkedCells-&gt;getCells()) {</div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>      f-&gt;SoALoader(cell, _soa, offset);</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>      offset += cell.numParticles();</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>      offset += cell.size();</div>
 <div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    }</div>
 <div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
 <div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <span class="keywordflow">return</span> &amp;_soa;</div>
@@ -242,7 +242,7 @@ $(function() {
 <div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <span class="keywordtype">size_t</span> offset = 0;</div>
 <div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;cell : _baseLinkedCells-&gt;getCells()) {</div>
 <div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>      f-&gt;SoAExtractor(cell, _soa, offset);</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>      offset += cell.numParticles();</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>      offset += cell.size();</div>
 <div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    }</div>
 <div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>  }</div>
 <div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
@@ -319,7 +319,7 @@ $(function() {
 <div class="ttc" id="aclassautopas_1_1ColorChangeObserver_html"><div class="ttname"><a href="classautopas_1_1ColorChangeObserver.html">autopas::ColorChangeObserver</a></div><div class="ttdoc">Observer interface that specifies handling color changes.</div><div class="ttdef"><b>Definition:</b> ColorChangeObserver.h:14</div></div>
 <div class="ttc" id="aclassautopas_1_1LinkedCells_html"><div class="ttname"><a href="classautopas_1_1LinkedCells.html">autopas::LinkedCells</a></div><div class="ttdoc">LinkedCells class.</div><div class="ttdef"><b>Definition:</b> LinkedCells.h:39</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleBase_html"><div class="ttname"><a href="classautopas_1_1ParticleBase.html">autopas::ParticleBase</a></div><div class="ttdoc">Minimal definition of a basic particle.</div><div class="ttdef"><b>Definition:</b> ParticleBase.h:33</div></div>
-<div class="ttc" id="aclassautopas_1_1SoA_html_a530a47fe9169c2fe80540d84c8797d6b"><div class="ttname"><a href="classautopas_1_1SoA.html#a530a47fe9169c2fe80540d84c8797d6b">autopas::SoA::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">delete all particles in the soa</div><div class="ttdef"><b>Definition:</b> SoA.h:188</div></div>
+<div class="ttc" id="aclassautopas_1_1SoA_html_a530a47fe9169c2fe80540d84c8797d6b"><div class="ttname"><a href="classautopas_1_1SoA.html#a530a47fe9169c2fe80540d84c8797d6b">autopas::SoA::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">delete all particles in the soa</div><div class="ttdef"><b>Definition:</b> SoA.h:187</div></div>
 <div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html">autopas::VerletNeighborListAsBuild</a></div><div class="ttdoc">This class implements a neighbor list that remembers which thread added which particle pair and at wh...</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:22</div></div>
 <div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_a01a40a192af1f48c01b0e46c725c1610"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#a01a40a192af1f48c01b0e46c725c1610">autopas::VerletNeighborListAsBuild::isSoAListValid</a></div><div class="ttdeci">bool isSoAListValid() const override</div><div class="ttdoc">Returns whether the SoA is build and up to date with the AoS.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:228</div></div>
 <div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_a0b29a390a1894ad8bcb391d143d691da"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#a0b29a390a1894ad8bcb391d143d691da">autopas::VerletNeighborListAsBuild::getAoSNeighborList</a></div><div class="ttdeci">const auto &amp; getAoSNeighborList()</div><div class="ttdoc">Returns the internal AoS neighbor list.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:134</div></div>

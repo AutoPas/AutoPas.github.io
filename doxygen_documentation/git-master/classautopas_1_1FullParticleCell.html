@@ -209,9 +209,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a238ed8a6470e75682220f4cb6b28abda"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1FullParticleCell.html#a238ed8a6470e75682220f4cb6b28abda">reduce</a> (Lambda reduceLambda, A &amp;result, const std::array&lt; double, 3 &gt; &amp;lowerCorner, const std::array&lt; double, 3 &gt; &amp;higherCorner, IteratorBehavior behavior)</td></tr>
 <tr class="memdesc:a238ed8a6470e75682220f4cb6b28abda"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reduce properties of particles as defined by a lambda function.  <br /></td></tr>
 <tr class="separator:a238ed8a6470e75682220f4cb6b28abda"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a966981e351e508bf9c6fe7af7c218dab"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1FullParticleCell.html#a966981e351e508bf9c6fe7af7c218dab">numParticles</a> () const override</td></tr>
-<tr class="memdesc:a966981e351e508bf9c6fe7af7c218dab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of particles stored in this cell.  <br /></td></tr>
-<tr class="separator:a966981e351e508bf9c6fe7af7c218dab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7393ba786980a7490d971ccc8207ccea"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1FullParticleCell.html#a7393ba786980a7490d971ccc8207ccea">size</a> () const override</td></tr>
+<tr class="memdesc:a7393ba786980a7490d971ccc8207ccea"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of all particles stored in this cell (owned, halo and dummy).  <br /></td></tr>
+<tr class="separator:a7393ba786980a7490d971ccc8207ccea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46d3cd7b4374fd30014bb04a4fc74d88"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1FullParticleCell.html#a46d3cd7b4374fd30014bb04a4fc74d88">getNumberOfParticles</a> (IteratorBehavior behavior) const override</td></tr>
+<tr class="memdesc:a46d3cd7b4374fd30014bb04a4fc74d88"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of particles with respect to the specified IteratorBehavior.    <br /></td></tr>
+<tr class="separator:a46d3cd7b4374fd30014bb04a4fc74d88"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad4efc12d65353d9fd63e041e0d3eb90f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1FullParticleCell.html#ad4efc12d65353d9fd63e041e0d3eb90f">operator[]</a> (size_t n)</td></tr>
 <tr class="memdesc:ad4efc12d65353d9fd63e041e0d3eb90f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the element at position n in the cell.  <br /></td></tr>
 <tr class="separator:ad4efc12d65353d9fd63e041e0d3eb90f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -272,9 +275,12 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ParticleCell</b> 
 <tr class="memitem:af63bcaafef98699c85dd237df6dda909 inherit pub_methods_classautopas_1_1ParticleCell"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleCell.html#af63bcaafef98699c85dd237df6dda909">addParticle</a> (const <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &amp;p)=0</td></tr>
 <tr class="memdesc:af63bcaafef98699c85dd237df6dda909 inherit pub_methods_classautopas_1_1ParticleCell"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a Particle to the cell.  <br /></td></tr>
 <tr class="separator:af63bcaafef98699c85dd237df6dda909 inherit pub_methods_classautopas_1_1ParticleCell"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afebac875a53fe79875cafd7e7849f030 inherit pub_methods_classautopas_1_1ParticleCell"><td class="memItemLeft" align="right" valign="top">virtual unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleCell.html#afebac875a53fe79875cafd7e7849f030">numParticles</a> () const =0</td></tr>
-<tr class="memdesc:afebac875a53fe79875cafd7e7849f030 inherit pub_methods_classautopas_1_1ParticleCell"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of particles stored in this cell.  <br /></td></tr>
-<tr class="separator:afebac875a53fe79875cafd7e7849f030 inherit pub_methods_classautopas_1_1ParticleCell"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a873fc0065012034e9a9da7ca25c15ce1 inherit pub_methods_classautopas_1_1ParticleCell"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleCell.html#a873fc0065012034e9a9da7ca25c15ce1">size</a> () const =0</td></tr>
+<tr class="memdesc:a873fc0065012034e9a9da7ca25c15ce1 inherit pub_methods_classautopas_1_1ParticleCell"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of all particles stored in this cell (owned, halo and dummy).  <br /></td></tr>
+<tr class="separator:a873fc0065012034e9a9da7ca25c15ce1 inherit pub_methods_classautopas_1_1ParticleCell"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abb38392a6d54c5234bcbd918e3ac1cc8 inherit pub_methods_classautopas_1_1ParticleCell"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleCell.html#abb38392a6d54c5234bcbd918e3ac1cc8">getNumberOfParticles</a> (IteratorBehavior behavior=IteratorBehavior::owned) const =0</td></tr>
+<tr class="memdesc:abb38392a6d54c5234bcbd918e3ac1cc8 inherit pub_methods_classautopas_1_1ParticleCell"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of particles with respect to the specified IteratorBehavior.  <br /></td></tr>
+<tr class="separator:abb38392a6d54c5234bcbd918e3ac1cc8 inherit pub_methods_classautopas_1_1ParticleCell"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a6fa928d15c5e4d93433b53486d174f inherit pub_methods_classautopas_1_1ParticleCell"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleCell.html#a4a6fa928d15c5e4d93433b53486d174f">isEmpty</a> () const =0</td></tr>
 <tr class="memdesc:a4a6fa928d15c5e4d93433b53486d174f inherit pub_methods_classautopas_1_1ParticleCell"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if the cell is empty.  <br /></td></tr>
 <tr class="separator:a4a6fa928d15c5e4d93433b53486d174f inherit pub_methods_classautopas_1_1ParticleCell"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -296,6 +302,15 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ParticleCell</b> 
 <tr class="memitem:ab5d421a46136847b03cd4e0a741c4c5f inherit pub_methods_classautopas_1_1ParticleCell"><td class="memItemLeft" align="right" valign="top">virtual std::array&lt; double, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleCell.html#ab5d421a46136847b03cd4e0a741c4c5f">getCellLength</a> () const =0</td></tr>
 <tr class="memdesc:ab5d421a46136847b03cd4e0a741c4c5f inherit pub_methods_classautopas_1_1ParticleCell"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the side lengths of this cell.  <br /></td></tr>
 <tr class="separator:ab5d421a46136847b03cd4e0a741c4c5f inherit pub_methods_classautopas_1_1ParticleCell"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad35f6226c50de8a5db0cbdfc0152d2b8 inherit pub_methods_classautopas_1_1ParticleCell"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0">OwnershipState</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleCell.html#ad35f6226c50de8a5db0cbdfc0152d2b8">getPossibleParticleOwnerships</a> () const</td></tr>
+<tr class="memdesc:ad35f6226c50de8a5db0cbdfc0152d2b8 inherit pub_methods_classautopas_1_1ParticleCell"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the type of particles contained in this cell.  <br /></td></tr>
+<tr class="separator:ad35f6226c50de8a5db0cbdfc0152d2b8 inherit pub_methods_classautopas_1_1ParticleCell"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf1b4c3f50f4d5e6b037ca2cef6af759 inherit pub_methods_classautopas_1_1ParticleCell"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleCell.html#acf1b4c3f50f4d5e6b037ca2cef6af759">setPossibleParticleOwnerships</a> (<a class="el" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0">OwnershipState</a> state)</td></tr>
+<tr class="memdesc:acf1b4c3f50f4d5e6b037ca2cef6af759 inherit pub_methods_classautopas_1_1ParticleCell"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the type of particles contained in this cell.  <br /></td></tr>
+<tr class="separator:acf1b4c3f50f4d5e6b037ca2cef6af759 inherit pub_methods_classautopas_1_1ParticleCell"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a751e7b46acddb844bdd252fe526e1a8f inherit pub_methods_classautopas_1_1ParticleCell"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1AutoPasLock.html">AutoPasLock</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleCell.html#a751e7b46acddb844bdd252fe526e1a8f">getCellLock</a> () const</td></tr>
+<tr class="memdesc:a751e7b46acddb844bdd252fe526e1a8f inherit pub_methods_classautopas_1_1ParticleCell"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a reference to the lock object for exclusive access to this cell.  <br /></td></tr>
+<tr class="separator:a751e7b46acddb844bdd252fe526e1a8f inherit pub_methods_classautopas_1_1ParticleCell"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -307,11 +322,21 @@ Public Attributes</h2></td></tr>
 <a class="el" href="classautopas_1_1SoA.html">SoA</a>&lt; <a class="el" href="classautopas_1_1FullParticleCell.html#a040cdbbb3414c65946ddfdb88950fe88">SoAArraysType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_particleSoABuffer</b> {}</td></tr>
 <tr class="memdesc:a213075054651cd297bf41c20d2651271"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> buffer of this cell. <br /></td></tr>
 <tr class="separator:a213075054651cd297bf41c20d2651271"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_attribs_classautopas_1_1ParticleCell"><td colspan="2" onclick="javascript:toggleInherit('pub_attribs_classautopas_1_1ParticleCell')"><img src="closed.png" alt="-"/>&#160;Public Attributes inherited from <a class="el" href="classautopas_1_1ParticleCell.html">autopas::ParticleCell&lt; Particle &gt;</a></td></tr>
-<tr class="memitem:a89859a1003e2831b37d5782e53cdcddc inherit pub_attribs_classautopas_1_1ParticleCell"><td class="memItemLeft" align="right" valign="top"><a id="a89859a1003e2831b37d5782e53cdcddc" name="a89859a1003e2831b37d5782e53cdcddc"></a>
-<a class="el" href="classautopas_1_1AutoPasLock.html">AutoPasLock</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_cellLock</b> {}</td></tr>
-<tr class="memdesc:a89859a1003e2831b37d5782e53cdcddc inherit pub_attribs_classautopas_1_1ParticleCell"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock object for exclusive access to this cell. <br /></td></tr>
-<tr class="separator:a89859a1003e2831b37d5782e53cdcddc inherit pub_attribs_classautopas_1_1ParticleCell"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_attribs_classautopas_1_1ParticleCell"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classautopas_1_1ParticleCell')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classautopas_1_1ParticleCell.html">autopas::ParticleCell&lt; Particle &gt;</a></td></tr>
+<tr class="memitem:a89859a1003e2831b37d5782e53cdcddc inherit pro_attribs_classautopas_1_1ParticleCell"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1AutoPasLock.html">AutoPasLock</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleCell.html#a89859a1003e2831b37d5782e53cdcddc">_cellLock</a> {}</td></tr>
+<tr class="memdesc:a89859a1003e2831b37d5782e53cdcddc inherit pro_attribs_classautopas_1_1ParticleCell"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock object for exclusive access to this cell.  <br /></td></tr>
+<tr class="separator:a89859a1003e2831b37d5782e53cdcddc inherit pro_attribs_classautopas_1_1ParticleCell"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a198d472cea5e8e1416cbbb53fbe4af0b inherit pro_attribs_classautopas_1_1ParticleCell"><td class="memItemLeft" align="right" valign="top"><a id="a198d472cea5e8e1416cbbb53fbe4af0b" name="a198d472cea5e8e1416cbbb53fbe4af0b"></a>
+<a class="el" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0">OwnershipState</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_ownershipState</b> {<a class="el" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a8f9a4c5fe0824547590a3fc568f5c7c7">autopas::OwnershipState::owned</a> | <a class="el" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a57f842286171094855e51fc3a541c1e2">autopas::OwnershipState::halo</a>}</td></tr>
+<tr class="memdesc:a198d472cea5e8e1416cbbb53fbe4af0b inherit pro_attribs_classautopas_1_1ParticleCell"><td class="mdescLeft">&#160;</td><td class="mdescRight">The particles which can be contained in this cell are determined by the OwnershipState. <br /></td></tr>
+<tr class="separator:a198d472cea5e8e1416cbbb53fbe4af0b inherit pro_attribs_classautopas_1_1ParticleCell"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d5e7856f8e6821a34cffcba12e6aa0b inherit pro_attribs_classautopas_1_1ParticleCell"><td class="memItemLeft" align="right" valign="top"><a id="a5d5e7856f8e6821a34cffcba12e6aa0b" name="a5d5e7856f8e6821a34cffcba12e6aa0b"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_ownershipStateDefined</b> {false}</td></tr>
+<tr class="memdesc:a5d5e7856f8e6821a34cffcba12e6aa0b inherit pro_attribs_classautopas_1_1ParticleCell"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag that is set to true once OwnershipState has been set to avoid resetting the OwnershipState. <br /></td></tr>
+<tr class="separator:a5d5e7856f8e6821a34cffcba12e6aa0b inherit pro_attribs_classautopas_1_1ParticleCell"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>&gt;<br />
@@ -894,6 +919,48 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
+<a id="a46d3cd7b4374fd30014bb04a4fc74d88" name="a46d3cd7b4374fd30014bb04a4fc74d88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46d3cd7b4374fd30014bb04a4fc74d88">&#9670;&#160;</a></span>getNumberOfParticles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classautopas_1_1FullParticleCell.html">autopas::FullParticleCell</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getNumberOfParticles </td>
+          <td>(</td>
+          <td class="paramtype">IteratorBehavior&#160;</td>
+          <td class="paramname"><em>behavior</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the number of particles with respect to the specified IteratorBehavior.   </p>
+<dl class="section warning"><dt>Warning</dt><dd>: Since this function counts the number of the respective particles in the internal particle storage, this is in O(n) + lock is required. Only use it when it is absolutely necessary to have the exact number of different particle types like owned or halo. If it is enough to have the whole number of particles (owned + halo + dummy), the function <a class="el" href="classautopas_1_1FullParticleCell.html#a7393ba786980a7490d971ccc8207ccea" title="Get the number of all particles stored in this cell (owned, halo and dummy).">size()</a> can be used. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">behavior</td><td>Behavior of the iterator, see IteratorBehavior. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of particles with respect to the specified IteratorBehavior.   </dd></dl>
+
+<p>Implements <a class="el" href="classautopas_1_1ParticleCell.html#abb38392a6d54c5234bcbd918e3ac1cc8">autopas::ParticleCell&lt; Particle &gt;</a>.</p>
+
+<p>Reimplemented in <a class="el" href="classautopas_1_1OctreeLeafNode.html#a300bf67d771982814b008bf135718600">autopas::OctreeLeafNode&lt; Particle &gt;</a>.</p>
+
+</div>
+</div>
 <a id="a5d0eac7d43111485deaf8880db1fcc71" name="a5d0eac7d43111485deaf8880db1fcc71"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5d0eac7d43111485deaf8880db1fcc71">&#9670;&#160;</a></span>getParticleCellTypeAsEnum()</h2>
 
@@ -955,38 +1022,6 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <dl class="section return"><dt>Returns</dt><dd>true if no particles are stored in this cell. </dd></dl>
 
 <p>Implements <a class="el" href="classautopas_1_1ParticleCell.html#a4a6fa928d15c5e4d93433b53486d174f">autopas::ParticleCell&lt; Particle &gt;</a>.</p>
-
-</div>
-</div>
-<a id="a966981e351e508bf9c6fe7af7c218dab" name="a966981e351e508bf9c6fe7af7c218dab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a966981e351e508bf9c6fe7af7c218dab">&#9670;&#160;</a></span>numParticles()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">unsigned long <a class="el" href="classautopas_1_1FullParticleCell.html">autopas::FullParticleCell</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::numParticles </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get the number of particles stored in this cell. </p>
-<dl class="section return"><dt>Returns</dt><dd>number of particles stored in this cell </dd></dl>
-
-<p>Implements <a class="el" href="classautopas_1_1ParticleCell.html#afebac875a53fe79875cafd7e7849f030">autopas::ParticleCell&lt; Particle &gt;</a>.</p>
 
 </div>
 </div>
@@ -1378,6 +1413,40 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </dl>
 
 <p>Implements <a class="el" href="classautopas_1_1ParticleCell.html#a17289b81c8c2743cc1bc6c1c45b67e58">autopas::ParticleCell&lt; Particle &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a7393ba786980a7490d971ccc8207ccea" name="a7393ba786980a7490d971ccc8207ccea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7393ba786980a7490d971ccc8207ccea">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classautopas_1_1FullParticleCell.html">autopas::FullParticleCell</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the number of all particles stored in this cell (owned, halo and dummy). </p>
+<dl class="section return"><dt>Returns</dt><dd>number of particles stored in this cell (owned, halo and dummy). </dd></dl>
+
+<p>Implements <a class="el" href="classautopas_1_1ParticleCell.html#a873fc0065012034e9a9da7ca25c15ce1">autopas::ParticleCell&lt; Particle &gt;</a>.</p>
+
+<p>Reimplemented in <a class="el" href="classautopas_1_1OctreeLeafNode.html#a4120d51e7cca6e3591d93bcdd9ab050a">autopas::OctreeLeafNode&lt; Particle &gt;</a>.</p>
 
 </div>
 </div>

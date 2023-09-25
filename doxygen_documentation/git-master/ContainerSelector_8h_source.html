@@ -232,7 +232,7 @@ $(function() {
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  <span class="comment">// copy particles so they do not get lost when container is switched</span></div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  <span class="keywordflow">if</span> (_currentContainer != <span class="keyword">nullptr</span>) {</div>
 <div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="comment">// with these assumptions slightly more space is reserved as numParticlesTotal already includes halos</span></div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keyword">const</span> <span class="keyword">auto</span> numParticlesTotal = _currentContainer-&gt;getNumberOfParticles();</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keyword">const</span> <span class="keyword">auto</span> numParticlesTotal = _currentContainer-&gt;size();</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keyword">const</span> <span class="keyword">auto</span> numParticlesHalo = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1NumParticlesEstimator.html#a2e1945cd199bdc217e444dcbe9a895eb">autopas::utils::NumParticlesEstimator::estimateNumHalosUniform</a>(</div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        numParticlesTotal, _currentContainer-&gt;getBoxMin(), _currentContainer-&gt;getBoxMax(),</div>
 <div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        _currentContainer-&gt;getInteractionLength());</div>

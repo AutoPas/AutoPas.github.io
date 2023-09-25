@@ -163,9 +163,12 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~OctreeNodeInterfa
 <tr class="memitem:a79f9f7af6e44d6b601b16140c52b29e7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1OctreeNodeInterface.html#a79f9f7af6e44d6b601b16140c52b29e7">clearChildren</a> (std::unique_ptr&lt; <a class="el" href="classautopas_1_1OctreeNodeInterface.html">OctreeNodeInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &gt; &amp;ref)=0</td></tr>
 <tr class="memdesc:a79f9f7af6e44d6b601b16140c52b29e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the entire tree below this node.  <br /></td></tr>
 <tr class="separator:a79f9f7af6e44d6b601b16140c52b29e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11691fce0c5a2a2e725720e4205a1d07"><td class="memItemLeft" align="right" valign="top">virtual unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1OctreeNodeInterface.html#a11691fce0c5a2a2e725720e4205a1d07">getNumberOfParticles</a> () const =0</td></tr>
-<tr class="memdesc:a11691fce0c5a2a2e725720e4205a1d07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of particles saved in the container.    <br /></td></tr>
-<tr class="separator:a11691fce0c5a2a2e725720e4205a1d07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad9a8dc6a8208513f434a65319d760c95"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1OctreeNodeInterface.html#ad9a8dc6a8208513f434a65319d760c95">size</a> () const =0</td></tr>
+<tr class="memdesc:ad9a8dc6a8208513f434a65319d760c95"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total number of particles saved in the container (owned + halo + dummy).    <br /></td></tr>
+<tr class="separator:ad9a8dc6a8208513f434a65319d760c95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a992d9f128fe23c00787dbf4c9f13f290"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1OctreeNodeInterface.html#a992d9f128fe23c00787dbf4c9f13f290">getNumberOfParticles</a> (IteratorBehavior behavior=IteratorBehavior::owned) const =0</td></tr>
+<tr class="memdesc:a992d9f128fe23c00787dbf4c9f13f290"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of particles with respect to the specified IteratorBehavior.      <br /></td></tr>
+<tr class="separator:a992d9f128fe23c00787dbf4c9f13f290"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad63c8a391496ba5662277817c1d8aec"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classautopas_1_1OctreeNodeInterface.html">OctreeNodeInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1OctreeNodeInterface.html#aad63c8a391496ba5662277817c1d8aec">SON</a> (<a class="el" href="namespaceautopas_1_1octree.html#a634edb45fec2977d2015038cd8a3d25d">octree::Octant</a> O)=0</td></tr>
 <tr class="memdesc:aad63c8a391496ba5662277817c1d8aec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a child node of this node (if there are children) given a specific octant using the spacial structure of the stored children.  <br /></td></tr>
 <tr class="separator:aad63c8a391496ba5662277817c1d8aec"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1075,8 +1078,8 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="a11691fce0c5a2a2e725720e4205a1d07" name="a11691fce0c5a2a2e725720e4205a1d07"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11691fce0c5a2a2e725720e4205a1d07">&#9670;&#160;</a></span>getNumberOfParticles()</h2>
+<a id="a992d9f128fe23c00787dbf4c9f13f290" name="a992d9f128fe23c00787dbf4c9f13f290"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a992d9f128fe23c00787dbf4c9f13f290">&#9670;&#160;</a></span>getNumberOfParticles()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1087,9 +1090,10 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual unsigned int <a class="el" href="classautopas_1_1OctreeNodeInterface.html">autopas::OctreeNodeInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getNumberOfParticles </td>
+          <td class="memname">virtual size_t <a class="el" href="classautopas_1_1OctreeNodeInterface.html">autopas::OctreeNodeInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getNumberOfParticles </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">IteratorBehavior&#160;</td>
+          <td class="paramname"><em>behavior</em> = <code>IteratorBehavior::owned</code></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -1100,10 +1104,17 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </table>
 </div><div class="memdoc">
 
-<p>Get the number of particles saved in the container.   </p>
-<dl class="section return"><dt>Returns</dt><dd>Number of particles in the container.   </dd></dl>
+<p>Get the number of particles with respect to the specified IteratorBehavior.     </p>
+<dl class="section warning"><dt>Warning</dt><dd>: Since this function counts the number of the respective particles in the internal particle storage, this is in O(n) + lock is required. Only use it when it is absolutely necessary to have the exact number of different particle types like owned or halo. If it is enough to have the whole number of particles (owned + halo + dummy), the function <a class="el" href="classautopas_1_1OctreeNodeInterface.html#ad9a8dc6a8208513f434a65319d760c95" title="Get the total number of particles saved in the container (owned + halo + dummy).">size()</a> can be used. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">behavior</td><td>Behavior of the iterator, see IteratorBehavior. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of particles with respect to the specified IteratorBehavior.     </dd></dl>
 
-<p>Implemented in <a class="el" href="classautopas_1_1OctreeInnerNode.html#a3a77626de0af49329f86e28d3941b19a">autopas::OctreeInnerNode&lt; Particle &gt;</a>, and <a class="el" href="classautopas_1_1OctreeLeafNode.html#a9a7121883f8bb29bc4a76b55e8832f30">autopas::OctreeLeafNode&lt; Particle &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classautopas_1_1OctreeInnerNode.html#a255ed9446c0fe23b572b3bf9a300d0c9">autopas::OctreeInnerNode&lt; Particle &gt;</a>, and <a class="el" href="classautopas_1_1OctreeLeafNode.html#a300bf67d771982814b008bf135718600">autopas::OctreeLeafNode&lt; Particle &gt;</a>.</p>
 
 </div>
 </div>
@@ -1479,6 +1490,38 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ad9a8dc6a8208513f434a65319d760c95" name="ad9a8dc6a8208513f434a65319d760c95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad9a8dc6a8208513f434a65319d760c95">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual size_t <a class="el" href="classautopas_1_1OctreeNodeInterface.html">autopas::OctreeNodeInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the total number of particles saved in the container (owned + halo + dummy).   </p>
+<dl class="section return"><dt>Returns</dt><dd>Number of particles saved in the container (owned + halo + dummy).   </dd></dl>
+
+<p>Implemented in <a class="el" href="classautopas_1_1OctreeInnerNode.html#a24a7bc72f9a57f35d895af45f2938d3f">autopas::OctreeInnerNode&lt; Particle &gt;</a>, and <a class="el" href="classautopas_1_1OctreeLeafNode.html#a4120d51e7cca6e3591d93bcdd9ab050a">autopas::OctreeLeafNode&lt; Particle &gt;</a>.</p>
 
 </div>
 </div>

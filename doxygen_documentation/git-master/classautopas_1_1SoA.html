@@ -179,9 +179,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae25d36763ba2a7eac560af8c4ddb1736"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1SoA.html#ae25d36763ba2a7eac560af8c4ddb1736">begin</a> ()</td></tr>
 <tr class="memdesc:ae25d36763ba2a7eac560af8c4ddb1736"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a pointer to the given attribute vector.  <br /></td></tr>
 <tr class="separator:ae25d36763ba2a7eac560af8c4ddb1736"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab14c169fa0525e63ea649750fa7e57b7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1SoA.html#ab14c169fa0525e63ea649750fa7e57b7">getNumberOfParticles</a> () const</td></tr>
-<tr class="memdesc:ab14c169fa0525e63ea649750fa7e57b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of particles.  <br /></td></tr>
-<tr class="separator:ab14c169fa0525e63ea649750fa7e57b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0567fd3b75d016fadadca0298464d00"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1SoA.html#aa0567fd3b75d016fadadca0298464d00">size</a> () const</td></tr>
+<tr class="memdesc:aa0567fd3b75d016fadadca0298464d00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of particles.  <br /></td></tr>
+<tr class="separator:aa0567fd3b75d016fadadca0298464d00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a530a47fe9169c2fe80540d84c8797d6b"><td class="memItemLeft" align="right" valign="top"><a id="a530a47fe9169c2fe80540d84c8797d6b" name="a530a47fe9169c2fe80540d84c8797d6b"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>clear</b> ()</td></tr>
 <tr class="memdesc:a530a47fe9169c2fe80540d84c8797d6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">delete all particles in the soa <br /></td></tr>
@@ -468,7 +468,7 @@ template&lt;class SoAArraysType &gt; </div>
 </div><div class="memdoc">
 
 <p>Constructs a view that starts at <code>startIndex</code> (inclusive) and ends at <code>endIndex</code> (exclusive). </p>
-<p><code>startIndex</code> and <code>endIndex</code> have to be between 0 (inclusive) and <code>this-&gt;<a class="el" href="classautopas_1_1SoA.html#ab14c169fa0525e63ea649750fa7e57b7" title="Returns the number of particles.">getNumberOfParticles()</a></code> (inclusive). <code>endIndex</code> has to be greater or equal to <code>startIndex</code>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p><code>startIndex</code> and <code>endIndex</code> have to be between 0 (inclusive) and <code>this-&gt;<a class="el" href="classautopas_1_1SoA.html#aa0567fd3b75d016fadadca0298464d00" title="Returns the number of particles.">size()</a></code> (inclusive). <code>endIndex</code> has to be greater or equal to <code>startIndex</code>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">startIndex</td><td>The index of the first entry to view. </td></tr>
     <tr><td class="paramname">endIndex</td><td>The index of the entry after the last entry to view. </td></tr>
@@ -476,37 +476,6 @@ template&lt;class SoAArraysType &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>the constructed <a class="el" href="classautopas_1_1SoAView.html" title="View on a fixed part of a SoA between a start index and an end index.">SoAView</a> from <code>startIndex</code> (inclusive) to <code>endIndex</code> (exclusive). </dd></dl>
-
-</div>
-</div>
-<a id="ab14c169fa0525e63ea649750fa7e57b7" name="ab14c169fa0525e63ea649750fa7e57b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab14c169fa0525e63ea649750fa7e57b7">&#9670;&#160;</a></span>getNumberOfParticles()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class SoAArraysType &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t <a class="el" href="classautopas_1_1SoA.html">autopas::SoA</a>&lt; SoAArraysType &gt;::getNumberOfParticles </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the number of particles. </p>
-<p>This function only checks the size of the first array since it is assumed that the user manages the arrays responsibly.</p>
-<dl class="section return"><dt>Returns</dt><dd>Number of particles. </dd></dl>
 
 </div>
 </div>
@@ -678,6 +647,37 @@ template&lt;class SoAArraysType &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aa0567fd3b75d016fadadca0298464d00" name="aa0567fd3b75d016fadadca0298464d00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0567fd3b75d016fadadca0298464d00">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class SoAArraysType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classautopas_1_1SoA.html">autopas::SoA</a>&lt; SoAArraysType &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the number of particles. </p>
+<p>This function only checks the size of the first array since it is assumed that the user manages the arrays responsibly.</p>
+<dl class="section return"><dt>Returns</dt><dd>Number of particles. </dd></dl>
 
 </div>
 </div>

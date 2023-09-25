@@ -633,7 +633,7 @@ $(function() {
 <div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span>    <span class="comment">// we will clear the old buffers so subtract the particles from the counters.</span></div>
 <div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>    <span class="keyword">const</span> <span class="keyword">auto</span> numParticlesInOldBuffers =</div>
 <div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span>        std::transform_reduce(oldBuffers.begin(), std::next(oldBuffers.begin(), newBuffers.size()), 0, std::plus&lt;&gt;(),</div>
-<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>                              [](<span class="keyword">const</span> <span class="keyword">auto</span> &amp;cell) { return cell.numParticles(); });</div>
+<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>                              [](<span class="keyword">const</span> <span class="keyword">auto</span> &amp;cell) { return cell.size(); });</div>
 <div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>    particleCounter.fetch_sub(numParticlesInOldBuffers, std::memory_order_relaxed);</div>
 <div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span> </div>
 <div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span>    <span class="comment">// clear the old buffers and copy the content of the new buffers over.</span></div>
@@ -978,8 +978,8 @@ $(function() {
 <div class="line"><a id="l01147" name="l01147"></a><span class="lineno"> 1147</span>    std::stringstream ss;</div>
 <div class="line"><a id="l01148" name="l01148"></a><span class="lineno"> 1148</span>    <span class="keywordtype">size_t</span> sum = 0;</div>
 <div class="line"><a id="l01149" name="l01149"></a><span class="lineno"> 1149</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;buffer : buffers) {</div>
-<div class="line"><a id="l01150" name="l01150"></a><span class="lineno"> 1150</span>      ss &lt;&lt; buffer.numParticles() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
-<div class="line"><a id="l01151" name="l01151"></a><span class="lineno"> 1151</span>      sum += buffer.numParticles();</div>
+<div class="line"><a id="l01150" name="l01150"></a><span class="lineno"> 1150</span>      ss &lt;&lt; buffer.size() &lt;&lt; <span class="stringliteral">&quot;, &quot;</span>;</div>
+<div class="line"><a id="l01151" name="l01151"></a><span class="lineno"> 1151</span>      sum += buffer.size();</div>
 <div class="line"><a id="l01152" name="l01152"></a><span class="lineno"> 1152</span>    }</div>
 <div class="line"><a id="l01153" name="l01153"></a><span class="lineno"> 1153</span>    ss &lt;&lt; <span class="stringliteral">&quot; Total: &quot;</span> &lt;&lt; sum;</div>
 <div class="line"><a id="l01154" name="l01154"></a><span class="lineno"> 1154</span>    <span class="keywordflow">return</span> ss.str();</div>

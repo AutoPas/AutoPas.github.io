@@ -221,9 +221,12 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ParticleContainer
 <tr class="memitem:a72611bd7d393897565b99b1e9d3f1d50"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a72611bd7d393897565b99b1e9d3f1d50">deleteAllParticles</a> ()=0</td></tr>
 <tr class="memdesc:a72611bd7d393897565b99b1e9d3f1d50"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all particles.  <br /></td></tr>
 <tr class="separator:a72611bd7d393897565b99b1e9d3f1d50"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee2e840ef096336fdd63ae91a6f3f08a"><td class="memItemLeft" align="right" valign="top">virtual unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#aee2e840ef096336fdd63ae91a6f3f08a">getNumberOfParticles</a> () const =0</td></tr>
-<tr class="memdesc:aee2e840ef096336fdd63ae91a6f3f08a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total number of particles saved in the container (owned and halo but not dummies).  <br /></td></tr>
-<tr class="separator:aee2e840ef096336fdd63ae91a6f3f08a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4643b9f9629050b3731ec5326247692"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#ad4643b9f9629050b3731ec5326247692">getNumberOfParticles</a> (IteratorBehavior behavior=IteratorBehavior::owned) const =0</td></tr>
+<tr class="memdesc:ad4643b9f9629050b3731ec5326247692"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of particles with respect to the specified IteratorBehavior.  <br /></td></tr>
+<tr class="separator:ad4643b9f9629050b3731ec5326247692"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5e6a361098c54b400b75365d2ce32a9"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#ab5e6a361098c54b400b75365d2ce32a9">size</a> () const =0</td></tr>
+<tr class="memdesc:ab5e6a361098c54b400b75365d2ce32a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total number of particles saved in the container (owned + halo + dummy).  <br /></td></tr>
+<tr class="separator:ab5e6a361098c54b400b75365d2ce32a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01662c901808511a2785ecad6f536c32"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a9eb1026f766e31bf170af8634f180d1d">ParticleType</a>, true, false &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a01662c901808511a2785ecad6f536c32">begin</a> (IteratorBehavior behavior=autopas::IteratorBehavior::ownedOrHalo, typename <a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a9eb1026f766e31bf170af8634f180d1d">ParticleType</a>, true, false &gt;::ParticleVecType *additionalVectors=nullptr)=0</td></tr>
 <tr class="memdesc:a01662c901808511a2785ecad6f536c32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all particles using for(auto iter = container.begin(); iter.isValid(); ++iter) .  <br /></td></tr>
 <tr class="separator:a01662c901808511a2785ecad6f536c32"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1047,8 +1050,8 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="aee2e840ef096336fdd63ae91a6f3f08a" name="aee2e840ef096336fdd63ae91a6f3f08a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee2e840ef096336fdd63ae91a6f3f08a">&#9670;&#160;</a></span>getNumberOfParticles()</h2>
+<a id="ad4643b9f9629050b3731ec5326247692" name="ad4643b9f9629050b3731ec5326247692"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4643b9f9629050b3731ec5326247692">&#9670;&#160;</a></span>getNumberOfParticles()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1059,9 +1062,10 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual unsigned long <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getNumberOfParticles </td>
+          <td class="memname">virtual size_t <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getNumberOfParticles </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">IteratorBehavior&#160;</td>
+          <td class="paramname"><em>behavior</em> = <code>IteratorBehavior::owned</code></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -1072,10 +1076,17 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </table>
 </div><div class="memdoc">
 
-<p>Get the total number of particles saved in the container (owned and halo but not dummies). </p>
-<dl class="section return"><dt>Returns</dt><dd>Number of particles in the container. </dd></dl>
+<p>Get the number of particles with respect to the specified IteratorBehavior. </p>
+<dl class="section warning"><dt>Warning</dt><dd>: Since this function counts the number of the respective particles in the internal particle storage, this is in O(n) + lock is required. Only use it when it is absolutely necessary to have the exact number of different particle types like owned or halo. If it is enough to have the whole number of particles (owned + halo + dummy), the function <a class="el" href="classautopas_1_1ParticleContainerInterface.html#ab5e6a361098c54b400b75365d2ce32a9" title="Get the total number of particles saved in the container (owned + halo + dummy).">size()</a> can be used. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">behavior</td><td>Behavior of the iterator, see IteratorBehavior. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of particles with respect to the specified IteratorBehavior. </dd></dl>
 
-<p>Implemented in <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a3664716455e226f6704ac26e6728b668">autopas::CellBasedParticleContainer&lt; ParticleCell &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a3664716455e226f6704ac26e6728b668">autopas::CellBasedParticleContainer&lt; FullParticleCell&lt; Particle &gt; &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a3664716455e226f6704ac26e6728b668">autopas::CellBasedParticleContainer&lt; ReferenceParticleCell&lt; Particle &gt; &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a3664716455e226f6704ac26e6728b668">autopas::CellBasedParticleContainer&lt; OctreeNodeWrapper&lt; Particle &gt; &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a3664716455e226f6704ac26e6728b668">autopas::CellBasedParticleContainer&lt; FullParticleCell&lt; autopas::ParticleBase &gt; &gt;</a>, <a class="el" href="classautopas_1_1Octree.html#aa97ea0de86971210cd2788d90fe9fc7f">autopas::Octree&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#a8f61f6026dfbe3b31557bb96a669c7ef">autopas::VerletClusterLists&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#a8f61f6026dfbe3b31557bb96a669c7ef">autopas::VerletClusterLists&lt; autopas::ParticleBase &gt;</a>, and <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a18fdf9a5baa0e3566352346fee72b35c">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a606a29922b7e831e39e7d170c93deb09">autopas::CellBasedParticleContainer&lt; ParticleCell &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a606a29922b7e831e39e7d170c93deb09">autopas::CellBasedParticleContainer&lt; FullParticleCell&lt; Particle &gt; &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a606a29922b7e831e39e7d170c93deb09">autopas::CellBasedParticleContainer&lt; ReferenceParticleCell&lt; Particle &gt; &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a606a29922b7e831e39e7d170c93deb09">autopas::CellBasedParticleContainer&lt; OctreeNodeWrapper&lt; Particle &gt; &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a606a29922b7e831e39e7d170c93deb09">autopas::CellBasedParticleContainer&lt; FullParticleCell&lt; autopas::ParticleBase &gt; &gt;</a>, <a class="el" href="classautopas_1_1Octree.html#afa5c38d8c7ed90c85d6d329e1b6e1927">autopas::Octree&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#a74b2334361d346fc174bb322a1dd4b6a">autopas::VerletClusterLists&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#a74b2334361d346fc174bb322a1dd4b6a">autopas::VerletClusterLists&lt; autopas::ParticleBase &gt;</a>, and <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#afb3a9f6447ca5819c75d0c15569a2dde">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>.</p>
 
 </div>
 </div>
@@ -1850,6 +1861,38 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </dl>
 
 <p>Implemented in <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a60f3d44fcafea911d9329f3277867b71">autopas::CellBasedParticleContainer&lt; ParticleCell &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a60f3d44fcafea911d9329f3277867b71">autopas::CellBasedParticleContainer&lt; FullParticleCell&lt; Particle &gt; &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a60f3d44fcafea911d9329f3277867b71">autopas::CellBasedParticleContainer&lt; ReferenceParticleCell&lt; Particle &gt; &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a60f3d44fcafea911d9329f3277867b71">autopas::CellBasedParticleContainer&lt; OctreeNodeWrapper&lt; Particle &gt; &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a60f3d44fcafea911d9329f3277867b71">autopas::CellBasedParticleContainer&lt; FullParticleCell&lt; autopas::ParticleBase &gt; &gt;</a>, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a066801266d25186ef3c02cf8a51de24c">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#a914e963b6177a3f557c69ee3d9f241e1">autopas::VerletClusterLists&lt; Particle &gt;</a>, and <a class="el" href="classautopas_1_1VerletClusterLists.html#a914e963b6177a3f557c69ee3d9f241e1">autopas::VerletClusterLists&lt; autopas::ParticleBase &gt;</a>.</p>
+
+</div>
+</div>
+<a id="ab5e6a361098c54b400b75365d2ce32a9" name="ab5e6a361098c54b400b75365d2ce32a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5e6a361098c54b400b75365d2ce32a9">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual size_t <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the total number of particles saved in the container (owned + halo + dummy). </p>
+<dl class="section return"><dt>Returns</dt><dd>Number of particles saved in the container (owned + halo + dummy). </dd></dl>
+
+<p>Implemented in <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a803f21a1520f73b827720166c1d64f60">autopas::CellBasedParticleContainer&lt; ParticleCell &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a803f21a1520f73b827720166c1d64f60">autopas::CellBasedParticleContainer&lt; FullParticleCell&lt; Particle &gt; &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a803f21a1520f73b827720166c1d64f60">autopas::CellBasedParticleContainer&lt; ReferenceParticleCell&lt; Particle &gt; &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a803f21a1520f73b827720166c1d64f60">autopas::CellBasedParticleContainer&lt; OctreeNodeWrapper&lt; Particle &gt; &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a803f21a1520f73b827720166c1d64f60">autopas::CellBasedParticleContainer&lt; FullParticleCell&lt; autopas::ParticleBase &gt; &gt;</a>, <a class="el" href="classautopas_1_1Octree.html#a116caacf2d764303f71b5686669b7176">autopas::Octree&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#a1705589f4380d49066f64fc354602549">autopas::VerletClusterLists&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#a1705589f4380d49066f64fc354602549">autopas::VerletClusterLists&lt; autopas::ParticleBase &gt;</a>, and <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#ad936886b02e79548b372752417e05bf8">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>.</p>
 
 </div>
 </div>

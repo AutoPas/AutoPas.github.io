@@ -128,8 +128,8 @@ $(function() {
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> x = lowerCorner[0]; x &lt;= upperCorner[0]; x++) {</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> y = lowerCorner[1]; y &lt;= upperCorner[1]; y++) {</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> z = lowerCorner[2]; z &lt;= upperCorner[2]; z++) {</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keyword">auto</span> load =</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            cells[<a class="code hl_function" href="namespaceautopas_1_1utils_1_1ThreeDimensionalMapping.html#a8d92b8e30d9eb33d3b6828989d9b5eb2">autopas::utils::ThreeDimensionalMapping::threeToOneD</a>(x, y, z, cellsPerDimension)].numParticles();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keyword">const</span> <span class="keyword">auto</span> load =</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>            cells[<a class="code hl_function" href="namespaceautopas_1_1utils_1_1ThreeDimensionalMapping.html#a8d92b8e30d9eb33d3b6828989d9b5eb2">autopas::utils::ThreeDimensionalMapping::threeToOneD</a>(x, y, z, cellsPerDimension)].size();</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        sum += load * load;</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>      }</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    }</div>

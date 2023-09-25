@@ -203,9 +203,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa21b08540e71aa767ff1937a40045a2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellBasedParticleContainer.html#aa21b08540e71aa767ff1937a40045a2e">deleteAllParticles</a> () override</td></tr>
 <tr class="memdesc:aa21b08540e71aa767ff1937a40045a2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all particles from the container.  <br /></td></tr>
 <tr class="separator:aa21b08540e71aa767ff1937a40045a2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3664716455e226f6704ac26e6728b668"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a3664716455e226f6704ac26e6728b668">getNumberOfParticles</a> () const override</td></tr>
-<tr class="memdesc:a3664716455e226f6704ac26e6728b668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of particles saved in the container.  <br /></td></tr>
-<tr class="separator:a3664716455e226f6704ac26e6728b668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a606a29922b7e831e39e7d170c93deb09"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a606a29922b7e831e39e7d170c93deb09">getNumberOfParticles</a> (IteratorBehavior behavior) const override</td></tr>
+<tr class="memdesc:a606a29922b7e831e39e7d170c93deb09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of particles with respect to the specified IteratorBehavior.    <br /></td></tr>
+<tr class="separator:a606a29922b7e831e39e7d170c93deb09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a803f21a1520f73b827720166c1d64f60"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a803f21a1520f73b827720166c1d64f60">size</a> () const override</td></tr>
+<tr class="memdesc:a803f21a1520f73b827720166c1d64f60"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total number of particles saved in the container (owned + halo + dummy).  <br /></td></tr>
+<tr class="separator:a803f21a1520f73b827720166c1d64f60"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88ef10599bc72d081660259f4c3967e2"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a88ef10599bc72d081660259f4c3967e2">getCells</a> () const</td></tr>
 <tr class="memdesc:a88ef10599bc72d081660259f4c3967e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get immutable vector of cells.  <br /></td></tr>
 <tr class="separator:a88ef10599bc72d081660259f4c3967e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -251,9 +254,12 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ParticleContainer
 <tr class="memitem:a72611bd7d393897565b99b1e9d3f1d50 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a72611bd7d393897565b99b1e9d3f1d50">deleteAllParticles</a> ()=0</td></tr>
 <tr class="memdesc:a72611bd7d393897565b99b1e9d3f1d50 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all particles.  <br /></td></tr>
 <tr class="separator:a72611bd7d393897565b99b1e9d3f1d50 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aee2e840ef096336fdd63ae91a6f3f08a inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#aee2e840ef096336fdd63ae91a6f3f08a">getNumberOfParticles</a> () const=0</td></tr>
-<tr class="memdesc:aee2e840ef096336fdd63ae91a6f3f08a inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total number of particles saved in the container (owned and halo but not dummies).  <br /></td></tr>
-<tr class="separator:aee2e840ef096336fdd63ae91a6f3f08a inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4643b9f9629050b3731ec5326247692 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#ad4643b9f9629050b3731ec5326247692">getNumberOfParticles</a> (IteratorBehavior behavior=IteratorBehavior::owned) const=0</td></tr>
+<tr class="memdesc:ad4643b9f9629050b3731ec5326247692 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of particles with respect to the specified IteratorBehavior.  <br /></td></tr>
+<tr class="separator:ad4643b9f9629050b3731ec5326247692 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5e6a361098c54b400b75365d2ce32a9 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#ab5e6a361098c54b400b75365d2ce32a9">size</a> () const=0</td></tr>
+<tr class="memdesc:ab5e6a361098c54b400b75365d2ce32a9 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total number of particles saved in the container (owned + halo + dummy).  <br /></td></tr>
+<tr class="separator:ab5e6a361098c54b400b75365d2ce32a9 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a01662c901808511a2785ecad6f536c32 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a9eb1026f766e31bf170af8634f180d1d">ParticleType</a>, true, false &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a01662c901808511a2785ecad6f536c32">begin</a> (IteratorBehavior behavior=autopas::IteratorBehavior::ownedOrHalo, typename <a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a9eb1026f766e31bf170af8634f180d1d">ParticleType</a>, true, false &gt;::ParticleVecType *additionalVectors=nullptr)=0</td></tr>
 <tr class="memdesc:a01662c901808511a2785ecad6f536c32 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all particles using for(auto iter = container.begin(); iter.isValid(); ++iter) .  <br /></td></tr>
 <tr class="separator:a01662c901808511a2785ecad6f536c32 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -645,8 +651,8 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 
 </div>
 </div>
-<a id="a3664716455e226f6704ac26e6728b668" name="a3664716455e226f6704ac26e6728b668"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3664716455e226f6704ac26e6728b668">&#9670;&#160;</a></span>getNumberOfParticles()</h2>
+<a id="a606a29922b7e831e39e7d170c93deb09" name="a606a29922b7e831e39e7d170c93deb09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a606a29922b7e831e39e7d170c93deb09">&#9670;&#160;</a></span>getNumberOfParticles()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -657,9 +663,10 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">unsigned long <a class="el" href="classautopas_1_1CellBasedParticleContainer.html">autopas::CellBasedParticleContainer</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt;::getNumberOfParticles </td>
+          <td class="memname">size_t <a class="el" href="classautopas_1_1CellBasedParticleContainer.html">autopas::CellBasedParticleContainer</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt;::getNumberOfParticles </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">IteratorBehavior&#160;</td>
+          <td class="paramname"><em>behavior</em></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -670,10 +677,17 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 </table>
 </div><div class="memdoc">
 
-<p>Get the number of particles saved in the container. </p>
-<dl class="section return"><dt>Returns</dt><dd>Number of particles in the container. </dd></dl>
+<p>Get the number of particles with respect to the specified IteratorBehavior.   </p>
+<dl class="section warning"><dt>Warning</dt><dd>: Since this function counts the number of the respective particles in the internal particle storage, this is in O(n) + lock is required. Only use it when it is absolutely necessary to have the exact number of different particle types like owned or halo. If it is enough to have the whole number of particles (owned + halo + dummy), the function <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a803f21a1520f73b827720166c1d64f60" title="Get the total number of particles saved in the container (owned + halo + dummy).">size()</a> can be used. </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">behavior</td><td>Behavior of the iterator, see IteratorBehavior. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The number of particles with respect to the specified IteratorBehavior.   </dd></dl>
 
-<p>Implements <a class="el" href="classautopas_1_1ParticleContainerInterface.html#aee2e840ef096336fdd63ae91a6f3f08a">autopas::ParticleContainerInterface&lt; ParticleCell::ParticleType &gt;</a>.</p>
+<p>Implements <a class="el" href="classautopas_1_1ParticleContainerInterface.html#ad4643b9f9629050b3731ec5326247692">autopas::ParticleContainerInterface&lt; ParticleCell::ParticleType &gt;</a>.</p>
 
 </div>
 </div>
@@ -857,6 +871,38 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 </dl>
 
 <p>Implements <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a65a8be37e00420b0006bf145fe731cb9">autopas::ParticleContainerInterface&lt; ParticleCell::ParticleType &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a803f21a1520f73b827720166c1d64f60" name="a803f21a1520f73b827720166c1d64f60"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a803f21a1520f73b827720166c1d64f60">&#9670;&#160;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classautopas_1_1CellBasedParticleContainer.html">autopas::CellBasedParticleContainer</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the total number of particles saved in the container (owned + halo + dummy). </p>
+<dl class="section return"><dt>Returns</dt><dd>Number of particles saved in the container (owned + halo + dummy). </dd></dl>
+
+<p>Implements <a class="el" href="classautopas_1_1ParticleContainerInterface.html#ab5e6a361098c54b400b75365d2ce32a9">autopas::ParticleContainerInterface&lt; ParticleCell::ParticleType &gt;</a>.</p>
 
 </div>
 </div>
