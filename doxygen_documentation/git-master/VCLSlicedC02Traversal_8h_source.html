@@ -133,7 +133,7 @@ $(function() {
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">auto</span> &amp;currentTower = clusterList.getTowerByIndex(x, y);</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;cluster : currentTower.getClusters()) {</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      _clusterFunctor.<a class="code hl_function" href="classautopas_1_1internal_1_1VCLClusterFunctor.html#a349c3f9010dcea68610768e8e56173fe">traverseCluster</a>(cluster);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> *neighborCluster : cluster.getNeighbors()) {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> *neighborCluster : *cluster.getNeighbors()) {</div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        _clusterFunctor.<a class="code hl_function" href="classautopas_1_1internal_1_1VCLClusterFunctor.html#ad0c554f00d7faeca6bc9b014afe25130">traverseClusterPair</a>(cluster, *neighborCluster);</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>      }</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['estimatorfunction_0',['EstimatorFunction',['../classautopas_1_1BalancedTraversal.html#a1dd521e32c372a11307f670409f3efe8',1,'autopas::BalancedTraversal']]]
+  ['difference_5ftype_0',['difference_type',['../classCellIterator.html#ae75411625440505421feba885371dcb5',1,'CellIterator']]]
 ];
