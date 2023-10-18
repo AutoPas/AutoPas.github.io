@@ -142,6 +142,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8f5cbf102cd746c212604aca0a0220cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC08CellHandler.html#a8f5cbf102cd746c212604aca0a0220cc">processBaseCell</a> (std::vector&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; &amp;cells, unsigned long baseIndex)</td></tr>
 <tr class="memdesc:a8f5cbf102cd746c212604aca0a0220cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes one interaction for each spacial direction based on the lower left frontal corner (=base index) of a 2x2x2 block of cells.  <br /></td></tr>
 <tr class="separator:a8f5cbf102cd746c212604aca0a0220cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ade1df09d949139ddb8a85f8328d6f125"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC08CellHandler.html#ade1df09d949139ddb8a85f8328d6f125">setUseSorting</a> (bool useSorting)</td></tr>
+<tr class="memdesc:ade1df09d949139ddb8a85f8328d6f125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a boolean value that indicates whether the CellFunctor should apply sorting or not.    <br /></td></tr>
+<tr class="separator:ade1df09d949139ddb8a85f8328d6f125"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -319,6 +322,43 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
   <table class="params">
     <tr><td class="paramname">cells</td><td>vector of all cells. </td></tr>
     <tr><td class="paramname">baseIndex</td><td>Index respective to which box is constructed. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ade1df09d949139ddb8a85f8328d6f125" name="ade1df09d949139ddb8a85f8328d6f125"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade1df09d949139ddb8a85f8328d6f125">&#9670;&#160;</a></span>setUseSorting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class PairwiseFunctor , DataLayoutOption::Value dataLayout, bool useNewton3&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1LCC08CellHandler.html">autopas::LCC08CellHandler</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor, dataLayout, useNewton3 &gt;::setUseSorting </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>useSorting</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a boolean value that indicates whether the CellFunctor should apply sorting or not.   </p>
+<p>This value only affects traversals that use the CellFunctor.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">useSorting</td><td>If the CellFunctor should apply sorting when processing cells   </td></tr>
   </table>
   </dd>
 </dl>

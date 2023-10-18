@@ -182,6 +182,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a885df6ae5561a7b5cf7f2d693687b23e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VLCC01Traversal.html#a885df6ae5561a7b5cf7f2d693687b23e">getUseNewton3</a> () const override</td></tr>
 <tr class="memdesc:a885df6ae5561a7b5cf7f2d693687b23e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether the traversal uses newton 3.  <br /></td></tr>
 <tr class="separator:a885df6ae5561a7b5cf7f2d693687b23e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76feb6d44cac87d7b409ab88074c163f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VLCC01Traversal.html#a76feb6d44cac87d7b409ab88074c163f">setUseSorting</a> (bool useSorting) override</td></tr>
+<tr class="memdesc:a76feb6d44cac87d7b409ab88074c163f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a boolean value that indicates whether the CellFunctor should apply sorting or not.    <br /></td></tr>
+<tr class="separator:a76feb6d44cac87d7b409ab88074c163f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classautopas_1_1C01BasedTraversal"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classautopas_1_1C01BasedTraversal')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classautopas_1_1C01BasedTraversal.html">autopas::C01BasedTraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3, collapseDepth &gt;</a></td></tr>
 <tr class="memitem:aed536c87064516d6e758064f85222eec inherit pub_methods_classautopas_1_1C01BasedTraversal"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1C01BasedTraversal.html#aed536c87064516d6e758064f85222eec">C01BasedTraversal</a> (const std::array&lt; unsigned long, 3 &gt; &amp;dims, PairwiseFunctor *pairwiseFunctor, double interactionLength, const std::array&lt; double, 3 &gt; &amp;cellLength)</td></tr>
 <tr class="memdesc:aed536c87064516d6e758064f85222eec inherit pub_methods_classautopas_1_1C01BasedTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the c01 traversal.  <br /></td></tr>
@@ -204,6 +207,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a85433bc526f482a341d1dab312c5940a inherit pub_methods_classautopas_1_1CellPairTraversal"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellPairTraversal.html#a85433bc526f482a341d1dab312c5940a">setCellsToTraverse</a> (std::vector&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; &amp;cells)</td></tr>
 <tr class="memdesc:a85433bc526f482a341d1dab312c5940a inherit pub_methods_classautopas_1_1CellPairTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the cells to iterate over.  <br /></td></tr>
 <tr class="separator:a85433bc526f482a341d1dab312c5940a inherit pub_methods_classautopas_1_1CellPairTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16a71a9911f625024a29569be3d48860 inherit pub_methods_classautopas_1_1CellPairTraversal"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellPairTraversal.html#a16a71a9911f625024a29569be3d48860">setUseSorting</a> (bool useSorting)=0</td></tr>
+<tr class="memdesc:a16a71a9911f625024a29569be3d48860 inherit pub_methods_classautopas_1_1CellPairTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a boolean value that indicates whether the CellFunctor should apply sorting or not.  <br /></td></tr>
+<tr class="separator:a16a71a9911f625024a29569be3d48860 inherit pub_methods_classautopas_1_1CellPairTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classautopas_1_1TraversalInterface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classautopas_1_1TraversalInterface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classautopas_1_1TraversalInterface.html">autopas::TraversalInterface</a></td></tr>
 <tr class="memitem:a60db78538e6a5af17479f006a07fb21c inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top"><a id="a60db78538e6a5af17479f006a07fb21c" name="a60db78538e6a5af17479f006a07fb21c"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~TraversalInterface</b> ()=default</td></tr>
@@ -500,6 +506,45 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 <dl class="section return"><dt>Returns</dt><dd>true iff the traversal can be applied. </dd></dl>
 
 <p>Implements <a class="el" href="classautopas_1_1TraversalInterface.html#ab4e3c867be1f544ee1d9bf6d0d6a133b">autopas::TraversalInterface</a>.</p>
+
+</div>
+</div>
+<a id="a76feb6d44cac87d7b409ab88074c163f" name="a76feb6d44cac87d7b409ab88074c163f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76feb6d44cac87d7b409ab88074c163f">&#9670;&#160;</a></span>setUseSorting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class PairwiseFunctor , DataLayoutOption::Value dataLayout, bool useNewton3, class NeighborList , ContainerOption::Value typeOfList&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1VLCC01Traversal.html">autopas::VLCC01Traversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor, dataLayout, useNewton3, NeighborList, typeOfList &gt;::setUseSorting </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>useSorting</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets a boolean value that indicates whether the CellFunctor should apply sorting or not.   </p>
+<p>This value only affects traversals that use the CellFunctor.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">useSorting</td><td>If the CellFunctor should apply sorting when processing cells   This traversal does not use the CellFunctor, so the function has no effect here </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classautopas_1_1CellPairTraversal.html#a16a71a9911f625024a29569be3d48860">autopas::CellPairTraversal&lt; ParticleCell &gt;</a>.</p>
 
 </div>
 </div>

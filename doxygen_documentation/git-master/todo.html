@@ -106,9 +106,9 @@ $(function() {
 <div class="contents">
 <div class="textblock"><dl class="reflist">
 <dt>Member <a class="el" href="namespaceautopas.html#ac64a70a137851f9fe1941487cfc42e52">autopas::DEFAULT_CACHE_LINE_SIZE</a>  </dt>
-<dd><a class="anchor" id="_todo000021"></a>C++17: replace value by std::hardware_destructive_interference_size not yet possible: as of 27.06.2019 this(P0154R1) is in neither libstc++ (gnu) nor libc++ (clang)  </dd>
+<dd><a class="anchor" id="_todo000020"></a>C++17: replace value by std::hardware_destructive_interference_size not yet possible: as of 27.06.2019 this(P0154R1) is in neither libstc++ (gnu) nor libc++ (clang)  </dd>
 <dt>Class <a class="el" href="classautopas_1_1FlopCounterFunctor.html">autopas::FlopCounterFunctor&lt; Particle, ForceFunctorType &gt;</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000016"></a>this class currently is limited to the following case:</p><ul>
+<dd><p class="startdd"><a class="anchor" id="_todo000015"></a>this class currently is limited to the following case:</p><ul>
 <li>constant cutoff radius</li>
 <li>cases where cutoff is determined with a single distance calculation between two positions ( the notable case where this doesn't hold is in a CoM-to-site style <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> <a class="el" href="classautopas_1_1Functor.html" title="Functor class.">Functor</a> for multi-site molecules ) </li>
 </ul>
@@ -116,11 +116,11 @@ $(function() {
 <p class="enddd">: we may want the possibility of doing this faster in cases where the number of flops per kernel call is constant  </p>
 </dd>
 <dt>Member <a class="el" href="classautopas_1_1Functor.html#af16cac0f8edfefca2f9ad98785cd5aab">autopas::Functor&lt; Particle, CRTP_T &gt;::getComputedAttr</a>  ()</dt>
-<dd><a class="anchor" id="_todo000019"></a>C++20: make this function virtual  </dd>
-<dt>Member <a class="el" href="classautopas_1_1Functor.html#aadf3d67809de082653da8495de30ed31">autopas::Functor&lt; Particle, CRTP_T &gt;::getNeededAttr</a>  ()</dt>
-<dd><a class="anchor" id="_todo000017"></a>C++20: make this function virtual  </dd>
-<dt>Member <a class="el" href="classautopas_1_1Functor.html#a47d8ad3bd65ceaaee7e15f8a010bcff5">autopas::Functor&lt; Particle, CRTP_T &gt;::getNeededAttr</a>  (std::false_type)</dt>
 <dd><a class="anchor" id="_todo000018"></a>C++20: make this function virtual  </dd>
+<dt>Member <a class="el" href="classautopas_1_1Functor.html#a47d8ad3bd65ceaaee7e15f8a010bcff5">autopas::Functor&lt; Particle, CRTP_T &gt;::getNeededAttr</a>  (std::false_type)</dt>
+<dd><a class="anchor" id="_todo000017"></a>C++20: make this function virtual  </dd>
+<dt>Member <a class="el" href="classautopas_1_1Functor.html#aadf3d67809de082653da8495de30ed31">autopas::Functor&lt; Particle, CRTP_T &gt;::getNeededAttr</a>  ()</dt>
+<dd><a class="anchor" id="_todo000016"></a>C++20: make this function virtual  </dd>
 <dt>Class <a class="el" href="classautopas_1_1internal_1_1CellBorderAndFlagManager.html">autopas::internal::CellBorderAndFlagManager</a>  </dt>
 <dd><a class="anchor" id="_todo000001"></a>: add cell border handling  </dd>
 <dt>Member <a class="el" href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html#ac106d109377050b9a65c8091fb6ff912">autopas::internal::VerletClusterListsRebuilder&lt; Particle &gt;::getTowerCoordinates</a>  (const std::array&lt; double, 3 &gt; &amp;location) const</dt>
@@ -136,7 +136,7 @@ $(function() {
 <dt>Member <a class="el" href="namespaceautopas_1_1LeavingParticleCollector.html#a66da2d3805193e7b0f22430e2d0d9f2a">autopas::LeavingParticleCollector::collectParticlesAndMarkNonOwnedAsDummy</a>  (ContainerType &amp;container)</dt>
 <dd><a class="anchor" id="_todo000004"></a>: openmp parallelization, general optimizations (do not iterate over all particles, but only over boundary, eventually merge both loops?  </dd>
 <dt>Member <a class="el" href="namespaceautopas_1_1OptimumSelector.html#a026bccf03fed7ad4ae1d87ea22cb8f3b">autopas::OptimumSelector::medianValue</a>  (std::vector&lt; T &gt; values)</dt>
-<dd><a class="anchor" id="_todo000020"></a>C++20: replace by std::midpoint  </dd>
+<dd><a class="anchor" id="_todo000019"></a>C++20: replace by std::midpoint  </dd>
 <dt>Member <a class="el" href="classautopas_1_1ParticleContainerInterface.html#aa3a6197fc11a19d594bebce507cc6625">autopas::ParticleContainerInterface&lt; Particle &gt;::addHaloParticle</a>  (const Particle &amp;haloParticle)</dt>
 <dd><a class="anchor" id="_todo000010"></a>do we want a check of the particle not being too far away in here as well?  </dd>
 <dt>Member <a class="el" href="classautopas_1_1SlicedBalancedBasedTraversal.html#a8a26e674416f1107f4540c5801c2b3db">autopas::SlicedBalancedBasedTraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3, spaciallyForward &gt;::initSliceThickness</a>  (unsigned long minSliceThickness) override</dt>
@@ -144,9 +144,9 @@ $(function() {
 <p class="enddd"><a class="anchor" id="_todo000003"></a>: use <a class="el" href="namespaceautopas_1_1utils_1_1ArrayUtils.html#a8811dae11b4ecf54ea7a820567ff0029" title="Generates a string representation of a container which fulfills the Container requirement (provide cb...">autopas::utils::ArrayUtils::to_string()</a>  </p>
 </dd>
 <dt>Member <a class="el" href="classautopas_1_1utils_1_1SoAStorage.html#a32ede55b59cbe6e9245f948e47c749c6">autopas::utils::SoAStorage&lt; SoAArraysType &gt;::apply</a>  (FunctorT func)</dt>
-<dd><a class="anchor" id="_todo000022"></a>c++20: replace with expansion statement: <code>for... (auto&amp; elem : tup) {}</code>  </dd>
+<dd><a class="anchor" id="_todo000021"></a>c++20: replace with expansion statement: <code>for... (auto&amp; elem : tup) {}</code>  </dd>
 <dt>Member <a class="el" href="namespaceautopas_1_1utils.html#a74ac3a54f767df5861d59cb241c635e3">autopas::utils::withStaticCellType</a>  (<a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8" title="The ParticleCell Type as an Enum.">autopas::CellType</a> cellType, F &amp;&amp;func)</dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000023"></a>c++20 change to explicit template for templates. </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000022"></a>c++20 change to explicit template for templates. </p>
 <p class="interdd"></p>
 <p class="enddd">function calls also have to be changed to  </p>
 </dd>
@@ -157,7 +157,7 @@ $(function() {
 <dt>Member <a class="el" href="classautopas_1_1VerletLists.html#a6503a9ab7723e166a6b9e007a0fdf974">autopas::VerletLists&lt; Particle &gt;::updateVerletListsAoS</a>  (bool useNewton3)</dt>
 <dd><a class="anchor" id="_todo000014"></a>autotune traversal  </dd>
 <dt>Member <a class="el" href="classsphLib_1_1SPHCalcHydroForceFunctor.html#aad330e56bc85f3544bf9e3b9d2eb4be3">sphLib::SPHCalcHydroForceFunctor&lt; Particle &gt;::getNumFlopsPerKernelCall</a>  ()</dt>
-<dd><a class="anchor" id="_todo000024"></a>return correct flopcount </dd>
+<dd><a class="anchor" id="_todo000023"></a>return correct flopcount </dd>
 </dl>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

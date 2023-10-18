@@ -121,15 +121,13 @@ Inheritance diagram for autopas::internal::CellFunctor&lt; Particle, ParticleCel
 <div class="dyncontent">
 <div class="center"><img src="classautopas_1_1internal_1_1CellFunctor__inherit__graph.png" border="0" usemap="#aautopas_1_1internal_1_1CellFunctor_3_01Particle_00_01ParticleCell_00_01ParticleFunctor_00_01DataLayout_00_01useNewton3_00_01bidirectional_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="aautopas_1_1internal_1_1CellFunctor_3_01Particle_00_01ParticleCell_00_01ParticleFunctor_00_01DataLayout_00_01useNewton3_00_01bidirectional_01_4_inherit__map" id="aautopas_1_1internal_1_1CellFunctor_3_01Particle_00_01ParticleCell_00_01ParticleFunctor_00_01DataLayout_00_01useNewton3_00_01bidirectional_01_4_inherit__map">
-<area shape="rect" title="A cell functor." alt="" coords="5,204,300,273"/>
+<area shape="rect" title="A cell functor." alt="" coords="5,143,300,212"/>
 <area shape="rect" href="classautopas_1_1internal_1_1CellFunctor.html" title=" " alt="" coords="582,5,795,104"/>
-<area shape="poly" title=" " alt="" coords="209,194,263,159,323,130,388,107,456,88,581,65,582,70,457,94,390,112,325,134,266,164,212,198"/>
+<area shape="poly" title=" " alt="" coords="249,135,323,111,457,82,581,63,582,69,458,87,325,116,250,140"/>
 <area shape="rect" href="classautopas_1_1internal_1_1CellFunctor.html" title=" " alt="" coords="582,128,795,227"/>
-<area shape="poly" title=" " alt="" coords="314,218,581,187,582,192,314,223"/>
-<area shape="rect" href="classautopas_1_1internal_1_1CellFunctor.html" title=" " alt="" coords="582,251,795,349"/>
-<area shape="poly" title=" " alt="" coords="285,274,324,281,458,295,582,299,582,304,458,300,324,287,284,279"/>
-<area shape="rect" href="classautopas_1_1internal_1_1CellFunctor.html" title=" " alt="" coords="564,374,813,458"/>
-<area shape="poly" title=" " alt="" coords="201,281,258,325,291,346,325,363,384,383,446,397,564,411,564,417,445,402,383,388,323,368,288,351,255,330,198,285"/>
+<area shape="poly" title=" " alt="" coords="314,175,582,175,582,180,314,180"/>
+<area shape="rect" href="classautopas_1_1internal_1_1CellFunctor.html" title=" " alt="" coords="564,251,813,335"/>
+<area shape="poly" title=" " alt="" coords="249,214,325,239,447,264,564,280,563,285,446,269,323,244,247,219"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -144,6 +142,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2cc27407ed0c310782714ca8f6644b4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellFunctor.html#a2cc27407ed0c310782714ca8f6644b4f">processCellPair</a> (<a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &amp;cell1, <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &amp;cell2, const std::array&lt; double, 3 &gt; &amp;sortingDirection={0., 0., 0.})</td></tr>
 <tr class="memdesc:a2cc27407ed0c310782714ca8f6644b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process the interactions between the particles of cell1 with particles of cell2.  <br /></td></tr>
 <tr class="separator:a2cc27407ed0c310782714ca8f6644b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e709026dd224f1a6bb1a785a8efab58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellFunctor.html#a2e709026dd224f1a6bb1a785a8efab58">setUseSorting</a> (bool useSorting)</td></tr>
+<tr class="memdesc:a2e709026dd224f1a6bb1a785a8efab58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a boolean value that indicates whether the <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html" title="A cell functor.">CellFunctor</a> should apply sorting or not.  <br /></td></tr>
+<tr class="separator:a2e709026dd224f1a6bb1a785a8efab58"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, class ParticleFunctor, DataLayoutOption::Value DataLayout, bool useNewton3 = true, bool bidirectional = true&gt;<br />
@@ -277,6 +278,35 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
     <tr><td class="paramname">cell1</td><td></td></tr>
     <tr><td class="paramname">cell2</td><td></td></tr>
     <tr><td class="paramname">sortingDirection</td><td>Normalized vector connecting centers of cell1 and cell2. If no parameter or {0, 0, 0} is given, sorting will be disabled. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2e709026dd224f1a6bb1a785a8efab58" name="a2e709026dd224f1a6bb1a785a8efab58"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e709026dd224f1a6bb1a785a8efab58">&#9670;&#160;</a></span>setUseSorting()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class ParticleFunctor , DataLayoutOption::Value DataLayout, bool useNewton3, bool bidirectional&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html">autopas::internal::CellFunctor</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, ParticleFunctor, DataLayout, useNewton3, bidirectional &gt;::setUseSorting </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>useSorting</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets a boolean value that indicates whether the <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html" title="A cell functor.">CellFunctor</a> should apply sorting or not. </p>
+<p>By default sorting is enabled</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">useSorting</td><td>If the <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html" title="A cell functor.">CellFunctor</a> should apply sorting when processing cells </td></tr>
   </table>
   </dd>
 </dl>
