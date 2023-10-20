@@ -252,8 +252,8 @@ $(function() {
 <div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>                    <a class="code hl_typedef" href="classautopas_1_1ContainerIterator.html#aa831a5ad6f29f19e79e0c515763b2592">ParticleVecType</a> *additionalVectorsToIterate, <span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;regionMin,</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>                    <span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;regionMax)</div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>      : _container(&amp;container),</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        _behavior(behavior),</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        _currentVectorIndex(0),</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        _currentVectorIndex(0),</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        _behavior(behavior),</div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>        _vectorIndexOffset((behavior &amp; IteratorBehavior::forceSequential) ? 1 : <a class="code hl_function" href="namespaceautopas.html#a0bcb9c71d0158db0bd7464764e3e5b39">autopas_get_num_threads</a>()) {</div>
 <div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="keywordflow">if</span> (additionalVectorsToIterate) {</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>      <span class="comment">// store pointers to all additional vectors</span></div>
@@ -365,19 +365,19 @@ $(function() {
 <div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span> </div>
 <div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>  <a class="code hl_typedef" href="classautopas_1_1ContainerIterator.html#a0e683011c43d5827227b0795f8dcc51d">ContainerType</a> *_container;</div>
 <div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span> </div>
-<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>  IteratorBehavior _behavior;</div>
-<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span> </div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>  <span class="keywordtype">bool</span> _iteratingAdditionalVectors{<span class="keyword">false</span>};</div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span> </div>
-<div class="line"><a id="l00412" name="l00412"></a><span class="lineno">  412</span>  <a class="code hl_typedef" href="classautopas_1_1ContainerIterator.html#aa831a5ad6f29f19e79e0c515763b2592">ParticleVecType</a> _additionalVectors;</div>
-<div class="line"><a id="l00413" name="l00413"></a><span class="lineno">  413</span> </div>
-<div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>  <a class="code hl_typedef" href="classautopas_1_1ContainerIterator.html#a0f8386920b171dd8a33584deef28d961">ParticleType</a> *_currentParticle = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span> </div>
-<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>  <span class="keywordtype">size_t</span> _currentVectorIndex{};</div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>  <span class="keywordtype">size_t</span> _currentParticleIndex{0};</div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span> </div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>  <span class="keywordtype">size_t</span> _currentVectorIndex{};</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span> </div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span>  <a class="code hl_typedef" href="classautopas_1_1ContainerIterator.html#a0f8386920b171dd8a33584deef28d961">ParticleType</a> *_currentParticle = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span> </div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>  <a class="code hl_typedef" href="classautopas_1_1ContainerIterator.html#aa831a5ad6f29f19e79e0c515763b2592">ParticleVecType</a> _additionalVectors;</div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span> </div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>  IteratorBehavior _behavior;</div>
 <div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span> </div>
-<div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>  <span class="keywordtype">size_t</span> _vectorIndexOffset{};</div>
-<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span> </div>
-<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>  <span class="keywordtype">size_t</span> _currentParticleIndex{0};</div>
+<div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>  <span class="keywordtype">bool</span> _iteratingAdditionalVectors{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span> </div>
+<div class="line"><a id="l00436" name="l00436"></a><span class="lineno">  436</span>  <span class="keywordtype">size_t</span> _vectorIndexOffset{};</div>
 <div class="line"><a id="l00437" name="l00437"></a><span class="lineno">  437</span> </div>
 <div class="line"><a id="l00441" name="l00441"></a><span class="lineno">  441</span>  <span class="keyword">struct </span>empty {};</div>
 <div class="line"><a id="l00445" name="l00445"></a><span class="lineno">  445</span>  <span class="keyword">using </span>RegionCornerT = std::conditional_t&lt;regionIter, std::array&lt;double, 3&gt;, empty&gt;;</div>
