@@ -142,9 +142,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8f5cbf102cd746c212604aca0a0220cc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC08CellHandler.html#a8f5cbf102cd746c212604aca0a0220cc">processBaseCell</a> (std::vector&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; &amp;cells, unsigned long baseIndex)</td></tr>
 <tr class="memdesc:a8f5cbf102cd746c212604aca0a0220cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes one interaction for each spacial direction based on the lower left frontal corner (=base index) of a 2x2x2 block of cells.  <br /></td></tr>
 <tr class="separator:a8f5cbf102cd746c212604aca0a0220cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade1df09d949139ddb8a85f8328d6f125"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC08CellHandler.html#ade1df09d949139ddb8a85f8328d6f125">setUseSorting</a> (bool useSorting)</td></tr>
-<tr class="memdesc:ade1df09d949139ddb8a85f8328d6f125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a boolean value that indicates whether the CellFunctor should apply sorting or not.    <br /></td></tr>
-<tr class="separator:ade1df09d949139ddb8a85f8328d6f125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83bfde57914dc8889560ea049c8b49ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC08CellHandler.html#a83bfde57914dc8889560ea049c8b49ee">setSortingThreshold</a> (size_t sortingThreshold)</td></tr>
+<tr class="memdesc:a83bfde57914dc8889560ea049c8b49ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the sorting-threshold for traversals that use the CellFunctor If the sum of the number of particles in two cells is greater or equal to that value, the CellFunctor creates a sorted view of the particles to avoid unnecessary distance checks.    <br /></td></tr>
+<tr class="separator:a83bfde57914dc8889560ea049c8b49ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -328,8 +328,8 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 
 </div>
 </div>
-<a id="ade1df09d949139ddb8a85f8328d6f125" name="ade1df09d949139ddb8a85f8328d6f125"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade1df09d949139ddb8a85f8328d6f125">&#9670;&#160;</a></span>setUseSorting()</h2>
+<a id="a83bfde57914dc8889560ea049c8b49ee" name="a83bfde57914dc8889560ea049c8b49ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83bfde57914dc8889560ea049c8b49ee">&#9670;&#160;</a></span>setSortingThreshold()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -340,10 +340,10 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1LCC08CellHandler.html">autopas::LCC08CellHandler</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor, dataLayout, useNewton3 &gt;::setUseSorting </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1LCC08CellHandler.html">autopas::LCC08CellHandler</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor, dataLayout, useNewton3 &gt;::setSortingThreshold </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>useSorting</em></td><td>)</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>sortingThreshold</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -354,11 +354,10 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 </table>
 </div><div class="memdoc">
 
-<p>Sets a boolean value that indicates whether the CellFunctor should apply sorting or not.   </p>
-<p>This value only affects traversals that use the CellFunctor.</p>
+<p>Set the sorting-threshold for traversals that use the CellFunctor If the sum of the number of particles in two cells is greater or equal to that value, the CellFunctor creates a sorted view of the particles to avoid unnecessary distance checks.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">useSorting</td><td>If the CellFunctor should apply sorting when processing cells   </td></tr>
+    <tr><td class="paramname">sortingThreshold</td><td>Sum of the number of particles in two cells from which sorting should be enabled   </td></tr>
   </table>
   </dd>
 </dl>

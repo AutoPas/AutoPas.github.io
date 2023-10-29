@@ -466,6 +466,12 @@ highCorner);iter.isValid();++iter)    <br /></td></tr>
 <tr class="memitem:a968bd488686f901da9086004712a2ece"><td class="memItemLeft" align="right" valign="top">const std::string &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a968bd488686f901da9086004712a2ece">getRuleFileName</a> () const</td></tr>
 <tr class="memdesc:a968bd488686f901da9086004712a2ece"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the name / path of the rule file for the <a class="el" href="classautopas_1_1RuleBasedTuning.html" title="A tuning strategy that uses information collected live from the domain to exclude configurations that...">RuleBasedTuning</a>.  <br /></td></tr>
 <tr class="separator:a968bd488686f901da9086004712a2ece"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44def67ab8760237c9166ae687d90d8d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a44def67ab8760237c9166ae687d90d8d">setSortingThreshold</a> (size_t sortingThreshold)</td></tr>
+<tr class="memdesc:a44def67ab8760237c9166ae687d90d8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the sorting-threshold for traversals that use the CellFunctor If the sum of the number of particles in two cells is greater or equal to that value, the CellFunctor creates a sorted view of the particles to avoid unnecessary distance checks.  <br /></td></tr>
+<tr class="separator:a44def67ab8760237c9166ae687d90d8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97757afe382ec120ec7360b458e9fbed"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a97757afe382ec120ec7360b458e9fbed">getSortingThreshold</a> () const</td></tr>
+<tr class="memdesc:a97757afe382ec120ec7360b458e9fbed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the sorting-threshold for traversals that use the CellFunctor.  <br /></td></tr>
+<tr class="separator:a97757afe382ec120ec7360b458e9fbed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>&gt;<br />
@@ -2353,6 +2359,36 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
+<a id="a97757afe382ec120ec7360b458e9fbed" name="a97757afe382ec120ec7360b458e9fbed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97757afe382ec120ec7360b458e9fbed">&#9670;&#160;</a></span>getSortingThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getSortingThreshold </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the sorting-threshold for traversals that use the CellFunctor. </p>
+<dl class="section return"><dt>Returns</dt><dd>sorting-threshold </dd></dl>
+
+</div>
+</div>
 <a id="aaade7f91b85219a9b204a73424fd2529" name="aaade7f91b85219a9b204a73424fd2529"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaade7f91b85219a9b204a73424fd2529">&#9670;&#160;</a></span>getTuningInterval()</h2>
 
@@ -4162,6 +4198,42 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <p>For possible selector strategy choices see <a class="el" href="classautopas_1_1options_1_1SelectorStrategyOption.html#a3de3088a46744ca2c1aac058ba33f5a4" title="Possible choices for the employed selectors.">options::SelectorStrategyOption::Value</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">selectorStrategy</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a44def67ab8760237c9166ae687d90d8d" name="a44def67ab8760237c9166ae687d90d8d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44def67ab8760237c9166ae687d90d8d">&#9670;&#160;</a></span>setSortingThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::setSortingThreshold </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>sortingThreshold</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the sorting-threshold for traversals that use the CellFunctor If the sum of the number of particles in two cells is greater or equal to that value, the CellFunctor creates a sorted view of the particles to avoid unnecessary distance checks. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sortingThreshold</td><td>Sum of the number of particles in two cells from which sorting should be enabled </td></tr>
   </table>
   </dd>
 </dl>

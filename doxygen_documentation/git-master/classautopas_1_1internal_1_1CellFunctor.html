@@ -142,9 +142,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2cc27407ed0c310782714ca8f6644b4f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellFunctor.html#a2cc27407ed0c310782714ca8f6644b4f">processCellPair</a> (<a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &amp;cell1, <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &amp;cell2, const std::array&lt; double, 3 &gt; &amp;sortingDirection={0., 0., 0.})</td></tr>
 <tr class="memdesc:a2cc27407ed0c310782714ca8f6644b4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process the interactions between the particles of cell1 with particles of cell2.  <br /></td></tr>
 <tr class="separator:a2cc27407ed0c310782714ca8f6644b4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e709026dd224f1a6bb1a785a8efab58"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellFunctor.html#a2e709026dd224f1a6bb1a785a8efab58">setUseSorting</a> (bool useSorting)</td></tr>
-<tr class="memdesc:a2e709026dd224f1a6bb1a785a8efab58"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets a boolean value that indicates whether the <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html" title="A cell functor.">CellFunctor</a> should apply sorting or not.  <br /></td></tr>
-<tr class="separator:a2e709026dd224f1a6bb1a785a8efab58"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd1240b15b9fb0658b557a08944d0e8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellFunctor.html#acd1240b15b9fb0658b557a08944d0e8f">setSortingThreshold</a> (size_t sortingThreshold)</td></tr>
+<tr class="memdesc:acd1240b15b9fb0658b557a08944d0e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the sorting-threshold If the sum of the number of particles in two cells is greater or equal to that value, the <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html" title="A cell functor.">CellFunctor</a> creates a sorted view of the particles to avoid unnecessary distance checks.  <br /></td></tr>
+<tr class="separator:acd1240b15b9fb0658b557a08944d0e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, class ParticleFunctor, DataLayoutOption::Value DataLayout, bool useNewton3 = true, bool bidirectional = true&gt;<br />
@@ -284,8 +284,8 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="a2e709026dd224f1a6bb1a785a8efab58" name="a2e709026dd224f1a6bb1a785a8efab58"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e709026dd224f1a6bb1a785a8efab58">&#9670;&#160;</a></span>setUseSorting()</h2>
+<a id="acd1240b15b9fb0658b557a08944d0e8f" name="acd1240b15b9fb0658b557a08944d0e8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd1240b15b9fb0658b557a08944d0e8f">&#9670;&#160;</a></span>setSortingThreshold()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -293,20 +293,19 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class ParticleFunctor , DataLayoutOption::Value DataLayout, bool useNewton3, bool bidirectional&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html">autopas::internal::CellFunctor</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, ParticleFunctor, DataLayout, useNewton3, bidirectional &gt;::setUseSorting </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html">autopas::internal::CellFunctor</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, ParticleFunctor, DataLayout, useNewton3, bidirectional &gt;::setSortingThreshold </td>
           <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>useSorting</em></td><td>)</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>sortingThreshold</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Sets a boolean value that indicates whether the <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html" title="A cell functor.">CellFunctor</a> should apply sorting or not. </p>
-<p>By default sorting is enabled</p>
+<p>Set the sorting-threshold If the sum of the number of particles in two cells is greater or equal to that value, the <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html" title="A cell functor.">CellFunctor</a> creates a sorted view of the particles to avoid unnecessary distance checks. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">useSorting</td><td>If the <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html" title="A cell functor.">CellFunctor</a> should apply sorting when processing cells </td></tr>
+    <tr><td class="paramname">sortingThreshold</td><td>Sum of the number of particles in two cells from which sorting should be enabled </td></tr>
   </table>
   </dd>
 </dl>
