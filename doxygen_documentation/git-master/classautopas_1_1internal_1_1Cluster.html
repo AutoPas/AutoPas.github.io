@@ -128,6 +128,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afbee3dd2f07dd9ce6baf080c13932569"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#afbee3dd2f07dd9ce6baf080c13932569">operator[]</a> (size_t index) const</td></tr>
 <tr class="memdesc:afbee3dd2f07dd9ce6baf080c13932569"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the particle at position index in the cluster.    <br /></td></tr>
 <tr class="separator:afbee3dd2f07dd9ce6baf080c13932569"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aebaaa4e0ecd8699f458d9f030f92a2b3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#aebaaa4e0ecd8699f458d9f030f92a2b3">empty</a> () const</td></tr>
+<tr class="memdesc:aebaaa4e0ecd8699f458d9f030f92a2b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the cluster contains any non-dummy particles.  <br /></td></tr>
+<tr class="separator:aebaaa4e0ecd8699f458d9f030f92a2b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a68d2ead0ed863816100128fae4d44245"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; double, double, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#a68d2ead0ed863816100128fae4d44245">getZMinMax</a> () const</td></tr>
 <tr class="memdesc:a68d2ead0ed863816100128fae4d44245"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Minimum and Maximum of the particles in z-direction.  <br /></td></tr>
 <tr class="separator:a68d2ead0ed863816100128fae4d44245"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -152,6 +155,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>clearNeighbors</b> ()
 <tr class="separator:aa8dd3363b9aec4f8a55083b7a3a00461"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24eeadf4efa0718a5475e8f82d16848a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#a24eeadf4efa0718a5475e8f82d16848a">reset</a> (<a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> *firstParticle)</td></tr>
 <tr class="separator:a24eeadf4efa0718a5475e8f82d16848a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e51499fbd573fc8b64bdcc27badc6eb"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; std::array&lt; double, 3 &gt;, std::array&lt; double, 3 &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#a1e51499fbd573fc8b64bdcc27badc6eb">getBoundingBox</a> () const</td></tr>
+<tr class="memdesc:a1e51499fbd573fc8b64bdcc27badc6eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the bounding box of this cluster.  <br /></td></tr>
+<tr class="separator:a1e51499fbd573fc8b64bdcc27badc6eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>&gt;<br />
@@ -247,6 +253,66 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aebaaa4e0ecd8699f458d9f030f92a2b3" name="aebaaa4e0ecd8699f458d9f030f92a2b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aebaaa4e0ecd8699f458d9f030f92a2b3">&#9670;&#160;</a></span>empty()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::empty </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicates if the cluster contains any non-dummy particles. </p>
+<dl class="section return"><dt>Returns</dt><dd>True if only dummy particles are present in the cluster. </dd></dl>
+
+</div>
+</div>
+<a id="a1e51499fbd573fc8b64bdcc27badc6eb" name="a1e51499fbd573fc8b64bdcc27badc6eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e51499fbd573fc8b64bdcc27badc6eb">&#9670;&#160;</a></span>getBoundingBox()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::tuple&lt; std::array&lt; double, 3 &gt;, std::array&lt; double, 3 &gt; &gt; <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getBoundingBox </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the bounding box of this cluster. </p>
+<dl class="section return"><dt>Returns</dt><dd>tuple&lt;lowerCorner, upperCorner&gt; </dd></dl>
 
 </div>
 </div>

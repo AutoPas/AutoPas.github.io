@@ -132,12 +132,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ada3b81a08d5188eeebc741b2a7771c34"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1VCLClusterFunctor.html#ada3b81a08d5188eeebc741b2a7771c34">VCLClusterFunctor</a> (PairwiseFunctor *functor, size_t clusterSize)</td></tr>
 <tr class="memdesc:ada3b81a08d5188eeebc741b2a7771c34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classautopas_1_1internal_1_1VCLClusterFunctor.html" title="Provides methods to traverse a single cluster and a pair of clusters.">VCLClusterFunctor</a> that uses the given functor internally.  <br /></td></tr>
 <tr class="separator:ada3b81a08d5188eeebc741b2a7771c34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a349c3f9010dcea68610768e8e56173fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1VCLClusterFunctor.html#a349c3f9010dcea68610768e8e56173fe">traverseCluster</a> (<a class="el" href="classautopas_1_1internal_1_1Cluster.html">internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp;cluster)</td></tr>
-<tr class="memdesc:a349c3f9010dcea68610768e8e56173fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traverses pairs of all particles in the given cluster.  <br /></td></tr>
-<tr class="separator:a349c3f9010dcea68610768e8e56173fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad0c554f00d7faeca6bc9b014afe25130"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1VCLClusterFunctor.html#ad0c554f00d7faeca6bc9b014afe25130">traverseClusterPair</a> (<a class="el" href="classautopas_1_1internal_1_1Cluster.html">internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp;cluster, <a class="el" href="classautopas_1_1internal_1_1Cluster.html">internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp;neighborCluster)</td></tr>
-<tr class="memdesc:ad0c554f00d7faeca6bc9b014afe25130"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traverses all pairs of particles between two clusters.  <br /></td></tr>
-<tr class="separator:ad0c554f00d7faeca6bc9b014afe25130"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0cd5389f4c0bd571eb9499877b59a4e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1VCLClusterFunctor.html#a0cd5389f4c0bd571eb9499877b59a4e8">processCluster</a> (<a class="el" href="classautopas_1_1internal_1_1Cluster.html">internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp;cluster, bool isHaloCluster)</td></tr>
+<tr class="memdesc:a0cd5389f4c0bd571eb9499877b59a4e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Invokes the calculations of all interactions within the cluster and, if they exist, it's neighbors.  <br /></td></tr>
+<tr class="separator:a0cd5389f4c0bd571eb9499877b59a4e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, class PairwiseFunctor, DataLayoutOption::Value dataLayout, bool useNewton3&gt;<br />
@@ -201,8 +198,8 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a349c3f9010dcea68610768e8e56173fe" name="a349c3f9010dcea68610768e8e56173fe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a349c3f9010dcea68610768e8e56173fe">&#9670;&#160;</a></span>traverseCluster()</h2>
+<a id="a0cd5389f4c0bd571eb9499877b59a4e8" name="a0cd5389f4c0bd571eb9499877b59a4e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0cd5389f4c0bd571eb9499877b59a4e8">&#9670;&#160;</a></span>processCluster()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -213,43 +210,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1internal_1_1VCLClusterFunctor.html">autopas::internal::VCLClusterFunctor</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, PairwiseFunctor, dataLayout, useNewton3 &gt;::traverseCluster </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classautopas_1_1internal_1_1Cluster.html">internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>cluster</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Traverses pairs of all particles in the given cluster. </p>
-<p>Always uses newton 3 in the AoS data layout. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cluster</td><td>The cluster to traverse. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ad0c554f00d7faeca6bc9b014afe25130" name="ad0c554f00d7faeca6bc9b014afe25130"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad0c554f00d7faeca6bc9b014afe25130">&#9670;&#160;</a></span>traverseClusterPair()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , class PairwiseFunctor , DataLayoutOption::Value dataLayout, bool useNewton3&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1internal_1_1VCLClusterFunctor.html">autopas::internal::VCLClusterFunctor</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, PairwiseFunctor, dataLayout, useNewton3 &gt;::traverseClusterPair </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1internal_1_1VCLClusterFunctor.html">autopas::internal::VCLClusterFunctor</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, PairwiseFunctor, dataLayout, useNewton3 &gt;::processCluster </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classautopas_1_1internal_1_1Cluster.html">internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>cluster</em>, </td>
@@ -257,8 +218,8 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classautopas_1_1internal_1_1Cluster.html">internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>neighborCluster</em>&#160;</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>isHaloCluster</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -273,11 +234,11 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </table>
 </div><div class="memdoc">
 
-<p>Traverses all pairs of particles between two clusters. </p>
+<p>Invokes the calculations of all interactions within the cluster and, if they exist, it's neighbors. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">cluster</td><td>The first cluster. </td></tr>
-    <tr><td class="paramname">neighborCluster</td><td>The second cluster. </td></tr>
+    <tr><td class="paramname">cluster</td><td></td></tr>
+    <tr><td class="paramname">isHaloCluster</td><td></td></tr>
   </table>
   </dd>
 </dl>

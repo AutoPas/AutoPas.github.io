@@ -210,7 +210,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a51fe644521108ff39eb73dbd34224fe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of all particles stored in this tower (owned, halo and dummy).  <br /></td></tr>
 <tr class="separator:a51fe644521108ff39eb73dbd34224fe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2a770a22d246c33aba02db73f39877eb"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a2a770a22d246c33aba02db73f39877eb">getNumActualParticles</a> () const</td></tr>
-<tr class="memdesc:a2a770a22d246c33aba02db73f39877eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of all particles saved in the tower without tailing dummies that are used to fill up clusters (owned.  <br /></td></tr>
+<tr class="memdesc:a2a770a22d246c33aba02db73f39877eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of all particles saved in the tower without tailing dummies that are used to fill up clusters (owned + halo + dummies excluding tailing dummies).  <br /></td></tr>
 <tr class="separator:a2a770a22d246c33aba02db73f39877eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a61fc690df63426163a8bb985d4b80b78"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a61fc690df63426163a8bb985d4b80b78">getNumClusters</a> () const</td></tr>
 <tr class="memdesc:a61fc690df63426163a8bb985d4b80b78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the number of clusters in the tower.  <br /></td></tr>
@@ -218,6 +218,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9350b9c7cba7f97e216c490e01d737bd"><td class="memItemLeft" align="right" valign="top">auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a9350b9c7cba7f97e216c490e01d737bd">getClusters</a> ()</td></tr>
 <tr class="memdesc:a9350b9c7cba7f97e216c490e01d737bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to the std::vector holding the clusters of this container.  <br /></td></tr>
 <tr class="separator:a9350b9c7cba7f97e216c490e01d737bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4efc4f0dc0dee92565e1e6da1518e77"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &gt;::iterator &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#ad4efc4f0dc0dee92565e1e6da1518e77">getFirstOwnedCluster</a> () const</td></tr>
+<tr class="memdesc:ad4efc4f0dc0dee92565e1e6da1518e77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the first cluster that contains at least one owned particle.  <br /></td></tr>
+<tr class="separator:ad4efc4f0dc0dee92565e1e6da1518e77"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc1847c000aec5c74773b5932d677fe3"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#adc1847c000aec5c74773b5932d677fe3">getFirstOwnedClusterIndex</a> () const</td></tr>
+<tr class="memdesc:adc1847c000aec5c74773b5932d677fe3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the first cluster that contains at least one owned particle.  <br /></td></tr>
+<tr class="separator:adc1847c000aec5c74773b5932d677fe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7968b98c9084fb9ad80a5b2567219732"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &gt;::iterator &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a7968b98c9084fb9ad80a5b2567219732">getFirstTailHaloCluster</a> () const</td></tr>
+<tr class="memdesc:a7968b98c9084fb9ad80a5b2567219732"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns an iterator to the first particle after the owned clusters, that contains no owned particles anymore.  <br /></td></tr>
+<tr class="separator:a7968b98c9084fb9ad80a5b2567219732"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a159139ea31e527efc2632e5fd6109894"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#a159139ea31e527efc2632e5fd6109894">getFirstTailHaloClusterIndex</a> () const</td></tr>
+<tr class="memdesc:a159139ea31e527efc2632e5fd6109894"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the index of the first particle after the owned clusters, that contains no owned particles anymore.  <br /></td></tr>
+<tr class="separator:a159139ea31e527efc2632e5fd6109894"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb5837fab484f19803f5f22a9ca9a2a5"><td class="memItemLeft" align="right" valign="top">auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1ClusterTower.html#abb5837fab484f19803f5f22a9ca9a2a5">getCluster</a> (size_t index)</td></tr>
 <tr class="memdesc:abb5837fab484f19803f5f22a9ca9a2a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the cluster at position index.  <br /></td></tr>
 <tr class="separator:abb5837fab484f19803f5f22a9ca9a2a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -904,6 +916,126 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
+<a id="ad4efc4f0dc0dee92565e1e6da1518e77" name="ad4efc4f0dc0dee92565e1e6da1518e77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4efc4f0dc0dee92565e1e6da1518e77">&#9670;&#160;</a></span>getFirstOwnedCluster()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &gt;::iterator &amp; <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html">autopas::internal::ClusterTower</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getFirstOwnedCluster </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns an iterator to the first cluster that contains at least one owned particle. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="adc1847c000aec5c74773b5932d677fe3" name="adc1847c000aec5c74773b5932d677fe3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc1847c000aec5c74773b5932d677fe3">&#9670;&#160;</a></span>getFirstOwnedClusterIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html">autopas::internal::ClusterTower</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getFirstOwnedClusterIndex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the index of the first cluster that contains at least one owned particle. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a7968b98c9084fb9ad80a5b2567219732" name="a7968b98c9084fb9ad80a5b2567219732"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7968b98c9084fb9ad80a5b2567219732">&#9670;&#160;</a></span>getFirstTailHaloCluster()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt; <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &gt;::iterator &amp; <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html">autopas::internal::ClusterTower</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getFirstTailHaloCluster </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns an iterator to the first particle after the owned clusters, that contains no owned particles anymore. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a159139ea31e527efc2632e5fd6109894" name="a159139ea31e527efc2632e5fd6109894"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a159139ea31e527efc2632e5fd6109894">&#9670;&#160;</a></span>getFirstTailHaloClusterIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classautopas_1_1internal_1_1ClusterTower.html">autopas::internal::ClusterTower</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getFirstTailHaloClusterIndex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the index of the first particle after the owned clusters, that contains no owned particles anymore. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 <a id="a2a770a22d246c33aba02db73f39877eb" name="a2a770a22d246c33aba02db73f39877eb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2a770a22d246c33aba02db73f39877eb">&#9670;&#160;</a></span>getNumActualParticles()</h2>
 
@@ -929,12 +1061,8 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </table>
 </div><div class="memdoc">
 
-<p>Get the number of all particles saved in the tower without tailing dummies that are used to fill up clusters (owned. </p>
-<ul>
-<li>halo + dummies excuding tailing dummies). <dl class="section return"><dt>Returns</dt><dd>Number of all particles saved in the tower without tailing dummies that are used to fill up clusters (owned</dd></dl>
-</li>
-<li>halo + dummies excuding tailing dummies). </li>
-</ul>
+<p>Get the number of all particles saved in the tower without tailing dummies that are used to fill up clusters (owned + halo + dummies excluding tailing dummies). </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
