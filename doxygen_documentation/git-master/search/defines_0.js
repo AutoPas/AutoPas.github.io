@@ -29,5 +29,6 @@ var searchData=
   ['autopas_5fmpi_5fsum_26',['AUTOPAS_MPI_SUM',['../WrapMPI_8h.html#abd46bf17bcaa49d2caaf4f1f234033c8',1,'WrapMPI.h']]],
   ['autopas_5fmpi_5funsigned_5fint_27',['AUTOPAS_MPI_UNSIGNED_INT',['../WrapMPI_8h.html#a49eb68cbec5fec61b4b474d29017e2c2',1,'WrapMPI.h']]],
   ['autopas_5fmpi_5funsigned_5flong_28',['AUTOPAS_MPI_UNSIGNED_LONG',['../WrapMPI_8h.html#a0dda7e3061652c8f7f87fdb210a224b8',1,'WrapMPI.h']]],
-  ['autopaslog_29',['AutoPasLog',['../Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575',1,'Logger.h']]]
+  ['autopas_5fopenmp_29',['AUTOPAS_OPENMP',['../WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d',1,'WrapOpenMP.h']]],
+  ['autopaslog_30',['AutoPasLog',['../Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575',1,'Logger.h']]]
 ];

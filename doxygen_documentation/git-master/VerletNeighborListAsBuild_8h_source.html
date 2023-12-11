@@ -201,136 +201,133 @@ $(function() {
 <div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> color = 0; color &lt; _numColors; color++) {</div>
 <div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> numThreads = _aosNeighborList[color].size();</div>
 <div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>      _soaNeighborList[color].resize(numThreads);</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span><span class="preprocessor">#if defined(AUTOPAS_OPENMP)</span></div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span><span class="preprocessor">#pragma omp parallel num_threads(numThreads)</span></div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span><span class="preprocessor">#if defined(AUTOPAS_OPENMP)</span></div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span><span class="preprocessor">#pragma omp for schedule(static)</span></div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>      <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> thread = 0; thread &lt; numThreads; thread++) {</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        <span class="keyword">auto</span> &amp;currentThreadList = _soaNeighborList[color][thread];</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        currentThreadList.clear();</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;pair : _aosNeighborList[color][thread]) {</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>          <span class="keywordtype">size_t</span> indexFirst = _aos2soaMap[pair.first];</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>          std::vector&lt;size_t, AlignedAllocator&lt;size_t&gt;&gt; neighbors;</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>          neighbors.reserve(pair.second.size());</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>          <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;second : pair.second) {</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>            <span class="keywordtype">size_t</span> indexSecond = _aos2soaMap[second];</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            neighbors.push_back(indexSecond);</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>          }</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>          currentThreadList.push_back({indexFirst, std::move(neighbors)});</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        }</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>      }</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    }</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    _soaListIsValid = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  }</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> TFunctor&gt;</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno"><a class="line" href="classautopas_1_1VerletNeighborListAsBuild.html#a1dc943e8c06561eb57832f981f91d1d9">  204</a></span>  <span class="keyword">auto</span> *<a class="code hl_function" href="classautopas_1_1VerletNeighborListAsBuild.html#a1dc943e8c06561eb57832f981f91d1d9">loadSoA</a>(TFunctor *f) {</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    _soa.<a class="code hl_function" href="classautopas_1_1SoA.html#a530a47fe9169c2fe80540d84c8797d6b">clear</a>();</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    <span class="keywordtype">size_t</span> offset = 0;</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;cell : _baseLinkedCells-&gt;getCells()) {</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>      f-&gt;SoALoader(cell, _soa, offset);</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>      offset += cell.size();</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    }</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <span class="keywordflow">return</span> &amp;_soa;</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  }</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> TFunctor&gt;</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno"><a class="line" href="classautopas_1_1VerletNeighborListAsBuild.html#ac33794b52c68067814068d0417335f51">  220</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1VerletNeighborListAsBuild.html#ac33794b52c68067814068d0417335f51">extractSoA</a>(TFunctor *f) {</div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    <span class="keywordtype">size_t</span> offset = 0;</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;cell : _baseLinkedCells-&gt;getCells()) {</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>      f-&gt;SoAExtractor(cell, _soa, offset);</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>      offset += cell.size();</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    }</div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>  }</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span> </div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="classautopas_1_1VerletNeighborListAsBuild.html#a01a40a192af1f48c01b0e46c725c1610">  228</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classautopas_1_1VerletNeighborListAsBuild.html#a01a40a192af1f48c01b0e46c725c1610">isSoAListValid</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> _soaListIsValid; }</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno"><a class="line" href="classautopas_1_1VerletNeighborListAsBuild.html#a7c8a1416c3d7d8bec0f77703cfc7e49a">  230</a></span>  <span class="keywordtype">long</span> <a class="code hl_function" href="classautopas_1_1VerletNeighborListAsBuild.html#a7c8a1416c3d7d8bec0f77703cfc7e49a">getNumberOfNeighborPairs</a>()<span class="keyword"> const override </span>{</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    <span class="keywordtype">long</span> numPairs = 0;</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;colorList : _aosNeighborList) {</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;threadList : colorList) {</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        numPairs += threadList.size();</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>      }</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    }</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="keywordflow">return</span> numPairs;</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>  }</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>  <span class="keywordtype">void</span> addPair(<a class="code hl_class" href="classautopas_1_1ParticleBase.html">Particle</a> *first, <a class="code hl_class" href="classautopas_1_1ParticleBase.html">Particle</a> *second) {</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="keywordtype">int</span> currentThreadIndex = <a class="code hl_function" href="namespaceautopas.html#ac3917775976f91c4251e72887dc1876e">autopas_get_thread_num</a>();</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    _aosNeighborList[_currentColor][currentThreadIndex][first].push_back(second);</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>  }</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>  <span class="keywordtype">void</span> checkPair(<a class="code hl_class" href="classautopas_1_1ParticleBase.html">Particle</a> *first, <a class="code hl_class" href="classautopas_1_1ParticleBase.html">Particle</a> *second) {</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    <span class="keywordtype">int</span> currentThreadIndex = <a class="code hl_function" href="namespaceautopas.html#ac3917775976f91c4251e72887dc1876e">autopas_get_thread_num</a>();</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    <span class="comment">// Check all neighbor lists for the pair, but the one that the pair would be in if it was not moved first.</span></div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="keyword">auto</span> &amp;oldThreadNeighborList = _aosNeighborList[_currentColor][currentThreadIndex];</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <span class="keywordflow">if</span> (isPairInList(oldThreadNeighborList, first, second)) {</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> color = 0; color &lt; _numColors; color++) {</div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> thread = 0; thread &lt; _aosNeighborList[color].size(); thread++) {</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>          <span class="keywordflow">if</span> (not isPairInList(_aosNeighborList[_currentColor][currentThreadIndex], first, second)) {</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>            <span class="comment">// this is thread safe, as _allPairsPresent is atomic</span></div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>            _allPairsPresent = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>            <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>          }</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        }</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>      }</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>      <span class="comment">// this is thread safe, as _allPairsPresent is atomic</span></div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>      _allPairsPresent = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>    }</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  }</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  <span class="keywordtype">bool</span> isPairInList(<a class="code hl_typedef" href="classautopas_1_1VerletNeighborListAsBuild.html#a1d053e2f0f2f7654a9cc28c777a33a70">AoSThreadNeighborList</a> &amp;currentNeighborList, <a class="code hl_class" href="classautopas_1_1ParticleBase.html">Particle</a> *first, <a class="code hl_class" href="classautopas_1_1ParticleBase.html">Particle</a> *second) {</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <span class="keyword">auto</span> iteratorFound = std::find(currentNeighborList[first].begin(), currentNeighborList[first].end(), second);</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> </div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    <span class="keywordflow">return</span> iteratorFound != currentNeighborList[first].end();</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  }</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keywordtype">size_t</span> _numColors = 8;</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>  std::array&lt;AoSColorNeighborList, _numColors&gt; _aosNeighborList;</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>  LinkedCells&lt;Particle&gt; *_baseLinkedCells;</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>  std::array&lt;SoAColorNeighborList, _numColors&gt; _soaNeighborList;</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span> </div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>  SoA&lt;typename Particle::SoAArraysType&gt; _soa;</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span> </div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>  <span class="keywordtype">bool</span> _soaListIsValid;</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>  <span class="keywordtype">int</span> _currentColor{0};</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span> </div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>  std::atomic&lt;bool&gt; _allPairsPresent;</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>};</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>}  <span class="comment">// namespace autopas</span></div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>      <a class="code hl_define" href="WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d">AUTOPAS_OPENMP</a>(parallel num_threads(numThreads))</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>      <a class="code hl_define" href="WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d">AUTOPAS_OPENMP</a>(<span class="keywordflow">for</span> schedule(<span class="keyword">static</span>))</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>      <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> thread = 0; thread &lt; numThreads; thread++) {</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>        <span class="keyword">auto</span> &amp;currentThreadList = _soaNeighborList[color][thread];</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>        currentThreadList.clear();</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;pair : _aosNeighborList[color][thread]) {</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>          <span class="keywordtype">size_t</span> indexFirst = _aos2soaMap[pair.first];</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>          std::vector&lt;size_t, AlignedAllocator&lt;size_t&gt;&gt; neighbors;</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>          neighbors.reserve(pair.second.size());</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>          <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;second : pair.second) {</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>            <span class="keywordtype">size_t</span> indexSecond = _aos2soaMap[second];</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>            neighbors.push_back(indexSecond);</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>          }</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>          currentThreadList.push_back({indexFirst, std::move(neighbors)});</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        }</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>      }</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    }</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    _soaListIsValid = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  }</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> TFunctor&gt;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="classautopas_1_1VerletNeighborListAsBuild.html#a1dc943e8c06561eb57832f981f91d1d9">  200</a></span>  <span class="keyword">auto</span> *<a class="code hl_function" href="classautopas_1_1VerletNeighborListAsBuild.html#a1dc943e8c06561eb57832f981f91d1d9">loadSoA</a>(TFunctor *f) {</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    _soa.<a class="code hl_function" href="classautopas_1_1SoA.html#a530a47fe9169c2fe80540d84c8797d6b">clear</a>();</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    <span class="keywordtype">size_t</span> offset = 0;</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;cell : _baseLinkedCells-&gt;getCells()) {</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>      f-&gt;SoALoader(cell, _soa, offset);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>      offset += cell.size();</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    }</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    <span class="keywordflow">return</span> &amp;_soa;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  }</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> TFunctor&gt;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="classautopas_1_1VerletNeighborListAsBuild.html#ac33794b52c68067814068d0417335f51">  216</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1VerletNeighborListAsBuild.html#ac33794b52c68067814068d0417335f51">extractSoA</a>(TFunctor *f) {</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>    <span class="keywordtype">size_t</span> offset = 0;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;cell : _baseLinkedCells-&gt;getCells()) {</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>      f-&gt;SoAExtractor(cell, _soa, offset);</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>      offset += cell.size();</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>    }</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>  }</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="classautopas_1_1VerletNeighborListAsBuild.html#a01a40a192af1f48c01b0e46c725c1610">  224</a></span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classautopas_1_1VerletNeighborListAsBuild.html#a01a40a192af1f48c01b0e46c725c1610">isSoAListValid</a>()<span class="keyword"> const override </span>{ <span class="keywordflow">return</span> _soaListIsValid; }</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno"><a class="line" href="classautopas_1_1VerletNeighborListAsBuild.html#a7c8a1416c3d7d8bec0f77703cfc7e49a">  226</a></span>  <span class="keywordtype">long</span> <a class="code hl_function" href="classautopas_1_1VerletNeighborListAsBuild.html#a7c8a1416c3d7d8bec0f77703cfc7e49a">getNumberOfNeighborPairs</a>()<span class="keyword"> const override </span>{</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <span class="keywordtype">long</span> numPairs = 0;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;colorList : _aosNeighborList) {</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>      <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;threadList : colorList) {</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        numPairs += threadList.size();</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>      }</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>    }</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>    <span class="keywordflow">return</span> numPairs;</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>  }</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span> </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>  <span class="keywordtype">void</span> addPair(<a class="code hl_class" href="classautopas_1_1ParticleBase.html">Particle</a> *first, <a class="code hl_class" href="classautopas_1_1ParticleBase.html">Particle</a> *second) {</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keywordtype">int</span> currentThreadIndex = <a class="code hl_function" href="namespaceautopas.html#ac3917775976f91c4251e72887dc1876e">autopas_get_thread_num</a>();</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    _aosNeighborList[_currentColor][currentThreadIndex][first].push_back(second);</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  }</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>  <span class="keywordtype">void</span> checkPair(<a class="code hl_class" href="classautopas_1_1ParticleBase.html">Particle</a> *first, <a class="code hl_class" href="classautopas_1_1ParticleBase.html">Particle</a> *second) {</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    <span class="keywordtype">int</span> currentThreadIndex = <a class="code hl_function" href="namespaceautopas.html#ac3917775976f91c4251e72887dc1876e">autopas_get_thread_num</a>();</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>    <span class="comment">// Check all neighbor lists for the pair, but the one that the pair would be in if it was not moved first.</span></div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="keyword">auto</span> &amp;oldThreadNeighborList = _aosNeighborList[_currentColor][currentThreadIndex];</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    <span class="keywordflow">if</span> (isPairInList(oldThreadNeighborList, first, second)) {</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> color = 0; color &lt; _numColors; color++) {</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> thread = 0; thread &lt; _aosNeighborList[color].size(); thread++) {</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>          <span class="keywordflow">if</span> (not isPairInList(_aosNeighborList[_currentColor][currentThreadIndex], first, second)) {</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>            <span class="comment">// this is thread safe, as _allPairsPresent is atomic</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>            _allPairsPresent = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>          }</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>        }</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>      }</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>      <span class="comment">// this is thread safe, as _allPairsPresent is atomic</span></div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>      _allPairsPresent = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>    }</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>  }</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>  <span class="keywordtype">bool</span> isPairInList(<a class="code hl_typedef" href="classautopas_1_1VerletNeighborListAsBuild.html#a1d053e2f0f2f7654a9cc28c777a33a70">AoSThreadNeighborList</a> &amp;currentNeighborList, <a class="code hl_class" href="classautopas_1_1ParticleBase.html">Particle</a> *first, <a class="code hl_class" href="classautopas_1_1ParticleBase.html">Particle</a> *second) {</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    <span class="keyword">auto</span> iteratorFound = std::find(currentNeighborList[first].begin(), currentNeighborList[first].end(), second);</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <span class="keywordflow">return</span> iteratorFound != currentNeighborList[first].end();</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  }</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keywordtype">size_t</span> _numColors = 8;</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  std::array&lt;AoSColorNeighborList, _numColors&gt; _aosNeighborList;</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>  LinkedCells&lt;Particle&gt; *_baseLinkedCells;</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>  std::array&lt;SoAColorNeighborList, _numColors&gt; _soaNeighborList;</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>  SoA&lt;typename Particle::SoAArraysType&gt; _soa;</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>  <span class="keywordtype">bool</span> _soaListIsValid;</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>  <span class="keywordtype">int</span> _currentColor{0};</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span> </div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>  std::atomic&lt;bool&gt; _allPairsPresent;</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>};</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>}  <span class="comment">// namespace autopas</span></div>
 <div class="ttc" id="aAsBuildPairGeneratorFunctor_8h_html"><div class="ttname"><a href="AsBuildPairGeneratorFunctor_8h.html">AsBuildPairGeneratorFunctor.h</a></div></div>
 <div class="ttc" id="aC08TraversalColorChangeNotify_8h_html"><div class="ttname"><a href="C08TraversalColorChangeNotify_8h.html">C08TraversalColorChangeNotify.h</a></div></div>
 <div class="ttc" id="aVerletNeighborListInterface_8h_html"><div class="ttname"><a href="VerletNeighborListInterface_8h.html">VerletNeighborListInterface.h</a></div></div>
 <div class="ttc" id="aWrapOpenMP_8h_html"><div class="ttname"><a href="WrapOpenMP_8h.html">WrapOpenMP.h</a></div></div>
+<div class="ttc" id="aWrapOpenMP_8h_html_adf64fc4981617d456044d0a30deb3d0d"><div class="ttname"><a href="WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d">AUTOPAS_OPENMP</a></div><div class="ttdeci">#define AUTOPAS_OPENMP(args)</div><div class="ttdoc">Empty macro to throw away any arguments.</div><div class="ttdef"><b>Definition:</b> WrapOpenMP.h:126</div></div>
 <div class="ttc" id="aclassautopas_1_1C08TraversalColorChangeNotify_html"><div class="ttname"><a href="classautopas_1_1C08TraversalColorChangeNotify.html">autopas::C08TraversalColorChangeNotify</a></div><div class="ttdoc">Constructor of the lc_c08 traversal.</div><div class="ttdef"><b>Definition:</b> C08TraversalColorChangeNotify.h:20</div></div>
-<div class="ttc" id="aclassautopas_1_1CellBasedParticleContainer_html_a3ae0545f0d40cf247fae2198dcafb444"><div class="ttname"><a href="classautopas_1_1CellBasedParticleContainer.html#a3ae0545f0d40cf247fae2198dcafb444">autopas::CellBasedParticleContainer::getInteractionLength</a></div><div class="ttdeci">double getInteractionLength() const final</div><div class="ttdoc">Return the interaction length (cutoff+skin) of the container.</div><div class="ttdef"><b>Definition:</b> CellBasedParticleContainer.h:84</div></div>
+<div class="ttc" id="aclassautopas_1_1CellBasedParticleContainer_html_a3ae0545f0d40cf247fae2198dcafb444"><div class="ttname"><a href="classautopas_1_1CellBasedParticleContainer.html#a3ae0545f0d40cf247fae2198dcafb444">autopas::CellBasedParticleContainer::getInteractionLength</a></div><div class="ttdeci">double getInteractionLength() const final</div><div class="ttdoc">Return the interaction length (cutoff+skin) of the container.</div><div class="ttdef"><b>Definition:</b> CellBasedParticleContainer.h:81</div></div>
 <div class="ttc" id="aclassautopas_1_1ColorChangeObserver_html"><div class="ttname"><a href="classautopas_1_1ColorChangeObserver.html">autopas::ColorChangeObserver</a></div><div class="ttdoc">Observer interface that specifies handling color changes.</div><div class="ttdef"><b>Definition:</b> ColorChangeObserver.h:14</div></div>
 <div class="ttc" id="aclassautopas_1_1LinkedCells_html"><div class="ttname"><a href="classautopas_1_1LinkedCells.html">autopas::LinkedCells</a></div><div class="ttdoc">LinkedCells class.</div><div class="ttdef"><b>Definition:</b> LinkedCells.h:39</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleBase_html"><div class="ttname"><a href="classautopas_1_1ParticleBase.html">autopas::ParticleBase</a></div><div class="ttdoc">Minimal definition of a basic particle.</div><div class="ttdef"><b>Definition:</b> ParticleBase.h:33</div></div>
 <div class="ttc" id="aclassautopas_1_1SoA_html_a530a47fe9169c2fe80540d84c8797d6b"><div class="ttname"><a href="classautopas_1_1SoA.html#a530a47fe9169c2fe80540d84c8797d6b">autopas::SoA::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">delete all particles in the soa</div><div class="ttdef"><b>Definition:</b> SoA.h:186</div></div>
 <div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html">autopas::VerletNeighborListAsBuild</a></div><div class="ttdoc">This class implements a neighbor list that remembers which thread added which particle pair and at wh...</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:22</div></div>
-<div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_a01a40a192af1f48c01b0e46c725c1610"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#a01a40a192af1f48c01b0e46c725c1610">autopas::VerletNeighborListAsBuild::isSoAListValid</a></div><div class="ttdeci">bool isSoAListValid() const override</div><div class="ttdoc">Returns whether the SoA is build and up to date with the AoS.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:228</div></div>
+<div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_a01a40a192af1f48c01b0e46c725c1610"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#a01a40a192af1f48c01b0e46c725c1610">autopas::VerletNeighborListAsBuild::isSoAListValid</a></div><div class="ttdeci">bool isSoAListValid() const override</div><div class="ttdoc">Returns whether the SoA is build and up to date with the AoS.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:224</div></div>
 <div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_a0b29a390a1894ad8bcb391d143d691da"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#a0b29a390a1894ad8bcb391d143d691da">autopas::VerletNeighborListAsBuild::getAoSNeighborList</a></div><div class="ttdeci">const auto &amp; getAoSNeighborList()</div><div class="ttdoc">Returns the internal AoS neighbor list.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:134</div></div>
 <div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_a1d053e2f0f2f7654a9cc28c777a33a70"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#a1d053e2f0f2f7654a9cc28c777a33a70">autopas::VerletNeighborListAsBuild::AoSThreadNeighborList</a></div><div class="ttdeci">std::unordered_map&lt; Particle *, std::vector&lt; Particle * &gt; &gt; AoSThreadNeighborList</div><div class="ttdoc">This type represents the neighbor list that each thread has for each color.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:58</div></div>
-<div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_a1dc943e8c06561eb57832f981f91d1d9"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#a1dc943e8c06561eb57832f981f91d1d9">autopas::VerletNeighborListAsBuild::loadSoA</a></div><div class="ttdeci">auto * loadSoA(TFunctor *f)</div><div class="ttdoc">Loads the particle information in the SoA and returns a pointer to the filled SoA.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:204</div></div>
+<div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_a1dc943e8c06561eb57832f981f91d1d9"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#a1dc943e8c06561eb57832f981f91d1d9">autopas::VerletNeighborListAsBuild::loadSoA</a></div><div class="ttdeci">auto * loadSoA(TFunctor *f)</div><div class="ttdoc">Loads the particle information in the SoA and returns a pointer to the filled SoA.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:200</div></div>
 <div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_a5a2f27437666c3b344a29aaaa6303dfa"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#a5a2f27437666c3b344a29aaaa6303dfa">autopas::VerletNeighborListAsBuild::VerletNeighborListAsBuild</a></div><div class="ttdeci">VerletNeighborListAsBuild()</div><div class="ttdoc">Constructor for the VerletNeighborListAsBuild.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:76</div></div>
-<div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_a7c8a1416c3d7d8bec0f77703cfc7e49a"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#a7c8a1416c3d7d8bec0f77703cfc7e49a">autopas::VerletNeighborListAsBuild::getNumberOfNeighborPairs</a></div><div class="ttdeci">long getNumberOfNeighborPairs() const override</div><div class="ttdoc">Returns the number of neighbor pairs in the list.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:230</div></div>
+<div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_a7c8a1416c3d7d8bec0f77703cfc7e49a"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#a7c8a1416c3d7d8bec0f77703cfc7e49a">autopas::VerletNeighborListAsBuild::getNumberOfNeighborPairs</a></div><div class="ttdeci">long getNumberOfNeighborPairs() const override</div><div class="ttdoc">Returns the number of neighbor pairs in the list.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:226</div></div>
 <div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_a8fd994db690684c871d1874657450ec1"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#a8fd994db690684c871d1874657450ec1">autopas::VerletNeighborListAsBuild::generateSoAFromAoS</a></div><div class="ttdeci">void generateSoAFromAoS() override</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:158</div></div>
 <div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_a9ec9183360cfe8741cc29b91e997452a"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#a9ec9183360cfe8741cc29b91e997452a">autopas::VerletNeighborListAsBuild::checkNeighborListValidity</a></div><div class="ttdeci">bool checkNeighborListValidity(bool useNewton3, double cutoff) override</div><div class="ttdoc">Checks if the neighbor list contains all pairs that is should.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:105</div></div>
 <div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_a9f15d9150c9e22aaee84f55a1b08b3be"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#a9f15d9150c9e22aaee84f55a1b08b3be">autopas::VerletNeighborListAsBuild::SoAThreadNeighborList</a></div><div class="ttdeci">std::vector&lt; std::pair&lt; size_t, std::vector&lt; size_t, autopas::AlignedAllocator&lt; size_t &gt; &gt; &gt; &gt; SoAThreadNeighborList</div><div class="ttdoc">This type represents the SoA neighbor list that each thread has for each color.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:67</div></div>
-<div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_ac33794b52c68067814068d0417335f51"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#ac33794b52c68067814068d0417335f51">autopas::VerletNeighborListAsBuild::extractSoA</a></div><div class="ttdeci">void extractSoA(TFunctor *f)</div><div class="ttdoc">Extracts the particle information out of the SoA returned by loadSoA() before.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:220</div></div>
+<div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_ac33794b52c68067814068d0417335f51"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#ac33794b52c68067814068d0417335f51">autopas::VerletNeighborListAsBuild::extractSoA</a></div><div class="ttdeci">void extractSoA(TFunctor *f)</div><div class="ttdoc">Extracts the particle information out of the SoA returned by loadSoA() before.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:216</div></div>
 <div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_ae5f12256e8e8c0da74564b9b4a7bed7e"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#ae5f12256e8e8c0da74564b9b4a7bed7e">autopas::VerletNeighborListAsBuild::receiveColorChange</a></div><div class="ttdeci">void receiveColorChange(unsigned long newColor) override</div><div class="ttdoc">Gets called when the color changes during the observed traversal.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:153</div></div>
 <div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_ae96f65daa0a09363b5378f679185f486"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#ae96f65daa0a09363b5378f679185f486">autopas::VerletNeighborListAsBuild::getSoANeighborList</a></div><div class="ttdeci">const auto &amp; getSoANeighborList()</div><div class="ttdoc">Returns the internal SoA neighbor list.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:151</div></div>
 <div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_aec14fc432a535172a7dded7b3629e9fc"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#aec14fc432a535172a7dded7b3629e9fc">autopas::VerletNeighborListAsBuild::buildAoSNeighborList</a></div><div class="ttdeci">void buildAoSNeighborList(LinkedCells&lt; Particle &gt; &amp;linkedCells, bool useNewton3) override</div><div class="ttdoc">Builds the neighbor list from a LinkedCells object.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:86</div></div>
@@ -340,8 +337,8 @@ $(function() {
 <div class="ttc" id="aclassautopas_1_1VerletNeighborListInterface_html"><div class="ttname"><a href="classautopas_1_1VerletNeighborListInterface.html">autopas::VerletNeighborListInterface</a></div><div class="ttdoc">Interface for neighbor lists used by VarVerletLists.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListInterface.h:21</div></div>
 <div class="ttc" id="aclassautopas_1_1internal_1_1AsBuildPairGeneratorFunctor_html"><div class="ttname"><a href="classautopas_1_1internal_1_1AsBuildPairGeneratorFunctor.html">autopas::internal::AsBuildPairGeneratorFunctor</a></div><div class="ttdoc">This functor can generate or check variable verlet lists using the typical pairwise traversal.</div><div class="ttdef"><b>Definition:</b> AsBuildPairGeneratorFunctor.h:29</div></div>
 <div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">This is the main namespace of AutoPas.</div><div class="ttdef"><b>Definition:</b> AutoPasDecl.h:31</div></div>
-<div class="ttc" id="anamespaceautopas_html_a385797c464a683f32da2d4a43ab53220"><div class="ttname"><a href="namespaceautopas.html#a385797c464a683f32da2d4a43ab53220">autopas::autopas_get_max_threads</a></div><div class="ttdeci">int autopas_get_max_threads()</div><div class="ttdoc">Dummy for omp_get_max_threads() when no OpenMP is available.</div><div class="ttdef"><b>Definition:</b> WrapOpenMP.h:125</div></div>
-<div class="ttc" id="anamespaceautopas_html_ac3917775976f91c4251e72887dc1876e"><div class="ttname"><a href="namespaceautopas.html#ac3917775976f91c4251e72887dc1876e">autopas::autopas_get_thread_num</a></div><div class="ttdeci">int autopas_get_thread_num()</div><div class="ttdoc">Dummy for omp_set_lock() when no OpenMP is available.</div><div class="ttdef"><b>Definition:</b> WrapOpenMP.h:113</div></div>
+<div class="ttc" id="anamespaceautopas_html_a385797c464a683f32da2d4a43ab53220"><div class="ttname"><a href="namespaceautopas.html#a385797c464a683f32da2d4a43ab53220">autopas::autopas_get_max_threads</a></div><div class="ttdeci">int autopas_get_max_threads()</div><div class="ttdoc">Dummy for omp_get_max_threads() when no OpenMP is available.</div><div class="ttdef"><b>Definition:</b> WrapOpenMP.h:144</div></div>
+<div class="ttc" id="anamespaceautopas_html_ac3917775976f91c4251e72887dc1876e"><div class="ttname"><a href="namespaceautopas.html#ac3917775976f91c4251e72887dc1876e">autopas::autopas_get_thread_num</a></div><div class="ttdeci">int autopas_get_thread_num()</div><div class="ttdoc">Dummy for omp_set_lock() when no OpenMP is available.</div><div class="ttdef"><b>Definition:</b> WrapOpenMP.h:132</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

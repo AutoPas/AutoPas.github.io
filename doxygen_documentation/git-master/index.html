@@ -208,24 +208,25 @@ Particle Ownership</h2>
 </ul>
 <h2><a class="anchor" id="autotoc_md15"></a>
 Iterating Through Particles</h2>
-<p>Iterators to iterate over particle are provided. The particle can be accesses using <code>iter-&gt;</code> or <code>*iter</code>. When created inside a OpenMP parallel region, work is automatically spread over all threads. </p><div class="fragment"><div class="line"><span class="preprocessor">#pragma omp parallel</span></div>
+<p>Iterators to iterate over particle are provided. The particle can be accesses using <code>iter-&gt;</code> or <code>*iter</code>. When created inside a OpenMP parallel region, work is automatically spread over all threads. </p><div class="fragment"><div class="line"><a class="code hl_define" href="WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d">AUTOPAS_OPENMP</a>(parallel)</div>
 <div class="line"><span class="keywordflow">for</span>(<span class="keyword">auto</span> iter = autoPas.begin(); iter.isValid(); ++iter) {</div>
 <div class="line">  <span class="comment">// user code:</span></div>
 <div class="line">  <span class="keyword">auto</span> position = iter-&gt;getR();</div>
 <div class="line">}</div>
-</div><!-- fragment --><p> For convenience the <code>end()</code> method is also implemented for the AutoPas class so you might also use range-based for loops: </p><div class="fragment"><div class="line"><span class="preprocessor">#pragma omp parallel</span></div>
+<div class="ttc" id="aWrapOpenMP_8h_html_adf64fc4981617d456044d0a30deb3d0d"><div class="ttname"><a href="WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d">AUTOPAS_OPENMP</a></div><div class="ttdeci">#define AUTOPAS_OPENMP(args)</div><div class="ttdoc">Empty macro to throw away any arguments.</div><div class="ttdef"><b>Definition:</b> WrapOpenMP.h:126</div></div>
+</div><!-- fragment --><p> For convenience the <code>end()</code> method is also implemented for the AutoPas class so you might also use range-based for loops: </p><div class="fragment"><div class="line"><a class="code hl_define" href="WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d">AUTOPAS_OPENMP</a>(parallel)</div>
 <div class="line"><span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; particle : autoPas) {</div>
 <div class="line">  <span class="comment">// user code:</span></div>
 <div class="line">  <span class="keyword">auto</span> position = particle.getR();</div>
 <div class="line">}</div>
-</div><!-- fragment --><p>To iterate over a subset of particles, the <code>getRegionIterator(lowCorner, highCorner)</code> method can be used: </p><div class="fragment"><div class="line"><span class="preprocessor">#pragma omp parallel</span></div>
+</div><!-- fragment --><p>To iterate over a subset of particles, the <code>getRegionIterator(lowCorner, highCorner)</code> method can be used: </p><div class="fragment"><div class="line"><a class="code hl_define" href="WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d">AUTOPAS_OPENMP</a>(parallel)</div>
 <div class="line"><span class="keywordflow">for</span>(<span class="keyword">auto</span> iter = autoPas.getRegionIterator(lowCorner, highCorner); iter != autoPas.end(); ++iter) {</div>
 <div class="line">  <span class="comment">// user code:</span></div>
 <div class="line">  <span class="keyword">auto</span> position = iter-&gt;getR();</div>
 <div class="line">}</div>
 </div><!-- fragment --><p>Both <code>begin()</code> and <code>getRegionIterator()</code> can also take the additional parameter <code>IteratorBehavior</code>, which indicates over which particles the iteration should be performed. See <a href="https://autopas.github.io/doxygen_documentation/git-master/namespaceautopas.html#a520fefd51e4555074cd16e7c3fd19c42">autopas::IteratorBehavior</a> for possible options and details. The default parameter is <code>ownedOrHalo</code>, which is also used for range-based for loops.</p>
 <p>Analogously to <code>begin()</code>, <code>cbegin()</code> is also defined, which guarantees to return a <code>const_iterator</code>.</p>
-<p>Iterators are not guaranteed to be valid after particle insertion (see <a href="https://github.com/AutoPas/AutoPas/issues/766">Issue #766</a> for details). However, particle deletion while iterating is supported via <code>autoPas.deleteParticle(iterator)</code>. After deletion the <code>++</code> operator has to be called: </p><div class="fragment"><div class="line"><span class="preprocessor">#pragma omp parallel</span></div>
+<p>Iterators are not guaranteed to be valid after particle insertion (see <a href="https://github.com/AutoPas/AutoPas/issues/766">Issue #766</a> for details). However, particle deletion while iterating is supported via <code>autoPas.deleteParticle(iterator)</code>. After deletion the <code>++</code> operator has to be called: </p><div class="fragment"><div class="line"><a class="code hl_define" href="WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d">AUTOPAS_OPENMP</a>(parallel)</div>
 <div class="line"><span class="keywordflow">for</span>(<span class="keyword">auto</span> iter = autoPas.getIterator(); iter != autoPas.end(); ++iter) {</div>
 <div class="line">  autoPas.deleteParticle(iterator);</div>
 <div class="line">}</div>
