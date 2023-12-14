@@ -119,7 +119,7 @@ $(function() {
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="namespaceautopas_1_1utils_1_1TupleUtils.html#a63430b206450d8a9b37e629b0b917acc">   22</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="namespaceautopas_1_1utils_1_1TupleUtils.html#a63430b206450d8a9b37e629b0b917acc">for_each</a>(T &amp;&amp;tuple, F &amp;&amp;f) {</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>  std::apply(</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>      <span class="comment">// function that takes all elements of the tuple as variadic argument</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      [&amp;](<span class="keyword">auto</span> &amp;... t) {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      [&amp;](<span class="keyword">auto</span> &amp;...t) {</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="comment">// unpack the tuple using a fold (... op pack) with op as the comma operator to apply a lambda on every element</span></div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="comment">// This will cause problems if anyone overloads the comma operator for elements of tuple!</span></div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        (..., f(t));</div>
