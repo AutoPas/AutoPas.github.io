@@ -852,10 +852,10 @@ $(function() {
 <div class="line"><a id="l01021" name="l01021"></a><span class="lineno"> 1021</span>                                                         std::vector&lt;<a class="code hl_class" href="classautopas_1_1FullParticleCell.html">FullParticleCell&lt;Particle&gt;</a>&gt; &amp;haloParticleBuffers) {</div>
 <div class="line"><a id="l01022" name="l01022"></a><span class="lineno"> 1022</span>  <span class="comment">// All (halo-)buffer interactions shall happen vectorized, hence, load all buffer data into SoAs</span></div>
 <div class="line"><a id="l01023" name="l01023"></a><span class="lineno"> 1023</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;buffer : particleBuffers) {</div>
-<div class="line"><a id="l01024" name="l01024"></a><span class="lineno"> 1024</span>    f-&gt;SoALoader(buffer, buffer._particleSoABuffer, 0);</div>
+<div class="line"><a id="l01024" name="l01024"></a><span class="lineno"> 1024</span>    f-&gt;SoALoader(buffer, buffer._particleSoABuffer, 0, <span class="comment">/*skipSoAResize*/</span> <span class="keyword">false</span>);</div>
 <div class="line"><a id="l01025" name="l01025"></a><span class="lineno"> 1025</span>  }</div>
 <div class="line"><a id="l01026" name="l01026"></a><span class="lineno"> 1026</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;buffer : haloParticleBuffers) {</div>
-<div class="line"><a id="l01027" name="l01027"></a><span class="lineno"> 1027</span>    f-&gt;SoALoader(buffer, buffer._particleSoABuffer, 0);</div>
+<div class="line"><a id="l01027" name="l01027"></a><span class="lineno"> 1027</span>    f-&gt;SoALoader(buffer, buffer._particleSoABuffer, 0, <span class="comment">/*skipSoAResize*/</span> <span class="keyword">false</span>);</div>
 <div class="line"><a id="l01028" name="l01028"></a><span class="lineno"> 1028</span>  }</div>
 <div class="line"><a id="l01029" name="l01029"></a><span class="lineno"> 1029</span> </div>
 <div class="line"><a id="l01030" name="l01030"></a><span class="lineno"> 1030</span>  <a class="code hl_define" href="WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d">AUTOPAS_OPENMP</a>(parallel) {</div>
