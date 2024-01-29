@@ -99,13 +99,56 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_fd30cd1efecaf93be567ddc5e3f81b58.html">autopas</a></li><li class="navelem"><a class="el" href="dir_1383fda221468e86310f84ca4d306e1b.html">tuning</a></li><li class="navelem"><a class="el" href="dir_0673cfa5d54f89d7495c32f3bcdd879f.html">tuningStrategy</a></li>  </ul>
-</div>
 </div><!-- top -->
+<div><div class="header">
+  <div class="headertitle"><div class="title">Building AutoPas </div></div>
+</div><!--header-->
 <div class="contents">
-<h3>tuningStrategy &rarr; containers Relation</h3><table class="dirtab"><tr class="dirtab"><th class="dirtab">File in autopas/tuning/tuningStrategy</th><th class="dirtab">Includes file in autopas/containers</th></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="ActiveHarmony_8h.html">ActiveHarmony.h</a></td><td class="dirtab"><a class="el" href="CompatibleLoadEstimators_8h.html">CompatibleLoadEstimators.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="ActiveHarmony_8h.html">ActiveHarmony.h</a></td><td class="dirtab"><a class="el" href="CompatibleTraversals_8h.html">CompatibleTraversals.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="ActiveHarmony_8h.html">ActiveHarmony.h</a></td><td class="dirtab"><a class="el" href="LoadEstimators_8h.html">LoadEstimators.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="BayesianClusterSearch_8h.html">BayesianClusterSearch.h</a></td><td class="dirtab"><a class="el" href="CompatibleLoadEstimators_8h.html">CompatibleLoadEstimators.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="BayesianClusterSearch_8h.html">BayesianClusterSearch.h</a></td><td class="dirtab"><a class="el" href="CompatibleTraversals_8h.html">CompatibleTraversals.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="BayesianSearch_8h.html">BayesianSearch.h</a></td><td class="dirtab"><a class="el" href="CompatibleLoadEstimators_8h.html">CompatibleLoadEstimators.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="BayesianSearch_8h.html">BayesianSearch.h</a></td><td class="dirtab"><a class="el" href="CompatibleTraversals_8h.html">CompatibleTraversals.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="LiveInfo_8h.html">LiveInfo.h</a></td><td class="dirtab"><a class="el" href="ParticleContainerInterface_8h.html">ParticleContainerInterface.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="MPIParallelizedStrategy_8h.html">MPIParallelizedStrategy.h</a></td><td class="dirtab"><a class="el" href="ParticleContainerInterface_8h.html">ParticleContainerInterface.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="PredictiveTuning_8h.html">PredictiveTuning.h</a></td><td class="dirtab"><a class="el" href="CompatibleLoadEstimators_8h.html">CompatibleLoadEstimators.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="PredictiveTuning_8h.html">PredictiveTuning.h</a></td><td class="dirtab"><a class="el" href="CompatibleTraversals_8h.html">CompatibleTraversals.h</a></td></tr></table></div><!-- contents -->
+<div class="textblock"><p><a class="anchor" id="autotoc_md7"></a> </p>
+<h1><a class="anchor" id="autotoc_md8"></a>
+Requirements</h1>
+<ul>
+<li>CMake 3.14 or newer</li>
+<li>make (build-essentials) or ninja</li>
+<li>a C++17 compiler (gcc11, clang13, and <strike>icpc 2019</strike> are tested.)</li>
+<li>For rule based tuning: <code>pkg-config</code>, <code>uuid</code></li>
+<li>For <code>tuningLogToSQL</code>: <code>libsqlite3</code></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md9"></a>
+Build Instructions</h1>
+<p>build instructions for make: </p><div class="fragment"><div class="line">mkdir build</div>
+<div class="line">cd build</div>
+<div class="line">cmake ..</div>
+<div class="line">make</div>
+</div><!-- fragment --><p> if you want to use a specific compiler, specify it at the first CMake call, e.g.: </p><div class="fragment"><div class="line">mkdir build</div>
+<div class="line">cd build</div>
+<div class="line">CC=clang CXX=clang++ cmake ..</div>
+<div class="line">make</div>
+</div><!-- fragment --><p> if you would like to use ninja instead of make: </p><div class="fragment"><div class="line">mkdir build</div>
+<div class="line">cd build</div>
+<div class="line">cmake -G Ninja ..</div>
+<div class="line">ninja</div>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md10"></a>
+Building AutoPas on a Cluster</h2>
+<p>HPC clusters often use module systems. CMake is sometimes not able to correctly detect the compiler you wished to use. If a wrong compiler is found please specify the compiler explicitly, e.g. for gcc: </p><div class="fragment"><div class="line">mkdir build</div>
+<div class="line">cd build</div>
+<div class="line">CC=`which gcc` CXX=`which g++` cmake ..</div>
+<div class="line">make</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md11"></a>
+Dependency Management</h2>
+<p>AutoPas relies on a small number of dependencies. By default, AutoPas looks for installed versions of those libraries, but it can also be forced to (selectively) use bundled versions. To make use of this feature, call <code>cmake</code> with: </p><div class="fragment"><div class="line">cmake -D spdlog_ForceBundled=ON    # replace spdlog by the lib you want to force</div>
+</div><!-- fragment --><p> For a full list, have a look at the variables exposed via <code>ccmake</code>.</p>
+<h1><a class="anchor" id="autotoc_md12"></a>
+Profiling Compilation Time</h1>
+<p>For profiling the compile-time, the <code>cmake</code> option <code>AUTOPAS_COMPILE_TIME_PROFILING</code> can be turned on. This enables gcc's -<code>ftime-report</code> and clang's <code>-ftime-trace</code>. It is recommended to use clang, as its output is more detailed. <code>-ftime-trace</code> generates a .json file for each compilation unit next to the generated object file (inside one of the CMakeFiles directories). Chrome has a built-in tool for viewing these files in a flame graph. It can be accessed through the URL <code>chrome://tracing</code>.</p>
+<h1><a class="anchor" id="autotoc_md13"></a>
+Related Files and Folders</h1>
+<ul>
+<li>cmake/</li>
+<li>CMakeLists.txt </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7

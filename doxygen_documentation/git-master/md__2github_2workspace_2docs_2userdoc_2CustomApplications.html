@@ -99,13 +99,50 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_fd30cd1efecaf93be567ddc5e3f81b58.html">autopas</a></li><li class="navelem"><a class="el" href="dir_8777f8ffd010627c96c00a6189ae23c7.html">containers</a></li><li class="navelem"><a class="el" href="dir_7273abb94f61f48560b69230a49c9685.html">verletListsCellBased</a></li><li class="navelem"><a class="el" href="dir_7e9f9feabad6a7d0c7901138db692bd3.html">varVerletLists</a></li>  </ul>
-</div>
 </div><!-- top -->
+<div><div class="header">
+  <div class="headertitle"><div class="title">Custom Applications </div></div>
+</div><!--header-->
 <div class="contents">
-<h3>varVerletLists &rarr; options Relation</h3><table class="dirtab"><tr class="dirtab"><th class="dirtab">File in autopas/containers/verletListsCellBased/varVerletLists</th><th class="dirtab">Includes file in autopas/options</th></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="dir_a766c987989e465854469f00f70a172c.html">neighborLists</a>&#160;/&#160;<a class="el" href="VerletNeighborListInterface_8h.html">VerletNeighborListInterface.h</a></td><td class="dirtab"><a class="el" href="TraversalOption_8h.html">TraversalOption.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="dir_3d939e438a2e7505c8bcf9a37ba1eee4.html">traversals</a>&#160;/&#160;<a class="el" href="VVLAsBuildTraversal_8h.html">VVLAsBuildTraversal.h</a></td><td class="dirtab"><a class="el" href="TraversalOption_8h.html">TraversalOption.h</a></td></tr></table></div><!-- contents -->
+<div class="textblock"><p><a class="anchor" id="autotoc_md17"></a> AutoPas can be used for arbitrary particle simulations. The repository comes with a few example applications that can be found in <a href="https://github.com/AutoPas/AutoPas/blob/master/applicationLibrary"><code>applicationLibrary</code></a>. To create a new custom application, custom particle and functor classes have to be created.</p>
+<h1><a class="anchor" id="autotoc_md18"></a>
+Custom Particles</h1>
+<p>First you will need to define a particle class which will be passed to AutoPas as template Argument. For that we provide some basic Particle classes defined in <a href="https://github.com/AutoPas/AutoPas/blob/master/applicationLibrary/molecularDynamics/molecularDynamicsLibrary"><code>molecularDynamicsLibrary</code></a> or <a href="https://github.com/AutoPas/AutoPas/blob/master/applicationLibrary/sph/SPHLibrary"><code>SPHLibrary</code></a> that you can use either directly or you can write your own Particle class by inheriting from one of the provided classes or from <a href="https://github.com/AutoPas/AutoPas/blob/master/src/autopas/particles/ParticleBase.h"><code>autopas::ParticleBase</code></a>.</p>
+<p>Important parts to implement:</p><ul>
+<li><code>enum AttributeNames</code></li>
+<li>Definition of a matching <code>SoAArraysType</code></li>
+<li>Getter and setter connecting the <code>AttributeNames</code> and actual members.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md19"></a>
+Custom Functors</h1>
+<p>Once you have defined your particle you can start with the functor class.</p>
+<h2><a class="anchor" id="autotoc_md20"></a>
+Definition</h2>
+<p>Important parts to implement:</p><ul>
+<li>Actual force calculations: <code>AoSFunctor()</code> and all Versions of <code>SoAFunctor*()</code></li>
+<li>Newton3 characteristics of the force: <code>allowsNewton3()</code>, <code>allowsNonNewton3()</code></li>
+<li>The calculation of the globals (potential energy, virial) must be implemented in a way so functor calls with newton3 enabled and newton3 disabled within one iteration are possible.</li>
+<li>Input and output variables of the force calculation via: <code>getComputedAttr()</code> and <code>getNeededAttr()</code></li>
+</ul>
+<h2><a class="anchor" id="autotoc_md21"></a>
+Usage</h2>
+<p>Each functor is applied to AutoPas via: </p><div class="fragment"><div class="line">autoPas.iteratePairwise(&amp;myFunctor);</div>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md22"></a>
+Using multiple functors</h2>
+<p>AutoPas is able to work with simulation setups using multiple functors that describe different forces. A good demonstration for that is the sph example found under examples/sph or examples/sph-mpi. There exist some things you have to be careful about when using multiple functors:</p><ul>
+<li>If you use multiple functors it is necessary that all functors support the same newton3 options. If there is one functor not supporting newton3, you have to disable newton3 support for AutoPas by calling <div class="fragment"><div class="line">autoPas.setAllowedNewton3Options({<span class="keyword">false</span>});</div>
+</div><!-- fragment --></li>
+<li>If you have <code>n</code> functors within one iteration and update the particle position only at the end or start of the iteration, the rebuildFrequency and the samplingRate have to be a multiple of <code>n</code>.</li>
+<li>Functors must be marked as (not) relevant for tuning by specifying <code>Functor::isRelevantForTuning()</code>. Functors marked as relevant should have a near-identical performance profile otherwise the sampling of configurations will be distorted. It is recommended, to only mark the most expensive functor as relevant.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md23"></a>
+Related Files and Folders</h1>
+<ul>
+<li><a class="el" href="Functor_8h.html">Functor.h</a></li>
+<li><a class="el" href="ParticleBase_8h.html">ParticleBase.h</a> </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7

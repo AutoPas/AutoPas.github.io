@@ -99,13 +99,38 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_0db7d5ad4875a982fc7a9a18d011ed77.html">applicationLibrary</a></li><li class="navelem"><a class="el" href="dir_5339c16e50c11cf6c0b19b47ef707741.html">sph</a></li>  </ul>
-</div>
 </div><!-- top -->
+<div><div class="header">
+  <div class="headertitle"><div class="title">Testing </div></div>
+</div><!--header-->
 <div class="contents">
-<h3>sph &rarr; autopas Relation</h3><table class="dirtab"><tr class="dirtab"><th class="dirtab">File in applicationLibrary/sph</th><th class="dirtab">Includes file in autopas</th></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="dir_36eab0de7549f24e2d00247b2582664f.html">SPHLibrary</a>&#160;/&#160;<a class="el" href="SPHCalcDensityFunctor_8h.html">SPHCalcDensityFunctor.h</a></td><td class="dirtab"><a class="el" href="dir_e729d0b1c1af7a5e5fe98aad6972d41f.html">pairwiseFunctors</a>&#160;/&#160;<a class="el" href="Functor_8h.html">Functor.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="dir_36eab0de7549f24e2d00247b2582664f.html">SPHLibrary</a>&#160;/&#160;<a class="el" href="SPHCalcDensityFunctor_8h.html">SPHCalcDensityFunctor.h</a></td><td class="dirtab"><a class="el" href="dir_5cf7d4c91e076551f9beccebdce65632.html">particles</a>&#160;/&#160;<a class="el" href="OwnershipState_8h.html">OwnershipState.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="dir_36eab0de7549f24e2d00247b2582664f.html">SPHLibrary</a>&#160;/&#160;<a class="el" href="SPHCalcHydroForceFunctor_8h.html">SPHCalcHydroForceFunctor.h</a></td><td class="dirtab"><a class="el" href="dir_5cf7d4c91e076551f9beccebdce65632.html">particles</a>&#160;/&#160;<a class="el" href="OwnershipState_8h.html">OwnershipState.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="dir_36eab0de7549f24e2d00247b2582664f.html">SPHLibrary</a>&#160;/&#160;<a class="el" href="SPHKernels_8h.html">SPHKernels.h</a></td><td class="dirtab"><a class="el" href="dir_3f3ec7e38fd6b6ef03106173a0bd914a.html">utils</a>&#160;/&#160;<a class="el" href="ArrayMath_8h.html">ArrayMath.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="dir_36eab0de7549f24e2d00247b2582664f.html">SPHLibrary</a>&#160;/&#160;<a class="el" href="SPHParticle_8cpp.html">SPHParticle.cpp</a></td><td class="dirtab"><a class="el" href="dir_3f3ec7e38fd6b6ef03106173a0bd914a.html">utils</a>&#160;/&#160;<a class="el" href="ArrayMath_8h.html">ArrayMath.h</a></td></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="dir_36eab0de7549f24e2d00247b2582664f.html">SPHLibrary</a>&#160;/&#160;<a class="el" href="SPHParticle_8h.html">SPHParticle.h</a></td><td class="dirtab"><a class="el" href="dir_5cf7d4c91e076551f9beccebdce65632.html">particles</a>&#160;/&#160;<a class="el" href="Particle_8h.html">Particle.h</a></td></tr></table></div><!-- contents -->
+<div class="textblock"><p><a class="anchor" id="autotoc_md39"></a> AutoPas uses <a href="https://github.com/google/googletest">googletest</a> as testing framework and exposes tests to ctest, the CMake test driver.</p>
+<h1><a class="anchor" id="autotoc_md40"></a>
+Running Tests</h1>
+<p>There are multiple possibilities. In order of recommendation:</p>
+<ol type="1">
+<li>Using <code>ctest</code>: <div class="fragment"><div class="line">ctest # add --verbose for more details on the tests</div>
+</div><!-- fragment --> To only run specific tests use arguments like <code>-R</code> (run tests matching regex) and <code>-E</code> (exclude tests matching regex) <div class="fragment"><div class="line">ctest -R &#39;Array.*testAdd&#39; -E &#39;Double&#39;</div>
+</div><!-- fragment --></li>
+<li>Using the <code>make</code> target: <div class="fragment"><div class="line">make test</div>
+</div><!-- fragment --></li>
+<li>Directly launching the test executable: <div class="fragment"><div class="line">tests/testAutopas/runTests</div>
+</div><!-- fragment --> To only run specific tests use arguments <div class="fragment"><div class="line">tests/testAutopas/runTests --gtest_filter=ArrayMathTest.testAdd*</div>
+</div><!-- fragment --></li>
+</ol>
+<h1><a class="anchor" id="autotoc_md41"></a>
+Debugging Tests</h1>
+<p>Many IDEs (e.g., CLion) have integrated support for googletest, and you can debug the tests directly within the IDE.</p>
+<p>If you prefer <code>gdb</code>:</p><ol type="1">
+<li>Find out the command to start your desired test with <code>-N</code> aka. <code>--show-only</code>: <div class="fragment"><div class="line">ctest -R &#39;Array.*testAdd&#39; -N</div>
+</div><!-- fragment --></li>
+<li>Start the test with <code>gdb</code> <div class="fragment"><div class="line">gdb --args ${TestCommand}</div>
+</div><!-- fragment --></li>
+</ol>
+<h1><a class="anchor" id="autotoc_md42"></a>
+Related Files and Folders</h1>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7

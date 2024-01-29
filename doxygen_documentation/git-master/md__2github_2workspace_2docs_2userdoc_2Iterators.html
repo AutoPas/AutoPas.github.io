@@ -99,13 +99,41 @@ $(function() {
 </div>
 </div>
 
-<div id="nav-path" class="navpath">
-  <ul>
-<li class="navelem"><a class="el" href="dir_fd30cd1efecaf93be567ddc5e3f81b58.html">autopas</a></li><li class="navelem"><a class="el" href="dir_8777f8ffd010627c96c00a6189ae23c7.html">containers</a></li><li class="navelem"><a class="el" href="dir_7273abb94f61f48560b69230a49c9685.html">verletListsCellBased</a></li><li class="navelem"><a class="el" href="dir_7e9f9feabad6a7d0c7901138db692bd3.html">varVerletLists</a></li>  </ul>
-</div>
 </div><!-- top -->
+<div><div class="header">
+  <div class="headertitle"><div class="title">Iterating Through Particles </div></div>
+</div><!--header-->
 <div class="contents">
-<h3>varVerletLists &rarr; traversals Relation</h3><table class="dirtab"><tr class="dirtab"><th class="dirtab">File in autopas/containers/verletListsCellBased/varVerletLists</th><th class="dirtab">Includes file in autopas/containers/verletListsCellBased/varVerletLists/traversals</th></tr><tr class="dirtab"><td class="dirtab"><a class="el" href="VarVerletLists_8h.html">VarVerletLists.h</a></td><td class="dirtab"><a class="el" href="VVLTraversalInterface_8h.html">VVLTraversalInterface.h</a></td></tr></table></div><!-- contents -->
+<div class="textblock"><p><a class="anchor" id="autotoc_md24"></a> Iterators to iterate over particle are provided. The particle can be accesses using the dereference operators <code>iter-&gt;</code> or <code>*iter</code>. When created inside a OpenMP parallel region, work is automatically spread over all threads. </p><div class="fragment"><div class="line"><a class="code hl_define" href="WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d">AUTOPAS_OPENMP</a>(parallel)</div>
+<div class="line"><span class="keywordflow">for</span>(<span class="keyword">auto</span> iter = autoPas.begin(); iter.isValid(); ++iter) {</div>
+<div class="line">  <span class="comment">// user code:</span></div>
+<div class="line">  <span class="keyword">auto</span> position = iter-&gt;getR();</div>
+<div class="line">}</div>
+<div class="ttc" id="aWrapOpenMP_8h_html_adf64fc4981617d456044d0a30deb3d0d"><div class="ttname"><a href="WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d">AUTOPAS_OPENMP</a></div><div class="ttdeci">#define AUTOPAS_OPENMP(args)</div><div class="ttdoc">Empty macro to throw away any arguments.</div><div class="ttdef"><b>Definition:</b> WrapOpenMP.h:126</div></div>
+</div><!-- fragment --><p>For convenience the <code>end()</code> method is also implemented for the AutoPas class, so you can also use range-based for loops: </p><div class="fragment"><div class="line"><a class="code hl_define" href="WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d">AUTOPAS_OPENMP</a>(parallel)</div>
+<div class="line"><span class="keywordflow">for</span>(<span class="keyword">auto</span>&amp; particle : autoPas) {</div>
+<div class="line">  <span class="comment">// user code:</span></div>
+<div class="line">  <span class="keyword">auto</span> position = particle.getR();</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>To iterate over a subset of particles, the <code>getRegionIterator(lowCorner, highCorner)</code> method can be used: </p><div class="fragment"><div class="line"><a class="code hl_define" href="WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d">AUTOPAS_OPENMP</a>(parallel)</div>
+<div class="line"><span class="keywordflow">for</span>(<span class="keyword">auto</span> iter = autoPas.getRegionIterator(lowCorner, highCorner); iter != autoPas.end(); ++iter) {</div>
+<div class="line">  <span class="comment">// user code:</span></div>
+<div class="line">  <span class="keyword">auto</span> position = iter-&gt;getR();</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>Both <code>begin()</code> and <code>getRegionIterator()</code> can also take the additional parameter <code>IteratorBehavior</code>, which indicates over which particles the iteration should be performed. See <a href="https://autopas.github.io/doxygen_documentation/git-master/classautopas_1_1options_1_1IteratorBehavior.html">autopas::IteratorBehavior</a> for possible options and details. The default parameter is <code>ownedOrHalo</code>, which is also used for range-based for loops.</p>
+<p>Analogously to <code>begin()</code>, <code>cbegin()</code> is also defined, which guarantees to return a <code>const_iterator</code>.</p>
+<p>Iterators are not guaranteed to be valid after particle insertion (see <a href="https://github.com/AutoPas/AutoPas/issues/766">Issue #766</a> for details). However, particle deletion while iterating is supported via <code>autoPas.deleteParticle(iterator)</code>. After deletion the <code>++</code> operator has to be called: </p><div class="fragment"><div class="line"><a class="code hl_define" href="WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d">AUTOPAS_OPENMP</a>(parallel)</div>
+<div class="line"><span class="keywordflow">for</span>(<span class="keyword">auto</span> iter = autoPas.getIterator(); iter != autoPas.end(); ++iter) {</div>
+<div class="line">  autoPas.deleteParticle(iterator);</div>
+<div class="line">}</div>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md25"></a>
+Related Files and Folders</h1>
+<ul>
+<li><a class="el" href="ContainerIterator_8h.html">ContainerIterator.h</a></li>
+<li><a class="el" href="IteratorBehavior_8h.html">IteratorBehavior.h</a> </li>
+</ul>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.7
