@@ -1290,7 +1290,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to the particle and its indices. If a index pair is given that does not exist but is also not beyond the last cell, the next fitting particle shall be returned. Example: If [4,2] does not exist, [5,1] shall be returned (or whatever is the next particle that fulfills the iterator requirements). If there is no next fitting particle {nullptr, 0, 0} is returned. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the particle and its indices. tuple&lt;Particle*, cellIndex, particleIndex&gt; If a index pair is given that does not exist but is also not beyond the last cell, the next fitting particle shall be returned. Example: If [4,2] does not exist, [5,1] shall be returned (or whatever is the next particle that fulfills the iterator requirements). If there is no next fitting particle {nullptr, 0, 0} is returned. </dd></dl>
 
 <p>Implements <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a787869df00344fe67ce760549b3c3647">autopas::ParticleContainerInterface&lt; ParticleCell::ParticleType &gt;</a>.</p>
 
@@ -1361,7 +1361,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to the particle and its indices. If a index pair is given that does not exist but is also not beyond the last cell, the next fitting particle shall be returned. Example: If [4,2] does not exist, [5,1] shall be returned (or whatever is the next particle that fulfills the iterator requirements). If there is no next fitting particle {nullptr, 0, 0} is returned.  </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Pointer to the particle and its indices. tuple&lt;Particle*, cellIndex, particleIndex&gt; If a index pair is given that does not exist but is also not beyond the last cell, the next fitting particle shall be returned. Example: If [4,2] does not exist, [5,1] shall be returned (or whatever is the next particle that fulfills the iterator requirements). If there is no next fitting particle {nullptr, 0, 0} is returned.  </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">boxMin</td><td>start of region in which the next particle should be. The coordinates are expected to be within the domain. </td></tr>
