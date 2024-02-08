@@ -205,9 +205,15 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ParticleBase</b> 
 <tr class="memitem:a570c7d5e795dd2c9a2211fafb3e26189"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleBase.html#a570c7d5e795dd2c9a2211fafb3e26189">setR</a> (const std::array&lt; double, 3 &gt; &amp;r)</td></tr>
 <tr class="memdesc:a570c7d5e795dd2c9a2211fafb3e26189"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the position of the particle.  <br /></td></tr>
 <tr class="separator:a570c7d5e795dd2c9a2211fafb3e26189"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88abb0e06b30651f873fcebf53cea532"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleBase.html#a88abb0e06b30651f873fcebf53cea532">setRDistanceCheck</a> (const std::array&lt; double, 3 &gt; &amp;r, double maxDistSquared)</td></tr>
+<tr class="memdesc:a88abb0e06b30651f873fcebf53cea532"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a distance vector to the position of the particle and check if the distance between the old and new position is less than a given max distance.  <br /></td></tr>
+<tr class="separator:a88abb0e06b30651f873fcebf53cea532"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0b9ab16667099394e7044978ff3711e8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleBase.html#a0b9ab16667099394e7044978ff3711e8">addR</a> (const std::array&lt; double, 3 &gt; &amp;r)</td></tr>
 <tr class="memdesc:a0b9ab16667099394e7044978ff3711e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a distance vector to the position of the particle.  <br /></td></tr>
 <tr class="separator:a0b9ab16667099394e7044978ff3711e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3df07bf914485a0a097c86906612110"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleBase.html#ad3df07bf914485a0a097c86906612110">addRDistanceCheck</a> (const std::array&lt; double, 3 &gt; &amp;r, double maxDistSquared)</td></tr>
+<tr class="memdesc:ad3df07bf914485a0a097c86906612110"><td class="mdescLeft">&#160;</td><td class="mdescRight">Add a distance vector to the position of the particle and check if the distance between the old and new position is less than a given max distance.  <br /></td></tr>
+<tr class="separator:ad3df07bf914485a0a097c86906612110"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb9b2dee44a6d9a32fef518e78c8e321"><td class="memItemLeft" align="right" valign="top">const std::array&lt; double, 3 &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleBase.html#adb9b2dee44a6d9a32fef518e78c8e321">getV</a> () const</td></tr>
 <tr class="memdesc:adb9b2dee44a6d9a32fef518e78c8e321"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the velocity of the particle.  <br /></td></tr>
 <tr class="separator:adb9b2dee44a6d9a32fef518e78c8e321"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -437,6 +443,56 @@ template&lt;typename floatType , typename idType &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="ad3df07bf914485a0a097c86906612110" name="ad3df07bf914485a0a097c86906612110"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3df07bf914485a0a097c86906612110">&#9670;&#160;</a></span>addRDistanceCheck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename floatType , typename idType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classautopas_1_1ParticleBase.html">autopas::ParticleBase</a>&lt; floatType, idType &gt;::addRDistanceCheck </td>
+          <td>(</td>
+          <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>maxDistSquared</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add a distance vector to the position of the particle and check if the distance between the old and new position is less than a given max distance. </p>
+<p>This max distance usually should be the skin per timestep divided by two.</p>
+<dl class="section note"><dt>Note</dt><dd>uses <a class="el" href="classautopas_1_1ParticleBase.html#a88abb0e06b30651f873fcebf53cea532" title="Add a distance vector to the position of the particle and check if the distance between the old and n...">setRDistanceCheck()</a></dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>vector to be added </td></tr>
+    <tr><td class="paramname">maxDistSquared</td><td>The maximum expected movement distance squared. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if dot(r - _r) &lt; skinPerTimestepHalvedSquared </dd></dl>
 
 </div>
 </div>
@@ -1054,6 +1110,55 @@ template&lt;typename floatType , typename idType &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a88abb0e06b30651f873fcebf53cea532" name="a88abb0e06b30651f873fcebf53cea532"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88abb0e06b30651f873fcebf53cea532">&#9670;&#160;</a></span>setRDistanceCheck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename floatType , typename idType &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classautopas_1_1ParticleBase.html">autopas::ParticleBase</a>&lt; floatType, idType &gt;::setRDistanceCheck </td>
+          <td>(</td>
+          <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>maxDistSquared</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Add a distance vector to the position of the particle and check if the distance between the old and new position is less than a given max distance. </p>
+<p>This max distance usually should be the skin per timestep divided by two.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">r</td><td>vector to be added </td></tr>
+    <tr><td class="paramname">maxDistSquared</td><td>The maximum expected movement distance squared. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if dot(r - _r) &lt; skinPerTimestepHalvedSquared </dd></dl>
 
 </div>
 </div>
