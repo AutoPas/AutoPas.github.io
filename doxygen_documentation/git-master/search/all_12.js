@@ -56,7 +56,7 @@ var searchData=
   ['resize_53',['resize',['../classautopas_1_1FullParticleCell.html#a20af0ec88b479a0ce8be4aad9c5bd2ae',1,'autopas::FullParticleCell::resize()'],['../classautopas_1_1ReferenceParticleCell.html#ad2398efaf480fdb21008b4e5b73db50d',1,'autopas::ReferenceParticleCell::resize()'],['../classautopas_1_1internal_1_1ClusterTowerBlock2D.html#a01b279a02d46e439ae630672556d0d48',1,'autopas::internal::ClusterTowerBlock2D::resize()']]],
   ['resizearrays_54',['resizeArrays',['../classautopas_1_1SoA.html#a363b70e1b48d15da31b41d3a0d805ca1',1,'autopas::SoA']]],
   ['resizebox_55',['resizeBox',['../classautopas_1_1ContainerSelector.html#a336e697123f54b05e976bffa3bc1d7e4',1,'autopas::ContainerSelector::resizeBox()'],['../classautopas_1_1LogicHandler.html#a3d664bd0982123285a0257473470a122',1,'autopas::LogicHandler::resizeBox()'],['../classautopas_1_1AutoPas.html#ab732087b6bcb219bee6a6d3cf65ce64a',1,'autopas::AutoPas::resizeBox()']]],
-  ['resizebuffers_56',['resizeBuffers',['../classautopas_1_1LCC04SoACellHandler.html#a6e37450c694ab10da14e5d8b14c83321',1,'autopas::LCC04SoACellHandler']]],
+  ['resizebuffers_56',['resizeBuffers',['../classautopas_1_1LCC04SoACellHandler.html#a5b58209d78179a6b997271f31778a5c5',1,'autopas::LCC04SoACellHandler']]],
   ['resolvelist_57',['resolveList',['../classautopas_1_1rule__syntax_1_1TranslationVisitor.html#aa31d18cc4cf37d7a0b8874fec89b00b6',1,'autopas::rule_syntax::TranslationVisitor']]],
   ['rethrow_58',['rethrow',['../classautopas_1_1utils_1_1ExceptionHandler.html#a539fd181000f9daab3b0668b10ec8914',1,'autopas::utils::ExceptionHandler']]],
   ['right_59',['right',['../structautopas_1_1rule__syntax_1_1BinaryOperator.html#a386f2a861898693ce095838653670f98',1,'autopas::rule_syntax::BinaryOperator']]],
@@ -66,10 +66,11 @@ var searchData=
   ['rule_2dbased_20tuning_20rule_20checker_63',['Rule-based Tuning Rule Checker',['../md__2github_2workspace_2tools_2ruleChecker_2README.html',1,'']]],
   ['rulebasedprogramparser_64',['RuleBasedProgramParser',['../classautopas_1_1rule__syntax_1_1RuleBasedProgramParser.html',1,'autopas::rule_syntax::RuleBasedProgramParser'],['../classautopas_1_1rule__syntax_1_1RuleBasedProgramParser.html#a5e53b5c09126e5b31a38d00526b2d08c',1,'autopas::rule_syntax::RuleBasedProgramParser::RuleBasedProgramParser()']]],
   ['rulebasedprogramtree_65',['RuleBasedProgramTree',['../structautopas_1_1rule__syntax_1_1RuleBasedProgramTree.html',1,'autopas::rule_syntax']]],
-  ['rulebasedtuning_66',['RuleBasedTuning',['../classautopas_1_1RuleBasedTuning.html',1,'autopas::RuleBasedTuning'],['../classautopas_1_1RuleBasedTuning.html#acbb1e7ab91780aff9d4b538abfdacfe2',1,'autopas::RuleBasedTuning::RuleBasedTuning()']]],
+  ['rulebasedtuning_66',['RuleBasedTuning',['../classautopas_1_1RuleBasedTuning.html',1,'autopas']]],
   ['rulebasedtuning_67',['ruleBasedTuning',['../classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4a116ef369350f6404c9926f3eafcf33ac',1,'autopas::options::TuningStrategyOption']]],
-  ['rulebasedtuning_2ecpp_68',['RuleBasedTuning.cpp',['../RuleBasedTuning_8cpp.html',1,'']]],
-  ['rulebasedtuning_2eh_69',['RuleBasedTuning.h',['../RuleBasedTuning_8h.html',1,'']]],
-  ['rulefilename_70',['ruleFileName',['../structautopas_1_1TuningStrategyFactoryInfo.html#a633f49ef644a33047ae9802fb85ab4f3',1,'autopas::TuningStrategyFactoryInfo']]],
-  ['rulevm_71',['RuleVM',['../classautopas_1_1RuleVM.html',1,'autopas']]]
+  ['rulebasedtuning_68',['RuleBasedTuning',['../classautopas_1_1RuleBasedTuning.html#acbb1e7ab91780aff9d4b538abfdacfe2',1,'autopas::RuleBasedTuning']]],
+  ['rulebasedtuning_2ecpp_69',['RuleBasedTuning.cpp',['../RuleBasedTuning_8cpp.html',1,'']]],
+  ['rulebasedtuning_2eh_70',['RuleBasedTuning.h',['../RuleBasedTuning_8h.html',1,'']]],
+  ['rulefilename_71',['ruleFileName',['../structautopas_1_1TuningStrategyFactoryInfo.html#a633f49ef644a33047ae9802fb85ab4f3',1,'autopas::TuningStrategyFactoryInfo']]],
+  ['rulevm_72',['RuleVM',['../classautopas_1_1RuleVM.html',1,'autopas']]]
 ];

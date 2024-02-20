@@ -34,7 +34,7 @@ var searchData=
   ['resize_31',['resize',['../classautopas_1_1FullParticleCell.html#a20af0ec88b479a0ce8be4aad9c5bd2ae',1,'autopas::FullParticleCell::resize()'],['../classautopas_1_1ReferenceParticleCell.html#ad2398efaf480fdb21008b4e5b73db50d',1,'autopas::ReferenceParticleCell::resize()'],['../classautopas_1_1internal_1_1ClusterTowerBlock2D.html#a01b279a02d46e439ae630672556d0d48',1,'autopas::internal::ClusterTowerBlock2D::resize()']]],
   ['resizearrays_32',['resizeArrays',['../classautopas_1_1SoA.html#a363b70e1b48d15da31b41d3a0d805ca1',1,'autopas::SoA']]],
   ['resizebox_33',['resizeBox',['../classautopas_1_1LogicHandler.html#a3d664bd0982123285a0257473470a122',1,'autopas::LogicHandler::resizeBox()'],['../classautopas_1_1ContainerSelector.html#a336e697123f54b05e976bffa3bc1d7e4',1,'autopas::ContainerSelector::resizeBox()'],['../classautopas_1_1AutoPas.html#ab732087b6bcb219bee6a6d3cf65ce64a',1,'autopas::AutoPas::resizeBox()']]],
-  ['resizebuffers_34',['resizeBuffers',['../classautopas_1_1LCC04SoACellHandler.html#a6e37450c694ab10da14e5d8b14c83321',1,'autopas::LCC04SoACellHandler']]],
+  ['resizebuffers_34',['resizeBuffers',['../classautopas_1_1LCC04SoACellHandler.html#a5b58209d78179a6b997271f31778a5c5',1,'autopas::LCC04SoACellHandler']]],
   ['resolvelist_35',['resolveList',['../classautopas_1_1rule__syntax_1_1TranslationVisitor.html#aa31d18cc4cf37d7a0b8874fec89b00b6',1,'autopas::rule_syntax::TranslationVisitor']]],
   ['rethrow_36',['rethrow',['../classautopas_1_1utils_1_1ExceptionHandler.html#a539fd181000f9daab3b0668b10ec8914',1,'autopas::utils::ExceptionHandler']]],
   ['rotateposition_37',['rotatePosition',['../namespaceautopas_1_1utils_1_1quaternion.html#af07af5870d6969cdfb6e0b6503c38e80',1,'autopas::utils::quaternion']]],

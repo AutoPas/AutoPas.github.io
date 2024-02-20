@@ -105,9 +105,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><dl class="reflist">
-<dt>Member <a class="el" href="classautopas_1_1CBasedTraversal.html#a9959e3b02f58925c6a64b799056a36a8">autopas::CBasedTraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3, collapseDepth &gt;::endTraversal</a>  () override</dt>
+<dt>Member <a class="el" href="classautopas_1_1CBasedTraversal.html#af39802ef175d596ee909605206c95127">autopas::CBasedTraversal&lt; ParticleCell, PairwiseFunctor, collapseDepth &gt;::endTraversal</a>  () override</dt>
 <dd><a class="anchor" id="_todo000004"></a>find a condition on when to use omp or when it is just overhead  </dd>
-<dt>Member <a class="el" href="classautopas_1_1CBasedTraversal.html#ab08c3989be5274d5a8b347361831105d">autopas::CBasedTraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3, collapseDepth &gt;::initTraversal</a>  () override</dt>
+<dt>Member <a class="el" href="classautopas_1_1CBasedTraversal.html#ae5441dd391db20bd06aea50e2e0f2f39">autopas::CBasedTraversal&lt; ParticleCell, PairwiseFunctor, collapseDepth &gt;::initTraversal</a>  () override</dt>
 <dd><a class="anchor" id="_todo000003"></a>find a condition on when to use omp or when it is just overhead  </dd>
 <dt>Member <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#aa21b08540e71aa767ff1937a40045a2e">autopas::CellBasedParticleContainer&lt; ParticleCell &gt;::deleteAllParticles</a>  () override</dt>
 <dd><a class="anchor" id="_todo000001"></a>: find a sensible value for magic number numThreads should be at least 1 and maximal max_threads  </dd>
@@ -133,25 +133,25 @@ $(function() {
 <dd><a class="anchor" id="_todo000015"></a>this is a sanity check to prevent doubling of particles, but could be done better! e.g. by border and  </dd>
 <dt>Member <a class="el" href="classautopas_1_1internal_1_1VerletClusterListsRebuilder.html#aa426ddffd046759c6f1482432ffd66b5">autopas::internal::VerletClusterListsRebuilder&lt; Particle &gt;::updateNeighborLists</a>  ()</dt>
 <dd><a class="anchor" id="_todo000019"></a>: find sensible chunksize  </dd>
-<dt>Member <a class="el" href="classautopas_1_1LCC01Traversal.html#adfc1d9fb2ce5ce418f2f26198f47558f">autopas::LCC01Traversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3, combineSoA &gt;::LCC01Traversal</a>  (const std::array&lt; unsigned long, 3 &gt; &amp;dims, PairwiseFunctor *pairwiseFunctor, const double interactionLength, const std::array&lt; double, 3 &gt; &amp;cellLength)</dt>
+<dt>Member <a class="el" href="classautopas_1_1LCC01Traversal.html#ac42579319af048082fe4270c3c0454b6">autopas::LCC01Traversal&lt; ParticleCell, PairwiseFunctor, combineSoA &gt;::LCC01Traversal</a>  (const std::array&lt; unsigned long, 3 &gt; &amp;dims, PairwiseFunctor *pairwiseFunctor, double interactionLength, const std::array&lt; double, 3 &gt; &amp;cellLength, DataLayoutOption dataLayout, bool useNewton3)</dt>
 <dd><a class="anchor" id="_todo000009"></a>Pass cutoff to _cellFunctor instead of interactionLength, unless this functor is used to build verlet-lists, in that case the interactionLength is needed!  </dd>
-<dt>Member <a class="el" href="classautopas_1_1LCC04CombinedSoATraversal.html#ad4ffb2fcf06b72a380206ff538fc150b">autopas::LCC04CombinedSoATraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;::isApplicable</a>  () const override</dt>
+<dt>Member <a class="el" href="classautopas_1_1LCC04CombinedSoATraversal.html#a570f16f0f504a63d7d6acd605deb8ae0">autopas::LCC04CombinedSoATraversal&lt; ParticleCell, PairwiseFunctor &gt;::isApplicable</a>  () const override</dt>
 <dd><a class="anchor" id="_todo000010"></a>Currently there is a bug when cellsize factor is smaller than 1: <a href="https://github.com/AutoPas/AutoPas/issues/354">https://github.com/AutoPas/AutoPas/issues/354</a> once this bug is fixed, reenable this traversal again for arbitrary <code>_overlap</code>s.  </dd>
-<dt>Member <a class="el" href="classautopas_1_1LCC08CellHandler.html#a2c55171d4b7c93d4aafc8393d4b89190">autopas::LCC08CellHandler&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;::LCC08CellHandler</a>  (PairwiseFunctor *pairwiseFunctor, const std::array&lt; unsigned long, 3 &gt; &amp;cellsPerDimension, const double interactionLength, const std::array&lt; double, 3 &gt; &amp;cellLength, const std::array&lt; unsigned long, 3 &gt; &amp;overlap)</dt>
+<dt>Member <a class="el" href="classautopas_1_1LCC08CellHandler.html#a49417d9f56f3a047ffbdbbbbf486db4b">autopas::LCC08CellHandler&lt; ParticleCell, PairwiseFunctor &gt;::LCC08CellHandler</a>  (PairwiseFunctor *pairwiseFunctor, const std::array&lt; unsigned long, 3 &gt; &amp;cellsPerDimension, double interactionLength, const std::array&lt; double, 3 &gt; &amp;cellLength, const std::array&lt; unsigned long, 3 &gt; &amp;overlap, DataLayoutOption dataLayout, bool useNewton3)</dt>
 <dd><a class="anchor" id="_todo000012"></a>Pass cutoff to _cellFunctor instead of interactionLength, unless this functor is used to build verlet-lists, in that case the interactionLength is needed!  </dd>
-<dt>Member <a class="el" href="classautopas_1_1LCC18Traversal.html#affc3675710a3cd8bc6ed49c2bacc81ba">autopas::LCC18Traversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;::LCC18Traversal</a>  (const std::array&lt; unsigned long, 3 &gt; &amp;dims, PairwiseFunctor *pairwiseFunctor, const double interactionLength, const std::array&lt; double, 3 &gt; &amp;cellLength)</dt>
+<dt>Member <a class="el" href="classautopas_1_1LCC18Traversal.html#a36a4cb5de2a27a037c4666e332c75216">autopas::LCC18Traversal&lt; ParticleCell, PairwiseFunctor &gt;::LCC18Traversal</a>  (const std::array&lt; unsigned long, 3 &gt; &amp;dims, PairwiseFunctor *pairwiseFunctor, double interactionLength, const std::array&lt; double, 3 &gt; &amp;cellLength, DataLayoutOption dataLayout, bool useNewton3)</dt>
 <dd><a class="anchor" id="_todo000013"></a>Pass cutoff to _cellFunctor instead of interactionLength, unless this functor is used to build verlet-lists, in that case the interactionLength is needed!  </dd>
 <dt>Member <a class="el" href="namespaceautopas_1_1OptimumSelector.html#a026bccf03fed7ad4ae1d87ea22cb8f3b">autopas::OptimumSelector::medianValue</a>  (std::vector&lt; T &gt; values)</dt>
 <dd><a class="anchor" id="_todo000028"></a>C++20: replace by std::midpoint  </dd>
 <dt>Member <a class="el" href="classautopas_1_1ParticleContainerInterface.html#aa3a6197fc11a19d594bebce507cc6625">autopas::ParticleContainerInterface&lt; Particle &gt;::addHaloParticle</a>  (const Particle &amp;haloParticle)</dt>
 <dd><a class="anchor" id="_todo000014"></a>do we want a check of the particle not being too far away in here as well?  </dd>
-<dt>Member <a class="el" href="classautopas_1_1SlicedBalancedBasedTraversal.html#a8a26e674416f1107f4540c5801c2b3db">autopas::SlicedBalancedBasedTraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3, spaciallyForward &gt;::initSliceThickness</a>  (unsigned long minSliceThickness) override</dt>
+<dt>Member <a class="el" href="classautopas_1_1SlicedBalancedBasedTraversal.html#a77282498134736f4dd0421d3236a503d">autopas::SlicedBalancedBasedTraversal&lt; ParticleCell, PairwiseFunctor &gt;::initSliceThickness</a>  (unsigned long minSliceThickness) override</dt>
 <dd><p class="startdd"><a class="anchor" id="_todo000006"></a>: use <a class="el" href="namespaceautopas_1_1utils_1_1ArrayUtils.html#a8811dae11b4ecf54ea7a820567ff0029" title="Generates a string representation of a container which fulfills the Container requirement (provide cb...">autopas::utils::ArrayUtils::to_string()</a> </p>
 <p class="enddd"><a class="anchor" id="_todo000005"></a>reserve to numSlices before push_back  </p>
 </dd>
-<dt>Member <a class="el" href="classautopas_1_1SlicedBasedTraversal.html#aa1dd07b2cf7a7e9e322cf51bcc6e7ee4">autopas::SlicedBasedTraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3, spaciallyForward &gt;::endTraversal</a>  () override</dt>
+<dt>Member <a class="el" href="classautopas_1_1SlicedBasedTraversal.html#ac09a2f072eaa65522f61a12255ef753e">autopas::SlicedBasedTraversal&lt; ParticleCell, PairwiseFunctor &gt;::endTraversal</a>  () override</dt>
 <dd><a class="anchor" id="_todo000007"></a>find a condition on when to use omp or when it is just overhead  </dd>
-<dt>Member <a class="el" href="classautopas_1_1SlicedBasedTraversal.html#a9e41ab7588af137245f0fb48aa825189">autopas::SlicedBasedTraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3, spaciallyForward &gt;::loadDataLayout</a>  ()</dt>
+<dt>Member <a class="el" href="classautopas_1_1SlicedBasedTraversal.html#a14223e1cad17a649acc964a6330840e2">autopas::SlicedBasedTraversal&lt; ParticleCell, PairwiseFunctor &gt;::loadDataLayout</a>  ()</dt>
 <dd><a class="anchor" id="_todo000008"></a>find a condition on when to use omp or when it is just overhead  </dd>
 <dt>Member <a class="el" href="classautopas_1_1utils_1_1SoAStorage.html#a32ede55b59cbe6e9245f948e47c749c6">autopas::utils::SoAStorage&lt; SoAArraysType &gt;::apply</a>  (FunctorT func)</dt>
 <dd><a class="anchor" id="_todo000030"></a>c++20: replace with expansion statement: <code>for... (auto&amp; elem : tup) {}</code>  </dd>
@@ -170,7 +170,7 @@ $(function() {
 <dd><a class="anchor" id="_todo000022"></a>: <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a>?  </dd>
 <dt>Member <a class="el" href="classautopas_1_1VerletLists.html#a6503a9ab7723e166a6b9e007a0fdf974">autopas::VerletLists&lt; Particle &gt;::updateVerletListsAoS</a>  (bool useNewton3)</dt>
 <dd><a class="anchor" id="_todo000023"></a>autotune traversal  </dd>
-<dt>Member <a class="el" href="classautopas_1_1VLListIterationTraversal.html#a88f2e7dfecc1dd809c0a733c58a12ff3">autopas::VLListIterationTraversal&lt; ParticleCell, PairwiseFunctor, dataLayout, useNewton3 &gt;::traverseParticlePairs</a>  () override</dt>
+<dt>Member <a class="el" href="classautopas_1_1VLListIterationTraversal.html#a336587958b637b60bc049af07fa3a0af">autopas::VLListIterationTraversal&lt; ParticleCell, PairwiseFunctor &gt;::traverseParticlePairs</a>  () override</dt>
 <dd><p class="startdd"><a class="anchor" id="_todo000021"></a>find a sensible chunk size </p>
 <p class="enddd"><a class="anchor" id="_todo000020"></a>find a sensible chunk size  </p>
 </dd>

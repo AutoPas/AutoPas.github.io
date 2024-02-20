@@ -130,10 +130,10 @@ $(function() {
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="comment">// Use SoA traversal for generation and AoS traversal for validation check.</span></div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keyword">constexpr</span> <span class="keyword">auto</span> dataLayout = validationMode ? DataLayoutOption::aos : DataLayoutOption::soa;</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keyword">auto</span> traversal = <a class="code hl_class" href="classautopas_1_1C08TraversalColorChangeNotify.html">C08TraversalColorChangeNotify&lt;FullParticleCell&lt;Particle&gt;</a>,</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                                                   <a class="code hl_class" href="classautopas_1_1internal_1_1AsBuildPairGeneratorFunctor.html">internal::AsBuildPairGeneratorFunctor&lt;Particle, validationMode&gt;</a>,</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                                                   dataLayout, useNewton3&gt;(</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        _baseLinkedCells-&gt;getCellBlock().getCellsPerDimensionWithHalo(), &amp;generatorFunctor,</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        _baseLinkedCells-&gt;getInteractionLength(), _baseLinkedCells-&gt;getCellBlock().getCellLength(), <span class="keyword">this</span>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>                                                   <a class="code hl_class" href="classautopas_1_1internal_1_1AsBuildPairGeneratorFunctor.html">internal::AsBuildPairGeneratorFunctor&lt;Particle, validationMode&gt;</a>&gt;(</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        _baseLinkedCells-&gt;getCellBlock().getCellsPerDimensionWithHalo(), &amp;generatorFunctor,</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        _baseLinkedCells-&gt;getInteractionLength(), _baseLinkedCells-&gt;getCellBlock().getCellLength(), <span class="keyword">this</span>, dataLayout,</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        useNewton3);</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    _baseLinkedCells-&gt;iteratePairwise(&amp;traversal);</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  }</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>

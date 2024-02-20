@@ -197,7 +197,7 @@ $(function() {
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>      soa.<a class="code hl_function" href="classautopas_1_1SoA.html#a363b70e1b48d15da31b41d3a0d805ca1">resizeArrays</a>(offset + cell.size());</div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    }</div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="keywordflow">if</span> (cell.size() == 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="keywordflow">if</span> (cell.isEmpty()) <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
 <div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="comment">// maybe_unused necessary because gcc doesn&#39;t understand that pointer is used later</span></div>
 <div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    [[maybe_unused]] <span class="keyword">auto</span> <span class="keyword">const</span> pointer = std::make_tuple(soa.template begin&lt;Functor_T::getNeededAttr()[I]&gt;()...);</div>
@@ -211,7 +211,7 @@ $(function() {
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> cell_t, std::size_t... I&gt;</div>
 <div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  <span class="keywordtype">void</span> SoAExtractorImpl(cell_t &amp;cell, <a class="code hl_class" href="classautopas_1_1SoA.html">::autopas::SoA&lt;SoAArraysType&gt;</a> &amp;soa, <span class="keywordtype">size_t</span> offset, std::index_sequence&lt;I...&gt;) {</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    <span class="keywordflow">if</span> (cell.size() == 0) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    <span class="keywordflow">if</span> (cell.isEmpty()) <span class="keywordflow">return</span>;</div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
 <div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    <span class="comment">// maybe_unused necessary because gcc doesn&#39;t understand that pointer is used later</span></div>
 <div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    [[maybe_unused]] <span class="keyword">auto</span> <span class="keyword">const</span> pointer = std::make_tuple(soa.template begin&lt;Functor_T::getComputedAttr()[I]&gt;()...);</div>
