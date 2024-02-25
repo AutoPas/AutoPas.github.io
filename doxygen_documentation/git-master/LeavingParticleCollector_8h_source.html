@@ -118,71 +118,88 @@ $(function() {
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="inBox_8h.html">autopas/utils/inBox.h</a>&quot;</span></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="namespaceautopas_1_1LeavingParticleCollector.html">   19</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceautopas_1_1LeavingParticleCollector.html">autopas::LeavingParticleCollector</a> {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ContainerType&gt;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="namespaceautopas_1_1LeavingParticleCollector.html#a66da2d3805193e7b0f22430e2d0d9f2a">   28</a></span>std::vector&lt;typename ContainerType::ParticleType&gt; <a class="code hl_function" href="namespaceautopas_1_1LeavingParticleCollector.html#a66da2d3805193e7b0f22430e2d0d9f2a">collectParticlesAndMarkNonOwnedAsDummy</a>(ContainerType &amp;container) {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keyword">using namespace </span>autopas::utils::ArrayMath::literals;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="keyword">const</span> <span class="keyword">auto</span> upperBoundForMisplacement = container.getCutoff();</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  <span class="keyword">const</span> <span class="keyword">auto</span> containerDimensions = container.getBoxMax() - container.getBoxMin();</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keyword">const</span> <span class="keyword">auto</span> lowerHaloCorner = container.getBoxMin() - upperBoundForMisplacement;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keyword">const</span> <span class="keyword">auto</span> upperHaloCorner = container.getBoxMax() + upperBoundForMisplacement;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="comment">// We need to extend these boundaries into the container because we need to include cells that still hold particles,</span></div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="comment">// which now have left the cells region towards the outside of the container.</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="comment">// travelled beyond that and skin can be 0.</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keyword">const</span> <span class="keyword">auto</span> lowerInnerCorner = container.getBoxMin() + upperBoundForMisplacement;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">const</span> <span class="keyword">auto</span> upperInnerCorner = container.getBoxMax() - upperBoundForMisplacement;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="comment">// volumes describing the halo regions on the six faces of the cuboid shaped container.</span></div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="comment">// The total volume can be thought of as:</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="comment">// 6 faces</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="comment">// 8 corners</span></div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="comment">// 12 edges</span></div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="comment">// These 26 pieces are combined to six volumes, the minimal number to cover it with region iterators.</span></div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keyword">const</span> std::array&lt;std::tuple&lt;<span class="keyword">decltype</span>(lowerHaloCorner), <span class="keyword">decltype</span>(upperHaloCorner)&gt;, 6&gt; haloVolumes{{</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      <span class="comment">// left face + edge shared by left and bottom faces</span></div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>      {{lowerHaloCorner[0], lowerInnerCorner[1], lowerHaloCorner[2]},</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>       {lowerInnerCorner[0], upperInnerCorner[1], upperInnerCorner[2]}},</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>      <span class="comment">// right face + edge shared by right and upper faces</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      {{upperInnerCorner[0], lowerInnerCorner[1], lowerInnerCorner[2]},</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>       {upperHaloCorner[0], upperInnerCorner[1], upperHaloCorner[2]}},</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>      <span class="comment">// top face + edge shared by left and top faces</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>      {{lowerHaloCorner[0], lowerInnerCorner[1], upperInnerCorner[2]},</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>       {upperInnerCorner[0], upperInnerCorner[1], upperHaloCorner[2]}},</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      <span class="comment">// bottom face + edge shared by right and bottom faces</span></div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      {{lowerInnerCorner[0], lowerInnerCorner[1], lowerHaloCorner[2]},</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>       {upperHaloCorner[0], upperInnerCorner[1], lowerInnerCorner[2]}},</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      <span class="comment">// front face with the all adjacent four edges and four corners</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>      {lowerHaloCorner, {upperHaloCorner[0], lowerInnerCorner[1], upperHaloCorner[2]}},</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      <span class="comment">// back face with the all adjacent four edges and four corners</span></div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>      {{lowerHaloCorner[0], upperInnerCorner[1], lowerHaloCorner[2]}, upperHaloCorner},</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  }};</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>  std::vector&lt;typename ContainerType::ParticleType&gt; leavingParticles{};</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="comment">// custom openmp reduction to concatenate all local vectors to one at the end of a parallel region</span></div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <a class="code hl_define" href="WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d">AUTOPAS_OPENMP</a>(declare reduction(vecMergeParticle :                                                 \</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                                   std::vector&lt;typename ContainerType::ParticleType&gt; :                \</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                                       omp_out.insert(omp_out.end(), omp_in.begin(), omp_in.end())))</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="comment">// this has to be a `parallel` and not `parallel for` because we are actually interested in parallelizing the inner</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  <span class="comment">// loops without having a barrier between outer loop iterations.</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="comment">// The way this works is that all threads iterate the outer loop but due to the way the iterators are parallelized,</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="comment">// each thread only picks its iterations of the inner loops, hence nothing is done multiple times.</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  <a class="code hl_define" href="WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d">AUTOPAS_OPENMP</a>(parallel reduction(vecMergeParticle : leavingParticles))</div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;[regionStart, regionEnd] : haloVolumes) {</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> iter = container.getRegionIterator(regionStart, regionEnd, autopas::IteratorBehavior::ownedOrHalo);</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>         iter.isValid(); ++iter) {</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>      <span class="comment">// Mark halo particles for deletion</span></div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      <span class="keywordflow">if</span> (iter-&gt;isHalo()) {</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        iter-&gt;setOwnershipState(<a class="code hl_enumvalue" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a275876e34cf609db118f3d84b799a790">OwnershipState::dummy</a>);</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="comment">// Collect leaving particles and mark them for deletion</span></div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (not <a class="code hl_function" href="namespaceautopas_1_1utils.html#acb8142fa65b2f710d92bcc40a2ba7d03">utils::inBox</a>(iter-&gt;getR(), container.getBoxMin(), container.getBoxMax())) {</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        leavingParticles.push_back(*iter);</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        iter-&gt;setOwnershipState(<a class="code hl_enumvalue" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a275876e34cf609db118f3d84b799a790">OwnershipState::dummy</a>);</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>      }</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  }</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keywordflow">return</span> leavingParticles;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>}</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}  <span class="comment">// namespace autopas::LeavingParticleCollector</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ContainerType&gt;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="namespaceautopas_1_1LeavingParticleCollector.html#a422bfc61a4948703d28396cc1f3688b3">   32</a></span>std::array&lt;std::tuple&lt;const std::array&lt;double, 3&gt;, <span class="keyword">const</span> std::array&lt;double, 3&gt;&gt;, 6&gt; <a class="code hl_function" href="namespaceautopas_1_1LeavingParticleCollector.html#a422bfc61a4948703d28396cc1f3688b3">calculateHaloVolumes</a>(</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">const</span> ContainerType &amp;container) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keyword">using namespace </span>autopas::utils::ArrayMath::literals;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="keyword">const</span> <span class="keyword">auto</span> upperBoundForMisplacement = container.getVerletSkin() / 2.0;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  <span class="keyword">const</span> <span class="keyword">auto</span> interactionLength = container.getInteractionLength();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;boxMin = container.getBoxMin();</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;boxMax = container.getBoxMax();</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>  <span class="comment">// Halo extends one interaction length away from the edge of the container. On top of that particles can drift.</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  <span class="keyword">const</span> <span class="keyword">auto</span> lowerHaloCorner = boxMin - interactionLength - upperBoundForMisplacement;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keyword">const</span> <span class="keyword">auto</span> upperHaloCorner = boxMax + interactionLength + upperBoundForMisplacement;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="comment">// We need to extend these boundaries into the container because we need to include cells that still hold particles,</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="comment">// which now have left the cells region towards the outside of the container.</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="comment">// travelled beyond that and skin can be 0.</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keyword">const</span> <span class="keyword">auto</span> lowerInnerCorner = boxMin + upperBoundForMisplacement;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keyword">const</span> <span class="keyword">auto</span> upperInnerCorner = boxMax - upperBoundForMisplacement;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="comment">// volumes describing the halo regions on the six faces of the cuboid shaped container.</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="comment">// The total volume can be thought of as:</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="comment">// 6 faces</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="comment">// 8 corners</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="comment">// 12 edges</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="comment">// These 26 pieces are combined to six volumes, the minimal number to cover it with region iterators.</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">const</span> std::array&lt;std::tuple&lt;<span class="keyword">decltype</span>(lowerHaloCorner), <span class="keyword">decltype</span>(upperHaloCorner)&gt;, 6&gt; haloVolumes{{</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>      <span class="comment">// left face + edge shared by left and bottom faces</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>      {{lowerHaloCorner[0], lowerInnerCorner[1], lowerHaloCorner[2]},</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>       {lowerInnerCorner[0], upperInnerCorner[1], upperInnerCorner[2]}},</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      <span class="comment">// right face + edge shared by right and upper faces</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>      {{upperInnerCorner[0], lowerInnerCorner[1], lowerInnerCorner[2]},</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>       {upperHaloCorner[0], upperInnerCorner[1], upperHaloCorner[2]}},</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>      <span class="comment">// top face + edge shared by left and top faces</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>      {{lowerHaloCorner[0], lowerInnerCorner[1], upperInnerCorner[2]},</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>       {upperInnerCorner[0], upperInnerCorner[1], upperHaloCorner[2]}},</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      <span class="comment">// bottom face + edge shared by right and bottom faces</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      {{lowerInnerCorner[0], lowerInnerCorner[1], lowerHaloCorner[2]},</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>       {upperHaloCorner[0], upperInnerCorner[1], lowerInnerCorner[2]}},</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      <span class="comment">// front face with the all adjacent four edges and four corners</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>      {lowerHaloCorner, {upperHaloCorner[0], lowerInnerCorner[1], upperHaloCorner[2]}},</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      <span class="comment">// back face with the all adjacent four edges and four corners</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>      {{lowerHaloCorner[0], upperInnerCorner[1], lowerHaloCorner[2]}, upperHaloCorner},</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  }};</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keywordflow">return</span> haloVolumes;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ContainerType&gt;</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="namespaceautopas_1_1LeavingParticleCollector.html#a66da2d3805193e7b0f22430e2d0d9f2a">   85</a></span>std::vector&lt;typename ContainerType::ParticleType&gt; <a class="code hl_function" href="namespaceautopas_1_1LeavingParticleCollector.html#a66da2d3805193e7b0f22430e2d0d9f2a">collectParticlesAndMarkNonOwnedAsDummy</a>(ContainerType &amp;container) {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keyword">const</span> <span class="keyword">auto</span> haloVolumes = <a class="code hl_function" href="namespaceautopas_1_1LeavingParticleCollector.html#a422bfc61a4948703d28396cc1f3688b3">calculateHaloVolumes</a>(container);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  std::vector&lt;typename ContainerType::ParticleType&gt; leavingParticles{};</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="comment">// Random number which is better than 0</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  leavingParticles.reserve(10);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  <span class="comment">// aliases for less getter accesses</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;boxMin = container.getBoxMin();</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;boxMax = container.getBoxMax();</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="comment">// custom openmp reduction to concatenate all local vectors to one at the end of a parallel region</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <a class="code hl_define" href="WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d">AUTOPAS_OPENMP</a>(declare reduction(vecMergeParticle :                                                 \</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>                                   std::vector&lt;typename ContainerType::ParticleType&gt; :                \</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>                                       omp_out.insert(omp_out.end(), omp_in.begin(), omp_in.end())))</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="comment">// this has to be a `parallel` and not `parallel for` because we are actually interested in parallelizing the inner</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  <span class="comment">// loops without having a barrier between outer loop iterations.</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="comment">// The way this works is that all threads iterate the outer loop but due to the way the iterators are parallelized,</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="comment">// each thread only picks its iterations of the inner loops, hence nothing is done multiple times.</span></div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <a class="code hl_define" href="WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d">AUTOPAS_OPENMP</a>(parallel reduction(vecMergeParticle : leavingParticles))</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;[regionStart, regionEnd] : haloVolumes) {</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> iter = container.getRegionIterator(regionStart, regionEnd, autopas::IteratorBehavior::ownedOrHalo);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>         iter.isValid(); ++iter) {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>      <span class="comment">// Mark halo particles for deletion</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <span class="keywordflow">if</span> (iter-&gt;isHalo()) {</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        iter-&gt;setOwnershipState(<a class="code hl_enumvalue" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a275876e34cf609db118f3d84b799a790">OwnershipState::dummy</a>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>        <span class="comment">// Collect leaving particles and mark them for deletion</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (not <a class="code hl_function" href="namespaceautopas_1_1utils.html#acb8142fa65b2f710d92bcc40a2ba7d03">utils::inBox</a>(iter-&gt;getR(), boxMin, boxMax)) {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        leavingParticles.push_back(*iter);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        iter-&gt;setOwnershipState(<a class="code hl_enumvalue" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a275876e34cf609db118f3d84b799a790">OwnershipState::dummy</a>);</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      }</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    }</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  }</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keywordflow">return</span> leavingParticles;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>}</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>}  <span class="comment">// namespace autopas::LeavingParticleCollector</span></div>
 <div class="ttc" id="aArrayMath_8h_html"><div class="ttname"><a href="ArrayMath_8h.html">ArrayMath.h</a></div></div>
 <div class="ttc" id="aIteratorBehavior_8h_html"><div class="ttname"><a href="IteratorBehavior_8h.html">IteratorBehavior.h</a></div></div>
 <div class="ttc" id="aOwnershipState_8h_html"><div class="ttname"><a href="OwnershipState_8h.html">OwnershipState.h</a></div></div>
@@ -190,7 +207,8 @@ $(function() {
 <div class="ttc" id="aWrapOpenMP_8h_html_adf64fc4981617d456044d0a30deb3d0d"><div class="ttname"><a href="WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d">AUTOPAS_OPENMP</a></div><div class="ttdeci">#define AUTOPAS_OPENMP(args)</div><div class="ttdoc">Empty macro to throw away any arguments.</div><div class="ttdef"><b>Definition:</b> WrapOpenMP.h:126</div></div>
 <div class="ttc" id="ainBox_8h_html"><div class="ttname"><a href="inBox_8h.html">inBox.h</a></div></div>
 <div class="ttc" id="anamespaceautopas_1_1LeavingParticleCollector_html"><div class="ttname"><a href="namespaceautopas_1_1LeavingParticleCollector.html">autopas::LeavingParticleCollector</a></div><div class="ttdoc">Namespace to collect leaving particles from a container.</div><div class="ttdef"><b>Definition:</b> LeavingParticleCollector.h:19</div></div>
-<div class="ttc" id="anamespaceautopas_1_1LeavingParticleCollector_html_a66da2d3805193e7b0f22430e2d0d9f2a"><div class="ttname"><a href="namespaceautopas_1_1LeavingParticleCollector.html#a66da2d3805193e7b0f22430e2d0d9f2a">autopas::LeavingParticleCollector::collectParticlesAndMarkNonOwnedAsDummy</a></div><div class="ttdeci">std::vector&lt; typename ContainerType::ParticleType &gt; collectParticlesAndMarkNonOwnedAsDummy(ContainerType &amp;container)</div><div class="ttdoc">Collects leaving particles and marks halo particles as dummy.</div><div class="ttdef"><b>Definition:</b> LeavingParticleCollector.h:28</div></div>
+<div class="ttc" id="anamespaceautopas_1_1LeavingParticleCollector_html_a422bfc61a4948703d28396cc1f3688b3"><div class="ttname"><a href="namespaceautopas_1_1LeavingParticleCollector.html#a422bfc61a4948703d28396cc1f3688b3">autopas::LeavingParticleCollector::calculateHaloVolumes</a></div><div class="ttdeci">std::array&lt; std::tuple&lt; const std::array&lt; double, 3 &gt;, const std::array&lt; double, 3 &gt; &gt;, 6 &gt; calculateHaloVolumes(const ContainerType &amp;container)</div><div class="ttdoc">For a given container that supports getCutoff(), getBoxMin() and getBoxMax(), calculates a set of 6 n...</div><div class="ttdef"><b>Definition:</b> LeavingParticleCollector.h:32</div></div>
+<div class="ttc" id="anamespaceautopas_1_1LeavingParticleCollector_html_a66da2d3805193e7b0f22430e2d0d9f2a"><div class="ttname"><a href="namespaceautopas_1_1LeavingParticleCollector.html#a66da2d3805193e7b0f22430e2d0d9f2a">autopas::LeavingParticleCollector::collectParticlesAndMarkNonOwnedAsDummy</a></div><div class="ttdeci">std::vector&lt; typename ContainerType::ParticleType &gt; collectParticlesAndMarkNonOwnedAsDummy(ContainerType &amp;container)</div><div class="ttdoc">Collects leaving particles and marks halo particles as dummy.</div><div class="ttdef"><b>Definition:</b> LeavingParticleCollector.h:85</div></div>
 <div class="ttc" id="anamespaceautopas_1_1utils_html_acb8142fa65b2f710d92bcc40a2ba7d03"><div class="ttname"><a href="namespaceautopas_1_1utils.html#acb8142fa65b2f710d92bcc40a2ba7d03">autopas::utils::inBox</a></div><div class="ttdeci">bool inBox(const std::array&lt; T, 3 &gt; &amp;position, const std::array&lt; T, 3 &gt; &amp;low, const std::array&lt; T, 3 &gt; &amp;high)</div><div class="ttdoc">Checks if position is inside of a box defined by low and high.</div><div class="ttdef"><b>Definition:</b> inBox.h:26</div></div>
 <div class="ttc" id="anamespaceautopas_html_a82a8cce861d1c5e0aae32f34ed39e5e0a275876e34cf609db118f3d84b799a790"><div class="ttname"><a href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a275876e34cf609db118f3d84b799a790">autopas::OwnershipState::dummy</a></div><div class="ttdeci">@ dummy</div><div class="ttdoc">Dummy or deleted state, a particle with this state is not an actual particle!</div></div>
 </div><!-- fragment --></div><!-- contents -->

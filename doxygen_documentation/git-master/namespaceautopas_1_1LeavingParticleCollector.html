@@ -116,6 +116,10 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a422bfc61a4948703d28396cc1f3688b3"><td class="memTemplParams" colspan="2">template&lt;class ContainerType &gt; </td></tr>
+<tr class="memitem:a422bfc61a4948703d28396cc1f3688b3"><td class="memTemplItemLeft" align="right" valign="top">std::array&lt; std::tuple&lt; const std::array&lt; double, 3 &gt;, const std::array&lt; double, 3 &gt; &gt;, 6 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1LeavingParticleCollector.html#a422bfc61a4948703d28396cc1f3688b3">calculateHaloVolumes</a> (const ContainerType &amp;container)</td></tr>
+<tr class="memdesc:a422bfc61a4948703d28396cc1f3688b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a given container that supports <code>getCutoff()</code>, <code>getBoxMin()</code> and <code>getBoxMax()</code>, calculates a set of 6 non-overlapping boxes that fully cover the halo.  <br /></td></tr>
+<tr class="separator:a422bfc61a4948703d28396cc1f3688b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a66da2d3805193e7b0f22430e2d0d9f2a"><td class="memTemplParams" colspan="2">template&lt;class ContainerType &gt; </td></tr>
 <tr class="memitem:a66da2d3805193e7b0f22430e2d0d9f2a"><td class="memTemplItemLeft" align="right" valign="top">std::vector&lt; typename ContainerType::ParticleType &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1LeavingParticleCollector.html#a66da2d3805193e7b0f22430e2d0d9f2a">collectParticlesAndMarkNonOwnedAsDummy</a> (ContainerType &amp;container)</td></tr>
 <tr class="memdesc:a66da2d3805193e7b0f22430e2d0d9f2a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collects leaving particles and marks halo particles as dummy.  <br /></td></tr>
@@ -124,6 +128,43 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Namespace to collect leaving particles from a container. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
+<a id="a422bfc61a4948703d28396cc1f3688b3" name="a422bfc61a4948703d28396cc1f3688b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a422bfc61a4948703d28396cc1f3688b3">&#9670;&#160;</a></span>calculateHaloVolumes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ContainerType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::array&lt; std::tuple&lt; const std::array&lt; double, 3 &gt;, const std::array&lt; double, 3 &gt; &gt;, 6 &gt; autopas::LeavingParticleCollector::calculateHaloVolumes </td>
+          <td>(</td>
+          <td class="paramtype">const ContainerType &amp;&#160;</td>
+          <td class="paramname"><em>container</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>For a given container that supports <code>getCutoff()</code>, <code>getBoxMin()</code> and <code>getBoxMax()</code>, calculates a set of 6 non-overlapping boxes that fully cover the halo. </p>
+<p>These boxes extend into the container to catch halo particles which have moved inside the container.</p>
+<dl class="section note"><dt>Note</dt><dd>this function is public for testing purposes.</dd></dl>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">ContainerType</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">container</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Vector of halo boxes. vector&lt;tuple&lt;lower_corner, upper_corner&gt;&gt; </dd></dl>
+
+</div>
+</div>
 <a id="a66da2d3805193e7b0f22430e2d0d9f2a" name="a66da2d3805193e7b0f22430e2d0d9f2a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a66da2d3805193e7b0f22430e2d0d9f2a">&#9670;&#160;</a></span>collectParticlesAndMarkNonOwnedAsDummy()</h2>
 
