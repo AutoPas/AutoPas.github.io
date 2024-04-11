@@ -109,6 +109,7 @@ $(function() {
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pro-methods">Protected Member Functions</a> &#124;
+<a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classautopas_1_1ParticleContainerInterface-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">autopas::ParticleContainerInterface&lt; Particle &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
@@ -181,10 +182,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa0d021848386b655665099f6536d38f3"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8">CellType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#aa0d021848386b655665099f6536d38f3">getParticleCellTypeEnum</a> () const =0</td></tr>
 <tr class="memdesc:aa0d021848386b655665099f6536d38f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a> type as an Enum.  <br /></td></tr>
 <tr class="separator:aa0d021848386b655665099f6536d38f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39724ab6b2de64346806d583d4551057"><td class="memItemLeft" align="right" valign="top"><a id="a39724ab6b2de64346806d583d4551057" name="a39724ab6b2de64346806d583d4551057"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ParticleContainerInterface</b> ()=default</td></tr>
-<tr class="memdesc:a39724ab6b2de64346806d583d4551057"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
-<tr class="separator:a39724ab6b2de64346806d583d4551057"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a418d31e949c58e79c73597685f5f7932"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a418d31e949c58e79c73597685f5f7932">ParticleContainerInterface</a> (double skinPerTimestep)</td></tr>
+<tr class="memdesc:a418d31e949c58e79c73597685f5f7932"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="separator:a418d31e949c58e79c73597685f5f7932"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3c2c64bd4786635537cbdb17ba1b416"><td class="memItemLeft" align="right" valign="top"><a id="af3c2c64bd4786635537cbdb17ba1b416" name="af3c2c64bd4786635537cbdb17ba1b416"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ParticleContainerInterface</b> ()=default</td></tr>
 <tr class="memdesc:af3c2c64bd4786635537cbdb17ba1b416"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor of <a class="el" href="classautopas_1_1ParticleContainerInterface.html" title="The ParticleContainerInterface class provides a basic interface for all Containers within AutoPas.">ParticleContainerInterface</a>. <br /></td></tr>
@@ -263,6 +263,12 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ParticleContainer
 <tr class="memitem:aff79b9a83a997b3c2fe9371557459a44"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#aff79b9a83a997b3c2fe9371557459a44">getVerletSkin</a> () const =0</td></tr>
 <tr class="memdesc:aff79b9a83a997b3c2fe9371557459a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the verletSkin of the container verletSkinPerTimestep*rebuildFrequency.  <br /></td></tr>
 <tr class="separator:aff79b9a83a997b3c2fe9371557459a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a776f714977d93a885ce91bdd60c4dbf4"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a776f714977d93a885ce91bdd60c4dbf4">getStepsSinceLastRebuild</a> () const</td></tr>
+<tr class="memdesc:a776f714977d93a885ce91bdd60c4dbf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of time-steps since last neighbor list rebuild.  <br /></td></tr>
+<tr class="separator:a776f714977d93a885ce91bdd60c4dbf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d5945bcf879e0a22d9a96db13b40403"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a0d5945bcf879e0a22d9a96db13b40403">setStepsSinceLastRebuild</a> (size_t stepsSinceLastRebuild)</td></tr>
+<tr class="memdesc:a0d5945bcf879e0a22d9a96db13b40403"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of time-steps since last neighbor list rebuild.  <br /></td></tr>
+<tr class="separator:a0d5945bcf879e0a22d9a96db13b40403"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2191ad8b6814478b7ccca24081468f99"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a2191ad8b6814478b7ccca24081468f99">getInteractionLength</a> () const =0</td></tr>
 <tr class="memdesc:a2191ad8b6814478b7ccca24081468f99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the interaction length (cutoff+skin) of the container.  <br /></td></tr>
 <tr class="separator:a2191ad8b6814478b7ccca24081468f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -302,6 +308,16 @@ Protected Member Functions</h2></td></tr>
 <tr class="memitem:a92952e5972fb6b30154a30012795f1a7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a92952e5972fb6b30154a30012795f1a7">addHaloParticleImpl</a> (const <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &amp;haloParticle)=0</td></tr>
 <tr class="memdesc:a92952e5972fb6b30154a30012795f1a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a particle to the container that lies in the halo region of the container.  <br /></td></tr>
 <tr class="separator:a92952e5972fb6b30154a30012795f1a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
+Protected Attributes</h2></td></tr>
+<tr class="memitem:ad99e3729351970d811228d4f308fe7ed"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#ad99e3729351970d811228d4f308fe7ed">_stepsSinceLastRebuild</a> {0}</td></tr>
+<tr class="memdesc:ad99e3729351970d811228d4f308fe7ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the number of time-steps since last neighbor list rebuild.  <br /></td></tr>
+<tr class="separator:ad99e3729351970d811228d4f308fe7ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4de3c46f496b5491c04026b9ef7b4a4c"><td class="memItemLeft" align="right" valign="top"><a id="a4de3c46f496b5491c04026b9ef7b4a4c" name="a4de3c46f496b5491c04026b9ef7b4a4c"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>_skinPerTimestep</b></td></tr>
+<tr class="memdesc:a4de3c46f496b5491c04026b9ef7b4a4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skin distance a particle is allowed to move in one time-step. <br /></td></tr>
+<tr class="separator:a4de3c46f496b5491c04026b9ef7b4a4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>&gt;<br />
@@ -314,8 +330,44 @@ class autopas::ParticleContainerInterface&lt; Particle &gt;</div><p>The <a class
   </dd>
 </dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a418d31e949c58e79c73597685f5f7932" name="a418d31e949c58e79c73597685f5f7932"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a418d31e949c58e79c73597685f5f7932">&#9670;&#160;</a></span>ParticleContainerInterface() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::ParticleContainerInterface </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>skinPerTimestep</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">skinPerTimestep</td><td>Skin distance a particle is allowed to move in one time-step. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a7d8082e38c0d26fe92ae93779035b6d7" name="a7d8082e38c0d26fe92ae93779035b6d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7d8082e38c0d26fe92ae93779035b6d7">&#9670;&#160;</a></span>ParticleContainerInterface()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d8082e38c0d26fe92ae93779035b6d7">&#9670;&#160;</a></span>ParticleContainerInterface() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -566,7 +618,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <dl class="section return"><dt>Returns</dt><dd>Iterator to the first particle.   </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>const version </dd></dl>
 
-<p>Implemented in <a class="el" href="classautopas_1_1Octree.html#ad2c9187ba849b9f276a1a213a47026f2">autopas::Octree&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#af96ebddcbdfe0ecd8fd8dd250b1d24ec">autopas::VerletClusterLists&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1DirectSum.html#a24c75f2b598511a1877afe55dbbde6ee">autopas::DirectSum&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#a5b2b98940437b627f4e523668a98d458">autopas::LinkedCells&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#a5b2b98940437b627f4e523668a98d458">autopas::LinkedCells&lt; autopas::ParticleBase &gt;</a>, <a class="el" href="classautopas_1_1LinkedCellsReferences.html#a99b59b0b6737cb5bd89b5028dc787561">autopas::LinkedCellsReferences&lt; Particle &gt;</a>, and <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a89323e1faa09458337ef03b3f46bbc14">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classautopas_1_1VerletClusterLists.html#af96ebddcbdfe0ecd8fd8dd250b1d24ec">autopas::VerletClusterLists&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1DirectSum.html#a24c75f2b598511a1877afe55dbbde6ee">autopas::DirectSum&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#a5b2b98940437b627f4e523668a98d458">autopas::LinkedCells&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#a5b2b98940437b627f4e523668a98d458">autopas::LinkedCells&lt; autopas::ParticleBase &gt;</a>, <a class="el" href="classautopas_1_1LinkedCellsReferences.html#a99b59b0b6737cb5bd89b5028dc787561">autopas::LinkedCellsReferences&lt; Particle &gt;</a>, and <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a89323e1faa09458337ef03b3f46bbc14">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>.</p>
 
 </div>
 </div>
@@ -617,7 +669,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Iterator to the first particle. </dd></dl>
 
-<p>Implemented in <a class="el" href="classautopas_1_1Octree.html#a1ff0e30924266a1a37a5ab8083ea8bdd">autopas::Octree&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#a4ec3eb7ab9f2b0afbcb1de85cef31b9a">autopas::VerletClusterLists&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1DirectSum.html#a460c02d47bfe263af288d74d91a8041d">autopas::DirectSum&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#a1051e4f8b84a0d0c6e409238309d5843">autopas::LinkedCells&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#a1051e4f8b84a0d0c6e409238309d5843">autopas::LinkedCells&lt; autopas::ParticleBase &gt;</a>, <a class="el" href="classautopas_1_1LinkedCellsReferences.html#a08236a465aace6bf71ec2a8eaf07ca07">autopas::LinkedCellsReferences&lt; Particle &gt;</a>, and <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a682cc4f97c87412322b3d5929bf26ccf">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classautopas_1_1VerletClusterLists.html#a4ec3eb7ab9f2b0afbcb1de85cef31b9a">autopas::VerletClusterLists&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1DirectSum.html#a460c02d47bfe263af288d74d91a8041d">autopas::DirectSum&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#a1051e4f8b84a0d0c6e409238309d5843">autopas::LinkedCells&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#a1051e4f8b84a0d0c6e409238309d5843">autopas::LinkedCells&lt; autopas::ParticleBase &gt;</a>, <a class="el" href="classautopas_1_1LinkedCellsReferences.html#a08236a465aace6bf71ec2a8eaf07ca07">autopas::LinkedCellsReferences&lt; Particle &gt;</a>, and <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a682cc4f97c87412322b3d5929bf26ccf">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>.</p>
 
 </div>
 </div>
@@ -769,7 +821,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>True if the given pointer still points to a new particle. </dd></dl>
 
-<p>Implemented in <a class="el" href="classautopas_1_1DirectSum.html#a6a2d1c5a39a95862242cff2de5e27f56">autopas::DirectSum&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#ad5d01be1b08fdf77ae2e11e6a85669b6">autopas::LinkedCells&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCellsReferences.html#a72ca7e363d8b94c7416940f561e05289">autopas::LinkedCellsReferences&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1Octree.html#a571dae90a829f5b3712d253239407891">autopas::Octree&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#a9b0f97d5ddfdc092db09b0fd796d3aca">autopas::VerletClusterLists&lt; Particle &gt;</a>, and <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a0d9758ec9201d49903446cf4dcd45d0e">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classautopas_1_1DirectSum.html#a6a2d1c5a39a95862242cff2de5e27f56">autopas::DirectSum&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#ad5d01be1b08fdf77ae2e11e6a85669b6">autopas::LinkedCells&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCellsReferences.html#a72ca7e363d8b94c7416940f561e05289">autopas::LinkedCellsReferences&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#a9b0f97d5ddfdc092db09b0fd796d3aca">autopas::VerletClusterLists&lt; Particle &gt;</a>, and <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a0d9758ec9201d49903446cf4dcd45d0e">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>.</p>
 
 </div>
 </div>
@@ -1449,7 +1501,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <dl class="section return"><dt>Returns</dt><dd>Iterator to iterate over all particles in a specific region.   </dd></dl>
 <dl class="section note"><dt>Note</dt><dd>const version </dd></dl>
 
-<p>Implemented in <a class="el" href="classautopas_1_1Octree.html#ac671d748b72e614879f730eaaafcaef6">autopas::Octree&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#a012d704c9ae5e21f78b3651fe6590749">autopas::VerletClusterLists&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a1b793b497079cca89c846c9f6c643ccc">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1DirectSum.html#ab3553f926320861a57765f809a5afc2a">autopas::DirectSum&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#aa1dc5607a3017b86b62b52e07d39c9ff">autopas::LinkedCells&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#aa1dc5607a3017b86b62b52e07d39c9ff">autopas::LinkedCells&lt; autopas::ParticleBase &gt;</a>, and <a class="el" href="classautopas_1_1LinkedCellsReferences.html#a56e69d9dcbd0ebedf62cc1ea63521252">autopas::LinkedCellsReferences&lt; Particle &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classautopas_1_1VerletClusterLists.html#a012d704c9ae5e21f78b3651fe6590749">autopas::VerletClusterLists&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a1b793b497079cca89c846c9f6c643ccc">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1DirectSum.html#ab3553f926320861a57765f809a5afc2a">autopas::DirectSum&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#aa1dc5607a3017b86b62b52e07d39c9ff">autopas::LinkedCells&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#aa1dc5607a3017b86b62b52e07d39c9ff">autopas::LinkedCells&lt; autopas::ParticleBase &gt;</a>, and <a class="el" href="classautopas_1_1LinkedCellsReferences.html#a56e69d9dcbd0ebedf62cc1ea63521252">autopas::LinkedCellsReferences&lt; Particle &gt;</a>.</p>
 
 </div>
 </div>
@@ -1513,7 +1565,38 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Iterator to iterate over all particles in a specific region. </dd></dl>
 
-<p>Implemented in <a class="el" href="classautopas_1_1Octree.html#aecef7aa67f1ad2d4976309deb95dc312">autopas::Octree&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#aaa722cb3d69cdccc84cdc82c0cd5e492">autopas::VerletClusterLists&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#ac04431caac9ea84ab693486f46bfde33">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1DirectSum.html#a68ec893b93960ef51ad38d3874e454dc">autopas::DirectSum&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#aeb2356529105608b27f763650ae60169">autopas::LinkedCells&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#aeb2356529105608b27f763650ae60169">autopas::LinkedCells&lt; autopas::ParticleBase &gt;</a>, and <a class="el" href="classautopas_1_1LinkedCellsReferences.html#ae4c1eae67feed590e61fa7ea48b9905e">autopas::LinkedCellsReferences&lt; Particle &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classautopas_1_1VerletClusterLists.html#aaa722cb3d69cdccc84cdc82c0cd5e492">autopas::VerletClusterLists&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#ac04431caac9ea84ab693486f46bfde33">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1DirectSum.html#a68ec893b93960ef51ad38d3874e454dc">autopas::DirectSum&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#aeb2356529105608b27f763650ae60169">autopas::LinkedCells&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#aeb2356529105608b27f763650ae60169">autopas::LinkedCells&lt; autopas::ParticleBase &gt;</a>, and <a class="el" href="classautopas_1_1LinkedCellsReferences.html#ae4c1eae67feed590e61fa7ea48b9905e">autopas::LinkedCellsReferences&lt; Particle &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a776f714977d93a885ce91bdd60c4dbf4" name="a776f714977d93a885ce91bdd60c4dbf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a776f714977d93a885ce91bdd60c4dbf4">&#9670;&#160;</a></span>getStepsSinceLastRebuild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual size_t <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getStepsSinceLastRebuild </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Return the number of time-steps since last neighbor list rebuild. </p>
+<dl class="section note"><dt>Note</dt><dd>: The value has to be set by <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a0d5945bcf879e0a22d9a96db13b40403" title="Set the number of time-steps since last neighbor list rebuild.">setStepsSinceLastRebuild()</a> from outside the container. Otherwise this will always return 0 </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>steps since last rebuild </dd></dl>
 
 </div>
 </div>
@@ -1782,6 +1865,44 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
+<a id="a0d5945bcf879e0a22d9a96db13b40403" name="a0d5945bcf879e0a22d9a96db13b40403"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d5945bcf879e0a22d9a96db13b40403">&#9670;&#160;</a></span>setStepsSinceLastRebuild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::setStepsSinceLastRebuild </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>stepsSinceLastRebuild</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the number of time-steps since last neighbor list rebuild. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">stepsSinceLastRebuild</td><td>steps since last neighbor list rebuild </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#adc2428f435785254163ea892c887e915">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>.</p>
+
+</div>
+</div>
 <a id="ab5e6a361098c54b400b75365d2ce32a9" name="ab5e6a361098c54b400b75365d2ce32a9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab5e6a361098c54b400b75365d2ce32a9">&#9670;&#160;</a></span>size()</h2>
 
@@ -1889,6 +2010,34 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <dl class="section return"><dt>Returns</dt><dd>Returns true if the particle was updated, false if no particle could be found. </dd></dl>
 
 <p>Implemented in <a class="el" href="classautopas_1_1VerletClusterLists.html#abedbee3ccdba8ed38a9616ae42dd0fb5">autopas::VerletClusterLists&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a7ea64a1fd613f46dc3eb70aa6e2e51d7">autopas::VerletListsLinkedBase&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1DirectSum.html#a17e611078e0785f8571a52f7d5d7503e">autopas::DirectSum&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#abc236cd4f9b14f94ff2205a001cc7f4b">autopas::LinkedCells&lt; Particle &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#abc236cd4f9b14f94ff2205a001cc7f4b">autopas::LinkedCells&lt; autopas::ParticleBase &gt;</a>, and <a class="el" href="classautopas_1_1LinkedCellsReferences.html#af4d83f27545f1e2ab7ebdc593bd2f619">autopas::LinkedCellsReferences&lt; Particle &gt;</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="ad99e3729351970d811228d4f308fe7ed" name="ad99e3729351970d811228d4f308fe7ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad99e3729351970d811228d4f308fe7ed">&#9670;&#160;</a></span>_stepsSinceLastRebuild</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::_stepsSinceLastRebuild {0}</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Stores the number of time-steps since last neighbor list rebuild. </p>
+<dl class="section note"><dt>Note</dt><dd>: The value has to be set by <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a0d5945bcf879e0a22d9a96db13b40403" title="Set the number of time-steps since last neighbor list rebuild.">setStepsSinceLastRebuild()</a> from outside the container. Otherwise this will always be 0 </dd></dl>
 
 </div>
 </div>

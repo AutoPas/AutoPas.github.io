@@ -156,7 +156,7 @@ Collaboration diagram for autopas::DirectSum&lt; Particle &gt;:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
 <tr class="memitem:af4ec891bc801c7bc4b696163f3d88e01"><td class="memItemLeft" align="right" valign="top"><a id="af4ec891bc801c7bc4b696163f3d88e01" name="af4ec891bc801c7bc4b696163f3d88e01"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>ParticleCell</b> = <a class="el" href="classautopas_1_1FullParticleCell.html">FullParticleCell</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;</td></tr>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>ParticleCell</b> = <a class="el" href="classautopas_1_1FullParticleCell.html">FullParticleCell</a>&lt; Particle &gt;</td></tr>
 <tr class="memdesc:af4ec891bc801c7bc4b696163f3d88e01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type of the <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a>. <br /></td></tr>
 <tr class="separator:af4ec891bc801c7bc4b696163f3d88e01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a361468601e60c79efeda723d8c188f74"><td class="memItemLeft" align="right" valign="top"><a id="a361468601e60c79efeda723d8c188f74" name="a361468601e60c79efeda723d8c188f74"></a>
@@ -235,22 +235,22 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af8d8b4320f74884a8af9a0e14a93b1af"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1DirectSum.html#af8d8b4320f74884a8af9a0e14a93b1af">reduceInRegion</a> (Lambda reduceLambda, A &amp;result, const std::array&lt; double, 3 &gt; &amp;lowerCorner, const std::array&lt; double, 3 &gt; &amp;higherCorner, IteratorBehavior behavior)</td></tr>
 <tr class="memdesc:af8d8b4320f74884a8af9a0e14a93b1af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Execute code on all particles in this container in a certain region as defined by a lambda function.    <br /></td></tr>
 <tr class="separator:af8d8b4320f74884a8af9a0e14a93b1af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cf626837688334e825ac7cadec5353f"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; const <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> *, size_t, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DirectSum.html#a6cf626837688334e825ac7cadec5353f">getParticle</a> (size_t cellIndex, size_t particleIndex, IteratorBehavior iteratorBehavior, const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax) const override</td></tr>
+<tr class="memitem:a6cf626837688334e825ac7cadec5353f"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; const Particle *, size_t, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DirectSum.html#a6cf626837688334e825ac7cadec5353f">getParticle</a> (size_t cellIndex, size_t particleIndex, IteratorBehavior iteratorBehavior, const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax) const override</td></tr>
 <tr class="memdesc:a6cf626837688334e825ac7cadec5353f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the pointer to a particle, identified via a cell and particle index.    <br /></td></tr>
 <tr class="separator:a6cf626837688334e825ac7cadec5353f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4846e31307f0b35ba40da9098160902"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; const <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> *, size_t, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DirectSum.html#aa4846e31307f0b35ba40da9098160902">getParticle</a> (size_t cellIndex, size_t particleIndex, IteratorBehavior iteratorBehavior) const override</td></tr>
+<tr class="memitem:aa4846e31307f0b35ba40da9098160902"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; const Particle *, size_t, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DirectSum.html#aa4846e31307f0b35ba40da9098160902">getParticle</a> (size_t cellIndex, size_t particleIndex, IteratorBehavior iteratorBehavior) const override</td></tr>
 <tr class="memdesc:aa4846e31307f0b35ba40da9098160902"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the pointer to a particle, identified via a cell and particle index.  <br /></td></tr>
 <tr class="separator:aa4846e31307f0b35ba40da9098160902"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a2d1c5a39a95862242cff2de5e27f56"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DirectSum.html#a6a2d1c5a39a95862242cff2de5e27f56">deleteParticle</a> (<a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &amp;particle) override</td></tr>
+<tr class="memitem:a6a2d1c5a39a95862242cff2de5e27f56"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DirectSum.html#a6a2d1c5a39a95862242cff2de5e27f56">deleteParticle</a> (Particle &amp;particle) override</td></tr>
 <tr class="memdesc:a6a2d1c5a39a95862242cff2de5e27f56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the given particle as long as this does not compromise the validity of the container.  <br /></td></tr>
 <tr class="separator:a6a2d1c5a39a95862242cff2de5e27f56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3b77fb0483709d0d7a7800e2241617c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DirectSum.html#ad3b77fb0483709d0d7a7800e2241617c">deleteParticle</a> (size_t cellIndex, size_t particleIndex) override</td></tr>
 <tr class="memdesc:ad3b77fb0483709d0d7a7800e2241617c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the particle at the given index positions as long as this does not compromise the validity of the container.  <br /></td></tr>
 <tr class="separator:ad3b77fb0483709d0d7a7800e2241617c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classautopas_1_1CellBasedParticleContainer"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classautopas_1_1CellBasedParticleContainer')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classautopas_1_1CellBasedParticleContainer.html">autopas::CellBasedParticleContainer&lt; FullParticleCell&lt; Particle &gt; &gt;</a></td></tr>
-<tr class="memitem:ab11c1bbcdf480789710990dd789001ae inherit pub_methods_classautopas_1_1CellBasedParticleContainer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellBasedParticleContainer.html#ab11c1bbcdf480789710990dd789001ae">CellBasedParticleContainer</a> (const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax, const double cutoff, const double skin)</td></tr>
-<tr class="memdesc:ab11c1bbcdf480789710990dd789001ae inherit pub_methods_classautopas_1_1CellBasedParticleContainer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of <a class="el" href="classautopas_1_1CellBasedParticleContainer.html" title="The CellBasedParticleContainer class stores particles in some object and provides methods to iterate ...">CellBasedParticleContainer</a>.  <br /></td></tr>
-<tr class="separator:ab11c1bbcdf480789710990dd789001ae inherit pub_methods_classautopas_1_1CellBasedParticleContainer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad50cff1cbb10b7a6cc0aa46141cf2a2e inherit pub_methods_classautopas_1_1CellBasedParticleContainer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellBasedParticleContainer.html#ad50cff1cbb10b7a6cc0aa46141cf2a2e">CellBasedParticleContainer</a> (const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax, const double cutoff, double skinPerTimestep, unsigned int rebuildFrequency)</td></tr>
+<tr class="memdesc:ad50cff1cbb10b7a6cc0aa46141cf2a2e inherit pub_methods_classautopas_1_1CellBasedParticleContainer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of <a class="el" href="classautopas_1_1CellBasedParticleContainer.html" title="The CellBasedParticleContainer class stores particles in some object and provides methods to iterate ...">CellBasedParticleContainer</a>.  <br /></td></tr>
+<tr class="separator:ad50cff1cbb10b7a6cc0aa46141cf2a2e inherit pub_methods_classautopas_1_1CellBasedParticleContainer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23a744d8e800ca72d1ddc1a11e7e4dfe inherit pub_methods_classautopas_1_1CellBasedParticleContainer"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a23a744d8e800ca72d1ddc1a11e7e4dfe">CellBasedParticleContainer</a> (const <a class="el" href="classautopas_1_1CellBasedParticleContainer.html">CellBasedParticleContainer</a> &amp;obj)=delete</td></tr>
 <tr class="memdesc:a23a744d8e800ca72d1ddc1a11e7e4dfe inherit pub_methods_classautopas_1_1CellBasedParticleContainer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the copy constructor to prevent unwanted copies.  <br /></td></tr>
 <tr class="separator:a23a744d8e800ca72d1ddc1a11e7e4dfe inherit pub_methods_classautopas_1_1CellBasedParticleContainer"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -288,17 +288,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a803f21a1520f73b827720166c1d64f60 inherit pub_methods_classautopas_1_1CellBasedParticleContainer"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a803f21a1520f73b827720166c1d64f60">size</a> () const override</td></tr>
 <tr class="memdesc:a803f21a1520f73b827720166c1d64f60 inherit pub_methods_classautopas_1_1CellBasedParticleContainer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the total number of particles saved in the container (owned + halo + dummy).  <br /></td></tr>
 <tr class="separator:a803f21a1520f73b827720166c1d64f60 inherit pub_methods_classautopas_1_1CellBasedParticleContainer"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88ef10599bc72d081660259f4c3967e2 inherit pub_methods_classautopas_1_1CellBasedParticleContainer"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classautopas_1_1FullParticleCell.html">FullParticleCell</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a88ef10599bc72d081660259f4c3967e2">getCells</a> () const</td></tr>
+<tr class="memitem:a88ef10599bc72d081660259f4c3967e2 inherit pub_methods_classautopas_1_1CellBasedParticleContainer"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classautopas_1_1FullParticleCell.html">FullParticleCell</a>&lt; <a class="el" href="commonTypedefs_8h.html#ac11d785d5f9402c62f88b5aec437494e">Particle</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a88ef10599bc72d081660259f4c3967e2">getCells</a> () const</td></tr>
 <tr class="memdesc:a88ef10599bc72d081660259f4c3967e2 inherit pub_methods_classautopas_1_1CellBasedParticleContainer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get immutable vector of cells.  <br /></td></tr>
 <tr class="separator:a88ef10599bc72d081660259f4c3967e2 inherit pub_methods_classautopas_1_1CellBasedParticleContainer"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classautopas_1_1ParticleContainerInterface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classautopas_1_1ParticleContainerInterface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface&lt; ParticleCell::ParticleType &gt;</a></td></tr>
 <tr class="memitem:aa0d021848386b655665099f6536d38f3 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8">CellType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#aa0d021848386b655665099f6536d38f3">getParticleCellTypeEnum</a> () const=0</td></tr>
 <tr class="memdesc:aa0d021848386b655665099f6536d38f3 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a> type as an Enum.  <br /></td></tr>
 <tr class="separator:aa0d021848386b655665099f6536d38f3 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a39724ab6b2de64346806d583d4551057 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top"><a id="a39724ab6b2de64346806d583d4551057" name="a39724ab6b2de64346806d583d4551057"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ParticleContainerInterface</b> ()=default</td></tr>
-<tr class="memdesc:a39724ab6b2de64346806d583d4551057 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default constructor. <br /></td></tr>
-<tr class="separator:a39724ab6b2de64346806d583d4551057 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a418d31e949c58e79c73597685f5f7932 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a418d31e949c58e79c73597685f5f7932">ParticleContainerInterface</a> (double skinPerTimestep)</td></tr>
+<tr class="memdesc:a418d31e949c58e79c73597685f5f7932 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="separator:a418d31e949c58e79c73597685f5f7932 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d8082e38c0d26fe92ae93779035b6d7 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a7d8082e38c0d26fe92ae93779035b6d7">ParticleContainerInterface</a> (const <a class="el" href="classautopas_1_1ParticleContainerInterface.html">ParticleContainerInterface</a> &amp;obj)=delete</td></tr>
 <tr class="memdesc:a7d8082e38c0d26fe92ae93779035b6d7 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the copy constructor to prevent unwanted copies.  <br /></td></tr>
 <tr class="separator:a7d8082e38c0d26fe92ae93779035b6d7 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -375,6 +374,12 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ParticleContainer
 <tr class="memitem:aff79b9a83a997b3c2fe9371557459a44 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#aff79b9a83a997b3c2fe9371557459a44">getVerletSkin</a> () const=0</td></tr>
 <tr class="memdesc:aff79b9a83a997b3c2fe9371557459a44 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the verletSkin of the container verletSkinPerTimestep*rebuildFrequency.  <br /></td></tr>
 <tr class="separator:aff79b9a83a997b3c2fe9371557459a44 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a776f714977d93a885ce91bdd60c4dbf4 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a776f714977d93a885ce91bdd60c4dbf4">getStepsSinceLastRebuild</a> () const</td></tr>
+<tr class="memdesc:a776f714977d93a885ce91bdd60c4dbf4 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of time-steps since last neighbor list rebuild.  <br /></td></tr>
+<tr class="separator:a776f714977d93a885ce91bdd60c4dbf4 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d5945bcf879e0a22d9a96db13b40403 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a0d5945bcf879e0a22d9a96db13b40403">setStepsSinceLastRebuild</a> (size_t stepsSinceLastRebuild)</td></tr>
+<tr class="memdesc:a0d5945bcf879e0a22d9a96db13b40403 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of time-steps since last neighbor list rebuild.  <br /></td></tr>
+<tr class="separator:a0d5945bcf879e0a22d9a96db13b40403 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2191ad8b6814478b7ccca24081468f99 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a2191ad8b6814478b7ccca24081468f99">getInteractionLength</a> () const=0</td></tr>
 <tr class="memdesc:a2191ad8b6814478b7ccca24081468f99 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the interaction length (cutoff+skin) of the container.  <br /></td></tr>
 <tr class="separator:a2191ad8b6814478b7ccca24081468f99 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -415,12 +420,20 @@ Additional Inherited Members</h2></td></tr>
 <tr class="memdesc:a92952e5972fb6b30154a30012795f1a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a particle to the container that lies in the halo region of the container.  <br /></td></tr>
 <tr class="separator:a92952e5972fb6b30154a30012795f1a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classautopas_1_1CellBasedParticleContainer"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classautopas_1_1CellBasedParticleContainer')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classautopas_1_1CellBasedParticleContainer.html">autopas::CellBasedParticleContainer&lt; FullParticleCell&lt; Particle &gt; &gt;</a></td></tr>
-<tr class="memitem:a41396716d06b3083c140f5260ab176cd inherit pro_attribs_classautopas_1_1CellBasedParticleContainer"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classautopas_1_1FullParticleCell.html">FullParticleCell</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a41396716d06b3083c140f5260ab176cd">_cells</a></td></tr>
+<tr class="memitem:a41396716d06b3083c140f5260ab176cd inherit pro_attribs_classautopas_1_1CellBasedParticleContainer"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classautopas_1_1FullParticleCell.html">FullParticleCell</a>&lt; <a class="el" href="commonTypedefs_8h.html#ac11d785d5f9402c62f88b5aec437494e">Particle</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a41396716d06b3083c140f5260ab176cd">_cells</a></td></tr>
 <tr class="memdesc:a41396716d06b3083c140f5260ab176cd inherit pro_attribs_classautopas_1_1CellBasedParticleContainer"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of particle cells.  <br /></td></tr>
 <tr class="separator:a41396716d06b3083c140f5260ab176cd inherit pro_attribs_classautopas_1_1CellBasedParticleContainer"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classautopas_1_1ParticleContainerInterface"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classautopas_1_1ParticleContainerInterface')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface&lt; ParticleCell::ParticleType &gt;</a></td></tr>
+<tr class="memitem:ad99e3729351970d811228d4f308fe7ed inherit pro_attribs_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#ad99e3729351970d811228d4f308fe7ed">_stepsSinceLastRebuild</a></td></tr>
+<tr class="memdesc:ad99e3729351970d811228d4f308fe7ed inherit pro_attribs_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the number of time-steps since last neighbor list rebuild.  <br /></td></tr>
+<tr class="separator:ad99e3729351970d811228d4f308fe7ed inherit pro_attribs_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4de3c46f496b5491c04026b9ef7b4a4c inherit pro_attribs_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top"><a id="a4de3c46f496b5491c04026b9ef7b4a4c" name="a4de3c46f496b5491c04026b9ef7b4a4c"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>_skinPerTimestep</b></td></tr>
+<tr class="memdesc:a4de3c46f496b5491c04026b9ef7b4a4c inherit pro_attribs_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skin distance a particle is allowed to move in one time-step. <br /></td></tr>
+<tr class="separator:a4de3c46f496b5491c04026b9ef7b4a4c inherit pro_attribs_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;class Particle&gt;<br />
 class autopas::DirectSum&lt; Particle &gt;</div><p>This class stores particles in a single cell. </p>
 <p>Interactions are calculated directly, such that each particle interacts with every other particle. Use this class only if you have a very small amount of particles at hand. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
@@ -435,13 +448,13 @@ class autopas::DirectSum&lt; Particle &gt;</div><p>This class stores particles i
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::DirectSum </td>
+          <td class="memname"><a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::DirectSum </td>
           <td>(</td>
           <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
           <td class="paramname"><em>boxMin</em>, </td>
@@ -504,13 +517,13 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::addHaloParticleImpl </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::addHaloParticleImpl </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classautopas_1_1DirectSum.html#a361468601e60c79efeda723d8c188f74">ParticleType</a> &amp;&#160;</td>
           <td class="paramname"><em>haloParticle</em></td><td>)</td>
@@ -543,13 +556,13 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::addParticleImpl </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::addParticleImpl </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classautopas_1_1DirectSum.html#a361468601e60c79efeda723d8c188f74">ParticleType</a> &amp;&#160;</td>
           <td class="paramname"><em>p</em></td><td>)</td>
@@ -582,13 +595,13 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; <a class="el" href="classautopas_1_1DirectSum.html#a361468601e60c79efeda723d8c188f74">ParticleType</a>, false, false &gt; <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::begin </td>
+          <td class="memname"><a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; <a class="el" href="classautopas_1_1DirectSum.html#a361468601e60c79efeda723d8c188f74">ParticleType</a>, false, false &gt; <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::begin </td>
           <td>(</td>
           <td class="paramtype">IteratorBehavior&#160;</td>
           <td class="paramname"><em>behavior</em> = <code>autopas::IteratorBehavior::ownedOrHalo</code>, </td>
@@ -634,13 +647,13 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; <a class="el" href="classautopas_1_1DirectSum.html#a361468601e60c79efeda723d8c188f74">ParticleType</a>, true, false &gt; <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::begin </td>
+          <td class="memname"><a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; <a class="el" href="classautopas_1_1DirectSum.html#a361468601e60c79efeda723d8c188f74">ParticleType</a>, true, false &gt; <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::begin </td>
           <td>(</td>
           <td class="paramtype">IteratorBehavior&#160;</td>
           <td class="paramname"><em>behavior</em> = <code>autopas::IteratorBehavior::ownedOrHalo</code>, </td>
@@ -685,13 +698,13 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::deleteHaloParticles </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::deleteHaloParticles </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -716,15 +729,15 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::deleteParticle </td>
+          <td class="memname">bool <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::deleteParticle </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &amp;&#160;</td>
+          <td class="paramtype">Particle &amp;&#160;</td>
           <td class="paramname"><em>particle</em></td><td>)</td>
           <td></td>
         </tr>
@@ -756,13 +769,13 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::deleteParticle </td>
+          <td class="memname">bool <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::deleteParticle </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>cellIndex</em>, </td>
@@ -806,7 +819,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <div class="memtemplate">
 template&lt;typename Lambda &gt; </div>
 <table class="mlabels">
@@ -814,7 +827,7 @@ template&lt;typename Lambda &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::forEach </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::forEach </td>
           <td>(</td>
           <td class="paramtype">Lambda&#160;</td>
           <td class="paramname"><em>forEachLambda</em>, </td>
@@ -862,7 +875,7 @@ template&lt;typename Lambda &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <div class="memtemplate">
 template&lt;typename Lambda &gt; </div>
 <table class="mlabels">
@@ -870,7 +883,7 @@ template&lt;typename Lambda &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::forEachInRegion </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::forEachInRegion </td>
           <td>(</td>
           <td class="paramtype">Lambda&#160;</td>
           <td class="paramname"><em>forEachLambda</em>, </td>
@@ -932,13 +945,13 @@ template&lt;typename Lambda &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ContainerOption <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getContainerType </td>
+          <td class="memname">ContainerOption <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::getContainerType </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -964,13 +977,13 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::tuple&lt; const <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> *, size_t, size_t &gt; <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getParticle </td>
+          <td class="memname">std::tuple&lt; const Particle *, size_t, size_t &gt; <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::getParticle </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>cellIndex</em>, </td>
@@ -1023,13 +1036,13 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::tuple&lt; const <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> *, size_t, size_t &gt; <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getParticle </td>
+          <td class="memname">std::tuple&lt; const Particle *, size_t, size_t &gt; <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::getParticle </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>cellIndex</em>, </td>
@@ -1101,13 +1114,13 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8">CellType</a> <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getParticleCellTypeEnum </td>
+          <td class="memname"><a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8">CellType</a> <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::getParticleCellTypeEnum </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1133,13 +1146,13 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; <a class="el" href="classautopas_1_1DirectSum.html#a361468601e60c79efeda723d8c188f74">ParticleType</a>, false, true &gt; <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getRegionIterator </td>
+          <td class="memname"><a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; <a class="el" href="classautopas_1_1DirectSum.html#a361468601e60c79efeda723d8c188f74">ParticleType</a>, false, true &gt; <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::getRegionIterator </td>
           <td>(</td>
           <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
           <td class="paramname"><em>lowerCorner</em>, </td>
@@ -1198,13 +1211,13 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; <a class="el" href="classautopas_1_1DirectSum.html#a361468601e60c79efeda723d8c188f74">ParticleType</a>, true, true &gt; <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getRegionIterator </td>
+          <td class="memname"><a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; <a class="el" href="classautopas_1_1DirectSum.html#a361468601e60c79efeda723d8c188f74">ParticleType</a>, true, true &gt; <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::getRegionIterator </td>
           <td>(</td>
           <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
           <td class="paramname"><em>lowerCorner</em>, </td>
@@ -1262,13 +1275,13 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1TraversalSelectorInfo.html">TraversalSelectorInfo</a> <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getTraversalSelectorInfo </td>
+          <td class="memname"><a class="el" href="classautopas_1_1TraversalSelectorInfo.html">TraversalSelectorInfo</a> <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::getTraversalSelectorInfo </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1294,13 +1307,13 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::iteratePairwise </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::iteratePairwise </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *&#160;</td>
           <td class="paramname"><em>traversal</em></td><td>)</td>
@@ -1332,13 +1345,13 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::rebuildNeighborLists </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::rebuildNeighborLists </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *&#160;</td>
           <td class="paramname"><em>traversal</em></td><td>)</td>
@@ -1370,7 +1383,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <div class="memtemplate">
 template&lt;typename Lambda , typename A &gt; </div>
 <table class="mlabels">
@@ -1378,7 +1391,7 @@ template&lt;typename Lambda , typename A &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::reduce </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::reduce </td>
           <td>(</td>
           <td class="paramtype">Lambda&#160;</td>
           <td class="paramname"><em>reduceLambda</em>, </td>
@@ -1436,7 +1449,7 @@ IteratorBehavior::ownedOrHalo   </dd></dl>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <div class="memtemplate">
 template&lt;typename Lambda , typename A &gt; </div>
 <table class="mlabels">
@@ -1444,7 +1457,7 @@ template&lt;typename Lambda , typename A &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::reduceInRegion </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::reduceInRegion </td>
           <td>(</td>
           <td class="paramtype">Lambda&#160;</td>
           <td class="paramname"><em>reduceLambda</em>, </td>
@@ -1514,13 +1527,13 @@ template&lt;typename Lambda , typename A &gt; </div>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::reserve </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::reserve </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>numParticles</em>, </td>
@@ -1564,13 +1577,13 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="classautopas_1_1DirectSum.html#a361468601e60c79efeda723d8c188f74">ParticleType</a> &gt; <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::updateContainer </td>
+          <td class="memname">std::vector&lt; <a class="el" href="classautopas_1_1DirectSum.html#a361468601e60c79efeda723d8c188f74">ParticleType</a> &gt; <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::updateContainer </td>
           <td>(</td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>keepNeighborListsValid</em></td><td>)</td>
@@ -1603,13 +1616,13 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::updateHaloParticle </td>
+          <td class="memname">bool <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::updateHaloParticle </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classautopas_1_1DirectSum.html#a361468601e60c79efeda723d8c188f74">ParticleType</a> &amp;&#160;</td>
           <td class="paramname"><em>haloParticle</em></td><td>)</td>
