@@ -247,15 +247,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>forceRetune</b> ()</t
 <tr class="memdesc:a5706dfa6e8e4f2405d0aaf84cbd5438f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all particles by using for(auto iter = autoPas.begin(); iter.isValid(); ++iter)    <br /></td></tr>
 <tr class="separator:a5706dfa6e8e4f2405d0aaf84cbd5438f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac889dfea8024a1b7fe69ffb8ca760c4e"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#ac889dfea8024a1b7fe69ffb8ca760c4e">end</a> () const</td></tr>
-<tr class="memdesc:ac889dfea8024a1b7fe69ffb8ca760c4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to enable range-based for loops for the <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> object.  <br /></td></tr>
+<tr class="memdesc:ac889dfea8024a1b7fe69ffb8ca760c4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dummy to make range-based for loops work.  <br /></td></tr>
 <tr class="separator:ac889dfea8024a1b7fe69ffb8ca760c4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a16b0b5843e5320d22810690f9f60228b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1AutoPas.html#a4d1d5cd72e8eda468c798857feb3a05d">RegionIteratorT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a16b0b5843e5320d22810690f9f60228b">getRegionIterator</a> (const std::array&lt; double, 3 &gt; &amp;lowerCorner, const std::array&lt; double, 3 &gt; &amp;higherCorner, IteratorBehavior behavior=IteratorBehavior::ownedOrHalo)</td></tr>
-<tr class="memdesc:a16b0b5843e5320d22810690f9f60228b"><td class="mdescLeft">&#160;</td><td class="mdescRight">iterate over all particles in a specified region for(auto iter = container.getRegionIterator(lowCorner,
-highCorner);iter.isValid();++iter)  <br /></td></tr>
+<tr class="memdesc:a16b0b5843e5320d22810690f9f60228b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all particles in a specified region.  <br /></td></tr>
 <tr class="separator:a16b0b5843e5320d22810690f9f60228b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a89d770a7dd1a7606369fbe4c0241b69d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1AutoPas.html#ad3ba1afff1495abef29c06dad5887bb5">RegionConstIteratorT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a89d770a7dd1a7606369fbe4c0241b69d">getRegionIterator</a> (const std::array&lt; double, 3 &gt; &amp;lowerCorner, const std::array&lt; double, 3 &gt; &amp;higherCorner, IteratorBehavior behavior=IteratorBehavior::ownedOrHalo) const</td></tr>
-<tr class="memdesc:a89d770a7dd1a7606369fbe4c0241b69d"><td class="mdescLeft">&#160;</td><td class="mdescRight">iterate over all particles in a specified region for(auto iter = container.getRegionIterator(lowCorner,
-highCorner);iter.isValid();++iter)    <br /></td></tr>
+<tr class="memdesc:a89d770a7dd1a7606369fbe4c0241b69d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all particles in a specified region.    <br /></td></tr>
 <tr class="separator:a89d770a7dd1a7606369fbe4c0241b69d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9e31d709cb991673caeda1ee893a120f"><td class="memTemplParams" colspan="2">template&lt;typename Lambda &gt; </td></tr>
 <tr class="memitem:a9e31d709cb991673caeda1ee893a120f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a9e31d709cb991673caeda1ee893a120f">forEachInRegionParallel</a> (Lambda forEachLambda, const std::array&lt; double, 3 &gt; &amp;lowerCorner, const std::array&lt; double, 3 &gt; &amp;higherCorner, IteratorBehavior behavior=IteratorBehavior::ownedOrHalo)</td></tr>
@@ -371,10 +369,10 @@ highCorner);iter.isValid();++iter)    <br /></td></tr>
 <tr class="memdesc:a9251b08e6f7fdd7c92d3c05332dd6987"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the range for the optimum in which has to be to be tested.  <br /></td></tr>
 <tr class="separator:a9251b08e6f7fdd7c92d3c05332dd6987"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a24aa51196d52c9270a0786bb0d12a294"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a24aa51196d52c9270a0786bb0d12a294">getMaxTuningPhasesWithoutTest</a> () const</td></tr>
-<tr class="memdesc:a24aa51196d52c9270a0786bb0d12a294"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the maximum number of tuning phases a configuration can not be tested.  <br /></td></tr>
+<tr class="memdesc:a24aa51196d52c9270a0786bb0d12a294"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the maximum number of tuning phases before a configuration is certainly tested again.  <br /></td></tr>
 <tr class="separator:a24aa51196d52c9270a0786bb0d12a294"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5332b5a2011cb0313377dbf26506301b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a5332b5a2011cb0313377dbf26506301b">setMaxTuningPhasesWithoutTest</a> (unsigned int maxTuningPhasesWithoutTest)</td></tr>
-<tr class="memdesc:a5332b5a2011cb0313377dbf26506301b"><td class="mdescLeft">&#160;</td><td class="mdescRight">For Predictive tuning: Set the relative cutoff for configurations to be blacklisted.  <br /></td></tr>
+<tr class="memdesc:a5332b5a2011cb0313377dbf26506301b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the maximum number of tuning phases before a configuration is certainly tested again.  <br /></td></tr>
 <tr class="separator:a5332b5a2011cb0313377dbf26506301b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c93b03f0c054d40d0160dbcde17dbec"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a8c93b03f0c054d40d0160dbcde17dbec">getRelativeBlacklistRange</a> () const</td></tr>
 <tr class="memdesc:a8c93b03f0c054d40d0160dbcde17dbec"><td class="mdescLeft">&#160;</td><td class="mdescRight">For Predictive tuning: Get the relative cutoff for configurations to be blacklisted.  <br /></td></tr>
@@ -626,7 +624,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>An exception is thrown if the halo particle is added and it is inside of the owned domain (defined by boxmin and boxmax) of the container. </dd>
+<dl class="section note"><dt>Note</dt><dd>An exception is thrown if the halo particle is added and it is inside of the owned domain (defined by boxMin and boxMax) of the container. </dd>
 <dd>
 This function is NOT thread-safe if the container is <a class="el" href="classautopas_1_1Octree.html" title="The octree is a CellBasedParticleContainer that consists internally of two octrees.">Octree</a>. </dd></dl>
 
@@ -747,7 +745,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
   </table>
   </dd>
 </dl>
-<dl class="section note"><dt>Note</dt><dd>An exception is thrown if the particle is added and it is not inside of the owned domain (defined by boxmin and boxmax) of the container. </dd>
+<dl class="section note"><dt>Note</dt><dd>An exception is thrown if the particle is added and it is not inside of the owned domain (defined by boxMin and boxMax) of the container. </dd>
 <dd>
 This function is NOT thread-safe if the container is <a class="el" href="classautopas_1_1Octree.html" title="The octree is a CellBasedParticleContainer that consists internally of two octrees.">Octree</a>. </dd></dl>
 
@@ -1074,8 +1072,9 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </table>
 </div><div class="memdoc">
 
-<p>Helper to enable range-based for loops for the <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> object. </p>
-<p>ParticleIterator::operator==() compares its own validity state against this value. Hence, as soon as the iterator is invalid the loop ends. </p><dl class="section return"><dt>Returns</dt><dd>false </dd></dl>
+<p>Dummy to make range-based for loops work. </p>
+<p>Range-Based for loops use the incremented <a class="el" href="classautopas_1_1AutoPas.html#ae94d20910871cf765fe55e765cb0387b" title="Iterate over all particles by using for(auto iter = autoPas.begin(); iter.isValid(); ++iter)">begin()</a> expression and compare it against the <a class="el" href="classautopas_1_1AutoPas.html#ac889dfea8024a1b7fe69ffb8ca760c4e" title="Dummy to make range-based for loops work.">end()</a> expression. <a class="el" href="classautopas_1_1ContainerIterator.html" title="Public iterator class that iterates over a particle container and additional vectors (which are typic...">ContainerIterator</a> implements <a class="el" href="classautopas_1_1ContainerIterator.html#a9b7c5ca3a325e9fd8cd88a0773dcfdc3" title="Checks if the current iterator has a given validity.">ContainerIterator::operator==()</a> that accepts a bool as right hand side argument, which is triggered by this <a class="el" href="classautopas_1_1AutoPas.html#ac889dfea8024a1b7fe69ffb8ca760c4e" title="Dummy to make range-based for loops work.">end()</a> function. This operator then proceeds to check the validity of the iterator itself.</p>
+<dl class="section return"><dt>Returns</dt><dd>false </dd></dl>
 
 </div>
 </div>
@@ -2081,7 +2080,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </table>
 </div><div class="memdoc">
 
-<p>Get the maximum number of tuning phases a configuration can not be tested. </p>
+<p>Get the maximum number of tuning phases before a configuration is certainly tested again. </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
@@ -2179,9 +2178,9 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
       </table>
 </div><div class="memdoc">
 
-<p>iterate over all particles in a specified region for(auto iter = container.getRegionIterator(lowCorner,
-highCorner);iter.isValid();++iter) </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Iterate over all particles in a specified region. </p>
+<div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span> iter = container.getRegionIterator(lowCorner, highCorner); iter.isValid(); ++iter) { }</div>
+</div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lowerCorner</td><td>lower corner of the region </td></tr>
     <tr><td class="paramname">higherCorner</td><td>higher corner of the region </td></tr>
@@ -2227,9 +2226,9 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
       </table>
 </div><div class="memdoc">
 
-<p>iterate over all particles in a specified region for(auto iter = container.getRegionIterator(lowCorner,
-highCorner);iter.isValid();++iter)   </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Iterate over all particles in a specified region.   </p>
+<div class="fragment"><div class="line"><span class="keywordflow">for</span> (<span class="keyword">auto</span> iter = container.getRegionIterator(lowCorner, highCorner); iter.isValid(); ++iter) { }</div>
+</div><!-- fragment --> <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">lowerCorner</td><td>lower corner of the region </td></tr>
     <tr><td class="paramname">higherCorner</td><td>higher corner of the region </td></tr>
@@ -3303,7 +3302,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <p>This function assumes a uniform distribution of particles throughout the domain. For example, this means that in a <a class="el" href="classautopas_1_1LinkedCells.html" title="LinkedCells class.">LinkedCells</a> Container in each cell vector.reserve(numParticles/numCells) is called. </p><dl class="section note"><dt>Note</dt><dd>This functions will create an estimate for the number of halo particles. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">numParticles</td><td>No buffer factor is applied. It is probably wise to slighly over-reserve to account for imbalance or particle movement. </td></tr>
+    <tr><td class="paramname">numParticles</td><td>No buffer factor is applied. It is probably wise to slightly over-reserve to account for imbalance or particle movement. </td></tr>
   </table>
   </dd>
 </dl>
@@ -3939,8 +3938,8 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </table>
 </div><div class="memdoc">
 
-<p>For Predictive tuning: Set the relative cutoff for configurations to be blacklisted. </p>
-<p>E.g. 2.5 means all configurations that take 2.5x the time of the optimum are blacklisted. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Set the maximum number of tuning phases before a configuration is certainly tested again. </p>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">maxTuningPhasesWithoutTest</td><td></td></tr>
   </table>
@@ -4266,7 +4265,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <p>Set the sorting-threshold for traversals that use the CellFunctor If the sum of the number of particles in two cells is greater or equal to that value, the CellFunctor creates a sorted view of the particles to avoid unnecessary distance checks. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">sortingThreshold</td><td>Sum of the number of particles in two cells from which sorting should be enabled </td></tr>
+    <tr><td class="paramname">sortingThreshold</td><td>Sum of the number of particles in two cells from which sorting should be enabled. </td></tr>
   </table>
   </dd>
 </dl>

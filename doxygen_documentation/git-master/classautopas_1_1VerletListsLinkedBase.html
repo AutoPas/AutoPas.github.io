@@ -344,7 +344,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ParticleContainer
 <tr class="memdesc:ad205a0ca53c65e2a5fdfca929d424bf3 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all particles in a specified region for(auto iter = container.getRegionIterator(lowCorner, highCorner);iter.isValid();++iter) .    <br /></td></tr>
 <tr class="separator:ad205a0ca53c65e2a5fdfca929d424bf3 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a791c5f88b0a78b5d9fb5e993dd949def inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a791c5f88b0a78b5d9fb5e993dd949def">end</a> () const</td></tr>
-<tr class="memdesc:a791c5f88b0a78b5d9fb5e993dd949def inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">End expression for all containers, this simply returns false.  <br /></td></tr>
+<tr class="memdesc:a791c5f88b0a78b5d9fb5e993dd949def inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dummy to make range-based for loops work.    <br /></td></tr>
 <tr class="separator:a791c5f88b0a78b5d9fb5e993dd949def inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9a28b26596e40f2c517edb57ba5383d inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#ac9a28b26596e40f2c517edb57ba5383d">iteratePairwise</a> (<a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *traversal)=0</td></tr>
 <tr class="memdesc:ac9a28b26596e40f2c517edb57ba5383d inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates over all particle pairs in the container.  <br /></td></tr>
@@ -1817,7 +1817,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <p>This function assumes a uniform distribution of particles throughout the domain. For example, this means that in a <a class="el" href="classautopas_1_1LinkedCells.html" title="LinkedCells class.">LinkedCells</a> Container in each cell vector.reserve(numParticles/numCells) is called. </p><dl class="section note"><dt>Note</dt><dd>This functions will create an estimate for the number of halo particles. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">numParticles</td><td>No buffer factor is applied. It is probably wise to slighly over-reserve to account for imbalance or particle movement.   </td></tr>
+    <tr><td class="paramname">numParticles</td><td>No buffer factor is applied. It is probably wise to slightly over-reserve to account for imbalance or particle movement.   </td></tr>
     <tr><td class="paramname">numParticlesHaloEstimate</td><td>Estimate for the number of halo particles. Reserves space in the container data structure. </td></tr>
   </table>
   </dd>

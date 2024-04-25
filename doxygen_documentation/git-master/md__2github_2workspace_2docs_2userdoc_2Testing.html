@@ -104,30 +104,64 @@ $(function() {
   <div class="headertitle"><div class="title">Testing </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md39"></a> AutoPas uses <a href="https://github.com/google/googletest">googletest</a> as testing framework and exposes tests to ctest, the CMake test driver.</p>
-<h1><a class="anchor" id="autotoc_md40"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md62"></a> AutoPas uses <a href="https://github.com/google/googletest">googletest</a> as its testing framework, which exposes tests to <a href="https://cmake.org/cmake/help/latest/manual/ctest.1.html"><code>ctest</code></a>, the CMake test driver.</p>
+<p>We do not distinguish between unit/integration/smoke/etc. in the tests directory <code>/tests/</code>. However, our tests, in general, fall into a few categories:</p><ul>
+<li><p class="startli">Regular GTests</p>
+<p class="startli">Everything in <a href="https://github.com/AutoPas/AutoPas/blob/master/tests/testAutopas/"><code>/tests/testAutopas/</code></a></p>
+</li>
+<li><p class="startli">GTests with MPI</p>
+<p class="startli">Everything in <a href="https://github.com/AutoPas/AutoPas/blob/master/tests/MPIParallelAutoPasTests/"><code>/tests/MPIParallelAutoPasTests/</code></a></p>
+</li>
+<li><p class="startli">Test involving examples</p>
+<p class="startli">Declared in the examples' CMakeLists files. <a href="https://github.com/AutoPas/AutoPas/blob/master/examples/md-flexible/CMakeLists.txt">E.g. md-flexible</a>.</p>
+</li>
+<li>GTests for examples This only exists for md-flexible in <code>examples/md-flexible/tests</code>. See md-flexible's <a href="https://github.com/AutoPas/AutoPas/blob/master/examples/md-flexible/README.md">README</a> for more information.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md63"></a>
 Running Tests</h1>
-<p>There are multiple possibilities. In order of recommendation:</p>
+<p>There are multiple possibilities to run tests from the <code>/tests/</code> directory. In order of recommendation:</p>
 <ol type="1">
-<li>Using <code>ctest</code>: <div class="fragment"><div class="line">ctest # add --verbose for more details on the tests</div>
-</div><!-- fragment --> To only run specific tests use arguments like <code>-R</code> (run tests matching regex) and <code>-E</code> (exclude tests matching regex) <div class="fragment"><div class="line">ctest -R &#39;Array.*testAdd&#39; -E &#39;Double&#39;</div>
+<li>Using <code>ctest</code>: <div class="fragment"><div class="line">ctest # add --verbose or --output-on-failure for more details on the tests and -j N to run N tests in parallel </div>
+</div><!-- fragment --> To only run specific tests, use arguments like <code>-R</code> (run tests matching regex) and <code>-E</code> (exclude tests matching regex) <div class="fragment"><div class="line">ctest -R &#39;Array.*testAdd&#39; -E &#39;Double&#39;</div>
 </div><!-- fragment --></li>
 <li>Using the <code>make</code> target: <div class="fragment"><div class="line">make test</div>
 </div><!-- fragment --></li>
 <li>Directly launching the test executable: <div class="fragment"><div class="line">tests/testAutopas/runTests</div>
-</div><!-- fragment --> To only run specific tests use arguments <div class="fragment"><div class="line">tests/testAutopas/runTests --gtest_filter=ArrayMathTest.testAdd*</div>
+</div><!-- fragment --> To only run specific tests, use arguments <div class="fragment"><div class="line">tests/testAutopas/runTests --gtest_filter=ArrayMathTest.testAdd*</div>
 </div><!-- fragment --></li>
 </ol>
-<h1><a class="anchor" id="autotoc_md41"></a>
+<h2><a class="anchor" id="autotoc_md64"></a>
+Running Example Tests</h2>
+<p>To enable the example simulations, run </p><div class="fragment"><div class="line">ctest -C checkExamples</div>
+</div><!-- fragment --><p> Example tests defined in <code>CMake</code> files are disabled by default. If you only want to run only those specific to one example, in your build directory, decent into its directory and run the command from above there.</p>
+<h1><a class="anchor" id="autotoc_md65"></a>
 Debugging Tests</h1>
 <p>Many IDEs (e.g., CLion) have integrated support for googletest, and you can debug the tests directly within the IDE.</p>
-<p>If you prefer <code>gdb</code>:</p><ol type="1">
-<li>Find out the command to start your desired test with <code>-N</code> aka. <code>--show-only</code>: <div class="fragment"><div class="line">ctest -R &#39;Array.*testAdd&#39; -N</div>
+<p>If you prefer <code>gdb</code> from the command line:</p><ol type="1">
+<li>Find the command to start your desired test with <code>-N</code> (aka. <code>--show-only</code>) plus <code>-V</code> (aka. <code>--verbose</code>): <div class="fragment"><div class="line">ctest -R &#39;Array.*testAdd&#39; -N -V</div>
 </div><!-- fragment --></li>
 <li>Start the test with <code>gdb</code> <div class="fragment"><div class="line">gdb --args ${TestCommand}</div>
 </div><!-- fragment --></li>
 </ol>
-<h1><a class="anchor" id="autotoc_md42"></a>
+<h2><a class="anchor" id="autotoc_md66"></a>
+MPI tests</h2>
+<p>MPI parallel applications like md-flexible can be a bit tricky to debug, so make sure you debug without MPI whenever you can. If you have to debug MPI code, the trick is to attach one <code>gdb</code> per rank and use as few ranks as needed. Remember to also limit the number of OpenMP threads to not overload your system.</p>
+<div class="fragment"><div class="line"># Maximum number of threads for an eight-core processor</div>
+<div class="line">OMP_NUM_THREADS=2 mpirun -n 4 -xterm -1! gdb --args examples/md-flexible/md-flexible</div>
+</div><!-- fragment --><p> Explanation:</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadCenter">Command Snippet   </th><th class="markdownTableHeadNone">Description    </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><code>OMP_NUM_THREADS=2</code>   </td><td class="markdownTableBodyNone">Shell environment variable to lock OpenMP to threads per rank (=process).    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"><code>mpirun -n 4</code>   </td><td class="markdownTableBodyNone">Four ranks will be started.    </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyCenter"><code>-xterm -1!</code>   </td><td class="markdownTableBodyNone">Open an <code>xTerm</code> console window for ranks. <code>-1</code> indicates that it should be done for all ranks, no matter the count, <code>!</code> ensures the windows do not immediately close when the program stops or crashes so that you can read the output.    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyCenter"><code>gdb --args</code>   </td><td class="markdownTableBodyNone">Launches the debugger. Everything that follows is treated as arguments to <code>gdb</code>.   </td></tr>
+</table>
+<h1><a class="anchor" id="autotoc_md67"></a>
 Related Files and Folders</h1>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

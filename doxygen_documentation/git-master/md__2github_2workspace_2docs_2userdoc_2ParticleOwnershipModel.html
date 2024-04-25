@@ -104,18 +104,36 @@ $(function() {
   <div class="headertitle"><div class="title">Particle Ownership Model </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md35"></a> Particles saved in an AutoPas container can be in one of the following states:</p><ul>
-<li><b>owned</b>: Particles that belong to this AutoPas instance. These particles are typically inside the boundary of the AutoPas instance. If a particle is added via <code>addParticle()</code>, it is automatically added as an owned particle. An owned particle can explicitly be removed by deleting the particle using an iterator (<code>autoPas.deleteParticle(iterator)</code>). On an update of the AutoPas container (using <code>updateContainer()</code>) owned particles that moved outside the boundary of its parent AutoPas container are returned.</li>
-<li><b>halo</b>: Particles that do not belong to the current AutoPas instance. These normally are ghost particles arising from either periodic boundary conditions or particles of a neighboring AutoPas object (if you split the entire domain over multiple AutoPas objects, i.e., you use a domain decomposition algorithm). The halo particles are needed for the correct calculation of the pairwise forces. On update of the AutoPas container, halo particles are deleted (see [Simulation Loop](TODO).</li>
-<li><b>dummy</b>: Particles that are deleted or that act as filler for certain algorithms. These particles do not affect the force calculation.</li>
+<div class="textblock"><p><a class="anchor" id="autotoc_md48"></a> In the spirit of the <a href="https://github.com/AutoPas/AutoPas/blob/master/docs/userdoc/ContainerInterfaceModel.md">container interface model</a> AutoPas needs a way to distinguish owned and halo particles. It uses a flagging mechanism, because, depending on the currently used container, they might be mixed in the same data structure.</p>
+<h1><a class="anchor" id="autotoc_md49"></a>
+Types</h1>
+<p>Particles in AutoPas have the property <code>ParticleBase::_ownershipState</code>, which indicates one of three possible states:</p>
+<ul>
+<li><p class="startli"><b>owned</b>: Particles that belong to this AutoPas instance.</p>
+<p class="startli">These are the particles one intuitively expects in the simulation. They are located inside the boundary of the AutoPas instance. On any update of the AutoPas container using <code>updateContainer()</code>, owned particles that moved outside the boundary of its parent AutoPas container are turned to <code>dummy</code> and returned.</p>
+</li>
+<li><p class="startli"><b>halo</b>: Particles not belonging to the current AutoPas instance.</p>
+<p class="startli">These halo particles are needed for the correct calculation of the pairwise forces. They usually are ghost particles from periodic boundary conditions, or MPI neighbor ranks. On update of the AutoPas container, all halo particles are turned to dummy or deleted (see <a href="https://github.com/AutoPas/AutoPas/blob/master/docs/userdoc/SimulationLoop.md">Simulation Loop</a>), depending on the underlying data structure.</p>
+</li>
+<li><p class="startli"><b>dummy</b>: Particles that are deleted or that act as filler for specific algorithms.</p>
+<p class="startli">These particles do not affect the interaction calculation and are removed from the data container when <code>updateContainer()</code> is called, and the data structure is really updated.</p>
+</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md36"></a>
+<h1><a class="anchor" id="autotoc_md50"></a>
+Enforcement</h1>
+<ul>
+<li>The ownership state is enforced according to the called function when inserting particles via <code>addParticle()</code> or <code>addHaloParticle()</code>.</li>
+<li>Due to its close relation to <code>IteratorBehavior</code>, static checks are in place to ensure that the binary values for <code>owned</code> and <code>halo</code> match. As explained in the respective classes, this is not easily possible for <code>dummy</code>.</li>
+<li>Never change the ownership state of a particle if you do not know precisely what you are doing. Especially deletion should always be done through methods of the main interface to avoid confusing internal counters.</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md51"></a>
 Related Files and Folders</h1>
 <ul>
+<li><a class="el" href="IteratorBehavior_8h.html">IteratorBehavior.h</a></li>
 <li><a class="el" href="LogicHandler_8h.html">LogicHandler.h</a></li>
+<li><a class="el" href="markParticleAsDeleted_8h.html">markParticleAsDeleted.h</a></li>
 <li><a class="el" href="OwnershipState_8h.html">OwnershipState.h</a></li>
-<li><a class="el" href="ParticleBase_8h.html">ParticleBase.h</a></li>
-<li><a class="el" href="markParticleAsDeleted_8h.html">markParticleAsDeleted.h</a> </li>
+<li><a class="el" href="ParticleBase_8h.html">ParticleBase.h</a> </li>
 </ul>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
