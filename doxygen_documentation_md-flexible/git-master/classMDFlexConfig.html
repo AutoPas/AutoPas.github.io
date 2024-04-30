@@ -867,7 +867,7 @@ static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>value
 </div><div class="memdoc">
 
 <p>Loads the particles from the checkpoint file defined in the configuration file. </p>
-<p>If the checkpoint has been recorded using multiple processes, the rank of the current process needs to be passed. The provided rank also needs to respect the domain decomposition. E. g. if the a regular grid decomposition is used, * don't pass the MPI_COMM_WORLD rank, as it might differ from the grid rank derived in the decomposition scheme. The wrong rank might result in a very bad network topology and therefore increase communication cost. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If the checkpoint has been recorded using multiple processes, the rank of the current process needs to be passed. The provided rank also needs to respect the domain decomposition. E. g. if the regular grid decomposition is used, don't pass the MPI_COMM_WORLD rank, as it might differ from the grid rank derived in the decomposition scheme. The wrong rank might result in a very bad network topology and therefore increase communication costs. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rank</td><td>The MPI rank of the current process. </td></tr>
     <tr><td class="paramname">communicatorSize</td><td>The size of the MPI communicator used for the simulation. </td></tr>
