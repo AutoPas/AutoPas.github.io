@@ -147,10 +147,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ad32706623a5717a5564d01b4694cbcb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass live info on to all tuning strategies.  <br /></td></tr>
 <tr class="separator:ad32706623a5717a5564d01b4694cbcb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acd71cda0cc2c6f07b2108aaca118f609"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#acd71cda0cc2c6f07b2108aaca118f609">needsHomogeneityAndMaxDensityBeforePrepare</a> () const</td></tr>
-<tr class="memdesc:acd71cda0cc2c6f07b2108aaca118f609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicator whether tuner needs homogeneity and max density information before the next call to <a class="el" href="classautopas_1_1AutoTuner.html#ae50e16a3864ee82c7e6b9525aa43a16b" title="Determines what live infos are needed and resets the strategy upon the start of a new tuning phase.">prepareIteration()</a>.  <br /></td></tr>
+<tr class="memdesc:acd71cda0cc2c6f07b2108aaca118f609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicator whether tuner needs homogeneity and max density information before the next call to <a class="el" href="classautopas_1_1AutoTuner.html#ae50e16a3864ee82c7e6b9525aa43a16b" title="Determines what live infos are needed and passes collected live info to the tuning strategies.">prepareIteration()</a>.  <br /></td></tr>
 <tr class="separator:acd71cda0cc2c6f07b2108aaca118f609"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae50e16a3864ee82c7e6b9525aa43a16b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#ae50e16a3864ee82c7e6b9525aa43a16b">prepareIteration</a> ()</td></tr>
-<tr class="memdesc:ae50e16a3864ee82c7e6b9525aa43a16b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines what live infos are needed and resets the strategy upon the start of a new tuning phase.  <br /></td></tr>
+<tr class="memdesc:ae50e16a3864ee82c7e6b9525aa43a16b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines what live infos are needed and passes collected live info to the tuning strategies.  <br /></td></tr>
 <tr class="separator:ae50e16a3864ee82c7e6b9525aa43a16b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43cf92b0c523b38f782b681f91dde5a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a43cf92b0c523b38f782b681f91dde5a1">bumpIterationCounters</a> ()</td></tr>
 <tr class="memdesc:a43cf92b0c523b38f782b681f91dde5a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increase internal iteration counters by one.  <br /></td></tr>
@@ -612,7 +612,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Indicator whether tuner needs homogeneity and max density information before the next call to <a class="el" href="classautopas_1_1AutoTuner.html#ae50e16a3864ee82c7e6b9525aa43a16b" title="Determines what live infos are needed and resets the strategy upon the start of a new tuning phase.">prepareIteration()</a>. </p>
+<p>Indicator whether tuner needs homogeneity and max density information before the next call to <a class="el" href="classautopas_1_1AutoTuner.html#ae50e16a3864ee82c7e6b9525aa43a16b" title="Determines what live infos are needed and passes collected live info to the tuning strategies.">prepareIteration()</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
@@ -667,7 +667,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Determines what live infos are needed and resets the strategy upon the start of a new tuning phase. </p>
+<p>Determines what live infos are needed and passes collected live info to the tuning strategies. </p>
 <dl class="section note"><dt>Note</dt><dd>The live info is not gathered here because then we would need the container.</dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>Bool indicating if live Infos are needed before the next call to tune </dd></dl>
 

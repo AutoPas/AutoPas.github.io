@@ -195,7 +195,7 @@ Static Public Member Functions</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
 <tr class="memitem:a2309c8e585f3bf9bb1908a1a2453f3c7"><td class="memItemLeft" align="right" valign="top">std::ostream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1Option.html#a2309c8e585f3bf9bb1908a1a2453f3c7">operator&lt;&lt;</a> (std::ostream &amp;os, const <a class="el" href="classautopas_1_1options_1_1Option.html">Option</a> &amp;option)</td></tr>
-<tr class="memdesc:a2309c8e585f3bf9bb1908a1a2453f3c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream operator.  <br /></td></tr>
+<tr class="memdesc:a2309c8e585f3bf9bb1908a1a2453f3c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream output operator.  <br /></td></tr>
 <tr class="separator:a2309c8e585f3bf9bb1908a1a2453f3c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec3f5afc7b56283d04c00f85dfbe1018"><td class="memItemLeft" align="right" valign="top">std::istream &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1Option.html#aec3f5afc7b56283d04c00f85dfbe1018">operator&gt;&gt;</a> (std::istream &amp;in, actualOption &amp;option)</td></tr>
 <tr class="memdesc:aec3f5afc7b56283d04c00f85dfbe1018"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stream extraction operator.  <br /></td></tr>
@@ -501,7 +501,7 @@ template&lt;typename actualOption &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Stream operator. </p>
+<p>Stream output operator. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">os</td><td></td></tr>
@@ -552,12 +552,12 @@ template&lt;typename actualOption &gt; </div>
 <p>Stream extraction operator. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">in</td><td></td></tr>
-    <tr><td class="paramname">option</td><td></td></tr>
+    <tr><td class="paramname">in</td><td>Stream from which will be parsed. </td></tr>
+    <tr><td class="paramname">option</td><td>out-parameter that will be filled with the parsed option. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Processed stream. </dd></dl>
 
 </div>
 </div>

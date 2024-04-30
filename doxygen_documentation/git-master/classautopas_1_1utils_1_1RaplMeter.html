@@ -112,7 +112,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Measures the energy consumption between calls of <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#aa16c3dad7c6e0d52edb44b73cc43ebce" title="reset perf file descriptors to start new measurement">reset()</a> and <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ab4ba4a3e533405bcd386451a01e144dc" title="measure power consumption since last call to reset the results can be retrieved with the get_&lt;domain&gt;...">sample()</a> using perf events.  
+<p>Measures the energy consumption between calls of <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#aa16c3dad7c6e0d52edb44b73cc43ebce" title="Reset perf file descriptors to start new measurement.">reset()</a> and <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ab4ba4a3e533405bcd386451a01e144dc" title="Measure power consumption since last call to reset the results can be retrieved with the get_&lt;domain&gt;...">sample()</a> using perf events.  
  <a href="classautopas_1_1utils_1_1RaplMeter.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="RaplMeter_8h_source.html">RaplMeter.h</a>&gt;</code></p>
@@ -120,34 +120,34 @@ $(function() {
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1cb5e76bb2eed7199d196a83226cbc21"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#a1cb5e76bb2eed7199d196a83226cbc21">init</a> ()</td></tr>
-<tr class="memdesc:a1cb5e76bb2eed7199d196a83226cbc21"><td class="mdescLeft">&#160;</td><td class="mdescRight">initialisation may fail, so moved out of constructor Note: This functios returns an error message instead of throwing an exception if initialization is not possible.  <br /></td></tr>
+<tr class="memdesc:a1cb5e76bb2eed7199d196a83226cbc21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization may fail, so moved out of constructor.  <br /></td></tr>
 <tr class="separator:a1cb5e76bb2eed7199d196a83226cbc21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa16c3dad7c6e0d52edb44b73cc43ebce"><td class="memItemLeft" align="right" valign="top"><a id="aa16c3dad7c6e0d52edb44b73cc43ebce" name="aa16c3dad7c6e0d52edb44b73cc43ebce"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> ()</td></tr>
-<tr class="memdesc:aa16c3dad7c6e0d52edb44b73cc43ebce"><td class="mdescLeft">&#160;</td><td class="mdescRight">reset perf file descriptors to start new measurement <br /></td></tr>
+<tr class="memdesc:aa16c3dad7c6e0d52edb44b73cc43ebce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset perf file descriptors to start new measurement. <br /></td></tr>
 <tr class="separator:aa16c3dad7c6e0d52edb44b73cc43ebce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4ba4a3e533405bcd386451a01e144dc"><td class="memItemLeft" align="right" valign="top"><a id="ab4ba4a3e533405bcd386451a01e144dc" name="ab4ba4a3e533405bcd386451a01e144dc"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>sample</b> ()</td></tr>
-<tr class="memdesc:ab4ba4a3e533405bcd386451a01e144dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">measure power consumption since last call to reset the results can be retrieved with the get_&lt;domain&gt;_energy() functions. <br /></td></tr>
+<tr class="memdesc:ab4ba4a3e533405bcd386451a01e144dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Measure power consumption since last call to reset the results can be retrieved with the get_&lt;domain&gt;_energy() functions. <br /></td></tr>
 <tr class="separator:ab4ba4a3e533405bcd386451a01e144dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25bde6a4ecf9b2f8e94104c838de52c9"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#a25bde6a4ecf9b2f8e94104c838de52c9">get_pkg_energy</a> ()</td></tr>
-<tr class="memdesc:a25bde6a4ecf9b2f8e94104c838de52c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the energy consumed by the cpu package between the last call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ab4ba4a3e533405bcd386451a01e144dc" title="measure power consumption since last call to reset the results can be retrieved with the get_&lt;domain&gt;...">sample()</a> and the preceding call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#aa16c3dad7c6e0d52edb44b73cc43ebce" title="reset perf file descriptors to start new measurement">reset()</a>  <br /></td></tr>
+<tr class="memdesc:a25bde6a4ecf9b2f8e94104c838de52c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the energy consumed by the cpu package between the last call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ab4ba4a3e533405bcd386451a01e144dc" title="Measure power consumption since last call to reset the results can be retrieved with the get_&lt;domain&gt;...">sample()</a> and the preceding call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#aa16c3dad7c6e0d52edb44b73cc43ebce" title="Reset perf file descriptors to start new measurement.">reset()</a>.  <br /></td></tr>
 <tr class="separator:a25bde6a4ecf9b2f8e94104c838de52c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed527d3ab9359ced1515dbb690bae957"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#aed527d3ab9359ced1515dbb690bae957">get_cores_energy</a> ()</td></tr>
-<tr class="memdesc:aed527d3ab9359ced1515dbb690bae957"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the energy consumed by the cpu cores between the last call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ab4ba4a3e533405bcd386451a01e144dc" title="measure power consumption since last call to reset the results can be retrieved with the get_&lt;domain&gt;...">sample()</a> and the preceding call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#aa16c3dad7c6e0d52edb44b73cc43ebce" title="reset perf file descriptors to start new measurement">reset()</a>  <br /></td></tr>
+<tr class="memdesc:aed527d3ab9359ced1515dbb690bae957"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the energy consumed by the cpu cores between the last call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ab4ba4a3e533405bcd386451a01e144dc" title="Measure power consumption since last call to reset the results can be retrieved with the get_&lt;domain&gt;...">sample()</a> and the preceding call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#aa16c3dad7c6e0d52edb44b73cc43ebce" title="Reset perf file descriptors to start new measurement.">reset()</a>.  <br /></td></tr>
 <tr class="separator:aed527d3ab9359ced1515dbb690bae957"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac053601b9c78b01686d56360fadad498"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ac053601b9c78b01686d56360fadad498">get_ram_energy</a> ()</td></tr>
-<tr class="memdesc:ac053601b9c78b01686d56360fadad498"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the energy consumed by ram between the last call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ab4ba4a3e533405bcd386451a01e144dc" title="measure power consumption since last call to reset the results can be retrieved with the get_&lt;domain&gt;...">sample()</a> and the preceding call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#aa16c3dad7c6e0d52edb44b73cc43ebce" title="reset perf file descriptors to start new measurement">reset()</a>  <br /></td></tr>
+<tr class="memdesc:ac053601b9c78b01686d56360fadad498"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the energy consumed by ram between the last call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ab4ba4a3e533405bcd386451a01e144dc" title="Measure power consumption since last call to reset the results can be retrieved with the get_&lt;domain&gt;...">sample()</a> and the preceding call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#aa16c3dad7c6e0d52edb44b73cc43ebce" title="Reset perf file descriptors to start new measurement.">reset()</a>.  <br /></td></tr>
 <tr class="separator:ac053601b9c78b01686d56360fadad498"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6a6e0f76ce1e24838cc84df7af0a511b"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#a6a6e0f76ce1e24838cc84df7af0a511b">get_psys_energy</a> ()</td></tr>
-<tr class="memdesc:a6a6e0f76ce1e24838cc84df7af0a511b"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the energy consumed by the entire system between the last call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ab4ba4a3e533405bcd386451a01e144dc" title="measure power consumption since last call to reset the results can be retrieved with the get_&lt;domain&gt;...">sample()</a> and the preceding call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#aa16c3dad7c6e0d52edb44b73cc43ebce" title="reset perf file descriptors to start new measurement">reset()</a>  <br /></td></tr>
+<tr class="memdesc:a6a6e0f76ce1e24838cc84df7af0a511b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the energy consumed by the entire system between the last call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ab4ba4a3e533405bcd386451a01e144dc" title="Measure power consumption since last call to reset the results can be retrieved with the get_&lt;domain&gt;...">sample()</a> and the preceding call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#aa16c3dad7c6e0d52edb44b73cc43ebce" title="Reset perf file descriptors to start new measurement.">reset()</a>.  <br /></td></tr>
 <tr class="separator:a6a6e0f76ce1e24838cc84df7af0a511b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab4ee2e701001edaaa61f35d569e49f46"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ab4ee2e701001edaaa61f35d569e49f46">get_total_energy</a> ()</td></tr>
-<tr class="memdesc:ab4ee2e701001edaaa61f35d569e49f46"><td class="mdescLeft">&#160;</td><td class="mdescRight">return energy measurement for tuning purposes.  <br /></td></tr>
+<tr class="memdesc:ab4ee2e701001edaaa61f35d569e49f46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return energy measurement for tuning purposes.  <br /></td></tr>
 <tr class="separator:ab4ee2e701001edaaa61f35d569e49f46"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Measures the energy consumption between calls of <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#aa16c3dad7c6e0d52edb44b73cc43ebce" title="reset perf file descriptors to start new measurement">reset()</a> and <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ab4ba4a3e533405bcd386451a01e144dc" title="measure power consumption since last call to reset the results can be retrieved with the get_&lt;domain&gt;...">sample()</a> using perf events. </p>
+<div class="textblock"><p>Measures the energy consumption between calls of <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#aa16c3dad7c6e0d52edb44b73cc43ebce" title="Reset perf file descriptors to start new measurement.">reset()</a> and <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ab4ba4a3e533405bcd386451a01e144dc" title="Measure power consumption since last call to reset the results can be retrieved with the get_&lt;domain&gt;...">sample()</a> using perf events. </p>
 <p>This requires root or a paranoid value less than 1. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="aed527d3ab9359ced1515dbb690bae957" name="aed527d3ab9359ced1515dbb690bae957"></a>
@@ -165,7 +165,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>sample</b> ()</td></t
       </table>
 </div><div class="memdoc">
 
-<p>returns the energy consumed by the cpu cores between the last call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ab4ba4a3e533405bcd386451a01e144dc" title="measure power consumption since last call to reset the results can be retrieved with the get_&lt;domain&gt;...">sample()</a> and the preceding call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#aa16c3dad7c6e0d52edb44b73cc43ebce" title="reset perf file descriptors to start new measurement">reset()</a> </p>
+<p>Returns the energy consumed by the cpu cores between the last call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ab4ba4a3e533405bcd386451a01e144dc" title="Measure power consumption since last call to reset the results can be retrieved with the get_&lt;domain&gt;...">sample()</a> and the preceding call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#aa16c3dad7c6e0d52edb44b73cc43ebce" title="Reset perf file descriptors to start new measurement.">reset()</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>Energy in Joules </dd></dl>
 
 </div>
@@ -185,7 +185,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>sample</b> ()</td></t
       </table>
 </div><div class="memdoc">
 
-<p>returns the energy consumed by the cpu package between the last call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ab4ba4a3e533405bcd386451a01e144dc" title="measure power consumption since last call to reset the results can be retrieved with the get_&lt;domain&gt;...">sample()</a> and the preceding call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#aa16c3dad7c6e0d52edb44b73cc43ebce" title="reset perf file descriptors to start new measurement">reset()</a> </p>
+<p>Returns the energy consumed by the cpu package between the last call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ab4ba4a3e533405bcd386451a01e144dc" title="Measure power consumption since last call to reset the results can be retrieved with the get_&lt;domain&gt;...">sample()</a> and the preceding call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#aa16c3dad7c6e0d52edb44b73cc43ebce" title="Reset perf file descriptors to start new measurement.">reset()</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>Energy in Joules </dd></dl>
 
 </div>
@@ -205,7 +205,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>sample</b> ()</td></t
       </table>
 </div><div class="memdoc">
 
-<p>returns the energy consumed by the entire system between the last call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ab4ba4a3e533405bcd386451a01e144dc" title="measure power consumption since last call to reset the results can be retrieved with the get_&lt;domain&gt;...">sample()</a> and the preceding call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#aa16c3dad7c6e0d52edb44b73cc43ebce" title="reset perf file descriptors to start new measurement">reset()</a> </p>
+<p>Returns the energy consumed by the entire system between the last call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ab4ba4a3e533405bcd386451a01e144dc" title="Measure power consumption since last call to reset the results can be retrieved with the get_&lt;domain&gt;...">sample()</a> and the preceding call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#aa16c3dad7c6e0d52edb44b73cc43ebce" title="Reset perf file descriptors to start new measurement.">reset()</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>Energy in Joules </dd></dl>
 
 </div>
@@ -225,7 +225,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>sample</b> ()</td></t
       </table>
 </div><div class="memdoc">
 
-<p>returns the energy consumed by ram between the last call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ab4ba4a3e533405bcd386451a01e144dc" title="measure power consumption since last call to reset the results can be retrieved with the get_&lt;domain&gt;...">sample()</a> and the preceding call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#aa16c3dad7c6e0d52edb44b73cc43ebce" title="reset perf file descriptors to start new measurement">reset()</a> </p>
+<p>Returns the energy consumed by ram between the last call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ab4ba4a3e533405bcd386451a01e144dc" title="Measure power consumption since last call to reset the results can be retrieved with the get_&lt;domain&gt;...">sample()</a> and the preceding call to <a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#aa16c3dad7c6e0d52edb44b73cc43ebce" title="Reset perf file descriptors to start new measurement.">reset()</a>. </p>
 <dl class="section return"><dt>Returns</dt><dd>Energy in Joules </dd></dl>
 
 </div>
@@ -245,7 +245,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>sample</b> ()</td></t
       </table>
 </div><div class="memdoc">
 
-<p>return energy measurement for tuning purposes. </p>
+<p>Return energy measurement for tuning purposes. </p>
 <p>Depending on which perf counters are available this may return psys, or a sum of pkg and ram. Note that the units used here are not consistent across different systems. The scaling is skipped for this purpose, as the <a class="el" href="classautopas_1_1AutoTuner.html" title="This class manages all logic related to the auto tuning mechanic.">AutoTuner</a> expects long values as opposed to doubles and rounding the scaled value seems like the inferior option as well as unnecessary given that the values provided by the powercap framework already have the correct type. The getters for pkg, cores, ram and psys provide scaled values for comparisons between different systems.</p>
 <dl class="section return"><dt>Returns</dt><dd>unscaled energy </dd></dl>
 
@@ -266,8 +266,8 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>sample</b> ()</td></t
       </table>
 </div><div class="memdoc">
 
-<p>initialisation may fail, so moved out of constructor Note: This functios returns an error message instead of throwing an exception if initialization is not possible. </p>
-<p>This way debuggers don't break on the start of every autopas initialization if we are not interested in energy measurement. </p><dl class="section return"><dt>Returns</dt><dd>Error message. The error is message is empty on success </dd></dl>
+<p>Initialization may fail, so moved out of constructor. </p>
+<p>Note: This function returns an error message instead of throwing an exception if initialization is not possible. This way debuggers don't break on the start of every autopas initialization if we are not interested in energy measurement. </p><dl class="section return"><dt>Returns</dt><dd>Error message. The error is message is empty on success </dd></dl>
 
 </div>
 </div>
