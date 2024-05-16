@@ -1014,83 +1014,87 @@ $(function() {
 <div class="line"><a id="l01187" name="l01187"></a><span class="lineno"> 1187</span>            <span class="keywordflow">return</span> measurements.timeTotal;</div>
 <div class="line"><a id="l01188" name="l01188"></a><span class="lineno"> 1188</span>          <span class="keywordflow">case</span> TuningMetricOption::energy:</div>
 <div class="line"><a id="l01189" name="l01189"></a><span class="lineno"> 1189</span>            <span class="keywordflow">return</span> measurements.energyTotal;</div>
-<div class="line"><a id="l01190" name="l01190"></a><span class="lineno"> 1190</span>        }</div>
-<div class="line"><a id="l01191" name="l01191"></a><span class="lineno"> 1191</span>      }();</div>
-<div class="line"><a id="l01192" name="l01192"></a><span class="lineno"> 1192</span>      _autoTuner.addMeasurement(measurement, not neighborListsAreValid());</div>
-<div class="line"><a id="l01193" name="l01193"></a><span class="lineno"> 1193</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l01194" name="l01194"></a><span class="lineno"> 1194</span>      <a class="code hl_define" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(TRACE, <span class="stringliteral">&quot;Skipping adding of sample because functor is not marked relevant.&quot;</span>);</div>
-<div class="line"><a id="l01195" name="l01195"></a><span class="lineno"> 1195</span>    }</div>
-<div class="line"><a id="l01196" name="l01196"></a><span class="lineno"> 1196</span> </div>
-<div class="line"><a id="l01197" name="l01197"></a><span class="lineno"> 1197</span>    <span class="comment">// this function depends on LogicHandler&#39;s and the AutoTuner&#39;s iteration counters,</span></div>
-<div class="line"><a id="l01198" name="l01198"></a><span class="lineno"> 1198</span>    <span class="comment">// that should not have been updated yet.</span></div>
-<div class="line"><a id="l01199" name="l01199"></a><span class="lineno"> 1199</span>    <span class="keywordflow">if</span> (not neighborListsAreValid() <span class="comment">/*we have done a rebuild now*/</span>) {</div>
-<div class="line"><a id="l01200" name="l01200"></a><span class="lineno"> 1200</span>      <span class="comment">// list is now valid</span></div>
-<div class="line"><a id="l01201" name="l01201"></a><span class="lineno"> 1201</span>      _neighborListsAreValid.store(<span class="keyword">true</span>, std::memory_order_relaxed);</div>
-<div class="line"><a id="l01202" name="l01202"></a><span class="lineno"> 1202</span>      _stepsSinceLastListRebuild = 0;</div>
-<div class="line"><a id="l01203" name="l01203"></a><span class="lineno"> 1203</span>    }</div>
-<div class="line"><a id="l01204" name="l01204"></a><span class="lineno"> 1204</span>    ++_stepsSinceLastListRebuild;</div>
-<div class="line"><a id="l01205" name="l01205"></a><span class="lineno"> 1205</span> </div>
-<div class="line"><a id="l01206" name="l01206"></a><span class="lineno"> 1206</span>    _containerSelector.getCurrentContainer().setStepsSinceLastRebuild(_stepsSinceLastListRebuild);</div>
-<div class="line"><a id="l01207" name="l01207"></a><span class="lineno"> 1207</span> </div>
-<div class="line"><a id="l01208" name="l01208"></a><span class="lineno"> 1208</span>    _autoTuner.bumpIterationCounters();</div>
-<div class="line"><a id="l01209" name="l01209"></a><span class="lineno"> 1209</span>    ++_iteration;</div>
-<div class="line"><a id="l01210" name="l01210"></a><span class="lineno"> 1210</span>  }</div>
-<div class="line"><a id="l01211" name="l01211"></a><span class="lineno"> 1211</span>  <span class="keywordflow">return</span> stillTuning;</div>
-<div class="line"><a id="l01212" name="l01212"></a><span class="lineno"> 1212</span>}</div>
-<div class="line"><a id="l01213" name="l01213"></a><span class="lineno"> 1213</span> </div>
-<div class="line"><a id="l01214" name="l01214"></a><span class="lineno"> 1214</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Particle&gt;</div>
-<div class="line"><a id="l01215" name="l01215"></a><span class="lineno"> 1215</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> PairwiseFunctor&gt;</div>
-<div class="line"><a id="l01216" name="l01216"></a><span class="lineno"><a class="line" href="classautopas_1_1LogicHandler.html#ab34ffc61be80923ec44784ea81e82a20"> 1216</a></span>std::tuple&lt;std::optional&lt;std::unique_ptr&lt;TraversalInterface&gt;&gt;, <span class="keywordtype">bool</span>&gt; <a class="code hl_class" href="classautopas_1_1LogicHandler.html">LogicHandler&lt;Particle&gt;::isConfigurationApplicable</a>(</div>
-<div class="line"><a id="l01217" name="l01217"></a><span class="lineno"> 1217</span>    <span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1Configuration.html">Configuration</a> &amp;conf, PairwiseFunctor &amp;pairwiseFunctor) {</div>
-<div class="line"><a id="l01218" name="l01218"></a><span class="lineno"> 1218</span>  <span class="comment">// Check if the container supports the traversal</span></div>
-<div class="line"><a id="l01219" name="l01219"></a><span class="lineno"> 1219</span>  <span class="keyword">const</span> <span class="keyword">auto</span> allContainerTraversals = compatibleTraversals::allCompatibleTraversals(conf.<a class="code hl_variable" href="classautopas_1_1Configuration.html#a6f60f44ea162cec7863f0d88237946b0">container</a>);</div>
-<div class="line"><a id="l01220" name="l01220"></a><span class="lineno"> 1220</span>  <span class="keywordflow">if</span> (allContainerTraversals.find(conf.<a class="code hl_variable" href="classautopas_1_1Configuration.html#a064071ca0d7525b3b2c4a743306b545a">traversal</a>) == allContainerTraversals.end()) {</div>
-<div class="line"><a id="l01221" name="l01221"></a><span class="lineno"> 1221</span>    <a class="code hl_define" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(DEBUG, <span class="stringliteral">&quot;Configuration rejected: Container {} does not support the traversal {}.&quot;</span>, conf.<a class="code hl_variable" href="classautopas_1_1Configuration.html#a6f60f44ea162cec7863f0d88237946b0">container</a>,</div>
-<div class="line"><a id="l01222" name="l01222"></a><span class="lineno"> 1222</span>               conf.<a class="code hl_variable" href="classautopas_1_1Configuration.html#a064071ca0d7525b3b2c4a743306b545a">traversal</a>);</div>
-<div class="line"><a id="l01223" name="l01223"></a><span class="lineno"> 1223</span>    <span class="keywordflow">return</span> {std::nullopt, <span class="keyword">true</span>};</div>
-<div class="line"><a id="l01224" name="l01224"></a><span class="lineno"> 1224</span>  }</div>
-<div class="line"><a id="l01225" name="l01225"></a><span class="lineno"> 1225</span> </div>
-<div class="line"><a id="l01226" name="l01226"></a><span class="lineno"> 1226</span>  <span class="comment">// Check if the required Newton 3 mode is supported by the functor</span></div>
-<div class="line"><a id="l01227" name="l01227"></a><span class="lineno"> 1227</span>  <span class="keywordflow">if</span> ((conf.<a class="code hl_variable" href="classautopas_1_1Configuration.html#a92957ab0a0aea511641fe63d76f28684">newton3</a> == Newton3Option::enabled and not pairwiseFunctor.allowsNewton3()) or</div>
-<div class="line"><a id="l01228" name="l01228"></a><span class="lineno"> 1228</span>      (conf.<a class="code hl_variable" href="classautopas_1_1Configuration.html#a92957ab0a0aea511641fe63d76f28684">newton3</a> == Newton3Option::disabled and not pairwiseFunctor.allowsNonNewton3())) {</div>
-<div class="line"><a id="l01229" name="l01229"></a><span class="lineno"> 1229</span>    <a class="code hl_define" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(DEBUG, <span class="stringliteral">&quot;Configuration rejected: The functor doesn&#39;t support Newton 3 {}!&quot;</span>, conf.<a class="code hl_variable" href="classautopas_1_1Configuration.html#a92957ab0a0aea511641fe63d76f28684">newton3</a>);</div>
-<div class="line"><a id="l01230" name="l01230"></a><span class="lineno"> 1230</span>    <span class="keywordflow">return</span> {std::nullopt, <span class="keyword">true</span>};</div>
-<div class="line"><a id="l01231" name="l01231"></a><span class="lineno"> 1231</span>  }</div>
-<div class="line"><a id="l01232" name="l01232"></a><span class="lineno"> 1232</span> </div>
-<div class="line"><a id="l01233" name="l01233"></a><span class="lineno"> 1233</span>  <span class="comment">// Check if the traversal is applicable to the current state of the container</span></div>
-<div class="line"><a id="l01234" name="l01234"></a><span class="lineno"> 1234</span>  _containerSelector.selectContainer(</div>
-<div class="line"><a id="l01235" name="l01235"></a><span class="lineno"> 1235</span>      conf.<a class="code hl_variable" href="classautopas_1_1Configuration.html#a6f60f44ea162cec7863f0d88237946b0">container</a>,</div>
-<div class="line"><a id="l01236" name="l01236"></a><span class="lineno"> 1236</span>      <a class="code hl_class" href="classautopas_1_1ContainerSelectorInfo.html">ContainerSelectorInfo</a>(conf.<a class="code hl_variable" href="classautopas_1_1Configuration.html#a10fbd75bcde633f8441d93387c7f20b4">cellSizeFactor</a>,</div>
-<div class="line"><a id="l01237" name="l01237"></a><span class="lineno"> 1237</span>                            _containerSelector.getCurrentContainer().getVerletSkin() / _neighborListRebuildFrequency,</div>
-<div class="line"><a id="l01238" name="l01238"></a><span class="lineno"> 1238</span>                            _neighborListRebuildFrequency, _verletClusterSize, conf.<a class="code hl_variable" href="classautopas_1_1Configuration.html#a00a76ca9f33ec89148117b540a3e88cb">loadEstimator</a>));</div>
-<div class="line"><a id="l01239" name="l01239"></a><span class="lineno"> 1239</span>  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;container = _containerSelector.getCurrentContainer();</div>
-<div class="line"><a id="l01240" name="l01240"></a><span class="lineno"> 1240</span>  <span class="keyword">const</span> <span class="keyword">auto</span> traversalInfo = container.getTraversalSelectorInfo();</div>
-<div class="line"><a id="l01241" name="l01241"></a><span class="lineno"> 1241</span> </div>
-<div class="line"><a id="l01242" name="l01242"></a><span class="lineno"> 1242</span>  <span class="keyword">auto</span> traversalPtrOpt = autopas::utils::withStaticCellType&lt;Particle&gt;(</div>
-<div class="line"><a id="l01243" name="l01243"></a><span class="lineno"> 1243</span>      container.getParticleCellTypeEnum(),</div>
-<div class="line"><a id="l01244" name="l01244"></a><span class="lineno"> 1244</span>      [&amp;](<span class="keyword">const</span> <span class="keyword">auto</span> &amp;particleCellDummy) -&gt; std::optional&lt;std::unique_ptr&lt;TraversalInterface&gt;&gt; {</div>
-<div class="line"><a id="l01245" name="l01245"></a><span class="lineno"> 1245</span>        <span class="comment">// Can&#39;t make this unique_ptr const otherwise we can&#39;t move it later.</span></div>
-<div class="line"><a id="l01246" name="l01246"></a><span class="lineno"> 1246</span>        auto traversalPtr =</div>
-<div class="line"><a id="l01247" name="l01247"></a><span class="lineno"> 1247</span>            TraversalSelector&lt;std::decay_t&lt;decltype(particleCellDummy)&gt;&gt;::template generateTraversal&lt;PairwiseFunctor&gt;(</div>
-<div class="line"><a id="l01248" name="l01248"></a><span class="lineno"> 1248</span>                conf.traversal, pairwiseFunctor, traversalInfo, conf.dataLayout, conf.newton3);</div>
-<div class="line"><a id="l01249" name="l01249"></a><span class="lineno"> 1249</span> </div>
-<div class="line"><a id="l01250" name="l01250"></a><span class="lineno"> 1250</span>        <span class="comment">// set sortingThreshold of the traversal if it can be casted to a CellPairTraversal and uses the CellFunctor</span></div>
-<div class="line"><a id="l01251" name="l01251"></a><span class="lineno"> 1251</span>        if (auto *cellPairTraversalPtr =</div>
-<div class="line"><a id="l01252" name="l01252"></a><span class="lineno"> 1252</span>                dynamic_cast&lt;autopas::CellPairTraversal&lt;std::decay_t&lt;decltype(particleCellDummy)&gt;&gt; *&gt;(</div>
-<div class="line"><a id="l01253" name="l01253"></a><span class="lineno"> 1253</span>                    traversalPtr.get())) {</div>
-<div class="line"><a id="l01254" name="l01254"></a><span class="lineno"> 1254</span>          cellPairTraversalPtr-&gt;setSortingThreshold(_sortingThreshold);</div>
-<div class="line"><a id="l01255" name="l01255"></a><span class="lineno"> 1255</span>        }</div>
-<div class="line"><a id="l01256" name="l01256"></a><span class="lineno"> 1256</span> </div>
-<div class="line"><a id="l01257" name="l01257"></a><span class="lineno"> 1257</span>        if (traversalPtr-&gt;isApplicable()) {</div>
-<div class="line"><a id="l01258" name="l01258"></a><span class="lineno"> 1258</span>          return std::optional{std::move(traversalPtr)};</div>
-<div class="line"><a id="l01259" name="l01259"></a><span class="lineno"> 1259</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l01260" name="l01260"></a><span class="lineno"> 1260</span>          <span class="keywordflow">return</span> std::nullopt;</div>
-<div class="line"><a id="l01261" name="l01261"></a><span class="lineno"> 1261</span>        }</div>
-<div class="line"><a id="l01262" name="l01262"></a><span class="lineno"> 1262</span>      });</div>
-<div class="line"><a id="l01263" name="l01263"></a><span class="lineno"> 1263</span>  <span class="keywordflow">return</span> {std::move(traversalPtrOpt), <span class="keyword">false</span>};</div>
-<div class="line"><a id="l01264" name="l01264"></a><span class="lineno"> 1264</span>}</div>
-<div class="line"><a id="l01265" name="l01265"></a><span class="lineno"> 1265</span> </div>
-<div class="line"><a id="l01266" name="l01266"></a><span class="lineno"> 1266</span>}  <span class="comment">// namespace autopas</span></div>
+<div class="line"><a id="l01190" name="l01190"></a><span class="lineno"> 1190</span>          <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l01191" name="l01191"></a><span class="lineno"> 1191</span>            <a class="code hl_function" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a>(</div>
+<div class="line"><a id="l01192" name="l01192"></a><span class="lineno"> 1192</span>                <span class="stringliteral">&quot;LogicHandler::iteratePairwisePipeline(): Unknown tuning metric.&quot;</span>);</div>
+<div class="line"><a id="l01193" name="l01193"></a><span class="lineno"> 1193</span>            <span class="keywordflow">return</span> 0l;</div>
+<div class="line"><a id="l01194" name="l01194"></a><span class="lineno"> 1194</span>        }</div>
+<div class="line"><a id="l01195" name="l01195"></a><span class="lineno"> 1195</span>      }();</div>
+<div class="line"><a id="l01196" name="l01196"></a><span class="lineno"> 1196</span>      _autoTuner.addMeasurement(measurement, not neighborListsAreValid());</div>
+<div class="line"><a id="l01197" name="l01197"></a><span class="lineno"> 1197</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l01198" name="l01198"></a><span class="lineno"> 1198</span>      <a class="code hl_define" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(TRACE, <span class="stringliteral">&quot;Skipping adding of sample because functor is not marked relevant.&quot;</span>);</div>
+<div class="line"><a id="l01199" name="l01199"></a><span class="lineno"> 1199</span>    }</div>
+<div class="line"><a id="l01200" name="l01200"></a><span class="lineno"> 1200</span> </div>
+<div class="line"><a id="l01201" name="l01201"></a><span class="lineno"> 1201</span>    <span class="comment">// this function depends on LogicHandler&#39;s and the AutoTuner&#39;s iteration counters,</span></div>
+<div class="line"><a id="l01202" name="l01202"></a><span class="lineno"> 1202</span>    <span class="comment">// that should not have been updated yet.</span></div>
+<div class="line"><a id="l01203" name="l01203"></a><span class="lineno"> 1203</span>    <span class="keywordflow">if</span> (not neighborListsAreValid() <span class="comment">/*we have done a rebuild now*/</span>) {</div>
+<div class="line"><a id="l01204" name="l01204"></a><span class="lineno"> 1204</span>      <span class="comment">// list is now valid</span></div>
+<div class="line"><a id="l01205" name="l01205"></a><span class="lineno"> 1205</span>      _neighborListsAreValid.store(<span class="keyword">true</span>, std::memory_order_relaxed);</div>
+<div class="line"><a id="l01206" name="l01206"></a><span class="lineno"> 1206</span>      _stepsSinceLastListRebuild = 0;</div>
+<div class="line"><a id="l01207" name="l01207"></a><span class="lineno"> 1207</span>    }</div>
+<div class="line"><a id="l01208" name="l01208"></a><span class="lineno"> 1208</span>    ++_stepsSinceLastListRebuild;</div>
+<div class="line"><a id="l01209" name="l01209"></a><span class="lineno"> 1209</span> </div>
+<div class="line"><a id="l01210" name="l01210"></a><span class="lineno"> 1210</span>    _containerSelector.getCurrentContainer().setStepsSinceLastRebuild(_stepsSinceLastListRebuild);</div>
+<div class="line"><a id="l01211" name="l01211"></a><span class="lineno"> 1211</span> </div>
+<div class="line"><a id="l01212" name="l01212"></a><span class="lineno"> 1212</span>    _autoTuner.bumpIterationCounters();</div>
+<div class="line"><a id="l01213" name="l01213"></a><span class="lineno"> 1213</span>    ++_iteration;</div>
+<div class="line"><a id="l01214" name="l01214"></a><span class="lineno"> 1214</span>  }</div>
+<div class="line"><a id="l01215" name="l01215"></a><span class="lineno"> 1215</span>  <span class="keywordflow">return</span> stillTuning;</div>
+<div class="line"><a id="l01216" name="l01216"></a><span class="lineno"> 1216</span>}</div>
+<div class="line"><a id="l01217" name="l01217"></a><span class="lineno"> 1217</span> </div>
+<div class="line"><a id="l01218" name="l01218"></a><span class="lineno"> 1218</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Particle&gt;</div>
+<div class="line"><a id="l01219" name="l01219"></a><span class="lineno"> 1219</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> PairwiseFunctor&gt;</div>
+<div class="line"><a id="l01220" name="l01220"></a><span class="lineno"><a class="line" href="classautopas_1_1LogicHandler.html#ab34ffc61be80923ec44784ea81e82a20"> 1220</a></span>std::tuple&lt;std::optional&lt;std::unique_ptr&lt;TraversalInterface&gt;&gt;, <span class="keywordtype">bool</span>&gt; <a class="code hl_class" href="classautopas_1_1LogicHandler.html">LogicHandler&lt;Particle&gt;::isConfigurationApplicable</a>(</div>
+<div class="line"><a id="l01221" name="l01221"></a><span class="lineno"> 1221</span>    <span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1Configuration.html">Configuration</a> &amp;conf, PairwiseFunctor &amp;pairwiseFunctor) {</div>
+<div class="line"><a id="l01222" name="l01222"></a><span class="lineno"> 1222</span>  <span class="comment">// Check if the container supports the traversal</span></div>
+<div class="line"><a id="l01223" name="l01223"></a><span class="lineno"> 1223</span>  <span class="keyword">const</span> <span class="keyword">auto</span> allContainerTraversals = compatibleTraversals::allCompatibleTraversals(conf.<a class="code hl_variable" href="classautopas_1_1Configuration.html#a6f60f44ea162cec7863f0d88237946b0">container</a>);</div>
+<div class="line"><a id="l01224" name="l01224"></a><span class="lineno"> 1224</span>  <span class="keywordflow">if</span> (allContainerTraversals.find(conf.<a class="code hl_variable" href="classautopas_1_1Configuration.html#a064071ca0d7525b3b2c4a743306b545a">traversal</a>) == allContainerTraversals.end()) {</div>
+<div class="line"><a id="l01225" name="l01225"></a><span class="lineno"> 1225</span>    <a class="code hl_define" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(DEBUG, <span class="stringliteral">&quot;Configuration rejected: Container {} does not support the traversal {}.&quot;</span>, conf.<a class="code hl_variable" href="classautopas_1_1Configuration.html#a6f60f44ea162cec7863f0d88237946b0">container</a>,</div>
+<div class="line"><a id="l01226" name="l01226"></a><span class="lineno"> 1226</span>               conf.<a class="code hl_variable" href="classautopas_1_1Configuration.html#a064071ca0d7525b3b2c4a743306b545a">traversal</a>);</div>
+<div class="line"><a id="l01227" name="l01227"></a><span class="lineno"> 1227</span>    <span class="keywordflow">return</span> {std::nullopt, <span class="keyword">true</span>};</div>
+<div class="line"><a id="l01228" name="l01228"></a><span class="lineno"> 1228</span>  }</div>
+<div class="line"><a id="l01229" name="l01229"></a><span class="lineno"> 1229</span> </div>
+<div class="line"><a id="l01230" name="l01230"></a><span class="lineno"> 1230</span>  <span class="comment">// Check if the required Newton 3 mode is supported by the functor</span></div>
+<div class="line"><a id="l01231" name="l01231"></a><span class="lineno"> 1231</span>  <span class="keywordflow">if</span> ((conf.<a class="code hl_variable" href="classautopas_1_1Configuration.html#a92957ab0a0aea511641fe63d76f28684">newton3</a> == Newton3Option::enabled and not pairwiseFunctor.allowsNewton3()) or</div>
+<div class="line"><a id="l01232" name="l01232"></a><span class="lineno"> 1232</span>      (conf.<a class="code hl_variable" href="classautopas_1_1Configuration.html#a92957ab0a0aea511641fe63d76f28684">newton3</a> == Newton3Option::disabled and not pairwiseFunctor.allowsNonNewton3())) {</div>
+<div class="line"><a id="l01233" name="l01233"></a><span class="lineno"> 1233</span>    <a class="code hl_define" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(DEBUG, <span class="stringliteral">&quot;Configuration rejected: The functor doesn&#39;t support Newton 3 {}!&quot;</span>, conf.<a class="code hl_variable" href="classautopas_1_1Configuration.html#a92957ab0a0aea511641fe63d76f28684">newton3</a>);</div>
+<div class="line"><a id="l01234" name="l01234"></a><span class="lineno"> 1234</span>    <span class="keywordflow">return</span> {std::nullopt, <span class="keyword">true</span>};</div>
+<div class="line"><a id="l01235" name="l01235"></a><span class="lineno"> 1235</span>  }</div>
+<div class="line"><a id="l01236" name="l01236"></a><span class="lineno"> 1236</span> </div>
+<div class="line"><a id="l01237" name="l01237"></a><span class="lineno"> 1237</span>  <span class="comment">// Check if the traversal is applicable to the current state of the container</span></div>
+<div class="line"><a id="l01238" name="l01238"></a><span class="lineno"> 1238</span>  _containerSelector.selectContainer(</div>
+<div class="line"><a id="l01239" name="l01239"></a><span class="lineno"> 1239</span>      conf.<a class="code hl_variable" href="classautopas_1_1Configuration.html#a6f60f44ea162cec7863f0d88237946b0">container</a>,</div>
+<div class="line"><a id="l01240" name="l01240"></a><span class="lineno"> 1240</span>      <a class="code hl_class" href="classautopas_1_1ContainerSelectorInfo.html">ContainerSelectorInfo</a>(conf.<a class="code hl_variable" href="classautopas_1_1Configuration.html#a10fbd75bcde633f8441d93387c7f20b4">cellSizeFactor</a>,</div>
+<div class="line"><a id="l01241" name="l01241"></a><span class="lineno"> 1241</span>                            _containerSelector.getCurrentContainer().getVerletSkin() / _neighborListRebuildFrequency,</div>
+<div class="line"><a id="l01242" name="l01242"></a><span class="lineno"> 1242</span>                            _neighborListRebuildFrequency, _verletClusterSize, conf.<a class="code hl_variable" href="classautopas_1_1Configuration.html#a00a76ca9f33ec89148117b540a3e88cb">loadEstimator</a>));</div>
+<div class="line"><a id="l01243" name="l01243"></a><span class="lineno"> 1243</span>  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;container = _containerSelector.getCurrentContainer();</div>
+<div class="line"><a id="l01244" name="l01244"></a><span class="lineno"> 1244</span>  <span class="keyword">const</span> <span class="keyword">auto</span> traversalInfo = container.getTraversalSelectorInfo();</div>
+<div class="line"><a id="l01245" name="l01245"></a><span class="lineno"> 1245</span> </div>
+<div class="line"><a id="l01246" name="l01246"></a><span class="lineno"> 1246</span>  <span class="keyword">auto</span> traversalPtrOpt = autopas::utils::withStaticCellType&lt;Particle&gt;(</div>
+<div class="line"><a id="l01247" name="l01247"></a><span class="lineno"> 1247</span>      container.getParticleCellTypeEnum(),</div>
+<div class="line"><a id="l01248" name="l01248"></a><span class="lineno"> 1248</span>      [&amp;](<span class="keyword">const</span> <span class="keyword">auto</span> &amp;particleCellDummy) -&gt; std::optional&lt;std::unique_ptr&lt;TraversalInterface&gt;&gt; {</div>
+<div class="line"><a id="l01249" name="l01249"></a><span class="lineno"> 1249</span>        <span class="comment">// Can&#39;t make this unique_ptr const otherwise we can&#39;t move it later.</span></div>
+<div class="line"><a id="l01250" name="l01250"></a><span class="lineno"> 1250</span>        auto traversalPtr =</div>
+<div class="line"><a id="l01251" name="l01251"></a><span class="lineno"> 1251</span>            TraversalSelector&lt;std::decay_t&lt;decltype(particleCellDummy)&gt;&gt;::template generateTraversal&lt;PairwiseFunctor&gt;(</div>
+<div class="line"><a id="l01252" name="l01252"></a><span class="lineno"> 1252</span>                conf.traversal, pairwiseFunctor, traversalInfo, conf.dataLayout, conf.newton3);</div>
+<div class="line"><a id="l01253" name="l01253"></a><span class="lineno"> 1253</span> </div>
+<div class="line"><a id="l01254" name="l01254"></a><span class="lineno"> 1254</span>        <span class="comment">// set sortingThreshold of the traversal if it can be casted to a CellPairTraversal and uses the CellFunctor</span></div>
+<div class="line"><a id="l01255" name="l01255"></a><span class="lineno"> 1255</span>        if (auto *cellPairTraversalPtr =</div>
+<div class="line"><a id="l01256" name="l01256"></a><span class="lineno"> 1256</span>                dynamic_cast&lt;autopas::CellPairTraversal&lt;std::decay_t&lt;decltype(particleCellDummy)&gt;&gt; *&gt;(</div>
+<div class="line"><a id="l01257" name="l01257"></a><span class="lineno"> 1257</span>                    traversalPtr.get())) {</div>
+<div class="line"><a id="l01258" name="l01258"></a><span class="lineno"> 1258</span>          cellPairTraversalPtr-&gt;setSortingThreshold(_sortingThreshold);</div>
+<div class="line"><a id="l01259" name="l01259"></a><span class="lineno"> 1259</span>        }</div>
+<div class="line"><a id="l01260" name="l01260"></a><span class="lineno"> 1260</span> </div>
+<div class="line"><a id="l01261" name="l01261"></a><span class="lineno"> 1261</span>        if (traversalPtr-&gt;isApplicable()) {</div>
+<div class="line"><a id="l01262" name="l01262"></a><span class="lineno"> 1262</span>          return std::optional{std::move(traversalPtr)};</div>
+<div class="line"><a id="l01263" name="l01263"></a><span class="lineno"> 1263</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l01264" name="l01264"></a><span class="lineno"> 1264</span>          <span class="keywordflow">return</span> std::nullopt;</div>
+<div class="line"><a id="l01265" name="l01265"></a><span class="lineno"> 1265</span>        }</div>
+<div class="line"><a id="l01266" name="l01266"></a><span class="lineno"> 1266</span>      });</div>
+<div class="line"><a id="l01267" name="l01267"></a><span class="lineno"> 1267</span>  <span class="keywordflow">return</span> {std::move(traversalPtrOpt), <span class="keyword">false</span>};</div>
+<div class="line"><a id="l01268" name="l01268"></a><span class="lineno"> 1268</span>}</div>
+<div class="line"><a id="l01269" name="l01269"></a><span class="lineno"> 1269</span> </div>
+<div class="line"><a id="l01270" name="l01270"></a><span class="lineno"> 1270</span>}  <span class="comment">// namespace autopas</span></div>
 <div class="ttc" id="aAutoTuner_8h_html"><div class="ttname"><a href="AutoTuner_8h.html">AutoTuner.h</a></div></div>
 <div class="ttc" id="aConfiguration_8h_html"><div class="ttname"><a href="Configuration_8h.html">Configuration.h</a></div></div>
 <div class="ttc" id="aContainerIterator_8h_html"><div class="ttname"><a href="ContainerIterator_8h.html">ContainerIterator.h</a></div></div>
@@ -1100,7 +1104,7 @@ $(function() {
 <div class="ttc" id="aIterationLogger_8h_html"><div class="ttname"><a href="IterationLogger_8h.html">IterationLogger.h</a></div></div>
 <div class="ttc" id="aIteratorBehavior_8h_html"><div class="ttname"><a href="IteratorBehavior_8h.html">IteratorBehavior.h</a></div></div>
 <div class="ttc" id="aLogger_8h_html"><div class="ttname"><a href="Logger_8h.html">Logger.h</a></div></div>
-<div class="ttc" id="aLogger_8h_html_ab5eef0a7030352f281056d3ee7f86575"><div class="ttname"><a href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a></div><div class="ttdeci">#define AutoPasLog(lvl, fmt,...)</div><div class="ttdoc">Macro for logging providing common meta information without filename.</div><div class="ttdef"><b>Definition:</b> Logger.h:48</div></div>
+<div class="ttc" id="aLogger_8h_html_ab5eef0a7030352f281056d3ee7f86575"><div class="ttname"><a href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a></div><div class="ttdeci">#define AutoPasLog(lvl, fmt,...)</div><div class="ttdoc">Macro for logging providing common meta information without filename.</div><div class="ttdef"><b>Definition:</b> Logger.h:24</div></div>
 <div class="ttc" id="aLogicHandlerInfo_8h_html"><div class="ttname"><a href="LogicHandlerInfo_8h.html">LogicHandlerInfo.h</a></div></div>
 <div class="ttc" id="aNumParticlesEstimator_8h_html"><div class="ttname"><a href="NumParticlesEstimator_8h.html">NumParticlesEstimator.h</a></div></div>
 <div class="ttc" id="aParticle_8h_html"><div class="ttname"><a href="Particle_8h.html">Particle.h</a></div></div>
@@ -1113,7 +1117,7 @@ $(function() {
 <div class="ttc" id="aWrapOpenMP_8h_html"><div class="ttname"><a href="WrapOpenMP_8h.html">WrapOpenMP.h</a></div></div>
 <div class="ttc" id="aWrapOpenMP_8h_html_adf64fc4981617d456044d0a30deb3d0d"><div class="ttname"><a href="WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d">AUTOPAS_OPENMP</a></div><div class="ttdeci">#define AUTOPAS_OPENMP(args)</div><div class="ttdoc">Empty macro to throw away any arguments.</div><div class="ttdef"><b>Definition:</b> WrapOpenMP.h:126</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html"><div class="ttname"><a href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a></div><div class="ttdoc">This class manages all logic related to the auto tuning mechanic.</div><div class="ttdef"><b>Definition:</b> AutoTuner.h:41</div></div>
-<div class="ttc" id="aclassautopas_1_1AutoTuner_html_ad8c778b2db88b8c7cfcbd4417b33ed5f"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#ad8c778b2db88b8c7cfcbd4417b33ed5f">autopas::AutoTuner::getCurrentConfig</a></div><div class="ttdeci">const Configuration &amp; getCurrentConfig() const</div><div class="ttdoc">Get the currently selected configuration.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:159</div></div>
+<div class="ttc" id="aclassautopas_1_1AutoTuner_html_ad8c778b2db88b8c7cfcbd4417b33ed5f"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#ad8c778b2db88b8c7cfcbd4417b33ed5f">autopas::AutoTuner::getCurrentConfig</a></div><div class="ttdeci">const Configuration &amp; getCurrentConfig() const</div><div class="ttdoc">Get the currently selected configuration.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:158</div></div>
 <div class="ttc" id="aclassautopas_1_1Configuration_html"><div class="ttname"><a href="classautopas_1_1Configuration.html">autopas::Configuration</a></div><div class="ttdoc">Class containing multiple options that form an algorithm configuration for the pairwise iteration.</div><div class="ttdef"><b>Definition:</b> Configuration.h:24</div></div>
 <div class="ttc" id="aclassautopas_1_1Configuration_html_a00a76ca9f33ec89148117b540a3e88cb"><div class="ttname"><a href="classautopas_1_1Configuration.html#a00a76ca9f33ec89148117b540a3e88cb">autopas::Configuration::loadEstimator</a></div><div class="ttdeci">LoadEstimatorOption loadEstimator</div><div class="ttdoc">Load Estimator option.</div><div class="ttdef"><b>Definition:</b> Configuration.h:121</div></div>
 <div class="ttc" id="aclassautopas_1_1Configuration_html_a064071ca0d7525b3b2c4a743306b545a"><div class="ttname"><a href="classautopas_1_1Configuration.html#a064071ca0d7525b3b2c4a743306b545a">autopas::Configuration::traversal</a></div><div class="ttdeci">TraversalOption traversal</div><div class="ttdoc">Traversal option.</div><div class="ttdef"><b>Definition:</b> Configuration.h:117</div></div>
@@ -1150,7 +1154,7 @@ $(function() {
 <div class="ttc" id="aclassautopas_1_1LogicHandler_html_a8ab7cbab0574ca34c46d8132e6113da9"><div class="ttname"><a href="classautopas_1_1LogicHandler.html#a8ab7cbab0574ca34c46d8132e6113da9">autopas::LogicHandler::addParticle</a></div><div class="ttdeci">void addParticle(const Particle &amp;p)</div><div class="ttdoc">Adds a particle to the container.</div><div class="ttdef"><b>Definition:</b> LogicHandler.h:278</div></div>
 <div class="ttc" id="aclassautopas_1_1LogicHandler_html_a8e08c944eeb4401be33463daef80181c"><div class="ttname"><a href="classautopas_1_1LogicHandler.html#a8e08c944eeb4401be33463daef80181c">autopas::LogicHandler::LogicHandler</a></div><div class="ttdeci">LogicHandler(autopas::AutoTuner &amp;autoTuner, const LogicHandlerInfo &amp;logicHandlerInfo, unsigned int rebuildFrequency, const std::string &amp;outputSuffix)</div><div class="ttdoc">Constructor of the LogicHandler.</div><div class="ttdef"><b>Definition:</b> LogicHandler.h:54</div></div>
 <div class="ttc" id="aclassautopas_1_1LogicHandler_html_a950e4f12d30c1c86baca3f4f0cac4a87"><div class="ttname"><a href="classautopas_1_1LogicHandler.html#a950e4f12d30c1c86baca3f4f0cac4a87">autopas::LogicHandler::updateContainer</a></div><div class="ttdeci">std::vector&lt; Particle &gt; updateContainer()</div><div class="ttdoc">Updates the container.</div><div class="ttdef"><b>Definition:</b> LogicHandler.h:148</div></div>
-<div class="ttc" id="aclassautopas_1_1LogicHandler_html_ab34ffc61be80923ec44784ea81e82a20"><div class="ttname"><a href="classautopas_1_1LogicHandler.html#ab34ffc61be80923ec44784ea81e82a20">autopas::LogicHandler::isConfigurationApplicable</a></div><div class="ttdeci">std::tuple&lt; std::optional&lt; std::unique_ptr&lt; TraversalInterface &gt; &gt;, bool &gt; isConfigurationApplicable(const Configuration &amp;conf, PairwiseFunctor &amp;pairwiseFunctor)</div><div class="ttdoc">Checks if the given configuration can be used with the given functor and the current state of the sim...</div><div class="ttdef"><b>Definition:</b> LogicHandler.h:1216</div></div>
+<div class="ttc" id="aclassautopas_1_1LogicHandler_html_ab34ffc61be80923ec44784ea81e82a20"><div class="ttname"><a href="classautopas_1_1LogicHandler.html#ab34ffc61be80923ec44784ea81e82a20">autopas::LogicHandler::isConfigurationApplicable</a></div><div class="ttdeci">std::tuple&lt; std::optional&lt; std::unique_ptr&lt; TraversalInterface &gt; &gt;, bool &gt; isConfigurationApplicable(const Configuration &amp;conf, PairwiseFunctor &amp;pairwiseFunctor)</div><div class="ttdoc">Checks if the given configuration can be used with the given functor and the current state of the sim...</div><div class="ttdef"><b>Definition:</b> LogicHandler.h:1220</div></div>
 <div class="ttc" id="aclassautopas_1_1LogicHandler_html_ae238f0eb5d477092ed94472bd2a78a59"><div class="ttname"><a href="classautopas_1_1LogicHandler.html#ae238f0eb5d477092ed94472bd2a78a59">autopas::LogicHandler::begin</a></div><div class="ttdeci">autopas::ContainerIterator&lt; Particle, true, false &gt; begin(IteratorBehavior behavior)</div><div class="ttdoc">Iterate over all particles by using for(auto iter = autoPas.begin(); iter.isValid(); ++iter)</div><div class="ttdef"><b>Definition:</b> LogicHandler.h:435</div></div>
 <div class="ttc" id="aclassautopas_1_1LogicHandler_html_ae6c4090578945b237e3ff25bcb99425c"><div class="ttname"><a href="classautopas_1_1LogicHandler.html#ae6c4090578945b237e3ff25bcb99425c">autopas::LogicHandler::gatherAdditionalVectors</a></div><div class="ttdeci">Iterator::ParticleVecType gatherAdditionalVectors(IteratorBehavior behavior)</div><div class="ttdoc">Create the additional vectors vector for a given iterator behavior.</div><div class="ttdef"><b>Definition:</b> LogicHandler.h:408</div></div>
 <div class="ttc" id="aclassautopas_1_1LogicHandler_html_ae99decd018721d63d338665932cf50b5"><div class="ttname"><a href="classautopas_1_1LogicHandler.html#ae99decd018721d63d338665932cf50b5">autopas::LogicHandler::getContainer</a></div><div class="ttdeci">autopas::ParticleContainerInterface&lt; Particle &gt; &amp; getContainer()</div><div class="ttdoc">Returns a non-const reference to the currently selected particle container.</div><div class="ttdef"><b>Definition:</b> LogicHandler.h:88</div></div>
