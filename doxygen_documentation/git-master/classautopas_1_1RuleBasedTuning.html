@@ -140,14 +140,14 @@ Collaboration diagram for autopas::RuleBasedTuning:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:add143adb42e865874c8b258a1bcbd3ac"><td class="memItemLeft" align="right" valign="top"><a id="add143adb42e865874c8b258a1bcbd3ac" name="add143adb42e865874c8b258a1bcbd3ac"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>PrintTuningErrorFunType</b> = std::function&lt; void(const <a class="el" href="structautopas_1_1rule__syntax_1_1ConfigurationOrder.html">rule_syntax::ConfigurationOrder</a> &amp;order, const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;actualBetterConfig, unsigned long betterRuntime, const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;shouldBeBetterConfig, unsigned long shouldBeBetterRuntime, const <a class="el" href="classautopas_1_1LiveInfo.html">LiveInfo</a> &amp;liveInfo)&gt;</td></tr>
-<tr class="memdesc:add143adb42e865874c8b258a1bcbd3ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function type used to print errors found in verify mode. <br /></td></tr>
-<tr class="separator:add143adb42e865874c8b258a1bcbd3ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af247ff72caceec4f9f9512d74e04cd75"><td class="memItemLeft" align="right" valign="top"><a id="af247ff72caceec4f9f9512d74e04cd75" name="af247ff72caceec4f9f9512d74e04cd75"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>PrintTuningErrorFunType</b> = int</td></tr>
+<tr class="memdesc:af247ff72caceec4f9f9512d74e04cd75"><td class="mdescLeft">&#160;</td><td class="mdescRight">A function type used to print errors found in verify mode. <br /></td></tr>
+<tr class="separator:af247ff72caceec4f9f9512d74e04cd75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acbb1e7ab91780aff9d4b538abfdacfe2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1RuleBasedTuning.html#acbb1e7ab91780aff9d4b538abfdacfe2">RuleBasedTuning</a> (const std::set&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;searchSpace, bool verifyModeEnabled=false, std::string ruleFileName=&quot;tuningRules.rule&quot;, <a class="el" href="classautopas_1_1RuleBasedTuning.html#add143adb42e865874c8b258a1bcbd3ac">PrintTuningErrorFunType</a> tuningErrorPrinter={})</td></tr>
+<tr class="memitem:acbb1e7ab91780aff9d4b538abfdacfe2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1RuleBasedTuning.html#acbb1e7ab91780aff9d4b538abfdacfe2">RuleBasedTuning</a> (const std::set&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;searchSpace, bool verifyModeEnabled=false, std::string ruleFileName=&quot;tuningRules.rule&quot;, <a class="el" href="classautopas_1_1RuleBasedTuning.html#af247ff72caceec4f9f9512d74e04cd75">PrintTuningErrorFunType</a> tuningErrorPrinter={})</td></tr>
 <tr class="memdesc:acbb1e7ab91780aff9d4b538abfdacfe2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a <a class="el" href="classautopas_1_1RuleBasedTuning.html" title="A tuning strategy that uses information collected live from the domain to exclude configurations that...">RuleBasedTuning</a> strategy.  <br /></td></tr>
 <tr class="separator:acbb1e7ab91780aff9d4b538abfdacfe2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7901d0769308135e6e8ebb7b2e3418e5"><td class="memItemLeft" align="right" valign="top">TuningStrategyOption&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1RuleBasedTuning.html#a7901d0769308135e6e8ebb7b2e3418e5">getOptionType</a> () const override</td></tr>
@@ -220,7 +220,8 @@ Public Member Functions</h2></td></tr>
 <div class="line">endif</div>
 </div><!-- fragment --><p> At first, we define our threshold as a variable. Variables are always constant and have global visibility. Then, we check if the threshold is not surpassed, and if yes, we apply the configuration order.</p>
 <p>A larger example file is stored in /examples/md-flexible/input/tuningRules.rule.</p>
-<p>Additionally, the class supports a so called "verify mode" where full search is performed and the given rules are checked for correctness. </p>
+<p>Additionally, the class supports a so called "verify mode" where full search is performed and the given rules are checked for correctness.</p>
+<p>Due to the compilation cost of ANTLR and issues with compiling the bundled dependency uuid on some machines, this tuning strategy can be disabled with the CMake option AUTOPAS_ENABLE_RULES_BASED_TUNING=OFF. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="acbb1e7ab91780aff9d4b538abfdacfe2" name="acbb1e7ab91780aff9d4b538abfdacfe2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acbb1e7ab91780aff9d4b538abfdacfe2">&#9670;&#160;</a></span>RuleBasedTuning()</h2>
@@ -252,7 +253,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classautopas_1_1RuleBasedTuning.html#add143adb42e865874c8b258a1bcbd3ac">RuleBasedTuning::PrintTuningErrorFunType</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1RuleBasedTuning.html#af247ff72caceec4f9f9512d74e04cd75">RuleBasedTuning::PrintTuningErrorFunType</a>&#160;</td>
           <td class="paramname"><em>tuningErrorPrinter</em> = <code>{}</code>&#160;</td>
         </tr>
         <tr>

@@ -104,20 +104,20 @@ $(function() {
   <div class="headertitle"><div class="title">Container Interface Model </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md14"></a> The behavior described in this section is completely hidden from AutoPas users. To ensure functionality, particles must not move more than <code>verletSkinPerTimestep / 2</code> per timestep. This was initially implemented in <a href="https://github.com/AutoPas/AutoPas/pull/642">PR 642</a>, so more details can be found there.</p>
-<h1><a class="anchor" id="autotoc_md15"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md15"></a> The behavior described in this section is completely hidden from AutoPas users. To ensure functionality, particles must not move more than <code>verletSkinPerTimestep / 2</code> per timestep. This was initially implemented in <a href="https://github.com/AutoPas/AutoPas/pull/642">PR 642</a>, so more details can be found there.</p>
+<h1><a class="anchor" id="autotoc_md16"></a>
 External Black-Box Interface</h1>
 <p>For an AutoPas user from the outside, it appears that the particle container is fully updated every time they call <code>AutoPas::updateContainer</code>. Particles leaving the domain are always returned, and particles can be added and deleted at any time. Historically this interface behavior was also called 'Linked-Cells-like'. For periodic boundary conditions or in an MPI-parallel simulation, the user is responsible for inserting the appropriate halo particles.</p>
-<h1><a class="anchor" id="autotoc_md16"></a>
+<h1><a class="anchor" id="autotoc_md17"></a>
 Internal Container Behavior</h1>
 <p>For Verlet list-based containers to perform efficiently, the aforementioned behavior is a problem, because they rely on their list references to not change until the next list rebuild. So our solution is to internally use a 'Verlet-like' behavior for all containers, where the actual container is not updated in every time step, leading to particles not necessarily being sorted into their new cells. We achieve this by avoiding container data structure changes during all updates that do not involve a potential rebuild of neighbor lists. This means that particles that would normally be deleted, like those leaving the domain or halos, are only marked for deletion (<code>OwnershipState::dummy</code>). They are only really removed during a container update at the end of a rebuild interval or container change.</p>
-<h2><a class="anchor" id="autotoc_md17"></a>
+<h2><a class="anchor" id="autotoc_md18"></a>
 &lt;tt&gt;LogicHandler&lt;/tt&gt; Buffers</h2>
 <p>The <code>LogicHandler</code> maintains particle buffers that allow the addition of particles to AutoPas without modifying the underlying container. These buffers are taken into account for the pairwise iteration as well as any other iterators. There is one pair of buffers for <code>owned</code> and <code>halo</code> particles per thread to allow parallel particle insertion.</p>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md19"></a>
 Reinsert Halos</h2>
 <p>As mentioned above, halo particles are not deleted immediately but only marked as <code>dummy</code>. Should the halo particle be reinserted before the container structure is updated, we search the vicinity of its coordinates. If there is a <code>dummy</code> particle with the same <code>id</code>, we replace it with the new particle. If nothing is found, the particle is added to a <code>LogicHandler</code> halo buffer. This effectively updates halo particles instead of deleting and reinserting them, making our data structures more stable.</p>
-<h3><a class="anchor" id="autotoc_md19"></a>
+<h3><a class="anchor" id="autotoc_md20"></a>
 Suboptimal Edge Cases</h3>
 <p>It is still possible that there is a dummy that is not updated, and a new particle is added. Consider the following chain of events:</p><ul>
 <li>The container is <code>LinkedCells</code> (or anything based on <code><a class="el" href="CellBlock3D_8h.html">CellBlock3D.h</a></code>), and a particle is stored in a cell just inside the boundary.</li>
@@ -125,7 +125,7 @@ Suboptimal Edge Cases</h3>
 <li>The particle is deleted (= turned <code>dummy</code>) by <code>AutoPas::updateContainer</code> because it left the domain.</li>
 <li>The particle is immediately added as a halo again. Since halo particles are not allowed to exist in non-halo cells, the existing dummy is not updated, and a new halo particle is added to buffers.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md20"></a>
+<h1><a class="anchor" id="autotoc_md21"></a>
 Related Files and Folders</h1>
 <ul>
 <li><a class="el" href="LeavingParticleCollector_8h.html">LeavingParticleCollector.h</a></li>
