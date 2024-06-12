@@ -104,7 +104,7 @@ $(function() {
   <div class="headertitle"><div class="title">Testing </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md63"></a> AutoPas uses <a href="https://github.com/google/googletest">googletest</a> as its testing framework, which exposes tests to <a href="https://cmake.org/cmake/help/latest/manual/ctest.1.html"><code>ctest</code></a>, the CMake test driver.</p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md64"></a> AutoPas uses <a href="https://github.com/google/googletest">googletest</a> as its testing framework, which exposes tests to <a href="https://cmake.org/cmake/help/latest/manual/ctest.1.html"><code>ctest</code></a>, the CMake test driver.</p>
 <p>We do not distinguish between unit/integration/smoke/etc. in the tests directory <code>/tests/</code>. However, our tests, in general, fall into a few categories:</p><ul>
 <li><p class="startli">Regular GTests</p>
 <p class="startli">Everything in <a href="https://github.com/AutoPas/AutoPas/blob/master/tests/testAutopas/"><code>/tests/testAutopas/</code></a></p>
@@ -117,7 +117,7 @@ $(function() {
 </li>
 <li>GTests for examples This only exists for md-flexible in <code>examples/md-flexible/tests</code>. See md-flexible's <a href="https://github.com/AutoPas/AutoPas/blob/master/examples/md-flexible/README.md">README</a> for more information.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md64"></a>
+<h1><a class="anchor" id="autotoc_md65"></a>
 Running Tests</h1>
 <p>There are multiple possibilities to run tests from the <code>/tests/</code> directory. In order of recommendation:</p>
 <ol type="1">
@@ -130,11 +130,11 @@ Running Tests</h1>
 </div><!-- fragment --> To only run specific tests, use arguments <div class="fragment"><div class="line">tests/testAutopas/runTests --gtest_filter=ArrayMathTest.testAdd*</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md65"></a>
+<h2><a class="anchor" id="autotoc_md66"></a>
 Running Example Tests</h2>
 <p>To enable the example simulations, run </p><div class="fragment"><div class="line">ctest -C checkExamples</div>
 </div><!-- fragment --><p> Example tests defined in <code>CMake</code> files are disabled by default. If you only want to run only those specific to one example, in your build directory, decent into its directory and run the command from above there.</p>
-<h1><a class="anchor" id="autotoc_md66"></a>
+<h1><a class="anchor" id="autotoc_md67"></a>
 Debugging Tests</h1>
 <p>Many IDEs (e.g., CLion) have integrated support for googletest, and you can debug the tests directly within the IDE.</p>
 <p>If you prefer <code>gdb</code> from the command line:</p><ol type="1">
@@ -143,7 +143,7 @@ Debugging Tests</h1>
 <li>Start the test with <code>gdb</code> <div class="fragment"><div class="line">gdb --args ${TestCommand}</div>
 </div><!-- fragment --></li>
 </ol>
-<h2><a class="anchor" id="autotoc_md67"></a>
+<h2><a class="anchor" id="autotoc_md68"></a>
 MPI tests</h2>
 <p>MPI parallel applications like md-flexible can be a bit tricky to debug, so make sure you debug without MPI whenever you can. If you have to debug MPI code, the trick is to attach one <code>gdb</code> per rank and use as few ranks as needed. Remember to also limit the number of OpenMP threads to not overload your system.</p>
 <div class="fragment"><div class="line"># Maximum number of threads for an eight-core processor</div>
@@ -161,7 +161,7 @@ MPI tests</h2>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyCenter"><code>gdb --args</code>   </td><td class="markdownTableBodyNone">Launches the debugger. Everything that follows is treated as arguments to <code>gdb</code>.   </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md68"></a>
+<h1><a class="anchor" id="autotoc_md69"></a>
 Related Files and Folders</h1>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

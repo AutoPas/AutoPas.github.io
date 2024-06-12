@@ -119,9 +119,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a1cb5e76bb2eed7199d196a83226cbc21"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#a1cb5e76bb2eed7199d196a83226cbc21">init</a> ()</td></tr>
-<tr class="memdesc:a1cb5e76bb2eed7199d196a83226cbc21"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization may fail, so moved out of constructor.  <br /></td></tr>
-<tr class="separator:a1cb5e76bb2eed7199d196a83226cbc21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada8a51a716f14a5826b76d76f999f647"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1utils_1_1RaplMeter.html#ada8a51a716f14a5826b76d76f999f647">init</a> (const bool mustSucceed)</td></tr>
+<tr class="memdesc:ada8a51a716f14a5826b76d76f999f647"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization may fail, so moved out of constructor.  <br /></td></tr>
+<tr class="separator:ada8a51a716f14a5826b76d76f999f647"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa16c3dad7c6e0d52edb44b73cc43ebce"><td class="memItemLeft" align="right" valign="top"><a id="aa16c3dad7c6e0d52edb44b73cc43ebce" name="aa16c3dad7c6e0d52edb44b73cc43ebce"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>reset</b> ()</td></tr>
 <tr class="memdesc:aa16c3dad7c6e0d52edb44b73cc43ebce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset perf file descriptors to start new measurement. <br /></td></tr>
@@ -251,23 +251,30 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>sample</b> ()</td></t
 
 </div>
 </div>
-<a id="a1cb5e76bb2eed7199d196a83226cbc21" name="a1cb5e76bb2eed7199d196a83226cbc21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1cb5e76bb2eed7199d196a83226cbc21">&#9670;&#160;</a></span>init()</h2>
+<a id="ada8a51a716f14a5826b76d76f999f647" name="ada8a51a716f14a5826b76d76f999f647"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada8a51a716f14a5826b76d76f999f647">&#9670;&#160;</a></span>init()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string autopas::utils::RaplMeter::init </td>
+          <td class="memname">bool autopas::utils::RaplMeter::init </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>mustSucceed</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Initialization may fail, so moved out of constructor. </p>
-<p>Note: This function returns an error message instead of throwing an exception if initialization is not possible. This way debuggers don't break on the start of every autopas initialization if we are not interested in energy measurement. </p><dl class="section return"><dt>Returns</dt><dd>Error message. The error is message is empty on success </dd></dl>
+<p>Note: This function returns an error message instead of throwing an exception if initialization is not possible. This way debuggers don't break on the start of every autopas initialization if we are not interested in energy measurement. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">mustSucceed</td><td>Bool indicating whether this method should throw on failure. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Error message. The error is message is empty on success </dd></dl>
 
 </div>
 </div>

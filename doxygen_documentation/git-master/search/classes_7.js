@@ -16,5 +16,6 @@ var searchData=
   ['is_5funique_5fptr_13',['is_unique_ptr',['../structautopas_1_1utils_1_1is__unique__ptr.html',1,'autopas::utils']]],
   ['is_5funique_5fptr_3c_20std_3a_3aunique_5fptr_3c_20t_20_3e_20_3e_14',['is_unique_ptr&lt; std::unique_ptr&lt; T &gt; &gt;',['../structautopas_1_1utils_1_1is__unique__ptr_3_01std_1_1unique__ptr_3_01T_01_4_01_4.html',1,'autopas::utils']]],
   ['iterationlogger_15',['IterationLogger',['../classautopas_1_1IterationLogger.html',1,'autopas']]],
-  ['iteratorbehavior_16',['IteratorBehavior',['../classautopas_1_1options_1_1IteratorBehavior.html',1,'autopas::options']]]
+  ['iterationmeasurements_16',['IterationMeasurements',['../structautopas_1_1IterationMeasurements.html',1,'autopas']]],
+  ['iteratorbehavior_17',['IteratorBehavior',['../classautopas_1_1options_1_1IteratorBehavior.html',1,'autopas::options']]]
 ];

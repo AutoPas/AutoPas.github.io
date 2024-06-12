@@ -104,33 +104,33 @@ $(function() {
   <div class="headertitle"><div class="title">Logging </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md40"></a> AutoPas contains multiple loggers with different purposes that can help shed light on the black box. Under the hood, they use <a href="https://github.com/gabime/spdlog">spdlog</a>. When deactivated via <code>CMake</code>, these loggers do not add any run time overhead.</p>
-<h1><a class="anchor" id="autotoc_md41"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md41"></a> AutoPas contains multiple loggers with different purposes that can help shed light on the black box. Under the hood, they use <a href="https://github.com/gabime/spdlog">spdlog</a>. When deactivated via <code>CMake</code>, these loggers do not add any run time overhead.</p>
+<h1><a class="anchor" id="autotoc_md42"></a>
 AutoPasLog</h1>
 <p>This is the main general-purpose logger. It supports all spdlog-levels, which are also accessible via the type alias <code><a class="el" href="classautopas_1_1Logger.html#a80b75d03d099be0340c79febe81f18bd" title="Typalias for log levels.">autopas::Logger::LogLevel</a></code>. These levels can be (de)activated at compile time via the <code>CMake</code> variable <code>AUTOPAS_MIN_LOG_LVL</code>. At run time, this logger's compiled levels can be set, e.g., via:</p>
 <div class="fragment"><div class="line"><a class="code hl_function" href="classautopas_1_1Logger.html#ae6125241be21442ba2cd5eaa84a432c1">autopas::Logger::get</a>()-&gt;set_level(autopas::Logger::LogLevel::debug);</div>
 <div class="ttc" id="aclassautopas_1_1Logger_html_ae6125241be21442ba2cd5eaa84a432c1"><div class="ttname"><a href="classautopas_1_1Logger.html#ae6125241be21442ba2cd5eaa84a432c1">autopas::Logger::get</a></div><div class="ttdeci">static auto get()</div><div class="ttdoc">Get a pointer to the actual logger object.</div><div class="ttdef"><b>Definition:</b> Logger.h:90</div></div>
 </div><!-- fragment --><p>To conveniently use this logger, a macro is provided that takes the log level in all caps, a message string which will be formatted by <a href="https://github.com/fmtlib/fmt">fmt</a> followed by any number of arguments: </p><div class="fragment"><div class="line"><a class="code hl_define" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(INFO, <span class="stringliteral">&quot;Message with two arguments: {} {}&quot;</span>, arg0, arg1);</div>
 <div class="ttc" id="aLogger_8h_html_ab5eef0a7030352f281056d3ee7f86575"><div class="ttname"><a href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a></div><div class="ttdeci">#define AutoPasLog(lvl, fmt,...)</div><div class="ttdoc">Macro for logging providing common meta information without filename.</div><div class="ttdef"><b>Definition:</b> Logger.h:24</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md42"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md43"></a>
 GaussianClusterLogger</h1>
 <p>Creates a graph representation of the Gaussian cluster model that was created during the simulation. This logger is switched on/off via the <code>CMake</code> variable <code>AUTOPAS_LOG_GAUSSIANCLUSTER</code>.</p>
-<h1><a class="anchor" id="autotoc_md43"></a>
+<h1><a class="anchor" id="autotoc_md44"></a>
 IterationLogger</h1>
 <p>Creates a CSV file containing information about the configuration and timings of every single call to <code>iteratePairwise()</code>. This logger is switched on/off via the <code>CMake</code> variable <code>AUTOPAS_LOG_ITERATIONS</code>.</p>
-<h1><a class="anchor" id="autotoc_md44"></a>
+<h1><a class="anchor" id="autotoc_md45"></a>
 OctreeLogger</h1>
 <p>Creates a VTK file to visualize the Octree particle container. This logger is switched on/off via the <code>CMake</code> variable <code>AUTOPAS_LOG_OCTREE</code>.</p>
-<h1><a class="anchor" id="autotoc_md45"></a>
+<h1><a class="anchor" id="autotoc_md46"></a>
 PredictionLogger</h1>
 <p>Creates a CSV containing the predictions made by the PredictiveTuning strategy. This logger is switched on/off via the <code>CMake</code> variable <code>AUTOPAS_LOG_PREDICTIONS</code>.</p>
-<h1><a class="anchor" id="autotoc_md46"></a>
+<h1><a class="anchor" id="autotoc_md47"></a>
 TuningDataLogger</h1>
 <p>Creates a CSV containing all data that is collected for tuning purposes. This is the raw data that is available to the tuning algorithms. This logger is switched on/off via the <code>CMake</code> variable <code>AUTOPAS_LOG_TUNINGDATA</code>.</p>
-<h1><a class="anchor" id="autotoc_md47"></a>
+<h1><a class="anchor" id="autotoc_md48"></a>
 TuningResultLogger</h1>
 <p>Creates a CSV containing the results of every tuning phase. It is beneficial if only the high-level end results are of interest. This logger is switched on/off via the <code>CMake</code> variable <code>AUTOPAS_LOG_TUNINGRESULTS</code>.</p>
-<h1><a class="anchor" id="autotoc_md48"></a>
+<h1><a class="anchor" id="autotoc_md49"></a>
 Related Files and Folders</h1>
 <ul>
 <li>src/autopas/utils/logging/ </li>

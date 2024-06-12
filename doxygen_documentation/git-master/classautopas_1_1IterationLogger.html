@@ -119,24 +119,24 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0bb638f554d1bb1e6f1556f9a897c577"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1IterationLogger.html#a0bb638f554d1bb1e6f1556f9a897c577">IterationLogger</a> (const std::string &amp;outputSuffix=&quot;&quot;)</td></tr>
-<tr class="memdesc:a0bb638f554d1bb1e6f1556f9a897c577"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor initializes the logger and sets the output file name.  <br /></td></tr>
-<tr class="separator:a0bb638f554d1bb1e6f1556f9a897c577"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad93ffee01b2b198bd56657b17b5e9617"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1IterationLogger.html#ad93ffee01b2b198bd56657b17b5e9617">IterationLogger</a> (const std::string &amp;outputSuffix=&quot;&quot;, bool energyMeasurements=false)</td></tr>
+<tr class="memdesc:ad93ffee01b2b198bd56657b17b5e9617"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor initializes the logger and sets the output file name.  <br /></td></tr>
+<tr class="separator:ad93ffee01b2b198bd56657b17b5e9617"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e57fe5fe019c94dd833aabacf18439e"><td class="memItemLeft" align="right" valign="top"><a id="a0e57fe5fe019c94dd833aabacf18439e" name="a0e57fe5fe019c94dd833aabacf18439e"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~IterationLogger</b> ()</td></tr>
 <tr class="memdesc:a0e57fe5fe019c94dd833aabacf18439e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor drops the logger from the spd registry. <br /></td></tr>
 <tr class="separator:a0e57fe5fe019c94dd833aabacf18439e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ba0ec9a3bb102ff868c0ee8d1ec2bd9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1IterationLogger.html#a7ba0ec9a3bb102ff868c0ee8d1ec2bd9">logIteration</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;configuration, size_t iteration, bool inTuningPhase, long timeIteratePairwise, long timeRemainderTraversal, long timeRebuildNeighborLists, long timeIteratePairwiseTotal, long timeTuning, double energyPsys, double energyPkg, double energyRam)</td></tr>
-<tr class="memdesc:a7ba0ec9a3bb102ff868c0ee8d1ec2bd9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log the given arguments and the internal buffer to the csv file.  <br /></td></tr>
-<tr class="separator:a7ba0ec9a3bb102ff868c0ee8d1ec2bd9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af49a99428430239cad96a0518feebf9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1IterationLogger.html#af49a99428430239cad96a0518feebf9e">logIteration</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;configuration, size_t iteration, bool inTuningPhase, long timeTuning, const <a class="el" href="structautopas_1_1IterationMeasurements.html">IterationMeasurements</a> &amp;measurements)</td></tr>
+<tr class="memdesc:af49a99428430239cad96a0518feebf9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log the given arguments and the internal buffer to the csv file.  <br /></td></tr>
+<tr class="separator:af49a99428430239cad96a0518feebf9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper to log performance data of <a class="el" href="classautopas_1_1AutoPas.html#aa4f698155519b2dc75f7a4ec800b3763" title="Function to iterate over all pairs of particles in the container.">AutoPas::iteratePairwise()</a> to a csv file for easier analysis. </p>
 <p>It uses an asynchronous spd logger to write a csv file named "AutoPas_iterationPerformance_&lt;dateStamp&gt;.csv".</p>
 <p>By default logging the data is disabled. It can be enabled by setting the cmake variable AUTOPAS_LOG_ITERATIONS to ON. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a0bb638f554d1bb1e6f1556f9a897c577" name="a0bb638f554d1bb1e6f1556f9a897c577"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0bb638f554d1bb1e6f1556f9a897c577">&#9670;&#160;</a></span>IterationLogger()</h2>
+<a id="ad93ffee01b2b198bd56657b17b5e9617" name="ad93ffee01b2b198bd56657b17b5e9617"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad93ffee01b2b198bd56657b17b5e9617">&#9670;&#160;</a></span>IterationLogger()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -148,8 +148,18 @@ Public Member Functions</h2></td></tr>
           <td class="memname">autopas::IterationLogger::IterationLogger </td>
           <td>(</td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>outputSuffix</em> = <code>&quot;&quot;</code></td><td>)</td>
+          <td class="paramname"><em>outputSuffix</em> = <code>&quot;&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>energyMeasurements</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -163,6 +173,7 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">outputSuffix</td><td>Suffix for all output files produced by this class. </td></tr>
+    <tr><td class="paramname">energyMeasurements</td><td>Should the logger include energy measurements? </td></tr>
   </table>
   </dd>
 </dl>
@@ -170,8 +181,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a7ba0ec9a3bb102ff868c0ee8d1ec2bd9" name="a7ba0ec9a3bb102ff868c0ee8d1ec2bd9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ba0ec9a3bb102ff868c0ee8d1ec2bd9">&#9670;&#160;</a></span>logIteration()</h2>
+<a id="af49a99428430239cad96a0518feebf9e" name="af49a99428430239cad96a0518feebf9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af49a99428430239cad96a0518feebf9e">&#9670;&#160;</a></span>logIteration()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -198,49 +209,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">long&#160;</td>
-          <td class="paramname"><em>timeIteratePairwise</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">long&#160;</td>
-          <td class="paramname"><em>timeRemainderTraversal</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">long&#160;</td>
-          <td class="paramname"><em>timeRebuildNeighborLists</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">long&#160;</td>
-          <td class="paramname"><em>timeIteratePairwiseTotal</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">long&#160;</td>
           <td class="paramname"><em>timeTuning</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>energyPsys</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>energyPkg</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>energyRam</em>&#160;</td>
+          <td class="paramtype">const <a class="el" href="structautopas_1_1IterationMeasurements.html">IterationMeasurements</a> &amp;&#160;</td>
+          <td class="paramname"><em>measurements</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -256,14 +231,8 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">configuration</td><td></td></tr>
     <tr><td class="paramname">iteration</td><td></td></tr>
     <tr><td class="paramname">inTuningPhase</td><td>True if the logged iteration is in a tuning phase. </td></tr>
-    <tr><td class="paramname">timeIteratePairwise</td><td>Time for Container::iteratePairwise(). </td></tr>
-    <tr><td class="paramname">timeRemainderTraversal</td><td>Time for LogicHandler::doRemainderTraversal(). </td></tr>
-    <tr><td class="paramname">timeRebuildNeighborLists</td><td>Time for Container::rebuildNeighborLists(). </td></tr>
-    <tr><td class="paramname">timeIteratePairwiseTotal</td><td>Time for LogicHandler::iteratePairwise(). This is slightly more than the sum of the above. Additional steps, only included in this timer are e.g. <a class="el" href="classautopas_1_1Functor.html#ad6c1b28af683bb01929229948553b211" title="This function is called at the start of each traversal.">Functor::initTraversal()</a> and <a class="el" href="classautopas_1_1Functor.html#aeec8a9f9e96ee72098d72a97cc28773f" title="This function is called at the end of each traversal.">Functor::endTraversal()</a>. </td></tr>
     <tr><td class="paramname">timeTuning</td><td>Time for finding the next configuration. </td></tr>
-    <tr><td class="paramname">energyPsys</td><td>Energy in Joules for the entire measured system since the last measurement. </td></tr>
-    <tr><td class="paramname">energyPkg</td><td>Energy in Joules for the CPU package since the last measurement. </td></tr>
-    <tr><td class="paramname">energyRam</td><td>Energy in Joules for the RAM since the last measurement. </td></tr>
+    <tr><td class="paramname">measurements</td><td>Struct that holds all measurements from a computeInteractions() iteration. </td></tr>
   </table>
   </dd>
 </dl>

@@ -32,7 +32,7 @@ var searchData=
   ['logallpredictions_29',['logAllPredictions',['../classautopas_1_1PredictionLogger.html#a8119cdff92d2e891b61cc86d728e8b8e',1,'autopas::PredictionLogger']]],
   ['logdebuggraph_30',['logDebugGraph',['../classautopas_1_1GaussianCluster.html#a25e79799e3304f3f52f6a309f7b26ebb',1,'autopas::GaussianCluster']]],
   ['logichandler_31',['LogicHandler',['../classautopas_1_1LogicHandler.html#a8e08c944eeb4401be33463daef80181c',1,'autopas::LogicHandler']]],
-  ['logiteration_32',['logIteration',['../classautopas_1_1AutoTuner.html#a8116631f0a85dfaea46e42a0511bace4',1,'autopas::AutoTuner::logIteration()'],['../classautopas_1_1IterationLogger.html#a7ba0ec9a3bb102ff868c0ee8d1ec2bd9',1,'autopas::IterationLogger::logIteration()']]],
+  ['logiteration_32',['logIteration',['../classautopas_1_1AutoTuner.html#a8116631f0a85dfaea46e42a0511bace4',1,'autopas::AutoTuner::logIteration()'],['../classautopas_1_1IterationLogger.html#af49a99428430239cad96a0518feebf9e',1,'autopas::IterationLogger::logIteration()']]],
   ['logtosqlitewriter_33',['LogToSQLiteWriter',['../classLogToSQLiteWriter.html#a120f53b995d753b9d9b8a2613c47dad7',1,'LogToSQLiteWriter']]],
   ['logtree_34',['logTree',['../classautopas_1_1OctreeLogger.html#aba6eef7f9da3dd9eed8f82df3ae30765',1,'autopas::OctreeLogger::logTree(OctreeNodeWrapper&lt; Particle &gt; *wrapper)'],['../classautopas_1_1OctreeLogger.html#aa76cdbd567adee72c8919bfe0c741604',1,'autopas::OctreeLogger::logTree(OctreeNodeInterface&lt; Particle &gt; *root)']]],
   ['logtuningdata_35',['logTuningData',['../classautopas_1_1TuningDataLogger.html#a855f59ac1f8d5135b05390d551d20d8a',1,'autopas::TuningDataLogger']]],

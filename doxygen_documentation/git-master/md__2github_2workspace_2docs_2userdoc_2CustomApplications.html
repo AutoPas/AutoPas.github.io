@@ -104,8 +104,8 @@ $(function() {
   <div class="headertitle"><div class="title">Custom Applications </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md22"></a> AutoPas can be used as the core of arbitrary (short-range) particle simulations. The repository comes with a few example applications that can be found in <a href="https://github.com/AutoPas/AutoPas/blob/master/applicationLibrary"><code>applicationLibrary</code></a>. To create a new custom application, custom particle and functor classes have to be created.</p>
-<h1><a class="anchor" id="autotoc_md23"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md23"></a> AutoPas can be used as the core of arbitrary (short-range) particle simulations. The repository comes with a few example applications that can be found in <a href="https://github.com/AutoPas/AutoPas/blob/master/applicationLibrary"><code>applicationLibrary</code></a>. To create a new custom application, custom particle and functor classes have to be created.</p>
+<h1><a class="anchor" id="autotoc_md24"></a>
 Custom Particles</h1>
 <p>Your particle class is an object-oriented representation of your particle model. For compatibility, it should inherit from <a href="https://github.com/AutoPas/AutoPas/blob/master/src/autopas/particles/ParticleBase.h"><code>ParticleBase</code></a>. This provides basic features like ID, 3D position, 3D force, and an <a href="https://github.com/AutoPas/AutoPas/blob/master/docs/userdoc/ParticleOwnershipModel.md"><code>OwnershipState</code></a>, as well as, amongst others, functionalities to automatically convert the particle into an SoA representation.</p>
 <p>For this to work, the new particle type has to define a few things to help the code generation:</p><ul>
@@ -114,10 +114,10 @@ Custom Particles</h1>
 <li><code>get()</code> and <code>set()</code> methods templated with the previously defined <code>AttributeNames</code>.</li>
 </ul>
 <p>As an example see <a href="https://github.com/AutoPas/AutoPas/blob/master/applicationLibrary/molecularDynamics/molecularDynamicsLibrary/MoleculeLJ.h"><code>MoleculeLJ</code></a>.</p>
-<h2><a class="anchor" id="autotoc_md24"></a>
+<h2><a class="anchor" id="autotoc_md25"></a>
 Multiple Particle Types</h2>
 <p>AutoPas only supports a single particle class. Therefore, if you want to handle multiple particle types e.g. asteroids vs satellites then you have to differentiate between them manually. This could be achieved via the introduction of an indicator member in your particle class e.g. <code>typeId</code> or having the class itself contain the fields for all types.</p>
-<h1><a class="anchor" id="autotoc_md25"></a>
+<h1><a class="anchor" id="autotoc_md26"></a>
 Custom Functors</h1>
 <p>The functor is a class that defines the interaction of particles, also sometimes referred to as the force kernel. For compatibility, it should inherit from <a href="https://github.com/AutoPas/AutoPas/blob/master/src/autopas/pairwiseFunctors/Functor.h"><code>Functor</code></a>. This class defines how to calculate and store the interactions, as well as some properties of the calculation.</p>
 <p>The critical elements to implement are:</p><ul>
@@ -128,7 +128,7 @@ Custom Functors</h1>
 <li><code>isRelevantForTuning()</code>: Indicator function to tell the tuning mechanism if iterations using this functor should be considered or not.</li>
 </ul>
 <p>As an example see <a href="https://github.com/AutoPas/AutoPas/blob/master/applicationLibrary/sph/SPHLibrary/SPHCalcDensityFunctor.h"><code>SPHCalcDensityFunctor</code></a>.</p>
-<h2><a class="anchor" id="autotoc_md26"></a>
+<h2><a class="anchor" id="autotoc_md27"></a>
 Using multiple functors</h2>
 <p>AutoPas is able to work with simulation setups that use multiple functors to describe different forces. A demonstration of that is the <a href="https://github.com/AutoPas/AutoPas/blob/master/examples/sph/">sph example</a>. There exist some caveats that have to be considered when using multiple functors:</p><ul>
 <li>All functors need to support the same Newton3 options. If there is one functor not supporting Newton3, you have to disable Newton3 support for AutoPas by calling <div class="fragment"><div class="line"><a class="code hl_namespace" href="namespaceautopas.html">autopas</a>.setAllowedNewton3Options({<span class="keyword">false</span>});</div>
@@ -137,7 +137,7 @@ Using multiple functors</h2>
 <li>If you have <code>n</code> functors within one iteration and update the particle position only at the end or start of the iteration, the Verlet rebuild interval, and the number of collected samples have to be a multiple of <code>n</code>.</li>
 <li>Functors must be marked as (not) relevant for tuning by specifying <code>Functor::isRelevantForTuning()</code>. Functors marked as relevant should have a near-identical performance profile, otherwise, the sampling of configurations will be distorted. It is recommended, to only mark the most expensive functor as relevant.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md27"></a>
+<h1><a class="anchor" id="autotoc_md28"></a>
 Related Files and Folders</h1>
 <ul>
 <li><a class="el" href="Functor_8h.html">Functor.h</a></li>
