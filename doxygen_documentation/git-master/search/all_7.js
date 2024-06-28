@@ -49,7 +49,7 @@ var searchData=
   ['functor_3c_20particle_2c_20sphcalchydroforcefunctor_3c_20particle_20_3e_20_3e_46',['Functor&lt; Particle, SPHCalcHydroForceFunctor&lt; Particle &gt; &gt;',['../classautopas_1_1Functor.html',1,'autopas']]],
   ['functor_3c_20particle_2c_20verletlistgeneratorfunctor_20_3e_47',['Functor&lt; Particle, VerletListGeneratorFunctor &gt;',['../classautopas_1_1Functor.html',1,'autopas']]],
   ['functor_3c_20particle_2c_20verletlistvaliditycheckerfunctor_20_3e_48',['Functor&lt; Particle, VerletListValidityCheckerFunctor &gt;',['../classautopas_1_1Functor.html',1,'autopas']]],
-  ['functor_3c_20particle_2c_20vlcallcellsgeneratorfunctor_3c_20particle_20_3e_20_3e_49',['Functor&lt; Particle, VLCAllCellsGeneratorFunctor&lt; Particle &gt; &gt;',['../classautopas_1_1Functor.html',1,'autopas']]],
+  ['functor_3c_20particle_2c_20vlcallcellsgeneratorfunctor_3c_20particle_2c_20traversaloptionenum_20_3e_20_3e_49',['Functor&lt; Particle, VLCAllCellsGeneratorFunctor&lt; Particle, TraversalOptionEnum &gt; &gt;',['../classautopas_1_1Functor.html',1,'autopas']]],
   ['functor_3c_20particle_2c_20vlccellpairgeneratorfunctor_3c_20particle_20_3e_20_3e_50',['Functor&lt; Particle, VLCCellPairGeneratorFunctor&lt; Particle &gt; &gt;',['../classautopas_1_1Functor.html',1,'autopas']]],
   ['functor_5ft_51',['Functor_T',['../classautopas_1_1Functor.html#a7509be8f36507a96e66f2bfd6a8adc19',1,'autopas::Functor']]],
   ['functorn3modes_52',['FunctorN3Modes',['../namespaceautopas.html#aae98cfb33c0ad2e9682bff91f985fcdb',1,'autopas']]]

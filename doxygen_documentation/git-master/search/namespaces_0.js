@@ -30,5 +30,6 @@ var searchData=
   ['threedimensionalmapping_27',['ThreeDimensionalMapping',['../namespaceautopas_1_1utils_1_1ThreeDimensionalMapping.html',1,'autopas::utils']]],
   ['tuninglogentry_28',['tuningLogEntry',['../namespaceautopas_1_1tuningLogEntry.html',1,'autopas']]],
   ['tupleutils_29',['TupleUtils',['../namespaceautopas_1_1utils_1_1TupleUtils.html',1,'autopas::utils']]],
-  ['utils_30',['utils',['../namespaceautopas_1_1utils.html',1,'autopas']]]
+  ['utils_30',['utils',['../namespaceautopas_1_1utils.html',1,'autopas']]],
+  ['verletlistscellshelpers_31',['VerletListsCellsHelpers',['../namespaceautopas_1_1VerletListsCellsHelpers.html',1,'autopas']]]
 ];

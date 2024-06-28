@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['listtype_0',['listType',['../classautopas_1_1VLCAllCellsNeighborList.html#a10e4b889c32868d2552b9603a5073385',1,'autopas::VLCAllCellsNeighborList::listType'],['../classautopas_1_1VLCCellPairNeighborList.html#a598d68a0ae7c4ded3a4bcbb0dcd4fc02',1,'autopas::VLCCellPairNeighborList::listType']]],
+  ['listtype_0',['listType',['../classautopas_1_1VLCAllCellsNeighborList.html#a4707e0af4ff18f03dc915995deee375d',1,'autopas::VLCAllCellsNeighborList::listType'],['../classautopas_1_1VLCCellPairNeighborList.html#a43854cbad8fed8518fa9cca6276ac79d',1,'autopas::VLCCellPairNeighborList::listType']]],
   ['loglevel_1',['LogLevel',['../classautopas_1_1Logger.html#a80b75d03d099be0340c79febe81f18bd',1,'autopas::Logger']]]
 ];
