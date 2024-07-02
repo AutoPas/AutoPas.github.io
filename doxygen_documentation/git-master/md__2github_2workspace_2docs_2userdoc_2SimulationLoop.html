@@ -114,7 +114,8 @@ High-Level View</h1>
 </ol>
 <h1><a class="anchor" id="autotoc_md56"></a>
 Code Example</h1>
-<p>A conceptual example of a primary simulation loop: </p><div class="fragment"><div class="line"><span class="comment">// main simulation loop</span></div>
+<p>A conceptual example of a primary simulation loop: </p><div class="fragment"><div class="line"> ++</div>
+<div class="line"><span class="comment">// main simulation loop</span></div>
 <div class="line"><span class="keywordflow">while</span> (needsMoreIterations()) {</div>
 <div class="line">   <span class="comment">// 1. Particles movement as a result of interactions or simulation forces.</span></div>
 <div class="line">   updatePositions();</div>
@@ -140,14 +141,16 @@ Code Example</h1>
 Steps</h1>
 <h2><a class="anchor" id="autotoc_md58"></a>
 1. Particle Movement</h2>
-<p>This step is highly user-dependent. Based on the simulation at hand, particles move due to the result of interaction forces or forces coming from the simulation model. Nevertheless, positions are usually updated through regular AutoPas iterators (see <a href="https://github.com/AutoPas/AutoPas/blob/master/docs/userdoc/Iterators.md"><code>Iterators.md</code></a> for details): </p><div class="fragment"><div class="line"><span class="keywordtype">void</span> updatePositions() {</div>
+<p>This step is highly user-dependent. Based on the simulation at hand, particles move due to the result of interaction forces or forces coming from the simulation model. Nevertheless, positions are usually updated through regular AutoPas iterators (see <a href="https://github.com/AutoPas/AutoPas/blob/master/docs/userdoc/Iterators.md"><code>Iterators.md</code></a> for details): </p><div class="fragment"><div class="line"> ++</div>
+<div class="line"><span class="keywordtype">void</span> updatePositions() {</div>
 <div class="line">   <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;p : <a class="code hl_namespace" href="namespaceautopas.html">autopas</a>) {</div>
 <div class="line">      p.setR(calculateNewPosition(p);</div>
 <div class="line">   }</div>
 <div class="line">}</div>
 </div><!-- fragment --><h3><a class="anchor" id="autotoc_md59"></a>
 1.1 Data Structure Update</h3>
-<div class="fragment"><div class="line"><span class="keyword">auto</span> emigrants = <a class="code hl_namespace" href="namespaceautopas.html">autopas</a>-&gt;updateContainer();</div>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line"><span class="keyword">auto</span> emigrants = <a class="code hl_namespace" href="namespaceautopas.html">autopas</a>-&gt;updateContainer();</div>
 </div><!-- fragment --><p> This method has to be called in every iteration after particles are moved. It achieves three things (see <a href="https://github.com/AutoPas/AutoPas/blob/master/docs/userdoc/ContainerInterfaceModel.md"><code>ContainerInterfaceModel.md</code></a> for more details):</p><ul>
 <li>Internal data structures are updated if necessary.</li>
 <li>Halo particles are (marked as) deleted.</li>
@@ -155,7 +158,8 @@ Steps</h1>
 </ul>
 <h3><a class="anchor" id="autotoc_md60"></a>
 1.2 Particle Exchange</h3>
-<div class="fragment"><div class="line"><a class="code hl_namespace" href="namespaceautopas.html">autopas</a>-&gt;addParticles(immigrants);</div>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line"><a class="code hl_namespace" href="namespaceautopas.html">autopas</a>-&gt;addParticles(immigrants);</div>
 <div class="line"><a class="code hl_namespace" href="namespaceautopas.html">autopas</a>-&gt;addHaloParticles(haloParticles);</div>
 </div><!-- fragment --><p> Depending on the simulation, the user might want to remove and/or insert particles in the local simulation. Examples of this could be:</p><ul>
 <li>Particles crossing periodic boundaries (remove in old subdomain, insert in new one).</li>
@@ -165,7 +169,8 @@ Steps</h1>
 </ul>
 <h2><a class="anchor" id="autotoc_md61"></a>
 2. Particle Interaction</h2>
-<div class="fragment"><div class="line">YourFunctor functor();</div>
+<div class="fragment"><div class="line"> ++</div>
+<div class="line">YourFunctor functor();</div>
 <div class="line"><a class="code hl_namespace" href="namespaceautopas.html">autopas</a>-&gt;iteratePairwise(&amp;functor);</div>
 </div><!-- fragment --><p> Apply your custom force interaction via one or several functors. This step triggers the tuning. It internally applies OpenMP parallelization, so do not use it in other thread-parallel environments.</p>
 <h2><a class="anchor" id="autotoc_md62"></a>

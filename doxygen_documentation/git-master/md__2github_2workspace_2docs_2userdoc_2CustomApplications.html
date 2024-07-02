@@ -131,7 +131,8 @@ Custom Functors</h1>
 <h2><a class="anchor" id="autotoc_md27"></a>
 Using multiple functors</h2>
 <p>AutoPas is able to work with simulation setups that use multiple functors to describe different forces. A demonstration of that is the <a href="https://github.com/AutoPas/AutoPas/blob/master/examples/sph/">sph example</a>. There exist some caveats that have to be considered when using multiple functors:</p><ul>
-<li>All functors need to support the same Newton3 options. If there is one functor not supporting Newton3, you have to disable Newton3 support for AutoPas by calling <div class="fragment"><div class="line"><a class="code hl_namespace" href="namespaceautopas.html">autopas</a>.setAllowedNewton3Options({<span class="keyword">false</span>});</div>
+<li>All functors need to support the same Newton3 options. If there is one functor not supporting Newton3, you have to disable Newton3 support for AutoPas by calling <div class="fragment"><div class="line">++</div>
+<div class="line"> <a class="code hl_namespace" href="namespaceautopas.html">autopas</a>.setAllowedNewton3Options({<span class="keyword">false</span>});</div>
 <div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">This is the main namespace of AutoPas.</div><div class="ttdef"><b>Definition:</b> AutoPasDecl.h:31</div></div>
 </div><!-- fragment --> Otherwise, the algorithm selection might choose a configuration with Newton3 and fail to apply the functor that does not support it.</li>
 <li>If you have <code>n</code> functors within one iteration and update the particle position only at the end or start of the iteration, the Verlet rebuild interval, and the number of collected samples have to be a multiple of <code>n</code>.</li>
