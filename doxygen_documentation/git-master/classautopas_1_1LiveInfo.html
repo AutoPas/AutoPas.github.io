@@ -138,6 +138,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a02b304cd13b8cd4ef0cb21fecf5fed04"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LiveInfo.html#a02b304cd13b8cd4ef0cb21fecf5fed04">toString</a> () const</td></tr>
 <tr class="memdesc:a02b304cd13b8cd4ef0cb21fecf5fed04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a string containing all live info gathered.  <br /></td></tr>
 <tr class="separator:a02b304cd13b8cd4ef0cb21fecf5fed04"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a082c22c074edd04622098f11967a912a"><td class="memItemLeft" align="right" valign="top">std::pair&lt; std::string, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LiveInfo.html#a082c22c074edd04622098f11967a912a">getCSVLine</a> () const</td></tr>
+<tr class="memdesc:a082c22c074edd04622098f11967a912a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generate a csv representation containing all values from the <a class="el" href="classautopas_1_1LiveInfo.html#a02b304cd13b8cd4ef0cb21fecf5fed04" title="Creates a string containing all live info gathered.">toString()</a> method.  <br /></td></tr>
+<tr class="separator:a082c22c074edd04622098f11967a912a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
 Friends</h2></td></tr>
@@ -259,6 +262,34 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 <p>Returns a map of all infos. </p>
 <dl class="section return"><dt>Returns</dt><dd>A map of all infos. </dd></dl>
+
+</div>
+</div>
+<a id="a082c22c074edd04622098f11967a912a" name="a082c22c074edd04622098f11967a912a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a082c22c074edd04622098f11967a912a">&#9670;&#160;</a></span>getCSVLine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; std::string, std::string &gt; autopas::LiveInfo::getCSVLine </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generate a csv representation containing all values from the <a class="el" href="classautopas_1_1LiveInfo.html#a02b304cd13b8cd4ef0cb21fecf5fed04" title="Creates a string containing all live info gathered.">toString()</a> method. </p>
+<p>Since the keys are not necessarily known in advance, this method generates a CSV header and a CSV line. </p><dl class="section return"><dt>Returns</dt><dd>A pair of strings in the form of (header, line). </dd></dl>
 
 </div>
 </div>
