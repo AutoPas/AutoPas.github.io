@@ -16,6 +16,5 @@ var searchData=
   ['domaintools_2ecpp_13',['DomainTools.cpp',['../DomainTools_8cpp.html',1,'']]],
   ['domaintools_2eh_14',['DomainTools.h',['../DomainTools_8h.html',1,'']]],
   ['dontcreateendconfig_15',['dontCreateEndConfig',['../classMDFlexConfig.html#a61bb5d9aad5c702c59112e3bcbf23eab',1,'MDFlexConfig']]],
-  ['dontmeasureflops_16',['dontMeasureFlops',['../classMDFlexConfig.html#a87d674c94dda16a39fcf0e00c88da912',1,'MDFlexConfig']]],
-  ['dontshowprogressbar_17',['dontShowProgressBar',['../classMDFlexConfig.html#aa70b59778d3dbd4b272490cc91f37aaa',1,'MDFlexConfig']]]
+  ['dontshowprogressbar_16',['dontShowProgressBar',['../classMDFlexConfig.html#aa70b59778d3dbd4b272490cc91f37aaa',1,'MDFlexConfig']]]
 ];

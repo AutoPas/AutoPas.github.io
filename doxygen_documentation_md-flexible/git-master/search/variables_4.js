@@ -7,6 +7,5 @@ var searchData=
   ['distributionmean_4',['distributionMean',['../classMDFlexConfig.html#ac1974014a48da0db0b5bf4fe5bf9e8d9',1,'MDFlexConfig']]],
   ['distributionstddev_5',['distributionStdDev',['../classMDFlexConfig.html#a11215229ee4e8bf4a8a618e8c0f40493',1,'MDFlexConfig']]],
   ['dontcreateendconfig_6',['dontCreateEndConfig',['../classMDFlexConfig.html#a61bb5d9aad5c702c59112e3bcbf23eab',1,'MDFlexConfig']]],
-  ['dontmeasureflops_7',['dontMeasureFlops',['../classMDFlexConfig.html#a87d674c94dda16a39fcf0e00c88da912',1,'MDFlexConfig']]],
-  ['dontshowprogressbar_8',['dontShowProgressBar',['../classMDFlexConfig.html#aa70b59778d3dbd4b272490cc91f37aaa',1,'MDFlexConfig']]]
+  ['dontshowprogressbar_7',['dontShowProgressBar',['../classMDFlexConfig.html#aa70b59778d3dbd4b272490cc91f37aaa',1,'MDFlexConfig']]]
 ];
