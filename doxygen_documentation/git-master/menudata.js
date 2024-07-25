@@ -190,6 +190,7 @@ var menudata={children:[
 {text:"a",url:"globals.html#index_a"},
 {text:"c",url:"globals.html#index_c"},
 {text:"f",url:"globals.html#index_f"},
+{text:"l",url:"globals.html#index_l"},
 {text:"m",url:"globals.html#index_m"},
 {text:"p",url:"globals.html#index_p"}]},
 {text:"Functions",url:"globals_func.html"},

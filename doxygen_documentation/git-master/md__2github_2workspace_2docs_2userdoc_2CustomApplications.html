@@ -126,6 +126,7 @@ Custom Functors</h1>
 <li><code>allowsNewton3()</code> and <code>allowsNonNewton3()</code>: Indicator functions to tell AutoPas if the functor supports optimizations using Newton's third law of motion. Should the functor calculate global forces, e.g. potential energy or virial, this must be implemented in a way that supports a mixture of all supported Newton3 modes within one iteration.</li>
 <li><code>getNeededAttr()</code> and <code>getComputedAttr()</code>: Indicator functions that return a <code>std::array</code> of all <code>AttributeNames</code>, which the functor needs to load from the particle to perform the calculation, as well as which fields are written.</li>
 <li><code>isRelevantForTuning()</code>: Indicator function to tell the tuning mechanism if iterations using this functor should be considered or not.</li>
+<li><code>getNumFLOPs()</code> and <code>getHitRate()</code>: These functions return the number of FLOPs per traversal of the container and the hit-rate (the ratio of distance calculations that lead to functor interactions e.g. force contributions.) These functions are only used if <code>AUTOPAS_LOG_FLOPS</code> is set to <code>ON</code>. If unimplemented, these functions return 0, making the statistics produced by the FLOP logger useless, but otherwise not affecting the simulation.</li>
 </ul>
 <p>As an example see <a href="https://github.com/AutoPas/AutoPas/blob/master/applicationLibrary/sph/SPHLibrary/SPHCalcDensityFunctor.h"><code>SPHCalcDensityFunctor</code></a>.</p>
 <h2><a class="anchor" id="autotoc_md27"></a>

@@ -41,10 +41,9 @@ var searchData=
   ['numbersetfinite_38',['NumberSetFinite',['../classautopas_1_1NumberSetFinite.html',1,'autopas::NumberSetFinite&lt; Number &gt;'],['../classautopas_1_1NumberSetFinite.html#a4cc866c4ae22f1b054b267d323a8b188',1,'autopas::NumberSetFinite::NumberSetFinite(const std::set&lt; Number &gt; &amp;values)'],['../classautopas_1_1NumberSetFinite.html#ac88eea861adcf93bb9a749cacad27651',1,'autopas::NumberSetFinite::NumberSetFinite()'],['../classautopas_1_1NumberSetFinite.html#a3c505071ff4db44cab317b733a0a6e4b',1,'autopas::NumberSetFinite::NumberSetFinite(std::initializer_list&lt; Number &gt; values)']]],
   ['numbersetfinite_2eh_39',['NumberSetFinite.h',['../NumberSetFinite_8h.html',1,'']]],
   ['numclusters_40',['numClusters',['../structautopas_1_1VerletClusterLists_1_1ClusterRange.html#a9438eb32cd346e6ae1efb7d47b5dd08a',1,'autopas::VerletClusterLists::ClusterRange']]],
-  ['numevidence_41',['numEvidence',['../classautopas_1_1GaussianCluster.html#ae5b19d19210ec68e27e964b9ccdba225',1,'autopas::GaussianCluster::numEvidence()'],['../classautopas_1_1GaussianProcess.html#a9afd30be507a56ccb5da3b2a11300e83',1,'autopas::GaussianProcess::numEvidence()']]],
-  ['numflopsperdistancecalculation_42',['numFlopsPerDistanceCalculation',['../classautopas_1_1FlopCounterFunctor.html#af3f3772c1d69e1b4f4483dbf4f54daa6',1,'autopas::FlopCounterFunctor']]],
-  ['numparticlesestimator_2ecpp_43',['NumParticlesEstimator.cpp',['../NumParticlesEstimator_8cpp.html',1,'']]],
-  ['numparticlesestimator_2eh_44',['NumParticlesEstimator.h',['../NumParticlesEstimator_8h.html',1,'']]],
-  ['numthreadguard_45',['NumThreadGuard',['../classNumThreadGuard.html',1,'NumThreadGuard'],['../classNumThreadGuard.html#a8c03f50109c26dba4e9609cb0a060967',1,'NumThreadGuard::NumThreadGuard(const NumThreadGuard &amp;)=delete'],['../classNumThreadGuard.html#a71dfd1f0a565afcafb247276db3a1f6b',1,'NumThreadGuard::NumThreadGuard(const int newNum)']]],
-  ['numthreadguard_2eh_46',['NumThreadGuard.h',['../NumThreadGuard_8h.html',1,'']]]
+  ['numevidence_41',['numEvidence',['../classautopas_1_1GaussianProcess.html#a9afd30be507a56ccb5da3b2a11300e83',1,'autopas::GaussianProcess::numEvidence()'],['../classautopas_1_1GaussianCluster.html#ae5b19d19210ec68e27e964b9ccdba225',1,'autopas::GaussianCluster::numEvidence()']]],
+  ['numparticlesestimator_2ecpp_42',['NumParticlesEstimator.cpp',['../NumParticlesEstimator_8cpp.html',1,'']]],
+  ['numparticlesestimator_2eh_43',['NumParticlesEstimator.h',['../NumParticlesEstimator_8h.html',1,'']]],
+  ['numthreadguard_44',['NumThreadGuard',['../classNumThreadGuard.html#a8c03f50109c26dba4e9609cb0a060967',1,'NumThreadGuard::NumThreadGuard()'],['../classNumThreadGuard.html',1,'NumThreadGuard'],['../classNumThreadGuard.html#a71dfd1f0a565afcafb247276db3a1f6b',1,'NumThreadGuard::NumThreadGuard()']]],
+  ['numthreadguard_2eh_45',['NumThreadGuard.h',['../NumThreadGuard_8h.html',1,'']]]
 ];

@@ -10,7 +10,7 @@ var searchData=
   ['finalize_7',['finalize',['../classautopas_1_1AutoPas.html#a9383bb71d73731a7698bb82a05e6d5d8',1,'autopas::AutoPas']]],
   ['findgloballybestconfiguration_8',['findGloballyBestConfiguration',['../namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a04eb20f31c3a1ebae57f0ff5b26c2bcb',1,'autopas::utils::AutoPasConfigurationCommunicator']]],
   ['floortoint_9',['floorToInt',['../namespaceautopas_1_1utils_1_1ArrayMath.html#a013c54004baba529ff9b1dc5bb8e2773',1,'autopas::utils::ArrayMath']]],
-  ['flopcounterfunctor_10',['FlopCounterFunctor',['../classautopas_1_1FlopCounterFunctor.html#a232ac1187e60d882cfce886273b6f687',1,'autopas::FlopCounterFunctor']]],
+  ['floplogger_10',['FLOPLogger',['../classautopas_1_1FLOPLogger.html#aa12131a6ee63bf56d4689eaadbeb36fc',1,'autopas::FLOPLogger']]],
   ['flush_11',['flush',['../classautopas_1_1GaussianClusterLogger.html#aa467675ccf957e27c61a3f5eae6e48a7',1,'autopas::GaussianClusterLogger']]],
   ['for_5feach_12',['for_each',['../namespaceautopas_1_1utils_1_1TupleUtils.html#a63430b206450d8a9b37e629b0b917acc',1,'autopas::utils::TupleUtils']]],
   ['forceretune_13',['forceRetune',['../classautopas_1_1AutoPas.html#a2ab293ffb7a0a617678466331db779c8',1,'autopas::AutoPas::forceRetune()'],['../classautopas_1_1AutoTuner.html#aed4b05aace993e15acdf69b4f0946ccc',1,'autopas::AutoTuner::forceRetune()']]],

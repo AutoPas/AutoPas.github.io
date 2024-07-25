@@ -112,21 +112,13 @@ $(function() {
 <dt>Member <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#aa21b08540e71aa767ff1937a40045a2e">autopas::CellBasedParticleContainer&lt; ParticleCell &gt;::deleteAllParticles</a>  () override</dt>
 <dd><a class="anchor" id="_todo000001"></a>: find a sensible value for magic number numThreads should be at least 1 and maximal max_threads  </dd>
 <dt>Member <a class="el" href="namespaceautopas.html#ac64a70a137851f9fe1941487cfc42e52">autopas::DEFAULT_CACHE_LINE_SIZE</a>  </dt>
-<dd><a class="anchor" id="_todo000028"></a>C++17: replace value by std::hardware_destructive_interference_size not yet possible: as of 27.06.2019 this(P0154R1) is in neither libstc++ (gnu) nor libc++ (clang)  </dd>
-<dt>Class <a class="el" href="classautopas_1_1FlopCounterFunctor.html">autopas::FlopCounterFunctor&lt; Particle, ForceFunctorType &gt;</a>  </dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000023"></a>this class currently is limited to the following case:</p><ul>
-<li>constant cutoff radius</li>
-<li>cases where cutoff is determined with a single distance calculation between two positions ( the notable case where this doesn't hold is in a CoM-to-site style <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> <a class="el" href="classautopas_1_1Functor.html" title="Functor class.">Functor</a> for multi-site molecules ) </li>
-</ul>
-<p class="interdd"></p>
-<p class="enddd">: we may want the possibility of doing this faster in cases where the number of flops per kernel call is constant  </p>
-</dd>
+<dd><a class="anchor" id="_todo000027"></a>C++17: replace value by std::hardware_destructive_interference_size not yet possible: as of 27.06.2019 this(P0154R1) is in neither libstc++ (gnu) nor libc++ (clang)  </dd>
 <dt>Member <a class="el" href="classautopas_1_1Functor.html#af16cac0f8edfefca2f9ad98785cd5aab">autopas::Functor&lt; Particle, CRTP_T &gt;::getComputedAttr</a>  ()</dt>
-<dd><a class="anchor" id="_todo000026"></a>C++20: make this function virtual  </dd>
-<dt>Member <a class="el" href="classautopas_1_1Functor.html#aadf3d67809de082653da8495de30ed31">autopas::Functor&lt; Particle, CRTP_T &gt;::getNeededAttr</a>  ()</dt>
-<dd><a class="anchor" id="_todo000024"></a>C++20: make this function virtual  </dd>
-<dt>Member <a class="el" href="classautopas_1_1Functor.html#a47d8ad3bd65ceaaee7e15f8a010bcff5">autopas::Functor&lt; Particle, CRTP_T &gt;::getNeededAttr</a>  (std::false_type)</dt>
 <dd><a class="anchor" id="_todo000025"></a>C++20: make this function virtual  </dd>
+<dt>Member <a class="el" href="classautopas_1_1Functor.html#aadf3d67809de082653da8495de30ed31">autopas::Functor&lt; Particle, CRTP_T &gt;::getNeededAttr</a>  ()</dt>
+<dd><a class="anchor" id="_todo000023"></a>C++20: make this function virtual  </dd>
+<dt>Member <a class="el" href="classautopas_1_1Functor.html#a47d8ad3bd65ceaaee7e15f8a010bcff5">autopas::Functor&lt; Particle, CRTP_T &gt;::getNeededAttr</a>  (std::false_type)</dt>
+<dd><a class="anchor" id="_todo000024"></a>C++20: make this function virtual  </dd>
 <dt>Class <a class="el" href="classautopas_1_1internal_1_1CellBorderAndFlagManager.html">autopas::internal::CellBorderAndFlagManager</a>  </dt>
 <dd><a class="anchor" id="_todo000002"></a>: add cell border handling  </dd>
 <dt>Member <a class="el" href="classautopas_1_1internal_1_1ClusterTowerBlock2D.html#a1d9b9ea6a55e2bd5423f50fc169e29de">autopas::internal::ClusterTowerBlock2D&lt; Particle &gt;::getTowerIndex2DAtPosition</a>  (const std::array&lt; double, 3 &gt; &amp;pos) const</dt>
@@ -142,7 +134,7 @@ $(function() {
 <dt>Member <a class="el" href="classautopas_1_1LCC18Traversal.html#a36a4cb5de2a27a037c4666e332c75216">autopas::LCC18Traversal&lt; ParticleCell, PairwiseFunctor &gt;::LCC18Traversal</a>  (const std::array&lt; unsigned long, 3 &gt; &amp;dims, PairwiseFunctor *pairwiseFunctor, double interactionLength, const std::array&lt; double, 3 &gt; &amp;cellLength, DataLayoutOption dataLayout, bool useNewton3)</dt>
 <dd><a class="anchor" id="_todo000012"></a>Pass cutoff to _cellFunctor instead of interactionLength, unless this functor is used to build verlet-lists, in that case the interactionLength is needed!  </dd>
 <dt>Member <a class="el" href="namespaceautopas_1_1OptimumSelector.html#a026bccf03fed7ad4ae1d87ea22cb8f3b">autopas::OptimumSelector::medianValue</a>  (std::vector&lt; T &gt; values)</dt>
-<dd><a class="anchor" id="_todo000027"></a>C++20: replace by std::midpoint  </dd>
+<dd><a class="anchor" id="_todo000026"></a>C++20: replace by std::midpoint  </dd>
 <dt>Member <a class="el" href="classautopas_1_1ParticleContainerInterface.html#aa3a6197fc11a19d594bebce507cc6625">autopas::ParticleContainerInterface&lt; Particle &gt;::addHaloParticle</a>  (const Particle &amp;haloParticle)</dt>
 <dd><a class="anchor" id="_todo000013"></a>do we want a check of the particle not being too far away in here as well?  </dd>
 <dt>Member <a class="el" href="classautopas_1_1SlicedBalancedBasedTraversal.html#a77282498134736f4dd0421d3236a503d">autopas::SlicedBalancedBasedTraversal&lt; ParticleCell, PairwiseFunctor &gt;::initSliceThickness</a>  (unsigned long minSliceThickness) override</dt>
@@ -154,9 +146,9 @@ $(function() {
 <dt>Member <a class="el" href="classautopas_1_1SlicedBasedTraversal.html#a14223e1cad17a649acc964a6330840e2">autopas::SlicedBasedTraversal&lt; ParticleCell, PairwiseFunctor &gt;::loadDataLayout</a>  ()</dt>
 <dd><a class="anchor" id="_todo000008"></a>find a condition on when to use omp or when it is just overhead  </dd>
 <dt>Member <a class="el" href="classautopas_1_1utils_1_1SoAStorage.html#a32ede55b59cbe6e9245f948e47c749c6">autopas::utils::SoAStorage&lt; SoAArraysType &gt;::apply</a>  (FunctorT func)</dt>
-<dd><a class="anchor" id="_todo000029"></a>c++20: replace with expansion statement: <code>for... (auto&amp; elem : tup) {}</code>  </dd>
+<dd><a class="anchor" id="_todo000028"></a>c++20: replace with expansion statement: <code>for... (auto&amp; elem : tup) {}</code>  </dd>
 <dt>Member <a class="el" href="namespaceautopas_1_1utils.html#a74ac3a54f767df5861d59cb241c635e3">autopas::utils::withStaticCellType</a>  (<a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8" title="The ParticleCell Type as an Enum.">autopas::CellType</a> cellType, F &amp;&amp;func)</dt>
-<dd><p class="startdd"><a class="anchor" id="_todo000030"></a>c++20 change to explicit template for templates. </p>
+<dd><p class="startdd"><a class="anchor" id="_todo000029"></a>c++20 change to explicit template for templates. </p>
 <p class="interdd"></p>
 <p class="enddd">function calls also have to be changed to  </p>
 </dd>
@@ -172,10 +164,8 @@ $(function() {
 <dd><a class="anchor" id="_todo000022"></a>autotune traversal  </dd>
 <dt>Member <a class="el" href="classautopas_1_1VLListIterationTraversal.html#a336587958b637b60bc049af07fa3a0af">autopas::VLListIterationTraversal&lt; ParticleCell, PairwiseFunctor &gt;::traverseParticlePairs</a>  () override</dt>
 <dd><p class="startdd"><a class="anchor" id="_todo000020"></a>find a sensible chunk size </p>
-<p class="enddd"><a class="anchor" id="_todo000019"></a>find a sensible chunk size  </p>
+<p class="enddd"><a class="anchor" id="_todo000019"></a>find a sensible chunk size </p>
 </dd>
-<dt>Member <a class="el" href="classsphLib_1_1SPHCalcHydroForceFunctor.html#aad330e56bc85f3544bf9e3b9d2eb4be3">sphLib::SPHCalcHydroForceFunctor&lt; Particle &gt;::getNumFlopsPerKernelCall</a>  ()</dt>
-<dd><a class="anchor" id="_todo000031"></a>return correct flopcount </dd>
 </dl>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->
