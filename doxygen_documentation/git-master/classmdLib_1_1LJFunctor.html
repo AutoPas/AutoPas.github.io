@@ -741,13 +741,11 @@ template&lt;class <a class="el" href="commonTypedefs_8h.html#ac11d785d5f9402c62f
 <p>For the globals calculation, this is:</p><ul>
 <li>virial: 3</li>
 <li>potential: 1, or 2 with shift</li>
-<li>accumulation: 4</li>
-<li>multiplications by 0.5 and second accumulations are not treated as useful FLOPs, as these are just workarounds to avoid accumulating globals on owned/halo borders twice</li>
-<li>Total: 8, or 9 with shift</li>
+<li>accumulation: 4 without n3, 8 with n3</li>
+<li>Total: 8 or 9 without n3, 12 or 13 with n3</li>
 </ul>
 <p>Caveats:</p>
-<p>This function is supposed to return useful FLOPs, e.g. without counting masked vector instructions or workarounds for accumulating globals on owned/halo borders twice. You could argue that, strictly speaking, we redundantly calculate forces and globals twice in the newton3 case. This function does not treat such "redundant" calculations as useless.</p>
-<p>Similarly, this function does not treat halo-halo interactions as redundant useless calculations.</p>
+<p>This function is supposed to return useful FLOPs, e.g. without counting masked vector instructions. You could also argue that, strictly speaking, we redundantly calculate forces and globals twice in the newton3 case on a owned/halo boundary. This function does not treat such "redundant" calculations as useless. Similarly, this function does not treat halo-halo interactions as redundant useless calculations.</p>
 <dl class="section return"><dt>Returns</dt><dd>number of FLOPs since <a class="el" href="classmdLib_1_1LJFunctor.html#a9bd2e10b426c28dca5312c36901324d0" title="Reset the global values.">initTraversal()</a> is called. </dd></dl>
 
 <p>Reimplemented from <a class="el" href="classautopas_1_1Functor.html#af4d3a473e5d2d582ee784fc39b278a87">autopas::Functor&lt; Particle, CRTP_T &gt;</a>.</p>
