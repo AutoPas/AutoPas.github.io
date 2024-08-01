@@ -126,7 +126,7 @@ $(function() {
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">template</span> &lt;<span class="keyword">class </span><a class="code hl_typedef" href="commonTypedefs_8h.html#ac11d785d5f9402c62f88b5aec437494e">Particle</a>, <span class="keywordtype">bool</span> applyShift = <span class="keyword">false</span>, <span class="keywordtype">bool</span> useMixing = <span class="keyword">false</span>,</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>          <a class="code hl_enumeration" href="namespaceautopas.html#aae98cfb33c0ad2e9682bff91f985fcdb">autopas::FunctorN3Modes</a> useNewton3 = autopas::FunctorN3Modes::Both, <span class="keywordtype">bool</span> calculateGlobals = <span class="keyword">false</span>,</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>          <span class="keywordtype">bool</span> <a class="code hl_variable" href="commonTypedefs_8h.html#aaa2193337129a64e1a03b2af566a6b25">countFLOPs</a> = <span class="keyword">false</span>, <span class="keywordtype">bool</span> relevantForTuning = <span class="keyword">true</span>&gt;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>          <span class="keywordtype">bool</span> countFLOPs = <span class="keyword">false</span>, <span class="keywordtype">bool</span> relevantForTuning = <span class="keyword">true</span>&gt;</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctor.html">   39</a></span><span class="keyword">class </span><a class="code hl_class" href="classmdLib_1_1LJFunctor.html">LJFunctor</a> : <span class="keyword">public</span> <a class="code hl_class" href="classautopas_1_1Functor.html">autopas::Functor</a>&lt;Particle, LJFunctor&lt;Particle, applyShift, useMixing, useNewton3,</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                                                              calculateGlobals, countFLOPs, relevantForTuning&gt;&gt; {</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  <span class="keyword">using </span>SoAArraysType = <span class="keyword">typename</span> <a class="code hl_typedef" href="classautopas_1_1ParticleBase.html#a5edc300640c4ece1b7cd14dbe3633c18">Particle::SoAArraysType</a>;</div>
@@ -551,7 +551,7 @@ $(function() {
 <div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span>          fz2ptr[j] -= fz;</div>
 <div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span>        }</div>
 <div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span> </div>
-<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_variable" href="commonTypedefs_8h.html#aaa2193337129a64e1a03b2af566a6b25">countFLOPs</a>) {</div>
+<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (countFLOPs) {</div>
 <div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span>          numDistanceCalculationSum += ownedStateJ != <a class="code hl_enumvalue" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a275876e34cf609db118f3d84b799a790">autopas::OwnershipState::dummy</a> ? 1 : 0;</div>
 <div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>          <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (newton3) {</div>
 <div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>            numKernelCallsN3Sum += mask;</div>
@@ -575,7 +575,7 @@ $(function() {
 <div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>          virialSumY += virialy * energyFactor;</div>
 <div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>          virialSumZ += virialz * energyFactor;</div>
 <div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span> </div>
-<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>          <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_variable" href="commonTypedefs_8h.html#aaa2193337129a64e1a03b2af566a6b25">countFLOPs</a>) {</div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>          <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (countFLOPs) {</div>
 <div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (newton3) {</div>
 <div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>              numGlobalCalcsN3Sum += mask;</div>
 <div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>            } <span class="keywordflow">else</span> {</div>
@@ -588,7 +588,7 @@ $(function() {
 <div class="line"><a id="l00540" name="l00540"></a><span class="lineno">  540</span>      fy1ptr[i] += fyacc;</div>
 <div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span>      fz1ptr[i] += fzacc;</div>
 <div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span>    }</div>
-<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_variable" href="commonTypedefs_8h.html#aaa2193337129a64e1a03b2af566a6b25">countFLOPs</a>) {</div>
+<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (countFLOPs) {</div>
 <div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span>      _aosThreadDataFLOPs[threadnum].numDistCalls += numDistanceCalculationSum;</div>
 <div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>      _aosThreadDataFLOPs[threadnum].numKernelCallsNoN3 += numKernelCallsNoN3Sum;</div>
 <div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>      _aosThreadDataFLOPs[threadnum].numKernelCallsN3 += numKernelCallsN3Sum;</div>
@@ -919,7 +919,7 @@ $(function() {
 <div class="line"><a id="l00949" name="l00949"></a><span class="lineno">  949</span>            fzArr[j] = fz;</div>
 <div class="line"><a id="l00950" name="l00950"></a><span class="lineno">  950</span>          }</div>
 <div class="line"><a id="l00951" name="l00951"></a><span class="lineno">  951</span> </div>
-<div class="line"><a id="l00952" name="l00952"></a><span class="lineno">  952</span>          <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_variable" href="commonTypedefs_8h.html#aaa2193337129a64e1a03b2af566a6b25">countFLOPs</a>) {</div>
+<div class="line"><a id="l00952" name="l00952"></a><span class="lineno">  952</span>          <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (countFLOPs) {</div>
 <div class="line"><a id="l00953" name="l00953"></a><span class="lineno">  953</span>            numDistanceCalculationSum += ownedStateJ != <a class="code hl_enumvalue" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a275876e34cf609db118f3d84b799a790">autopas::OwnershipState::dummy</a> ? 1 : 0;</div>
 <div class="line"><a id="l00954" name="l00954"></a><span class="lineno">  954</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (newton3) {</div>
 <div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span>              numKernelCallsN3Sum += mask;</div>
@@ -944,7 +944,7 @@ $(function() {
 <div class="line"><a id="l00974" name="l00974"></a><span class="lineno">  974</span>            virialSumY += virialy * energyFactor;</div>
 <div class="line"><a id="l00975" name="l00975"></a><span class="lineno">  975</span>            virialSumZ += virialz * energyFactor;</div>
 <div class="line"><a id="l00976" name="l00976"></a><span class="lineno">  976</span> </div>
-<div class="line"><a id="l00977" name="l00977"></a><span class="lineno">  977</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_variable" href="commonTypedefs_8h.html#aaa2193337129a64e1a03b2af566a6b25">countFLOPs</a>) {</div>
+<div class="line"><a id="l00977" name="l00977"></a><span class="lineno">  977</span>            <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (countFLOPs) {</div>
 <div class="line"><a id="l00978" name="l00978"></a><span class="lineno">  978</span>              <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (newton3) {</div>
 <div class="line"><a id="l00979" name="l00979"></a><span class="lineno">  979</span>                numGlobalCalcsN3Sum += mask;</div>
 <div class="line"><a id="l00980" name="l00980"></a><span class="lineno">  980</span>              } <span class="keywordflow">else</span> {</div>
@@ -992,7 +992,7 @@ $(function() {
 <div class="line"><a id="l01022" name="l01022"></a><span class="lineno"> 1022</span> </div>
 <div class="line"><a id="l01023" name="l01023"></a><span class="lineno"> 1023</span>      <span class="keyword">const</span> SoAFloatPrecision dr2 = drx2 + dry2 + drz2;</div>
 <div class="line"><a id="l01024" name="l01024"></a><span class="lineno"> 1024</span> </div>
-<div class="line"><a id="l01025" name="l01025"></a><span class="lineno"> 1025</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_variable" href="commonTypedefs_8h.html#aaa2193337129a64e1a03b2af566a6b25">countFLOPs</a>) {</div>
+<div class="line"><a id="l01025" name="l01025"></a><span class="lineno"> 1025</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (countFLOPs) {</div>
 <div class="line"><a id="l01026" name="l01026"></a><span class="lineno"> 1026</span>        numDistanceCalculationSum += 1;</div>
 <div class="line"><a id="l01027" name="l01027"></a><span class="lineno"> 1027</span>      }</div>
 <div class="line"><a id="l01028" name="l01028"></a><span class="lineno"> 1028</span> </div>
@@ -1020,7 +1020,7 @@ $(function() {
 <div class="line"><a id="l01050" name="l01050"></a><span class="lineno"> 1050</span>        fzptr[j] -= fz;</div>
 <div class="line"><a id="l01051" name="l01051"></a><span class="lineno"> 1051</span>      }</div>
 <div class="line"><a id="l01052" name="l01052"></a><span class="lineno"> 1052</span> </div>
-<div class="line"><a id="l01053" name="l01053"></a><span class="lineno"> 1053</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_variable" href="commonTypedefs_8h.html#aaa2193337129a64e1a03b2af566a6b25">countFLOPs</a>) {</div>
+<div class="line"><a id="l01053" name="l01053"></a><span class="lineno"> 1053</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (countFLOPs) {</div>
 <div class="line"><a id="l01054" name="l01054"></a><span class="lineno"> 1054</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (newton3) {</div>
 <div class="line"><a id="l01055" name="l01055"></a><span class="lineno"> 1055</span>          numKernelCallsN3Sum += 1;</div>
 <div class="line"><a id="l01056" name="l01056"></a><span class="lineno"> 1056</span>        } <span class="keywordflow">else</span> {</div>
@@ -1043,7 +1043,7 @@ $(function() {
 <div class="line"><a id="l01073" name="l01073"></a><span class="lineno"> 1073</span>        virialSumY += virialy * energyFactor;</div>
 <div class="line"><a id="l01074" name="l01074"></a><span class="lineno"> 1074</span>        virialSumZ += virialz * energyFactor;</div>
 <div class="line"><a id="l01075" name="l01075"></a><span class="lineno"> 1075</span> </div>
-<div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_variable" href="commonTypedefs_8h.html#aaa2193337129a64e1a03b2af566a6b25">countFLOPs</a>) {</div>
+<div class="line"><a id="l01076" name="l01076"></a><span class="lineno"> 1076</span>        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (countFLOPs) {</div>
 <div class="line"><a id="l01077" name="l01077"></a><span class="lineno"> 1077</span>          <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (newton3) {</div>
 <div class="line"><a id="l01078" name="l01078"></a><span class="lineno"> 1078</span>            ++numGlobalCalcsN3Sum;</div>
 <div class="line"><a id="l01079" name="l01079"></a><span class="lineno"> 1079</span>          } <span class="keywordflow">else</span> {</div>
@@ -1059,7 +1059,7 @@ $(function() {
 <div class="line"><a id="l01089" name="l01089"></a><span class="lineno"> 1089</span>      fzptr[indexFirst] += fzacc;</div>
 <div class="line"><a id="l01090" name="l01090"></a><span class="lineno"> 1090</span>    }</div>
 <div class="line"><a id="l01091" name="l01091"></a><span class="lineno"> 1091</span> </div>
-<div class="line"><a id="l01092" name="l01092"></a><span class="lineno"> 1092</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<a class="code hl_variable" href="commonTypedefs_8h.html#aaa2193337129a64e1a03b2af566a6b25">countFLOPs</a>) {</div>
+<div class="line"><a id="l01092" name="l01092"></a><span class="lineno"> 1092</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (countFLOPs) {</div>
 <div class="line"><a id="l01093" name="l01093"></a><span class="lineno"> 1093</span>      _aosThreadDataFLOPs[threadnum].numDistCalls += numDistanceCalculationSum;</div>
 <div class="line"><a id="l01094" name="l01094"></a><span class="lineno"> 1094</span>      _aosThreadDataFLOPs[threadnum].numKernelCallsNoN3 += numKernelCallsNoN3Sum;</div>
 <div class="line"><a id="l01095" name="l01095"></a><span class="lineno"> 1095</span>      _aosThreadDataFLOPs[threadnum].numKernelCallsN3 += numKernelCallsN3Sum;</div>
@@ -1189,7 +1189,6 @@ $(function() {
 <div class="ttc" id="aclassmdLib_1_1LJFunctor_html_ac862dd8da0dbf0190a0e9ddbd4cfea65"><div class="ttname"><a href="classmdLib_1_1LJFunctor.html#ac862dd8da0dbf0190a0e9ddbd4cfea65">mdLib::LJFunctor::endTraversal</a></div><div class="ttdeci">void endTraversal(bool newton3) final</div><div class="ttdoc">Accumulates global values, e.g.</div><div class="ttdef"><b>Definition:</b> LJFunctor.h:652</div></div>
 <div class="ttc" id="aclassmdLib_1_1LJFunctor_html_ae43b1fc3bb3ce35f10b3273c45fe2355"><div class="ttname"><a href="classmdLib_1_1LJFunctor.html#ae43b1fc3bb3ce35f10b3273c45fe2355">mdLib::LJFunctor::SoAFunctorVerlet</a></div><div class="ttdeci">void SoAFunctorVerlet(autopas::SoAView&lt; SoAArraysType &gt; soa, const size_t indexFirst, const std::vector&lt; size_t, autopas::AlignedAllocator&lt; size_t &gt; &gt; &amp;neighborList, bool newton3) final</div><div class="ttdoc">Functor for structure of arrays (SoA) for neighbor lists.</div><div class="ttdef"><b>Definition:</b> LJFunctor.h:566</div></div>
 <div class="ttc" id="aclassmdLib_1_1LJFunctor_html_afa0d6fa02dad5fa8dcc0646d1bcbb138"><div class="ttname"><a href="classmdLib_1_1LJFunctor.html#afa0d6fa02dad5fa8dcc0646d1bcbb138">mdLib::LJFunctor::isRelevantForTuning</a></div><div class="ttdeci">bool isRelevantForTuning() final</div><div class="ttdoc">Specifies whether the functor should be considered for the auto-tuning process.</div><div class="ttdef"><b>Definition:</b> LJFunctor.h:107</div></div>
-<div class="ttc" id="acommonTypedefs_8h_html_aaa2193337129a64e1a03b2af566a6b25"><div class="ttname"><a href="commonTypedefs_8h.html#aaa2193337129a64e1a03b2af566a6b25">autopasTestingTypeDefs::countFLOPs</a></div><div class="ttdeci">constexpr bool countFLOPs</div><div class="ttdoc">If AutoPas is compiled with FLOP logging enabled, use functors with FLOP counting enabled.</div><div class="ttdef"><b>Definition:</b> commonTypedefs.h:45</div></div>
 <div class="ttc" id="acommonTypedefs_8h_html_ac11d785d5f9402c62f88b5aec437494e"><div class="ttname"><a href="commonTypedefs_8h.html#ac11d785d5f9402c62f88b5aec437494e">Particle</a></div><div class="ttdeci">autopas::Particle Particle</div><div class="ttdoc">Short for AutoPas Particle.</div><div class="ttdef"><b>Definition:</b> commonTypedefs.h:20</div></div>
 <div class="ttc" id="ainBox_8h_html"><div class="ttname"><a href="inBox_8h.html">inBox.h</a></div></div>
 <div class="ttc" id="anamespaceautopas_1_1utils_1_1ArrayMath_html_a1d321ba1191121f73334c284d1e72e72"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ArrayMath.html#a1d321ba1191121f73334c284d1e72e72">autopas::utils::ArrayMath::dot</a></div><div class="ttdeci">constexpr T dot(const std::array&lt; T, SIZE &gt; &amp;a, const std::array&lt; T, SIZE &gt; &amp;b)</div><div class="ttdoc">Generates the dot product of two arrays.</div><div class="ttdef"><b>Definition:</b> ArrayMath.h:233</div></div>
