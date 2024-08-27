@@ -153,12 +153,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0e2e11a52988f7c4d67eccf353335b61"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a0e2e11a52988f7c4d67eccf353335b61">addEvidence</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;configuration, const <a class="el" href="classautopas_1_1Evidence.html">Evidence</a> &amp;evidence)</td></tr>
 <tr class="memdesc:a0e2e11a52988f7c4d67eccf353335b61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies the strategy about empirically collected information for the given configuration.  <br /></td></tr>
 <tr class="separator:a0e2e11a52988f7c4d67eccf353335b61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45e766b635dea87edc8e81fa85af0f41"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a45e766b635dea87edc8e81fa85af0f41">optimizeSuggestions</a> (std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;configQueue, const <a class="el" href="classautopas_1_1EvidenceCollection.html">EvidenceCollection</a> &amp;evidenceCollection)=0</td></tr>
-<tr class="memdesc:a45e766b635dea87edc8e81fa85af0f41"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimizes the queue of configurations to process.  <br /></td></tr>
-<tr class="separator:a45e766b635dea87edc8e81fa85af0f41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e9b4f910967a9a9251939ceaec3e755"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a7e9b4f910967a9a9251939ceaec3e755">reset</a> (size_t iteration, size_t tuningPhase, std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;configQueue, const <a class="el" href="classautopas_1_1EvidenceCollection.html">autopas::EvidenceCollection</a> &amp;evidenceCollection)=0</td></tr>
-<tr class="memdesc:a7e9b4f910967a9a9251939ceaec3e755"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset all internal parameters to the beginning of a new tuning phase.  <br /></td></tr>
-<tr class="separator:a7e9b4f910967a9a9251939ceaec3e755"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16f4d28b36da3543a4766c559563a154"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a16f4d28b36da3543a4766c559563a154">optimizeSuggestions</a> (std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;configQueue, const <a class="el" href="classautopas_1_1EvidenceCollection.html">EvidenceCollection</a> &amp;evidenceCollection)=0</td></tr>
+<tr class="memdesc:a16f4d28b36da3543a4766c559563a154"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimizes the queue of configurations to process.  <br /></td></tr>
+<tr class="separator:a16f4d28b36da3543a4766c559563a154"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7334920b6ed59a03f6b42b1a73816d4b"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a7334920b6ed59a03f6b42b1a73816d4b">reset</a> (size_t iteration, size_t tuningPhase, std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;configQueue, const <a class="el" href="classautopas_1_1EvidenceCollection.html">autopas::EvidenceCollection</a> &amp;evidenceCollection)=0</td></tr>
+<tr class="memdesc:a7334920b6ed59a03f6b42b1a73816d4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset all internal parameters to the beginning of a new tuning phase.  <br /></td></tr>
+<tr class="separator:a7334920b6ed59a03f6b42b1a73816d4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c0bc535436e8aa6a8b25b6f1b50b5e2"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a7c0bc535436e8aa6a8b25b6f1b50b5e2">needsLiveInfo</a> () const</td></tr>
 <tr class="memdesc:a7c0bc535436e8aa6a8b25b6f1b50b5e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this tuning strategy wants to get a <a class="el" href="classautopas_1_1LiveInfo.html" title="This class is able to gather and store important information for a tuning phase from a container and ...">LiveInfo</a> object passed before a new tuning phase.  <br /></td></tr>
 <tr class="separator:a7c0bc535436e8aa6a8b25b6f1b50b5e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -223,7 +223,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Reimplemented in <a class="el" href="classautopas_1_1ActiveHarmony.html#ae774e574a88706e41c867bb7dd30e6a6">autopas::ActiveHarmony</a>, <a class="el" href="classautopas_1_1BayesianClusterSearch.html#a6d54481bcc28df5f821fda53390a93f0">autopas::BayesianClusterSearch</a>, <a class="el" href="classautopas_1_1BayesianSearch.html#a189ad8409daed67b39d854d313fd84a4">autopas::BayesianSearch</a>, <a class="el" href="classautopas_1_1PredictiveTuning.html#afab5087c92fd09a7a4aed7f1256c4071">autopas::PredictiveTuning</a>, <a class="el" href="classautopas_1_1RuleBasedTuning.html#a71ecb9ddb93d39f4f71f13a91adef0c7">autopas::RuleBasedTuning</a>, and <a class="el" href="classautopas_1_1TuningStrategyLogger.html#aaf6f8234ae21d16d48e6e6a0b4029dab">autopas::TuningStrategyLogger</a>.</p>
+<p>Reimplemented in <a class="el" href="classautopas_1_1ActiveHarmony.html#ae774e574a88706e41c867bb7dd30e6a6">autopas::ActiveHarmony</a>, <a class="el" href="classautopas_1_1BayesianClusterSearch.html#a6d54481bcc28df5f821fda53390a93f0">autopas::BayesianClusterSearch</a>, <a class="el" href="classautopas_1_1BayesianSearch.html#a189ad8409daed67b39d854d313fd84a4">autopas::BayesianSearch</a>, <a class="el" href="classautopas_1_1PredictiveTuning.html#afab5087c92fd09a7a4aed7f1256c4071">autopas::PredictiveTuning</a>, <a class="el" href="classautopas_1_1RandomSearch.html#adac3e1f879b9948858193864e1844831">autopas::RandomSearch</a>, <a class="el" href="classautopas_1_1RuleBasedTuning.html#a71ecb9ddb93d39f4f71f13a91adef0c7">autopas::RuleBasedTuning</a>, and <a class="el" href="classautopas_1_1TuningStrategyLogger.html#aaf6f8234ae21d16d48e6e6a0b4029dab">autopas::TuningStrategyLogger</a>.</p>
 
 </div>
 </div>
@@ -317,8 +317,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a45e766b635dea87edc8e81fa85af0f41" name="a45e766b635dea87edc8e81fa85af0f41"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45e766b635dea87edc8e81fa85af0f41">&#9670;&#160;</a></span>optimizeSuggestions()</h2>
+<a id="a16f4d28b36da3543a4766c559563a154" name="a16f4d28b36da3543a4766c559563a154"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a16f4d28b36da3543a4766c559563a154">&#9670;&#160;</a></span>optimizeSuggestions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -327,7 +327,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void autopas::TuningStrategyInterface::optimizeSuggestions </td>
+          <td class="memname">virtual bool autopas::TuningStrategyInterface::optimizeSuggestions </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>configQueue</em>, </td>
@@ -360,8 +360,9 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>boolean value to signal if the tuning strategy has intentionally wiped the config queue </dd></dl>
 
-<p>Implemented in <a class="el" href="classautopas_1_1ActiveHarmony.html#a295e2476ea60ca2783e24f2716f1320d">autopas::ActiveHarmony</a>, <a class="el" href="classautopas_1_1BayesianClusterSearch.html#a0f0822a764f4053c283eabea1f06d972">autopas::BayesianClusterSearch</a>, <a class="el" href="classautopas_1_1BayesianSearch.html#a9561b3339d23f948fc40d116704a9237">autopas::BayesianSearch</a>, <a class="el" href="classautopas_1_1PredictiveTuning.html#ac2ca7072b0f69a4e89d89b98bfadeea7">autopas::PredictiveTuning</a>, <a class="el" href="classautopas_1_1MPIParallelizedStrategy.html#af6e9c5cb464646ab4129d48ad26c46c9">autopas::MPIParallelizedStrategy</a>, <a class="el" href="classautopas_1_1RandomSearch.html#ac1202d49cdaa5c89183ff77b5b1fceb5">autopas::RandomSearch</a>, <a class="el" href="classautopas_1_1RuleBasedTuning.html#a70c2df670f375a45e933d522a6515991">autopas::RuleBasedTuning</a>, <a class="el" href="classautopas_1_1SlowConfigFilter.html#aa95b0c365d237b512d1062f748f099ce">autopas::SlowConfigFilter</a>, <a class="el" href="classautopas_1_1SortByName.html#a12fac46a3d5c9abe7d30e397573dd928">autopas::SortByName</a>, and <a class="el" href="classautopas_1_1TuningStrategyLogger.html#aec98eb07f4e048de252eb03b3acb5222">autopas::TuningStrategyLogger</a>.</p>
+<p>Implemented in <a class="el" href="classautopas_1_1ActiveHarmony.html#ad7258a5d28ccc56142e6d200db51c224">autopas::ActiveHarmony</a>, <a class="el" href="classautopas_1_1BayesianClusterSearch.html#a19befe815011204b02735159af2fb382">autopas::BayesianClusterSearch</a>, <a class="el" href="classautopas_1_1BayesianSearch.html#a2ff69539d48cf9535a302dbe38ade685">autopas::BayesianSearch</a>, <a class="el" href="classautopas_1_1MPIParallelizedStrategy.html#aa2e3780a7a3be0809c063d4974bf78aa">autopas::MPIParallelizedStrategy</a>, <a class="el" href="classautopas_1_1PredictiveTuning.html#a03b0c2f879b1c47d253fa9ae0c8fba55">autopas::PredictiveTuning</a>, <a class="el" href="classautopas_1_1RandomSearch.html#afec860f88a9130b18bde5954f35c5bcf">autopas::RandomSearch</a>, <a class="el" href="classautopas_1_1RuleBasedTuning.html#ab515d091aea4ca7ccc1b4f062c846d99">autopas::RuleBasedTuning</a>, <a class="el" href="classautopas_1_1SlowConfigFilter.html#a37e93e6a985d7e0b3f2112a48e87ba72">autopas::SlowConfigFilter</a>, <a class="el" href="classautopas_1_1SortByName.html#a5d0df5b19a446102be8d41050adb5b41">autopas::SortByName</a>, and <a class="el" href="classautopas_1_1TuningStrategyLogger.html#aa92ed4369250cd554878f25ac94eedcc">autopas::TuningStrategyLogger</a>.</p>
 
 </div>
 </div>
@@ -495,8 +496,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7e9b4f910967a9a9251939ceaec3e755" name="a7e9b4f910967a9a9251939ceaec3e755"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7e9b4f910967a9a9251939ceaec3e755">&#9670;&#160;</a></span>reset()</h2>
+<a id="a7334920b6ed59a03f6b42b1a73816d4b" name="a7334920b6ed59a03f6b42b1a73816d4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7334920b6ed59a03f6b42b1a73816d4b">&#9670;&#160;</a></span>reset()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -505,7 +506,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void autopas::TuningStrategyInterface::reset </td>
+          <td class="memname">virtual bool autopas::TuningStrategyInterface::reset </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>iteration</em>, </td>
@@ -552,8 +553,9 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>boolean value to signal if the tuning strategy has intentionally wiped the config queue </dd></dl>
 
-<p>Implemented in <a class="el" href="classautopas_1_1ActiveHarmony.html#a95c6317eb6fe870c3ffd98d6716664bf">autopas::ActiveHarmony</a>, <a class="el" href="classautopas_1_1BayesianClusterSearch.html#a519868de05380b674d27d0c08bf23bea">autopas::BayesianClusterSearch</a>, <a class="el" href="classautopas_1_1BayesianSearch.html#a81797266972ef8c0c6cfaf9e9aa10af0">autopas::BayesianSearch</a>, <a class="el" href="classautopas_1_1MPIParallelizedStrategy.html#afeaed418a45c28014c345e5ee1b92ec3">autopas::MPIParallelizedStrategy</a>, <a class="el" href="classautopas_1_1PredictiveTuning.html#a30982270aaca9715ce57af023a82cd9f">autopas::PredictiveTuning</a>, <a class="el" href="classautopas_1_1RuleBasedTuning.html#a47e1dd2fab99098fb4178f88bc42b929">autopas::RuleBasedTuning</a>, <a class="el" href="classautopas_1_1TuningStrategyLogger.html#a8d646d54c86ffb524f74d2334240aa2d">autopas::TuningStrategyLogger</a>, <a class="el" href="classautopas_1_1SlowConfigFilter.html#a41f04f35ef0b0d3ccd9aa98ffe402001">autopas::SlowConfigFilter</a>, <a class="el" href="classautopas_1_1SortByName.html#a78692b84365d30a13c8f326782d955c9">autopas::SortByName</a>, and <a class="el" href="classautopas_1_1RandomSearch.html#adad7cf804a2799adc8bbdf09d9632dfa">autopas::RandomSearch</a>.</p>
+<p>Implemented in <a class="el" href="classautopas_1_1ActiveHarmony.html#acf174975dc24453637d0bcdacea62f5d">autopas::ActiveHarmony</a>, <a class="el" href="classautopas_1_1BayesianClusterSearch.html#a08eaad2d78ee7386589c199442d03269">autopas::BayesianClusterSearch</a>, <a class="el" href="classautopas_1_1BayesianSearch.html#aa122d5b21ea2184ef1ad17d9ede82bbd">autopas::BayesianSearch</a>, <a class="el" href="classautopas_1_1MPIParallelizedStrategy.html#acd332fd60d49430fab745784f9c8148f">autopas::MPIParallelizedStrategy</a>, <a class="el" href="classautopas_1_1PredictiveTuning.html#a1519f3cd9f01024b68505703d0d47ac5">autopas::PredictiveTuning</a>, <a class="el" href="classautopas_1_1RuleBasedTuning.html#a4f61d48fc2be440aed0c20a0a1c46cd0">autopas::RuleBasedTuning</a>, <a class="el" href="classautopas_1_1TuningStrategyLogger.html#a2d3f9fc6c8213cd64f82835dc040fa8d">autopas::TuningStrategyLogger</a>, <a class="el" href="classautopas_1_1SlowConfigFilter.html#ab094d03576c843619809e3d8f2587a71">autopas::SlowConfigFilter</a>, <a class="el" href="classautopas_1_1SortByName.html#ab57a4966c33f8a4dfe488aac012eeb19">autopas::SortByName</a>, and <a class="el" href="classautopas_1_1RandomSearch.html#ae61fc0fefc69aeaa90b4399f5dae293f">autopas::RandomSearch</a>.</p>
 
 </div>
 </div>

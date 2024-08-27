@@ -155,12 +155,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afab5087c92fd09a7a4aed7f1256c4071"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1PredictiveTuning.html#afab5087c92fd09a7a4aed7f1256c4071">addEvidence</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;configuration, const <a class="el" href="classautopas_1_1Evidence.html">Evidence</a> &amp;evidence) override</td></tr>
 <tr class="memdesc:afab5087c92fd09a7a4aed7f1256c4071"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies the strategy about empirically collected information for the given configuration.  <br /></td></tr>
 <tr class="separator:afab5087c92fd09a7a4aed7f1256c4071"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a30982270aaca9715ce57af023a82cd9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1PredictiveTuning.html#a30982270aaca9715ce57af023a82cd9f">reset</a> (size_t iteration, size_t tuningPhase, std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;configQueue, const <a class="el" href="classautopas_1_1EvidenceCollection.html">autopas::EvidenceCollection</a> &amp;evidenceCollection) override</td></tr>
-<tr class="memdesc:a30982270aaca9715ce57af023a82cd9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset all internal parameters to the beginning of a new tuning phase.  <br /></td></tr>
-<tr class="separator:a30982270aaca9715ce57af023a82cd9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2ca7072b0f69a4e89d89b98bfadeea7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1PredictiveTuning.html#ac2ca7072b0f69a4e89d89b98bfadeea7">optimizeSuggestions</a> (std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;configQueue, const <a class="el" href="classautopas_1_1EvidenceCollection.html">EvidenceCollection</a> &amp;evidence) override</td></tr>
-<tr class="memdesc:ac2ca7072b0f69a4e89d89b98bfadeea7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimizes the queue of configurations to process.  <br /></td></tr>
-<tr class="separator:ac2ca7072b0f69a4e89d89b98bfadeea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1519f3cd9f01024b68505703d0d47ac5"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1PredictiveTuning.html#a1519f3cd9f01024b68505703d0d47ac5">reset</a> (size_t iteration, size_t tuningPhase, std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;configQueue, const <a class="el" href="classautopas_1_1EvidenceCollection.html">autopas::EvidenceCollection</a> &amp;evidenceCollection) override</td></tr>
+<tr class="memdesc:a1519f3cd9f01024b68505703d0d47ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset all internal parameters to the beginning of a new tuning phase.  <br /></td></tr>
+<tr class="separator:a1519f3cd9f01024b68505703d0d47ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03b0c2f879b1c47d253fa9ae0c8fba55"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1PredictiveTuning.html#a03b0c2f879b1c47d253fa9ae0c8fba55">optimizeSuggestions</a> (std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;configQueue, const <a class="el" href="classautopas_1_1EvidenceCollection.html">EvidenceCollection</a> &amp;evidenceCollection) override</td></tr>
+<tr class="memdesc:a03b0c2f879b1c47d253fa9ae0c8fba55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimizes the queue of configurations to process.  <br /></td></tr>
+<tr class="separator:a03b0c2f879b1c47d253fa9ae0c8fba55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a07c52fa740c3badd9d8a253fa3051655"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1PredictiveTuning.html#a07c52fa740c3badd9d8a253fa3051655">rejectConfiguration</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;configuration, bool indefinitely) override</td></tr>
 <tr class="memdesc:a07c52fa740c3badd9d8a253fa3051655"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify the strategy about a configuration that is (currently) invalid and thus can potentially be dropped from some internal storage.  <br /></td></tr>
 <tr class="separator:a07c52fa740c3badd9d8a253fa3051655"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -174,12 +174,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0e2e11a52988f7c4d67eccf353335b61 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a0e2e11a52988f7c4d67eccf353335b61">addEvidence</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;configuration, const <a class="el" href="classautopas_1_1Evidence.html">Evidence</a> &amp;evidence)</td></tr>
 <tr class="memdesc:a0e2e11a52988f7c4d67eccf353335b61 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notifies the strategy about empirically collected information for the given configuration.  <br /></td></tr>
 <tr class="separator:a0e2e11a52988f7c4d67eccf353335b61 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45e766b635dea87edc8e81fa85af0f41 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a45e766b635dea87edc8e81fa85af0f41">optimizeSuggestions</a> (std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;configQueue, const <a class="el" href="classautopas_1_1EvidenceCollection.html">EvidenceCollection</a> &amp;evidenceCollection)=0</td></tr>
-<tr class="memdesc:a45e766b635dea87edc8e81fa85af0f41 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimizes the queue of configurations to process.  <br /></td></tr>
-<tr class="separator:a45e766b635dea87edc8e81fa85af0f41 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7e9b4f910967a9a9251939ceaec3e755 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a7e9b4f910967a9a9251939ceaec3e755">reset</a> (size_t iteration, size_t tuningPhase, std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;configQueue, const <a class="el" href="classautopas_1_1EvidenceCollection.html">autopas::EvidenceCollection</a> &amp;evidenceCollection)=0</td></tr>
-<tr class="memdesc:a7e9b4f910967a9a9251939ceaec3e755 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset all internal parameters to the beginning of a new tuning phase.  <br /></td></tr>
-<tr class="separator:a7e9b4f910967a9a9251939ceaec3e755 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a16f4d28b36da3543a4766c559563a154 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a16f4d28b36da3543a4766c559563a154">optimizeSuggestions</a> (std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;configQueue, const <a class="el" href="classautopas_1_1EvidenceCollection.html">EvidenceCollection</a> &amp;evidenceCollection)=0</td></tr>
+<tr class="memdesc:a16f4d28b36da3543a4766c559563a154 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Optimizes the queue of configurations to process.  <br /></td></tr>
+<tr class="separator:a16f4d28b36da3543a4766c559563a154 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7334920b6ed59a03f6b42b1a73816d4b inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a7334920b6ed59a03f6b42b1a73816d4b">reset</a> (size_t iteration, size_t tuningPhase, std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;configQueue, const <a class="el" href="classautopas_1_1EvidenceCollection.html">autopas::EvidenceCollection</a> &amp;evidenceCollection)=0</td></tr>
+<tr class="memdesc:a7334920b6ed59a03f6b42b1a73816d4b inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reset all internal parameters to the beginning of a new tuning phase.  <br /></td></tr>
+<tr class="separator:a7334920b6ed59a03f6b42b1a73816d4b inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7c0bc535436e8aa6a8b25b6f1b50b5e2 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a7c0bc535436e8aa6a8b25b6f1b50b5e2">needsLiveInfo</a> () const</td></tr>
 <tr class="memdesc:a7c0bc535436e8aa6a8b25b6f1b50b5e2 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this tuning strategy wants to get a <a class="el" href="classautopas_1_1LiveInfo.html" title="This class is able to gather and store important information for a tuning phase from a container and ...">LiveInfo</a> object passed before a new tuning phase.  <br /></td></tr>
 <tr class="separator:a7c0bc535436e8aa6a8b25b6f1b50b5e2 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -413,8 +413,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ac2ca7072b0f69a4e89d89b98bfadeea7" name="ac2ca7072b0f69a4e89d89b98bfadeea7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2ca7072b0f69a4e89d89b98bfadeea7">&#9670;&#160;</a></span>optimizeSuggestions()</h2>
+<a id="a03b0c2f879b1c47d253fa9ae0c8fba55" name="a03b0c2f879b1c47d253fa9ae0c8fba55"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03b0c2f879b1c47d253fa9ae0c8fba55">&#9670;&#160;</a></span>optimizeSuggestions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -423,7 +423,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void autopas::PredictiveTuning::optimizeSuggestions </td>
+          <td class="memname">bool autopas::PredictiveTuning::optimizeSuggestions </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>configQueue</em>, </td>
@@ -456,8 +456,9 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>boolean value to signal if the tuning strategy has intentionally wiped the config queue </dd></dl>
 
-<p>Implements <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a45e766b635dea87edc8e81fa85af0f41">autopas::TuningStrategyInterface</a>.</p>
+<p>Implements <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a16f4d28b36da3543a4766c559563a154">autopas::TuningStrategyInterface</a>.</p>
 
 </div>
 </div>
@@ -508,8 +509,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a30982270aaca9715ce57af023a82cd9f" name="a30982270aaca9715ce57af023a82cd9f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a30982270aaca9715ce57af023a82cd9f">&#9670;&#160;</a></span>reset()</h2>
+<a id="a1519f3cd9f01024b68505703d0d47ac5" name="a1519f3cd9f01024b68505703d0d47ac5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1519f3cd9f01024b68505703d0d47ac5">&#9670;&#160;</a></span>reset()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -518,7 +519,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void autopas::PredictiveTuning::reset </td>
+          <td class="memname">bool autopas::PredictiveTuning::reset </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>iteration</em>, </td>
@@ -565,8 +566,9 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd>boolean value to signal if the tuning strategy has intentionally wiped the config queue </dd></dl>
 
-<p>Implements <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a7e9b4f910967a9a9251939ceaec3e755">autopas::TuningStrategyInterface</a>.</p>
+<p>Implements <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a7334920b6ed59a03f6b42b1a73816d4b">autopas::TuningStrategyInterface</a>.</p>
 
 </div>
 </div>
