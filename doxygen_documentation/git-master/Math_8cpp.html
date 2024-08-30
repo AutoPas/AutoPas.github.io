@@ -149,9 +149,18 @@ Functions</h2></td></tr>
 <tr class="memitem:acf7e940d35b3d514d0d11247cec006f4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Math_8cpp.html#acf7e940d35b3d514d0d11247cec006f4">autopas::utils::Math::sigmoid</a> (double x)</td></tr>
 <tr class="memdesc:acf7e940d35b3d514d0d11247cec006f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sigmoid logistic function.  <br /></td></tr>
 <tr class="separator:acf7e940d35b3d514d0d11247cec006f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab7a054f9fec06b6ce5ae8e457d29c264"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Math_8cpp.html#ab7a054f9fec06b6ce5ae8e457d29c264">autopas::utils::Math::isNear</a> (double a, double b, double relativeDifference=1e-9)</td></tr>
-<tr class="memdesc:ab7a054f9fec06b6ce5ae8e457d29c264"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if two doubles are near each other.  <br /></td></tr>
-<tr class="separator:ab7a054f9fec06b6ce5ae8e457d29c264"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a06aa11501587615c728c43bc16b2aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Math_8cpp.html#a0a06aa11501587615c728c43bc16b2aa">autopas::utils::Math::isNearRel</a> (double a, double b, double maxRelativeDifference=1e-9)</td></tr>
+<tr class="memdesc:a0a06aa11501587615c728c43bc16b2aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if two doubles are near each other.  <br /></td></tr>
+<tr class="separator:a0a06aa11501587615c728c43bc16b2aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af37065c567de887a294d789aeaf7ee8f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Math_8cpp.html#af37065c567de887a294d789aeaf7ee8f">autopas::utils::Math::isNearAbs</a> (double a, double b, double maxAbsoluteDifference)</td></tr>
+<tr class="memdesc:af37065c567de887a294d789aeaf7ee8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if two doubles are near each other.  <br /></td></tr>
+<tr class="separator:af37065c567de887a294d789aeaf7ee8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:accf030ccc17331c9e06e621770111c5a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Math_8cpp.html#accf030ccc17331c9e06e621770111c5a">autopas::utils::Math::roundFixed</a> (double d, int fixedPrecision)</td></tr>
+<tr class="memdesc:accf030ccc17331c9e06e621770111c5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Round a floating point number to a given number of decimal digits.  <br /></td></tr>
+<tr class="separator:accf030ccc17331c9e06e621770111c5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46721ca3bcc3ec01f661a026595b7d52"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Math_8cpp.html#a46721ca3bcc3ec01f661a026595b7d52">autopas::utils::Math::roundFloating</a> (double d, int floatingPrecision)</td></tr>
+<tr class="memdesc:a46721ca3bcc3ec01f661a026595b7d52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Round a floating point number to a given floating precision.  <br /></td></tr>
+<tr class="separator:a46721ca3bcc3ec01f661a026595b7d52"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a178157dc9219ded73d569c77ef53e04e"><td class="memItemLeft" align="right" valign="top">Eigen::VectorXd&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Math_8cpp.html#a178157dc9219ded73d569c77ef53e04e">autopas::utils::Math::makeVectorXd</a> (const std::vector&lt; double &gt; &amp;elements)</td></tr>
 <tr class="memdesc:a178157dc9219ded73d569c77ef53e04e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a vector of doubles from given elements.  <br /></td></tr>
 <tr class="separator:a178157dc9219ded73d569c77ef53e04e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,14 +172,14 @@ Functions</h2></td></tr>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Jan Nguyen </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>18.08.19 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ab7a054f9fec06b6ce5ae8e457d29c264" name="ab7a054f9fec06b6ce5ae8e457d29c264"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7a054f9fec06b6ce5ae8e457d29c264">&#9670;&#160;</a></span>isNear()</h2>
+<a id="af37065c567de887a294d789aeaf7ee8f" name="af37065c567de887a294d789aeaf7ee8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af37065c567de887a294d789aeaf7ee8f">&#9670;&#160;</a></span>isNearAbs()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool autopas::utils::Math::isNear </td>
+          <td class="memname">bool autopas::utils::Math::isNearAbs </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
           <td class="paramname"><em>a</em>, </td>
@@ -185,7 +194,7 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>relativeDifference</em> = <code>1e-9</code>&#160;</td>
+          <td class="paramname"><em>maxAbsoluteDifference</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -200,7 +209,52 @@ Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">a</td><td></td></tr>
     <tr><td class="paramname">b</td><td></td></tr>
-    <tr><td class="paramname">relativeDifference</td><td></td></tr>
+    <tr><td class="paramname">maxAbsoluteDifference</td><td>inclusive </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a0a06aa11501587615c728c43bc16b2aa" name="a0a06aa11501587615c728c43bc16b2aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a06aa11501587615c728c43bc16b2aa">&#9670;&#160;</a></span>isNearRel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool autopas::utils::Math::isNearRel </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>b</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>maxRelativeDifference</em> = <code>1e-9</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Determines if two doubles are near each other. </p>
+<p>This function should be preferred to comparing with ==. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td></td></tr>
+    <tr><td class="paramname">b</td><td></td></tr>
+    <tr><td class="paramname">maxRelativeDifference</td><td>inclusive, relative to max(|a|, |b|). </td></tr>
   </table>
   </dd>
 </dl>
@@ -313,6 +367,82 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>PDF(x) </dd></dl>
+
+</div>
+</div>
+<a id="accf030ccc17331c9e06e621770111c5a" name="accf030ccc17331c9e06e621770111c5a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#accf030ccc17331c9e06e621770111c5a">&#9670;&#160;</a></span>roundFixed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double autopas::utils::Math::roundFixed </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>fixedPrecision</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Round a floating point number to a given number of decimal digits. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td>Number to round. </td></tr>
+    <tr><td class="paramname">fixedPrecision</td><td>Number of decimal digits. Negative values lead to rounding of digits left of the decimal. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>d rounded to the given number of digits. </dd></dl>
+
+</div>
+</div>
+<a id="a46721ca3bcc3ec01f661a026595b7d52" name="a46721ca3bcc3ec01f661a026595b7d52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46721ca3bcc3ec01f661a026595b7d52">&#9670;&#160;</a></span>roundFloating()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double autopas::utils::Math::roundFloating </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>floatingPrecision</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Round a floating point number to a given floating precision. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td>Number to round. </td></tr>
+    <tr><td class="paramname">floatingPrecision</td><td>Number of significant digits. Values &lt;0 will return in 0. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>d rounded to the given number of digits. </dd></dl>
 
 </div>
 </div>
