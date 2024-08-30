@@ -205,46 +205,48 @@ $(function() {
 <div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="classSimulation.html#ab87e6fc953d99e1fff60d3fd5a6578bf">  228</a></span>  <span class="keywordtype">bool</span> <a class="code hl_variable" href="classSimulation.html#ab87e6fc953d99e1fff60d3fd5a6578bf">_createVtkFiles</a>;</div>
 <div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  [[nodiscard]] std::tuple&lt;size_t, bool&gt; estimateNumberOfIterations() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>  <span class="keywordtype">void</span> printProgress(<span class="keywordtype">size_t</span> iterationProgress, <span class="keywordtype">size_t</span> maxIterations, <span class="keywordtype">bool</span> maxIsPrecise);</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span> </div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>  [[nodiscard]] <span class="keyword">static</span> std::string timerToString(<span class="keyword">const</span> std::string &amp;name, <span class="keywordtype">long</span> timeNS, <span class="keywordtype">int</span> numberWidth = 0,</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>                                                 <span class="keywordtype">long</span> maxTime = 0ul);</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span> </div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>  <span class="keywordtype">void</span> updatePositionsAndResetForces();</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>  <span class="keywordtype">void</span> updateQuaternions();</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  <span class="keywordtype">void</span> updateInteractionForces();</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>  <span class="keywordtype">void</span> updateVelocities();</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  <span class="keywordtype">void</span> updateAngularVelocities();</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>  <span class="keywordtype">void</span> updateThermostat();</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>  std::shared_ptr&lt;RegularGridDecomposition&gt; _domainDecomposition;</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>  [[nodiscard]] <span class="keyword">static</span> <span class="keywordtype">long</span> accumulateTime(<span class="keyword">const</span> <span class="keywordtype">long</span> &amp;time);</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span> </div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>  <span class="keywordtype">void</span> updateSimulationPauseState();</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span> </div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>  <span class="keywordtype">void</span> logSimulationState();</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span> </div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>  <span class="keywordtype">void</span> logMeasurements();</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>  <span class="keywordtype">void</span> loadParticles();</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  [[nodiscard]] std::tuple&lt;size_t, bool&gt; estimateNumberOfIterations() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>  <span class="keywordtype">void</span> printProgress(<span class="keywordtype">size_t</span> iterationProgress, <span class="keywordtype">size_t</span> maxIterations, <span class="keywordtype">bool</span> maxIsPrecise);</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>  [[nodiscard]] <span class="keyword">static</span> std::string timerToString(<span class="keyword">const</span> std::string &amp;name, <span class="keywordtype">long</span> timeNS, <span class="keywordtype">int</span> numberWidth = 0,</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                                                 <span class="keywordtype">long</span> maxTime = 0ul);</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>  <span class="keywordtype">void</span> updatePositionsAndResetForces();</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>  <span class="keywordtype">void</span> updateQuaternions();</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>  <span class="keywordtype">void</span> updateInteractionForces();</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span> </div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>  <span class="keywordtype">void</span> updateVelocities();</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>  <span class="keywordtype">void</span> updateAngularVelocities();</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>  <span class="keywordtype">void</span> updateThermostat();</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span> </div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>  std::shared_ptr&lt;RegularGridDecomposition&gt; _domainDecomposition;</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>  [[nodiscard]] <span class="keyword">static</span> <span class="keywordtype">long</span> accumulateTime(<span class="keyword">const</span> <span class="keywordtype">long</span> &amp;time);</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>  <span class="keywordtype">void</span> updateSimulationPauseState();</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>  <span class="keywordtype">void</span> logSimulationState();</div>
 <div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span> </div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>  <span class="keywordtype">bool</span> calculatePairwiseForces();</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>  <span class="keywordtype">void</span> calculateGlobalForces(<span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;globalForce);</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span> </div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>  [[nodiscard]] <span class="keywordtype">bool</span> needsMoreIterations() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>  <span class="keywordtype">void</span> logMeasurements();</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>  <span class="keywordtype">bool</span> calculatePairwiseForces();</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span> </div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>  <span class="keywordtype">void</span> calculateGlobalForces(<span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;globalForce);</div>
 <div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span> </div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>  [[maybe_unused]] <span class="keywordtype">void</span> checkNumParticles(<span class="keywordtype">size_t</span> expectedNumParticlesGlobal, <span class="keywordtype">size_t</span> numParticlesCurrentlyMigratingLocal,</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>                                          <span class="keywordtype">int</span> lineNumber);</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span> </div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> F&gt;</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>  T applyWithChosenFunctor(F f);</div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>};</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>  [[nodiscard]] <span class="keywordtype">bool</span> needsMoreIterations() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span> </div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>  [[maybe_unused]] <span class="keywordtype">void</span> checkNumParticles(<span class="keywordtype">size_t</span> expectedNumParticlesGlobal, <span class="keywordtype">size_t</span> numParticlesCurrentlyMigratingLocal,</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>                                          <span class="keywordtype">int</span> lineNumber);</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span> </div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> T, <span class="keyword">class</span> F&gt;</div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span>  T applyWithChosenFunctor(F f);</div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>};</div>
 <div class="ttc" id="aDomainDecomposition_8h_html"><div class="ttname"><a href="DomainDecomposition_8h.html">DomainDecomposition.h</a></div></div>
 <div class="ttc" id="aMDFlexConfig_8h_html"><div class="ttname"><a href="MDFlexConfig_8h.html">MDFlexConfig.h</a></div></div>
 <div class="ttc" id="aParallelVtkWriter_8h_html"><div class="ttname"><a href="ParallelVtkWriter_8h.html">ParallelVtkWriter.h</a></div></div>
@@ -259,11 +261,11 @@ $(function() {
 <div class="ttc" id="aclassSimulation_html_a678da6575be5807b5698d8ffefe5a8d6"><div class="ttname"><a href="classSimulation.html#a678da6575be5807b5698d8ffefe5a8d6">Simulation::_numTuningIterations</a></div><div class="ttdeci">size_t _numTuningIterations</div><div class="ttdoc">Counts completed iterations that were used for tuning.</div><div class="ttdef"><b>Definition:</b> Simulation.h:87</div></div>
 <div class="ttc" id="aclassSimulation_html_a7dcaa423874ae99e1bd5f5400bdfa3c0"><div class="ttname"><a href="classSimulation.html#a7dcaa423874ae99e1bd5f5400bdfa3c0">Simulation::_floatStringPrecision</a></div><div class="ttdeci">static constexpr auto _floatStringPrecision</div><div class="ttdoc">Precision of floating point numbers printed.</div><div class="ttdef"><b>Definition:</b> Simulation.h:112</div></div>
 <div class="ttc" id="aclassSimulation_html_a9a54c447073c029d035161334da87a9a"><div class="ttname"><a href="classSimulation.html#a9a54c447073c029d035161334da87a9a">Simulation::_outputStream</a></div><div class="ttdeci">std::ostream * _outputStream</div><div class="ttdoc">Pointer to the output stream.</div><div class="ttdef"><b>Definition:</b> Simulation.h:76</div></div>
-<div class="ttc" id="aclassSimulation_html_aa49bdaf89bc48b8dbb5a8e88d6b74daa"><div class="ttname"><a href="classSimulation.html#aa49bdaf89bc48b8dbb5a8e88d6b74daa">Simulation::finalize</a></div><div class="ttdeci">void finalize()</div><div class="ttdoc">Finalizes the simulation.</div><div class="ttdef"><b>Definition:</b> Simulation.cpp:177</div></div>
+<div class="ttc" id="aclassSimulation_html_aa49bdaf89bc48b8dbb5a8e88d6b74daa"><div class="ttname"><a href="classSimulation.html#aa49bdaf89bc48b8dbb5a8e88d6b74daa">Simulation::finalize</a></div><div class="ttdeci">void finalize()</div><div class="ttdoc">Finalizes the simulation.</div><div class="ttdef"><b>Definition:</b> Simulation.cpp:172</div></div>
 <div class="ttc" id="aclassSimulation_html_aabcfa929f9e6622346ece569f0229a91"><div class="ttname"><a href="classSimulation.html#aabcfa929f9e6622346ece569f0229a91">Simulation::~Simulation</a></div><div class="ttdeci">~Simulation()=default</div><div class="ttdoc">Destructor.</div></div>
 <div class="ttc" id="aclassSimulation_html_ab87e6fc953d99e1fff60d3fd5a6578bf"><div class="ttname"><a href="classSimulation.html#ab87e6fc953d99e1fff60d3fd5a6578bf">Simulation::_createVtkFiles</a></div><div class="ttdeci">bool _createVtkFiles</div><div class="ttdoc">Defines, if vtk files should be created or not.</div><div class="ttdef"><b>Definition:</b> Simulation.h:228</div></div>
 <div class="ttc" id="aclassSimulation_html_adb490cd366341cd954643e2c6e58daa0"><div class="ttname"><a href="classSimulation.html#adb490cd366341cd954643e2c6e58daa0">Simulation::_numTuningPhasesCompleted</a></div><div class="ttdeci">size_t _numTuningPhasesCompleted</div><div class="ttdoc">Counts completed tuning phases.</div><div class="ttdef"><b>Definition:</b> Simulation.h:92</div></div>
-<div class="ttc" id="aclassSimulation_html_ae5c367f87c0b5dc9740bc6d00e44e72c"><div class="ttname"><a href="classSimulation.html#ae5c367f87c0b5dc9740bc6d00e44e72c">Simulation::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Runs the simulation, implementing velocity verlet.</div><div class="ttdef"><b>Definition:</b> Simulation.cpp:186</div></div>
+<div class="ttc" id="aclassSimulation_html_ae5c367f87c0b5dc9740bc6d00e44e72c"><div class="ttname"><a href="classSimulation.html#ae5c367f87c0b5dc9740bc6d00e44e72c">Simulation::run</a></div><div class="ttdeci">void run()</div><div class="ttdoc">Runs the simulation, implementing velocity verlet.</div><div class="ttdef"><b>Definition:</b> Simulation.cpp:181</div></div>
 <div class="ttc" id="aclassSimulation_html_ae67969719b22632712edd5164d9b52bf"><div class="ttname"><a href="classSimulation.html#ae67969719b22632712edd5164d9b52bf">Simulation::_autoPasContainer</a></div><div class="ttdeci">std::shared_ptr&lt; autopas::AutoPas&lt; ParticleType &gt; &gt; _autoPasContainer</div><div class="ttdoc">The the nodes' AutoPas container used for simulation.</div><div class="ttdef"><b>Definition:</b> Simulation.h:66</div></div>
 <div class="ttc" id="aclassSimulation_html_ae7590bec32b8b7c29de42157f2b9f4ab"><div class="ttname"><a href="classSimulation.html#ae7590bec32b8b7c29de42157f2b9f4ab">Simulation::_vtkWriter</a></div><div class="ttdeci">std::shared_ptr&lt; ParallelVtkWriter &gt; _vtkWriter</div><div class="ttdoc">Parallel VTK file writer.</div><div class="ttdef"><b>Definition:</b> Simulation.h:223</div></div>
 <div class="ttc" id="aclassSimulation_html_aeba9547f5eb7fb1ef4cacd786f3b6215"><div class="ttname"><a href="classSimulation.html#aeba9547f5eb7fb1ef4cacd786f3b6215">Simulation::_simulationIsPaused</a></div><div class="ttdeci">bool _simulationIsPaused</div><div class="ttdoc">Indicator if the simulation is paused due to the PauseDuringTuning option.</div><div class="ttdef"><b>Definition:</b> Simulation.h:102</div></div>

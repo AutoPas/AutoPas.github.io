@@ -247,9 +247,6 @@ Public Member Functions</h2></td></tr>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>calcSimulationBox</b> ()</td></tr>
 <tr class="memdesc:a16173a29af6a15eba0923a5ce73110e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks parsed Objects and determines the necessary size of the simulation box. <br /></td></tr>
 <tr class="separator:a16173a29af6a15eba0923a5ce73110e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa89cf9f7ea2744cb6f4157066dc437e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="TypeDefinitions_8h.html#a508a019295b8d0c8151dee48a9541b3e">ParticleType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#aaa89cf9f7ea2744cb6f4157066dc437e">getParticles</a> ()</td></tr>
-<tr class="memdesc:aaa89cf9f7ea2744cb6f4157066dc437e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the particles generated based on the provided configuration file.  <br /></td></tr>
-<tr class="separator:aaa89cf9f7ea2744cb6f4157066dc437e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae24db1a596d5d99bb19cdf1c0a316226"><td class="memItemLeft" align="right" valign="top">std::shared_ptr&lt; <a class="el" href="TypeDefinitions_8h.html#ac7905f92c17c06ef74b0c257ad1b950c">ParticlePropertiesLibraryType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#ae24db1a596d5d99bb19cdf1c0a316226">getParticlePropertiesLibrary</a> ()</td></tr>
 <tr class="memdesc:ae24db1a596d5d99bb19cdf1c0a316226"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the ParticlePropertiesLibrary containing the properties of the particle types used in this simulation.  <br /></td></tr>
 <tr class="separator:ae24db1a596d5d99bb19cdf1c0a316226"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -263,9 +260,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>calcSimulationBox</b>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>flushParticles</b> ()</td></tr>
 <tr class="memdesc:ab4729480b723538f64823b9d16b7c26f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flushes the particles. <br /></td></tr>
 <tr class="separator:ab4729480b723538f64823b9d16b7c26f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e957dd0dcf0cbb74b078ce359143996"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#a0e957dd0dcf0cbb74b078ce359143996">loadParticlesFromCheckpoint</a> (const size_t &amp;rank, const size_t &amp;communicatorSize)</td></tr>
-<tr class="memdesc:a0e957dd0dcf0cbb74b078ce359143996"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the particles from the checkpoint file defined in the configuration file.  <br /></td></tr>
-<tr class="separator:a0e957dd0dcf0cbb74b078ce359143996"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0211e5782c5f78a8fdebe759e7eb7a44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#a0211e5782c5f78a8fdebe759e7eb7a44">loadParticlesFromCheckpoint</a> (const size_t &amp;rank, const size_t &amp;numRanks)</td></tr>
+<tr class="memdesc:a0211e5782c5f78a8fdebe759e7eb7a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the particles from the checkpoint file defined in the configuration file.  <br /></td></tr>
+<tr class="separator:a0211e5782c5f78a8fdebe759e7eb7a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4797aa0d3cf518c68ec21efb41aecad1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#a4797aa0d3cf518c68ec21efb41aecad1">globalForceIsZero</a> () const</td></tr>
 <tr class="memdesc:a4797aa0d3cf518c68ec21efb41aecad1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convenience function testing if the global force contains only 0 entries.  <br /></td></tr>
 <tr class="separator:a4797aa0d3cf518c68ec21efb41aecad1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -507,6 +504,10 @@ std::vector&lt; <a class="el" href="classCubeClosestPacked.html">CubeClosestPack
 <tr class="memitem:add4c0e71a9c7882b352a6aee2e7cfd8a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMDFlexConfig_1_1MDFlexOption.html">MDFlexOption</a>&lt; std::string, __LINE__ &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#add4c0e71a9c7882b352a6aee2e7cfd8a">outputSuffix</a></td></tr>
 <tr class="memdesc:add4c0e71a9c7882b352a6aee2e7cfd8a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The suffix for files created by the tuning logger.  <br /></td></tr>
 <tr class="separator:add4c0e71a9c7882b352a6aee2e7cfd8a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f674e7ada77a5832ef3bb1d8771f777"><td class="memItemLeft" align="right" valign="top"><a id="a8f674e7ada77a5832ef3bb1d8771f777" name="a8f674e7ada77a5832ef3bb1d8771f777"></a>
+std::vector&lt; <a class="el" href="TypeDefinitions_8h.html#a508a019295b8d0c8151dee48a9541b3e">ParticleType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>particles</b> {}</td></tr>
+<tr class="memdesc:a8f674e7ada77a5832ef3bb1d8771f777"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the particles generated based on the provided configuration file These particles can be added to the respective autopas container, but have to be converted to the respective particle type, first. <br /></td></tr>
+<tr class="separator:a8f674e7ada77a5832ef3bb1d8771f777"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -783,34 +784,6 @@ static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>value
 
 </div>
 </div>
-<a id="aaa89cf9f7ea2744cb6f4157066dc437e" name="aaa89cf9f7ea2744cb6f4157066dc437e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa89cf9f7ea2744cb6f4157066dc437e">&#9670;&#160;</a></span>getParticles()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="TypeDefinitions_8h.html#a508a019295b8d0c8151dee48a9541b3e">ParticleType</a> &gt; MDFlexConfig::getParticles </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Returns the particles generated based on the provided configuration file. </p>
-<dl class="section return"><dt>Returns</dt><dd>a vector containing the generated particles. </dd></dl>
-
-</div>
-</div>
 <a id="a4797aa0d3cf518c68ec21efb41aecad1" name="a4797aa0d3cf518c68ec21efb41aecad1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4797aa0d3cf518c68ec21efb41aecad1">&#9670;&#160;</a></span>globalForceIsZero()</h2>
 
@@ -839,8 +812,8 @@ static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>value
 
 </div>
 </div>
-<a id="a0e957dd0dcf0cbb74b078ce359143996" name="a0e957dd0dcf0cbb74b078ce359143996"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e957dd0dcf0cbb74b078ce359143996">&#9670;&#160;</a></span>loadParticlesFromCheckpoint()</h2>
+<a id="a0211e5782c5f78a8fdebe759e7eb7a44" name="a0211e5782c5f78a8fdebe759e7eb7a44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0211e5782c5f78a8fdebe759e7eb7a44">&#9670;&#160;</a></span>loadParticlesFromCheckpoint()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -855,7 +828,7 @@ static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>value
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const size_t &amp;&#160;</td>
-          <td class="paramname"><em>communicatorSize</em>&#160;</td>
+          <td class="paramname"><em>numRanks</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -869,7 +842,7 @@ static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>value
 <p>If the checkpoint has been recorded using multiple processes, the rank of the current process needs to be passed. The provided rank also needs to respect the domain decomposition. E. g. if the regular grid decomposition is used, don't pass the MPI_COMM_WORLD rank, as it might differ from the grid rank derived in the decomposition scheme. The wrong rank might result in a very bad network topology and therefore increase communication costs. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rank</td><td>The MPI rank of the current process. </td></tr>
-    <tr><td class="paramname">communicatorSize</td><td>The size of the MPI communicator used for the simulation. </td></tr>
+    <tr><td class="paramname">numRanks</td><td>The size of the MPI communicator used for the simulation. </td></tr>
   </table>
   </dd>
 </dl>
