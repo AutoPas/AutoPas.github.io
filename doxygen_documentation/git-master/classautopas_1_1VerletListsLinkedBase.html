@@ -224,9 +224,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:abf9be2ecb9414481dd1eef48bd5dfe80"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsLinkedBase.html#abf9be2ecb9414481dd1eef48bd5dfe80">updateContainer</a> (bool keepNeighborListsValid) override</td></tr>
 <tr class="memdesc:abf9be2ecb9414481dd1eef48bd5dfe80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the container.    <br /></td></tr>
 <tr class="separator:abf9be2ecb9414481dd1eef48bd5dfe80"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7ea64a1fd613f46dc3eb70aa6e2e51d7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a7ea64a1fd613f46dc3eb70aa6e2e51d7">updateHaloParticle</a> (const <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &amp;particle) override</td></tr>
-<tr class="memdesc:a7ea64a1fd613f46dc3eb70aa6e2e51d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches the provided halo particle and updates the found particle.  <br /></td></tr>
-<tr class="separator:a7ea64a1fd613f46dc3eb70aa6e2e51d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad3e7270c351de15054db08e304d2924"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsLinkedBase.html#aad3e7270c351de15054db08e304d2924">updateHaloParticle</a> (const <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &amp;haloParticle) override</td></tr>
+<tr class="memdesc:aad3e7270c351de15054db08e304d2924"><td class="mdescLeft">&#160;</td><td class="mdescRight">Searches the provided halo particle and updates the found particle.  <br /></td></tr>
+<tr class="separator:aad3e7270c351de15054db08e304d2924"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a682cc4f97c87412322b3d5929bf26ccf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, true, false &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a682cc4f97c87412322b3d5929bf26ccf">begin</a> (IteratorBehavior behavior=IteratorBehavior::ownedOrHalo, typename <a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, true, false &gt;::ParticleVecType *additionalVectors=nullptr) override</td></tr>
 <tr class="memdesc:a682cc4f97c87412322b3d5929bf26ccf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all particles using for(auto iter = container.begin(); iter.isValid(); ++iter) .    <br /></td></tr>
 <tr class="separator:a682cc4f97c87412322b3d5929bf26ccf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1975,8 +1975,8 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="a7ea64a1fd613f46dc3eb70aa6e2e51d7" name="a7ea64a1fd613f46dc3eb70aa6e2e51d7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7ea64a1fd613f46dc3eb70aa6e2e51d7">&#9670;&#160;</a></span>updateHaloParticle()</h2>
+<a id="aad3e7270c351de15054db08e304d2924" name="aad3e7270c351de15054db08e304d2924"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad3e7270c351de15054db08e304d2924">&#9670;&#160;</a></span>updateHaloParticle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1990,7 +1990,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
           <td class="memname">bool <a class="el" href="classautopas_1_1VerletListsLinkedBase.html">autopas::VerletListsLinkedBase</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::updateHaloParticle </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &amp;&#160;</td>
-          <td class="paramname"><em>particle</em></td><td>)</td>
+          <td class="paramname"><em>haloParticle</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -2004,7 +2004,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <p>Searches the provided halo particle and updates the found particle. </p>
 <p>Searches for the provided particle within the halo cells of the container and overwrites the found particle with the provided particle. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">particle</td><td></td></tr>
+    <tr><td class="paramname">haloParticle</td><td></td></tr>
   </table>
   </dd>
 </dl>
