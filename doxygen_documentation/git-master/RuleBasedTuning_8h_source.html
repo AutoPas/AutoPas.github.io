@@ -120,7 +120,7 @@ $(function() {
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;unordered_set&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;variant&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#ifdef AUTOPAS_ENABLE_RULES_BASED_TUNING</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#ifdef AUTOPAS_ENABLE_RULES_BASED_AND_FUZZY_TUNING</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;RuleBasedProgramParser.h&quot;</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;RuleBasedProgramTree.h&quot;</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;RuleVM.h&quot;</span></div>
@@ -135,8 +135,8 @@ $(function() {
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="classautopas_1_1RuleBasedTuning.html">   84</a></span><span class="keyword">class </span><a class="code hl_class" href="classautopas_1_1RuleBasedTuning.html">RuleBasedTuning</a> : <span class="keyword">public</span> <a class="code hl_class" href="classautopas_1_1TuningStrategyInterface.html">TuningStrategyInterface</a> {</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classautopas_1_1RuleBasedTuning.html#af247ff72caceec4f9f9512d74e04cd75">   89</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="classautopas_1_1RuleBasedTuning.html#af247ff72caceec4f9f9512d74e04cd75">PrintTuningErrorFunType</a> =</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">#ifdef AUTOPAS_ENABLE_RULES_BASED_TUNING</span></div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      std::function&lt;void(<span class="keyword">const</span> <a class="code hl_struct" href="structautopas_1_1rule__syntax_1_1ConfigurationOrder.html">rule_syntax::ConfigurationOrder</a> &amp;order, <span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1Configuration.html">Configuration</a> &amp;actualBetterConfig,</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="preprocessor">#ifdef AUTOPAS_ENABLE_RULES_BASED_AND_FUZZY_TUNING</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      std::function&lt;void(<span class="keyword">const</span> <a class="code hl_struct" href="structautopas_1_1RuleSyntax_1_1ConfigurationOrder.html">RuleSyntax::ConfigurationOrder</a> &amp;order, <span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1Configuration.html">Configuration</a> &amp;actualBetterConfig,</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> betterRuntime, <span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1Configuration.html">Configuration</a> &amp;shouldBeBetterConfig,</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                         <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> shouldBeBetterRuntime, <span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1LiveInfo.html">LiveInfo</a> &amp;liveInfo)&gt;;</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#else</span></div>
@@ -166,14 +166,14 @@ $(function() {
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>                           <span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1EvidenceCollection.html">EvidenceCollection</a> &amp;evidenceCollection) <span class="keyword">override</span>;</div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="preprocessor">#ifdef AUTOPAS_ENABLE_RULES_BASED_TUNING</span></div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="preprocessor">#ifdef AUTOPAS_ENABLE_RULES_BASED_AND_FUZZY_TUNING</span></div>
 <div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>  std::string rulesToString(<span class="keyword">const</span> std::string &amp;filePath) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
 <div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>  <span class="keywordtype">void</span> verifyCurrentConfigTime(<span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1Configuration.html">Configuration</a> &amp;configuration) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span> </div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  std::vector&lt;rule_syntax::ConfigurationOrder&gt; applyRules(<span class="keyword">const</span> std::vector&lt;Configuration&gt; &amp;searchSpace);</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>  std::vector&lt;RuleSyntax::ConfigurationOrder&gt; applyRules(<span class="keyword">const</span> std::vector&lt;Configuration&gt; &amp;searchSpace);</div>
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  std::vector&lt;rule_syntax::ConfigurationOrder&gt; _lastApplicableConfigurationOrders{};</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  std::vector&lt;RuleSyntax::ConfigurationOrder&gt; _lastApplicableConfigurationOrders{};</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>  <span class="comment">// The following member variables are only conditionally compiled to avoid warnings about unused variables.</span></div>
 <div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span> </div>
@@ -218,7 +218,7 @@ $(function() {
 <div class="ttc" id="aclassautopas_1_1RuleBasedTuning_html_af247ff72caceec4f9f9512d74e04cd75"><div class="ttname"><a href="classautopas_1_1RuleBasedTuning.html#af247ff72caceec4f9f9512d74e04cd75">autopas::RuleBasedTuning::PrintTuningErrorFunType</a></div><div class="ttdeci">int PrintTuningErrorFunType</div><div class="ttdoc">A function type used to print errors found in verify mode.</div><div class="ttdef"><b>Definition:</b> RuleBasedTuning.h:95</div></div>
 <div class="ttc" id="aclassautopas_1_1TuningStrategyInterface_html"><div class="ttname"><a href="classautopas_1_1TuningStrategyInterface.html">autopas::TuningStrategyInterface</a></div><div class="ttdoc">Interface for tuning strategies for the auto tuner.</div><div class="ttdef"><b>Definition:</b> TuningStrategyInterface.h:23</div></div>
 <div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">This is the main namespace of AutoPas.</div><div class="ttdef"><b>Definition:</b> AutoPasDecl.h:31</div></div>
-<div class="ttc" id="astructautopas_1_1rule__syntax_1_1ConfigurationOrder_html"><div class="ttname"><a href="structautopas_1_1rule__syntax_1_1ConfigurationOrder.html">autopas::rule_syntax::ConfigurationOrder</a></div><div class="ttdoc">A ConfigurationOrder statement in the rule language e.g.</div><div class="ttdef"><b>Definition:</b> RuleBasedProgramTree.h:193</div></div>
+<div class="ttc" id="astructautopas_1_1RuleSyntax_1_1ConfigurationOrder_html"><div class="ttname"><a href="structautopas_1_1RuleSyntax_1_1ConfigurationOrder.html">autopas::RuleSyntax::ConfigurationOrder</a></div><div class="ttdoc">A ConfigurationOrder statement in the rule language e.g.</div><div class="ttdef"><b>Definition:</b> RuleBasedProgramTree.h:193</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sameproperty_0',['SameProperty',['../structautopas_1_1rule__syntax_1_1ConfigurationOrder.html#a731deb007aba62f9059f4e4baeed0566',1,'autopas::rule_syntax::ConfigurationOrder']]]
+  ['sameproperty_0',['SameProperty',['../structautopas_1_1RuleSyntax_1_1ConfigurationOrder.html#a969772d7215c2e8f784fb2420210f9e9',1,'autopas::RuleSyntax::ConfigurationOrder']]]
 ];

@@ -21,5 +21,5 @@ var searchData=
   ['sphcalchydroforcefunctor_18',['SPHCalcHydroForceFunctor',['../classsphLib_1_1SPHCalcHydroForceFunctor.html',1,'sphLib']]],
   ['sphkernels_19',['SPHKernels',['../classsphLib_1_1SPHKernels.html',1,'sphLib']]],
   ['sphparticle_20',['SPHParticle',['../classsphLib_1_1SPHParticle.html',1,'sphLib']]],
-  ['statement_21',['Statement',['../structautopas_1_1rule__syntax_1_1Statement.html',1,'autopas::rule_syntax']]]
+  ['statement_21',['Statement',['../structautopas_1_1RuleSyntax_1_1Statement.html',1,'autopas::RuleSyntax']]]
 ];

@@ -2,7 +2,7 @@ var searchData=
 [
   ['asbuildpairgeneratorfunctor_3c_20particle_2c_20false_20_3e_0',['AsBuildPairGeneratorFunctor&lt; Particle, false &gt;',['../classautopas_1_1VerletNeighborListAsBuild.html#a95c550abcd0a66744336ae2f572a8db9',1,'autopas::VerletNeighborListAsBuild']]],
   ['asbuildpairgeneratorfunctor_3c_20particle_2c_20true_20_3e_1',['AsBuildPairGeneratorFunctor&lt; Particle, true &gt;',['../classautopas_1_1VerletNeighborListAsBuild.html#a016acd1ec4c83868203a40971446a053',1,'autopas::VerletNeighborListAsBuild']]],
-  ['if_2',['If',['../structautopas_1_1rule__syntax_1_1If.html',1,'autopas::rule_syntax::If'],['../structautopas_1_1rule__syntax_1_1If.html#af7b9de5347bc2568f59e5b6cbabc18b4',1,'autopas::rule_syntax::If::If()']]],
+  ['if_2',['If',['../structautopas_1_1RuleSyntax_1_1If.html',1,'autopas::RuleSyntax::If'],['../structautopas_1_1RuleSyntax_1_1If.html#a23a1a782d2646ec5d9ddea9207c1db95',1,'autopas::RuleSyntax::If::If()']]],
   ['ignore_3',['ignore',['../namespaceautopas_1_1utils.html#a9d742020d77e569b7b7200992d15fef8a25f9f84486f9f4d59df399c5a6391f35',1,'autopas::utils']]],
   ['ignorecellforiteration_4',['ignoreCellForIteration',['../classautopas_1_1internal_1_1CellBorderAndFlagManager.html#a15f4e95e626141703b5c65bcf5d3526d',1,'autopas::internal::CellBorderAndFlagManager']]],
   ['inbox_5',['inBox',['../namespaceautopas_1_1utils.html#acb8142fa65b2f710d92bcc40a2ba7d03',1,'autopas::utils']]],

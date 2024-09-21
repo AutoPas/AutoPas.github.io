@@ -12,5 +12,5 @@ var searchData=
   ['tuninginterval_9',['tuningInterval',['../structautopas_1_1AutoTunerInfo.html#a02bc4a5a5f396cb504c49cee5e515a5b',1,'autopas::AutoTunerInfo']]],
   ['tuningmetric_10',['tuningMetric',['../structautopas_1_1AutoTunerInfo.html#a37a8d4955cb9c77ba75bed2b7a242f6c',1,'autopas::AutoTunerInfo']]],
   ['tuningphase_11',['tuningPhase',['../classautopas_1_1Evidence.html#a6c4d4c64cbb0f2ccd74512525217efba',1,'autopas::Evidence']]],
-  ['type_12',['type',['../structautopas_1_1rule__syntax_1_1Literal.html#a0e69643f705a6c5846ce3f735d19a69f',1,'autopas::rule_syntax::Literal']]]
+  ['type_12',['type',['../structautopas_1_1RuleSyntax_1_1Literal.html#ada18fb6a784c2e4c0f916fa61670569a',1,'autopas::RuleSyntax::Literal']]]
 ];

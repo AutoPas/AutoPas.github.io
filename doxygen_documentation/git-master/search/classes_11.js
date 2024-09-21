@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['variable_0',['Variable',['../structautopas_1_1rule__syntax_1_1Variable.html',1,'autopas::rule_syntax']]],
+  ['variable_0',['Variable',['../structautopas_1_1RuleSyntax_1_1Variable.html',1,'autopas::RuleSyntax']]],
   ['varverletlists_1',['VarVerletLists',['../classautopas_1_1VarVerletLists.html',1,'autopas']]],
   ['vclc01balancedtraversal_2',['VCLC01BalancedTraversal',['../classautopas_1_1VCLC01BalancedTraversal.html',1,'autopas']]],
   ['vclc06traversal_3',['VCLC06Traversal',['../classautopas_1_1VCLC06Traversal.html',1,'autopas']]],

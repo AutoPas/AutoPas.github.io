@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['if_0',['If',['../structautopas_1_1rule__syntax_1_1If.html#af7b9de5347bc2568f59e5b6cbabc18b4',1,'autopas::rule_syntax::If']]],
+  ['if_0',['If',['../structautopas_1_1RuleSyntax_1_1If.html#a23a1a782d2646ec5d9ddea9207c1db95',1,'autopas::RuleSyntax::If']]],
   ['ignorecellforiteration_1',['ignoreCellForIteration',['../classautopas_1_1internal_1_1CellBorderAndFlagManager.html#a15f4e95e626141703b5c65bcf5d3526d',1,'autopas::internal::CellBorderAndFlagManager']]],
   ['inbox_2',['inBox',['../namespaceautopas_1_1utils.html#acb8142fa65b2f710d92bcc40a2ba7d03',1,'autopas::utils']]],
   ['includecellpair_3',['includeCellPair',['../namespaceautopas_1_1LCC08CellHandlerUtility_1_1internal.html#aec211a91a7fd922e38c3a45f3890118b',1,'autopas::LCC08CellHandlerUtility::internal']]],

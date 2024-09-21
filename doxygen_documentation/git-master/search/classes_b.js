@@ -21,5 +21,6 @@ var searchData=
   ['otc01traversal_18',['OTC01Traversal',['../classautopas_1_1OTC01Traversal.html',1,'autopas']]],
   ['otc18traversal_19',['OTC18Traversal',['../classautopas_1_1OTC18Traversal.html',1,'autopas']]],
   ['ottraversalinterface_20',['OTTraversalInterface',['../classautopas_1_1OTTraversalInterface.html',1,'autopas']]],
-  ['ottraversalinterface_3c_20octreenodewrapper_3c_20particle_20_3e_20_3e_21',['OTTraversalInterface&lt; OctreeNodeWrapper&lt; Particle &gt; &gt;',['../classautopas_1_1OTTraversalInterface.html',1,'autopas']]]
+  ['ottraversalinterface_3c_20octreenodewrapper_3c_20particle_20_3e_20_3e_21',['OTTraversalInterface&lt; OctreeNodeWrapper&lt; Particle &gt; &gt;',['../classautopas_1_1OTTraversalInterface.html',1,'autopas']]],
+  ['outputmapper_22',['OutputMapper',['../classautopas_1_1FuzzyLogic_1_1OutputMapper.html',1,'autopas::FuzzyLogic']]]
 ];

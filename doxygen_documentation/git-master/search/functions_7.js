@@ -4,5 +4,5 @@ var searchData=
   ['hascompatiblevalues_1',['hasCompatibleValues',['../classautopas_1_1Configuration.html#aea1e0c2fca7bbda1cf4e9750707a6ebf',1,'autopas::Configuration']]],
   ['hasparent_2',['hasParent',['../classautopas_1_1OctreeNodeInterface.html#aab2a78fb9d6b1edb1fea9e71ceef4881',1,'autopas::OctreeNodeInterface']]],
   ['hasvalidvalues_3',['hasValidValues',['../classautopas_1_1Configuration.html#a3dec7a71096a98368a92f4c255cffc3b',1,'autopas::Configuration']]],
-  ['haveequalsameproperties_4',['haveEqualSameProperties',['../structautopas_1_1rule__syntax_1_1ConfigurationOrder.html#a2129141498d32d2240adf72978e13c32',1,'autopas::rule_syntax::ConfigurationOrder']]]
+  ['haveequalsameproperties_4',['haveEqualSameProperties',['../structautopas_1_1RuleSyntax_1_1ConfigurationOrder.html#ac5a9f2e4c951e030b41573da51bdfb28',1,'autopas::RuleSyntax::ConfigurationOrder']]]
 ];
