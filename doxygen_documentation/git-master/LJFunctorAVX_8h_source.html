@@ -313,15 +313,15 @@ $(function() {
 <div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>      <span class="comment">// a &amp; ~(b -1) == a - (a mod b)</span></div>
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>      <span class="keywordflow">for</span> (; j &lt; (i &amp; ~(vecLength - 1)); j += 4) {</div>
 <div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>        SoAKernel&lt;true, false&gt;(j, ownedStateI, <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span>int64_t *<span class="keyword">&gt;</span>(ownedStatePtr), x1, y1, z1, xptr, yptr,</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                               zptr, fxptr, fyptr, fzptr, &amp;typeIDptr[i], typeIDptr, fxacc, fyacc, fzacc, &amp;virialSumX,</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                               &amp;virialSumY, &amp;virialSumZ, &amp;potentialEnergySum, 0);</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                               zptr, fxptr, fyptr, fzptr, &amp;typeIDptr[i], &amp;typeIDptr[j], fxacc, fyacc, fzacc,</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                               &amp;virialSumX, &amp;virialSumY, &amp;virialSumZ, &amp;potentialEnergySum, 0);</div>
 <div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>      }</div>
 <div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>      <span class="comment">// If b is a power of 2 the following holds:</span></div>
 <div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>      <span class="comment">// a &amp; (b -1) == a mod b</span></div>
 <div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>      <span class="keyword">const</span> <span class="keywordtype">int</span> rest = (int)(i &amp; (vecLength - 1));</div>
 <div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>      <span class="keywordflow">if</span> (rest &gt; 0) {</div>
 <div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        SoAKernel&lt;true, true&gt;(j, ownedStateI, <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span>int64_t *<span class="keyword">&gt;</span>(ownedStatePtr), x1, y1, z1, xptr, yptr,</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>                              zptr, fxptr, fyptr, fzptr, &amp;typeIDptr[i], typeIDptr, fxacc, fyacc, fzacc, &amp;virialSumX,</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>                              zptr, fxptr, fyptr, fzptr, &amp;typeIDptr[i], &amp;typeIDptr[j], fxacc, fyacc, fzacc, &amp;virialSumX,</div>
 <div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>                              &amp;virialSumY, &amp;virialSumZ, &amp;potentialEnergySum, rest);</div>
 <div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>      }</div>
 <div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
@@ -430,14 +430,14 @@ $(function() {
 <div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>      <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> j = 0;</div>
 <div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>      <span class="keywordflow">for</span> (; j &lt; (soa2.<a class="code hl_function" href="classautopas_1_1SoAView.html#a03c301441b1ff85d43e55489d06de3b3">size</a>() &amp; ~(vecLength - 1)); j += 4) {</div>
 <div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>        SoAKernel&lt;newton3, false&gt;(j, ownedStateI, <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span>int64_t *<span class="keyword">&gt;</span>(ownedStatePtr2), x1, y1, z1, x2ptr,</div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>                                  y2ptr, z2ptr, fx2ptr, fy2ptr, fz2ptr, typeID1ptr, typeID2ptr, fxacc, fyacc, fzacc,</div>
-<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>                                  &amp;virialSumX, &amp;virialSumY, &amp;virialSumZ, &amp;potentialEnergySum, 0);</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>                                  y2ptr, z2ptr, fx2ptr, fy2ptr, fz2ptr, &amp;typeID1ptr[i], &amp;typeID2ptr[j], fxacc, fyacc,</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span>                                  fzacc, &amp;virialSumX, &amp;virialSumY, &amp;virialSumZ, &amp;potentialEnergySum, 0);</div>
 <div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>      }</div>
 <div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span>      <span class="keyword">const</span> <span class="keywordtype">int</span> rest = (int)(soa2.<a class="code hl_function" href="classautopas_1_1SoAView.html#a03c301441b1ff85d43e55489d06de3b3">size</a>() &amp; (vecLength - 1));</div>
 <div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>      <span class="keywordflow">if</span> (rest &gt; 0)</div>
 <div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>        SoAKernel&lt;newton3, true&gt;(j, ownedStateI, <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span>int64_t *<span class="keyword">&gt;</span>(ownedStatePtr2), x1, y1, z1, x2ptr,</div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>                                 y2ptr, z2ptr, fx2ptr, fy2ptr, fz2ptr, typeID1ptr, typeID2ptr, fxacc, fyacc, fzacc,</div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>                                 &amp;virialSumX, &amp;virialSumY, &amp;virialSumZ, &amp;potentialEnergySum, rest);</div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>                                 y2ptr, z2ptr, fx2ptr, fy2ptr, fz2ptr, &amp;typeID1ptr[i], &amp;typeID2ptr[j], fxacc, fyacc,</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>                                 fzacc, &amp;virialSumX, &amp;virialSumY, &amp;virialSumZ, &amp;potentialEnergySum, rest);</div>
 <div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span> </div>
 <div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>      <span class="comment">// horizontally reduce fDacc to sumfD</span></div>
 <div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>      <span class="keyword">const</span> __m256d hSumfxfy = _mm256_hadd_pd(fxacc, fyacc);</div>
