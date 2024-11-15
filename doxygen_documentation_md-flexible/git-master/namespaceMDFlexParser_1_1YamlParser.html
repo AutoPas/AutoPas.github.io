@@ -129,10 +129,10 @@ Functions</h2></td></tr>
 <tr class="memitem:a72dfa8d26bc24f09c276afc165d3adcb"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMDFlexParser_1_1YamlParser.html#a72dfa8d26bc24f09c276afc165d3adcb">makeErrorMsg</a> (const YAML::Mark &amp;mark, const std::string &amp;key, const std::string &amp;errorMsg, const std::string &amp;expected, const std::string &amp;description)</td></tr>
 <tr class="memdesc:a72dfa8d26bc24f09c276afc165d3adcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an error message for all non-object-keys.  <br /></td></tr>
 <tr class="separator:a72dfa8d26bc24f09c276afc165d3adcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74b1e27ee3d374d6b2ac6dfdc32128a9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:a74b1e27ee3d374d6b2ac6dfdc32128a9"><td class="memTemplItemLeft" align="right" valign="top">const T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMDFlexParser_1_1YamlParser.html#a74b1e27ee3d374d6b2ac6dfdc32128a9">parseComplexTypeValueSingle</a> (const YAML::Node node, const std::string &amp;key, std::vector&lt; std::string &gt; &amp;complexTypeErrors)</td></tr>
-<tr class="memdesc:a74b1e27ee3d374d6b2ac6dfdc32128a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the scalar value of a key in a complex-type node of a YAML-config.  <br /></td></tr>
-<tr class="separator:a74b1e27ee3d374d6b2ac6dfdc32128a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a15226f71c4376d8015a60d0f0cdc4ac9"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a15226f71c4376d8015a60d0f0cdc4ac9"><td class="memTemplItemLeft" align="right" valign="top">const T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMDFlexParser_1_1YamlParser.html#a15226f71c4376d8015a60d0f0cdc4ac9">parseComplexTypeValueSingle</a> (const YAML::Node node, const std::string &amp;key, std::vector&lt; std::string &gt; &amp;complexTypeErrors, bool required=true)</td></tr>
+<tr class="memdesc:a15226f71c4376d8015a60d0f0cdc4ac9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the scalar value of a key in a complex-type node of a YAML-config.  <br /></td></tr>
+<tr class="separator:a15226f71c4376d8015a60d0f0cdc4ac9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb2c2aa2c7efa50ad8c1c53318949883"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t S&gt; </td></tr>
 <tr class="memitem:acb2c2aa2c7efa50ad8c1c53318949883"><td class="memTemplItemLeft" align="right" valign="top">const std::array&lt; T, S &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceMDFlexParser_1_1YamlParser.html#acb2c2aa2c7efa50ad8c1c53318949883">parseComplexTypeValueSequence</a> (const YAML::Node node, const std::string &amp;key, std::vector&lt; std::string &gt; &amp;complexTypeErrors)</td></tr>
 <tr class="memdesc:acb2c2aa2c7efa50ad8c1c53318949883"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the sequence value of a key in a complex-type node of a YAML-config.  <br /></td></tr>
@@ -313,8 +313,8 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="a74b1e27ee3d374d6b2ac6dfdc32128a9" name="a74b1e27ee3d374d6b2ac6dfdc32128a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74b1e27ee3d374d6b2ac6dfdc32128a9">&#9670;&#160;</a></span>parseComplexTypeValueSingle()</h2>
+<a id="a15226f71c4376d8015a60d0f0cdc4ac9" name="a15226f71c4376d8015a60d0f0cdc4ac9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15226f71c4376d8015a60d0f0cdc4ac9">&#9670;&#160;</a></span>parseComplexTypeValueSingle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -337,7 +337,13 @@ template&lt;typename T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::vector&lt; std::string &gt; &amp;&#160;</td>
-          <td class="paramname"><em>complexTypeErrors</em>&#160;</td>
+          <td class="paramname"><em>complexTypeErrors</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>required</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -353,6 +359,7 @@ template&lt;typename T &gt; </div>
     <tr><td class="paramname">node</td><td>root-YAML-node of a complex-type. </td></tr>
     <tr><td class="paramname">key</td><td>The key to parse. </td></tr>
     <tr><td class="paramname">complexTypeErrors</td><td>Vector to store all errors during parsing of one complex-type node </td></tr>
+    <tr><td class="paramname">required</td><td>Throw error if a value is required </td></tr>
   </table>
   </dd>
 </dl>

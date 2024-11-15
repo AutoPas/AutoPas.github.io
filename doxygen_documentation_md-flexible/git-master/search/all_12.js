@@ -14,12 +14,13 @@ var searchData=
   ['togetoptoption_11',['toGetoptOption',['../structMDFlexConfig_1_1MDFlexOption.html#aa798836b6f2ad2085498ea3b98c1022f',1,'MDFlexConfig::MDFlexOption']]],
   ['total_12',['total',['../structSimulation_1_1Timers.html#aa2acaa67f26ffb455d45a17513d120cd',1,'Simulation::Timers']]],
   ['traversaloptions_13',['traversalOptions',['../classMDFlexConfig.html#a83b6854029e48119ba9dac35fc01bf4b',1,'MDFlexConfig']]],
-  ['tuninginterval_14',['tuningInterval',['../classMDFlexConfig.html#ad83b8cdea5ce2bdd4d37688b6456c7ec',1,'MDFlexConfig']]],
-  ['tuningmaxevidence_15',['tuningMaxEvidence',['../classMDFlexConfig.html#a1b01604920edb5ebf04049c1c3de1de1',1,'MDFlexConfig']]],
-  ['tuningmetricoption_16',['tuningMetricOption',['../classMDFlexConfig.html#a4ca5eded42212928693a77130c57bf16',1,'MDFlexConfig']]],
-  ['tuningphases_17',['tuningPhases',['../classMDFlexConfig.html#a64accd5dcd5fc6da5daebdb3ba64335f',1,'MDFlexConfig']]],
-  ['tuningsamples_18',['tuningSamples',['../classMDFlexConfig.html#aaf414c67d6877238e90bed93d1d9a125',1,'MDFlexConfig']]],
-  ['tuningstrategyoptions_19',['tuningStrategyOptions',['../classMDFlexConfig.html#a66ff3883eafee2b15b8667c740a2a4e6',1,'MDFlexConfig']]],
-  ['typedefinitions_2eh_20',['TypeDefinitions.h',['../TypeDefinitions_8h.html',1,'']]],
-  ['typetostr_21',['typeToStr',['../namespaceMDFlexParser_1_1YamlParser.html#a45258f128e73d9e1dadb04f81bdcbda9',1,'MDFlexParser::YamlParser']]]
+  ['traversaloptions3b_14',['traversalOptions3B',['../classMDFlexConfig.html#a3874328c53054cc2fe7edc29e26eb980',1,'MDFlexConfig']]],
+  ['tuninginterval_15',['tuningInterval',['../classMDFlexConfig.html#ad83b8cdea5ce2bdd4d37688b6456c7ec',1,'MDFlexConfig']]],
+  ['tuningmaxevidence_16',['tuningMaxEvidence',['../classMDFlexConfig.html#a1b01604920edb5ebf04049c1c3de1de1',1,'MDFlexConfig']]],
+  ['tuningmetricoption_17',['tuningMetricOption',['../classMDFlexConfig.html#a4ca5eded42212928693a77130c57bf16',1,'MDFlexConfig']]],
+  ['tuningphases_18',['tuningPhases',['../classMDFlexConfig.html#a64accd5dcd5fc6da5daebdb3ba64335f',1,'MDFlexConfig']]],
+  ['tuningsamples_19',['tuningSamples',['../classMDFlexConfig.html#aaf414c67d6877238e90bed93d1d9a125',1,'MDFlexConfig']]],
+  ['tuningstrategyoptions_20',['tuningStrategyOptions',['../classMDFlexConfig.html#a66ff3883eafee2b15b8667c740a2a4e6',1,'MDFlexConfig']]],
+  ['typedefinitions_2eh_21',['TypeDefinitions.h',['../TypeDefinitions_8h.html',1,'']]],
+  ['typetostr_22',['typeToStr',['../namespaceMDFlexParser_1_1YamlParser.html#a45258f128e73d9e1dadb04f81bdcbda9',1,'MDFlexParser::YamlParser']]]
 ];
