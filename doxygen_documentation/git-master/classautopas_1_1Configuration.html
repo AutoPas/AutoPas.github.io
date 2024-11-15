@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -142,9 +149,9 @@ Collaboration diagram for autopas::Configuration:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9a8bd9a8972d55c846b46025741f24e9"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Configuration.html#a9a8bd9a8972d55c846b46025741f24e9">Configuration</a> (ContainerOption _container, double _cellSizeFactor, TraversalOption _traversal, <a class="el" href="classautopas_1_1LoadEstimatorOption.html">LoadEstimatorOption</a> _loadEstimator, DataLayoutOption _dataLayout, Newton3Option _newton3)</td></tr>
-<tr class="memdesc:a9a8bd9a8972d55c846b46025741f24e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
-<tr class="separator:a9a8bd9a8972d55c846b46025741f24e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b3befd66d47c0ac38c47f4ae1603adb"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Configuration.html#a8b3befd66d47c0ac38c47f4ae1603adb">Configuration</a> (ContainerOption _container, double _cellSizeFactor, TraversalOption _traversal, <a class="el" href="classautopas_1_1LoadEstimatorOption.html">LoadEstimatorOption</a> _loadEstimator, DataLayoutOption _dataLayout, Newton3Option _newton3, InteractionTypeOption _interactionType)</td></tr>
+<tr class="memdesc:a8b3befd66d47c0ac38c47f4ae1603adb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="separator:a8b3befd66d47c0ac38c47f4ae1603adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41ae85775df70dd4587547cda46b5f94"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Configuration.html#a41ae85775df70dd4587547cda46b5f94">Configuration</a> ()</td></tr>
 <tr class="memdesc:a41ae85775df70dd4587547cda46b5f94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor taking no arguments.  <br /></td></tr>
 <tr class="separator:a41ae85775df70dd4587547cda46b5f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -199,12 +206,16 @@ Newton3Option&#160;</td><td class="memItemRight" valign="bottom"><b>newton3</b><
 double&#160;</td><td class="memItemRight" valign="bottom"><b>cellSizeFactor</b></td></tr>
 <tr class="memdesc:a10fbd75bcde633f8441d93387c7f20b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">CellSizeFactor. <br /></td></tr>
 <tr class="separator:a10fbd75bcde633f8441d93387c7f20b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a36090904dd9c1e11caccd6ec7aa24b79"><td class="memItemLeft" align="right" valign="top"><a id="a36090904dd9c1e11caccd6ec7aa24b79" name="a36090904dd9c1e11caccd6ec7aa24b79"></a>
+InteractionTypeOption&#160;</td><td class="memItemRight" valign="bottom"><b>interactionType</b></td></tr>
+<tr class="memdesc:a36090904dd9c1e11caccd6ec7aa24b79"><td class="mdescLeft">&#160;</td><td class="mdescRight">Interaction type of the configuration. <br /></td></tr>
+<tr class="separator:a36090904dd9c1e11caccd6ec7aa24b79"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class containing multiple options that form an algorithm configuration for the pairwise iteration. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a9a8bd9a8972d55c846b46025741f24e9" name="a9a8bd9a8972d55c846b46025741f24e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9a8bd9a8972d55c846b46025741f24e9">&#9670;&#160;</a></span>Configuration() <span class="overload">[1/2]</span></h2>
+<a id="a8b3befd66d47c0ac38c47f4ae1603adb" name="a8b3befd66d47c0ac38c47f4ae1603adb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b3befd66d47c0ac38c47f4ae1603adb">&#9670;&#160;</a></span>Configuration() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -246,7 +257,13 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>cellSizeFactor</b><
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">Newton3Option&#160;</td>
-          <td class="paramname"><em>_newton3</em>&#160;</td>
+          <td class="paramname"><em>_newton3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">InteractionTypeOption&#160;</td>
+          <td class="paramname"><em>_interactionType</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -270,6 +287,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>cellSizeFactor</b><
     <tr><td class="paramname">_dataLayout</td><td></td></tr>
     <tr><td class="paramname">_newton3</td><td></td></tr>
     <tr><td class="paramname">_cellSizeFactor</td><td></td></tr>
+    <tr><td class="paramname">_interactionType</td><td></td></tr>
   </table>
   </dd>
 </dl>

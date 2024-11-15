@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -121,9 +128,9 @@ Inheritance diagram for autopas::VLCCellPairC08CellHandler&lt; ParticleCell, Pai
 <div class="dyncontent">
 <div class="center"><img src="classautopas_1_1VLCCellPairC08CellHandler__inherit__graph.png" border="0" usemap="#aautopas_1_1VLCCellPairC08CellHandler_3_01ParticleCell_00_01PairwiseFunctor_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="aautopas_1_1VLCCellPairC08CellHandler_3_01ParticleCell_00_01PairwiseFunctor_01_4_inherit__map" id="aautopas_1_1VLCCellPairC08CellHandler_3_01ParticleCell_00_01PairwiseFunctor_01_4_inherit__map">
-<area shape="rect" title="This class provides the base logic for the c08 traversal for VLCCellPairNeighborList." alt="" coords="7,5,229,60"/>
-<area shape="rect" href="classautopas_1_1VLCCellPairC08CellHandler.html" title=" " alt="" coords="5,137,231,192"/>
-<area shape="poly" title=" " alt="" coords="121,74,121,137,115,137,115,74"/>
+<area shape="rect" title="This class provides the base logic for the c08 traversal for VLCCellPairNeighborList." alt="" coords="5,7,228,62"/>
+<area shape="rect" href="classautopas_1_1VLCCellPairC08CellHandler.html" title=" " alt="" coords="457,7,683,62"/>
+<area shape="poly" title=" " alt="" coords="242,32,457,32,457,37,242,37"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -132,17 +139,17 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a36e738714af979c1c487db8963f36f27"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VLCCellPairC08CellHandler.html#a36e738714af979c1c487db8963f36f27">VLCCellPairC08CellHandler</a> (const std::array&lt; unsigned long, 3 &gt; &amp;dims, double interactionLength, const std::array&lt; double, 3 &gt; &amp;cellLength)</td></tr>
 <tr class="memdesc:a36e738714af979c1c487db8963f36f27"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the <a class="el" href="classautopas_1_1VLCCellPairC08CellHandler.html" title="This class provides the base logic for the c08 traversal for VLCCellPairNeighborList.">VLCCellPairC08CellHandler</a>.  <br /></td></tr>
 <tr class="separator:a36e738714af979c1c487db8963f36f27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0d0b4c922ab3718bc84d241e8abc4ed1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VLCCellPairC08CellHandler.html#a0d0b4c922ab3718bc84d241e8abc4ed1">processCellListsC08</a> (<a class="el" href="classautopas_1_1VLCCellPairNeighborList.html">VLCCellPairNeighborList</a>&lt; typename <a class="el" href="classautopas_1_1ParticleCell.html#a553070a9b356ecf3bea43f1a2b344765">ParticleCell::ParticleType</a> &gt; &amp;neighborList, unsigned long cellIndex, PairwiseFunctor *pairwiseFunctor, DataLayoutOption layout, <a class="el" href="classautopas_1_1SoA.html">SoA</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#a5edc300640c4ece1b7cd14dbe3633c18">ParticleCell::ParticleType::SoAArraysType</a> &gt; *soa, bool useNewton3)</td></tr>
+<tr class="memitem:a0d0b4c922ab3718bc84d241e8abc4ed1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VLCCellPairC08CellHandler.html#a0d0b4c922ab3718bc84d241e8abc4ed1">processCellListsC08</a> (<a class="el" href="classautopas_1_1VLCCellPairNeighborList.html">VLCCellPairNeighborList</a>&lt; typename <a class="el" href="classautopas_1_1ParticleCell.html#a553070a9b356ecf3bea43f1a2b344765">ParticleCell::ParticleType</a> &gt; &amp;neighborList, unsigned long cellIndex, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> *pairwiseFunctor, DataLayoutOption layout, <a class="el" href="classautopas_1_1SoA.html">SoA</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#a5edc300640c4ece1b7cd14dbe3633c18">ParticleCell::ParticleType::SoAArraysType</a> &gt; *soa, bool useNewton3)</td></tr>
 <tr class="memdesc:a0d0b4c922ab3718bc84d241e8abc4ed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes a c08 base step for the cell at cellIndex.  <br /></td></tr>
 <tr class="separator:a0d0b4c922ab3718bc84d241e8abc4ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, class PairwiseFunctor&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a>&gt;<br />
 class autopas::VLCCellPairC08CellHandler&lt; ParticleCell, PairwiseFunctor &gt;</div><p>This class provides the base logic for the c08 traversal for <a class="el" href="classautopas_1_1VLCCellPairNeighborList.html" title="Neighbor list to be used with VerletListsCells container.">VLCCellPairNeighborList</a>. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname"><a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a></td><td>the type of cells </td></tr>
-    <tr><td class="paramname">PairwiseFunctor</td><td>The functor that defines the interaction of two particles. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classautopas_1_1PairwiseFunctor.html" title="PairwiseFunctor class.">PairwiseFunctor</a></td><td>The functor that defines the interaction of two particles. </td></tr>
   </table>
   </dd>
 </dl>
@@ -153,13 +160,13 @@ class autopas::VLCCellPairC08CellHandler&lt; ParticleCell, PairwiseFunctor &gt;<
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1VLCCellPairC08CellHandler.html">autopas::VLCCellPairC08CellHandler</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor &gt;::VLCCellPairC08CellHandler </td>
+          <td class="memname"><a class="el" href="classautopas_1_1VLCCellPairC08CellHandler.html">autopas::VLCCellPairC08CellHandler</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt;::VLCCellPairC08CellHandler </td>
           <td>(</td>
           <td class="paramtype">const std::array&lt; unsigned long, 3 &gt; &amp;&#160;</td>
           <td class="paramname"><em>dims</em>, </td>
@@ -208,13 +215,13 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1VLCCellPairC08CellHandler.html">autopas::VLCCellPairC08CellHandler</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor &gt;::processCellListsC08 </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1VLCCellPairC08CellHandler.html">autopas::VLCCellPairC08CellHandler</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt;::processCellListsC08 </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="classautopas_1_1VLCCellPairNeighborList.html">VLCCellPairNeighborList</a>&lt; typename <a class="el" href="classautopas_1_1ParticleCell.html#a553070a9b356ecf3bea43f1a2b344765">ParticleCell::ParticleType</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>neighborList</em>, </td>
@@ -228,7 +235,7 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">PairwiseFunctor *&#160;</td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> *&#160;</td>
           <td class="paramname"><em>pairwiseFunctor</em>, </td>
         </tr>
         <tr>

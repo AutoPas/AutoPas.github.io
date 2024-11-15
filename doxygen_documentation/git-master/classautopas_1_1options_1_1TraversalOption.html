@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -189,7 +196,7 @@ Public Types</h2></td></tr>
 &#160;&#160;<a class="el" href="classautopas_1_1options_1_1TraversalOption.html#a581c23bd69741242b26363a84b5c0d44adc19ac45bb8274d076c28f9ee60f3adb">vvl_as_built</a>
 <br />
  }</td></tr>
-<tr class="memdesc:a581c23bd69741242b26363a84b5c0d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Possible choices for the cell pair traversal.  <a href="classautopas_1_1options_1_1TraversalOption.html#a581c23bd69741242b26363a84b5c0d44">More...</a><br /></td></tr>
+<tr class="memdesc:a581c23bd69741242b26363a84b5c0d44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Possible choices for the cell traversal.  <a href="classautopas_1_1options_1_1TraversalOption.html#a581c23bd69741242b26363a84b5c0d44">More...</a><br /></td></tr>
 <tr class="separator:a581c23bd69741242b26363a84b5c0d44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
@@ -217,6 +224,21 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a5b99ad19f32e07fa8896a1d94d79e04f"><td class="memItemLeft" align="right" valign="top">static std::set&lt; <a class="el" href="classautopas_1_1options_1_1TraversalOption.html">TraversalOption</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1TraversalOption.html#a5b99ad19f32e07fa8896a1d94d79e04f">getDiscouragedOptions</a> ()</td></tr>
 <tr class="memdesc:a5b99ad19f32e07fa8896a1d94d79e04f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of options that are very unlikely to be interesting.  <br /></td></tr>
 <tr class="separator:a5b99ad19f32e07fa8896a1d94d79e04f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ca732a4dd44bc9c548ff447c677474b"><td class="memItemLeft" align="right" valign="top">static std::set&lt; <a class="el" href="classautopas_1_1options_1_1TraversalOption.html">TraversalOption</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1TraversalOption.html#a8ca732a4dd44bc9c548ff447c677474b">getAllPairwiseOptions</a> ()</td></tr>
+<tr class="memdesc:a8ca732a4dd44bc9c548ff447c677474b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of options that apply for pairwise interactions.  <br /></td></tr>
+<tr class="separator:a8ca732a4dd44bc9c548ff447c677474b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acaef649e599f18daea941208210ca358"><td class="memItemLeft" align="right" valign="top">static std::set&lt; <a class="el" href="classautopas_1_1options_1_1TraversalOption.html">TraversalOption</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1TraversalOption.html#acaef649e599f18daea941208210ca358">getAllTriwiseOptions</a> ()</td></tr>
+<tr class="memdesc:acaef649e599f18daea941208210ca358"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of options that apply for triwise interactions.  <br /></td></tr>
+<tr class="separator:acaef649e599f18daea941208210ca358"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7bda7e7dbec9a9c068dc3f3b8830e42c"><td class="memItemLeft" align="right" valign="top">static std::set&lt; <a class="el" href="classautopas_1_1options_1_1TraversalOption.html">TraversalOption</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1TraversalOption.html#a7bda7e7dbec9a9c068dc3f3b8830e42c">getMostPairwiseOptions</a> ()</td></tr>
+<tr class="memdesc:a7bda7e7dbec9a9c068dc3f3b8830e42c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of all pairwise traversals without discouraged options.  <br /></td></tr>
+<tr class="separator:a7bda7e7dbec9a9c068dc3f3b8830e42c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad42792374f38e8e86a56293733101402"><td class="memItemLeft" align="right" valign="top">static std::set&lt; <a class="el" href="classautopas_1_1options_1_1TraversalOption.html">TraversalOption</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1TraversalOption.html#ad42792374f38e8e86a56293733101402">getMostTriwiseOptions</a> ()</td></tr>
+<tr class="memdesc:ad42792374f38e8e86a56293733101402"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of all triwise traversals without discouraged options.  <br /></td></tr>
+<tr class="separator:ad42792374f38e8e86a56293733101402"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1758fbe080bf6f7558bdf7fedd1ca4f"><td class="memItemLeft" align="right" valign="top">static std::set&lt; <a class="el" href="classautopas_1_1options_1_1TraversalOption.html">TraversalOption</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1TraversalOption.html#af1758fbe080bf6f7558bdf7fedd1ca4f">getAllOptionsOf</a> (const autopas::InteractionTypeOption &amp;interactionType)</td></tr>
+<tr class="memdesc:af1758fbe080bf6f7558bdf7fedd1ca4f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set of all options specific to an interaction type.  <br /></td></tr>
+<tr class="separator:af1758fbe080bf6f7558bdf7fedd1ca4f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa876315805e116ebdba5c29402f56c46"><td class="memItemLeft" align="right" valign="top">static std::map&lt; <a class="el" href="classautopas_1_1options_1_1TraversalOption.html">TraversalOption</a>, std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1options_1_1TraversalOption.html#aa876315805e116ebdba5c29402f56c46">getOptionNames</a> ()</td></tr>
 <tr class="memdesc:aa876315805e116ebdba5c29402f56c46"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a way to iterate over the possible choices of <a class="el" href="classautopas_1_1options_1_1TraversalOption.html" title="Class representing the traversal choices.">TraversalOption</a>.  <br /></td></tr>
 <tr class="separator:aa876315805e116ebdba5c29402f56c46"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -252,13 +274,16 @@ Static Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Possible choices for the cell pair traversal. </p>
-<p>Try to maintain lexicographic ordering. </p>
+<p>Possible choices for the cell traversal. </p>
+<p>Traversals marked with '+' can be used for both pairwise and triwise interactions. Try to maintain lexicographic ordering. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a581c23bd69741242b26363a84b5c0d44a7eb0fd64f78ff14bf3d43f947eaddb14" name="a581c23bd69741242b26363a84b5c0d44a7eb0fd64f78ff14bf3d43f947eaddb14"></a>ds_sequential&#160;</td><td class="fielddoc"><p><a class="el" href="classautopas_1_1DSSequentialTraversal.html" title="This sum defines the traversal typically used by the DirectSum container.">DSSequentialTraversal</a> : Sequential double loop over all particles. </p>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a581c23bd69741242b26363a84b5c0d44a7eb0fd64f78ff14bf3d43f947eaddb14" name="a581c23bd69741242b26363a84b5c0d44a7eb0fd64f78ff14bf3d43f947eaddb14"></a>ds_sequential&#160;</td><td class="fielddoc"><ul>
+<li><a class="el" href="classautopas_1_1DSSequentialTraversal.html" title="This sum defines the traversal typically used by the DirectSum container.">DSSequentialTraversal</a> : Sequential nested loop over all particles. </li>
+</ul>
 </td></tr>
-<tr><td class="fieldname"><a id="a581c23bd69741242b26363a84b5c0d44a539a1043ed6730936b215b165644394d" name="a581c23bd69741242b26363a84b5c0d44a539a1043ed6730936b215b165644394d"></a>lc_c01&#160;</td><td class="fielddoc"><p><a class="el" href="classautopas_1_1LCC01Traversal.html" title="This class provides the c01 traversal and the c01 traversal with combined SoA buffers.">LCC01Traversal</a> : Every cell interacts with all neighbors. </p>
-<p>Is not compatible with Newton3 thus embarrassingly parallel. Good load balancing and no overhead. </p>
+<tr><td class="fieldname"><a id="a581c23bd69741242b26363a84b5c0d44a539a1043ed6730936b215b165644394d" name="a581c23bd69741242b26363a84b5c0d44a539a1043ed6730936b215b165644394d"></a>lc_c01&#160;</td><td class="fielddoc"><ul>
+<li><a class="el" href="classautopas_1_1LCC01Traversal.html" title="This class provides the c01 traversal and the c01 traversal with combined SoA buffers.">LCC01Traversal</a> : Every cell interacts with all neighbors. Is not compatible with Newton3 thus embarrassingly parallel. Good load balancing and no overhead. </li>
+</ul>
 </td></tr>
 <tr><td class="fieldname"><a id="a581c23bd69741242b26363a84b5c0d44a12187c6698c14405d5c11d611cbf28b0" name="a581c23bd69741242b26363a84b5c0d44a12187c6698c14405d5c11d611cbf28b0"></a>lc_c01_combined_SoA&#160;</td><td class="fielddoc"><p>LCC01CombinedSoATraversal : Same as <a class="el" href="classautopas_1_1LCC01Traversal.html" title="This class provides the c01 traversal and the c01 traversal with combined SoA buffers.">LCC01Traversal</a> but SoAs are combined into a circular buffer and the domain is traversed line-wise. </p>
 </td></tr>
@@ -383,6 +408,97 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="af1758fbe080bf6f7558bdf7fedd1ca4f" name="af1758fbe080bf6f7558bdf7fedd1ca4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1758fbe080bf6f7558bdf7fedd1ca4f">&#9670;&#160;</a></span>getAllOptionsOf()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::set&lt; <a class="el" href="classautopas_1_1options_1_1TraversalOption.html">TraversalOption</a> &gt; autopas::options::TraversalOption::getAllOptionsOf </td>
+          <td>(</td>
+          <td class="paramtype">const autopas::InteractionTypeOption &amp;&#160;</td>
+          <td class="paramname"><em>interactionType</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set of all options specific to an interaction type. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">interactionType</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a8ca732a4dd44bc9c548ff447c677474b" name="a8ca732a4dd44bc9c548ff447c677474b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ca732a4dd44bc9c548ff447c677474b">&#9670;&#160;</a></span>getAllPairwiseOptions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::set&lt; <a class="el" href="classautopas_1_1options_1_1TraversalOption.html">TraversalOption</a> &gt; autopas::options::TraversalOption::getAllPairwiseOptions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set of options that apply for pairwise interactions. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="acaef649e599f18daea941208210ca358" name="acaef649e599f18daea941208210ca358"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acaef649e599f18daea941208210ca358">&#9670;&#160;</a></span>getAllTriwiseOptions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::set&lt; <a class="el" href="classautopas_1_1options_1_1TraversalOption.html">TraversalOption</a> &gt; autopas::options::TraversalOption::getAllTriwiseOptions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set of options that apply for triwise interactions. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 <a id="a5b99ad19f32e07fa8896a1d94d79e04f" name="a5b99ad19f32e07fa8896a1d94d79e04f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5b99ad19f32e07fa8896a1d94d79e04f">&#9670;&#160;</a></span>getDiscouragedOptions()</h2>
 
@@ -407,6 +523,62 @@ Static Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Set of options that are very unlikely to be interesting. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a7bda7e7dbec9a9c068dc3f3b8830e42c" name="a7bda7e7dbec9a9c068dc3f3b8830e42c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7bda7e7dbec9a9c068dc3f3b8830e42c">&#9670;&#160;</a></span>getMostPairwiseOptions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::set&lt; <a class="el" href="classautopas_1_1options_1_1TraversalOption.html">TraversalOption</a> &gt; autopas::options::TraversalOption::getMostPairwiseOptions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set of all pairwise traversals without discouraged options. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="ad42792374f38e8e86a56293733101402" name="ad42792374f38e8e86a56293733101402"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad42792374f38e8e86a56293733101402">&#9670;&#160;</a></span>getMostTriwiseOptions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::set&lt; <a class="el" href="classautopas_1_1options_1_1TraversalOption.html">TraversalOption</a> &gt; autopas::options::TraversalOption::getMostTriwiseOptions </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set of all triwise traversals without discouraged options. </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>

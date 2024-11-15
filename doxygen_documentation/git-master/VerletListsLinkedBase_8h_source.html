@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -317,11 +324,11 @@ $(function() {
 <div class="ttc" id="aParticleContainerInterface_8h_html"><div class="ttname"><a href="ParticleContainerInterface_8h.html">ParticleContainerInterface.h</a></div></div>
 <div class="ttc" id="aclassautopas_1_1ContainerIterator_html"><div class="ttname"><a href="classautopas_1_1ContainerIterator.html">autopas::ContainerIterator</a></div><div class="ttdoc">Public iterator class that iterates over a particle container and additional vectors (which are typic...</div><div class="ttdef"><b>Definition:</b> ContainerIterator.h:93</div></div>
 <div class="ttc" id="aclassautopas_1_1ContainerIterator_html_aa831a5ad6f29f19e79e0c515763b2592"><div class="ttname"><a href="classautopas_1_1ContainerIterator.html#aa831a5ad6f29f19e79e0c515763b2592">autopas::ContainerIterator::ParticleVecType</a></div><div class="ttdeci">std::conditional_t&lt; modifiable, std::vector&lt; std::vector&lt; Particle &gt; * &gt;, std::vector&lt; std::vector&lt; Particle &gt; const * &gt; &gt; ParticleVecType</div><div class="ttdoc">Type of the additional vector collection.</div><div class="ttdef"><b>Definition:</b> ContainerIterator.h:106</div></div>
-<div class="ttc" id="aclassautopas_1_1LinkedCells_html"><div class="ttname"><a href="classautopas_1_1LinkedCells.html">autopas::LinkedCells</a></div><div class="ttdoc">LinkedCells class.</div><div class="ttdef"><b>Definition:</b> LinkedCells.h:39</div></div>
+<div class="ttc" id="aclassautopas_1_1LinkedCells_html"><div class="ttname"><a href="classautopas_1_1LinkedCells.html">autopas::LinkedCells</a></div><div class="ttdoc">LinkedCells class.</div><div class="ttdef"><b>Definition:</b> LinkedCells.h:40</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleBase_html"><div class="ttname"><a href="classautopas_1_1ParticleBase.html">autopas::ParticleBase</a></div><div class="ttdoc">Minimal definition of a basic particle.</div><div class="ttdef"><b>Definition:</b> ParticleBase.h:33</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleBase_html_af6f9be6af58a98669a065bb8b80c438f"><div class="ttname"><a href="classautopas_1_1ParticleBase.html#af6f9be6af58a98669a065bb8b80c438f">autopas::ParticleBase::getR</a></div><div class="ttdeci">const std::array&lt; double, 3 &gt; &amp; getR() const</div><div class="ttdoc">Get the position of the particle.</div><div class="ttdef"><b>Definition:</b> ParticleBase.h:150</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleContainerInterface_html"><div class="ttname"><a href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a></div><div class="ttdoc">The ParticleContainerInterface class provides a basic interface for all Containers within AutoPas.</div><div class="ttdef"><b>Definition:</b> ParticleContainerInterface.h:37</div></div>
-<div class="ttc" id="aclassautopas_1_1ParticleContainerInterface_html_ad99e3729351970d811228d4f308fe7ed"><div class="ttname"><a href="classautopas_1_1ParticleContainerInterface.html#ad99e3729351970d811228d4f308fe7ed">autopas::ParticleContainerInterface::_stepsSinceLastRebuild</a></div><div class="ttdeci">size_t _stepsSinceLastRebuild</div><div class="ttdoc">Stores the number of time-steps since last neighbor list rebuild.</div><div class="ttdef"><b>Definition:</b> ParticleContainerInterface.h:428</div></div>
+<div class="ttc" id="aclassautopas_1_1ParticleContainerInterface_html_ad99e3729351970d811228d4f308fe7ed"><div class="ttname"><a href="classautopas_1_1ParticleContainerInterface.html#ad99e3729351970d811228d4f308fe7ed">autopas::ParticleContainerInterface::_stepsSinceLastRebuild</a></div><div class="ttdeci">size_t _stepsSinceLastRebuild</div><div class="ttdoc">Stores the number of time-steps since last neighbor list rebuild.</div><div class="ttdef"><b>Definition:</b> ParticleContainerInterface.h:429</div></div>
 <div class="ttc" id="aclassautopas_1_1TraversalSelectorInfo_html"><div class="ttname"><a href="classautopas_1_1TraversalSelectorInfo.html">autopas::TraversalSelectorInfo</a></div><div class="ttdoc">Info for traversals of a specific container.</div><div class="ttdef"><b>Definition:</b> TraversalSelectorInfo.h:14</div></div>
 <div class="ttc" id="aclassautopas_1_1VerletListsLinkedBase_html"><div class="ttname"><a href="classautopas_1_1VerletListsLinkedBase.html">autopas::VerletListsLinkedBase</a></div><div class="ttdoc">Base class for Verlet lists which use an underlying linked cells container.</div><div class="ttdef"><b>Definition:</b> VerletListsLinkedBase.h:26</div></div>
 <div class="ttc" id="aclassautopas_1_1VerletListsLinkedBase_html_a02f7d97fae34ede2f78cbde0cf667dfb"><div class="ttname"><a href="classautopas_1_1VerletListsLinkedBase.html#a02f7d97fae34ede2f78cbde0cf667dfb">autopas::VerletListsLinkedBase::_verletBuiltNewton3</a></div><div class="ttdeci">bool _verletBuiltNewton3</div><div class="ttdoc">specifies if the current verlet list was built for newton3</div><div class="ttdef"><b>Definition:</b> VerletListsLinkedBase.h:327</div></div>

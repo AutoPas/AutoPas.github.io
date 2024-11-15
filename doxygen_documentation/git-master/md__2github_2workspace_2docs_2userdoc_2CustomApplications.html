@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -119,7 +126,7 @@ Multiple Particle Types</h2>
 <p>AutoPas only supports a single particle class. Therefore, if you want to handle multiple particle types e.g. asteroids vs satellites then you have to differentiate between them manually. This could be achieved via the introduction of an indicator member in your particle class e.g. <code>typeId</code> or having the class itself contain the fields for all types.</p>
 <h1><a class="anchor" id="autotoc_md26"></a>
 Custom Functors</h1>
-<p>The functor is a class that defines the interaction of particles, also sometimes referred to as the force kernel. For compatibility, it should inherit from <a href="https://github.com/AutoPas/AutoPas/blob/master/src/autopas/pairwiseFunctors/Functor.h"><code>Functor</code></a>. This class defines how to calculate and store the interactions, as well as some properties of the calculation.</p>
+<p>The functor is a class that defines the interaction of particles, also sometimes referred to as the force kernel. AutoPas supports pairwise interactions as well as interactions between triplets of particles. For compatibility, your functor must inherit from either <a href="https://github.com/AutoPas/AutoPas/blob/master/src/autopas/baseFunctors/PairwiseFunctor.h"><code>PairwiseFunctor</code></a> or <a href="https://github.com/AutoPas/AutoPas/blob/master/src/autopas/baseFunctors/TriwiseFunctor.h"><code>TriwiseFunctor</code></a>. These classes suggest how to calculate and store the interactions, as well as some properties of the calculation.</p>
 <p>The critical elements to implement are:</p><ul>
 <li><code>AoSFunctor()</code>: This function defines how particles interact if both are stored in the Array-of-Structs format, which is exactly what was previously defined as particle class.</li>
 <li>All versions of <code>SoAFunctor()</code>: This function defines the same interaction as <code>AoSFunctor</code>, but optimized for different data structure layouts.</li>
@@ -127,11 +134,18 @@ Custom Functors</h1>
 <li><code>getNeededAttr()</code> and <code>getComputedAttr()</code>: Indicator functions that return a <code>std::array</code> of all <code>AttributeNames</code>, which the functor needs to load from the particle to perform the calculation, as well as which fields are written.</li>
 <li><code>isRelevantForTuning()</code>: Indicator function to tell the tuning mechanism if iterations using this functor should be considered or not.</li>
 <li><code>getNumFLOPs()</code> and <code>getHitRate()</code>: These functions return the number of FLOPs per traversal of the container and the hit-rate (the ratio of distance calculations that lead to functor interactions e.g. force contributions.) These functions are only used if <code>AUTOPAS_LOG_FLOPS</code> is set to <code>ON</code>. If unimplemented, these functions return 0, making the statistics produced by the FLOP logger useless, but otherwise not affecting the simulation.</li>
+<li><code>getName()</code>: This function should return the name of the functor as a <code>std::string</code>.</li>
 </ul>
-<p>As an example see <a href="https://github.com/AutoPas/AutoPas/blob/master/applicationLibrary/sph/SPHLibrary/SPHCalcDensityFunctor.h"><code>SPHCalcDensityFunctor</code></a>.</p>
+<p>As an example for a pairwise functor see <a href="https://github.com/AutoPas/AutoPas/blob/master/applicationLibrary/sph/SPHLibrary/SPHCalcDensityFunctor.h"><code>SPHCalcDensityFunctor</code></a>. As an example for a triwise functor see <a href="https://github.com/AutoPas/AutoPas/blob/master/applicationLibrary/molecularDynamics/molecularDynamicsLibrary/AxilrodTellerFunctor.h"><code>AxilrodTellerFunctor</code></a>.</p>
 <h2><a class="anchor" id="autotoc_md27"></a>
 Using multiple functors</h2>
-<p>AutoPas is able to work with simulation setups that use multiple functors to describe different forces. A demonstration of that is the <a href="https://github.com/AutoPas/AutoPas/blob/master/examples/sph/">sph example</a>. There exist some caveats that have to be considered when using multiple functors:</p><ul>
+<p>AutoPas is able to work with simulation setups that use multiple functors of the same or different interaction types to describe different forces.</p>
+<h3><a class="anchor" id="autotoc_md28"></a>
+Multiple functors of different interaction types</h3>
+<p>AutoPas supports pairwise and triwise functors which can also be combined to calculate e.g. different force components. AutoPas tunes pairwise and triwise functors separately, which means that their configurations are independent. An example input file to set up such a simulation can be found in <a href="https://github.com/AutoPas/AutoPas/blob/master/examples/md-flexible/input/3BodyTest.yaml"><code>3BodyTest.yaml</code></a>.</p>
+<h3><a class="anchor" id="autotoc_md29"></a>
+Multiple functors of the same interaction type</h3>
+<p>A demonstration of this is the <a href="https://github.com/AutoPas/AutoPas/blob/master/examples/sph/">sph example</a>. There exist some caveats that have to be considered when using multiple functors of the same interaction type (e.g. all pairwise):</p><ul>
 <li>All functors need to support the same Newton3 options. If there is one functor not supporting Newton3, you have to disable Newton3 support for AutoPas by calling <div class="fragment"><div class="line">++</div>
 <div class="line"> <a class="code hl_namespace" href="namespaceautopas.html">autopas</a>.setAllowedNewton3Options({<span class="keyword">false</span>});</div>
 <div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">This is the main namespace of AutoPas.</div><div class="ttdef"><b>Definition:</b> AutoPasDecl.h:31</div></div>
@@ -139,10 +153,12 @@ Using multiple functors</h2>
 <li>If you have <code>n</code> functors within one iteration and update the particle position only at the end or start of the iteration, the Verlet rebuild interval, and the number of collected samples have to be a multiple of <code>n</code>.</li>
 <li>Functors must be marked as (not) relevant for tuning by specifying <code>Functor::isRelevantForTuning()</code>. Functors marked as relevant should have a near-identical performance profile, otherwise, the sampling of configurations will be distorted. It is recommended, to only mark the most expensive functor as relevant.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md28"></a>
+<h1><a class="anchor" id="autotoc_md30"></a>
 Related Files and Folders</h1>
 <ul>
 <li><a class="el" href="Functor_8h.html">Functor.h</a></li>
+<li><a class="el" href="PairwiseFunctor_8h.html">PairwiseFunctor.h</a></li>
+<li><a class="el" href="TriwiseFunctor_8h.html">TriwiseFunctor.h</a></li>
 <li><a class="el" href="ParticleBase_8h.html">ParticleBase.h</a> </li>
 </ul>
 </div></div><!-- contents -->

@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -108,6 +115,7 @@ $(function() {
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">autopas::utils Namespace Reference</div></div>
@@ -204,6 +212,17 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classautopas_1_1utils_1_1Timer.html" title="Timer class to stop times.">Timer</a> class to stop times.  <a href="classautopas_1_1utils_1_1Timer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:acac3f5cff802aacc3b721e9766f50e14"><td class="memTemplParams" colspan="2">template&lt;typename FunctorT &gt; </td></tr>
+<tr class="memitem:acac3f5cff802aacc3b721e9766f50e14"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils.html#acac3f5cff802aacc3b721e9766f50e14">isPairwiseFunctor</a> = decltype(isPairwiseFunctorImpl(std::declval&lt; FunctorT &gt;()))</td></tr>
+<tr class="memdesc:acac3f5cff802aacc3b721e9766f50e14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a <a class="el" href="classautopas_1_1Functor.html" title="Functor base class.">Functor</a> Type is inheriting from <a class="el" href="classautopas_1_1PairwiseFunctor.html" title="PairwiseFunctor class.">PairwiseFunctor</a>.  <br /></td></tr>
+<tr class="separator:acac3f5cff802aacc3b721e9766f50e14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9b300bad229e89ed683f1717016745c"><td class="memTemplParams" colspan="2">template&lt;typename FunctorT &gt; </td></tr>
+<tr class="memitem:aa9b300bad229e89ed683f1717016745c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils.html#aa9b300bad229e89ed683f1717016745c">isTriwiseFunctor</a> = decltype(isTriwiseFunctorImpl(std::declval&lt; FunctorT &gt;()))</td></tr>
+<tr class="memdesc:aa9b300bad229e89ed683f1717016745c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check whether a <a class="el" href="classautopas_1_1Functor.html" title="Functor base class.">Functor</a> Type is inheriting from <a class="el" href="classautopas_1_1TriwiseFunctor.html" title="TriwiseFunctor class.">TriwiseFunctor</a>.  <br /></td></tr>
+<tr class="separator:aa9b300bad229e89ed683f1717016745c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
 <tr class="memitem:a9d742020d77e569b7b7200992d15fef8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils.html#a9d742020d77e569b7b7200992d15fef8">ExceptionBehavior</a> { <a class="el" href="namespaceautopas_1_1utils.html#a9d742020d77e569b7b7200992d15fef8a25f9f84486f9f4d59df399c5a6391f35">ignore</a>
@@ -244,7 +263,56 @@ Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>In this namespace some helper classes and functions can be found used inside of <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a>. </p>
 <p>These classes reside mostly in the utils directory. However, most commonly used function inside the utils directory might not be in the utils namespace. </p>
-</div><h2 class="groupheader">Enumeration Type Documentation</h2>
+</div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="acac3f5cff802aacc3b721e9766f50e14" name="acac3f5cff802aacc3b721e9766f50e14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acac3f5cff802aacc3b721e9766f50e14">&#9670;&#160;</a></span>isPairwiseFunctor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FunctorT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceautopas_1_1utils.html#acac3f5cff802aacc3b721e9766f50e14">autopas::utils::isPairwiseFunctor</a> = typedef decltype(isPairwiseFunctorImpl(std::declval&lt;FunctorT&gt;()))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check whether a <a class="el" href="classautopas_1_1Functor.html" title="Functor base class.">Functor</a> Type is inheriting from <a class="el" href="classautopas_1_1PairwiseFunctor.html" title="PairwiseFunctor class.">PairwiseFunctor</a>. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">FunctorT</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa9b300bad229e89ed683f1717016745c" name="aa9b300bad229e89ed683f1717016745c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9b300bad229e89ed683f1717016745c">&#9670;&#160;</a></span>isTriwiseFunctor</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FunctorT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceautopas_1_1utils.html#aa9b300bad229e89ed683f1717016745c">autopas::utils::isTriwiseFunctor</a> = typedef decltype(isTriwiseFunctorImpl(std::declval&lt;FunctorT&gt;()))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Check whether a <a class="el" href="classautopas_1_1Functor.html" title="Functor base class.">Functor</a> Type is inheriting from <a class="el" href="classautopas_1_1TriwiseFunctor.html" title="TriwiseFunctor class.">TriwiseFunctor</a>. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">FunctorT</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
 <a id="a9d742020d77e569b7b7200992d15fef8" name="a9d742020d77e569b7b7200992d15fef8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9d742020d77e569b7b7200992d15fef8">&#9670;&#160;</a></span>ExceptionBehavior</h2>
 

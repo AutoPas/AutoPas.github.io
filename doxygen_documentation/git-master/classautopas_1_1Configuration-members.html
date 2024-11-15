@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -112,7 +119,7 @@ $(function() {
 <p>This is the complete list of members for <a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a>, including all inherited members.</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="classautopas_1_1Configuration.html#a10fbd75bcde633f8441d93387c7f20b4">cellSizeFactor</a></td><td class="entry"><a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classautopas_1_1Configuration.html#a9a8bd9a8972d55c846b46025741f24e9">Configuration</a>(ContainerOption _container, double _cellSizeFactor, TraversalOption _traversal, LoadEstimatorOption _loadEstimator, DataLayoutOption _dataLayout, Newton3Option _newton3)</td><td class="entry"><a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classautopas_1_1Configuration.html#a8b3befd66d47c0ac38c47f4ae1603adb">Configuration</a>(ContainerOption _container, double _cellSizeFactor, TraversalOption _traversal, LoadEstimatorOption _loadEstimator, DataLayoutOption _dataLayout, Newton3Option _newton3, InteractionTypeOption _interactionType)</td><td class="entry"><a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classautopas_1_1Configuration.html#a41ae85775df70dd4587547cda46b5f94">Configuration</a>()</td><td class="entry"><a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classautopas_1_1Configuration.html#a6f60f44ea162cec7863f0d88237946b0">container</a></td><td class="entry"><a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classautopas_1_1Configuration.html#a1da545e318dfc9caa09912da71c995a3">dataLayout</a></td><td class="entry"><a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a></td><td class="entry"></td></tr>
@@ -122,11 +129,12 @@ $(function() {
   <tr class="even"><td class="entry"><a class="el" href="classautopas_1_1Configuration.html#af71245ac5b773fa9dd269210814ca113">getCSVLine</a>() const</td><td class="entry"><a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classautopas_1_1Configuration.html#aea1e0c2fca7bbda1cf4e9750707a6ebf">hasCompatibleValues</a>() const</td><td class="entry"><a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classautopas_1_1Configuration.html#a3dec7a71096a98368a92f4c255cffc3b">hasValidValues</a>() const</td><td class="entry"><a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classautopas_1_1Configuration.html#a00a76ca9f33ec89148117b540a3e88cb">loadEstimator</a></td><td class="entry"><a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classautopas_1_1Configuration.html#a92957ab0a0aea511641fe63d76f28684">newton3</a></td><td class="entry"><a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classautopas_1_1Configuration.html#a1b483e40ec5a412318ba2b972c384269">toShortString</a>(bool fixedLength=true) const</td><td class="entry"><a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classautopas_1_1Configuration.html#a00914b38297aa034f1b727afa2fa39f0">toString</a>() const</td><td class="entry"><a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classautopas_1_1Configuration.html#a064071ca0d7525b3b2c4a743306b545a">traversal</a></td><td class="entry"><a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classautopas_1_1Configuration.html#a36090904dd9c1e11caccd6ec7aa24b79">interactionType</a></td><td class="entry"><a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classautopas_1_1Configuration.html#a00a76ca9f33ec89148117b540a3e88cb">loadEstimator</a></td><td class="entry"><a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classautopas_1_1Configuration.html#a92957ab0a0aea511641fe63d76f28684">newton3</a></td><td class="entry"><a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classautopas_1_1Configuration.html#a1b483e40ec5a412318ba2b972c384269">toShortString</a>(bool fixedLength=true) const</td><td class="entry"><a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a></td><td class="entry"><span class="mlabel">inline</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classautopas_1_1Configuration.html#a00914b38297aa034f1b727afa2fa39f0">toString</a>() const</td><td class="entry"><a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classautopas_1_1Configuration.html#a064071ca0d7525b3b2c4a743306b545a">traversal</a></td><td class="entry"><a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a></td><td class="entry"></td></tr>
 </table></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

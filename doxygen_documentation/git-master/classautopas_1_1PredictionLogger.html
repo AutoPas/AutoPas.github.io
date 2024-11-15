@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -126,9 +133,9 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~PredictionLogger</b> ()</td></tr>
 <tr class="memdesc:a5e0fc901c3464264738587f295fb573e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor drops the logger from the spd registry. <br /></td></tr>
 <tr class="separator:a5e0fc901c3464264738587f295fb573e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8119cdff92d2e891b61cc86d728e8b8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1PredictionLogger.html#a8119cdff92d2e891b61cc86d728e8b8e">logAllPredictions</a> (const std::unordered_map&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a>, long, <a class="el" href="structautopas_1_1ConfigHash.html">ConfigHash</a> &gt; &amp;predictions, long predictionErrorValue, size_t tuningPhaseCounter)</td></tr>
-<tr class="memdesc:a8119cdff92d2e891b61cc86d728e8b8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print all predictions of the given set of configurations to the logger.  <br /></td></tr>
-<tr class="separator:a8119cdff92d2e891b61cc86d728e8b8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2abc9329d2d4b4eef5e9617391cbb89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1PredictionLogger.html#ad2abc9329d2d4b4eef5e9617391cbb89">logAllPredictions</a> (const std::unordered_map&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a>, long, <a class="el" href="structautopas_1_1ConfigHash.html">ConfigHash</a> &gt; &amp;predictions, long predictionErrorValue, size_t tuningPhaseCounter) const</td></tr>
+<tr class="memdesc:ad2abc9329d2d4b4eef5e9617391cbb89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Print all predictions of the given set of configurations to the logger.  <br /></td></tr>
+<tr class="separator:ad2abc9329d2d4b4eef5e9617391cbb89"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper to log prediction data of <a class="el" href="classautopas_1_1PredictiveTuning.html" title="In every tuning phase, this strategy makes a prediction about the run time for every configuration.">PredictiveTuning</a> to a csv file for easier analysis. </p>
@@ -170,8 +177,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8119cdff92d2e891b61cc86d728e8b8e" name="a8119cdff92d2e891b61cc86d728e8b8e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8119cdff92d2e891b61cc86d728e8b8e">&#9670;&#160;</a></span>logAllPredictions()</h2>
+<a id="ad2abc9329d2d4b4eef5e9617391cbb89" name="ad2abc9329d2d4b4eef5e9617391cbb89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2abc9329d2d4b4eef5e9617391cbb89">&#9670;&#160;</a></span>logAllPredictions()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -197,7 +204,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">

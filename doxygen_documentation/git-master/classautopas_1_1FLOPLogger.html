@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -112,7 +119,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Helper to log FLOP count and HitRate for <a class="el" href="classautopas_1_1AutoPas.html#aa4f698155519b2dc75f7a4ec800b3763" title="Function to iterate over all pairs of particles in the container.">AutoPas::iteratePairwise()</a> calls with the functors in the molecular dynamics library to a csv file for easier analysis.  
+<p>Helper to log FLOP count and HitRate for AutoPas::iteratePairwise() calls with the functors in the molecular dynamics library to a csv file for easier analysis.  
  <a href="classautopas_1_1FLOPLogger.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="FLOPLogger_8h_source.html">FLOPLogger.h</a>&gt;</code></p>
@@ -131,7 +138,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a6b112536f8a3ee9d88c65dd6b285ba3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Helper to log FLOP count and HitRate for <a class="el" href="classautopas_1_1AutoPas.html#aa4f698155519b2dc75f7a4ec800b3763" title="Function to iterate over all pairs of particles in the container.">AutoPas::iteratePairwise()</a> calls with the functors in the molecular dynamics library to a csv file for easier analysis. </p>
+<div class="textblock"><p>Helper to log FLOP count and HitRate for AutoPas::iteratePairwise() calls with the functors in the molecular dynamics library to a csv file for easier analysis. </p>
 <p>It uses an asynchronous spd logger to write a csv file named "AutoPas_FLOPCount_&lt;dateStamp&gt;.csv".</p>
 <p>By default logging the data is disabled. It can be enabled by setting the cmake variable AUTOPAS_LOG_FLOPS to ON.</p>
 <p>When enabled and used with a functor where FLOP counting is not implemented (in which case the functor will return the default nonsensical negative FLOP count and/or Hit rate), "Not Implemented" is outputted instead. </p>

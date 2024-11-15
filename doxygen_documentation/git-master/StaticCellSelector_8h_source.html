@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -134,7 +141,7 @@ $(function() {
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>      <span class="keywordflow">return</span> func(<a class="code hl_class" href="classautopas_1_1ReferenceParticleCell.html">autopas::ReferenceParticleCell&lt;ParticleType&gt;</a>());</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  }</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <a class="code hl_function" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a>(</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      <span class="stringliteral">&quot;Trying to use a traversal of of a Celltype not specified in TravelComparison::calculateForces. &quot;</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>      <span class="stringliteral">&quot;Trying to use a traversal of of a Celltype not specified in TravelComparison::computeInteractions. &quot;</span></div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>      <span class="stringliteral">&quot;CelltypeEnum: {}&quot;</span>,</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>      cellType);</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordflow">return</span> <span class="keyword">decltype</span>(func(<a class="code hl_class" href="classautopas_1_1FullParticleCell.html">autopas::FullParticleCell&lt;ParticleType&gt;</a>()))();</div>

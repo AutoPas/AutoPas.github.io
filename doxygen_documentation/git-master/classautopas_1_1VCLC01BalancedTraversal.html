@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -154,7 +161,7 @@ Collaboration diagram for autopas::VCLC01BalancedTraversal&lt; Particle, Pairwis
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a28724c077618f7243647c7ce07a5cfcc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html#a28724c077618f7243647c7ce07a5cfcc">VCLC01BalancedTraversal</a> (PairwiseFunctor *pairwiseFunctor, size_t clusterSize, DataLayoutOption dataLayout, bool useNewton3)</td></tr>
+<tr class="memitem:a28724c077618f7243647c7ce07a5cfcc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html#a28724c077618f7243647c7ce07a5cfcc">VCLC01BalancedTraversal</a> (<a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> *pairwiseFunctor, size_t clusterSize, DataLayoutOption dataLayout, bool useNewton3)</td></tr>
 <tr class="memdesc:a28724c077618f7243647c7ce07a5cfcc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the <a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html" title="Traversal for VerletClusterLists.">VCLC01BalancedTraversal</a>.  <br /></td></tr>
 <tr class="separator:a28724c077618f7243647c7ce07a5cfcc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aacd5421b47a36b5b72f193540203064f"><td class="memItemLeft" align="right" valign="top">TraversalOption&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html#aacd5421b47a36b5b72f193540203064f">getTraversalType</a> () const override</td></tr>
@@ -169,9 +176,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7f3851f2800917cca9ac25f164c9f724"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html#a7f3851f2800917cca9ac25f164c9f724">endTraversal</a> () override</td></tr>
 <tr class="memdesc:a7f3851f2800917cca9ac25f164c9f724"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes the traversal.  <br /></td></tr>
 <tr class="separator:a7f3851f2800917cca9ac25f164c9f724"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aade7aece4241915d6a0cec91d95c5b18"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html#aade7aece4241915d6a0cec91d95c5b18">traverseParticlePairs</a> () override</td></tr>
-<tr class="memdesc:aade7aece4241915d6a0cec91d95c5b18"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traverses all particle pairs.  <br /></td></tr>
-<tr class="separator:aade7aece4241915d6a0cec91d95c5b18"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11059e91ff1cfbb0f68782971f9517a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html#a11059e91ff1cfbb0f68782971f9517a2">traverseParticles</a> () override</td></tr>
+<tr class="memdesc:a11059e91ff1cfbb0f68782971f9517a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traverse the particles by pairs, triplets etc.  <br /></td></tr>
+<tr class="separator:a11059e91ff1cfbb0f68782971f9517a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1483eaa41603db4c02c9b4ba33127b0"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html#af1483eaa41603db4c02c9b4ba33127b0">needsStaticClusterThreadPartition</a> () override</td></tr>
 <tr class="memdesc:af1483eaa41603db4c02c9b4ba33127b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this traversal needs the static cluster thread partiton of the cluster list.  <br /></td></tr>
 <tr class="separator:af1483eaa41603db4c02c9b4ba33127b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -192,12 +199,12 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~TraversalInterfac
 <tr class="memitem:a7393be0cfe5049e72c5bccac54b8d0d7 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#a7393be0cfe5049e72c5bccac54b8d0d7">initTraversal</a> ()=0</td></tr>
 <tr class="memdesc:a7393be0cfe5049e72c5bccac54b8d0d7 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the traversal.  <br /></td></tr>
 <tr class="separator:a7393be0cfe5049e72c5bccac54b8d0d7 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a733bfd7efaacfcdddd4c453821f3c165 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#a733bfd7efaacfcdddd4c453821f3c165">traverseParticles</a> ()=0</td></tr>
+<tr class="memdesc:a733bfd7efaacfcdddd4c453821f3c165 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traverse the particles by pairs, triplets etc.  <br /></td></tr>
+<tr class="separator:a733bfd7efaacfcdddd4c453821f3c165 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23f7631b7324e1c90f956154658ca524 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#a23f7631b7324e1c90f956154658ca524">endTraversal</a> ()=0</td></tr>
 <tr class="memdesc:a23f7631b7324e1c90f956154658ca524 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes the traversal.  <br /></td></tr>
 <tr class="separator:a23f7631b7324e1c90f956154658ca524 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3df61a48799b2638ae9acec662b3b76b inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#a3df61a48799b2638ae9acec662b3b76b">traverseParticlePairs</a> ()=0</td></tr>
-<tr class="memdesc:a3df61a48799b2638ae9acec662b3b76b inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traverses all particle pairs.  <br /></td></tr>
-<tr class="separator:a3df61a48799b2638ae9acec662b3b76b inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4d02d384bc51e52f7880ad34d771473 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#af4d02d384bc51e52f7880ad34d771473">getUseNewton3</a> () const</td></tr>
 <tr class="memdesc:af4d02d384bc51e52f7880ad34d771473 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether the traversal uses newton 3.  <br /></td></tr>
 <tr class="separator:af4d02d384bc51e52f7880ad34d771473 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -239,13 +246,13 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_useNewton3</b></td><
 <tr class="separator:a28280e375a622da4df589116809d734b inherit pro_attribs_classautopas_1_1VCLTraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, class PairwiseFunctor&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a>&gt;<br />
 class autopas::VCLC01BalancedTraversal&lt; Particle, PairwiseFunctor &gt;</div><p>Traversal for <a class="el" href="classautopas_1_1VerletClusterLists.html" title="Particles are divided into clusters.">VerletClusterLists</a>. </p>
 <p>Does not support newton 3.</p>
 <p>It uses a static scheduling that gives each thread about the same amount of cluster pairs to handle. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname"><a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a></td><td></td></tr>
-    <tr><td class="paramname">PairwiseFunctor</td><td>The type of the functor. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classautopas_1_1PairwiseFunctor.html" title="PairwiseFunctor class.">PairwiseFunctor</a></td><td>The type of the functor. </td></tr>
   </table>
   </dd>
 </dl>
@@ -256,15 +263,15 @@ class autopas::VCLC01BalancedTraversal&lt; Particle, PairwiseFunctor &gt;</div><
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html">autopas::VCLC01BalancedTraversal</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, PairwiseFunctor &gt;::VCLC01BalancedTraversal </td>
+          <td class="memname"><a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html">autopas::VCLC01BalancedTraversal</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt;::VCLC01BalancedTraversal </td>
           <td>(</td>
-          <td class="paramtype">PairwiseFunctor *&#160;</td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> *&#160;</td>
           <td class="paramname"><em>pairwiseFunctor</em>, </td>
         </tr>
         <tr>
@@ -318,13 +325,13 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html">autopas::VCLC01BalancedTraversal</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, PairwiseFunctor &gt;::endTraversal </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html">autopas::VCLC01BalancedTraversal</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt;::endTraversal </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -350,13 +357,13 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">TraversalOption <a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html">autopas::VCLC01BalancedTraversal</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, PairwiseFunctor &gt;::getTraversalType </td>
+          <td class="memname">TraversalOption <a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html">autopas::VCLC01BalancedTraversal</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt;::getTraversalType </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -382,13 +389,13 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html">autopas::VCLC01BalancedTraversal</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, PairwiseFunctor &gt;::initTraversal </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html">autopas::VCLC01BalancedTraversal</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt;::initTraversal </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -414,13 +421,13 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html">autopas::VCLC01BalancedTraversal</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, PairwiseFunctor &gt;::isApplicable </td>
+          <td class="memname">bool <a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html">autopas::VCLC01BalancedTraversal</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt;::isApplicable </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -446,13 +453,13 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html">autopas::VCLC01BalancedTraversal</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, PairwiseFunctor &gt;::needsStaticClusterThreadPartition </td>
+          <td class="memname">bool <a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html">autopas::VCLC01BalancedTraversal</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt;::needsStaticClusterThreadPartition </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -472,19 +479,19 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="aade7aece4241915d6a0cec91d95c5b18" name="aade7aece4241915d6a0cec91d95c5b18"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aade7aece4241915d6a0cec91d95c5b18">&#9670;&#160;</a></span>traverseParticlePairs()</h2>
+<a id="a11059e91ff1cfbb0f68782971f9517a2" name="a11059e91ff1cfbb0f68782971f9517a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11059e91ff1cfbb0f68782971f9517a2">&#9670;&#160;</a></span>traverseParticles()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html">autopas::VCLC01BalancedTraversal</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, PairwiseFunctor &gt;::traverseParticlePairs </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1VCLC01BalancedTraversal.html">autopas::VCLC01BalancedTraversal</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt;::traverseParticles </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -497,9 +504,10 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </table>
 </div><div class="memdoc">
 
-<p>Traverses all particle pairs. </p>
+<p>Traverse the particles by pairs, triplets etc. </p>
+<p>as determined by the <a class="el" href="classautopas_1_1Functor.html" title="Functor base class.">Functor</a> type. </p>
 
-<p>Implements <a class="el" href="classautopas_1_1TraversalInterface.html#a3df61a48799b2638ae9acec662b3b76b">autopas::TraversalInterface</a>.</p>
+<p>Implements <a class="el" href="classautopas_1_1TraversalInterface.html#a733bfd7efaacfcdddd4c453821f3c165">autopas::TraversalInterface</a>.</p>
 
 </div>
 </div>

@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -119,10 +126,18 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a4c343322047513992224414ae31909fc"><td class="memTemplParams" colspan="2">template&lt;class PairwiseFunctor &gt; </td></tr>
-<tr class="memitem:a4c343322047513992224414ae31909fc"><td class="memTemplItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalSelector.html#a4c343322047513992224414ae31909fc">generateTraversal</a> (TraversalOption traversalType, PairwiseFunctor &amp;pairwiseFunctor, const <a class="el" href="classautopas_1_1TraversalSelectorInfo.html">TraversalSelectorInfo</a> &amp;traversalInfo, DataLayoutOption dataLayout, bool useNewton3)</td></tr>
-<tr class="memdesc:a4c343322047513992224414ae31909fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a given Traversal for the given properties.  <br /></td></tr>
-<tr class="separator:a4c343322047513992224414ae31909fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a09a908184fca2a6b370f643d11b13eb3"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </td></tr>
+<tr class="memitem:a09a908184fca2a6b370f643d11b13eb3"><td class="memTemplItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalSelector.html#a09a908184fca2a6b370f643d11b13eb3">generateTraversal</a> (TraversalOption traversalType, <a class="el" href="classautopas_1_1Functor.html">Functor</a> &amp;functor, const <a class="el" href="classautopas_1_1TraversalSelectorInfo.html">TraversalSelectorInfo</a> &amp;traversalInfo, DataLayoutOption dataLayout, bool useNewton3)</td></tr>
+<tr class="memdesc:a09a908184fca2a6b370f643d11b13eb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a given Traversal for the given properties.  <br /></td></tr>
+<tr class="separator:a09a908184fca2a6b370f643d11b13eb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f8a0324e6ad4bb3511f76d5c6e9f81b"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </td></tr>
+<tr class="memitem:a2f8a0324e6ad4bb3511f76d5c6e9f81b"><td class="memTemplItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalSelector.html#a2f8a0324e6ad4bb3511f76d5c6e9f81b">generatePairwiseTraversal</a> (TraversalOption traversalType, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &amp;pairwiseFunctor, const <a class="el" href="classautopas_1_1TraversalSelectorInfo.html">TraversalSelectorInfo</a> &amp;traversalInfo, DataLayoutOption dataLayout, bool useNewton3)</td></tr>
+<tr class="memdesc:a2f8a0324e6ad4bb3511f76d5c6e9f81b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a given pairwise Traversal for the given properties.  <br /></td></tr>
+<tr class="separator:a2f8a0324e6ad4bb3511f76d5c6e9f81b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1fb3957e9deb9c9b4066e94a8c77a0fc"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classautopas_1_1TriwiseFunctor.html">TriwiseFunctor</a> &gt; </td></tr>
+<tr class="memitem:a1fb3957e9deb9c9b4066e94a8c77a0fc"><td class="memTemplItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalSelector.html#a1fb3957e9deb9c9b4066e94a8c77a0fc">generateTriwiseTraversal</a> (TraversalOption traversalType, <a class="el" href="classautopas_1_1TriwiseFunctor.html">TriwiseFunctor</a> &amp;triwiseFunctor, const <a class="el" href="classautopas_1_1TraversalSelectorInfo.html">TraversalSelectorInfo</a> &amp;traversalInfo, DataLayoutOption dataLayout, bool useNewton3)</td></tr>
+<tr class="memdesc:a1fb3957e9deb9c9b4066e94a8c77a0fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a given triwise Traversal for the given properties.  <br /></td></tr>
+<tr class="separator:a1fb3957e9deb9c9b4066e94a8c77a0fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>&gt;<br />
@@ -137,21 +152,21 @@ class autopas::TraversalSelector&lt; ParticleCell &gt;</div><p><a class="el" hre
   </dd>
 </dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4c343322047513992224414ae31909fc" name="a4c343322047513992224414ae31909fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c343322047513992224414ae31909fc">&#9670;&#160;</a></span>generateTraversal()</h2>
+<a id="a2f8a0324e6ad4bb3511f76d5c6e9f81b" name="a2f8a0324e6ad4bb3511f76d5c6e9f81b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f8a0324e6ad4bb3511f76d5c6e9f81b">&#9670;&#160;</a></span>generatePairwiseTraversal()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; </div>
 <div class="memtemplate">
-template&lt;class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt; <a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> &gt; <a class="el" href="classautopas_1_1TraversalSelector.html">autopas::TraversalSelector</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt;::generateTraversal </td>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> &gt; <a class="el" href="classautopas_1_1TraversalSelector.html">autopas::TraversalSelector</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt;::generatePairwiseTraversal </td>
           <td>(</td>
           <td class="paramtype">TraversalOption&#160;</td>
           <td class="paramname"><em>traversalType</em>, </td>
@@ -159,7 +174,7 @@ template&lt;class PairwiseFunctor &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">PairwiseFunctor &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &amp;&#160;</td>
           <td class="paramname"><em>pairwiseFunctor</em>, </td>
         </tr>
         <tr>
@@ -193,10 +208,10 @@ template&lt;class PairwiseFunctor &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Generates a given Traversal for the given properties. </p>
-<p>Requires less templates but calls the templated version after a decision tree. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+<p>Generates a given pairwise Traversal for the given properties. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">PairwiseFunctor</td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="classautopas_1_1PairwiseFunctor.html" title="PairwiseFunctor class.">PairwiseFunctor</a></td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -204,6 +219,160 @@ template&lt;class PairwiseFunctor &gt; </div>
   <table class="params">
     <tr><td class="paramname">traversalType</td><td></td></tr>
     <tr><td class="paramname">pairwiseFunctor</td><td></td></tr>
+    <tr><td class="paramname">traversalInfo</td><td></td></tr>
+    <tr><td class="paramname">dataLayout</td><td></td></tr>
+    <tr><td class="paramname">useNewton3</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Smartpointer to the traversal. </dd></dl>
+
+</div>
+</div>
+<a id="a09a908184fca2a6b370f643d11b13eb3" name="a09a908184fca2a6b370f643d11b13eb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a09a908184fca2a6b370f643d11b13eb3">&#9670;&#160;</a></span>generateTraversal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> &gt; <a class="el" href="classautopas_1_1TraversalSelector.html">autopas::TraversalSelector</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt;::generateTraversal </td>
+          <td>(</td>
+          <td class="paramtype">TraversalOption&#160;</td>
+          <td class="paramname"><em>traversalType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1Functor.html">Functor</a> &amp;&#160;</td>
+          <td class="paramname"><em>functor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classautopas_1_1TraversalSelectorInfo.html">TraversalSelectorInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>traversalInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DataLayoutOption&#160;</td>
+          <td class="paramname"><em>dataLayout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>useNewton3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generates a given Traversal for the given properties. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname"><a class="el" href="classautopas_1_1Functor.html" title="Functor base class.">Functor</a></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">traversalType</td><td></td></tr>
+    <tr><td class="paramname">functor</td><td></td></tr>
+    <tr><td class="paramname">traversalInfo</td><td></td></tr>
+    <tr><td class="paramname">dataLayout</td><td></td></tr>
+    <tr><td class="paramname">useNewton3</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Smartpointer to the traversal. </dd></dl>
+
+</div>
+</div>
+<a id="a1fb3957e9deb9c9b4066e94a8c77a0fc" name="a1fb3957e9deb9c9b4066e94a8c77a0fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1fb3957e9deb9c9b4066e94a8c77a0fc">&#9670;&#160;</a></span>generateTriwiseTraversal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="classautopas_1_1TriwiseFunctor.html">TriwiseFunctor</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt; <a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> &gt; <a class="el" href="classautopas_1_1TraversalSelector.html">autopas::TraversalSelector</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt;::generateTriwiseTraversal </td>
+          <td>(</td>
+          <td class="paramtype">TraversalOption&#160;</td>
+          <td class="paramname"><em>traversalType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1TriwiseFunctor.html">TriwiseFunctor</a> &amp;&#160;</td>
+          <td class="paramname"><em>triwiseFunctor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classautopas_1_1TraversalSelectorInfo.html">TraversalSelectorInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>traversalInfo</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">DataLayoutOption&#160;</td>
+          <td class="paramname"><em>dataLayout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>useNewton3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generates a given triwise Traversal for the given properties. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname"><a class="el" href="classautopas_1_1TriwiseFunctor.html" title="TriwiseFunctor class.">TriwiseFunctor</a></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">traversalType</td><td></td></tr>
+    <tr><td class="paramname">triwiseFunctor</td><td></td></tr>
     <tr><td class="paramname">traversalInfo</td><td></td></tr>
     <tr><td class="paramname">dataLayout</td><td></td></tr>
     <tr><td class="paramname">useNewton3</td><td></td></tr>

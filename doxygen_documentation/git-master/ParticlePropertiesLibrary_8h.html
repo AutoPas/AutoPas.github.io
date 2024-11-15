@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -110,7 +117,8 @@ $(function() {
   <div class="headertitle"><div class="title">ParticlePropertiesLibrary.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &lt;cmath&gt;</code><br />
+<div class="textblock"><code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
 <code>#include &lt;map&gt;</code><br />
 <code>#include &lt;set&gt;</code><br />
 <code>#include &lt;vector&gt;</code><br />
@@ -121,48 +129,50 @@ Include dependency graph for ParticlePropertiesLibrary.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="ParticlePropertiesLibrary_8h__incl.png" border="0" usemap="#a_2github_2workspace_2applicationLibrary_2molecularDynamics_2molecularDynamicsLibrary_2ParticlePropertiesLibrary_8h" alt=""/></div>
 <map name="a_2github_2workspace_2applicationLibrary_2molecularDynamics_2molecularDynamicsLibrary_2ParticlePropertiesLibrary_8h" id="a_2github_2workspace_2applicationLibrary_2molecularDynamics_2molecularDynamicsLibrary_2ParticlePropertiesLibrary_8h">
-<area shape="rect" title=" " alt="" coords="119,5,336,75"/>
-<area shape="rect" title=" " alt="" coords="5,123,68,148"/>
-<area shape="poly" title=" " alt="" coords="160,77,74,119,72,114,157,72"/>
-<area shape="rect" title=" " alt="" coords="93,123,143,148"/>
-<area shape="poly" title=" " alt="" coords="190,77,144,116,140,112,186,73"/>
-<area shape="rect" title=" " alt="" coords="167,123,210,148"/>
-<area shape="poly" title=" " alt="" coords="216,76,201,111,196,109,211,74"/>
-<area shape="rect" title=" " alt="" coords="235,123,297,148"/>
-<area shape="poly" title=" " alt="" coords="244,74,258,109,253,111,239,76"/>
-<area shape="rect" href="AlignedAllocator_8h.html" title=" " alt="" coords="321,123,549,148"/>
-<area shape="poly" title=" " alt="" coords="304,72,398,114,396,119,301,77"/>
-<area shape="rect" href="ExceptionHandler_8h.html" title=" " alt="" coords="588,123,824,148"/>
-<area shape="poly" title=" " alt="" coords="337,60,635,117,634,123,336,65"/>
-<area shape="rect" title=" " alt="" coords="489,203,555,229"/>
-<area shape="poly" title=" " alt="" coords="450,146,501,192,497,196,446,150"/>
-<area shape="rect" title=" " alt="" coords="249,203,307,229"/>
-<area shape="poly" title=" " alt="" coords="414,150,314,200,312,195,411,146"/>
-<area shape="rect" title=" " alt="" coords="332,203,381,229"/>
-<area shape="poly" title=" " alt="" coords="426,150,380,195,376,192,422,146"/>
-<area shape="rect" title=" " alt="" coords="405,203,465,229"/>
-<area shape="poly" title=" " alt="" coords="438,148,438,189,433,189,433,148"/>
-<area shape="poly" title=" " alt="" coords="680,150,562,201,560,196,678,146"/>
-<area shape="rect" title=" " alt="" coords="579,203,665,229"/>
-<area shape="poly" title=" " alt="" coords="695,150,646,196,643,192,692,146"/>
-<area shape="rect" title=" " alt="" coords="690,203,754,229"/>
-<area shape="poly" title=" " alt="" coords="711,148,720,189,714,190,706,149"/>
-<area shape="rect" title=" " alt="" coords="778,203,837,229"/>
-<area shape="poly" title=" " alt="" coords="723,146,783,193,780,197,719,150"/>
-<area shape="rect" href="Logger_8h.html" title=" " alt="" coords="861,196,1020,236"/>
-<area shape="poly" title=" " alt="" coords="741,145,872,189,870,194,739,151"/>
-<area shape="rect" title=" " alt="" coords="432,284,580,324"/>
-<area shape="poly" title=" " alt="" coords="861,236,849,239,594,287,593,281,848,233,860,231"/>
-<area shape="rect" title=" " alt="" coords="605,284,746,324"/>
-<area shape="poly" title=" " alt="" coords="883,239,747,282,745,277,882,234"/>
-<area shape="rect" title=" " alt="" coords="771,284,932,324"/>
-<area shape="poly" title=" " alt="" coords="923,238,883,276,879,272,919,234"/>
-<area shape="rect" title=" " alt="" coords="956,284,1104,324"/>
-<area shape="poly" title=" " alt="" coords="962,234,1002,272,998,276,959,238"/>
-<area shape="rect" title=" " alt="" coords="1128,291,1252,317"/>
-<area shape="poly" title=" " alt="" coords="996,234,1145,284,1143,289,995,239"/>
-<area shape="rect" title=" " alt="" coords="1277,291,1357,317"/>
-<area shape="poly" title=" " alt="" coords="1021,228,1137,250,1265,281,1275,284,1274,290,1264,287,1136,256,1020,233"/>
+<area shape="rect" title=" " alt="" coords="190,5,407,75"/>
+<area shape="rect" title=" " alt="" coords="5,123,91,148"/>
+<area shape="poly" title=" " alt="" coords="209,77,93,120,91,115,207,72"/>
+<area shape="rect" title=" " alt="" coords="115,123,178,148"/>
+<area shape="poly" title=" " alt="" coords="245,77,179,118,176,113,242,73"/>
+<area shape="rect" title=" " alt="" coords="203,123,253,148"/>
+<area shape="poly" title=" " alt="" coords="275,76,247,113,243,110,271,73"/>
+<area shape="rect" title=" " alt="" coords="277,123,320,148"/>
+<area shape="poly" title=" " alt="" coords="301,75,301,109,296,109,296,75"/>
+<area shape="rect" title=" " alt="" coords="345,123,407,148"/>
+<area shape="poly" title=" " alt="" coords="329,73,360,110,355,114,325,76"/>
+<area shape="rect" href="AlignedAllocator_8h.html" title=" " alt="" coords="431,123,659,148"/>
+<area shape="poly" title=" " alt="" coords="389,72,503,115,501,120,387,77"/>
+<area shape="rect" href="ExceptionHandler_8h.html" title=" " alt="" coords="698,123,934,148"/>
+<area shape="poly" title=" " alt="" coords="408,58,739,118,739,123,407,63"/>
+<area shape="rect" title=" " alt="" coords="599,203,665,229"/>
+<area shape="poly" title=" " alt="" coords="560,146,611,192,607,196,556,150"/>
+<area shape="rect" title=" " alt="" coords="359,203,417,229"/>
+<area shape="poly" title=" " alt="" coords="524,150,424,200,422,195,521,146"/>
+<area shape="rect" title=" " alt="" coords="442,203,491,229"/>
+<area shape="poly" title=" " alt="" coords="536,150,490,195,486,192,532,146"/>
+<area shape="rect" title=" " alt="" coords="515,203,575,229"/>
+<area shape="poly" title=" " alt="" coords="548,148,548,189,543,189,543,148"/>
+<area shape="poly" title=" " alt="" coords="790,150,672,201,670,196,788,146"/>
+<area shape="rect" title=" " alt="" coords="689,203,775,229"/>
+<area shape="poly" title=" " alt="" coords="805,150,756,196,753,192,802,146"/>
+<area shape="rect" title=" " alt="" coords="800,203,864,229"/>
+<area shape="poly" title=" " alt="" coords="821,148,830,189,824,190,816,149"/>
+<area shape="rect" title=" " alt="" coords="888,203,947,229"/>
+<area shape="poly" title=" " alt="" coords="833,146,893,193,890,197,829,150"/>
+<area shape="rect" href="Logger_8h.html" title=" " alt="" coords="971,196,1130,236"/>
+<area shape="poly" title=" " alt="" coords="851,145,982,189,980,194,849,151"/>
+<area shape="rect" title=" " alt="" coords="542,284,690,324"/>
+<area shape="poly" title=" " alt="" coords="971,236,959,239,704,287,703,281,958,233,970,231"/>
+<area shape="rect" title=" " alt="" coords="715,284,856,324"/>
+<area shape="poly" title=" " alt="" coords="993,239,857,282,855,277,992,234"/>
+<area shape="rect" title=" " alt="" coords="881,284,1042,324"/>
+<area shape="poly" title=" " alt="" coords="1033,238,993,276,989,272,1029,234"/>
+<area shape="rect" title=" " alt="" coords="1066,284,1214,324"/>
+<area shape="poly" title=" " alt="" coords="1072,234,1112,272,1108,276,1069,238"/>
+<area shape="rect" title=" " alt="" coords="1238,291,1362,317"/>
+<area shape="poly" title=" " alt="" coords="1106,234,1255,284,1253,289,1105,239"/>
+<area shape="rect" title=" " alt="" coords="1387,291,1467,317"/>
+<area shape="poly" title=" " alt="" coords="1131,228,1247,250,1375,281,1385,284,1384,290,1374,287,1246,256,1130,233"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -170,23 +180,25 @@ This graph shows which files directly or indirectly include this file:</div>
 <div class="dyncontent">
 <div class="center"><img src="ParticlePropertiesLibrary_8h__dep__incl.png" border="0" usemap="#a_2github_2workspace_2applicationLibrary_2molecularDynamics_2molecularDynamicsLibrary_2ParticlePropertiesLibrary_8hdep" alt=""/></div>
 <map name="a_2github_2workspace_2applicationLibrary_2molecularDynamics_2molecularDynamicsLibrary_2ParticlePropertiesLibrary_8hdep" id="a_2github_2workspace_2applicationLibrary_2molecularDynamics_2molecularDynamicsLibrary_2ParticlePropertiesLibrary_8hdep">
-<area shape="rect" title=" " alt="" coords="459,5,676,75"/>
-<area shape="rect" href="LJFunctor_8h.html" title=" " alt="" coords="217,123,435,192"/>
-<area shape="poly" title=" " alt="" coords="486,83,398,125,395,120,484,78"/>
-<area shape="rect" href="autopasmd_8h.html" title="Main include file for all molecular dynamics functionality for convenience." alt="" coords="5,240,223,309"/>
-<area shape="poly" title=" " alt="" coords="445,48,386,56,324,71,263,93,208,125,180,150,158,180,128,241,123,238,153,178,176,147,204,121,261,88,323,66,385,51,445,43"/>
-<area shape="rect" href="LJFunctorAVX_8h.html" title=" " alt="" coords="459,123,676,192"/>
-<area shape="poly" title=" " alt="" coords="570,89,570,122,565,122,565,89"/>
-<area shape="rect" href="LJFunctorSVE_8h.html" title=" " alt="" coords="700,123,917,192"/>
-<area shape="poly" title=" " alt="" coords="651,78,739,120,737,125,649,83"/>
-<area shape="rect" href="LJMultisiteFunctor_8h.html" title=" " alt="" coords="941,123,1159,192"/>
-<area shape="poly" title=" " alt="" coords="690,65,931,120,941,123,940,128,929,125,689,70"/>
-<area shape="poly" title=" " alt="" coords="253,201,177,242,175,237,251,196"/>
-<area shape="rect" href="commonTypedefs_8h.html" title=" " alt="" coords="247,247,450,302"/>
-<area shape="poly" title=" " alt="" coords="338,205,346,247,341,248,333,206"/>
-<area shape="rect" href="AutoPasInstantiations_8cpp.html" title="Contains a explicit template instantiation so that they are not generated on a test&#45;by&#45;test basis." alt="" coords="245,357,591,412"/>
-<area shape="poly" title=" " alt="" coords="425,197,447,216,464,239,471,254,473,270,468,302,456,333,440,358,436,356,451,330,463,301,467,270,465,255,460,241,443,220,422,202"/>
-<area shape="poly" title=" " alt="" coords="375,313,403,356,399,359,371,315"/>
+<area shape="rect" title=" " alt="" coords="419,5,636,75"/>
+<area shape="rect" href="AxilrodTellerFunctor_8h.html" title=" " alt="" coords="5,123,223,192"/>
+<area shape="poly" title=" " alt="" coords="406,78,223,128,222,123,405,73"/>
+<area shape="rect" href="LJFunctor_8h.html" title=" " alt="" coords="299,123,516,192"/>
+<area shape="poly" title=" " alt="" coords="484,86,444,124,441,121,480,83"/>
+<area shape="rect" href="autopasmd_8h.html" title="Main include file for all molecular dynamics functionality for convenience." alt="" coords="108,240,325,309"/>
+<area shape="poly" title=" " alt="" coords="406,65,344,88,315,105,289,125,266,151,249,181,227,241,222,239,244,179,262,148,286,121,312,100,342,84,404,60"/>
+<area shape="rect" href="LJFunctorAVX_8h.html" title=" " alt="" coords="540,123,757,192"/>
+<area shape="poly" title=" " alt="" coords="575,83,615,121,611,124,571,86"/>
+<area shape="rect" href="LJFunctorSVE_8h.html" title=" " alt="" coords="781,123,999,192"/>
+<area shape="poly" title=" " alt="" coords="647,76,785,120,783,125,645,81"/>
+<area shape="rect" href="LJMultisiteFunctor_8h.html" title=" " alt="" coords="1023,123,1240,192"/>
+<area shape="poly" title=" " alt="" coords="650,56,822,83,1012,120,1023,123,1022,128,1011,125,821,88,649,61"/>
+<area shape="poly" title=" " alt="" coords="341,202,274,242,271,237,338,197"/>
+<area shape="rect" href="commonTypedefs_8h.html" title=" " alt="" coords="350,247,553,302"/>
+<area shape="poly" title=" " alt="" coords="428,204,444,246,439,248,423,206"/>
+<area shape="rect" href="AutoPasInstantiations_8cpp.html" title="Contains a explicit template instantiation so that they are not generated on a test&#45;by&#45;test basis." alt="" coords="347,357,694,412"/>
+<area shape="poly" title=" " alt="" coords="525,197,548,215,567,239,574,254,576,270,572,302,559,332,543,358,539,355,554,330,566,300,571,270,568,255,562,241,544,219,521,201"/>
+<area shape="poly" title=" " alt="" coords="478,313,506,356,501,359,474,315"/>
 </map>
 </div>
 </div>

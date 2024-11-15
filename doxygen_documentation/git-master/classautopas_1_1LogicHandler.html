@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -119,9 +126,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8e08c944eeb4401be33463daef80181c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a8e08c944eeb4401be33463daef80181c">LogicHandler</a> (<a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a> &amp;autoTuner, const <a class="el" href="classautopas_1_1LogicHandlerInfo.html">LogicHandlerInfo</a> &amp;logicHandlerInfo, unsigned int rebuildFrequency, const std::string &amp;outputSuffix)</td></tr>
-<tr class="memdesc:a8e08c944eeb4401be33463daef80181c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the <a class="el" href="classautopas_1_1LogicHandler.html" title="The LogicHandler takes care of the containers s.t.">LogicHandler</a>.  <br /></td></tr>
-<tr class="separator:a8e08c944eeb4401be33463daef80181c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9031122152531661284ccad0d5074c6a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a9031122152531661284ccad0d5074c6a">LogicHandler</a> (std::unordered_map&lt; InteractionTypeOption::Value, std::unique_ptr&lt; <a class="el" href="classautopas_1_1AutoTuner.html">AutoTuner</a> &gt; &gt; &amp;autotuners, const <a class="el" href="classautopas_1_1LogicHandlerInfo.html">LogicHandlerInfo</a> &amp;logicHandlerInfo, unsigned int rebuildFrequency, const std::string &amp;outputSuffix)</td></tr>
+<tr class="memdesc:a9031122152531661284ccad0d5074c6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the <a class="el" href="classautopas_1_1LogicHandler.html" title="The LogicHandler takes care of the containers s.t.">LogicHandler</a>.  <br /></td></tr>
+<tr class="separator:a9031122152531661284ccad0d5074c6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae99decd018721d63d338665932cf50b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#ae99decd018721d63d338665932cf50b5">getContainer</a> ()</td></tr>
 <tr class="memdesc:ae99decd018721d63d338665932cf50b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a non-const reference to the currently selected particle container.  <br /></td></tr>
 <tr class="separator:ae99decd018721d63d338665932cf50b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -155,10 +162,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6b5c1c7cdbc3a8cf3d8e906a1904448c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a6b5c1c7cdbc3a8cf3d8e906a1904448c">decreaseParticleCounter</a> (<a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &amp;particle)</td></tr>
 <tr class="memdesc:a6b5c1c7cdbc3a8cf3d8e906a1904448c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrease the correct internal particle counters.  <br /></td></tr>
 <tr class="separator:a6b5c1c7cdbc3a8cf3d8e906a1904448c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51e917df29dd39e566a132cced8da119"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </td></tr>
-<tr class="memitem:a51e917df29dd39e566a132cced8da119"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a51e917df29dd39e566a132cced8da119">iteratePairwisePipeline</a> (<a class="el" href="classautopas_1_1Functor.html">Functor</a> *functor)</td></tr>
-<tr class="memdesc:a51e917df29dd39e566a132cced8da119"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function covers the full pipeline of all mechanics happening during the pairwise iteration.  <br /></td></tr>
-<tr class="separator:a51e917df29dd39e566a132cced8da119"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab93768f5136d14af5db2648ee5f42fca"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </td></tr>
+<tr class="memitem:ab93768f5136d14af5db2648ee5f42fca"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#ab93768f5136d14af5db2648ee5f42fca">computeInteractionsPipeline</a> (<a class="el" href="classautopas_1_1Functor.html">Functor</a> *functor, const InteractionTypeOption &amp;interactionType)</td></tr>
+<tr class="memdesc:ab93768f5136d14af5db2648ee5f42fca"><td class="mdescLeft">&#160;</td><td class="mdescRight">This function covers the full pipeline of all mechanics happening during the computation of particle interactions.  <br /></td></tr>
+<tr class="separator:ab93768f5136d14af5db2648ee5f42fca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6c4090578945b237e3ff25bcb99425c"><td class="memTemplParams" colspan="2">template&lt;class Iterator &gt; </td></tr>
 <tr class="memitem:ae6c4090578945b237e3ff25bcb99425c"><td class="memTemplItemLeft" align="right" valign="top">Iterator::ParticleVecType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#ae6c4090578945b237e3ff25bcb99425c">gatherAdditionalVectors</a> (IteratorBehavior behavior)</td></tr>
 <tr class="memdesc:ae6c4090578945b237e3ff25bcb99425c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the additional vectors vector for a given iterator behavior.  <br /></td></tr>
@@ -181,10 +188,13 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4baa3c9ae05b9b970216044fc4674a0a"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a4baa3c9ae05b9b970216044fc4674a0a">getNumberOfParticlesHalo</a> () const</td></tr>
 <tr class="memdesc:a4baa3c9ae05b9b970216044fc4674a0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of halo particles.  <br /></td></tr>
 <tr class="separator:a4baa3c9ae05b9b970216044fc4674a0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab34ffc61be80923ec44784ea81e82a20"><td class="memTemplParams" colspan="2">template&lt;class PairwiseFunctor &gt; </td></tr>
-<tr class="memitem:ab34ffc61be80923ec44784ea81e82a20"><td class="memTemplItemLeft" align="right" valign="top">std::tuple&lt; std::optional&lt; std::unique_ptr&lt; <a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> &gt; &gt;, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#ab34ffc61be80923ec44784ea81e82a20">isConfigurationApplicable</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;conf, PairwiseFunctor &amp;pairwiseFunctor)</td></tr>
-<tr class="memdesc:ab34ffc61be80923ec44784ea81e82a20"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given configuration can be used with the given functor and the current state of the simulation.  <br /></td></tr>
-<tr class="separator:ab34ffc61be80923ec44784ea81e82a20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28f090e47e10a11905090526c2b89635"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a28f090e47e10a11905090526c2b89635">checkTuningStates</a> (const InteractionTypeOption &amp;interactionType)</td></tr>
+<tr class="memdesc:a28f090e47e10a11905090526c2b89635"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if other autotuners for any other interaction types are still in a tuning phase.  <br /></td></tr>
+<tr class="separator:a28f090e47e10a11905090526c2b89635"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30a557fe26729a6105cbb1fa1e82471d"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </td></tr>
+<tr class="memitem:a30a557fe26729a6105cbb1fa1e82471d"><td class="memTemplItemLeft" align="right" valign="top">std::tuple&lt; std::optional&lt; std::unique_ptr&lt; <a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> &gt; &gt;, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a30a557fe26729a6105cbb1fa1e82471d">isConfigurationApplicable</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;conf, <a class="el" href="classautopas_1_1Functor.html">Functor</a> &amp;functor, const InteractionTypeOption &amp;interactionType)</td></tr>
+<tr class="memdesc:a30a557fe26729a6105cbb1fa1e82471d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given configuration can be used with the given functor and the current state of the simulation.  <br /></td></tr>
+<tr class="separator:a30a557fe26729a6105cbb1fa1e82471d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a04b1075231ded94518b82f306d47735a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a04b1075231ded94518b82f306d47735a">setParticleBuffers</a> (const std::vector&lt; <a class="el" href="classautopas_1_1FullParticleCell.html">FullParticleCell</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &gt; &amp;particleBuffers, const std::vector&lt; <a class="el" href="classautopas_1_1FullParticleCell.html">FullParticleCell</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &gt; &amp;haloParticleBuffers)</td></tr>
 <tr class="memdesc:a04b1075231ded94518b82f306d47735a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Directly exchange the internal particle and halo buffers with the given vectors and update particle counters.  <br /></td></tr>
 <tr class="separator:a04b1075231ded94518b82f306d47735a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -197,8 +207,8 @@ Public Member Functions</h2></td></tr>
 class autopas::LogicHandler&lt; Particle &gt;</div><p>The <a class="el" href="classautopas_1_1LogicHandler.html" title="The LogicHandler takes care of the containers s.t.">LogicHandler</a> takes care of the containers s.t. </p>
 <p>they are all in the same valid state. This is mainly done by incorporating a global container rebuild frequency, which defines when containers and their neighbor lists will be rebuilt. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8e08c944eeb4401be33463daef80181c" name="a8e08c944eeb4401be33463daef80181c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e08c944eeb4401be33463daef80181c">&#9670;&#160;</a></span>LogicHandler()</h2>
+<a id="a9031122152531661284ccad0d5074c6a" name="a9031122152531661284ccad0d5074c6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9031122152531661284ccad0d5074c6a">&#9670;&#160;</a></span>LogicHandler()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -211,8 +221,8 @@ template&lt;typename <a class="el" href="namespaceautopas.html#a1103977ab8f79d29
         <tr>
           <td class="memname"><a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::LogicHandler </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a> &amp;&#160;</td>
-          <td class="paramname"><em>autoTuner</em>, </td>
+          <td class="paramtype">std::unordered_map&lt; InteractionTypeOption::Value, std::unique_ptr&lt; <a class="el" href="classautopas_1_1AutoTuner.html">AutoTuner</a> &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>autotuners</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -248,7 +258,7 @@ template&lt;typename <a class="el" href="namespaceautopas.html#a1103977ab8f79d29
 <p>Constructor of the <a class="el" href="classautopas_1_1LogicHandler.html" title="The LogicHandler takes care of the containers s.t.">LogicHandler</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">autoTuner</td><td></td></tr>
+    <tr><td class="paramname">autotuners</td><td>Unordered map with interaction types and respective autotuner instances. </td></tr>
     <tr><td class="paramname">logicHandlerInfo</td><td></td></tr>
     <tr><td class="paramname">rebuildFrequency</td><td></td></tr>
     <tr><td class="paramname">outputSuffix</td><td></td></tr>
@@ -411,6 +421,43 @@ template&lt;typename <a class="el" href="namespaceautopas.html#a1103977ab8f79d29
 
 </div>
 </div>
+<a id="a28f090e47e10a11905090526c2b89635" name="a28f090e47e10a11905090526c2b89635"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28f090e47e10a11905090526c2b89635">&#9670;&#160;</a></span>checkTuningStates()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::checkTuningStates </td>
+          <td>(</td>
+          <td class="paramtype">const InteractionTypeOption &amp;&#160;</td>
+          <td class="paramname"><em>interactionType</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Check if other autotuners for any other interaction types are still in a tuning phase. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">interactionType</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>bool whether other tuners are still tuning. </dd></dl>
+
+</div>
+</div>
 <a id="a5cfe51ae56e730bcb340aa2d489eb5a4" name="a5cfe51ae56e730bcb340aa2d489eb5a4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5cfe51ae56e730bcb340aa2d489eb5a4">&#9670;&#160;</a></span>collectLeavingParticlesFromBuffer()</h2>
 
@@ -445,6 +492,75 @@ template&lt;typename <a class="el" href="namespaceautopas.html#a1103977ab8f79d29
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Leaving particles. </dd></dl>
+
+</div>
+</div>
+<a id="ab93768f5136d14af5db2648ee5f42fca" name="ab93768f5136d14af5db2648ee5f42fca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab93768f5136d14af5db2648ee5f42fca">&#9670;&#160;</a></span>computeInteractionsPipeline()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::computeInteractionsPipeline </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1Functor.html">Functor</a> *&#160;</td>
+          <td class="paramname"><em>functor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const InteractionTypeOption &amp;&#160;</td>
+          <td class="paramname"><em>interactionType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This function covers the full pipeline of all mechanics happening during the computation of particle interactions. </p>
+<p>This includes:</p><ul>
+<li>selecting a configuration<ul>
+<li>gather live info, homogeneity, and max density</li>
+<li>get next config (tuning)</li>
+<li>check applicability</li>
+<li>instantiation of traversal and container</li>
+</ul>
+</li>
+<li>triggering iteration and tuning result logger</li>
+<li>computing the interactions<ul>
+<li>init and end traversal</li>
+<li>remainder traversal</li>
+<li>measurements</li>
+</ul>
+</li>
+<li>pass measurements to tuner</li>
+</ul>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname"><a class="el" href="classautopas_1_1Functor.html" title="Functor base class.">Functor</a></td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">functor</td><td></td></tr>
+    <tr><td class="paramname">interactionType</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if this was a tuning iteration. </dd></dl>
+<p>Selection of configuration (tuning if necessary)</p>
+<p>Computing the particle interactions</p>
+<p>Debug Output</p>
+<p>Pass on measurements</p>
 
 </div>
 </div>
@@ -510,7 +626,7 @@ template&lt;typename <a class="el" href="namespaceautopas.html#a1103977ab8f79d29
 </div><div class="memdoc">
 
 <p>Deletes all particles.   </p>
-<dl class="section note"><dt>Note</dt><dd>This invalidates the container, a rebuild is forced on the next iteratePairwise() call.   </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This invalidates the container, a rebuild is forced on the next computeInteractions() call.   </dd></dl>
 
 </div>
 </div>
@@ -820,15 +936,15 @@ template&lt;typename <a class="el" href="namespaceautopas.html#a1103977ab8f79d29
 
 </div>
 </div>
-<a id="ab34ffc61be80923ec44784ea81e82a20" name="ab34ffc61be80923ec44784ea81e82a20"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab34ffc61be80923ec44784ea81e82a20">&#9670;&#160;</a></span>isConfigurationApplicable()</h2>
+<a id="a30a557fe26729a6105cbb1fa1e82471d" name="a30a557fe26729a6105cbb1fa1e82471d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a30a557fe26729a6105cbb1fa1e82471d">&#9670;&#160;</a></span>isConfigurationApplicable()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
 <div class="memtemplate">
-template&lt;class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </div>
       <table class="memname">
         <tr>
           <td class="memname">std::tuple&lt; std::optional&lt; std::unique_ptr&lt; <a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> &gt; &gt;, bool &gt; <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::isConfigurationApplicable </td>
@@ -839,8 +955,14 @@ template&lt;class PairwiseFunctor &gt; </div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">PairwiseFunctor &amp;&#160;</td>
-          <td class="paramname"><em>pairwiseFunctor</em>&#160;</td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1Functor.html">Functor</a> &amp;&#160;</td>
+          <td class="paramname"><em>functor</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const InteractionTypeOption &amp;&#160;</td>
+          <td class="paramname"><em>interactionType</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -854,76 +976,19 @@ template&lt;class PairwiseFunctor &gt; </div>
 <dl class="section note"><dt>Note</dt><dd>For the checks we need to switch to the container in the config, hece this function can't be const. Also we need to build the traversal, hence, it is returned.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">PairwiseFunctor</td><td></td></tr>
+    <tr><td class="paramname"><a class="el" href="classautopas_1_1Functor.html" title="Functor base class.">Functor</a></td><td></td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">conf</td><td></td></tr>
-    <tr><td class="paramname">pairwiseFunctor</td><td></td></tr>
+    <tr><td class="paramname">functor</td><td></td></tr>
+    <tr><td class="paramname">interactionType</td><td></td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>tuple&lt;optional&lt;Traversal&gt;, rejectIndefinitely&gt; The optional is empty if the configuration is not applicable The bool rejectIndefinitely indicates if the configuration can be completely removed from the search space because it will never be applicable. </dd></dl>
-
-</div>
-</div>
-<a id="a51e917df29dd39e566a132cced8da119" name="a51e917df29dd39e566a132cced8da119"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51e917df29dd39e566a132cced8da119">&#9670;&#160;</a></span>iteratePairwisePipeline()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
-<div class="memtemplate">
-template&lt;class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::iteratePairwisePipeline </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classautopas_1_1Functor.html">Functor</a> *&#160;</td>
-          <td class="paramname"><em>functor</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>This function covers the full pipeline of all mechanics happening during the pairwise iteration. </p>
-<p>This includes:</p><ul>
-<li>selecting a configuration<ul>
-<li>gather live info, homogeneity, and max density</li>
-<li>get next config (tuning)</li>
-<li>check applicability</li>
-<li>instantiation of traversal and container</li>
-</ul>
-</li>
-<li>triggering iteration and tuning result logger</li>
-<li>pairwise iteration<ul>
-<li>init and end traversal</li>
-<li>remainder traversal</li>
-<li>measurements</li>
-</ul>
-</li>
-<li>pass measurements to tuner</li>
-</ul>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname"><a class="el" href="classautopas_1_1Functor.html" title="Functor class.">Functor</a></td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">functor</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if this was a tuning iteration. </dd></dl>
-<p>Selection of configuration (tuning if necessary)</p>
-<p>Pairwise iteration</p>
-<p>Debug Output</p>
-<p>Pass on measurements</p>
 
 </div>
 </div>

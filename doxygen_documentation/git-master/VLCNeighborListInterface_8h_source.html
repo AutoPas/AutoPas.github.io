@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -180,12 +187,12 @@ $(function() {
 <div class="ttc" id="aTraversalOption_8h_html"><div class="ttname"><a href="TraversalOption_8h.html">TraversalOption.h</a></div></div>
 <div class="ttc" id="aVerletListsCellsHelpers_8h_html"><div class="ttname"><a href="VerletListsCellsHelpers_8h.html">VerletListsCellsHelpers.h</a></div></div>
 <div class="ttc" id="aWrapOpenMP_8h_html_adf64fc4981617d456044d0a30deb3d0d"><div class="ttname"><a href="WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d">AUTOPAS_OPENMP</a></div><div class="ttdeci">#define AUTOPAS_OPENMP(args)</div><div class="ttdoc">Empty macro to throw away any arguments.</div><div class="ttdef"><b>Definition:</b> WrapOpenMP.h:126</div></div>
-<div class="ttc" id="aclassautopas_1_1LinkedCells_html"><div class="ttname"><a href="classautopas_1_1LinkedCells.html">autopas::LinkedCells</a></div><div class="ttdoc">LinkedCells class.</div><div class="ttdef"><b>Definition:</b> LinkedCells.h:39</div></div>
+<div class="ttc" id="aclassautopas_1_1LinkedCells_html"><div class="ttname"><a href="classautopas_1_1LinkedCells.html">autopas::LinkedCells</a></div><div class="ttdoc">LinkedCells class.</div><div class="ttdef"><b>Definition:</b> LinkedCells.h:40</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleBase_html"><div class="ttname"><a href="classautopas_1_1ParticleBase.html">autopas::ParticleBase</a></div><div class="ttdoc">Minimal definition of a basic particle.</div><div class="ttdef"><b>Definition:</b> ParticleBase.h:33</div></div>
 <div class="ttc" id="aclassautopas_1_1SoA_html"><div class="ttname"><a href="classautopas_1_1SoA.html">autopas::SoA</a></div><div class="ttdoc">Structur of the array class.</div><div class="ttdef"><b>Definition:</b> SoA.h:28</div></div>
 <div class="ttc" id="aclassautopas_1_1SoA_html_a363b70e1b48d15da31b41d3a0d805ca1"><div class="ttname"><a href="classautopas_1_1SoA.html#a363b70e1b48d15da31b41d3a0d805ca1">autopas::SoA::resizeArrays</a></div><div class="ttdeci">void resizeArrays(size_t length)</div><div class="ttdoc">Resizes all Vectors to the given length.</div><div class="ttdef"><b>Definition:</b> SoA.h:45</div></div>
 <div class="ttc" id="aclassautopas_1_1SoA_html_a530a47fe9169c2fe80540d84c8797d6b"><div class="ttname"><a href="classautopas_1_1SoA.html#a530a47fe9169c2fe80540d84c8797d6b">autopas::SoA::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">delete all particles in the soa</div><div class="ttdef"><b>Definition:</b> SoA.h:186</div></div>
-<div class="ttc" id="aclassautopas_1_1TraversalInterface_html"><div class="ttname"><a href="classautopas_1_1TraversalInterface.html">autopas::TraversalInterface</a></div><div class="ttdoc">This interface serves as a common parent class for all traversals.</div><div class="ttdef"><b>Definition:</b> TraversalInterface.h:17</div></div>
+<div class="ttc" id="aclassautopas_1_1TraversalInterface_html"><div class="ttname"><a href="classautopas_1_1TraversalInterface.html">autopas::TraversalInterface</a></div><div class="ttdoc">This interface serves as a common parent class for all traversals.</div><div class="ttdef"><b>Definition:</b> TraversalInterface.h:18</div></div>
 <div class="ttc" id="aclassautopas_1_1VLCNeighborListInterface_html"><div class="ttname"><a href="classautopas_1_1VLCNeighborListInterface.html">autopas::VLCNeighborListInterface</a></div><div class="ttdoc">Interface of neighbor lists to be used with VerletListsCells container.</div><div class="ttdef"><b>Definition:</b> VLCNeighborListInterface.h:19</div></div>
 <div class="ttc" id="aclassautopas_1_1VLCNeighborListInterface_html_a00c54a0f4660c6423774e0c71eaeb32a"><div class="ttname"><a href="classautopas_1_1VLCNeighborListInterface.html#a00c54a0f4660c6423774e0c71eaeb32a">autopas::VLCNeighborListInterface::applyBuildFunctor</a></div><div class="ttdeci">virtual void applyBuildFunctor(LinkedCells&lt; Particle &gt; &amp;linkedCells, bool useNewton3, double cutoff, double skin, double interactionLength, const TraversalOption &amp;vlcTraversalOpt, typename VerletListsCellsHelpers::VLCBuildType buildType)=0</div><div class="ttdoc">Creates and applies a generator functor for the building of the neighbor list.</div></div>
 <div class="ttc" id="aclassautopas_1_1VLCNeighborListInterface_html_a0ff67e01d0b92c699e5a7462fc050226"><div class="ttname"><a href="classautopas_1_1VLCNeighborListInterface.html#a0ff67e01d0b92c699e5a7462fc050226">autopas::VLCNeighborListInterface::getNumberOfPartners</a></div><div class="ttdeci">virtual size_t getNumberOfPartners(const Particle *particle) const =0</div><div class="ttdoc">Gets the number of neighbors over all neighbor lists that belong to this particle.</div></div>

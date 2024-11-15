@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -134,7 +141,7 @@ $(function() {
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        _baseLinkedCells-&gt;getCellBlock().getCellsPerDimensionWithHalo(), &amp;generatorFunctor,</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        _baseLinkedCells-&gt;getInteractionLength(), _baseLinkedCells-&gt;getCellBlock().getCellLength(), <span class="keyword">this</span>, dataLayout,</div>
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        useNewton3);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    _baseLinkedCells-&gt;iteratePairwise(&amp;traversal);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    _baseLinkedCells-&gt;computeInteractions(&amp;traversal);</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  }</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> <span class="keyword">public</span>:</div>
@@ -324,7 +331,7 @@ $(function() {
 <div class="ttc" id="aclassautopas_1_1C08TraversalColorChangeNotify_html"><div class="ttname"><a href="classautopas_1_1C08TraversalColorChangeNotify.html">autopas::C08TraversalColorChangeNotify</a></div><div class="ttdoc">Constructor of the lc_c08 traversal.</div><div class="ttdef"><b>Definition:</b> C08TraversalColorChangeNotify.h:20</div></div>
 <div class="ttc" id="aclassautopas_1_1CellBasedParticleContainer_html_a3ae0545f0d40cf247fae2198dcafb444"><div class="ttname"><a href="classautopas_1_1CellBasedParticleContainer.html#a3ae0545f0d40cf247fae2198dcafb444">autopas::CellBasedParticleContainer::getInteractionLength</a></div><div class="ttdeci">double getInteractionLength() const final</div><div class="ttdoc">Return the interaction length (cutoff+skin) of the container.</div><div class="ttdef"><b>Definition:</b> CellBasedParticleContainer.h:89</div></div>
 <div class="ttc" id="aclassautopas_1_1ColorChangeObserver_html"><div class="ttname"><a href="classautopas_1_1ColorChangeObserver.html">autopas::ColorChangeObserver</a></div><div class="ttdoc">Observer interface that specifies handling color changes.</div><div class="ttdef"><b>Definition:</b> ColorChangeObserver.h:14</div></div>
-<div class="ttc" id="aclassautopas_1_1LinkedCells_html"><div class="ttname"><a href="classautopas_1_1LinkedCells.html">autopas::LinkedCells</a></div><div class="ttdoc">LinkedCells class.</div><div class="ttdef"><b>Definition:</b> LinkedCells.h:39</div></div>
+<div class="ttc" id="aclassautopas_1_1LinkedCells_html"><div class="ttname"><a href="classautopas_1_1LinkedCells.html">autopas::LinkedCells</a></div><div class="ttdoc">LinkedCells class.</div><div class="ttdef"><b>Definition:</b> LinkedCells.h:40</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleBase_html"><div class="ttname"><a href="classautopas_1_1ParticleBase.html">autopas::ParticleBase</a></div><div class="ttdoc">Minimal definition of a basic particle.</div><div class="ttdef"><b>Definition:</b> ParticleBase.h:33</div></div>
 <div class="ttc" id="aclassautopas_1_1SoA_html_a363b70e1b48d15da31b41d3a0d805ca1"><div class="ttname"><a href="classautopas_1_1SoA.html#a363b70e1b48d15da31b41d3a0d805ca1">autopas::SoA::resizeArrays</a></div><div class="ttdeci">void resizeArrays(size_t length)</div><div class="ttdoc">Resizes all Vectors to the given length.</div><div class="ttdef"><b>Definition:</b> SoA.h:45</div></div>
 <div class="ttc" id="aclassautopas_1_1SoA_html_a530a47fe9169c2fe80540d84c8797d6b"><div class="ttname"><a href="classautopas_1_1SoA.html#a530a47fe9169c2fe80540d84c8797d6b">autopas::SoA::clear</a></div><div class="ttdeci">void clear()</div><div class="ttdoc">delete all particles in the soa</div><div class="ttdef"><b>Definition:</b> SoA.h:186</div></div>
@@ -346,7 +353,7 @@ $(function() {
 <div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_af76782c4d57c0d82a03fea3ede4fcc91"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#af76782c4d57c0d82a03fea3ede4fcc91">autopas::VerletNeighborListAsBuild::getContainerType</a></div><div class="ttdeci">ContainerOption getContainerType() const override</div><div class="ttdoc">Returns the ContainerOption this neighbor list is for.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:78</div></div>
 <div class="ttc" id="aclassautopas_1_1VerletNeighborListAsBuild_html_af9e148e37bc7b5dc1206d3afbed9aacf"><div class="ttname"><a href="classautopas_1_1VerletNeighborListAsBuild.html#af9e148e37bc7b5dc1206d3afbed9aacf">autopas::VerletNeighborListAsBuild::AoSColorNeighborList</a></div><div class="ttdeci">std::vector&lt; AoSThreadNeighborList &gt; AoSColorNeighborList</div><div class="ttdoc">This type represents the thread lists for all colors.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListAsBuild.h:62</div></div>
 <div class="ttc" id="aclassautopas_1_1VerletNeighborListInterface_html"><div class="ttname"><a href="classautopas_1_1VerletNeighborListInterface.html">autopas::VerletNeighborListInterface</a></div><div class="ttdoc">Interface for neighbor lists used by VarVerletLists.</div><div class="ttdef"><b>Definition:</b> VerletNeighborListInterface.h:21</div></div>
-<div class="ttc" id="aclassautopas_1_1internal_1_1AsBuildPairGeneratorFunctor_html"><div class="ttname"><a href="classautopas_1_1internal_1_1AsBuildPairGeneratorFunctor.html">autopas::internal::AsBuildPairGeneratorFunctor</a></div><div class="ttdoc">This functor can generate or check variable verlet lists using the typical pairwise traversal.</div><div class="ttdef"><b>Definition:</b> AsBuildPairGeneratorFunctor.h:29</div></div>
+<div class="ttc" id="aclassautopas_1_1internal_1_1AsBuildPairGeneratorFunctor_html"><div class="ttname"><a href="classautopas_1_1internal_1_1AsBuildPairGeneratorFunctor.html">autopas::internal::AsBuildPairGeneratorFunctor</a></div><div class="ttdoc">This functor can generate or check variable verlet lists using the typical pairwise traversal.</div><div class="ttdef"><b>Definition:</b> AsBuildPairGeneratorFunctor.h:30</div></div>
 <div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">This is the main namespace of AutoPas.</div><div class="ttdef"><b>Definition:</b> AutoPasDecl.h:31</div></div>
 <div class="ttc" id="anamespaceautopas_html_a385797c464a683f32da2d4a43ab53220"><div class="ttname"><a href="namespaceautopas.html#a385797c464a683f32da2d4a43ab53220">autopas::autopas_get_max_threads</a></div><div class="ttdeci">int autopas_get_max_threads()</div><div class="ttdoc">Dummy for omp_get_max_threads() when no OpenMP is available.</div><div class="ttdef"><b>Definition:</b> WrapOpenMP.h:144</div></div>
 <div class="ttc" id="anamespaceautopas_html_ac3917775976f91c4251e72887dc1876e"><div class="ttname"><a href="namespaceautopas.html#ac3917775976f91c4251e72887dc1876e">autopas::autopas_get_thread_num</a></div><div class="ttdeci">int autopas_get_thread_num()</div><div class="ttdoc">Dummy for omp_set_lock() when no OpenMP is available.</div><div class="ttdef"><b>Definition:</b> WrapOpenMP.h:132</div></div>

@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -195,9 +202,9 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ac7ed4864ccbbd03c7535fc1b726491d8"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classautopas_1_1Configuration.html">Configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1MPIParallelizedStrategy.html#ac7ed4864ccbbd03c7535fc1b726491d8">createFallBackConfiguration</a> (const std::set&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;searchSpace)</td></tr>
-<tr class="memdesc:ac7ed4864ccbbd03c7535fc1b726491d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a resilient configuration that should always be applicable.  <br /></td></tr>
-<tr class="separator:ac7ed4864ccbbd03c7535fc1b726491d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca3bff4603cce19d6e4302de5ee0e69a"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classautopas_1_1Configuration.html">Configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1MPIParallelizedStrategy.html#aca3bff4603cce19d6e4302de5ee0e69a">createFallBackConfiguration</a> (const std::set&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;searchSpace, const InteractionTypeOption &amp;interactionType)</td></tr>
+<tr class="memdesc:aca3bff4603cce19d6e4302de5ee0e69a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a resilient configuration that should always be applicable.  <br /></td></tr>
+<tr class="separator:aca3bff4603cce19d6e4302de5ee0e69a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This strategy spreads the configuration queue in a round robin fashion over all ranks (with similar domain). </p>
@@ -244,7 +251,7 @@ Static Public Member Functions</h2></td></tr>
 <p>Constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">fallbackConfiguration</td><td>Generally applicable configuration that can be used if no local configuration are applicable. It is suggested to use <a class="el" href="classautopas_1_1MPIParallelizedStrategy.html#ac7ed4864ccbbd03c7535fc1b726491d8" title="Create a resilient configuration that should always be applicable.">MPIParallelizedStrategy::createFallBackConfiguration()</a> for this. </td></tr>
+    <tr><td class="paramname">fallbackConfiguration</td><td>Generally applicable configuration that can be used if no local configuration are applicable. It is suggested to use <a class="el" href="classautopas_1_1MPIParallelizedStrategy.html#aca3bff4603cce19d6e4302de5ee0e69a" title="Create a resilient configuration that should always be applicable.">MPIParallelizedStrategy::createFallBackConfiguration()</a> for this. </td></tr>
     <tr><td class="paramname">comm</td><td>The communicator holding all ranks which participate in this tuning strategy. </td></tr>
     <tr><td class="paramname">mpiTuningMaxDifferenceForBucket</td><td></td></tr>
     <tr><td class="paramname">mpiTuningWeightForMaxDensity</td><td></td></tr>
@@ -255,8 +262,8 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac7ed4864ccbbd03c7535fc1b726491d8" name="ac7ed4864ccbbd03c7535fc1b726491d8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7ed4864ccbbd03c7535fc1b726491d8">&#9670;&#160;</a></span>createFallBackConfiguration()</h2>
+<a id="aca3bff4603cce19d6e4302de5ee0e69a" name="aca3bff4603cce19d6e4302de5ee0e69a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca3bff4603cce19d6e4302de5ee0e69a">&#9670;&#160;</a></span>createFallBackConfiguration()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -268,8 +275,18 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname"><a class="el" href="classautopas_1_1Configuration.html">Configuration</a> autopas::MPIParallelizedStrategy::createFallBackConfiguration </td>
           <td>(</td>
           <td class="paramtype">const std::set&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>searchSpace</em></td><td>)</td>
+          <td class="paramname"><em>searchSpace</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const InteractionTypeOption &amp;&#160;</td>
+          <td class="paramname"><em>interactionType</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -283,6 +300,7 @@ Static Public Member Functions</h2></td></tr>
 <p>The idea is to pick some configuration that is basically always applicable (lc_c08) and guess from the search space which options Newton3 and Data Layout options are allowed. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">searchSpace</td><td></td></tr>
+    <tr><td class="paramname">interactionType</td><td></td></tr>
   </table>
   </dd>
 </dl>

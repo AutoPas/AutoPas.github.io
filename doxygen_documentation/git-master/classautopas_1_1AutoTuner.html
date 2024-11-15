@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -138,7 +145,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a27de7b1ab9f73c877eb316b79a4e63db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Move assignment operator.  <br /></td></tr>
 <tr class="separator:a27de7b1ab9f73c877eb316b79a4e63db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed4b05aace993e15acdf69b4f0946ccc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#aed4b05aace993e15acdf69b4f0946ccc">forceRetune</a> ()</td></tr>
-<tr class="memdesc:aed4b05aace993e15acdf69b4f0946ccc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Force the internal tuner to enter a new tuning phase upon the next call to iteratePairwise().    <br /></td></tr>
+<tr class="memdesc:aed4b05aace993e15acdf69b4f0946ccc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Force the internal tuner to enter a new tuning phase upon the next call to computeInteractions().    <br /></td></tr>
 <tr class="separator:aed4b05aace993e15acdf69b4f0946ccc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae067e7ec72d47901218da725b136f58b"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classautopas_1_1TuningMetricOption.html">TuningMetricOption</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#ae067e7ec72d47901218da725b136f58b">getTuningMetric</a> () const</td></tr>
 <tr class="memdesc:ae067e7ec72d47901218da725b136f58b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the primary metric for tuning.  <br /></td></tr>
@@ -152,11 +159,11 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae50e16a3864ee82c7e6b9525aa43a16b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#ae50e16a3864ee82c7e6b9525aa43a16b">prepareIteration</a> ()</td></tr>
 <tr class="memdesc:ae50e16a3864ee82c7e6b9525aa43a16b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines what live infos are needed and passes collected live info to the tuning strategies.  <br /></td></tr>
 <tr class="separator:ae50e16a3864ee82c7e6b9525aa43a16b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a43cf92b0c523b38f782b681f91dde5a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a43cf92b0c523b38f782b681f91dde5a1">bumpIterationCounters</a> ()</td></tr>
-<tr class="memdesc:a43cf92b0c523b38f782b681f91dde5a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increase internal iteration counters by one.  <br /></td></tr>
-<tr class="separator:a43cf92b0c523b38f782b681f91dde5a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b3efd0da6d143a2a333d524553bc84a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a2b3efd0da6d143a2a333d524553bc84a">bumpIterationCounters</a> (bool needToWait=false)</td></tr>
+<tr class="memdesc:a2b3efd0da6d143a2a333d524553bc84a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increase internal iteration counters by one.  <br /></td></tr>
+<tr class="separator:a2b3efd0da6d143a2a333d524553bc84a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a796da93e86a1678f995acd6819e34e9e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a796da93e86a1678f995acd6819e34e9e">willRebuildNeighborLists</a> () const</td></tr>
-<tr class="memdesc:a796da93e86a1678f995acd6819e34e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether rebuildNeighborLists() will be triggered in the next call to iteratePairwise().  <br /></td></tr>
+<tr class="memdesc:a796da93e86a1678f995acd6819e34e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether rebuildNeighborLists() will be triggered in the next iteration.  <br /></td></tr>
 <tr class="separator:a796da93e86a1678f995acd6819e34e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8c778b2db88b8c7cfcbd4417b33ed5f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#ad8c778b2db88b8c7cfcbd4417b33ed5f">getCurrentConfig</a> () const</td></tr>
 <tr class="memdesc:ad8c778b2db88b8c7cfcbd4417b33ed5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the currently selected configuration.  <br /></td></tr>
@@ -173,9 +180,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a08333ac15c1db2f1ebd2820cc2d56d54"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a08333ac15c1db2f1ebd2820cc2d56d54">searchSpaceIsEmpty</a> () const</td></tr>
 <tr class="memdesc:a08333ac15c1db2f1ebd2820cc2d56d54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicator function whether the search space has no configurations in it.  <br /></td></tr>
 <tr class="separator:a08333ac15c1db2f1ebd2820cc2d56d54"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8116631f0a85dfaea46e42a0511bace4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a8116631f0a85dfaea46e42a0511bace4">logIteration</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;conf, bool tuningIteration, long tuningTime)</td></tr>
-<tr class="memdesc:a8116631f0a85dfaea46e42a0511bace4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log the collected data and if we are at the end of a tuning phase the result to files.  <br /></td></tr>
-<tr class="separator:a8116631f0a85dfaea46e42a0511bace4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4869c59c2bc70ac244e27840a1f716c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a4869c59c2bc70ac244e27840a1f716c1">logTuningResult</a> (bool tuningIteration, long tuningTime) const</td></tr>
+<tr class="memdesc:a4869c59c2bc70ac244e27840a1f716c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">After a tuning phase has finished, write the result to a file.  <br /></td></tr>
+<tr class="separator:a4869c59c2bc70ac244e27840a1f716c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac10dcc9eac0aa2ffa243577bc12447cf"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#ac10dcc9eac0aa2ffa243577bc12447cf">initEnergy</a> ()</td></tr>
 <tr class="memdesc:ac10dcc9eac0aa2ffa243577bc12447cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialize rapl meter.  <br /></td></tr>
 <tr class="separator:ac10dcc9eac0aa2ffa243577bc12447cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -357,8 +364,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a43cf92b0c523b38f782b681f91dde5a1" name="a43cf92b0c523b38f782b681f91dde5a1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a43cf92b0c523b38f782b681f91dde5a1">&#9670;&#160;</a></span>bumpIterationCounters()</h2>
+<a id="a2b3efd0da6d143a2a333d524553bc84a" name="a2b3efd0da6d143a2a333d524553bc84a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b3efd0da6d143a2a333d524553bc84a">&#9670;&#160;</a></span>bumpIterationCounters()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -366,14 +373,20 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">void autopas::AutoTuner::bumpIterationCounters </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>needToWait</em> = <code>false</code></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Increase internal iteration counters by one. </p>
-<p>Should be called at the end of an iteration. </p>
+<p>Should be called at the end of an iteration. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">needToWait</td><td>If tuner should wait for other tuners. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -412,7 +425,7 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Force the internal tuner to enter a new tuning phase upon the next call to iteratePairwise().   </p>
+<p>Force the internal tuner to enter a new tuning phase upon the next call to computeInteractions().   </p>
 
 </div>
 </div>
@@ -576,21 +589,15 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a8116631f0a85dfaea46e42a0511bace4" name="a8116631f0a85dfaea46e42a0511bace4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8116631f0a85dfaea46e42a0511bace4">&#9670;&#160;</a></span>logIteration()</h2>
+<a id="a4869c59c2bc70ac244e27840a1f716c1" name="a4869c59c2bc70ac244e27840a1f716c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4869c59c2bc70ac244e27840a1f716c1">&#9670;&#160;</a></span>logTuningResult()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void autopas::AutoTuner::logIteration </td>
+          <td class="memname">void autopas::AutoTuner::logTuningResult </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;&#160;</td>
-          <td class="paramname"><em>conf</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>tuningIteration</em>, </td>
         </tr>
@@ -603,15 +610,14 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td> const</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Log the collected data and if we are at the end of a tuning phase the result to files. </p>
+<p>After a tuning phase has finished, write the result to a file. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">conf</td><td></td></tr>
     <tr><td class="paramname">tuningIteration</td><td></td></tr>
     <tr><td class="paramname">tuningTime</td><td></td></tr>
   </table>
@@ -858,9 +864,9 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns whether rebuildNeighborLists() will be triggered in the next call to iteratePairwise(). </p>
+<p>Returns whether rebuildNeighborLists() will be triggered in the next iteration. </p>
 <p>This might also indicate a container change.</p>
-<dl class="section return"><dt>Returns</dt><dd>True if the the current iteration counters indicate a rebuild in the next iteration. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the current iteration counters indicate a rebuild in the next iteration. </dd></dl>
 
 </div>
 </div>

@@ -1,7 +1,7 @@
 var searchData=
 [
   ['theta_0',['theta',['../classautopas_1_1GaussianHyperparameters.html#ab83c20b6c74d1514b1bd8e98f152eaac',1,'autopas::GaussianHyperparameters']]],
-  ['timeiteratepairwise_1',['timeIteratePairwise',['../structautopas_1_1IterationMeasurements.html#afdf350da910949d8a1711870de73e857',1,'autopas::IterationMeasurements']]],
+  ['timecomputeinteractions_1',['timeComputeInteractions',['../structautopas_1_1IterationMeasurements.html#ac74a7d4dcef1af211c1966649a850725',1,'autopas::IterationMeasurements']]],
   ['timerebuild_2',['timeRebuild',['../structautopas_1_1IterationMeasurements.html#a561729016a061d11da48ad62913c3f59',1,'autopas::IterationMeasurements']]],
   ['timeremaindertraversal_3',['timeRemainderTraversal',['../structautopas_1_1IterationMeasurements.html#a8ab74dd953f1b237d9d01ff19f5f1bff',1,'autopas::IterationMeasurements']]],
   ['timetotal_4',['timeTotal',['../structautopas_1_1IterationMeasurements.html#a6cc045f6fe1eba2d4511a8d7fb692017',1,'autopas::IterationMeasurements']]],

@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -111,7 +118,7 @@ $(function() {
 <a href="LCC04SoACellHandler_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="CellPairTraversal_8h.html">autopas/containers/cellPairTraversals/CellPairTraversal.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="CellTraversal_8h.html">autopas/containers/cellTraversals/CellTraversal.h</a>&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="LCC08CellHandlerUtility_8h.html">autopas/containers/linkedCells/traversals/LCC08CellHandlerUtility.h</a>&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="AlignedAllocator_8h.html">autopas/utils/AlignedAllocator.h</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="ArrayMath_8h.html">autopas/utils/ArrayMath.h</a>&quot;</span></div>
@@ -123,7 +130,7 @@ $(function() {
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ParticleCell, <span class="keyword">class</span> PairwiseFunctor&gt;</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classautopas_1_1LCC04SoACellHandler.html">   31</a></span><span class="keyword">class </span><a class="code hl_class" href="classautopas_1_1LCC04SoACellHandler.html">LCC04SoACellHandler</a> {</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classautopas_1_1LCC04SoACellHandler.html#aa00469245c9729f6c1ce822c888833b3">   43</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classautopas_1_1LCC04SoACellHandler.html#aa00469245c9729f6c1ce822c888833b3">LCC04SoACellHandler</a>(PairwiseFunctor *pairwiseFunctor, <span class="keyword">const</span> std::array&lt;unsigned long, 3&gt; &amp;cellsPerDimension,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classautopas_1_1LCC04SoACellHandler.html#aa00469245c9729f6c1ce822c888833b3">   43</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classautopas_1_1LCC04SoACellHandler.html#aa00469245c9729f6c1ce822c888833b3">LCC04SoACellHandler</a>(<a class="code hl_class" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> *pairwiseFunctor, <span class="keyword">const</span> std::array&lt;unsigned long, 3&gt; &amp;cellsPerDimension,</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                               <span class="keywordtype">double</span> interactionLength, <span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;cellLength,</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                               DataLayoutOption dataLayout, <span class="keywordtype">bool</span> useNewton3,</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>                               <span class="keyword">const</span> std::array&lt;unsigned long, 3&gt; &amp;overlap = {1ul, 1ul, 1ul})</div>
@@ -165,7 +172,7 @@ $(function() {
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="keyword">const</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _cacheOffset;</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  PairwiseFunctor *_pairwiseFunctor;</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  <a class="code hl_class" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> *_pairwiseFunctor;</div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
 <div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  DataLayoutOption _dataLayout;</div>
 <div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
@@ -403,7 +410,7 @@ $(function() {
 <div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span>}  <span class="comment">// namespace autopas</span></div>
 <div class="ttc" id="aAlignedAllocator_8h_html"><div class="ttname"><a href="AlignedAllocator_8h.html">AlignedAllocator.h</a></div></div>
 <div class="ttc" id="aArrayMath_8h_html"><div class="ttname"><a href="ArrayMath_8h.html">ArrayMath.h</a></div></div>
-<div class="ttc" id="aCellPairTraversal_8h_html"><div class="ttname"><a href="CellPairTraversal_8h.html">CellPairTraversal.h</a></div></div>
+<div class="ttc" id="aCellTraversal_8h_html"><div class="ttname"><a href="CellTraversal_8h.html">CellTraversal.h</a></div></div>
 <div class="ttc" id="aLCC08CellHandlerUtility_8h_html"><div class="ttname"><a href="LCC08CellHandlerUtility_8h.html">LCC08CellHandlerUtility.h</a></div></div>
 <div class="ttc" id="aLogger_8h_html_ab5eef0a7030352f281056d3ee7f86575"><div class="ttname"><a href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a></div><div class="ttdeci">#define AutoPasLog(lvl, fmt,...)</div><div class="ttdoc">Macro for logging providing common meta information without filename.</div><div class="ttdef"><b>Definition:</b> Logger.h:24</div></div>
 <div class="ttc" id="aThreeDimensionalMapping_8h_html"><div class="ttname"><a href="ThreeDimensionalMapping_8h.html">ThreeDimensionalMapping.h</a></div></div>
@@ -412,6 +419,7 @@ $(function() {
 <div class="ttc" id="aclassautopas_1_1LCC04SoACellHandler_html_a3b5d1374245e3e23fff3dbe98e2ea476"><div class="ttname"><a href="classautopas_1_1LCC04SoACellHandler.html#a3b5d1374245e3e23fff3dbe98e2ea476">autopas::LCC04SoACellHandler::processBaseCell</a></div><div class="ttdeci">void processBaseCell(std::vector&lt; ParticleCell &gt; &amp;cells, unsigned long x, unsigned long y, unsigned long z)</div><div class="ttdoc">Computes one interaction for each spacial direction based on the lower left frontal corner of a 2x2x2...</div><div class="ttdef"><b>Definition:</b> LCC04SoACellHandler.h:177</div></div>
 <div class="ttc" id="aclassautopas_1_1LCC04SoACellHandler_html_a5b58209d78179a6b997271f31778a5c5"><div class="ttname"><a href="classautopas_1_1LCC04SoACellHandler.html#a5b58209d78179a6b997271f31778a5c5">autopas::LCC04SoACellHandler::resizeBuffers</a></div><div class="ttdeci">void resizeBuffers()</div><div class="ttdoc">Resize all buffers to match the current number of threads.</div><div class="ttdef"><b>Definition:</b> LCC04SoACellHandler.h:378</div></div>
 <div class="ttc" id="aclassautopas_1_1LCC04SoACellHandler_html_aa00469245c9729f6c1ce822c888833b3"><div class="ttname"><a href="classautopas_1_1LCC04SoACellHandler.html#aa00469245c9729f6c1ce822c888833b3">autopas::LCC04SoACellHandler::LCC04SoACellHandler</a></div><div class="ttdeci">LCC04SoACellHandler(PairwiseFunctor *pairwiseFunctor, const std::array&lt; unsigned long, 3 &gt; &amp;cellsPerDimension, double interactionLength, const std::array&lt; double, 3 &gt; &amp;cellLength, DataLayoutOption dataLayout, bool useNewton3, const std::array&lt; unsigned long, 3 &gt; &amp;overlap={1ul, 1ul, 1ul})</div><div class="ttdoc">Constructor of the c04 traversal with combined SoA buffers.</div><div class="ttdef"><b>Definition:</b> LCC04SoACellHandler.h:43</div></div>
+<div class="ttc" id="aclassautopas_1_1PairwiseFunctor_html"><div class="ttname"><a href="classautopas_1_1PairwiseFunctor.html">autopas::PairwiseFunctor</a></div><div class="ttdoc">PairwiseFunctor class.</div><div class="ttdef"><b>Definition:</b> PairwiseFunctor.h:31</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleCell_html"><div class="ttname"><a href="classautopas_1_1ParticleCell.html">autopas::ParticleCell</a></div><div class="ttdoc">Class for Cells of Particles.</div><div class="ttdef"><b>Definition:</b> ParticleCell.h:51</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleCell_html_a873fc0065012034e9a9da7ca25c15ce1"><div class="ttname"><a href="classautopas_1_1ParticleCell.html#a873fc0065012034e9a9da7ca25c15ce1">autopas::ParticleCell::size</a></div><div class="ttdeci">virtual size_t size() const =0</div><div class="ttdoc">Get the number of all particles stored in this cell (owned, halo and dummy).</div></div>
 <div class="ttc" id="anamespaceautopas_1_1utils_1_1ThreeDimensionalMapping_html_a695d7461713f9c1ad63a1df22fbc29ed"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ThreeDimensionalMapping.html#a695d7461713f9c1ad63a1df22fbc29ed">autopas::utils::ThreeDimensionalMapping::oneToThreeD</a></div><div class="ttdeci">constexpr std::array&lt; T, 3 &gt; oneToThreeD(T ind, const std::array&lt; T, 3 &gt; &amp;dims)</div><div class="ttdoc">Convert a 1d index to a 3d index.</div><div class="ttdef"><b>Definition:</b> ThreeDimensionalMapping.h:55</div></div>

@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -123,8 +130,8 @@ $(function() {
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <a class="code hl_function" href="classautopas_1_1TuningResultLogger.html#a0f88cbc4af512485f0ed81ab7d0e12a8">~TuningResultLogger</a>();</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1TuningResultLogger.html#a721a193d495fadd5ade0cad0f4f1a81b">logTuningResult</a>(<span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1Configuration.html">autopas::Configuration</a> &amp;configuration, <span class="keywordtype">size_t</span> iteration, <span class="keywordtype">long</span> timeTuning,</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                       <span class="keywordtype">long</span> optimumPerformance);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1TuningResultLogger.html#ab59186231fcb88f0a27c902f98a52cb0">logTuningResult</a>(<span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1Configuration.html">autopas::Configuration</a> &amp;configuration, <span class="keywordtype">size_t</span> iteration, <span class="keywordtype">long</span> timeTuning,</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>                       <span class="keywordtype">long</span> optimumPerformance) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  std::string _loggerName;</div>
@@ -135,7 +142,7 @@ $(function() {
 <div class="ttc" id="aclassautopas_1_1Configuration_html"><div class="ttname"><a href="classautopas_1_1Configuration.html">autopas::Configuration</a></div><div class="ttdoc">Class containing multiple options that form an algorithm configuration for the pairwise iteration.</div><div class="ttdef"><b>Definition:</b> Configuration.h:24</div></div>
 <div class="ttc" id="aclassautopas_1_1TuningResultLogger_html"><div class="ttname"><a href="classautopas_1_1TuningResultLogger.html">autopas::TuningResultLogger</a></div><div class="ttdoc">Helper to log results of the tuning process to a csv file for easier analysis.</div><div class="ttdef"><b>Definition:</b> TuningResultLogger.h:23</div></div>
 <div class="ttc" id="aclassautopas_1_1TuningResultLogger_html_a0f88cbc4af512485f0ed81ab7d0e12a8"><div class="ttname"><a href="classautopas_1_1TuningResultLogger.html#a0f88cbc4af512485f0ed81ab7d0e12a8">autopas::TuningResultLogger::~TuningResultLogger</a></div><div class="ttdeci">~TuningResultLogger()</div><div class="ttdoc">Destructor drops the logger from the spd registry.</div><div class="ttdef"><b>Definition:</b> TuningResultLogger.cpp:30</div></div>
-<div class="ttc" id="aclassautopas_1_1TuningResultLogger_html_a721a193d495fadd5ade0cad0f4f1a81b"><div class="ttname"><a href="classautopas_1_1TuningResultLogger.html#a721a193d495fadd5ade0cad0f4f1a81b">autopas::TuningResultLogger::logTuningResult</a></div><div class="ttdeci">void logTuningResult(const autopas::Configuration &amp;configuration, size_t iteration, long timeTuning, long optimumPerformance)</div><div class="ttdoc">Log the result of a tuning phase.</div><div class="ttdef"><b>Definition:</b> TuningResultLogger.cpp:36</div></div>
+<div class="ttc" id="aclassautopas_1_1TuningResultLogger_html_ab59186231fcb88f0a27c902f98a52cb0"><div class="ttname"><a href="classautopas_1_1TuningResultLogger.html#ab59186231fcb88f0a27c902f98a52cb0">autopas::TuningResultLogger::logTuningResult</a></div><div class="ttdeci">void logTuningResult(const autopas::Configuration &amp;configuration, size_t iteration, long timeTuning, long optimumPerformance) const</div><div class="ttdoc">Log the result of a tuning phase.</div><div class="ttdef"><b>Definition:</b> TuningResultLogger.cpp:36</div></div>
 <div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">This is the main namespace of AutoPas.</div><div class="ttdef"><b>Definition:</b> AutoPasDecl.h:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

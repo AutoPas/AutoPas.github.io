@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -123,8 +130,8 @@ $(function() {
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <a class="code hl_function" href="classautopas_1_1PredictionLogger.html#a5e0fc901c3464264738587f295fb573e">~PredictionLogger</a>();</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1PredictionLogger.html#a8119cdff92d2e891b61cc86d728e8b8e">logAllPredictions</a>(<span class="keyword">const</span> std::unordered_map&lt;Configuration, long, ConfigHash&gt; &amp;predictions,</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                         <span class="keywordtype">long</span> predictionErrorValue, <span class="keywordtype">size_t</span> tuningPhaseCounter);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1PredictionLogger.html#ad2abc9329d2d4b4eef5e9617391cbb89">logAllPredictions</a>(<span class="keyword">const</span> std::unordered_map&lt;Configuration, long, ConfigHash&gt; &amp;predictions,</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                         <span class="keywordtype">long</span> predictionErrorValue, <span class="keywordtype">size_t</span> tuningPhaseCounter) <span class="keyword">const</span>;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> <span class="keyword">private</span>:</div>
 <div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  std::string _loggerName;</div>
@@ -134,7 +141,7 @@ $(function() {
 <div class="ttc" id="aConfiguration_8h_html"><div class="ttname"><a href="Configuration_8h.html">Configuration.h</a></div></div>
 <div class="ttc" id="aclassautopas_1_1PredictionLogger_html"><div class="ttname"><a href="classautopas_1_1PredictionLogger.html">autopas::PredictionLogger</a></div><div class="ttdoc">Helper to log prediction data of PredictiveTuning to a csv file for easier analysis.</div><div class="ttdef"><b>Definition:</b> PredictionLogger.h:23</div></div>
 <div class="ttc" id="aclassautopas_1_1PredictionLogger_html_a5e0fc901c3464264738587f295fb573e"><div class="ttname"><a href="classautopas_1_1PredictionLogger.html#a5e0fc901c3464264738587f295fb573e">autopas::PredictionLogger::~PredictionLogger</a></div><div class="ttdeci">~PredictionLogger()</div><div class="ttdoc">Destructor drops the logger from the spd registry.</div><div class="ttdef"><b>Definition:</b> PredictionLogger.cpp:37</div></div>
-<div class="ttc" id="aclassautopas_1_1PredictionLogger_html_a8119cdff92d2e891b61cc86d728e8b8e"><div class="ttname"><a href="classautopas_1_1PredictionLogger.html#a8119cdff92d2e891b61cc86d728e8b8e">autopas::PredictionLogger::logAllPredictions</a></div><div class="ttdeci">void logAllPredictions(const std::unordered_map&lt; Configuration, long, ConfigHash &gt; &amp;predictions, long predictionErrorValue, size_t tuningPhaseCounter)</div><div class="ttdoc">Print all predictions of the given set of configurations to the logger.</div><div class="ttdef"><b>Definition:</b> PredictionLogger.cpp:43</div></div>
+<div class="ttc" id="aclassautopas_1_1PredictionLogger_html_ad2abc9329d2d4b4eef5e9617391cbb89"><div class="ttname"><a href="classautopas_1_1PredictionLogger.html#ad2abc9329d2d4b4eef5e9617391cbb89">autopas::PredictionLogger::logAllPredictions</a></div><div class="ttdeci">void logAllPredictions(const std::unordered_map&lt; Configuration, long, ConfigHash &gt; &amp;predictions, long predictionErrorValue, size_t tuningPhaseCounter) const</div><div class="ttdoc">Print all predictions of the given set of configurations to the logger.</div><div class="ttdef"><b>Definition:</b> PredictionLogger.cpp:43</div></div>
 <div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">This is the main namespace of AutoPas.</div><div class="ttdef"><b>Definition:</b> AutoPasDecl.h:31</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

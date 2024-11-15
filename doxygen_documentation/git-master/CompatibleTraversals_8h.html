@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -113,6 +120,7 @@ $(function() {
 <div class="contents">
 <div class="textblock"><code>#include &lt;set&gt;</code><br />
 <code>#include &quot;<a class="el" href="ContainerOption_8h_source.html">autopas/options/ContainerOption.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="InteractionTypeOption_8h_source.html">autopas/options/InteractionTypeOption.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="TraversalOption_8h_source.html">autopas/options/TraversalOption.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="ExceptionHandler_8h_source.html">autopas/utils/ExceptionHandler.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="StringUtils_8h_source.html">autopas/utils/StringUtils.h</a>&quot;</code><br />
@@ -121,95 +129,100 @@ Include dependency graph for CompatibleTraversals.h:</div>
 <div class="dyncontent">
 <div class="center"><img src="CompatibleTraversals_8h__incl.png" border="0" usemap="#aautopas_2containers_2CompatibleTraversals_8h" alt=""/></div>
 <map name="aautopas_2containers_2CompatibleTraversals_8h" id="aautopas_2containers_2CompatibleTraversals_8h">
-<area shape="rect" title=" " alt="" coords="1314,5,1493,45"/>
-<area shape="rect" title=" " alt="" coords="1479,548,1522,573"/>
-<area shape="poly" title=" " alt="" coords="1493,32,1561,41,1630,53,1689,70,1712,80,1729,91,1748,114,1756,137,1757,193,1757,416,1750,450,1732,480,1705,503,1672,522,1636,536,1600,546,1536,558,1535,553,1599,541,1635,531,1670,517,1702,499,1728,476,1745,448,1751,415,1751,193,1751,138,1743,117,1726,95,1710,85,1688,75,1629,58,1560,46,1493,37"/>
-<area shape="rect" href="ContainerOption_8h.html" title=" " alt="" coords="1523,93,1716,133"/>
-<area shape="poly" title=" " alt="" coords="1452,43,1560,86,1558,91,1450,48"/>
-<area shape="rect" href="StringUtils_8h.html" title=" " alt="" coords="1067,255,1257,280"/>
-<area shape="poly" title=" " alt="" coords="1368,48,1333,69,1298,95,1261,133,1228,174,1178,245,1174,241,1223,171,1257,130,1295,91,1330,65,1365,43"/>
-<area shape="rect" href="ExceptionHandler_8h.html" title=" " alt="" coords="260,548,496,573"/>
-<area shape="poly" title=" " alt="" coords="1314,35,1069,54,768,87,628,108,513,134,469,148,435,162,414,178,407,193,407,415,401,481,388,536,383,534,395,480,402,415,402,192,410,174,432,158,467,143,512,129,627,103,767,81,1068,49,1314,30"/>
-<area shape="rect" href="TraversalOption_8h.html" title=" " alt="" coords="1309,93,1498,133"/>
-<area shape="poly" title=" " alt="" coords="1406,46,1406,79,1401,79,1401,46"/>
-<area shape="poly" title=" " alt="" coords="1640,132,1661,156,1682,188,1699,226,1706,266,1706,416,1701,445,1687,470,1667,492,1643,511,1587,538,1536,554,1535,549,1585,533,1640,506,1664,488,1683,467,1696,443,1701,415,1701,266,1694,227,1678,191,1656,160,1636,135"/>
-<area shape="rect" href="Option_8h.html" title=" " alt="" coords="1333,181,1519,207"/>
-<area shape="poly" title=" " alt="" coords="1574,136,1468,179,1466,174,1572,131"/>
-<area shape="poly" title=" " alt="" coords="1433,206,1471,314,1493,392,1509,474,1510,506,1507,534,1502,534,1504,505,1503,475,1488,394,1466,315,1428,208"/>
-<area shape="rect" title=" " alt="" coords="570,548,655,573"/>
-<area shape="poly" title=" " alt="" coords="1333,203,1100,218,818,245,689,264,582,286,541,298,510,312,491,325,485,340,485,415,487,436,494,455,518,489,548,517,580,539,577,543,545,521,514,492,489,457,482,437,479,415,479,339,487,322,507,307,539,293,581,281,688,258,818,240,1099,212,1333,197"/>
-<area shape="rect" title=" " alt="" coords="788,548,859,573"/>
-<area shape="poly" title=" " alt="" coords="1333,200,1168,210,973,231,880,248,798,270,732,297,708,313,690,329,686,340,690,352,702,374,715,391,747,413,781,435,797,451,811,474,822,504,826,534,820,534,816,505,806,476,792,455,777,439,744,417,712,394,697,378,685,354,680,340,685,327,704,308,730,292,796,265,879,243,973,226,1167,204,1333,195"/>
-<area shape="rect" title=" " alt="" coords="1514,255,1565,280"/>
-<area shape="poly" title=" " alt="" coords="1446,204,1511,245,1508,250,1443,209"/>
-<area shape="rect" title=" " alt="" coords="618,629,677,654"/>
-<area shape="poly" title=" " alt="" coords="1490,204,1537,222,1559,236,1579,253,1594,273,1602,293,1605,339,1605,489,1600,520,1586,542,1564,560,1535,576,1484,590,1394,602,1147,622,882,635,690,641,690,636,882,629,1147,616,1394,597,1482,585,1533,571,1561,555,1582,539,1595,518,1599,488,1599,339,1597,294,1590,276,1575,256,1556,240,1534,227,1488,209"/>
-<area shape="rect" title=" " alt="" coords="1349,475,1412,500"/>
-<area shape="poly" title=" " alt="" coords="1430,207,1432,299,1428,363,1415,427,1399,464,1394,462,1410,426,1422,362,1427,299,1424,207"/>
-<area shape="poly" title=" " alt="" coords="1384,209,1219,254,1217,248,1383,204"/>
-<area shape="poly" title=" " alt="" coords="1258,271,1294,278,1332,288,1368,304,1400,326,1423,349,1442,375,1471,433,1490,489,1499,534,1494,535,1484,490,1466,435,1437,378,1419,352,1396,330,1365,309,1330,293,1293,283,1257,276"/>
-<area shape="poly" title=" " alt="" coords="1067,274,909,283,821,293,734,306,656,325,592,348,568,362,550,378,539,394,535,413,535,489,539,533,560,572,585,599,614,619,611,624,582,603,556,575,534,534,530,489,530,412,534,392,546,374,565,358,590,343,654,319,733,301,820,288,909,278,1066,268"/>
-<area shape="poly" title=" " alt="" coords="1236,277,1318,297,1353,310,1375,326,1391,359,1397,396,1395,432,1390,462,1385,461,1390,431,1392,396,1386,361,1371,330,1350,315,1317,302,1235,283"/>
-<area shape="rect" title=" " alt="" coords="960,328,1023,353"/>
-<area shape="poly" title=" " alt="" coords="1136,282,1033,325,1031,320,1134,278"/>
-<area shape="rect" title=" " alt="" coords="1047,328,1106,353"/>
-<area shape="poly" title=" " alt="" coords="1150,282,1103,321,1099,317,1147,278"/>
-<area shape="rect" href="NumberInterval_8h.html" title=" " alt="" coords="713,328,937,353"/>
-<area shape="poly" title=" " alt="" coords="1108,283,893,328,892,322,1107,277"/>
-<area shape="rect" href="NumberSet_8h.html" title=" " alt="" coords="801,401,907,427"/>
-<area shape="poly" title=" " alt="" coords="1066,277,845,297,750,312,719,321,703,330,696,341,696,352,702,361,713,370,747,386,788,398,787,403,746,391,710,375,698,365,691,353,691,340,699,326,717,316,749,307,844,292,1066,272"/>
-<area shape="rect" href="NumberSetFinite_8h.html" title=" " alt="" coords="1131,328,1361,353"/>
-<area shape="poly" title=" " alt="" coords="1177,278,1223,317,1220,321,1174,282"/>
-<area shape="poly" title=" " alt="" coords="832,353,846,388,842,390,827,355"/>
-<area shape="poly" title=" " alt="" coords="860,426,878,463,893,482,911,498,957,516,1021,531,1098,541,1181,549,1345,556,1466,557,1466,562,1345,561,1181,554,1097,547,1020,536,956,521,909,502,889,486,874,466,856,428"/>
-<area shape="poly" title=" " alt="" coords="908,420,1336,477,1335,483,907,425"/>
-<area shape="rect" title=" " alt="" coords="922,475,997,500"/>
-<area shape="poly" title=" " alt="" coords="872,424,932,465,930,469,869,429"/>
-<area shape="poly" title=" " alt="" coords="801,429,711,450,609,477,506,512,419,545,417,540,504,507,608,472,710,445,800,424"/>
-<area shape="rect" href="Random_8h.html" title=" " alt="" coords="621,475,797,500"/>
-<area shape="poly" title=" " alt="" coords="832,429,746,471,743,466,829,424"/>
-<area shape="poly" title=" " alt="" coords="432,571,514,591,606,619,611,621,609,626,604,624,513,596,430,576"/>
-<area shape="rect" title=" " alt="" coords="145,629,211,654"/>
-<area shape="poly" title=" " alt="" coords="348,576,223,624,218,626,216,621,221,619,346,571"/>
-<area shape="rect" title=" " alt="" coords="235,629,321,654"/>
-<area shape="poly" title=" " alt="" coords="365,576,305,622,302,618,362,571"/>
-<area shape="rect" title=" " alt="" coords="346,629,410,654"/>
-<area shape="poly" title=" " alt="" coords="381,574,381,615,375,615,375,574"/>
-<area shape="rect" href="Logger_8h.html" title=" " alt="" coords="435,621,593,661"/>
-<area shape="poly" title=" " alt="" coords="399,571,470,612,468,617,397,576"/>
-<area shape="rect" title=" " alt="" coords="5,709,153,749"/>
-<area shape="poly" title=" " alt="" coords="435,662,423,664,167,712,166,707,421,659,434,656"/>
-<area shape="rect" title=" " alt="" coords="178,709,319,749"/>
-<area shape="poly" title=" " alt="" coords="457,664,320,708,319,703,455,659"/>
-<area shape="rect" title=" " alt="" coords="344,709,505,749"/>
-<area shape="poly" title=" " alt="" coords="496,664,456,702,453,698,492,660"/>
-<area shape="rect" title=" " alt="" coords="529,709,677,749"/>
-<area shape="poly" title=" " alt="" coords="536,660,575,698,572,702,532,664"/>
-<area shape="rect" title=" " alt="" coords="701,717,825,742"/>
-<area shape="poly" title=" " alt="" coords="570,659,718,710,716,715,568,664"/>
-<area shape="rect" title=" " alt="" coords="850,717,930,742"/>
-<area shape="poly" title=" " alt="" coords="594,656,837,707,848,710,846,715,836,712,593,661"/>
-<area shape="poly" title=" " alt="" coords="797,494,1466,554,1465,559,797,499"/>
-<area shape="poly" title=" " alt="" coords="695,502,641,542,638,537,692,498"/>
-<area shape="poly" title=" " alt="" coords="728,498,794,538,792,543,726,502"/>
-<area shape="poly" title=" " alt="" coords="656,503,445,548,444,542,655,497"/>
-<area shape="rect" title=" " alt="" coords="679,548,751,573"/>
-<area shape="poly" title=" " alt="" coords="712,500,716,534,710,535,707,501"/>
-<area shape="poly" title=" " alt="" coords="1265,351,1337,402,1425,473,1484,535,1481,539,1422,477,1334,406,1262,356"/>
-<area shape="poly" title=" " alt="" coords="1183,356,921,403,920,398,1183,351"/>
-<area shape="rect" href="ArrayUtils_8h.html" title=" " alt="" coords="1187,401,1286,427"/>
-<area shape="poly" title=" " alt="" coords="1247,354,1243,388,1237,387,1242,353"/>
-<area shape="poly" title=" " alt="" coords="1249,425,1287,460,1338,498,1405,528,1467,548,1465,553,1403,533,1335,502,1283,464,1246,429"/>
-<area shape="poly" title=" " alt="" coords="1261,424,1346,466,1344,471,1259,429"/>
-<area shape="poly" title=" " alt="" coords="1193,429,1011,476,1009,471,1191,424"/>
-<area shape="rect" title=" " alt="" coords="1119,475,1175,500"/>
-<area shape="poly" title=" " alt="" coords="1224,429,1174,468,1171,464,1221,425"/>
-<area shape="rect" title=" " alt="" coords="1199,475,1274,500"/>
-<area shape="poly" title=" " alt="" coords="1239,427,1239,461,1234,461,1234,427"/>
-<area shape="rect" title=" " alt="" coords="1021,475,1095,500"/>
-<area shape="poly" title=" " alt="" coords="1209,429,1101,472,1099,467,1207,424"/>
-<area shape="poly" title=" " alt="" coords="1499,130,1553,149,1603,176,1624,194,1641,215,1651,239,1655,266,1655,416,1652,439,1643,461,1629,481,1612,499,1574,527,1536,548,1534,543,1571,523,1609,495,1625,478,1638,459,1647,438,1650,415,1650,266,1646,240,1636,218,1620,198,1600,181,1551,153,1497,135"/>
-<area shape="poly" title=" " alt="" coords="1411,133,1421,167,1416,169,1406,134"/>
+<area shape="rect" title=" " alt="" coords="509,5,688,45"/>
+<area shape="rect" title=" " alt="" coords="263,636,305,661"/>
+<area shape="poly" title=" " alt="" coords="509,42,387,65,255,99,198,121,151,145,120,172,112,185,109,200,109,503,113,528,124,551,140,571,161,589,207,616,251,634,249,639,205,621,157,593,136,575,120,554,108,530,104,504,104,200,107,184,116,168,148,140,195,116,254,94,386,60,509,37"/>
+<area shape="rect" href="ContainerOption_8h.html" title=" " alt="" coords="558,181,751,221"/>
+<area shape="poly" title=" " alt="" coords="615,44,630,66,643,92,652,131,656,167,651,168,647,132,637,94,625,69,611,47"/>
+<area shape="rect" href="StringUtils_8h.html" title=" " alt="" coords="694,343,885,368"/>
+<area shape="poly" title=" " alt="" coords="630,43,663,67,701,98,737,136,766,180,781,219,790,259,793,329,788,329,784,260,776,220,762,183,733,140,697,102,660,71,627,48"/>
+<area shape="rect" href="ExceptionHandler_8h.html" title=" " alt="" coords="1322,636,1558,661"/>
+<area shape="poly" title=" " alt="" coords="688,24,894,31,1016,40,1138,56,1250,77,1299,91,1342,108,1378,126,1406,148,1423,172,1429,200,1429,503,1433,568,1439,622,1434,623,1427,568,1424,503,1424,200,1418,175,1402,152,1375,131,1340,113,1298,97,1249,83,1137,61,1016,46,894,36,688,29"/>
+<area shape="rect" href="InteractionTypeOption_8h.html" title=" " alt="" coords="312,181,512,221"/>
+<area shape="poly" title=" " alt="" coords="510,44,465,64,446,78,429,95,419,111,414,130,411,168,406,167,408,129,414,109,425,92,442,74,463,59,508,40"/>
+<area shape="rect" href="TraversalOption_8h.html" title=" " alt="" coords="439,93,628,133"/>
+<area shape="poly" title=" " alt="" coords="586,47,558,84,554,81,582,44"/>
+<area shape="poly" title=" " alt="" coords="606,224,543,253,470,295,397,350,365,382,337,417,316,460,309,498,308,538,301,588,293,624,288,622,296,588,303,538,304,497,310,459,332,415,361,378,394,346,467,290,541,248,604,219"/>
+<area shape="rect" href="Option_8h.html" title=" " alt="" coords="834,269,1019,295"/>
+<area shape="poly" title=" " alt="" coords="721,219,875,263,873,268,719,224"/>
+<area shape="poly" title=" " alt="" coords="834,294,642,313,419,343,318,362,235,382,179,405,165,416,160,428,160,503,161,529,166,548,176,566,191,586,220,612,251,631,249,635,217,616,187,590,171,569,161,550,156,530,155,503,155,427,161,413,177,400,233,377,317,357,418,338,642,308,834,288"/>
+<area shape="rect" title=" " alt="" coords="956,636,1041,661"/>
+<area shape="poly" title=" " alt="" coords="1002,292,1054,310,1079,324,1102,341,1117,358,1126,374,1135,416,1135,448,1123,472,1076,517,1058,531,1042,539,1028,548,1014,564,1004,593,1000,622,995,621,999,592,1010,561,1024,544,1039,534,1055,526,1073,513,1119,469,1130,447,1129,416,1121,376,1113,361,1098,345,1076,328,1052,315,1000,297"/>
+<area shape="rect" title=" " alt="" coords="1175,636,1246,661"/>
+<area shape="poly" title=" " alt="" coords="1020,285,1093,298,1130,309,1164,323,1194,341,1218,364,1234,393,1240,427,1240,503,1233,569,1221,624,1215,622,1228,568,1235,503,1235,428,1229,395,1214,368,1191,345,1162,328,1128,314,1092,303,1019,291"/>
+<area shape="rect" title=" " alt="" coords="909,343,960,368"/>
+<area shape="poly" title=" " alt="" coords="931,295,935,329,929,329,925,295"/>
+<area shape="rect" title=" " alt="" coords="1224,717,1283,742"/>
+<area shape="poly" title=" " alt="" coords="1020,283,1069,288,1122,299,1175,316,1224,340,1251,358,1272,375,1286,397,1291,427,1291,503,1288,560,1280,616,1262,704,1257,703,1275,615,1282,560,1285,503,1285,428,1281,398,1268,378,1248,362,1221,345,1173,321,1121,304,1068,294,1019,288"/>
+<area shape="rect" title=" " alt="" coords="879,563,942,588"/>
+<area shape="poly" title=" " alt="" coords="964,292,1020,315,1077,348,1100,368,1115,391,1121,416,1113,442,1099,465,1081,485,1040,518,996,544,956,561,954,557,994,539,1037,514,1077,481,1094,462,1108,440,1115,415,1110,393,1096,371,1074,352,1017,320,962,297"/>
+<area shape="poly" title=" " alt="" coords="906,297,825,339,823,334,903,292"/>
+<area shape="poly" title=" " alt="" coords="694,359,596,363,490,372,396,390,361,403,336,418,318,440,303,465,294,493,287,522,282,577,284,622,278,622,277,577,282,521,288,491,299,463,313,437,333,414,359,398,395,385,489,367,595,358,694,354"/>
+<area shape="poly" title=" " alt="" coords="694,367,499,386,272,416,169,434,84,455,28,478,13,490,8,501,8,576,11,587,18,597,49,616,98,634,163,649,329,675,525,695,732,708,929,717,1210,725,1210,730,928,722,732,713,525,700,328,681,162,655,97,639,47,621,15,601,6,589,3,577,3,500,9,486,25,473,83,450,168,429,271,411,498,381,694,362"/>
+<area shape="poly" title=" " alt="" coords="808,366,835,387,861,414,880,448,895,485,910,548,905,550,890,486,876,451,857,418,831,391,805,370"/>
+<area shape="rect" title=" " alt="" coords="953,416,1015,441"/>
+<area shape="poly" title=" " alt="" coords="822,366,940,409,939,414,820,371"/>
+<area shape="rect" title=" " alt="" coords="1040,416,1099,441"/>
+<area shape="poly" title=" " alt="" coords="837,365,1027,413,1026,418,836,371"/>
+<area shape="rect" href="NumberInterval_8h.html" title=" " alt="" coords="603,416,827,441"/>
+<area shape="poly" title=" " alt="" coords="779,370,739,408,735,405,776,366"/>
+<area shape="rect" href="NumberSet_8h.html" title=" " alt="" coords="771,489,877,515"/>
+<area shape="poly" title=" " alt="" coords="805,366,825,387,841,415,844,447,837,477,832,475,839,447,836,417,821,390,801,370"/>
+<area shape="rect" href="NumberSetFinite_8h.html" title=" " alt="" coords="347,416,578,441"/>
+<area shape="poly" title=" " alt="" coords="737,371,530,416,528,410,736,365"/>
+<area shape="poly" title=" " alt="" coords="734,439,796,479,793,484,731,444"/>
+<area shape="poly" title=" " alt="" coords="829,515,830,552,825,572,814,590,786,603,736,613,594,631,438,642,319,649,319,643,438,637,594,625,735,608,784,598,810,586,820,570,825,551,824,515"/>
+<area shape="poly" title=" " alt="" coords="840,513,888,552,884,556,836,517"/>
+<area shape="rect" title=" " alt="" coords="725,563,800,588"/>
+<area shape="poly" title=" " alt="" coords="816,517,784,554,780,550,812,513"/>
+<area shape="poly" title=" " alt="" coords="878,505,1029,524,1121,540,1213,560,1317,594,1403,628,1401,633,1315,599,1211,565,1120,545,1029,529,877,511"/>
+<area shape="rect" href="Random_8h.html" title=" " alt="" coords="1024,563,1200,588"/>
+<area shape="poly" title=" " alt="" coords="871,512,1053,557,1052,562,870,517"/>
+<area shape="poly" title=" " alt="" coords="1413,664,1297,712,1292,714,1290,709,1295,707,1411,659"/>
+<area shape="rect" title=" " alt="" coords="1307,717,1373,742"/>
+<area shape="poly" title=" " alt="" coords="1427,664,1367,710,1364,706,1424,659"/>
+<area shape="rect" title=" " alt="" coords="1397,717,1483,742"/>
+<area shape="poly" title=" " alt="" coords="1443,662,1443,703,1437,703,1437,662"/>
+<area shape="rect" title=" " alt="" coords="1508,717,1572,742"/>
+<area shape="poly" title=" " alt="" coords="1456,659,1516,706,1513,710,1453,664"/>
+<area shape="rect" href="Logger_8h.html" title=" " alt="" coords="1597,709,1755,749"/>
+<area shape="poly" title=" " alt="" coords="1475,659,1607,702,1605,707,1473,664"/>
+<area shape="rect" title=" " alt="" coords="1167,797,1315,837"/>
+<area shape="poly" title=" " alt="" coords="1597,750,1585,752,1329,800,1328,795,1583,747,1596,744"/>
+<area shape="rect" title=" " alt="" coords="1340,797,1481,837"/>
+<area shape="poly" title=" " alt="" coords="1619,752,1482,796,1481,791,1617,747"/>
+<area shape="rect" title=" " alt="" coords="1506,797,1667,837"/>
+<area shape="poly" title=" " alt="" coords="1658,752,1618,790,1615,786,1654,748"/>
+<area shape="rect" title=" " alt="" coords="1691,797,1839,837"/>
+<area shape="poly" title=" " alt="" coords="1698,748,1737,786,1734,790,1694,752"/>
+<area shape="rect" title=" " alt="" coords="1863,805,1987,830"/>
+<area shape="poly" title=" " alt="" coords="1732,747,1880,798,1878,803,1730,752"/>
+<area shape="rect" title=" " alt="" coords="2012,805,2092,830"/>
+<area shape="poly" title=" " alt="" coords="1756,741,1873,764,2001,795,2011,798,2009,803,1999,800,1871,769,1755,746"/>
+<area shape="poly" title=" " alt="" coords="1024,587,319,647,319,642,1024,582"/>
+<area shape="poly" title=" " alt="" coords="1095,590,1030,631,1027,626,1092,586"/>
+<area shape="poly" title=" " alt="" coords="1129,586,1185,626,1182,630,1126,590"/>
+<area shape="poly" title=" " alt="" coords="1165,585,1374,630,1373,636,1164,591"/>
+<area shape="rect" title=" " alt="" coords="1076,636,1148,661"/>
+<area shape="poly" title=" " alt="" coords="1115,588,1115,622,1109,622,1109,588"/>
+<area shape="poly" title=" " alt="" coords="455,443,305,626,301,623,451,440"/>
+<area shape="poly" title=" " alt="" coords="521,439,757,485,756,490,520,444"/>
+<area shape="rect" href="ArrayUtils_8h.html" title=" " alt="" coords="535,489,633,515"/>
+<area shape="poly" title=" " alt="" coords="484,439,554,480,551,485,481,444"/>
+<area shape="poly" title=" " alt="" coords="553,517,437,565,316,631,313,626,435,560,551,512"/>
+<area shape="poly" title=" " alt="" coords="634,511,866,562,865,567,633,517"/>
+<area shape="poly" title=" " alt="" coords="614,512,722,555,720,560,612,517"/>
+<area shape="rect" title=" " alt="" coords="645,563,701,588"/>
+<area shape="poly" title=" " alt="" coords="600,513,650,552,646,556,597,517"/>
+<area shape="rect" title=" " alt="" coords="448,563,523,588"/>
+<area shape="poly" title=" " alt="" coords="570,517,514,557,511,552,567,513"/>
+<area shape="rect" title=" " alt="" coords="547,563,621,588"/>
+<area shape="poly" title=" " alt="" coords="587,515,587,549,581,549,581,515"/>
+<area shape="poly" title=" " alt="" coords="347,224,300,244,256,272,238,289,223,308,214,330,211,354,211,503,216,538,230,571,248,601,266,624,262,627,243,604,225,574,211,540,205,504,205,354,209,328,219,305,234,285,253,267,298,239,345,219"/>
+<area shape="poly" title=" " alt="" coords="513,215,838,265,838,270,512,221"/>
+<area shape="poly" title=" " alt="" coords="439,131,321,153,196,185,141,205,98,228,69,254,61,267,59,281,59,503,60,529,63,550,73,567,90,586,127,612,170,629,212,638,249,643,248,648,211,644,168,634,125,616,86,590,68,570,58,551,54,530,53,503,53,280,56,265,65,250,95,224,139,201,194,180,319,147,438,125"/>
+<area shape="poly" title=" " alt="" coords="619,131,691,151,765,179,841,219,902,259,899,264,838,224,763,184,689,156,617,136"/>
+<area shape="poly" title=" " alt="" coords="508,136,451,176,448,171,505,131"/>
 </map>
 </div>
 </div><div class="textblock"><div class="dynheader">
@@ -405,15 +418,21 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ab03c8929be9287f732650a1c5c420235"><td class="memItemLeft" align="right" valign="top">std::set&lt; TraversalOption &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1compatibleTraversals_1_1anonymous__namespace_02CompatibleTraversals_8h_03.html#ab03c8929be9287f732650a1c5c420235">autopas::compatibleTraversals::anonymous_namespace{CompatibleTraversals.h}::filterAllOptions</a> (const std::string &amp;prefix)</td></tr>
-<tr class="memdesc:ab03c8929be9287f732650a1c5c420235"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to filter all traversal options for a given prefix.  <br /></td></tr>
-<tr class="separator:ab03c8929be9287f732650a1c5c420235"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07e4cc3717efc625c50a2d3fe965de30"><td class="memItemLeft" align="right" valign="top">std::set&lt; TraversalOption &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1compatibleTraversals_1_1anonymous__namespace_02CompatibleTraversals_8h_03.html#a07e4cc3717efc625c50a2d3fe965de30">autopas::compatibleTraversals::anonymous_namespace{CompatibleTraversals.h}::filterAllOptions</a> (const std::string &amp;prefix, const InteractionTypeOption &amp;interactionType)</td></tr>
+<tr class="memdesc:a07e4cc3717efc625c50a2d3fe965de30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to filter all traversal options for a given prefix and interaction type.  <br /></td></tr>
+<tr class="separator:a07e4cc3717efc625c50a2d3fe965de30"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5aaae9aac52c63463a25b9cc25803933"><td class="memItemLeft" align="right" valign="top">static const std::set&lt; TraversalOption &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CompatibleTraversals_8h.html#a5aaae9aac52c63463a25b9cc25803933">autopas::compatibleTraversals::allDSCompatibleTraversals</a> ()</td></tr>
 <tr class="memdesc:a5aaae9aac52c63463a25b9cc25803933"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lists all traversal options applicable for the Direct Sum container.  <br /></td></tr>
 <tr class="separator:a5aaae9aac52c63463a25b9cc25803933"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a110511fc3253b3ea242d541257c6ed68"><td class="memItemLeft" align="right" valign="top">static const std::set&lt; TraversalOption &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CompatibleTraversals_8h.html#a110511fc3253b3ea242d541257c6ed68">autopas::compatibleTraversals::allDSCompatibleTraversals3B</a> ()</td></tr>
+<tr class="memdesc:a110511fc3253b3ea242d541257c6ed68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lists all triwise traversal options applicable for the Direct Sum container.  <br /></td></tr>
+<tr class="separator:a110511fc3253b3ea242d541257c6ed68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7dff18104834d130c734ca8e35a8148b"><td class="memItemLeft" align="right" valign="top">static const std::set&lt; TraversalOption &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CompatibleTraversals_8h.html#a7dff18104834d130c734ca8e35a8148b">autopas::compatibleTraversals::allLCCompatibleTraversals</a> ()</td></tr>
 <tr class="memdesc:a7dff18104834d130c734ca8e35a8148b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lists all traversal options applicable for the Linked Cells container.  <br /></td></tr>
 <tr class="separator:a7dff18104834d130c734ca8e35a8148b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7211a1933297c3da27932d65d8759b33"><td class="memItemLeft" align="right" valign="top">static const std::set&lt; TraversalOption &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CompatibleTraversals_8h.html#a7211a1933297c3da27932d65d8759b33">autopas::compatibleTraversals::allLCCompatibleTraversals3B</a> ()</td></tr>
+<tr class="memdesc:a7211a1933297c3da27932d65d8759b33"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lists all triwise traversal options applicable for the Linked Cells container.  <br /></td></tr>
+<tr class="separator:a7211a1933297c3da27932d65d8759b33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6742e8e80b4ffe7103782919be281e56"><td class="memItemLeft" align="right" valign="top">static const std::set&lt; TraversalOption &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CompatibleTraversals_8h.html#a6742e8e80b4ffe7103782919be281e56">autopas::compatibleTraversals::allRLCCompatibleTraversals</a> ()</td></tr>
 <tr class="memdesc:a6742e8e80b4ffe7103782919be281e56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lists all traversal options applicable for the Reference Linked Cells container.  <br /></td></tr>
 <tr class="separator:a6742e8e80b4ffe7103782919be281e56"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -447,9 +466,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a9695a69d455b998078215c26b827726e"><td class="memItemLeft" align="right" valign="top">static std::set&lt; TraversalOption &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CompatibleTraversals_8h.html#a9695a69d455b998078215c26b827726e">autopas::compatibleTraversals::allTraversalsSupportingOnlySoA</a> ()</td></tr>
 <tr class="memdesc:a9695a69d455b998078215c26b827726e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a set of all traversals that only support DataLayout <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a>.  <br /></td></tr>
 <tr class="separator:a9695a69d455b998078215c26b827726e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5d18f94e328743a038f13ac33eae9264"><td class="memItemLeft" align="right" valign="top">static const std::set&lt; TraversalOption &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CompatibleTraversals_8h.html#a5d18f94e328743a038f13ac33eae9264">autopas::compatibleTraversals::allCompatibleTraversals</a> (ContainerOption containerOption)</td></tr>
-<tr class="memdesc:a5d18f94e328743a038f13ac33eae9264"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lists all traversal options applicable for the given container.  <br /></td></tr>
-<tr class="separator:a5d18f94e328743a038f13ac33eae9264"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3fb771422005f2b14608e8f8b3d4e3a"><td class="memItemLeft" align="right" valign="top">static const std::set&lt; TraversalOption &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CompatibleTraversals_8h.html#ab3fb771422005f2b14608e8f8b3d4e3a">autopas::compatibleTraversals::allCompatibleTraversals</a> (ContainerOption containerOption, const InteractionTypeOption interactionTypeOption)</td></tr>
+<tr class="memdesc:ab3fb771422005f2b14608e8f8b3d4e3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lists all traversal options applicable for the given container.  <br /></td></tr>
+<tr class="separator:ab3fb771422005f2b14608e8f8b3d4e3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a94565a81bd1d01a35b7fb6d6a1346501"><td class="memItemLeft" align="right" valign="top">static std::set&lt; ContainerOption &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="CompatibleTraversals_8h.html#a94565a81bd1d01a35b7fb6d6a1346501">autopas::compatibleTraversals::allCompatibleContainers</a> (TraversalOption traversalOption)</td></tr>
 <tr class="memdesc:a94565a81bd1d01a35b7fb6d6a1346501"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lists all container options which given traversal can be applied to.  <br /></td></tr>
 <tr class="separator:a94565a81bd1d01a35b7fb6d6a1346501"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -493,8 +512,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5d18f94e328743a038f13ac33eae9264" name="a5d18f94e328743a038f13ac33eae9264"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d18f94e328743a038f13ac33eae9264">&#9670;&#160;</a></span>allCompatibleTraversals()</h2>
+<a id="ab3fb771422005f2b14608e8f8b3d4e3a" name="ab3fb771422005f2b14608e8f8b3d4e3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3fb771422005f2b14608e8f8b3d4e3a">&#9670;&#160;</a></span>allCompatibleTraversals()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -506,8 +525,18 @@ Functions</h2></td></tr>
           <td class="memname">static const std::set&lt; TraversalOption &gt; &amp; autopas::compatibleTraversals::allCompatibleTraversals </td>
           <td>(</td>
           <td class="paramtype">ContainerOption&#160;</td>
-          <td class="paramname"><em>containerOption</em></td><td>)</td>
+          <td class="paramname"><em>containerOption</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const InteractionTypeOption&#160;</td>
+          <td class="paramname"><em>interactionTypeOption</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -521,6 +550,7 @@ Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">containerOption</td><td>ContainerOption </td></tr>
+    <tr><td class="paramname">interactionTypeOption</td><td>Interaction type for which compatible traversals are collected </td></tr>
   </table>
   </dd>
 </dl>
@@ -556,6 +586,34 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a110511fc3253b3ea242d541257c6ed68" name="a110511fc3253b3ea242d541257c6ed68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a110511fc3253b3ea242d541257c6ed68">&#9670;&#160;</a></span>allDSCompatibleTraversals3B()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const std::set&lt; TraversalOption &gt; &amp; autopas::compatibleTraversals::allDSCompatibleTraversals3B </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lists all triwise traversal options applicable for the Direct Sum container. </p>
+<dl class="section return"><dt>Returns</dt><dd>set of all applicable traversal options. </dd></dl>
+
+</div>
+</div>
 <a id="a7dff18104834d130c734ca8e35a8148b" name="a7dff18104834d130c734ca8e35a8148b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7dff18104834d130c734ca8e35a8148b">&#9670;&#160;</a></span>allLCCompatibleTraversals()</h2>
 
@@ -580,6 +638,34 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Lists all traversal options applicable for the Linked Cells container. </p>
+<dl class="section return"><dt>Returns</dt><dd>set of all applicable traversal options. </dd></dl>
+
+</div>
+</div>
+<a id="a7211a1933297c3da27932d65d8759b33" name="a7211a1933297c3da27932d65d8759b33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7211a1933297c3da27932d65d8759b33">&#9670;&#160;</a></span>allLCCompatibleTraversals3B()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static const std::set&lt; TraversalOption &gt; &amp; autopas::compatibleTraversals::allLCCompatibleTraversals3B </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lists all triwise traversal options applicable for the Linked Cells container. </p>
 <dl class="section return"><dt>Returns</dt><dd>set of all applicable traversal options. </dd></dl>
 
 </div>

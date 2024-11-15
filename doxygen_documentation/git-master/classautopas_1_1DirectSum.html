@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -193,14 +200,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1a99abd79721724651af961b178c771b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all halo particles.  <br /></td></tr>
 <tr class="separator:a1a99abd79721724651af961b178c771b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe84cdd63c465c927c30f47100bb195f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DirectSum.html#afe84cdd63c465c927c30f47100bb195f">rebuildNeighborLists</a> (<a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *traversal) override</td></tr>
-<tr class="memdesc:afe84cdd63c465c927c30f47100bb195f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuilds the neighbor lists.  <br /></td></tr>
+<tr class="memdesc:afe84cdd63c465c927c30f47100bb195f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuilds the neighbor lists for the next traversals.  <br /></td></tr>
 <tr class="separator:afe84cdd63c465c927c30f47100bb195f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a033251be3d0ca1b08b2ce50b0e740c40"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8">CellType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DirectSum.html#a033251be3d0ca1b08b2ce50b0e740c40">getParticleCellTypeEnum</a> () const override</td></tr>
 <tr class="memdesc:a033251be3d0ca1b08b2ce50b0e740c40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a> type as an Enum.  <br /></td></tr>
 <tr class="separator:a033251be3d0ca1b08b2ce50b0e740c40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:accb5e84e2328e6dea200b791786bdb4e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DirectSum.html#accb5e84e2328e6dea200b791786bdb4e">iteratePairwise</a> (<a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *traversal) override</td></tr>
-<tr class="memdesc:accb5e84e2328e6dea200b791786bdb4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates over all particle pairs in the container.  <br /></td></tr>
-<tr class="separator:accb5e84e2328e6dea200b791786bdb4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a844930865f818e4a2c6193b92a9378ee"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DirectSum.html#a844930865f818e4a2c6193b92a9378ee">computeInteractions</a> (<a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *traversal) override</td></tr>
+<tr class="memdesc:a844930865f818e4a2c6193b92a9378ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates over all particle multiples (e.g.  <br /></td></tr>
+<tr class="separator:a844930865f818e4a2c6193b92a9378ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac9079ac1e7e1e4aadadd03207a04b39f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classautopas_1_1DirectSum.html#a361468601e60c79efeda723d8c188f74">ParticleType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DirectSum.html#ac9079ac1e7e1e4aadadd03207a04b39f">updateContainer</a> (bool keepNeighborListsValid) override</td></tr>
 <tr class="memdesc:ac9079ac1e7e1e4aadadd03207a04b39f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the container.  <br /></td></tr>
 <tr class="separator:ac9079ac1e7e1e4aadadd03207a04b39f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -324,7 +331,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ParticleContainer
 <tr class="memdesc:a08dbde7d49563a7b88e2b2c5f0de9b07 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update a halo particle of the container with the given haloParticle.  <br /></td></tr>
 <tr class="separator:a08dbde7d49563a7b88e2b2c5f0de9b07 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afdfccbe1d9d20fb331152c427b6dd9a3 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#afdfccbe1d9d20fb331152c427b6dd9a3">rebuildNeighborLists</a> (<a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *traversal)=0</td></tr>
-<tr class="memdesc:afdfccbe1d9d20fb331152c427b6dd9a3 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuilds the neighbor lists.  <br /></td></tr>
+<tr class="memdesc:afdfccbe1d9d20fb331152c427b6dd9a3 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuilds the neighbor lists for the next traversals.  <br /></td></tr>
 <tr class="separator:afdfccbe1d9d20fb331152c427b6dd9a3 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4c21f6471b6b201fd02bed146182cbfa inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a4c21f6471b6b201fd02bed146182cbfa">deleteHaloParticles</a> ()=0</td></tr>
 <tr class="memdesc:a4c21f6471b6b201fd02bed146182cbfa inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all halo particles.  <br /></td></tr>
@@ -356,9 +363,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ParticleContainer
 <tr class="memitem:a791c5f88b0a78b5d9fb5e993dd949def inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a791c5f88b0a78b5d9fb5e993dd949def">end</a> () const</td></tr>
 <tr class="memdesc:a791c5f88b0a78b5d9fb5e993dd949def inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dummy to make range-based for loops work.    <br /></td></tr>
 <tr class="separator:a791c5f88b0a78b5d9fb5e993dd949def inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9a28b26596e40f2c517edb57ba5383d inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#ac9a28b26596e40f2c517edb57ba5383d">iteratePairwise</a> (<a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *traversal)=0</td></tr>
-<tr class="memdesc:ac9a28b26596e40f2c517edb57ba5383d inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates over all particle pairs in the container.  <br /></td></tr>
-<tr class="separator:ac9a28b26596e40f2c517edb57ba5383d inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6bbca0d1de544c2205fb1729104bbaf9 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a6bbca0d1de544c2205fb1729104bbaf9">computeInteractions</a> (<a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *traversal)=0</td></tr>
+<tr class="memdesc:a6bbca0d1de544c2205fb1729104bbaf9 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates over all particle multiples (e.g.  <br /></td></tr>
+<tr class="separator:a6bbca0d1de544c2205fb1729104bbaf9 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe78d425e123737e61a77a218ece7031 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual const std::array&lt; double, 3 &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#afe78d425e123737e61a77a218ece7031">getBoxMax</a> () const=0</td></tr>
 <tr class="memdesc:afe78d425e123737e61a77a218ece7031 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the upper corner of the container without halo.  <br /></td></tr>
 <tr class="separator:afe78d425e123737e61a77a218ece7031 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -389,9 +396,9 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ParticleContainer
 <tr class="memitem:a0792166b79e13d3f310ba67bc7531432 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="classautopas_1_1TraversalSelectorInfo.html">TraversalSelectorInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a0792166b79e13d3f310ba67bc7531432">getTraversalSelectorInfo</a> () const=0</td></tr>
 <tr class="memdesc:a0792166b79e13d3f310ba67bc7531432 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a traversal selector info for this container.  <br /></td></tr>
 <tr class="separator:a0792166b79e13d3f310ba67bc7531432 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3733affc7fb253c28f8dac03713d1252 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">std::set&lt; TraversalOption &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a3733affc7fb253c28f8dac03713d1252">getAllTraversals</a> () const</td></tr>
-<tr class="memdesc:a3733affc7fb253c28f8dac03713d1252 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a list of all traversals that are theoretically applicable to this container.  <br /></td></tr>
-<tr class="separator:a3733affc7fb253c28f8dac03713d1252 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77692b1d332709c338719d53b2f13f1c inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">std::set&lt; TraversalOption &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a77692b1d332709c338719d53b2f13f1c">getAllTraversals</a> (const InteractionTypeOption interactionType) const</td></tr>
+<tr class="memdesc:a77692b1d332709c338719d53b2f13f1c inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a list of all traversals that are theoretically applicable to this container.  <br /></td></tr>
+<tr class="separator:a77692b1d332709c338719d53b2f13f1c inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a787869df00344fe67ce760549b3c3647 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual std::tuple&lt; const <a class="el" href="classautopas_1_1ParticleCell.html#a553070a9b356ecf3bea43f1a2b344765">ParticleCell::ParticleType</a> *, size_t, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a787869df00344fe67ce760549b3c3647">getParticle</a> (size_t cellIndex, size_t particleIndex, IteratorBehavior iteratorBehavior) const=0</td></tr>
 <tr class="memdesc:a787869df00344fe67ce760549b3c3647 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the pointer to a particle, identified via a cell and particle index.  <br /></td></tr>
 <tr class="separator:a787869df00344fe67ce760549b3c3647 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -696,6 +703,44 @@ template&lt;class Particle &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Iterator to the first particle. </dd></dl>
 
 <p>Implements <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a01662c901808511a2785ecad6f536c32">autopas::ParticleContainerInterface&lt; ParticleCell::ParticleType &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a844930865f818e4a2c6193b92a9378ee" name="a844930865f818e4a2c6193b92a9378ee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a844930865f818e4a2c6193b92a9378ee">&#9670;&#160;</a></span>computeInteractions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Particle &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::computeInteractions </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *&#160;</td>
+          <td class="paramname"><em>traversal</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Iterates over all particle multiples (e.g. </p>
+<p>pairs, triplets) in the container using the given traversal. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">traversal</td><td>The traversal to use for the iteration. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a6bbca0d1de544c2205fb1729104bbaf9">autopas::ParticleContainerInterface&lt; ParticleCell::ParticleType &gt;</a>.</p>
 
 </div>
 </div>
@@ -1308,44 +1353,6 @@ template&lt;class Particle &gt; </div>
 
 </div>
 </div>
-<a id="accb5e84e2328e6dea200b791786bdb4e" name="accb5e84e2328e6dea200b791786bdb4e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#accb5e84e2328e6dea200b791786bdb4e">&#9670;&#160;</a></span>iteratePairwise()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Particle &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1DirectSum.html">autopas::DirectSum</a>&lt; Particle &gt;::iteratePairwise </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *&#160;</td>
-          <td class="paramname"><em>traversal</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Iterates over all particle pairs in the container. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">traversal</td><td>The traversal to use for the iteration. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Implements <a class="el" href="classautopas_1_1ParticleContainerInterface.html#ac9a28b26596e40f2c517edb57ba5383d">autopas::ParticleContainerInterface&lt; ParticleCell::ParticleType &gt;</a>.</p>
-
-</div>
-</div>
 <a id="afe84cdd63c465c927c30f47100bb195f" name="afe84cdd63c465c927c30f47100bb195f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe84cdd63c465c927c30f47100bb195f">&#9670;&#160;</a></span>rebuildNeighborLists()</h2>
 
@@ -1372,7 +1379,7 @@ template&lt;class Particle &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Rebuilds the neighbor lists. </p>
+<p>Rebuilds the neighbor lists for the next traversals. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">traversal</td><td>The used traversal. </td></tr>

@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -159,7 +166,7 @@ Collaboration diagram for autopas::VCLClusterIterationTraversal&lt; ParticleCell
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae18ddc4f38386feac468587d5a4b0164"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VCLClusterIterationTraversal.html#ae18ddc4f38386feac468587d5a4b0164">VCLClusterIterationTraversal</a> (PairwiseFunctor *pairwiseFunctor, size_t clusterSize, DataLayoutOption dataLayout, bool useNewton3)</td></tr>
+<tr class="memitem:ae18ddc4f38386feac468587d5a4b0164"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VCLClusterIterationTraversal.html#ae18ddc4f38386feac468587d5a4b0164">VCLClusterIterationTraversal</a> (<a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> *pairwiseFunctor, size_t clusterSize, DataLayoutOption dataLayout, bool useNewton3)</td></tr>
 <tr class="memdesc:ae18ddc4f38386feac468587d5a4b0164"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the <a class="el" href="classautopas_1_1VCLClusterIterationTraversal.html" title="Traversal for VerletClusterLists.">VCLClusterIterationTraversal</a>.  <br /></td></tr>
 <tr class="separator:ae18ddc4f38386feac468587d5a4b0164"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4962f0f78b954a3dbb0ec21243132909"><td class="memItemLeft" align="right" valign="top">TraversalOption&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VCLClusterIterationTraversal.html#a4962f0f78b954a3dbb0ec21243132909">getTraversalType</a> () const override</td></tr>
@@ -174,9 +181,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad3307eb45d55162ff6cabaa3daa8b12e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VCLClusterIterationTraversal.html#ad3307eb45d55162ff6cabaa3daa8b12e">endTraversal</a> () override</td></tr>
 <tr class="memdesc:ad3307eb45d55162ff6cabaa3daa8b12e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes the traversal.  <br /></td></tr>
 <tr class="separator:ad3307eb45d55162ff6cabaa3daa8b12e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a840c1f20e9d9eda2fd3d6fde73ffee4a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VCLClusterIterationTraversal.html#a840c1f20e9d9eda2fd3d6fde73ffee4a">traverseParticlePairs</a> () override</td></tr>
-<tr class="memdesc:a840c1f20e9d9eda2fd3d6fde73ffee4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traverses all particle pairs.  <br /></td></tr>
-<tr class="separator:a840c1f20e9d9eda2fd3d6fde73ffee4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abccf2c26d769bbfd8db6e913d8370782"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VCLClusterIterationTraversal.html#abccf2c26d769bbfd8db6e913d8370782">traverseParticles</a> () override</td></tr>
+<tr class="memdesc:abccf2c26d769bbfd8db6e913d8370782"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traverse the particles by pairs, triplets etc.  <br /></td></tr>
+<tr class="separator:abccf2c26d769bbfd8db6e913d8370782"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classautopas_1_1TraversalInterface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classautopas_1_1TraversalInterface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classautopas_1_1TraversalInterface.html">autopas::TraversalInterface</a></td></tr>
 <tr class="memitem:a60db78538e6a5af17479f006a07fb21c inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top"><a id="a60db78538e6a5af17479f006a07fb21c" name="a60db78538e6a5af17479f006a07fb21c"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~TraversalInterface</b> ()=default</td></tr>
@@ -194,12 +201,12 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~TraversalInterfac
 <tr class="memitem:a7393be0cfe5049e72c5bccac54b8d0d7 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#a7393be0cfe5049e72c5bccac54b8d0d7">initTraversal</a> ()=0</td></tr>
 <tr class="memdesc:a7393be0cfe5049e72c5bccac54b8d0d7 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the traversal.  <br /></td></tr>
 <tr class="separator:a7393be0cfe5049e72c5bccac54b8d0d7 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a733bfd7efaacfcdddd4c453821f3c165 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#a733bfd7efaacfcdddd4c453821f3c165">traverseParticles</a> ()=0</td></tr>
+<tr class="memdesc:a733bfd7efaacfcdddd4c453821f3c165 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traverse the particles by pairs, triplets etc.  <br /></td></tr>
+<tr class="separator:a733bfd7efaacfcdddd4c453821f3c165 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23f7631b7324e1c90f956154658ca524 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#a23f7631b7324e1c90f956154658ca524">endTraversal</a> ()=0</td></tr>
 <tr class="memdesc:a23f7631b7324e1c90f956154658ca524 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes the traversal.  <br /></td></tr>
 <tr class="separator:a23f7631b7324e1c90f956154658ca524 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3df61a48799b2638ae9acec662b3b76b inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#a3df61a48799b2638ae9acec662b3b76b">traverseParticlePairs</a> ()=0</td></tr>
-<tr class="memdesc:a3df61a48799b2638ae9acec662b3b76b inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traverses all particle pairs.  <br /></td></tr>
-<tr class="separator:a3df61a48799b2638ae9acec662b3b76b inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4d02d384bc51e52f7880ad34d771473 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#af4d02d384bc51e52f7880ad34d771473">getUseNewton3</a> () const</td></tr>
 <tr class="memdesc:af4d02d384bc51e52f7880ad34d771473 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether the traversal uses newton 3.  <br /></td></tr>
 <tr class="separator:af4d02d384bc51e52f7880ad34d771473 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -241,12 +248,12 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_useNewton3</b></td><
 <tr class="separator:a28280e375a622da4df589116809d734b inherit pro_attribs_classautopas_1_1VCLTraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, class PairwiseFunctor&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a>&gt;<br />
 class autopas::VCLClusterIterationTraversal&lt; ParticleCell, PairwiseFunctor &gt;</div><p>Traversal for <a class="el" href="classautopas_1_1VerletClusterLists.html" title="Particles are divided into clusters.">VerletClusterLists</a>. </p>
 <p>Does not support newton 3. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname"><a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a></td><td></td></tr>
-    <tr><td class="paramname">PairwiseFunctor</td><td>The type of the functor. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classautopas_1_1PairwiseFunctor.html" title="PairwiseFunctor class.">PairwiseFunctor</a></td><td>The type of the functor. </td></tr>
   </table>
   </dd>
 </dl>
@@ -257,15 +264,15 @@ class autopas::VCLClusterIterationTraversal&lt; ParticleCell, PairwiseFunctor &g
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1VCLClusterIterationTraversal.html">autopas::VCLClusterIterationTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor &gt;::VCLClusterIterationTraversal </td>
+          <td class="memname"><a class="el" href="classautopas_1_1VCLClusterIterationTraversal.html">autopas::VCLClusterIterationTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt;::VCLClusterIterationTraversal </td>
           <td>(</td>
-          <td class="paramtype">PairwiseFunctor *&#160;</td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> *&#160;</td>
           <td class="paramname"><em>pairwiseFunctor</em>, </td>
         </tr>
         <tr>
@@ -319,13 +326,13 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1VCLClusterIterationTraversal.html">autopas::VCLClusterIterationTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor &gt;::endTraversal </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1VCLClusterIterationTraversal.html">autopas::VCLClusterIterationTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt;::endTraversal </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -351,13 +358,13 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">TraversalOption <a class="el" href="classautopas_1_1VCLClusterIterationTraversal.html">autopas::VCLClusterIterationTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor &gt;::getTraversalType </td>
+          <td class="memname">TraversalOption <a class="el" href="classautopas_1_1VCLClusterIterationTraversal.html">autopas::VCLClusterIterationTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt;::getTraversalType </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -383,13 +390,13 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1VCLClusterIterationTraversal.html">autopas::VCLClusterIterationTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor &gt;::initTraversal </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1VCLClusterIterationTraversal.html">autopas::VCLClusterIterationTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt;::initTraversal </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -415,13 +422,13 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classautopas_1_1VCLClusterIterationTraversal.html">autopas::VCLClusterIterationTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor &gt;::isApplicable </td>
+          <td class="memname">bool <a class="el" href="classautopas_1_1VCLClusterIterationTraversal.html">autopas::VCLClusterIterationTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt;::isApplicable </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -441,19 +448,19 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 
 </div>
 </div>
-<a id="a840c1f20e9d9eda2fd3d6fde73ffee4a" name="a840c1f20e9d9eda2fd3d6fde73ffee4a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a840c1f20e9d9eda2fd3d6fde73ffee4a">&#9670;&#160;</a></span>traverseParticlePairs()</h2>
+<a id="abccf2c26d769bbfd8db6e913d8370782" name="abccf2c26d769bbfd8db6e913d8370782"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abccf2c26d769bbfd8db6e913d8370782">&#9670;&#160;</a></span>traverseParticles()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1VCLClusterIterationTraversal.html">autopas::VCLClusterIterationTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor &gt;::traverseParticlePairs </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1VCLClusterIterationTraversal.html">autopas::VCLClusterIterationTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt;::traverseParticles </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -466,9 +473,10 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 </table>
 </div><div class="memdoc">
 
-<p>Traverses all particle pairs. </p>
+<p>Traverse the particles by pairs, triplets etc. </p>
+<p>as determined by the <a class="el" href="classautopas_1_1Functor.html" title="Functor base class.">Functor</a> type. </p>
 
-<p>Implements <a class="el" href="classautopas_1_1TraversalInterface.html#a3df61a48799b2638ae9acec662b3b76b">autopas::TraversalInterface</a>.</p>
+<p>Implements <a class="el" href="classautopas_1_1TraversalInterface.html#a733bfd7efaacfcdddd4c453821f3c165">autopas::TraversalInterface</a>.</p>
 
 </div>
 </div>

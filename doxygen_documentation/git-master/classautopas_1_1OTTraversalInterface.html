@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -123,33 +130,74 @@ Inheritance diagram for autopas::OTTraversalInterface&lt; ParticleCell &gt;:</di
 <div class="dyncontent">
 <div class="center"><img src="classautopas_1_1OTTraversalInterface__inherit__graph.png" border="0" usemap="#aautopas_1_1OTTraversalInterface_3_01ParticleCell_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="aautopas_1_1OTTraversalInterface_3_01ParticleCell_01_4_inherit__map" id="aautopas_1_1OTTraversalInterface_3_01ParticleCell_01_4_inherit__map">
-<area shape="rect" title="This interface exists to provide a row interface for octree to add its cells." alt="" coords="5,37,223,77"/>
-<area shape="rect" href="classautopas_1_1OTTraversalInterface.html" title=" " alt="" coords="423,37,685,77"/>
-<area shape="poly" title=" " alt="" coords="237,55,423,55,423,60,237,60"/>
-<area shape="rect" href="classautopas_1_1OTC01Traversal.html" title="This traversal is capable of iterating over particles stored in the Octree data structure." alt="" coords="735,5,945,45"/>
-<area shape="poly" title=" " alt="" coords="699,38,734,34,735,40,699,44"/>
-<area shape="rect" href="classautopas_1_1OTC18Traversal.html" title="This traversal is capable of iterating over particles stored in the Octree data structure." alt="" coords="735,69,945,109"/>
-<area shape="poly" title=" " alt="" coords="699,71,735,75,734,80,699,76"/>
+<area shape="rect" title="This interface exists to provide a row interface for octree to add its cells." alt="" coords="253,37,471,77"/>
+<area shape="rect" href="classautopas_1_1OTTraversalInterface.html" title=" " alt="" coords="671,37,933,77"/>
+<area shape="poly" title=" " alt="" coords="485,55,671,55,671,60,485,60"/>
+<area shape="rect" href="classautopas_1_1TraversalInterface.html" title="This interface serves as a common parent class for all traversals." alt="" coords="5,45,204,70"/>
+<area shape="poly" title=" " alt="" coords="217,55,253,55,253,60,217,60"/>
+<area shape="rect" href="classautopas_1_1OTC01Traversal.html" title="This traversal is capable of iterating over particles stored in the Octree data structure." alt="" coords="983,5,1193,45"/>
+<area shape="poly" title=" " alt="" coords="947,38,982,34,983,40,947,44"/>
+<area shape="rect" href="classautopas_1_1OTC18Traversal.html" title="This traversal is capable of iterating over particles stored in the Octree data structure." alt="" coords="983,69,1193,109"/>
+<area shape="poly" title=" " alt="" coords="947,71,983,75,982,80,947,76"/>
+</map>
+<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
+<div class="dynheader">
+Collaboration diagram for autopas::OTTraversalInterface&lt; ParticleCell &gt;:</div>
+<div class="dyncontent">
+<div class="center"><img src="classautopas_1_1OTTraversalInterface__coll__graph.png" border="0" usemap="#aautopas_1_1OTTraversalInterface_3_01ParticleCell_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="aautopas_1_1OTTraversalInterface_3_01ParticleCell_01_4_coll__map" id="aautopas_1_1OTTraversalInterface_3_01ParticleCell_01_4_coll__map">
+<area shape="rect" title="This interface exists to provide a row interface for octree to add its cells." alt="" coords="5,79,223,119"/>
+<area shape="rect" href="classautopas_1_1TraversalInterface.html" title="This interface serves as a common parent class for all traversals." alt="" coords="15,5,213,31"/>
+<area shape="poly" title=" " alt="" coords="117,44,117,79,111,79,111,44"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad281dfb6fef877c7988603115a4d299c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1OTTraversalInterface.html#ad281dfb6fef877c7988603115a4d299c">OTTraversalInterface</a> (double interactionLength)</td></tr>
-<tr class="memdesc:ad281dfb6fef877c7988603115a4d299c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new traversal interface, which provides functionality that is required by all octree traversals.  <br /></td></tr>
-<tr class="separator:ad281dfb6fef877c7988603115a4d299c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabe0ab064248c129aae5b430cf6b9d6a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1OTTraversalInterface.html#aabe0ab064248c129aae5b430cf6b9d6a">OTTraversalInterface</a> (double interactionLength, DataLayoutOption dataLayout, bool useNewton3)</td></tr>
+<tr class="memdesc:aabe0ab064248c129aae5b430cf6b9d6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new traversal interface, which provides functionality that is required by all octree traversals.  <br /></td></tr>
+<tr class="separator:aabe0ab064248c129aae5b430cf6b9d6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adaaa368a60c39d23ea5bacc7424acfc4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1OTTraversalInterface.html#adaaa368a60c39d23ea5bacc7424acfc4">setCells</a> (std::vector&lt; <a class="el" href="classautopas_1_1OctreeNodeWrapper.html">OctreeNodeWrapper</a>&lt; ParticleType &gt; &gt; *cells)</td></tr>
 <tr class="memdesc:adaaa368a60c39d23ea5bacc7424acfc4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify the traversal about the cells that it is able to traverse.  <br /></td></tr>
 <tr class="separator:adaaa368a60c39d23ea5bacc7424acfc4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classautopas_1_1TraversalInterface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classautopas_1_1TraversalInterface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classautopas_1_1TraversalInterface.html">autopas::TraversalInterface</a></td></tr>
+<tr class="memitem:a60db78538e6a5af17479f006a07fb21c inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top"><a id="a60db78538e6a5af17479f006a07fb21c" name="a60db78538e6a5af17479f006a07fb21c"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~TraversalInterface</b> ()=default</td></tr>
+<tr class="memdesc:a60db78538e6a5af17479f006a07fb21c inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor of <a class="el" href="classautopas_1_1TraversalInterface.html" title="This interface serves as a common parent class for all traversals.">TraversalInterface</a>. <br /></td></tr>
+<tr class="separator:a60db78538e6a5af17479f006a07fb21c inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a62e1b0dc64a9f24a233b68c8c879cc inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#a7a62e1b0dc64a9f24a233b68c8c879cc">TraversalInterface</a> (DataLayoutOption dataLayout, bool useNewton3)</td></tr>
+<tr class="memdesc:a7a62e1b0dc64a9f24a233b68c8c879cc inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the <a class="el" href="classautopas_1_1TraversalInterface.html" title="This interface serves as a common parent class for all traversals.">TraversalInterface</a>.  <br /></td></tr>
+<tr class="separator:a7a62e1b0dc64a9f24a233b68c8c879cc inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37474936c05b085f9ad3be1de9f86aaa inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">virtual TraversalOption&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#a37474936c05b085f9ad3be1de9f86aaa">getTraversalType</a> () const =0</td></tr>
+<tr class="memdesc:a37474936c05b085f9ad3be1de9f86aaa inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a enum representing the name of the traversal class.  <br /></td></tr>
+<tr class="separator:a37474936c05b085f9ad3be1de9f86aaa inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4e3c867be1f544ee1d9bf6d0d6a133b inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#ab4e3c867be1f544ee1d9bf6d0d6a133b">isApplicable</a> () const =0</td></tr>
+<tr class="memdesc:ab4e3c867be1f544ee1d9bf6d0d6a133b inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the traversal is applicable to the current state of the domain.  <br /></td></tr>
+<tr class="separator:ab4e3c867be1f544ee1d9bf6d0d6a133b inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7393be0cfe5049e72c5bccac54b8d0d7 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#a7393be0cfe5049e72c5bccac54b8d0d7">initTraversal</a> ()=0</td></tr>
+<tr class="memdesc:a7393be0cfe5049e72c5bccac54b8d0d7 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the traversal.  <br /></td></tr>
+<tr class="separator:a7393be0cfe5049e72c5bccac54b8d0d7 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a733bfd7efaacfcdddd4c453821f3c165 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#a733bfd7efaacfcdddd4c453821f3c165">traverseParticles</a> ()=0</td></tr>
+<tr class="memdesc:a733bfd7efaacfcdddd4c453821f3c165 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traverse the particles by pairs, triplets etc.  <br /></td></tr>
+<tr class="separator:a733bfd7efaacfcdddd4c453821f3c165 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23f7631b7324e1c90f956154658ca524 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#a23f7631b7324e1c90f956154658ca524">endTraversal</a> ()=0</td></tr>
+<tr class="memdesc:a23f7631b7324e1c90f956154658ca524 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes the traversal.  <br /></td></tr>
+<tr class="separator:a23f7631b7324e1c90f956154658ca524 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4d02d384bc51e52f7880ad34d771473 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#af4d02d384bc51e52f7880ad34d771473">getUseNewton3</a> () const</td></tr>
+<tr class="memdesc:af4d02d384bc51e52f7880ad34d771473 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether the traversal uses newton 3.  <br /></td></tr>
+<tr class="separator:af4d02d384bc51e52f7880ad34d771473 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abeb602653c321f955aa730de78890c13 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">DataLayoutOption&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#abeb602653c321f955aa730de78890c13">getDataLayout</a> () const</td></tr>
+<tr class="memdesc:abeb602653c321f955aa730de78890c13 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the data layout option.  <br /></td></tr>
+<tr class="separator:abeb602653c321f955aa730de78890c13 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
-<tr class="memitem:ac14e7eaa5c4c2e585c80fea8644c1d3f"><td class="memTemplParams" colspan="2">template&lt;typename PairwiseFunctor &gt; </td></tr>
-<tr class="memitem:ac14e7eaa5c4c2e585c80fea8644c1d3f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1OTTraversalInterface.html#ac14e7eaa5c4c2e585c80fea8644c1d3f">loadBuffers</a> (<a class="el" href="classautopas_1_1utils_1_1DataLayoutConverter.html">utils::DataLayoutConverter</a>&lt; PairwiseFunctor &gt; &amp;dataLayoutConverter, <a class="el" href="classautopas_1_1OctreeNodeWrapper.html">OctreeNodeWrapper</a>&lt; ParticleType &gt; *wrapper, std::vector&lt; <a class="el" href="classautopas_1_1OctreeLeafNode.html">OctreeLeafNode</a>&lt; ParticleType &gt; * &gt; &amp;leaves)</td></tr>
+<tr class="memitem:ac14e7eaa5c4c2e585c80fea8644c1d3f"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </td></tr>
+<tr class="memitem:ac14e7eaa5c4c2e585c80fea8644c1d3f"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1OTTraversalInterface.html#ac14e7eaa5c4c2e585c80fea8644c1d3f">loadBuffers</a> (<a class="el" href="classautopas_1_1utils_1_1DataLayoutConverter.html">utils::DataLayoutConverter</a>&lt; <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; &amp;dataLayoutConverter, <a class="el" href="classautopas_1_1OctreeNodeWrapper.html">OctreeNodeWrapper</a>&lt; ParticleType &gt; *wrapper, std::vector&lt; <a class="el" href="classautopas_1_1OctreeLeafNode.html">OctreeLeafNode</a>&lt; ParticleType &gt; * &gt; &amp;leaves)</td></tr>
 <tr class="memdesc:ac14e7eaa5c4c2e585c80fea8644c1d3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gather all leaves and load the SoA/AoS buffers.  <br /></td></tr>
 <tr class="separator:ac14e7eaa5c4c2e585c80fea8644c1d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af36b71b2bc834bfe67b1ea09e56380ca"><td class="memTemplParams" colspan="2">template&lt;typename PairwiseFunctor &gt; </td></tr>
-<tr class="memitem:af36b71b2bc834bfe67b1ea09e56380ca"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1OTTraversalInterface.html#af36b71b2bc834bfe67b1ea09e56380ca">unloadBuffers</a> (<a class="el" href="classautopas_1_1utils_1_1DataLayoutConverter.html">utils::DataLayoutConverter</a>&lt; PairwiseFunctor &gt; &amp;dataLayoutConverter, std::vector&lt; <a class="el" href="classautopas_1_1OctreeLeafNode.html">OctreeLeafNode</a>&lt; ParticleType &gt; * &gt; &amp;leaves)</td></tr>
+<tr class="memitem:af36b71b2bc834bfe67b1ea09e56380ca"><td class="memTemplParams" colspan="2">template&lt;typename <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </td></tr>
+<tr class="memitem:af36b71b2bc834bfe67b1ea09e56380ca"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1OTTraversalInterface.html#af36b71b2bc834bfe67b1ea09e56380ca">unloadBuffers</a> (<a class="el" href="classautopas_1_1utils_1_1DataLayoutConverter.html">utils::DataLayoutConverter</a>&lt; <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; &amp;dataLayoutConverter, std::vector&lt; <a class="el" href="classautopas_1_1OctreeLeafNode.html">OctreeLeafNode</a>&lt; ParticleType &gt; * &gt; &amp;leaves)</td></tr>
 <tr class="memdesc:af36b71b2bc834bfe67b1ea09e56380ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unload the SoA/AoS buffers and clear the gathered leaves list.  <br /></td></tr>
 <tr class="separator:af36b71b2bc834bfe67b1ea09e56380ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ccfd84d9e00b480475a9016191ac93c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1OctreeNodeWrapper.html">OctreeNodeWrapper</a>&lt; ParticleType &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1OTTraversalInterface.html#a1ccfd84d9e00b480475a9016191ac93c">getOwned</a> ()</td></tr>
@@ -176,13 +224,22 @@ std::vector&lt; <a class="el" href="classautopas_1_1OctreeLeafNode.html">OctreeL
 double&#160;</td><td class="memItemRight" valign="bottom"><b>_interactionLength</b></td></tr>
 <tr class="memdesc:a918edf4a29b2240492850592a15b286f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The interaction length is used for finding neighbors. <br /></td></tr>
 <tr class="separator:a918edf4a29b2240492850592a15b286f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pro_attribs_classautopas_1_1TraversalInterface"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classautopas_1_1TraversalInterface')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classautopas_1_1TraversalInterface.html">autopas::TraversalInterface</a></td></tr>
+<tr class="memitem:a55f978445ef25816d76a47ad7c3e8df9 inherit pro_attribs_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top"><a id="a55f978445ef25816d76a47ad7c3e8df9" name="a55f978445ef25816d76a47ad7c3e8df9"></a>
+DataLayoutOption&#160;</td><td class="memItemRight" valign="bottom"><b>_dataLayout</b></td></tr>
+<tr class="memdesc:a55f978445ef25816d76a47ad7c3e8df9 inherit pro_attribs_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">The datalayout used by this traversal. <br /></td></tr>
+<tr class="separator:a55f978445ef25816d76a47ad7c3e8df9 inherit pro_attribs_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9d27639984e9e235202eca16760d6fd inherit pro_attribs_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top"><a id="aa9d27639984e9e235202eca16760d6fd" name="aa9d27639984e9e235202eca16760d6fd"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>_useNewton3</b></td></tr>
+<tr class="memdesc:aa9d27639984e9e235202eca16760d6fd inherit pro_attribs_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">If this traversal makes use of newton3. <br /></td></tr>
+<tr class="separator:aa9d27639984e9e235202eca16760d6fd inherit pro_attribs_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>&gt;<br />
 class autopas::OTTraversalInterface&lt; ParticleCell &gt;</div><p>This interface exists to provide a row interface for octree to add its cells. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ad281dfb6fef877c7988603115a4d299c" name="ad281dfb6fef877c7988603115a4d299c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad281dfb6fef877c7988603115a4d299c">&#9670;&#160;</a></span>OTTraversalInterface()</h2>
+<a id="aabe0ab064248c129aae5b430cf6b9d6a" name="aabe0ab064248c129aae5b430cf6b9d6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabe0ab064248c129aae5b430cf6b9d6a">&#9670;&#160;</a></span>OTTraversalInterface()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -196,8 +253,24 @@ template&lt;typename <a class="el" href="classautopas_1_1ParticleCell.html">Part
           <td class="memname"><a class="el" href="classautopas_1_1OTTraversalInterface.html">autopas::OTTraversalInterface</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt;::OTTraversalInterface </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>interactionLength</em></td><td>)</td>
+          <td class="paramname"><em>interactionLength</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">DataLayoutOption&#160;</td>
+          <td class="paramname"><em>dataLayout</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>useNewton3</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -211,6 +284,8 @@ template&lt;typename <a class="el" href="classautopas_1_1ParticleCell.html">Part
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">interactionLength</td><td>The interaction length </td></tr>
+    <tr><td class="paramname">dataLayout</td><td></td></tr>
+    <tr><td class="paramname">useNewton3</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -286,7 +361,7 @@ template&lt;typename <a class="el" href="classautopas_1_1ParticleCell.html">Part
 <div class="memtemplate">
 template&lt;typename <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; </div>
 <div class="memtemplate">
-template&lt;typename PairwiseFunctor &gt; </div>
+template&lt;typename <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -294,7 +369,7 @@ template&lt;typename PairwiseFunctor &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classautopas_1_1OTTraversalInterface.html">autopas::OTTraversalInterface</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt;::loadBuffers </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classautopas_1_1utils_1_1DataLayoutConverter.html">utils::DataLayoutConverter</a>&lt; PairwiseFunctor &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1utils_1_1DataLayoutConverter.html">utils::DataLayoutConverter</a>&lt; <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>dataLayoutConverter</em>, </td>
         </tr>
         <tr>
@@ -378,7 +453,7 @@ template&lt;typename <a class="el" href="classautopas_1_1ParticleCell.html">Part
 <div class="memtemplate">
 template&lt;typename <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; </div>
 <div class="memtemplate">
-template&lt;typename PairwiseFunctor &gt; </div>
+template&lt;typename <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -386,7 +461,7 @@ template&lt;typename PairwiseFunctor &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classautopas_1_1OTTraversalInterface.html">autopas::OTTraversalInterface</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt;::unloadBuffers </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classautopas_1_1utils_1_1DataLayoutConverter.html">utils::DataLayoutConverter</a>&lt; PairwiseFunctor &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1utils_1_1DataLayoutConverter.html">utils::DataLayoutConverter</a>&lt; <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>dataLayoutConverter</em>, </td>
         </tr>
         <tr>

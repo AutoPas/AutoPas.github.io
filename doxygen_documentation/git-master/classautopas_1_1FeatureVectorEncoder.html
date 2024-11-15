@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -124,9 +131,9 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>FeatureVectorEncoder</b> ()</td></tr>
 <tr class="memdesc:ac1da47ea1d3d4c4db113cc66da07aca0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default Constructor. <br /></td></tr>
 <tr class="separator:ac1da47ea1d3d4c4db113cc66da07aca0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af5a5e7c68ea997dcd954e46f6912fb9e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1FeatureVectorEncoder.html#af5a5e7c68ea997dcd954e46f6912fb9e">FeatureVectorEncoder</a> (const std::vector&lt; <a class="el" href="classautopas_1_1FeatureVector.html#a2b6dd98d94c7724057087b774ac0f9c7">FeatureVector::ContainerTraversalEstimatorOption</a> &gt; &amp;containerTraversalEstimatorOptions, const std::vector&lt; DataLayoutOption &gt; &amp;dataLayoutOptions, const std::vector&lt; Newton3Option &gt; &amp;newton3Options, const <a class="el" href="classautopas_1_1NumberSet.html">NumberSet</a>&lt; double &gt; &amp;cellSizeFactors)</td></tr>
-<tr class="memdesc:af5a5e7c68ea997dcd954e46f6912fb9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Contructor.  <br /></td></tr>
-<tr class="separator:af5a5e7c68ea997dcd954e46f6912fb9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1610d863881ff41e8fe3eabc593fd78"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1FeatureVectorEncoder.html#ad1610d863881ff41e8fe3eabc593fd78">FeatureVectorEncoder</a> (const std::vector&lt; <a class="el" href="classautopas_1_1FeatureVector.html#a2b6dd98d94c7724057087b774ac0f9c7">FeatureVector::ContainerTraversalEstimatorOption</a> &gt; &amp;containerTraversalEstimatorOptions, const std::vector&lt; DataLayoutOption &gt; &amp;dataLayoutOptions, const std::vector&lt; Newton3Option &gt; &amp;newton3Options, const <a class="el" href="classautopas_1_1NumberSet.html">NumberSet</a>&lt; double &gt; &amp;cellSizeFactors, const InteractionTypeOption &amp;interactionType)</td></tr>
+<tr class="memdesc:ad1610d863881ff41e8fe3eabc593fd78"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="separator:ad1610d863881ff41e8fe3eabc593fd78"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a241df7c09d24863d29063437673a9518"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1FeatureVectorEncoder.html#a241df7c09d24863d29063437673a9518">setAllowedOptions</a> (const std::vector&lt; <a class="el" href="classautopas_1_1FeatureVector.html#a2b6dd98d94c7724057087b774ac0f9c7">FeatureVector::ContainerTraversalEstimatorOption</a> &gt; &amp;containerTraversalEstimatorOptions, const std::vector&lt; DataLayoutOption &gt; &amp;dataLayoutOptions, const std::vector&lt; Newton3Option &gt; &amp;newton3Options, const <a class="el" href="classautopas_1_1NumberSet.html">NumberSet</a>&lt; double &gt; &amp;cellSizeFactors)</td></tr>
 <tr class="memdesc:a241df7c09d24863d29063437673a9518"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set allowed options.  <br /></td></tr>
 <tr class="separator:a241df7c09d24863d29063437673a9518"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -175,8 +182,8 @@ static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>tu
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Encoder to convert <a class="el" href="classautopas_1_1FeatureVector.html" title="FeatureVector representation of a Configuration.">FeatureVector</a> from and to Eigen::Vector. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af5a5e7c68ea997dcd954e46f6912fb9e" name="af5a5e7c68ea997dcd954e46f6912fb9e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af5a5e7c68ea997dcd954e46f6912fb9e">&#9670;&#160;</a></span>FeatureVectorEncoder()</h2>
+<a id="ad1610d863881ff41e8fe3eabc593fd78" name="ad1610d863881ff41e8fe3eabc593fd78"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1610d863881ff41e8fe3eabc593fd78">&#9670;&#160;</a></span>FeatureVectorEncoder()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -203,7 +210,13 @@ static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>tu
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classautopas_1_1NumberSet.html">NumberSet</a>&lt; double &gt; &amp;&#160;</td>
-          <td class="paramname"><em>cellSizeFactors</em>&#160;</td>
+          <td class="paramname"><em>cellSizeFactors</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const InteractionTypeOption &amp;&#160;</td>
+          <td class="paramname"><em>interactionType</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -213,13 +226,14 @@ static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><b>tu
       </table>
 </div><div class="memdoc">
 
-<p>Contructor. </p>
+<p>Constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">containerTraversalEstimatorOptions</td><td></td></tr>
     <tr><td class="paramname">dataLayoutOptions</td><td></td></tr>
     <tr><td class="paramname">newton3Options</td><td></td></tr>
     <tr><td class="paramname">cellSizeFactors</td><td></td></tr>
+    <tr><td class="paramname">interactionType</td><td></td></tr>
   </table>
   </dd>
 </dl>

@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -123,9 +130,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aaa8a728c9121745c2662d3f54a6f0a11"><td class="memItemLeft" align="right" valign="top">std::set&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1SearchSpaceGenerators.html#aaa8a728c9121745c2662d3f54a6f0a11">cartesianProduct</a> (const std::set&lt; ContainerOption &gt; &amp;allowedContainerOptions, const std::set&lt; TraversalOption &gt; &amp;allowedTraversalOptions, const std::set&lt; <a class="el" href="classautopas_1_1LoadEstimatorOption.html">LoadEstimatorOption</a> &gt; &amp;allowedLoadEstimatorOptions, const std::set&lt; DataLayoutOption &gt; &amp;allowedDataLayoutOptions, const std::set&lt; Newton3Option &gt; &amp;allowedNewton3Options, const <a class="el" href="classautopas_1_1NumberSet.html">NumberSet</a>&lt; double &gt; *allowedCellSizeFactors)</td></tr>
-<tr class="memdesc:aaa8a728c9121745c2662d3f54a6f0a11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the search space with the cartesian product of the given options (minus invalid combinations).  <br /></td></tr>
-<tr class="separator:aaa8a728c9121745c2662d3f54a6f0a11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ba5e3bfb9fcec2ff236916684a55704"><td class="memItemLeft" align="right" valign="top">std::set&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1SearchSpaceGenerators.html#a3ba5e3bfb9fcec2ff236916684a55704">cartesianProduct</a> (const std::set&lt; ContainerOption &gt; &amp;allowedContainerOptions, const std::set&lt; TraversalOption &gt; &amp;allowedTraversalOptions, const std::set&lt; <a class="el" href="classautopas_1_1LoadEstimatorOption.html">LoadEstimatorOption</a> &gt; &amp;allowedLoadEstimatorOptions, const std::set&lt; DataLayoutOption &gt; &amp;allowedDataLayoutOptions, const std::set&lt; Newton3Option &gt; &amp;allowedNewton3Options, const <a class="el" href="classautopas_1_1NumberSet.html">NumberSet</a>&lt; double &gt; *allowedCellSizeFactors, const InteractionTypeOption &amp;interactionType)</td></tr>
+<tr class="memdesc:a3ba5e3bfb9fcec2ff236916684a55704"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the search space with the cartesian product of the given options (minus invalid combinations).  <br /></td></tr>
+<tr class="separator:a3ba5e3bfb9fcec2ff236916684a55704"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a34ae04d2a652da2eed003555983183d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structautopas_1_1SearchSpaceGenerators_1_1OptionSpace.html">OptionSpace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1SearchSpaceGenerators.html#a34ae04d2a652da2eed003555983183d9">inferOptionDimensions</a> (const std::set&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;searchSet)</td></tr>
 <tr class="memdesc:a34ae04d2a652da2eed003555983183d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crudely trying to reconstruct the dimensions of the search space from a given set of options.  <br /></td></tr>
 <tr class="separator:a34ae04d2a652da2eed003555983183d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -182,8 +189,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aaa8a728c9121745c2662d3f54a6f0a11" name="aaa8a728c9121745c2662d3f54a6f0a11"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa8a728c9121745c2662d3f54a6f0a11">&#9670;&#160;</a></span>cartesianProduct()</h2>
+<a id="a3ba5e3bfb9fcec2ff236916684a55704" name="a3ba5e3bfb9fcec2ff236916684a55704"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ba5e3bfb9fcec2ff236916684a55704">&#9670;&#160;</a></span>cartesianProduct()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -222,7 +229,13 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="classautopas_1_1NumberSet.html">NumberSet</a>&lt; double &gt; *&#160;</td>
-          <td class="paramname"><em>allowedCellSizeFactors</em>&#160;</td>
+          <td class="paramname"><em>allowedCellSizeFactors</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const InteractionTypeOption &amp;&#160;</td>
+          <td class="paramname"><em>interactionType</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -241,6 +254,7 @@ Functions</h2></td></tr>
     <tr><td class="paramname">allowedDataLayoutOptions</td><td></td></tr>
     <tr><td class="paramname">allowedNewton3Options</td><td></td></tr>
     <tr><td class="paramname">allowedCellSizeFactors</td><td></td></tr>
+    <tr><td class="paramname">interactionType</td><td></td></tr>
   </table>
   </dd>
 </dl>

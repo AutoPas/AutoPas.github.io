@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -108,7 +115,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classautopas_1_1DSSequentialTraversal-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">autopas::DSSequentialTraversal&lt; ParticleCell, PairwiseFunctor &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">autopas::DSSequentialTraversal&lt; ParticleCell, Functor &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -117,71 +124,71 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="DSSequentialTraversal_8h_source.html">DSSequentialTraversal.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for autopas::DSSequentialTraversal&lt; ParticleCell, PairwiseFunctor &gt;:</div>
+Inheritance diagram for autopas::DSSequentialTraversal&lt; ParticleCell, Functor &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="classautopas_1_1DSSequentialTraversal__inherit__graph.png" border="0" usemap="#aautopas_1_1DSSequentialTraversal_3_01ParticleCell_00_01PairwiseFunctor_01_4_inherit__map" alt="Inheritance graph"/></div>
-<map name="aautopas_1_1DSSequentialTraversal_3_01ParticleCell_00_01PairwiseFunctor_01_4_inherit__map" id="aautopas_1_1DSSequentialTraversal_3_01ParticleCell_00_01PairwiseFunctor_01_4_inherit__map">
-<area shape="rect" title="This sum defines the traversal typically used by the DirectSum container." alt="" coords="517,37,752,77"/>
-<area shape="rect" href="classautopas_1_1CellPairTraversal.html" title="A cell pair traversal." alt="" coords="265,5,456,45"/>
-<area shape="poly" title=" " alt="" coords="470,35,517,41,517,46,469,41"/>
-<area shape="rect" href="classautopas_1_1TraversalInterface.html" title="This interface serves as a common parent class for all traversals." alt="" coords="5,13,204,38"/>
-<area shape="poly" title=" " alt="" coords="218,23,265,23,265,28,218,28"/>
-<area shape="rect" href="classautopas_1_1DSTraversalInterface.html" title="Interface for traversals used by the DirectSum container." alt="" coords="252,69,469,109"/>
-<area shape="poly" title=" " alt="" coords="483,72,517,68,517,74,484,78"/>
+<div class="center"><img src="classautopas_1_1DSSequentialTraversal__inherit__graph.png" border="0" usemap="#aautopas_1_1DSSequentialTraversal_3_01ParticleCell_00_01Functor_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="aautopas_1_1DSSequentialTraversal_3_01ParticleCell_00_01Functor_01_4_inherit__map" id="aautopas_1_1DSSequentialTraversal_3_01ParticleCell_00_01Functor_01_4_inherit__map">
+<area shape="rect" title="This sum defines the traversal typically used by the DirectSum container." alt="" coords="271,63,499,103"/>
+<area shape="rect" href="classautopas_1_1CellTraversal.html" title="A cell pair traversal." alt="" coords="31,5,197,45"/>
+<area shape="poly" title=" " alt="" coords="211,43,290,60,289,65,210,48"/>
+<area shape="rect" href="classautopas_1_1TraversalInterface.html" title="This interface serves as a common parent class for all traversals." alt="" coords="15,70,213,95"/>
+<area shape="poly" title=" " alt="" coords="227,80,271,80,271,85,227,85"/>
+<area shape="rect" href="classautopas_1_1DSTraversalInterface.html" title="Interface for traversals used by the DirectSum container." alt="" coords="5,119,223,145"/>
+<area shape="poly" title=" " alt="" coords="197,114,274,100,275,105,198,119"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
-Collaboration diagram for autopas::DSSequentialTraversal&lt; ParticleCell, PairwiseFunctor &gt;:</div>
+Collaboration diagram for autopas::DSSequentialTraversal&lt; ParticleCell, Functor &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="classautopas_1_1DSSequentialTraversal__coll__graph.png" border="0" usemap="#aautopas_1_1DSSequentialTraversal_3_01ParticleCell_00_01PairwiseFunctor_01_4_coll__map" alt="Collaboration graph"/></div>
-<map name="aautopas_1_1DSSequentialTraversal_3_01ParticleCell_00_01PairwiseFunctor_01_4_coll__map" id="aautopas_1_1DSSequentialTraversal_3_01ParticleCell_00_01PairwiseFunctor_01_4_coll__map">
-<area shape="rect" title="This sum defines the traversal typically used by the DirectSum container." alt="" coords="517,37,752,77"/>
-<area shape="rect" href="classautopas_1_1CellPairTraversal.html" title="A cell pair traversal." alt="" coords="265,5,456,45"/>
-<area shape="poly" title=" " alt="" coords="470,35,517,41,517,46,469,41"/>
-<area shape="rect" href="classautopas_1_1TraversalInterface.html" title="This interface serves as a common parent class for all traversals." alt="" coords="5,13,204,38"/>
-<area shape="poly" title=" " alt="" coords="218,23,265,23,265,28,218,28"/>
-<area shape="rect" href="classautopas_1_1DSTraversalInterface.html" title="Interface for traversals used by the DirectSum container." alt="" coords="252,69,469,109"/>
-<area shape="poly" title=" " alt="" coords="483,72,517,68,517,74,484,78"/>
+<div class="center"><img src="classautopas_1_1DSSequentialTraversal__coll__graph.png" border="0" usemap="#aautopas_1_1DSSequentialTraversal_3_01ParticleCell_00_01Functor_01_4_coll__map" alt="Collaboration graph"/></div>
+<map name="aautopas_1_1DSSequentialTraversal_3_01ParticleCell_00_01Functor_01_4_coll__map" id="aautopas_1_1DSSequentialTraversal_3_01ParticleCell_00_01Functor_01_4_coll__map">
+<area shape="rect" title="This sum defines the traversal typically used by the DirectSum container." alt="" coords="271,63,499,103"/>
+<area shape="rect" href="classautopas_1_1CellTraversal.html" title="A cell pair traversal." alt="" coords="31,5,197,45"/>
+<area shape="poly" title=" " alt="" coords="211,43,290,60,289,65,210,48"/>
+<area shape="rect" href="classautopas_1_1TraversalInterface.html" title="This interface serves as a common parent class for all traversals." alt="" coords="15,70,213,95"/>
+<area shape="poly" title=" " alt="" coords="227,80,271,80,271,85,227,85"/>
+<area shape="rect" href="classautopas_1_1DSTraversalInterface.html" title="Interface for traversals used by the DirectSum container." alt="" coords="5,119,223,145"/>
+<area shape="poly" title=" " alt="" coords="197,114,274,100,275,105,198,119"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ae940104eeda3614bef7628cc54b2f65b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DSSequentialTraversal.html#ae940104eeda3614bef7628cc54b2f65b">DSSequentialTraversal</a> (PairwiseFunctor *pairwiseFunctor, double cutoff, DataLayoutOption dataLayout, bool useNewton3)</td></tr>
-<tr class="memdesc:ae940104eeda3614bef7628cc54b2f65b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classautopas_1_1DirectSum.html" title="This class stores all owned particles in a single cell.">DirectSum</a> traversal.  <br /></td></tr>
-<tr class="separator:ae940104eeda3614bef7628cc54b2f65b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa374f7f038808b25b06fd6c761edcd6c"><td class="memItemLeft" align="right" valign="top">TraversalOption&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DSSequentialTraversal.html#aa374f7f038808b25b06fd6c761edcd6c">getTraversalType</a> () const override</td></tr>
-<tr class="memdesc:aa374f7f038808b25b06fd6c761edcd6c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a enum representing the name of the traversal class.  <br /></td></tr>
-<tr class="separator:aa374f7f038808b25b06fd6c761edcd6c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add5bbaf9d0a1147acbbe85a997d3687b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DSSequentialTraversal.html#add5bbaf9d0a1147acbbe85a997d3687b">isApplicable</a> () const override</td></tr>
-<tr class="memdesc:add5bbaf9d0a1147acbbe85a997d3687b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the traversal is applicable to the current state of the domain.  <br /></td></tr>
-<tr class="separator:add5bbaf9d0a1147acbbe85a997d3687b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6003fa78ebf9e4785311e4ab676f5ae7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DSSequentialTraversal.html#a6003fa78ebf9e4785311e4ab676f5ae7">initTraversal</a> () override</td></tr>
-<tr class="memdesc:a6003fa78ebf9e4785311e4ab676f5ae7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the traversal.  <br /></td></tr>
-<tr class="separator:a6003fa78ebf9e4785311e4ab676f5ae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6976b62b7f8472ac5ff67bbd5a3ffdf4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DSSequentialTraversal.html#a6976b62b7f8472ac5ff67bbd5a3ffdf4">endTraversal</a> () override</td></tr>
-<tr class="memdesc:a6976b62b7f8472ac5ff67bbd5a3ffdf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes the traversal.  <br /></td></tr>
-<tr class="separator:a6976b62b7f8472ac5ff67bbd5a3ffdf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6a4d47a8e4e55192ea2431090a2abf42"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DSSequentialTraversal.html#a6a4d47a8e4e55192ea2431090a2abf42">traverseParticlePairs</a> () override</td></tr>
-<tr class="memdesc:a6a4d47a8e4e55192ea2431090a2abf42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traverses all particle pairs.    <br /></td></tr>
-<tr class="separator:a6a4d47a8e4e55192ea2431090a2abf42"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f05396378d8cc4b57f7f906ca059529"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DSSequentialTraversal.html#a5f05396378d8cc4b57f7f906ca059529">setSortingThreshold</a> (size_t sortingThreshold) override</td></tr>
-<tr class="memdesc:a5f05396378d8cc4b57f7f906ca059529"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the sorting-threshold for traversals that use the CellFunctor If the sum of the number of particles in two cells is greater or equal to that value, the CellFunctor creates a sorted view of the particles to avoid unnecessary distance checks.    <br /></td></tr>
-<tr class="separator:a5f05396378d8cc4b57f7f906ca059529"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="inherit_header pub_methods_classautopas_1_1CellPairTraversal"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classautopas_1_1CellPairTraversal')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classautopas_1_1CellPairTraversal.html">autopas::CellPairTraversal&lt; ParticleCell &gt;</a></td></tr>
-<tr class="memitem:a4c5cf19fe67522f155cb585e53c0ca7b inherit pub_methods_classautopas_1_1CellPairTraversal"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellPairTraversal.html#a4c5cf19fe67522f155cb585e53c0ca7b">CellPairTraversal</a> (const std::array&lt; unsigned long, 3 &gt; &amp;dims, DataLayoutOption dataLayout, bool useNewton3)</td></tr>
-<tr class="memdesc:a4c5cf19fe67522f155cb585e53c0ca7b inherit pub_methods_classautopas_1_1CellPairTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of <a class="el" href="classautopas_1_1CellPairTraversal.html" title="A cell pair traversal.">CellPairTraversal</a>.  <br /></td></tr>
-<tr class="separator:a4c5cf19fe67522f155cb585e53c0ca7b inherit pub_methods_classautopas_1_1CellPairTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1c953f07e70e9da63fa78846111c9564 inherit pub_methods_classautopas_1_1CellPairTraversal"><td class="memItemLeft" align="right" valign="top"><a id="a1c953f07e70e9da63fa78846111c9564" name="a1c953f07e70e9da63fa78846111c9564"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>~CellPairTraversal</b> () override=default</td></tr>
-<tr class="memdesc:a1c953f07e70e9da63fa78846111c9564 inherit pub_methods_classautopas_1_1CellPairTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor of <a class="el" href="classautopas_1_1CellPairTraversal.html" title="A cell pair traversal.">CellPairTraversal</a>. <br /></td></tr>
-<tr class="separator:a1c953f07e70e9da63fa78846111c9564 inherit pub_methods_classautopas_1_1CellPairTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a85433bc526f482a341d1dab312c5940a inherit pub_methods_classautopas_1_1CellPairTraversal"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellPairTraversal.html#a85433bc526f482a341d1dab312c5940a">setCellsToTraverse</a> (std::vector&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; &amp;cells)</td></tr>
-<tr class="memdesc:a85433bc526f482a341d1dab312c5940a inherit pub_methods_classautopas_1_1CellPairTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the cells to iterate over.  <br /></td></tr>
-<tr class="separator:a85433bc526f482a341d1dab312c5940a inherit pub_methods_classautopas_1_1CellPairTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a28519633c53888b657ae7a589e49a58f inherit pub_methods_classautopas_1_1CellPairTraversal"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellPairTraversal.html#a28519633c53888b657ae7a589e49a58f">setSortingThreshold</a> (size_t sortingThreshold)=0</td></tr>
-<tr class="memdesc:a28519633c53888b657ae7a589e49a58f inherit pub_methods_classautopas_1_1CellPairTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the sorting-threshold for traversals that use the CellFunctor If the sum of the number of particles in two cells is greater or equal to that value, the CellFunctor creates a sorted view of the particles to avoid unnecessary distance checks.  <br /></td></tr>
-<tr class="separator:a28519633c53888b657ae7a589e49a58f inherit pub_methods_classautopas_1_1CellPairTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a441838adb7f0fd8cdd043f86e742ea8b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DSSequentialTraversal.html#a441838adb7f0fd8cdd043f86e742ea8b">DSSequentialTraversal</a> (<a class="el" href="classautopas_1_1Functor.html">Functor</a> *functor, double cutoff, DataLayoutOption dataLayout, bool useNewton3)</td></tr>
+<tr class="memdesc:a441838adb7f0fd8cdd043f86e742ea8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for the <a class="el" href="classautopas_1_1DirectSum.html" title="This class stores all owned particles in a single cell.">DirectSum</a> traversal.  <br /></td></tr>
+<tr class="separator:a441838adb7f0fd8cdd043f86e742ea8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac88bddfa562abe152d0e860055e8dcb4"><td class="memItemLeft" align="right" valign="top">TraversalOption&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DSSequentialTraversal.html#ac88bddfa562abe152d0e860055e8dcb4">getTraversalType</a> () const override</td></tr>
+<tr class="memdesc:ac88bddfa562abe152d0e860055e8dcb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a enum representing the name of the traversal class.  <br /></td></tr>
+<tr class="separator:ac88bddfa562abe152d0e860055e8dcb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a321bff401f5d7c80334ddc09540cc3e8"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DSSequentialTraversal.html#a321bff401f5d7c80334ddc09540cc3e8">isApplicable</a> () const override</td></tr>
+<tr class="memdesc:a321bff401f5d7c80334ddc09540cc3e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the traversal is applicable to the current state of the domain.  <br /></td></tr>
+<tr class="separator:a321bff401f5d7c80334ddc09540cc3e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad353c6af0eac4e9b1f3d32a62383387e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DSSequentialTraversal.html#ad353c6af0eac4e9b1f3d32a62383387e">initTraversal</a> () override</td></tr>
+<tr class="memdesc:ad353c6af0eac4e9b1f3d32a62383387e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the traversal.  <br /></td></tr>
+<tr class="separator:ad353c6af0eac4e9b1f3d32a62383387e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8751613379eaf528a2c09ca51ee2d522"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DSSequentialTraversal.html#a8751613379eaf528a2c09ca51ee2d522">endTraversal</a> () override</td></tr>
+<tr class="memdesc:a8751613379eaf528a2c09ca51ee2d522"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes the traversal.  <br /></td></tr>
+<tr class="separator:a8751613379eaf528a2c09ca51ee2d522"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d04eb111930b77c51e40ffe59501d83"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DSSequentialTraversal.html#a0d04eb111930b77c51e40ffe59501d83">traverseParticles</a> () override</td></tr>
+<tr class="memdesc:a0d04eb111930b77c51e40ffe59501d83"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traverse the particles by pairs, triplets etc.    <br /></td></tr>
+<tr class="separator:a0d04eb111930b77c51e40ffe59501d83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a263a00288bf4f7fff00bdc7e71d0c2ef"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1DSSequentialTraversal.html#a263a00288bf4f7fff00bdc7e71d0c2ef">setSortingThreshold</a> (size_t sortingThreshold) override</td></tr>
+<tr class="memdesc:a263a00288bf4f7fff00bdc7e71d0c2ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the sorting-threshold for traversals that use the CellFunctor If the sum of the number of particles in two cells is greater or equal to that value, the CellFunctor creates a sorted view of the particles to avoid unnecessary distance checks.    <br /></td></tr>
+<tr class="separator:a263a00288bf4f7fff00bdc7e71d0c2ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_classautopas_1_1CellTraversal"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classautopas_1_1CellTraversal')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classautopas_1_1CellTraversal.html">autopas::CellTraversal&lt; ParticleCell &gt;</a></td></tr>
+<tr class="memitem:aa896e72f5f1f9ffff7c86bb478301202 inherit pub_methods_classautopas_1_1CellTraversal"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellTraversal.html#aa896e72f5f1f9ffff7c86bb478301202">CellTraversal</a> (const std::array&lt; unsigned long, 3 &gt; &amp;dims)</td></tr>
+<tr class="memdesc:aa896e72f5f1f9ffff7c86bb478301202 inherit pub_methods_classautopas_1_1CellTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of <a class="el" href="classautopas_1_1CellTraversal.html" title="A cell pair traversal.">CellTraversal</a>.  <br /></td></tr>
+<tr class="separator:aa896e72f5f1f9ffff7c86bb478301202 inherit pub_methods_classautopas_1_1CellTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac5045d9c1d63026f23f37a4cf5b94b18 inherit pub_methods_classautopas_1_1CellTraversal"><td class="memItemLeft" align="right" valign="top"><a id="ac5045d9c1d63026f23f37a4cf5b94b18" name="ac5045d9c1d63026f23f37a4cf5b94b18"></a>
+virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~CellTraversal</b> ()=default</td></tr>
+<tr class="memdesc:ac5045d9c1d63026f23f37a4cf5b94b18 inherit pub_methods_classautopas_1_1CellTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor of <a class="el" href="classautopas_1_1CellTraversal.html" title="A cell pair traversal.">CellTraversal</a>. <br /></td></tr>
+<tr class="separator:ac5045d9c1d63026f23f37a4cf5b94b18 inherit pub_methods_classautopas_1_1CellTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6869a14bbe8b6233f461aa5629f6344e inherit pub_methods_classautopas_1_1CellTraversal"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellTraversal.html#a6869a14bbe8b6233f461aa5629f6344e">setCellsToTraverse</a> (std::vector&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; &amp;cells)</td></tr>
+<tr class="memdesc:a6869a14bbe8b6233f461aa5629f6344e inherit pub_methods_classautopas_1_1CellTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the cells to iterate over.  <br /></td></tr>
+<tr class="separator:a6869a14bbe8b6233f461aa5629f6344e inherit pub_methods_classautopas_1_1CellTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb5af56d616fb6310d54f54a705747fd inherit pub_methods_classautopas_1_1CellTraversal"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellTraversal.html#afb5af56d616fb6310d54f54a705747fd">setSortingThreshold</a> (size_t sortingThreshold)=0</td></tr>
+<tr class="memdesc:afb5af56d616fb6310d54f54a705747fd inherit pub_methods_classautopas_1_1CellTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the sorting-threshold for traversals that use the CellFunctor If the sum of the number of particles in two cells is greater or equal to that value, the CellFunctor creates a sorted view of the particles to avoid unnecessary distance checks.  <br /></td></tr>
+<tr class="separator:afb5af56d616fb6310d54f54a705747fd inherit pub_methods_classautopas_1_1CellTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classautopas_1_1TraversalInterface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classautopas_1_1TraversalInterface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classautopas_1_1TraversalInterface.html">autopas::TraversalInterface</a></td></tr>
 <tr class="memitem:a60db78538e6a5af17479f006a07fb21c inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top"><a id="a60db78538e6a5af17479f006a07fb21c" name="a60db78538e6a5af17479f006a07fb21c"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~TraversalInterface</b> ()=default</td></tr>
@@ -199,12 +206,12 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~TraversalInterfac
 <tr class="memitem:a7393be0cfe5049e72c5bccac54b8d0d7 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#a7393be0cfe5049e72c5bccac54b8d0d7">initTraversal</a> ()=0</td></tr>
 <tr class="memdesc:a7393be0cfe5049e72c5bccac54b8d0d7 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the traversal.  <br /></td></tr>
 <tr class="separator:a7393be0cfe5049e72c5bccac54b8d0d7 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a733bfd7efaacfcdddd4c453821f3c165 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#a733bfd7efaacfcdddd4c453821f3c165">traverseParticles</a> ()=0</td></tr>
+<tr class="memdesc:a733bfd7efaacfcdddd4c453821f3c165 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traverse the particles by pairs, triplets etc.  <br /></td></tr>
+<tr class="separator:a733bfd7efaacfcdddd4c453821f3c165 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23f7631b7324e1c90f956154658ca524 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#a23f7631b7324e1c90f956154658ca524">endTraversal</a> ()=0</td></tr>
 <tr class="memdesc:a23f7631b7324e1c90f956154658ca524 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes the traversal.  <br /></td></tr>
 <tr class="separator:a23f7631b7324e1c90f956154658ca524 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3df61a48799b2638ae9acec662b3b76b inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#a3df61a48799b2638ae9acec662b3b76b">traverseParticlePairs</a> ()=0</td></tr>
-<tr class="memdesc:a3df61a48799b2638ae9acec662b3b76b inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traverses all particle pairs.  <br /></td></tr>
-<tr class="separator:a3df61a48799b2638ae9acec662b3b76b inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af4d02d384bc51e52f7880ad34d771473 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html#af4d02d384bc51e52f7880ad34d771473">getUseNewton3</a> () const</td></tr>
 <tr class="memdesc:af4d02d384bc51e52f7880ad34d771473 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return whether the traversal uses newton 3.  <br /></td></tr>
 <tr class="separator:af4d02d384bc51e52f7880ad34d771473 inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -214,14 +221,14 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~TraversalInterfac
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
-<tr class="inherit_header pro_attribs_classautopas_1_1CellPairTraversal"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classautopas_1_1CellPairTraversal')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classautopas_1_1CellPairTraversal.html">autopas::CellPairTraversal&lt; ParticleCell &gt;</a></td></tr>
-<tr class="memitem:aec4cb9a0faddadabd5a0a6fee46e9ad6 inherit pro_attribs_classautopas_1_1CellPairTraversal"><td class="memItemLeft" align="right" valign="top">std::array&lt; unsigned long, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellPairTraversal.html#aec4cb9a0faddadabd5a0a6fee46e9ad6">_cellsPerDimension</a></td></tr>
-<tr class="memdesc:aec4cb9a0faddadabd5a0a6fee46e9ad6 inherit pro_attribs_classautopas_1_1CellPairTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">The dimensions of the cellblock.  <br /></td></tr>
-<tr class="separator:aec4cb9a0faddadabd5a0a6fee46e9ad6 inherit pro_attribs_classautopas_1_1CellPairTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aac14e7b8a25b838af342b72335cf9dc2 inherit pro_attribs_classautopas_1_1CellPairTraversal"><td class="memItemLeft" align="right" valign="top"><a id="aac14e7b8a25b838af342b72335cf9dc2" name="aac14e7b8a25b838af342b72335cf9dc2"></a>
+<tr class="inherit_header pro_attribs_classautopas_1_1CellTraversal"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classautopas_1_1CellTraversal')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classautopas_1_1CellTraversal.html">autopas::CellTraversal&lt; ParticleCell &gt;</a></td></tr>
+<tr class="memitem:a6f15630c1c150354892dd12ffead19f7 inherit pro_attribs_classautopas_1_1CellTraversal"><td class="memItemLeft" align="right" valign="top">std::array&lt; unsigned long, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellTraversal.html#a6f15630c1c150354892dd12ffead19f7">_cellsPerDimension</a></td></tr>
+<tr class="memdesc:a6f15630c1c150354892dd12ffead19f7 inherit pro_attribs_classautopas_1_1CellTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">The dimensions of the cellblock.  <br /></td></tr>
+<tr class="separator:a6f15630c1c150354892dd12ffead19f7 inherit pro_attribs_classautopas_1_1CellTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ad693d109b120da202f5b60d0edb14d inherit pro_attribs_classautopas_1_1CellTraversal"><td class="memItemLeft" align="right" valign="top"><a id="a2ad693d109b120da202f5b60d0edb14d" name="a2ad693d109b120da202f5b60d0edb14d"></a>
 std::vector&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; *&#160;</td><td class="memItemRight" valign="bottom"><b>_cells</b></td></tr>
-<tr class="memdesc:aac14e7b8a25b838af342b72335cf9dc2 inherit pro_attribs_classautopas_1_1CellPairTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">The cells to traverse. <br /></td></tr>
-<tr class="separator:aac14e7b8a25b838af342b72335cf9dc2 inherit pro_attribs_classautopas_1_1CellPairTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:a2ad693d109b120da202f5b60d0edb14d inherit pro_attribs_classautopas_1_1CellTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">The cells to traverse. <br /></td></tr>
+<tr class="separator:a2ad693d109b120da202f5b60d0edb14d inherit pro_attribs_classautopas_1_1CellTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classautopas_1_1TraversalInterface"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classautopas_1_1TraversalInterface')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classautopas_1_1TraversalInterface.html">autopas::TraversalInterface</a></td></tr>
 <tr class="memitem:a55f978445ef25816d76a47ad7c3e8df9 inherit pro_attribs_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top"><a id="a55f978445ef25816d76a47ad7c3e8df9" name="a55f978445ef25816d76a47ad7c3e8df9"></a>
 DataLayoutOption&#160;</td><td class="memItemRight" valign="bottom"><b>_dataLayout</b></td></tr>
@@ -233,32 +240,32 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_useNewton3</b></td><
 <tr class="separator:aa9d27639984e9e235202eca16760d6fd inherit pro_attribs_classautopas_1_1TraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, class PairwiseFunctor&gt;<br />
-class autopas::DSSequentialTraversal&lt; ParticleCell, PairwiseFunctor &gt;</div><p>This sum defines the traversal typically used by the <a class="el" href="classautopas_1_1DirectSum.html" title="This class stores all owned particles in a single cell.">DirectSum</a> container. </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, class <a class="el" href="classautopas_1_1Functor.html">Functor</a>&gt;<br />
+class autopas::DSSequentialTraversal&lt; ParticleCell, Functor &gt;</div><p>This sum defines the traversal typically used by the <a class="el" href="classautopas_1_1DirectSum.html" title="This class stores all owned particles in a single cell.">DirectSum</a> container. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname"><a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a></td><td>the type of cells </td></tr>
-    <tr><td class="paramname">PairwiseFunctor</td><td>The functor that defines the interaction of two particles. </td></tr>
+    <tr><td class="paramname"><a class="el" href="classautopas_1_1Functor.html" title="Functor base class.">Functor</a></td><td>The functor that defines the interaction of particles. </td></tr>
   </table>
   </dd>
 </dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ae940104eeda3614bef7628cc54b2f65b" name="ae940104eeda3614bef7628cc54b2f65b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae940104eeda3614bef7628cc54b2f65b">&#9670;&#160;</a></span>DSSequentialTraversal()</h2>
+<a id="a441838adb7f0fd8cdd043f86e742ea8b" name="a441838adb7f0fd8cdd043f86e742ea8b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a441838adb7f0fd8cdd043f86e742ea8b">&#9670;&#160;</a></span>DSSequentialTraversal()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1DSSequentialTraversal.html">autopas::DSSequentialTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor &gt;::DSSequentialTraversal </td>
+          <td class="memname"><a class="el" href="classautopas_1_1DSSequentialTraversal.html">autopas::DSSequentialTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt;::DSSequentialTraversal </td>
           <td>(</td>
-          <td class="paramtype">PairwiseFunctor *&#160;</td>
-          <td class="paramname"><em>pairwiseFunctor</em>, </td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1Functor.html">Functor</a> *&#160;</td>
+          <td class="paramname"><em>functor</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -294,9 +301,9 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 <p>Constructor for the <a class="el" href="classautopas_1_1DirectSum.html" title="This class stores all owned particles in a single cell.">DirectSum</a> traversal. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pairwiseFunctor</td><td>The functor that defines the interaction of two particles. </td></tr>
+    <tr><td class="paramname">functor</td><td>The functor that defines the interaction of particles. </td></tr>
     <tr><td class="paramname">cutoff</td><td>cutoff (this is enough for the directsum traversal, please don't use the interaction length here.) </td></tr>
-    <tr><td class="paramname">dataLayout</td><td>The data layout with which this traversal should be initialised. </td></tr>
+    <tr><td class="paramname">dataLayout</td><td>The data layout with which this traversal should be initialized. </td></tr>
     <tr><td class="paramname">useNewton3</td><td>Parameter to specify whether the traversal makes use of newton3 or not. </td></tr>
   </table>
   </dd>
@@ -305,19 +312,19 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6976b62b7f8472ac5ff67bbd5a3ffdf4" name="a6976b62b7f8472ac5ff67bbd5a3ffdf4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6976b62b7f8472ac5ff67bbd5a3ffdf4">&#9670;&#160;</a></span>endTraversal()</h2>
+<a id="a8751613379eaf528a2c09ca51ee2d522" name="a8751613379eaf528a2c09ca51ee2d522"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8751613379eaf528a2c09ca51ee2d522">&#9670;&#160;</a></span>endTraversal()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1DSSequentialTraversal.html">autopas::DSSequentialTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor &gt;::endTraversal </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1DSSequentialTraversal.html">autopas::DSSequentialTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt;::endTraversal </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -337,19 +344,19 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 
 </div>
 </div>
-<a id="aa374f7f038808b25b06fd6c761edcd6c" name="aa374f7f038808b25b06fd6c761edcd6c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa374f7f038808b25b06fd6c761edcd6c">&#9670;&#160;</a></span>getTraversalType()</h2>
+<a id="ac88bddfa562abe152d0e860055e8dcb4" name="ac88bddfa562abe152d0e860055e8dcb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac88bddfa562abe152d0e860055e8dcb4">&#9670;&#160;</a></span>getTraversalType()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">TraversalOption <a class="el" href="classautopas_1_1DSSequentialTraversal.html">autopas::DSSequentialTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor &gt;::getTraversalType </td>
+          <td class="memname">TraversalOption <a class="el" href="classautopas_1_1DSSequentialTraversal.html">autopas::DSSequentialTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt;::getTraversalType </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -369,19 +376,19 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 
 </div>
 </div>
-<a id="a6003fa78ebf9e4785311e4ab676f5ae7" name="a6003fa78ebf9e4785311e4ab676f5ae7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6003fa78ebf9e4785311e4ab676f5ae7">&#9670;&#160;</a></span>initTraversal()</h2>
+<a id="ad353c6af0eac4e9b1f3d32a62383387e" name="ad353c6af0eac4e9b1f3d32a62383387e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad353c6af0eac4e9b1f3d32a62383387e">&#9670;&#160;</a></span>initTraversal()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1DSSequentialTraversal.html">autopas::DSSequentialTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor &gt;::initTraversal </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1DSSequentialTraversal.html">autopas::DSSequentialTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt;::initTraversal </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -401,19 +408,19 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 
 </div>
 </div>
-<a id="add5bbaf9d0a1147acbbe85a997d3687b" name="add5bbaf9d0a1147acbbe85a997d3687b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add5bbaf9d0a1147acbbe85a997d3687b">&#9670;&#160;</a></span>isApplicable()</h2>
+<a id="a321bff401f5d7c80334ddc09540cc3e8" name="a321bff401f5d7c80334ddc09540cc3e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a321bff401f5d7c80334ddc09540cc3e8">&#9670;&#160;</a></span>isApplicable()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classautopas_1_1DSSequentialTraversal.html">autopas::DSSequentialTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor &gt;::isApplicable </td>
+          <td class="memname">bool <a class="el" href="classautopas_1_1DSSequentialTraversal.html">autopas::DSSequentialTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt;::isApplicable </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -433,19 +440,19 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 
 </div>
 </div>
-<a id="a5f05396378d8cc4b57f7f906ca059529" name="a5f05396378d8cc4b57f7f906ca059529"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f05396378d8cc4b57f7f906ca059529">&#9670;&#160;</a></span>setSortingThreshold()</h2>
+<a id="a263a00288bf4f7fff00bdc7e71d0c2ef" name="a263a00288bf4f7fff00bdc7e71d0c2ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a263a00288bf4f7fff00bdc7e71d0c2ef">&#9670;&#160;</a></span>setSortingThreshold()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1DSSequentialTraversal.html">autopas::DSSequentialTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor &gt;::setSortingThreshold </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1DSSequentialTraversal.html">autopas::DSSequentialTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt;::setSortingThreshold </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>sortingThreshold</em></td><td>)</td>
@@ -467,23 +474,23 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classautopas_1_1CellPairTraversal.html#a28519633c53888b657ae7a589e49a58f">autopas::CellPairTraversal&lt; ParticleCell &gt;</a>.</p>
+<p>Implements <a class="el" href="classautopas_1_1CellTraversal.html#afb5af56d616fb6310d54f54a705747fd">autopas::CellTraversal&lt; ParticleCell &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a6a4d47a8e4e55192ea2431090a2abf42" name="a6a4d47a8e4e55192ea2431090a2abf42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a4d47a8e4e55192ea2431090a2abf42">&#9670;&#160;</a></span>traverseParticlePairs()</h2>
+<a id="a0d04eb111930b77c51e40ffe59501d83" name="a0d04eb111930b77c51e40ffe59501d83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d04eb111930b77c51e40ffe59501d83">&#9670;&#160;</a></span>traverseParticles()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class PairwiseFunctor &gt; </div>
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1DSSequentialTraversal.html">autopas::DSSequentialTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor &gt;::traverseParticlePairs</td>
+          <td class="memname">void <a class="el" href="classautopas_1_1DSSequentialTraversal.html">autopas::DSSequentialTraversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt;::traverseParticles</td>
         </tr>
       </table>
   </td>
@@ -493,10 +500,10 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 </table>
 </div><div class="memdoc">
 
-<p>Traverses all particle pairs.   </p>
-<dl class="section note"><dt>Note</dt><dd>This function expects a vector of exactly two cells. First cell is the main region, second is halo. </dd></dl>
+<p>Traverse the particles by pairs, triplets etc.   </p>
+<p>as determined by the <a class="el" href="classautopas_1_1Functor.html" title="Functor base class.">Functor</a> type.   </p><dl class="section note"><dt>Note</dt><dd>This function expects a vector of exactly two cells. First cell is the main region, second is halo. </dd></dl>
 
-<p>Implements <a class="el" href="classautopas_1_1TraversalInterface.html#a3df61a48799b2638ae9acec662b3b76b">autopas::TraversalInterface</a>.</p>
+<p>Implements <a class="el" href="classautopas_1_1TraversalInterface.html#a733bfd7efaacfcdddd4c453821f3c165">autopas::TraversalInterface</a>.</p>
 
 </div>
 </div>

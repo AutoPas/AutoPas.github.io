@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -124,7 +131,7 @@ $(function() {
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="ThreeDimensionalMapping_8h.html">autopas/utils/ThreeDimensionalMapping.h</a>&quot;</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="inBox_8h.html">autopas/utils/inBox.h</a>&quot;</span></div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="namespaceautopas_1_1internal.html">   23</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceautopas_1_1internal.html">autopas::internal</a> {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceautopas_1_1internal.html">autopas::internal</a> {</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ParticleCell&gt;</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classautopas_1_1internal_1_1CellBlock3D.html">   30</a></span><span class="keyword">class </span><a class="code hl_class" href="classautopas_1_1internal_1_1CellBlock3D.html">CellBlock3D</a> : <span class="keyword">public</span> <a class="code hl_class" href="classautopas_1_1internal_1_1CellBorderAndFlagManager.html">CellBorderAndFlagManager</a> {</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> <span class="keyword">public</span>:</div>
@@ -547,7 +554,7 @@ $(function() {
 <div class="ttc" id="aclassautopas_1_1internal_1_1CellBorderAndFlagManager_html"><div class="ttname"><a href="classautopas_1_1internal_1_1CellBorderAndFlagManager.html">autopas::internal::CellBorderAndFlagManager</a></div><div class="ttdoc">Interface class to handle cell borders and cell types of cells.</div><div class="ttdef"><b>Definition:</b> CellBorderAndFlagManager.h:17</div></div>
 <div class="ttc" id="aclassautopas_1_1utils_1_1ExceptionHandler_html_ae61b9aac49a90a9ff86859c73005ee07"><div class="ttname"><a href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a></div><div class="ttdeci">static void exception(const Exception e)</div><div class="ttdoc">Handle an exception derived by std::exception.</div><div class="ttdef"><b>Definition:</b> ExceptionHandler.h:63</div></div>
 <div class="ttc" id="ainBox_8h_html"><div class="ttname"><a href="inBox_8h.html">inBox.h</a></div></div>
-<div class="ttc" id="anamespaceautopas_1_1internal_html"><div class="ttname"><a href="namespaceautopas_1_1internal.html">autopas::internal</a></div><div class="ttdoc">This namespace is used for implementation specifics.</div><div class="ttdef"><b>Definition:</b> CellBlock3D.h:23</div></div>
+<div class="ttc" id="anamespaceautopas_1_1internal_html"><div class="ttname"><a href="namespaceautopas_1_1internal.html">autopas::internal</a></div><div class="ttdoc">This namespace is used for implementation specifics.</div><div class="ttdef"><b>Definition:</b> CellFunctor.h:14</div></div>
 <div class="ttc" id="anamespaceautopas_1_1utils_1_1ArrayUtils_html_a8811dae11b4ecf54ea7a820567ff0029"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ArrayUtils.html#a8811dae11b4ecf54ea7a820567ff0029">autopas::utils::ArrayUtils::to_string</a></div><div class="ttdeci">void to_string(std::ostream &amp;os, const Container &amp;container, const std::string &amp;delimiter, const std::array&lt; std::string, 2 &gt; &amp;surround, Fun elemToString)</div><div class="ttdoc">Generates a string representation of a container which fulfills the Container requirement (provide cb...</div><div class="ttdef"><b>Definition:</b> ArrayUtils.h:102</div></div>
 <div class="ttc" id="anamespaceautopas_1_1utils_1_1ThreeDimensionalMapping_html_a695d7461713f9c1ad63a1df22fbc29ed"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ThreeDimensionalMapping.html#a695d7461713f9c1ad63a1df22fbc29ed">autopas::utils::ThreeDimensionalMapping::oneToThreeD</a></div><div class="ttdeci">constexpr std::array&lt; T, 3 &gt; oneToThreeD(T ind, const std::array&lt; T, 3 &gt; &amp;dims)</div><div class="ttdoc">Convert a 1d index to a 3d index.</div><div class="ttdef"><b>Definition:</b> ThreeDimensionalMapping.h:55</div></div>
 <div class="ttc" id="anamespaceautopas_1_1utils_1_1ThreeDimensionalMapping_html_a8d92b8e30d9eb33d3b6828989d9b5eb2"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ThreeDimensionalMapping.html#a8d92b8e30d9eb33d3b6828989d9b5eb2">autopas::utils::ThreeDimensionalMapping::threeToOneD</a></div><div class="ttdeci">constexpr T threeToOneD(T x, T y, T z, const std::array&lt; T, 3 &gt; &amp;dims)</div><div class="ttdoc">Convert a 3d index to a 1d index.</div><div class="ttdef"><b>Definition:</b> ThreeDimensionalMapping.h:29</div></div>

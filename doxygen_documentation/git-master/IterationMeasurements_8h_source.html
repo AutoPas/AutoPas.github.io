@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -113,7 +120,7 @@ $(function() {
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceautopas.html">autopas</a> {</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="structautopas_1_1IterationMeasurements.html">   13</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structautopas_1_1IterationMeasurements.html">IterationMeasurements</a> {</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structautopas_1_1IterationMeasurements.html#afdf350da910949d8a1711870de73e857">   17</a></span>  <span class="keywordtype">long</span> <a class="code hl_variable" href="structautopas_1_1IterationMeasurements.html#afdf350da910949d8a1711870de73e857">timeIteratePairwise</a>{};</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="structautopas_1_1IterationMeasurements.html#ac74a7d4dcef1af211c1966649a850725">   17</a></span>  <span class="keywordtype">long</span> <a class="code hl_variable" href="structautopas_1_1IterationMeasurements.html#ac74a7d4dcef1af211c1966649a850725">timeComputeInteractions</a>{};</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="structautopas_1_1IterationMeasurements.html#a8ab74dd953f1b237d9d01ff19f5f1bff">   22</a></span>  <span class="keywordtype">long</span> <a class="code hl_variable" href="structautopas_1_1IterationMeasurements.html#a8ab74dd953f1b237d9d01ff19f5f1bff">timeRemainderTraversal</a>{};</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
@@ -140,9 +147,9 @@ $(function() {
 <div class="ttc" id="astructautopas_1_1IterationMeasurements_html_a586ebaaaed19d5533621606902cd13ef"><div class="ttname"><a href="structautopas_1_1IterationMeasurements.html#a586ebaaaed19d5533621606902cd13ef">autopas::IterationMeasurements::energyTotal</a></div><div class="ttdeci">long energyTotal</div><div class="ttdoc">Total energy consumed.</div><div class="ttdef"><b>Definition:</b> IterationMeasurements.h:58</div></div>
 <div class="ttc" id="astructautopas_1_1IterationMeasurements_html_a6cc045f6fe1eba2d4511a8d7fb692017"><div class="ttname"><a href="structautopas_1_1IterationMeasurements.html#a6cc045f6fe1eba2d4511a8d7fb692017">autopas::IterationMeasurements::timeTotal</a></div><div class="ttdeci">long timeTotal</div><div class="ttdoc">Time it takes for the complete iteratePairwise pipeline.</div><div class="ttdef"><b>Definition:</b> IterationMeasurements.h:32</div></div>
 <div class="ttc" id="astructautopas_1_1IterationMeasurements_html_a8ab74dd953f1b237d9d01ff19f5f1bff"><div class="ttname"><a href="structautopas_1_1IterationMeasurements.html#a8ab74dd953f1b237d9d01ff19f5f1bff">autopas::IterationMeasurements::timeRemainderTraversal</a></div><div class="ttdeci">long timeRemainderTraversal</div><div class="ttdoc">Time it takes for the Remainder Traversal.</div><div class="ttdef"><b>Definition:</b> IterationMeasurements.h:22</div></div>
+<div class="ttc" id="astructautopas_1_1IterationMeasurements_html_ac74a7d4dcef1af211c1966649a850725"><div class="ttname"><a href="structautopas_1_1IterationMeasurements.html#ac74a7d4dcef1af211c1966649a850725">autopas::IterationMeasurements::timeComputeInteractions</a></div><div class="ttdeci">long timeComputeInteractions</div><div class="ttdoc">Time it takes for the LogicHandler's computeInteractions() function.</div><div class="ttdef"><b>Definition:</b> IterationMeasurements.h:17</div></div>
 <div class="ttc" id="astructautopas_1_1IterationMeasurements_html_ad1620364306acc4c52b464a39ac363b7"><div class="ttname"><a href="structautopas_1_1IterationMeasurements.html#ad1620364306acc4c52b464a39ac363b7">autopas::IterationMeasurements::energyPsys</a></div><div class="ttdeci">double energyPsys</div><div class="ttdoc">Energy consumed by the entire system.</div><div class="ttdef"><b>Definition:</b> IterationMeasurements.h:42</div></div>
 <div class="ttc" id="astructautopas_1_1IterationMeasurements_html_ad9e5b02406d14dfe6f11f514535c2403"><div class="ttname"><a href="structautopas_1_1IterationMeasurements.html#ad9e5b02406d14dfe6f11f514535c2403">autopas::IterationMeasurements::energyMeasurementsPossible</a></div><div class="ttdeci">bool energyMeasurementsPossible</div><div class="ttdoc">Bool whether energy measurements are currently possible.</div><div class="ttdef"><b>Definition:</b> IterationMeasurements.h:37</div></div>
-<div class="ttc" id="astructautopas_1_1IterationMeasurements_html_afdf350da910949d8a1711870de73e857"><div class="ttname"><a href="structautopas_1_1IterationMeasurements.html#afdf350da910949d8a1711870de73e857">autopas::IterationMeasurements::timeIteratePairwise</a></div><div class="ttdeci">long timeIteratePairwise</div><div class="ttdoc">Time it takes for the LogicHandler's iteratePairwise() function.</div><div class="ttdef"><b>Definition:</b> IterationMeasurements.h:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

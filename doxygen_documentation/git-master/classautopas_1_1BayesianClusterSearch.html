@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -139,9 +146,9 @@ Collaboration diagram for autopas::BayesianClusterSearch:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aee7ea256229ff1f82887edc949d59c3d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#aee7ea256229ff1f82887edc949d59c3d">BayesianClusterSearch</a> (const std::set&lt; ContainerOption &gt; &amp;allowedContainerOptions=ContainerOption::getAllOptions(), const <a class="el" href="classautopas_1_1NumberSet.html">NumberSet</a>&lt; double &gt; &amp;allowedCellSizeFactors=<a class="el" href="classautopas_1_1NumberInterval.html">NumberInterval</a>&lt; double &gt;(1., 2.), const std::set&lt; TraversalOption &gt; &amp;allowedTraversalOptions=TraversalOption::getAllOptions(), const std::set&lt; <a class="el" href="classautopas_1_1LoadEstimatorOption.html">LoadEstimatorOption</a> &gt; &amp;allowedLoadEstimatorOptions=LoadEstimatorOption::getAllOptions(), const std::set&lt; DataLayoutOption &gt; &amp;allowedDataLayoutOptions=DataLayoutOption::getAllOptions(), const std::set&lt; Newton3Option &gt; &amp;allowedNewton3Options=Newton3Option::getAllOptions(), size_t maxEvidence=10, AcquisitionFunctionOption predAcqFunction=AcquisitionFunctionOption::upperConfidenceBound, const std::string &amp;outputSuffix=&quot;&quot;, size_t predNumLHSamples=50, unsigned long seed=std::random_device()())</td></tr>
-<tr class="memdesc:aee7ea256229ff1f82887edc949d59c3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
-<tr class="separator:aee7ea256229ff1f82887edc949d59c3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e1a312ae4deb84936a9a6e5163aa87b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#a9e1a312ae4deb84936a9a6e5163aa87b">BayesianClusterSearch</a> (const InteractionTypeOption &amp;interactionType, const std::set&lt; ContainerOption &gt; &amp;allowedContainerOptions=ContainerOption::getAllOptions(), const <a class="el" href="classautopas_1_1NumberSet.html">NumberSet</a>&lt; double &gt; &amp;allowedCellSizeFactors=<a class="el" href="classautopas_1_1NumberInterval.html">NumberInterval</a>&lt; double &gt;(1., 2.), const std::set&lt; TraversalOption &gt; &amp;allowedTraversalOptions=TraversalOption::getAllOptions(), const std::set&lt; <a class="el" href="classautopas_1_1LoadEstimatorOption.html">LoadEstimatorOption</a> &gt; &amp;allowedLoadEstimatorOptions=LoadEstimatorOption::getAllOptions(), const std::set&lt; DataLayoutOption &gt; &amp;allowedDataLayoutOptions=DataLayoutOption::getAllOptions(), const std::set&lt; Newton3Option &gt; &amp;allowedNewton3Options=Newton3Option::getAllOptions(), size_t maxEvidence=10, AcquisitionFunctionOption predAcqFunction=AcquisitionFunctionOption::upperConfidenceBound, const std::string &amp;outputSuffix=&quot;&quot;, size_t predNumLHSamples=50, unsigned long seed=std::random_device()())</td></tr>
+<tr class="memdesc:a9e1a312ae4deb84936a9a6e5163aa87b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="separator:a9e1a312ae4deb84936a9a6e5163aa87b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a06944115cb3ffcaf09aed524eacc3376"><td class="memItemLeft" align="right" valign="top">TuningStrategyOption&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#a06944115cb3ffcaf09aed524eacc3376">getOptionType</a> () const override</td></tr>
 <tr class="memdesc:a06944115cb3ffcaf09aed524eacc3376"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get this object's associated TuningStrategyOption type.  <br /></td></tr>
 <tr class="separator:a06944115cb3ffcaf09aed524eacc3376"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -196,8 +203,8 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>Assume that the stochastic distribution of the execution time while fixing discrete variables corresponds to a Gaussian Process. </p>
 <p>This allows to estimate the 'gain' of testing a given feature next. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aee7ea256229ff1f82887edc949d59c3d" name="aee7ea256229ff1f82887edc949d59c3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aee7ea256229ff1f82887edc949d59c3d">&#9670;&#160;</a></span>BayesianClusterSearch()</h2>
+<a id="a9e1a312ae4deb84936a9a6e5163aa87b" name="a9e1a312ae4deb84936a9a6e5163aa87b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e1a312ae4deb84936a9a6e5163aa87b">&#9670;&#160;</a></span>BayesianClusterSearch()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -208,6 +215,12 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">autopas::BayesianClusterSearch::BayesianClusterSearch </td>
           <td>(</td>
+          <td class="paramtype">const InteractionTypeOption &amp;&#160;</td>
+          <td class="paramname"><em>interactionType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const std::set&lt; ContainerOption &gt; &amp;&#160;</td>
           <td class="paramname"><em>allowedContainerOptions</em> = <code>ContainerOption::getAllOptions()</code>, </td>
         </tr>
@@ -287,6 +300,7 @@ Public Member Functions</h2></td></tr>
 <p>Constructor. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">interactionType</td><td></td></tr>
     <tr><td class="paramname">allowedContainerOptions</td><td></td></tr>
     <tr><td class="paramname">allowedCellSizeFactors</td><td></td></tr>
     <tr><td class="paramname">allowedTraversalOptions</td><td></td></tr>

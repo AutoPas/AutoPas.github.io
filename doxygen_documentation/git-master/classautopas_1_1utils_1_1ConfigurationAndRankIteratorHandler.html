@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -119,9 +126,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a5d54ff8257c680185be798c367fa8665"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1utils_1_1ConfigurationAndRankIteratorHandler.html#a5d54ff8257c680185be798c367fa8665">ConfigurationAndRankIteratorHandler</a> (const std::set&lt; ContainerOption &gt; &amp;containerOptions, const std::set&lt; double &gt; &amp;cellSizeFactors, const std::set&lt; TraversalOption &gt; &amp;traversalOptions, const std::set&lt; <a class="el" href="classautopas_1_1LoadEstimatorOption.html">LoadEstimatorOption</a> &gt; &amp;loadEstimatorOptions, const std::set&lt; DataLayoutOption &gt; &amp;dataLayoutOptions, const std::set&lt; Newton3Option &gt; &amp;newton3Options, const int numConfigs, const int commSize)</td></tr>
-<tr class="memdesc:a5d54ff8257c680185be798c367fa8665"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classautopas_1_1utils_1_1ConfigurationAndRankIteratorHandler.html" title="Functionality needed to iterate through ranks and configurations simultaneously in an evenly distribu...">ConfigurationAndRankIteratorHandler</a>.  <br /></td></tr>
-<tr class="separator:a5d54ff8257c680185be798c367fa8665"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aeda879f16f3aa17a165e62b43b9c9088"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1utils_1_1ConfigurationAndRankIteratorHandler.html#aeda879f16f3aa17a165e62b43b9c9088">ConfigurationAndRankIteratorHandler</a> (const std::set&lt; ContainerOption &gt; &amp;containerOptions, const std::set&lt; double &gt; &amp;cellSizeFactors, const std::set&lt; TraversalOption &gt; &amp;traversalOptions, const std::set&lt; <a class="el" href="classautopas_1_1LoadEstimatorOption.html">LoadEstimatorOption</a> &gt; &amp;loadEstimatorOptions, const std::set&lt; DataLayoutOption &gt; &amp;dataLayoutOptions, const std::set&lt; Newton3Option &gt; &amp;newton3Options, const InteractionTypeOption &amp;interactionType, const int numConfigs, const int commSize)</td></tr>
+<tr class="memdesc:aeda879f16f3aa17a165e62b43b9c9088"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classautopas_1_1utils_1_1ConfigurationAndRankIteratorHandler.html" title="Functionality needed to iterate through ranks and configurations simultaneously in an evenly distribu...">ConfigurationAndRankIteratorHandler</a>.  <br /></td></tr>
+<tr class="separator:aeda879f16f3aa17a165e62b43b9c9088"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1438d09995dd72bd641435ed8ad09e5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1utils_1_1ConfigurationAndRankIteratorHandler.html#ae1438d09995dd72bd641435ed8ad09e5">advanceIterators</a> (int numConfigs, int commSize)</td></tr>
 <tr class="memdesc:ae1438d09995dd72bd641435ed8ad09e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Advances the rankIterator (<a class="el" href="classautopas_1_1utils_1_1ConfigurationAndRankIteratorHandler.html#a115d7e57ca9bebe809cc3f0d89c1eb6b" title="Getter for the rankIterator.">getRankIterator()</a>) and/or the Option iterators for a single step such that repeated.  <br /></td></tr>
 <tr class="separator:ae1438d09995dd72bd641435ed8ad09e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -163,8 +170,8 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>Functionality needed to iterate through ranks and configurations simultaneously in an evenly distributed manner. </p>
 <p>If more configurations than ranks exist, each configuration is paired with a single rank. If more ranks exist, it's the other way around. Since it cannot traverse infinite sets of CellSizeFactors, it provides information for splitting those among configurations if more ranks than configurations exist. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a5d54ff8257c680185be798c367fa8665" name="a5d54ff8257c680185be798c367fa8665"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5d54ff8257c680185be798c367fa8665">&#9670;&#160;</a></span>ConfigurationAndRankIteratorHandler()</h2>
+<a id="aeda879f16f3aa17a165e62b43b9c9088" name="aeda879f16f3aa17a165e62b43b9c9088"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeda879f16f3aa17a165e62b43b9c9088">&#9670;&#160;</a></span>ConfigurationAndRankIteratorHandler()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -211,6 +218,12 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const InteractionTypeOption &amp;&#160;</td>
+          <td class="paramname"><em>interactionType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const int&#160;</td>
           <td class="paramname"><em>numConfigs</em>, </td>
         </tr>
@@ -242,6 +255,7 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">loadEstimatorOptions</td><td></td></tr>
     <tr><td class="paramname">dataLayoutOptions</td><td></td></tr>
     <tr><td class="paramname">newton3Options</td><td></td></tr>
+    <tr><td class="paramname">interactionType</td><td></td></tr>
     <tr><td class="paramname">numConfigs</td><td></td></tr>
     <tr><td class="paramname">commSize</td><td></td></tr>
   </table>

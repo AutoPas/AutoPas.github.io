@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -112,7 +119,7 @@ $(function() {
 <p>This is the complete list of members for <a class="el" href="classautopas_1_1MPIParallelizedStrategy.html">autopas::MPIParallelizedStrategy</a>, including all inherited members.</p>
 <table class="directory">
   <tr class="even"><td class="entry"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a0e2e11a52988f7c4d67eccf353335b61">addEvidence</a>(const Configuration &amp;configuration, const Evidence &amp;evidence)</td><td class="entry"><a class="el" href="classautopas_1_1TuningStrategyInterface.html">autopas::TuningStrategyInterface</a></td><td class="entry"><span class="mlabel">inline</span><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classautopas_1_1MPIParallelizedStrategy.html#ac7ed4864ccbbd03c7535fc1b726491d8">createFallBackConfiguration</a>(const std::set&lt; Configuration &gt; &amp;searchSpace)</td><td class="entry"><a class="el" href="classautopas_1_1MPIParallelizedStrategy.html">autopas::MPIParallelizedStrategy</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classautopas_1_1MPIParallelizedStrategy.html#aca3bff4603cce19d6e4302de5ee0e69a">createFallBackConfiguration</a>(const std::set&lt; Configuration &gt; &amp;searchSpace, const InteractionTypeOption &amp;interactionType)</td><td class="entry"><a class="el" href="classautopas_1_1MPIParallelizedStrategy.html">autopas::MPIParallelizedStrategy</a></td><td class="entry"><span class="mlabel">static</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classautopas_1_1MPIParallelizedStrategy.html#a8316a81496117fa3d7f41fa434f0d8d3">getBucket</a>() const</td><td class="entry"><a class="el" href="classautopas_1_1MPIParallelizedStrategy.html">autopas::MPIParallelizedStrategy</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classautopas_1_1MPIParallelizedStrategy.html#a7bdbe8e620e4be0187c9b1e7ba55726a">getOptionType</a>() const override</td><td class="entry"><a class="el" href="classautopas_1_1MPIParallelizedStrategy.html">autopas::MPIParallelizedStrategy</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classautopas_1_1MPIParallelizedStrategy.html#a4b8693082b4cdb66eecda1014379a760">MPIParallelizedStrategy</a>(const Configuration &amp;fallbackConfiguration, const AutoPas_MPI_Comm &amp;comm, double mpiTuningMaxDifferenceForBucket, double mpiTuningWeightForMaxDensity)</td><td class="entry"><a class="el" href="classautopas_1_1MPIParallelizedStrategy.html">autopas::MPIParallelizedStrategy</a></td><td class="entry"></td></tr>

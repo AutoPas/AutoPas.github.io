@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -138,9 +145,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2fabbcb8e069487f48826a90cf3cf575"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classParticlePropertiesLibrary.html">ParticlePropertiesLibrary</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticlePropertiesLibrary.html#a2fabbcb8e069487f48826a90cf3cf575">operator=</a> (const <a class="el" href="classParticlePropertiesLibrary.html">ParticlePropertiesLibrary</a> &amp;particlePropertiesLibrary)=default</td></tr>
 <tr class="memdesc:a2fabbcb8e069487f48826a90cf3cf575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Copy assignment operator.  <br /></td></tr>
 <tr class="separator:a2fabbcb8e069487f48826a90cf3cf575"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae6e739fdbf0177001a4798faaeafcfa4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticlePropertiesLibrary.html#ae6e739fdbf0177001a4798faaeafcfa4">addSiteType</a> (const intType siteId, const floatType epsilon, const floatType sigma, const floatType mass)</td></tr>
-<tr class="memdesc:ae6e739fdbf0177001a4798faaeafcfa4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the properties of a type of a single LJ site type to the library.  <br /></td></tr>
-<tr class="separator:ae6e739fdbf0177001a4798faaeafcfa4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab00a77e972536b128152c5270cd3905"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticlePropertiesLibrary.html#aab00a77e972536b128152c5270cd3905">addSiteType</a> (const intType siteId, const floatType mass)</td></tr>
+<tr class="memdesc:aab00a77e972536b128152c5270cd3905"><td class="mdescLeft">&#160;</td><td class="mdescRight">Registers a new single site type to the library with a given mass.  <br /></td></tr>
+<tr class="separator:aab00a77e972536b128152c5270cd3905"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43c75846641c128c76f0ed73c04b346d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticlePropertiesLibrary.html#a43c75846641c128c76f0ed73c04b346d">addLJParametersToSite</a> (const intType siteId, const floatType epsilon, const floatType sigma)</td></tr>
+<tr class="memdesc:a43c75846641c128c76f0ed73c04b346d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the LJ properties of a single site type to the library.  <br /></td></tr>
+<tr class="separator:a43c75846641c128c76f0ed73c04b346d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7427d81452145769c6ab5460495b3192"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticlePropertiesLibrary.html#a7427d81452145769c6ab5460495b3192">addATParametersToSite</a> (const intType siteId, const floatType nu)</td></tr>
+<tr class="memdesc:a7427d81452145769c6ab5460495b3192"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the AT properties of a single site type to the library.  <br /></td></tr>
+<tr class="separator:a7427d81452145769c6ab5460495b3192"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a83fd8f3c5224dcc8901eca3b1f0b902f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticlePropertiesLibrary.html#a83fd8f3c5224dcc8901eca3b1f0b902f">addMolType</a> (const intType molId, const std::vector&lt; intType &gt; siteIds, const std::vector&lt; std::array&lt; floatType, 3 &gt; &gt; relPos, const std::array&lt; floatType, 3 &gt; momentOfInertia)</td></tr>
 <tr class="memdesc:a83fd8f3c5224dcc8901eca3b1f0b902f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the properties of a molecule type to the library including: position and type of all sites, as well as the diagonalized moment of inertia.  <br /></td></tr>
 <tr class="separator:a83fd8f3c5224dcc8901eca3b1f0b902f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -160,6 +173,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>calculateMixingCoeffi
 <tr class="memitem:af16a10315133096471309863c8ab6124"><td class="memItemLeft" align="right" valign="top">floatType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticlePropertiesLibrary.html#af16a10315133096471309863c8ab6124">getSigma</a> (intType i) const</td></tr>
 <tr class="memdesc:af16a10315133096471309863c8ab6124"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the site's sigma.  <br /></td></tr>
 <tr class="separator:af16a10315133096471309863c8ab6124"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4553b65a441d736eb0079f15b23e6db"><td class="memItemLeft" align="right" valign="top">floatType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticlePropertiesLibrary.html#ad4553b65a441d736eb0079f15b23e6db">getNu</a> (intType i) const</td></tr>
+<tr class="memdesc:ad4553b65a441d736eb0079f15b23e6db"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the site's nu.  <br /></td></tr>
+<tr class="separator:ad4553b65a441d736eb0079f15b23e6db"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad210020ffb7d77a3e322b293a9098c7a"><td class="memItemLeft" align="right" valign="top">floatType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticlePropertiesLibrary.html#ad210020ffb7d77a3e322b293a9098c7a">getSiteMass</a> (intType i) const</td></tr>
 <tr class="memdesc:ad210020ffb7d77a3e322b293a9098c7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the site's mass.  <br /></td></tr>
 <tr class="separator:ad210020ffb7d77a3e322b293a9098c7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -184,18 +200,24 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>calculateMixingCoeffi
 <tr class="memitem:adef719658571d5bf89f335f666e0544d"><td class="memItemLeft" align="right" valign="top">floatType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticlePropertiesLibrary.html#adef719658571d5bf89f335f666e0544d">getMixing24Epsilon</a> (intType i, intType j) const</td></tr>
 <tr class="memdesc:adef719658571d5bf89f335f666e0544d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the precomputed mixed epsilon * 24.  <br /></td></tr>
 <tr class="separator:adef719658571d5bf89f335f666e0544d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b3a757d9eaf16705ec2e458712aef04"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticlePropertiesLibrary.html#a3b3a757d9eaf16705ec2e458712aef04">getMixingData</a> (intType i, intType j) const</td></tr>
-<tr class="memdesc:a3b3a757d9eaf16705ec2e458712aef04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get complete mixing data for one pair of site types.  <br /></td></tr>
-<tr class="separator:a3b3a757d9eaf16705ec2e458712aef04"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf0b56788203a8131072263a34de86e8"><td class="memItemLeft" align="right" valign="top">const double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticlePropertiesLibrary.html#aaf0b56788203a8131072263a34de86e8">getMixingDataPtr</a> (intType i, intType j)</td></tr>
-<tr class="memdesc:aaf0b56788203a8131072263a34de86e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a pointer to Mixing Data for one pair of site types.  <br /></td></tr>
-<tr class="separator:aaf0b56788203a8131072263a34de86e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef9dc1c4c350989d674de7c2cb132681"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticlePropertiesLibrary.html#aef9dc1c4c350989d674de7c2cb132681">getLJMixingData</a> (intType i, intType j) const</td></tr>
+<tr class="memdesc:aef9dc1c4c350989d674de7c2cb132681"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get complete mixing data for one pair of LJ site types.  <br /></td></tr>
+<tr class="separator:aef9dc1c4c350989d674de7c2cb132681"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcfa7412e44128fbebd2ddccbe6b4bf4"><td class="memItemLeft" align="right" valign="top">const double *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticlePropertiesLibrary.html#adcfa7412e44128fbebd2ddccbe6b4bf4">getLJMixingDataPtr</a> (intType i, intType j)</td></tr>
+<tr class="memdesc:adcfa7412e44128fbebd2ddccbe6b4bf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a pointer to Mixing Data for one pair of LJ site types.  <br /></td></tr>
+<tr class="separator:adcfa7412e44128fbebd2ddccbe6b4bf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8730a82cb4edb2d63c0b9af3780e40e5"><td class="memItemLeft" align="right" valign="top">floatType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticlePropertiesLibrary.html#a8730a82cb4edb2d63c0b9af3780e40e5">getMixingSigmaSquared</a> (intType i, intType j) const</td></tr>
 <tr class="memdesc:a8730a82cb4edb2d63c0b9af3780e40e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns precomputed mixed squared sigma for one pair of site types.  <br /></td></tr>
 <tr class="separator:a8730a82cb4edb2d63c0b9af3780e40e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a171aff310b633d52d4df73e795d48560"><td class="memItemLeft" align="right" valign="top">floatType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticlePropertiesLibrary.html#a171aff310b633d52d4df73e795d48560">getMixingShift6</a> (intType i, intType j) const</td></tr>
 <tr class="memdesc:a171aff310b633d52d4df73e795d48560"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns precomputed mixed shift * 6 for one pair of site types.  <br /></td></tr>
 <tr class="separator:a171aff310b633d52d4df73e795d48560"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af55a500cd01bf051225379eace2e2441"><td class="memItemLeft" align="right" valign="top">floatType&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticlePropertiesLibrary.html#af55a500cd01bf051225379eace2e2441">getMixingNu</a> (intType i, intType j, intType k) const</td></tr>
+<tr class="memdesc:af55a500cd01bf051225379eace2e2441"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the precomputed mixed epsilon * 24.  <br /></td></tr>
+<tr class="separator:af55a500cd01bf051225379eace2e2441"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a645af90a48872f7e9331265b445891c0"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticlePropertiesLibrary.html#a645af90a48872f7e9331265b445891c0">getATMixingData</a> (intType i, intType j, intType k) const</td></tr>
+<tr class="memdesc:a645af90a48872f7e9331265b445891c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get complete mixing data for one triplet of AT site types.  <br /></td></tr>
+<tr class="separator:a645af90a48872f7e9331265b445891c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -282,6 +304,91 @@ template&lt;typename floatType  = double, typename intType  = unsigned long&gt; 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7427d81452145769c6ab5460495b3192" name="a7427d81452145769c6ab5460495b3192"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7427d81452145769c6ab5460495b3192">&#9670;&#160;</a></span>addATParametersToSite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename floatType , typename intType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classParticlePropertiesLibrary.html">ParticlePropertiesLibrary</a>&lt; floatType, intType &gt;::addATParametersToSite </td>
+          <td>(</td>
+          <td class="paramtype">const intType&#160;</td>
+          <td class="paramname"><em>siteId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const floatType&#160;</td>
+          <td class="paramname"><em>nu</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds the AT properties of a single site type to the library. </p>
+<p>Checks if a site with given siteId was already registered. Old values will be overwritten. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">siteId</td><td></td></tr>
+    <tr><td class="paramname">nu</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a43c75846641c128c76f0ed73c04b346d" name="a43c75846641c128c76f0ed73c04b346d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43c75846641c128c76f0ed73c04b346d">&#9670;&#160;</a></span>addLJParametersToSite()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename floatType , typename intType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classParticlePropertiesLibrary.html">ParticlePropertiesLibrary</a>&lt; floatType, intType &gt;::addLJParametersToSite </td>
+          <td>(</td>
+          <td class="paramtype">const intType&#160;</td>
+          <td class="paramname"><em>siteId</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const floatType&#160;</td>
+          <td class="paramname"><em>epsilon</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const floatType&#160;</td>
+          <td class="paramname"><em>sigma</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Adds the LJ properties of a single site type to the library. </p>
+<p>Checks if a site with given siteId was already registered. Old values will be overwritten. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">siteId</td><td></td></tr>
+    <tr><td class="paramname">epsilon</td><td></td></tr>
+    <tr><td class="paramname">sigma</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a83fd8f3c5224dcc8901eca3b1f0b902f" name="a83fd8f3c5224dcc8901eca3b1f0b902f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a83fd8f3c5224dcc8901eca3b1f0b902f">&#9670;&#160;</a></span>addMolType()</h2>
 
@@ -336,8 +443,8 @@ template&lt;typename floatType , typename intType &gt; </div>
 
 </div>
 </div>
-<a id="ae6e739fdbf0177001a4798faaeafcfa4" name="ae6e739fdbf0177001a4798faaeafcfa4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae6e739fdbf0177001a4798faaeafcfa4">&#9670;&#160;</a></span>addSiteType()</h2>
+<a id="aab00a77e972536b128152c5270cd3905" name="aab00a77e972536b128152c5270cd3905"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab00a77e972536b128152c5270cd3905">&#9670;&#160;</a></span>addSiteType()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -354,18 +461,6 @@ template&lt;typename floatType , typename intType &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const floatType&#160;</td>
-          <td class="paramname"><em>epsilon</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const floatType&#160;</td>
-          <td class="paramname"><em>sigma</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const floatType&#160;</td>
           <td class="paramname"><em>mass</em>&#160;</td>
         </tr>
         <tr>
@@ -376,12 +471,13 @@ template&lt;typename floatType , typename intType &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Adds the properties of a type of a single LJ site type to the library. </p>
-<p>This function also precomputes all possible mixed values with already known particle types. If the type id already exists the values will be overwritten. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Registers a new single site type to the library with a given mass. </p>
+<dl class="section note"><dt>Note</dt><dd>New sites must be registered with consecutive siteIds. </dd>
+<dd>
+This only registers the site. Potential specific parameters must be added afterwards by calling e.g. <code><a class="el" href="classParticlePropertiesLibrary.html#a43c75846641c128c76f0ed73c04b346d" title="Adds the LJ properties of a single site type to the library.">addLJParametersToSite()</a></code> for a Lennard-Jones Site.</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">siteId</td><td></td></tr>
-    <tr><td class="paramname">epsilon</td><td></td></tr>
-    <tr><td class="paramname">sigma</td><td></td></tr>
     <tr><td class="paramname">mass</td><td></td></tr>
   </table>
   </dd>
@@ -444,6 +540,61 @@ template&lt;typename floatType , typename intType &gt; </div>
 
 </div>
 </div>
+<a id="a645af90a48872f7e9331265b445891c0" name="a645af90a48872f7e9331265b445891c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a645af90a48872f7e9331265b445891c0">&#9670;&#160;</a></span>getATMixingData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename floatType  = double, typename intType  = unsigned long&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classParticlePropertiesLibrary.html">ParticlePropertiesLibrary</a>&lt; floatType, intType &gt;::getATMixingData </td>
+          <td>(</td>
+          <td class="paramtype">intType&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">intType&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">intType&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get complete mixing data for one triplet of AT site types. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>Id of site one. </td></tr>
+    <tr><td class="paramname">j</td><td>Id of site two. </td></tr>
+    <tr><td class="paramname">k</td><td>Id of site three. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 <a id="a897a411eba7aaa9cadb303e670914a23" name="a897a411eba7aaa9cadb303e670914a23"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a897a411eba7aaa9cadb303e670914a23">&#9670;&#160;</a></span>getEpsilon()</h2>
 
@@ -470,6 +621,102 @@ template&lt;typename floatType , typename intType &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>epsilon_i </dd></dl>
+
+</div>
+</div>
+<a id="aef9dc1c4c350989d674de7c2cb132681" name="aef9dc1c4c350989d674de7c2cb132681"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef9dc1c4c350989d674de7c2cb132681">&#9670;&#160;</a></span>getLJMixingData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename floatType  = double, typename intType  = unsigned long&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto <a class="el" href="classParticlePropertiesLibrary.html">ParticlePropertiesLibrary</a>&lt; floatType, intType &gt;::getLJMixingData </td>
+          <td>(</td>
+          <td class="paramtype">intType&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">intType&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get complete mixing data for one pair of LJ site types. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>Id of site one. </td></tr>
+    <tr><td class="paramname">j</td><td>Id of site two. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="adcfa7412e44128fbebd2ddccbe6b4bf4" name="adcfa7412e44128fbebd2ddccbe6b4bf4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcfa7412e44128fbebd2ddccbe6b4bf4">&#9670;&#160;</a></span>getLJMixingDataPtr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename floatType  = double, typename intType  = unsigned long&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const double * <a class="el" href="classParticlePropertiesLibrary.html">ParticlePropertiesLibrary</a>&lt; floatType, intType &gt;::getLJMixingDataPtr </td>
+          <td>(</td>
+          <td class="paramtype">intType&#160;</td>
+          <td class="paramname"><em>i</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">intType&#160;</td>
+          <td class="paramname"><em>j</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get a pointer to Mixing Data for one pair of LJ site types. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>Id of site one. </td></tr>
+    <tr><td class="paramname">j</td><td>Id of site two. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -521,8 +768,8 @@ template&lt;typename floatType  = double, typename intType  = unsigned long&gt; 
 
 </div>
 </div>
-<a id="a3b3a757d9eaf16705ec2e458712aef04" name="a3b3a757d9eaf16705ec2e458712aef04"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b3a757d9eaf16705ec2e458712aef04">&#9670;&#160;</a></span>getMixingData()</h2>
+<a id="af55a500cd01bf051225379eace2e2441" name="af55a500cd01bf051225379eace2e2441"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af55a500cd01bf051225379eace2e2441">&#9670;&#160;</a></span>getMixingNu()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -533,7 +780,7 @@ template&lt;typename floatType  = double, typename intType  = unsigned long&gt; 
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="classParticlePropertiesLibrary.html">ParticlePropertiesLibrary</a>&lt; floatType, intType &gt;::getMixingData </td>
+          <td class="memname">floatType <a class="el" href="classParticlePropertiesLibrary.html">ParticlePropertiesLibrary</a>&lt; floatType, intType &gt;::getMixingNu </td>
           <td>(</td>
           <td class="paramtype">intType&#160;</td>
           <td class="paramname"><em>i</em>, </td>
@@ -542,7 +789,13 @@ template&lt;typename floatType  = double, typename intType  = unsigned long&gt; 
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">intType&#160;</td>
-          <td class="paramname"><em>j</em>&#160;</td>
+          <td class="paramname"><em>j</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">intType&#160;</td>
+          <td class="paramname"><em>k</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -557,63 +810,16 @@ template&lt;typename floatType  = double, typename intType  = unsigned long&gt; 
 </table>
 </div><div class="memdoc">
 
-<p>Get complete mixing data for one pair of site types. </p>
+<p>Returns the precomputed mixed epsilon * 24. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">i</td><td>Id of site one. </td></tr>
     <tr><td class="paramname">j</td><td>Id of site two. </td></tr>
+    <tr><td class="paramname">k</td><td>Id of site three. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="aaf0b56788203a8131072263a34de86e8" name="aaf0b56788203a8131072263a34de86e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf0b56788203a8131072263a34de86e8">&#9670;&#160;</a></span>getMixingDataPtr()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename floatType  = double, typename intType  = unsigned long&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const double * <a class="el" href="classParticlePropertiesLibrary.html">ParticlePropertiesLibrary</a>&lt; floatType, intType &gt;::getMixingDataPtr </td>
-          <td>(</td>
-          <td class="paramtype">intType&#160;</td>
-          <td class="paramname"><em>i</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">intType&#160;</td>
-          <td class="paramname"><em>j</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Get a pointer to Mixing Data for one pair of site types. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">i</td><td>Id of site one. </td></tr>
-    <tr><td class="paramname">j</td><td>Id of site two. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>nu_ijk </dd></dl>
 
 </div>
 </div>
@@ -800,6 +1006,35 @@ template&lt;typename floatType , typename intType &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>diagonalized moment of inertia, with each element of the returned array corresponding to a diagonal element of the MoI matrix/tensor. </dd></dl>
+
+</div>
+</div>
+<a id="ad4553b65a441d736eb0079f15b23e6db" name="ad4553b65a441d736eb0079f15b23e6db"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4553b65a441d736eb0079f15b23e6db">&#9670;&#160;</a></span>getNu()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename floatType , typename intType &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">floatType <a class="el" href="classParticlePropertiesLibrary.html">ParticlePropertiesLibrary</a>&lt; floatType, intType &gt;::getNu </td>
+          <td>(</td>
+          <td class="paramtype">intType&#160;</td>
+          <td class="paramname"><em>i</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Getter for the site's nu. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">i</td><td>Type Id of the site or single-site molecule. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>nu_i </dd></dl>
 
 </div>
 </div>

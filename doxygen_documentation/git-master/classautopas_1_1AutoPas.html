@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -153,7 +160,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab732087b6bcb219bee6a6d3cf65ce64a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2ab293ffb7a0a617678466331db779c8"><td class="memItemLeft" align="right" valign="top"><a id="a2ab293ffb7a0a617678466331db779c8" name="a2ab293ffb7a0a617678466331db779c8"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>forceRetune</b> ()</td></tr>
-<tr class="memdesc:a2ab293ffb7a0a617678466331db779c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Force the internal tuner to enter a new tuning phase upon the next call to <a class="el" href="classautopas_1_1AutoPas.html#aa4f698155519b2dc75f7a4ec800b3763" title="Function to iterate over all pairs of particles in the container.">iteratePairwise()</a>. <br /></td></tr>
+<tr class="memdesc:a2ab293ffb7a0a617678466331db779c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Force the internal tuner to enter a new tuning phase upon the next call to <a class="el" href="classautopas_1_1AutoPas.html#ab1b7cf464564dd21a8deecf34a7984d1" title="Function to iterate over all inter-particle interactions in the container This function only handles ...">computeInteractions()</a>. <br /></td></tr>
 <tr class="separator:a2ab293ffb7a0a617678466331db779c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9383bb71d73731a7698bb82a05e6d5d8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a9383bb71d73731a7698bb82a05e6d5d8">finalize</a> ()</td></tr>
 <tr class="memdesc:a9383bb71d73731a7698bb82a05e6d5d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Free the <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> MPI communicator.  <br /></td></tr>
@@ -201,10 +208,10 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>forceRetune</b> ()</t
 <tr class="memitem:a10580834829b0a43d0cc1c9aec27b391"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a10580834829b0a43d0cc1c9aec27b391">deleteParticle</a> (<a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &amp;particle)</td></tr>
 <tr class="memdesc:a10580834829b0a43d0cc1c9aec27b391"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the given particle and leaves the container in a valid state.  <br /></td></tr>
 <tr class="separator:a10580834829b0a43d0cc1c9aec27b391"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4f698155519b2dc75f7a4ec800b3763"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </td></tr>
-<tr class="memitem:aa4f698155519b2dc75f7a4ec800b3763"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#aa4f698155519b2dc75f7a4ec800b3763">iteratePairwise</a> (<a class="el" href="classautopas_1_1Functor.html">Functor</a> *f)</td></tr>
-<tr class="memdesc:aa4f698155519b2dc75f7a4ec800b3763"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to iterate over all pairs of particles in the container.  <br /></td></tr>
-<tr class="separator:aa4f698155519b2dc75f7a4ec800b3763"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab1b7cf464564dd21a8deecf34a7984d1"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </td></tr>
+<tr class="memitem:ab1b7cf464564dd21a8deecf34a7984d1"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#ab1b7cf464564dd21a8deecf34a7984d1">computeInteractions</a> (<a class="el" href="classautopas_1_1Functor.html">Functor</a> *f)</td></tr>
+<tr class="memdesc:ab1b7cf464564dd21a8deecf34a7984d1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to iterate over all inter-particle interactions in the container This function only handles short-range interactions.  <br /></td></tr>
+<tr class="separator:ab1b7cf464564dd21a8deecf34a7984d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae94d20910871cf765fe55e765cb0387b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1AutoPas.html#a07677b34e1a20ebe0514bd8d3259ed13">IteratorT</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#ae94d20910871cf765fe55e765cb0387b">begin</a> (IteratorBehavior behavior=IteratorBehavior::ownedOrHalo)</td></tr>
 <tr class="memdesc:ae94d20910871cf765fe55e765cb0387b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all particles by using for(auto iter = autoPas.begin(); iter.isValid(); ++iter)  <br /></td></tr>
 <tr class="separator:ae94d20910871cf765fe55e765cb0387b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -416,27 +423,30 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>forceRetune</b> ()</t
 <tr class="memitem:a1c7ee5d2d419714f85cb40890a907177"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a1c7ee5d2d419714f85cb40890a907177">setAllowedContainers</a> (const std::set&lt; ContainerOption &gt; &amp;allowedContainers)</td></tr>
 <tr class="memdesc:a1c7ee5d2d419714f85cb40890a907177"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the list of allowed containers.  <br /></td></tr>
 <tr class="separator:a1c7ee5d2d419714f85cb40890a907177"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af24047439d500a98914607bfd12c694c"><td class="memItemLeft" align="right" valign="top">const std::set&lt; TraversalOption &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#af24047439d500a98914607bfd12c694c">getAllowedTraversals</a> () const</td></tr>
-<tr class="memdesc:af24047439d500a98914607bfd12c694c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the list of allowed traversals.  <br /></td></tr>
-<tr class="separator:af24047439d500a98914607bfd12c694c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa6785a52962c4b0be6ddc7c3703550b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#aa6785a52962c4b0be6ddc7c3703550b5">setAllowedTraversals</a> (const std::set&lt; TraversalOption &gt; &amp;allowedTraversals)</td></tr>
-<tr class="memdesc:aa6785a52962c4b0be6ddc7c3703550b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the list of allowed traversals.  <br /></td></tr>
-<tr class="separator:aa6785a52962c4b0be6ddc7c3703550b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a027c37578724b34ad855a18acf75a0af"><td class="memItemLeft" align="right" valign="top">const std::set&lt; DataLayoutOption &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a027c37578724b34ad855a18acf75a0af">getAllowedDataLayouts</a> () const</td></tr>
-<tr class="memdesc:a027c37578724b34ad855a18acf75a0af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the list of allowed data layouts.  <br /></td></tr>
-<tr class="separator:a027c37578724b34ad855a18acf75a0af"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1be010b3d2012e75d810f6f8afe8c70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#af1be010b3d2012e75d810f6f8afe8c70">setAllowedDataLayouts</a> (const std::set&lt; DataLayoutOption &gt; &amp;allowedDataLayouts)</td></tr>
-<tr class="memdesc:af1be010b3d2012e75d810f6f8afe8c70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the list of allowed data layouts.  <br /></td></tr>
-<tr class="separator:af1be010b3d2012e75d810f6f8afe8c70"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9eab64a58a5a67993d9896624ee5c3d"><td class="memItemLeft" align="right" valign="top">const std::set&lt; Newton3Option &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#aa9eab64a58a5a67993d9896624ee5c3d">getAllowedNewton3Options</a> () const</td></tr>
-<tr class="memdesc:aa9eab64a58a5a67993d9896624ee5c3d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the list of allowed newton 3 options.  <br /></td></tr>
-<tr class="separator:aa9eab64a58a5a67993d9896624ee5c3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac51c45b565b6b507bbfb0bb225c5340a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#ac51c45b565b6b507bbfb0bb225c5340a">setAllowedNewton3Options</a> (const std::set&lt; Newton3Option &gt; &amp;allowedNewton3Options)</td></tr>
-<tr class="memdesc:ac51c45b565b6b507bbfb0bb225c5340a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the list of allowed newton 3 options.  <br /></td></tr>
-<tr class="separator:ac51c45b565b6b507bbfb0bb225c5340a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2a8e38bacf636c5d77ec9fa33c814937"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a2a8e38bacf636c5d77ec9fa33c814937">getCurrentConfig</a> () const</td></tr>
-<tr class="memdesc:a2a8e38bacf636c5d77ec9fa33c814937"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the currently selected configuration.  <br /></td></tr>
-<tr class="separator:a2a8e38bacf636c5d77ec9fa33c814937"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a396345f54b3998971067d57e37e8f769"><td class="memItemLeft" align="right" valign="top">const std::set&lt; TraversalOption &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a396345f54b3998971067d57e37e8f769">getAllowedTraversals</a> (const InteractionTypeOption interactionType=InteractionTypeOption::pairwise) const</td></tr>
+<tr class="memdesc:a396345f54b3998971067d57e37e8f769"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the list of allowed traversals.  <br /></td></tr>
+<tr class="separator:a396345f54b3998971067d57e37e8f769"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ac593328f89e009b2bac1485e4a0e71"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a5ac593328f89e009b2bac1485e4a0e71">setAllowedTraversals</a> (const std::set&lt; TraversalOption &gt; &amp;allowedTraversals, const InteractionTypeOption interactionType=InteractionTypeOption::pairwise)</td></tr>
+<tr class="memdesc:a5ac593328f89e009b2bac1485e4a0e71"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the list of allowed traversals.  <br /></td></tr>
+<tr class="separator:a5ac593328f89e009b2bac1485e4a0e71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aee196458f1096dd137a9b5605d36cda6"><td class="memItemLeft" align="right" valign="top">const std::set&lt; DataLayoutOption &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#aee196458f1096dd137a9b5605d36cda6">getAllowedDataLayouts</a> (const InteractionTypeOption interactionType=InteractionTypeOption::pairwise) const</td></tr>
+<tr class="memdesc:aee196458f1096dd137a9b5605d36cda6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the list of allowed data layouts.  <br /></td></tr>
+<tr class="separator:aee196458f1096dd137a9b5605d36cda6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae317c808931a386d6133996988182ba5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#ae317c808931a386d6133996988182ba5">setAllowedDataLayouts</a> (const std::set&lt; DataLayoutOption &gt; &amp;allowedDataLayouts, const InteractionTypeOption interactionType=InteractionTypeOption::pairwise)</td></tr>
+<tr class="memdesc:ae317c808931a386d6133996988182ba5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the list of allowed data layouts.  <br /></td></tr>
+<tr class="separator:ae317c808931a386d6133996988182ba5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa3bbd38cc59bda8bbc665cddc8ad9f0e"><td class="memItemLeft" align="right" valign="top">const std::set&lt; Newton3Option &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#aa3bbd38cc59bda8bbc665cddc8ad9f0e">getAllowedNewton3Options</a> (const InteractionTypeOption interactionType=InteractionTypeOption::pairwise) const</td></tr>
+<tr class="memdesc:aa3bbd38cc59bda8bbc665cddc8ad9f0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the list of allowed newton 3 options.  <br /></td></tr>
+<tr class="separator:aa3bbd38cc59bda8bbc665cddc8ad9f0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50c2cd2f9c18ee9919a336b327fc602c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a50c2cd2f9c18ee9919a336b327fc602c">setAllowedNewton3Options</a> (const std::set&lt; Newton3Option &gt; &amp;allowedNewton3Options, const InteractionTypeOption interactionType=InteractionTypeOption::pairwise)</td></tr>
+<tr class="memdesc:a50c2cd2f9c18ee9919a336b327fc602c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the list of allowed newton 3 options.  <br /></td></tr>
+<tr class="separator:a50c2cd2f9c18ee9919a336b327fc602c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba99cdffcc11a0d2d0f71462de0ba170"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#aba99cdffcc11a0d2d0f71462de0ba170">setAllowedInteractionTypeOptions</a> (const std::set&lt; InteractionTypeOption &gt; &amp;allowedInteractionTypeOptions)</td></tr>
+<tr class="memdesc:aba99cdffcc11a0d2d0f71462de0ba170"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the list of allowed interaction types.  <br /></td></tr>
+<tr class="separator:aba99cdffcc11a0d2d0f71462de0ba170"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb45284eed745b42f2fb5faa767630ec"><td class="memItemLeft" align="right" valign="top">std::unordered_map&lt; InteractionTypeOption::Value, std::reference_wrapper&lt; const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#acb45284eed745b42f2fb5faa767630ec">getCurrentConfigs</a> () const</td></tr>
+<tr class="memdesc:acb45284eed745b42f2fb5faa767630ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the currently selected configuration.  <br /></td></tr>
+<tr class="separator:acb45284eed745b42f2fb5faa767630ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9bb3607e9402da0f1d2ee69efe721d1f"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; TuningStrategyOption &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a9bb3607e9402da0f1d2ee69efe721d1f">getTuningStrategyOptions</a> () const</td></tr>
 <tr class="memdesc:a9bb3607e9402da0f1d2ee69efe721d1f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the tuning strategy option.  <br /></td></tr>
 <tr class="separator:a9bb3607e9402da0f1d2ee69efe721d1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -941,6 +951,37 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
+<a id="ab1b7cf464564dd21a8deecf34a7984d1" name="ab1b7cf464564dd21a8deecf34a7984d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1b7cf464564dd21a8deecf34a7984d1">&#9670;&#160;</a></span>computeInteractions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<div class="memtemplate">
+template&lt;class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::computeInteractions </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1Functor.html">Functor</a> *&#160;</td>
+          <td class="paramname"><em>f</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Function to iterate over all inter-particle interactions in the container This function only handles short-range interactions. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">f</td><td><a class="el" href="classautopas_1_1Functor.html" title="Functor base class.">Functor</a> that describes the interaction (e.g. force). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true if this was a tuning iteraction. </dd></dl>
+
+</div>
+</div>
 <a id="afee5dbae89197b47efbfc8159ad4f4be" name="afee5dbae89197b47efbfc8159ad4f4be"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afee5dbae89197b47efbfc8159ad4f4be">&#9670;&#160;</a></span>deleteAllParticles()</h2>
 
@@ -956,7 +997,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </div><div class="memdoc">
 
 <p>Deletes all particles. </p>
-<dl class="section note"><dt>Note</dt><dd>This invalidates the container, a rebuild is forced on the next <a class="el" href="classautopas_1_1AutoPas.html#aa4f698155519b2dc75f7a4ec800b3763" title="Function to iterate over all pairs of particles in the container.">iteratePairwise()</a> call. </dd></dl>
+<dl class="section note"><dt>Note</dt><dd>This invalidates the container, a rebuild is forced on the next <a class="el" href="classautopas_1_1AutoPas.html#ab1b7cf464564dd21a8deecf34a7984d1" title="Function to iterate over all inter-particle interactions in the container This function only handles ...">computeInteractions()</a> call. </dd></dl>
 
 </div>
 </div>
@@ -1731,8 +1772,8 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="a027c37578724b34ad855a18acf75a0af" name="a027c37578724b34ad855a18acf75a0af"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a027c37578724b34ad855a18acf75a0af">&#9670;&#160;</a></span>getAllowedDataLayouts()</h2>
+<a id="aee196458f1096dd137a9b5605d36cda6" name="aee196458f1096dd137a9b5605d36cda6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee196458f1096dd137a9b5605d36cda6">&#9670;&#160;</a></span>getAllowedDataLayouts()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1745,7 +1786,8 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
         <tr>
           <td class="memname">const std::set&lt; DataLayoutOption &gt; &amp; <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getAllowedDataLayouts </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const InteractionTypeOption&#160;</td>
+          <td class="paramname"><em>interactionType</em> = <code>InteractionTypeOption::pairwise</code></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -1758,6 +1800,12 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 <p>Get the list of allowed data layouts. </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">interactionType</td><td>Get allowed data layouts for this interaction type. Defaults to InteractionTypeOption::pairwise. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -1791,8 +1839,8 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="aa9eab64a58a5a67993d9896624ee5c3d" name="aa9eab64a58a5a67993d9896624ee5c3d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa9eab64a58a5a67993d9896624ee5c3d">&#9670;&#160;</a></span>getAllowedNewton3Options()</h2>
+<a id="aa3bbd38cc59bda8bbc665cddc8ad9f0e" name="aa3bbd38cc59bda8bbc665cddc8ad9f0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3bbd38cc59bda8bbc665cddc8ad9f0e">&#9670;&#160;</a></span>getAllowedNewton3Options()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1805,7 +1853,8 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
         <tr>
           <td class="memname">const std::set&lt; Newton3Option &gt; &amp; <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getAllowedNewton3Options </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const InteractionTypeOption&#160;</td>
+          <td class="paramname"><em>interactionType</em> = <code>InteractionTypeOption::pairwise</code></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -1817,12 +1866,18 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </div><div class="memdoc">
 
 <p>Get the list of allowed newton 3 options. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">interactionType</td><td>Get allowed newton 3 options for this interaction type. Defaults to InteractionTypeOption::pairwise. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
-<a id="af24047439d500a98914607bfd12c694c" name="af24047439d500a98914607bfd12c694c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af24047439d500a98914607bfd12c694c">&#9670;&#160;</a></span>getAllowedTraversals()</h2>
+<a id="a396345f54b3998971067d57e37e8f769" name="a396345f54b3998971067d57e37e8f769"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a396345f54b3998971067d57e37e8f769">&#9670;&#160;</a></span>getAllowedTraversals()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1835,7 +1890,8 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
         <tr>
           <td class="memname">const std::set&lt; TraversalOption &gt; &amp; <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getAllowedTraversals </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">const InteractionTypeOption&#160;</td>
+          <td class="paramname"><em>interactionType</em> = <code>InteractionTypeOption::pairwise</code></td><td>)</td>
           <td> const</td>
         </tr>
       </table>
@@ -1847,6 +1903,12 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </div><div class="memdoc">
 
 <p>Get the list of allowed traversals. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">interactionType</td><td>Get allowed traversals for this interaction type. Defaults to InteractionTypeOption::pairwise. </td></tr>
+  </table>
+  </dd>
+</dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
@@ -1908,8 +1970,8 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="a2a8e38bacf636c5d77ec9fa33c814937" name="a2a8e38bacf636c5d77ec9fa33c814937"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2a8e38bacf636c5d77ec9fa33c814937">&#9670;&#160;</a></span>getCurrentConfig()</h2>
+<a id="acb45284eed745b42f2fb5faa767630ec" name="acb45284eed745b42f2fb5faa767630ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb45284eed745b42f2fb5faa767630ec">&#9670;&#160;</a></span>getCurrentConfigs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1920,7 +1982,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp; <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getCurrentConfig </td>
+          <td class="memname">std::unordered_map&lt; InteractionTypeOption::Value, std::reference_wrapper&lt; const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &gt; <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getCurrentConfigs </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1934,7 +1996,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </div><div class="memdoc">
 
 <p>Getter for the currently selected configuration. </p>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classautopas_1_1Configuration.html" title="Class containing multiple options that form an algorithm configuration for the pairwise iteration.">Configuration</a> object currently used. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classautopas_1_1Configuration.html" title="Class containing multiple options that form an algorithm configuration for the pairwise iteration.">Configuration</a> objects currently used for respective interaction types. </dd></dl>
 
 </div>
 </div>
@@ -2624,37 +2686,6 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <p>This will completely reset the container and remove all containing particles!</p>
 <p>This function needs to be called before any other function (except setters) on the <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> object.</p>
 <p>Changing any of the member options only takes effect when init is called. </p>
-
-</div>
-</div>
-<a id="aa4f698155519b2dc75f7a4ec800b3763" name="aa4f698155519b2dc75f7a4ec800b3763"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa4f698155519b2dc75f7a4ec800b3763">&#9670;&#160;</a></span>iteratePairwise()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
-<div class="memtemplate">
-template&lt;class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::iteratePairwise </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classautopas_1_1Functor.html">Functor</a> *&#160;</td>
-          <td class="paramname"><em>f</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Function to iterate over all pairs of particles in the container. </p>
-<p>This function only handles short-range interactions. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">f</td><td><a class="el" href="classautopas_1_1Functor.html" title="Functor class.">Functor</a> that describes the pair-potential. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>true if this was a tuning iteration. </dd></dl>
 
 </div>
 </div>
@@ -3521,8 +3552,8 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="af1be010b3d2012e75d810f6f8afe8c70" name="af1be010b3d2012e75d810f6f8afe8c70"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af1be010b3d2012e75d810f6f8afe8c70">&#9670;&#160;</a></span>setAllowedDataLayouts()</h2>
+<a id="ae317c808931a386d6133996988182ba5" name="ae317c808931a386d6133996988182ba5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae317c808931a386d6133996988182ba5">&#9670;&#160;</a></span>setAllowedDataLayouts()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3536,8 +3567,18 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
           <td class="memname">void <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::setAllowedDataLayouts </td>
           <td>(</td>
           <td class="paramtype">const std::set&lt; DataLayoutOption &gt; &amp;&#160;</td>
-          <td class="paramname"><em>allowedDataLayouts</em></td><td>)</td>
+          <td class="paramname"><em>allowedDataLayouts</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const InteractionTypeOption&#160;</td>
+          <td class="paramname"><em>interactionType</em> = <code>InteractionTypeOption::pairwise</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -3548,9 +3589,46 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </div><div class="memdoc">
 
 <p>Set the list of allowed data layouts. </p>
-<p>For possible data layout choices see <a class="el" href="classautopas_1_1options_1_1DataLayoutOption.html#afb9db222f1986e39980de92fff121878" title="Possible choices for the particle data layout.">options::DataLayoutOption::Value</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>For possible data layouts choices see <a class="el" href="classautopas_1_1options_1_1DataLayoutOption.html#afb9db222f1986e39980de92fff121878" title="Possible choices for the particle data layout.">options::DataLayoutOption::Value</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">allowedDataLayouts</td><td></td></tr>
+    <tr><td class="paramname">interactionType</td><td>Set allowed data layouts for this interaction type. Defaults to InteractionTypeOption::pairwise. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aba99cdffcc11a0d2d0f71462de0ba170" name="aba99cdffcc11a0d2d0f71462de0ba170"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba99cdffcc11a0d2d0f71462de0ba170">&#9670;&#160;</a></span>setAllowedInteractionTypeOptions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::setAllowedInteractionTypeOptions </td>
+          <td>(</td>
+          <td class="paramtype">const std::set&lt; InteractionTypeOption &gt; &amp;&#160;</td>
+          <td class="paramname"><em>allowedInteractionTypeOptions</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the list of allowed interaction types. </p>
+<p><a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> will initialize AutoTuners for the allowed interaction types. For possible newton 3 choices see options::interactionTypeOption::Value. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">allowedInteractionTypeOptions</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -3593,8 +3671,8 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="ac51c45b565b6b507bbfb0bb225c5340a" name="ac51c45b565b6b507bbfb0bb225c5340a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac51c45b565b6b507bbfb0bb225c5340a">&#9670;&#160;</a></span>setAllowedNewton3Options()</h2>
+<a id="a50c2cd2f9c18ee9919a336b327fc602c" name="a50c2cd2f9c18ee9919a336b327fc602c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50c2cd2f9c18ee9919a336b327fc602c">&#9670;&#160;</a></span>setAllowedNewton3Options()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3608,8 +3686,18 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
           <td class="memname">void <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::setAllowedNewton3Options </td>
           <td>(</td>
           <td class="paramtype">const std::set&lt; Newton3Option &gt; &amp;&#160;</td>
-          <td class="paramname"><em>allowedNewton3Options</em></td><td>)</td>
+          <td class="paramname"><em>allowedNewton3Options</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const InteractionTypeOption&#160;</td>
+          <td class="paramname"><em>interactionType</em> = <code>InteractionTypeOption::pairwise</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -3623,14 +3711,15 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <p>For possible newton 3 choices see <a class="el" href="classautopas_1_1options_1_1Newton3Option.html#a38afa593fbe0c8c3e5044ef16f506967" title="Possible choices for the Newton3 optimization.">options::Newton3Option::Value</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">allowedNewton3Options</td><td></td></tr>
+    <tr><td class="paramname">interactionType</td><td>Set allowed newton 3 options for this interaction type. Defaults to InteractionTypeOption::pairwise. </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="aa6785a52962c4b0be6ddc7c3703550b5" name="aa6785a52962c4b0be6ddc7c3703550b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa6785a52962c4b0be6ddc7c3703550b5">&#9670;&#160;</a></span>setAllowedTraversals()</h2>
+<a id="a5ac593328f89e009b2bac1485e4a0e71" name="a5ac593328f89e009b2bac1485e4a0e71"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ac593328f89e009b2bac1485e4a0e71">&#9670;&#160;</a></span>setAllowedTraversals()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -3644,8 +3733,18 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
           <td class="memname">void <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::setAllowedTraversals </td>
           <td>(</td>
           <td class="paramtype">const std::set&lt; TraversalOption &gt; &amp;&#160;</td>
-          <td class="paramname"><em>allowedTraversals</em></td><td>)</td>
+          <td class="paramname"><em>allowedTraversals</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const InteractionTypeOption&#160;</td>
+          <td class="paramname"><em>interactionType</em> = <code>InteractionTypeOption::pairwise</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -3656,9 +3755,10 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </div><div class="memdoc">
 
 <p>Set the list of allowed traversals. </p>
-<p>For possible traversals choices see <a class="el" href="classautopas_1_1options_1_1TraversalOption.html#a581c23bd69741242b26363a84b5c0d44" title="Possible choices for the cell pair traversal.">options::TraversalOption::Value</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>For possible traversals choices see <a class="el" href="classautopas_1_1options_1_1TraversalOption.html#a581c23bd69741242b26363a84b5c0d44" title="Possible choices for the cell traversal.">options::TraversalOption::Value</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">allowedTraversals</td><td></td></tr>
+    <tr><td class="paramname">interactionType</td><td>Set allowed traversals for this interaction type. Defaults to InteractionTypeOption::pairwise. </td></tr>
   </table>
   </dd>
 </dl>

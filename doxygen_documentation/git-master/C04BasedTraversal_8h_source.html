@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -101,7 +108,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_fd30cd1efecaf93be567ddc5e3f81b58.html">autopas</a></li><li class="navelem"><a class="el" href="dir_8777f8ffd010627c96c00a6189ae23c7.html">containers</a></li><li class="navelem"><a class="el" href="dir_35edfe0e79dcf857835410c33c5f78c7.html">cellPairTraversals</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_fd30cd1efecaf93be567ddc5e3f81b58.html">autopas</a></li><li class="navelem"><a class="el" href="dir_8777f8ffd010627c96c00a6189ae23c7.html">containers</a></li><li class="navelem"><a class="el" href="dir_293c3c2f4c7595ab1ef49000e0b49b54.html">cellTraversals</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -111,44 +118,44 @@ $(function() {
 <a href="C04BasedTraversal_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="CBasedTraversal_8h.html">autopas/containers/cellPairTraversals/CBasedTraversal.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="ColorBasedTraversal_8h.html">ColorBasedTraversal.h</a>&quot;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="ArrayMath_8h.html">autopas/utils/ArrayMath.h</a>&quot;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;<a class="code" href="DataLayoutConverter_8h.html">autopas/utils/DataLayoutConverter.h</a>&quot;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceautopas.html">autopas</a> {</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ParticleCell, <span class="keyword">class</span> PairwiseFunctor, <span class="keywordtype">int</span> collapseDepth = 3&gt;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classautopas_1_1C04BasedTraversal.html">   26</a></span><span class="keyword">class </span><a class="code hl_class" href="classautopas_1_1C04BasedTraversal.html">C04BasedTraversal</a> : <span class="keyword">public</span> <a class="code hl_class" href="classautopas_1_1CBasedTraversal.html">CBasedTraversal</a>&lt;ParticleCell, PairwiseFunctor, collapseDepth&gt; {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ParticleCell, <span class="keyword">class</span> Functor, <span class="keywordtype">int</span> collapseDepth = 3&gt;</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="classautopas_1_1C04BasedTraversal.html">   26</a></span><span class="keyword">class </span><a class="code hl_class" href="classautopas_1_1C04BasedTraversal.html">C04BasedTraversal</a> : <span class="keyword">public</span> <a class="code hl_class" href="classautopas_1_1ColorBasedTraversal.html">ColorBasedTraversal</a>&lt;ParticleCell, Functor, collapseDepth&gt; {</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classautopas_1_1C04BasedTraversal.html#ac38cd5ec120c23123c8b69bcc3923da5">   38</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classautopas_1_1C04BasedTraversal.html#ac38cd5ec120c23123c8b69bcc3923da5">C04BasedTraversal</a>(<span class="keyword">const</span> std::array&lt;unsigned long, 3&gt; &amp;dims, PairwiseFunctor *pairwiseFunctor,</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                             <span class="keywordtype">double</span> interactionLength, <span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;cellLength,</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                             DataLayoutOption dataLayout, <span class="keywordtype">bool</span> useNewton3)</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>      : <a class="code hl_class" href="classautopas_1_1CBasedTraversal.html">CBasedTraversal</a>&lt;<a class="code hl_class" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor, collapseDepth&gt;(dims, pairwiseFunctor, interactionLength,</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                                                                      cellLength, dataLayout, useNewton3) {}</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> <span class="keyword">protected</span>:</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> LoopBody&gt;</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classautopas_1_1C04BasedTraversal.html#a19009a75de63068fde0e66e7f7559df2">   50</a></span>  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1C04BasedTraversal.html#a19009a75de63068fde0e66e7f7559df2">c04Traversal</a>(LoopBody &amp;&amp;loopBody);</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>};</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ParticleCell, <span class="keyword">class</span> PairwiseFunctor, <span class="keywordtype">int</span> collapseDepth&gt;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> LoopBody&gt;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classautopas_1_1C04BasedTraversal.html#a19009a75de63068fde0e66e7f7559df2">   55</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1C04BasedTraversal.html#a19009a75de63068fde0e66e7f7559df2">C04BasedTraversal&lt;ParticleCell, PairwiseFunctor, collapseDepth&gt;::c04Traversal</a>(LoopBody &amp;&amp;loopBody) {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">using namespace </span>autopas::utils::ArrayMath::literals;</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keyword">const</span> <span class="keyword">auto</span> end = this-&gt;_cellsPerDimension - this-&gt;_overlap;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">auto</span> stride = this-&gt;_overlap + 1ul;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  stride[0] = 1;</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  this-&gt;cTraversal(std::forward&lt;LoopBody&gt;(loopBody), end, stride);</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}  <span class="comment">// namespace autopas</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classautopas_1_1C04BasedTraversal.html#ada3c671cb9fa5cd1c2af1d99c215ae1f">   38</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classautopas_1_1C04BasedTraversal.html#ada3c671cb9fa5cd1c2af1d99c215ae1f">C04BasedTraversal</a>(<span class="keyword">const</span> std::array&lt;unsigned long, 3&gt; &amp;dims, <a class="code hl_class" href="classautopas_1_1Functor.html">Functor</a> *functor, <span class="keyword">const</span> <span class="keywordtype">double</span> interactionLength,</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                             <span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;cellLength, DataLayoutOption dataLayout, <span class="keywordtype">bool</span> useNewton3)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      : <a class="code hl_class" href="classautopas_1_1ColorBasedTraversal.html">ColorBasedTraversal</a>&lt;<a class="code hl_class" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="code hl_class" href="classautopas_1_1Functor.html">Functor</a>, collapseDepth&gt;(dims, functor, interactionLength, cellLength,</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                                                                  dataLayout, useNewton3) {}</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> <span class="keyword">protected</span>:</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> LoopBody&gt;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno"><a class="line" href="classautopas_1_1C04BasedTraversal.html#af6967faa1c4224f4a12ed7cbd8cbf6f4">   49</a></span>  <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1C04BasedTraversal.html#af6967faa1c4224f4a12ed7cbd8cbf6f4">c04Traversal</a>(LoopBody &amp;&amp;loopBody);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ParticleCell, <span class="keyword">class</span> Functor, <span class="keywordtype">int</span> collapseDepth&gt;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> LoopBody&gt;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="classautopas_1_1C04BasedTraversal.html#af6967faa1c4224f4a12ed7cbd8cbf6f4">   54</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1C04BasedTraversal.html#af6967faa1c4224f4a12ed7cbd8cbf6f4">C04BasedTraversal&lt;ParticleCell, Functor, collapseDepth&gt;::c04Traversal</a>(LoopBody &amp;&amp;loopBody) {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keyword">using namespace </span>autopas::utils::ArrayMath::literals;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keyword">const</span> <span class="keyword">auto</span> end = this-&gt;_cellsPerDimension - this-&gt;_overlap;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keyword">auto</span> stride = this-&gt;_overlap + 1ul;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  stride[0] = 1;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  this-&gt;colorTraversal(std::forward&lt;LoopBody&gt;(loopBody), end, stride);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>}</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>}  <span class="comment">// namespace autopas</span></div>
 <div class="ttc" id="aArrayMath_8h_html"><div class="ttname"><a href="ArrayMath_8h.html">ArrayMath.h</a></div></div>
-<div class="ttc" id="aCBasedTraversal_8h_html"><div class="ttname"><a href="CBasedTraversal_8h.html">CBasedTraversal.h</a></div></div>
+<div class="ttc" id="aColorBasedTraversal_8h_html"><div class="ttname"><a href="ColorBasedTraversal_8h.html">ColorBasedTraversal.h</a></div></div>
 <div class="ttc" id="aDataLayoutConverter_8h_html"><div class="ttname"><a href="DataLayoutConverter_8h.html">DataLayoutConverter.h</a></div></div>
 <div class="ttc" id="aclassautopas_1_1C04BasedTraversal_html"><div class="ttname"><a href="classautopas_1_1C04BasedTraversal.html">autopas::C04BasedTraversal</a></div><div class="ttdoc">This class provides the base for traversals using the c04 base step.</div><div class="ttdef"><b>Definition:</b> C04BasedTraversal.h:26</div></div>
-<div class="ttc" id="aclassautopas_1_1C04BasedTraversal_html_a19009a75de63068fde0e66e7f7559df2"><div class="ttname"><a href="classautopas_1_1C04BasedTraversal.html#a19009a75de63068fde0e66e7f7559df2">autopas::C04BasedTraversal::c04Traversal</a></div><div class="ttdeci">void c04Traversal(LoopBody &amp;&amp;loopBody)</div><div class="ttdoc">The main traversal of the C04Traversal.</div><div class="ttdef"><b>Definition:</b> C04BasedTraversal.h:55</div></div>
-<div class="ttc" id="aclassautopas_1_1C04BasedTraversal_html_ac38cd5ec120c23123c8b69bcc3923da5"><div class="ttname"><a href="classautopas_1_1C04BasedTraversal.html#ac38cd5ec120c23123c8b69bcc3923da5">autopas::C04BasedTraversal::C04BasedTraversal</a></div><div class="ttdeci">C04BasedTraversal(const std::array&lt; unsigned long, 3 &gt; &amp;dims, PairwiseFunctor *pairwiseFunctor, double interactionLength, const std::array&lt; double, 3 &gt; &amp;cellLength, DataLayoutOption dataLayout, bool useNewton3)</div><div class="ttdoc">Constructor of the c04 traversal.</div><div class="ttdef"><b>Definition:</b> C04BasedTraversal.h:38</div></div>
-<div class="ttc" id="aclassautopas_1_1CBasedTraversal_html"><div class="ttname"><a href="classautopas_1_1CBasedTraversal.html">autopas::CBasedTraversal</a></div><div class="ttdoc">This class provides the base for traversals using base steps based on cell coloring.</div><div class="ttdef"><b>Definition:</b> CBasedTraversal.h:25</div></div>
+<div class="ttc" id="aclassautopas_1_1C04BasedTraversal_html_ada3c671cb9fa5cd1c2af1d99c215ae1f"><div class="ttname"><a href="classautopas_1_1C04BasedTraversal.html#ada3c671cb9fa5cd1c2af1d99c215ae1f">autopas::C04BasedTraversal::C04BasedTraversal</a></div><div class="ttdeci">C04BasedTraversal(const std::array&lt; unsigned long, 3 &gt; &amp;dims, Functor *functor, const double interactionLength, const std::array&lt; double, 3 &gt; &amp;cellLength, DataLayoutOption dataLayout, bool useNewton3)</div><div class="ttdoc">Constructor of the c04 traversal.</div><div class="ttdef"><b>Definition:</b> C04BasedTraversal.h:38</div></div>
+<div class="ttc" id="aclassautopas_1_1C04BasedTraversal_html_af6967faa1c4224f4a12ed7cbd8cbf6f4"><div class="ttname"><a href="classautopas_1_1C04BasedTraversal.html#af6967faa1c4224f4a12ed7cbd8cbf6f4">autopas::C04BasedTraversal::c04Traversal</a></div><div class="ttdeci">void c04Traversal(LoopBody &amp;&amp;loopBody)</div><div class="ttdoc">The main traversal of the C04Traversal.</div><div class="ttdef"><b>Definition:</b> C04BasedTraversal.h:54</div></div>
+<div class="ttc" id="aclassautopas_1_1ColorBasedTraversal_html"><div class="ttname"><a href="classautopas_1_1ColorBasedTraversal.html">autopas::ColorBasedTraversal</a></div><div class="ttdoc">This class provides the base for traversals using base steps based on cell coloring.</div><div class="ttdef"><b>Definition:</b> ColorBasedTraversal.h:27</div></div>
+<div class="ttc" id="aclassautopas_1_1Functor_html"><div class="ttname"><a href="classautopas_1_1Functor.html">autopas::Functor</a></div><div class="ttdoc">Functor base class.</div><div class="ttdef"><b>Definition:</b> Functor.h:40</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleCell_html"><div class="ttname"><a href="classautopas_1_1ParticleCell.html">autopas::ParticleCell</a></div><div class="ttdoc">Class for Cells of Particles.</div><div class="ttdef"><b>Definition:</b> ParticleCell.h:51</div></div>
 <div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">This is the main namespace of AutoPas.</div><div class="ttdef"><b>Definition:</b> AutoPasDecl.h:31</div></div>
 </div><!-- fragment --></div><!-- contents -->

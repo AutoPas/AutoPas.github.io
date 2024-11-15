@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['emptyfunctor_0',['EmptyFunctor',['../classEmptyFunctor.html',1,'']]],
+  ['emptypairwisefunctor_0',['EmptyPairwiseFunctor',['../classEmptyPairwiseFunctor.html',1,'']]],
   ['evidence_1',['Evidence',['../classautopas_1_1Evidence.html',1,'autopas']]],
   ['evidencecollection_2',['EvidenceCollection',['../classautopas_1_1EvidenceCollection.html',1,'autopas']]],
   ['exceptionhandler_3',['ExceptionHandler',['../classautopas_1_1utils_1_1ExceptionHandler.html',1,'autopas::utils']]],

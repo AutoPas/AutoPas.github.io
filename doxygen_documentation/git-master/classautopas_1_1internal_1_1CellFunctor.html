@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -121,21 +128,19 @@ Inheritance diagram for autopas::internal::CellFunctor&lt; ParticleCell, Particl
 <div class="dyncontent">
 <div class="center"><img src="classautopas_1_1internal_1_1CellFunctor__inherit__graph.png" border="0" usemap="#aautopas_1_1internal_1_1CellFunctor_3_01ParticleCell_00_01ParticleFunctor_00_01bidirectional_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="aautopas_1_1internal_1_1CellFunctor_3_01ParticleCell_00_01ParticleFunctor_00_01bidirectional_01_4_inherit__map" id="aautopas_1_1internal_1_1CellFunctor_3_01ParticleCell_00_01ParticleFunctor_00_01bidirectional_01_4_inherit__map">
-<area shape="rect" title="A cell functor." alt="" coords="5,106,232,161"/>
-<area shape="rect" href="classautopas_1_1internal_1_1CellFunctor.html" title=" " alt="" coords="485,5,703,75"/>
-<area shape="poly" title=" " alt="" coords="237,100,255,96,485,54,485,59,257,101,238,105"/>
-<area shape="rect" href="classautopas_1_1internal_1_1CellFunctor.html" title=" " alt="" coords="485,99,703,168"/>
-<area shape="poly" title=" " alt="" coords="246,131,485,131,485,136,246,136"/>
-<area shape="rect" href="classautopas_1_1internal_1_1CellFunctor.html" title=" " alt="" coords="469,192,719,261"/>
-<area shape="poly" title=" " alt="" coords="238,161,257,165,470,205,469,210,255,171,237,166"/>
+<area shape="rect" title="A cell functor." alt="" coords="5,59,232,114"/>
+<area shape="rect" href="classautopas_1_1internal_1_1CellFunctor.html" title=" " alt="" coords="476,5,657,75"/>
+<area shape="poly" title=" " alt="" coords="246,71,475,47,476,52,246,76"/>
+<area shape="rect" href="classautopas_1_1internal_1_1CellFunctor.html" title=" " alt="" coords="469,99,664,168"/>
+<area shape="poly" title=" " alt="" coords="231,114,256,119,366,129,469,132,469,137,366,134,256,124,230,120"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab7d6240b0ea424b0bdcda3dbe183a0f9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellFunctor.html#ab7d6240b0ea424b0bdcda3dbe183a0f9">CellFunctor</a> (ParticleFunctor *f, double sortingCutoff, DataLayoutOption dataLayout, bool useNewton3)</td></tr>
-<tr class="memdesc:ab7d6240b0ea424b0bdcda3dbe183a0f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor of <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html" title="A cell functor.">CellFunctor</a>.  <br /></td></tr>
-<tr class="separator:ab7d6240b0ea424b0bdcda3dbe183a0f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d902aaea509566016efcd2aa3167ac7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellFunctor.html#a5d902aaea509566016efcd2aa3167ac7">CellFunctor</a> (ParticleFunctor *f, const double sortingCutoff, DataLayoutOption dataLayout, bool useNewton3)</td></tr>
+<tr class="memdesc:a5d902aaea509566016efcd2aa3167ac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">The constructor of <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html" title="A cell functor.">CellFunctor</a>.  <br /></td></tr>
+<tr class="separator:a5d902aaea509566016efcd2aa3167ac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a79db78b982e1d17993179ae7e1bcd7ec"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellFunctor.html#a79db78b982e1d17993179ae7e1bcd7ec">processCell</a> (<a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &amp;cell)</td></tr>
 <tr class="memdesc:a79db78b982e1d17993179ae7e1bcd7ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">Process the interactions inside one cell.  <br /></td></tr>
 <tr class="separator:a79db78b982e1d17993179ae7e1bcd7ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -158,19 +163,18 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, class ParticleFunctor, bool bidirectional = true&gt;<br />
 class autopas::internal::CellFunctor&lt; ParticleCell, ParticleFunctor, bidirectional &gt;</div><p>A cell functor. </p>
-<p>This functor is built from the normal <a class="el" href="classautopas_1_1Functor.html" title="Functor class.">Functor</a> of the template type ParticleFunctor. It is an internal object to handle interactions between two cells of particles. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+<p>This functor is built from the normal <a class="el" href="classautopas_1_1Functor.html" title="Functor base class.">Functor</a> of the template type ParticleFunctor. It is an internal object to handle interactions between two cells of particles. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname"><a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a></td><td></td></tr>
     <tr><td class="paramname">ParticleFunctor</td><td>the functor which </td></tr>
-    <tr><td class="paramname">dataLayout</td><td>the dataLayout to be used </td></tr>
     <tr><td class="paramname">bidirectional</td><td>if no newton3 is used processCellPair(cell1, cell2) should also handle processCellPair(cell2,
 cell1) </td></tr>
   </table>
   </dd>
 </dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ab7d6240b0ea424b0bdcda3dbe183a0f9" name="ab7d6240b0ea424b0bdcda3dbe183a0f9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab7d6240b0ea424b0bdcda3dbe183a0f9">&#9670;&#160;</a></span>CellFunctor()</h2>
+<a id="a5d902aaea509566016efcd2aa3167ac7" name="a5d902aaea509566016efcd2aa3167ac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d902aaea509566016efcd2aa3167ac7">&#9670;&#160;</a></span>CellFunctor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -189,7 +193,7 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
+          <td class="paramtype">const double&#160;</td>
           <td class="paramname"><em>sortingCutoff</em>, </td>
         </tr>
         <tr>
@@ -416,7 +420,7 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 <p>Set the sorting-threshold If the sum of the number of particles in two cells is greater or equal to that value, the <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html" title="A cell functor.">CellFunctor</a> creates a sorted view of the particles to avoid unnecessary distance checks. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">sortingThreshold</td><td>Sum of the number of particles in two cells from which sorting should be enabled </td></tr>
+    <tr><td class="paramname">sortingThreshold</td><td>Sum of the number of particles in two cells from which sorting should be enabled. </td></tr>
   </table>
   </dd>
 </dl>
@@ -424,7 +428,7 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>autopas/pairwiseFunctors/<a class="el" href="CellFunctor_8h_source.html">CellFunctor.h</a></li>
+<li>autopas/baseFunctors/<a class="el" href="CellFunctor_8h_source.html">CellFunctor.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -114,7 +121,7 @@ $(function() {
   <tr class="even"><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html#a411e32258a3a23b30787e5a636fc523a">addHomogeneityAndMaxDensity</a>(double homogeneity, double maxDensity, long time)</td><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html#aaa33a8e72dd043a9872ff9f51415fcf0">addMeasurement</a>(long sample, bool neighborListRebuilt)</td><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html#ab7c2cbc5351ace6d99e0ce0021e85ebe">AutoTuner</a>(TuningStrategiesListType &amp;tuningStrategies, const SearchSpaceType &amp;searchSpace, const AutoTunerInfo &amp;autoTunerInfo, unsigned int rebuildFrequency, const std::string &amp;outputSuffix)</td><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html#a43cf92b0c523b38f782b681f91dde5a1">bumpIterationCounters</a>()</td><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html#a2b3efd0da6d143a2a333d524553bc84a">bumpIterationCounters</a>(bool needToWait=false)</td><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html#ac150a44caf878d980d963a5761768442">canMeasureEnergy</a>() const</td><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html#aed4b05aace993e15acdf69b4f0946ccc">forceRetune</a>()</td><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html#aad340bf7e91f7b47c951ff70c38c7a30">getConfigQueue</a>() const</td><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a></td><td class="entry"></td></tr>
@@ -125,7 +132,7 @@ $(function() {
   <tr class="odd"><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html#a7dc9c3399b98e20b23c642753ded91e5">getTuningStrategies</a>() const</td><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html#ac10dcc9eac0aa2ffa243577bc12447cf">initEnergy</a>()</td><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html#ac5383029952ce900fd2cf745aabaa634">inTuningPhase</a>() const</td><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html#a8116631f0a85dfaea46e42a0511bace4">logIteration</a>(const Configuration &amp;conf, bool tuningIteration, long tuningTime)</td><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html#a4869c59c2bc70ac244e27840a1f716c1">logTuningResult</a>(bool tuningIteration, long tuningTime) const</td><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html#acd71cda0cc2c6f07b2108aaca118f609">needsHomogeneityAndMaxDensityBeforePrepare</a>() const</td><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html#a27de7b1ab9f73c877eb316b79a4e63db">operator=</a>(AutoTuner &amp;&amp;other) noexcept</td><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html#ae50e16a3864ee82c7e6b9525aa43a16b">prepareIteration</a>()</td><td class="entry"><a class="el" href="classautopas_1_1AutoTuner.html">autopas::AutoTuner</a></td><td class="entry"></td></tr>

@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -119,7 +126,7 @@ $(function() {
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle, <span class="keyword">class</span> PairwiseFunctor&gt;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="classautopas_1_1internal_1_1VCLClusterFunctor.html">   21</a></span><span class="keyword">class </span><a class="code hl_class" href="classautopas_1_1internal_1_1VCLClusterFunctor.html">VCLClusterFunctor</a> {</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classautopas_1_1internal_1_1VCLClusterFunctor.html#aa856a91c5fa406cb7cd56a4f7bffea37">   30</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classautopas_1_1internal_1_1VCLClusterFunctor.html#aa856a91c5fa406cb7cd56a4f7bffea37">VCLClusterFunctor</a>(PairwiseFunctor *functor, <span class="keywordtype">size_t</span> clusterSize, DataLayoutOption dataLayout, <span class="keywordtype">bool</span> useNewton3)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="classautopas_1_1internal_1_1VCLClusterFunctor.html#aa856a91c5fa406cb7cd56a4f7bffea37">   30</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classautopas_1_1internal_1_1VCLClusterFunctor.html#aa856a91c5fa406cb7cd56a4f7bffea37">VCLClusterFunctor</a>(<a class="code hl_class" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> *functor, <span class="keywordtype">size_t</span> clusterSize, DataLayoutOption dataLayout, <span class="keywordtype">bool</span> useNewton3)</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      : _functor(functor), _clusterSize(clusterSize), _dataLayout(dataLayout), _useNewton3(useNewton3) {}</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno"><a class="line" href="classautopas_1_1internal_1_1VCLClusterFunctor.html#a1ee40556a82fb3b3b00915afd6c6d228">   38</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1internal_1_1VCLClusterFunctor.html#a1ee40556a82fb3b3b00915afd6c6d228">processCluster</a>(<a class="code hl_class" href="classautopas_1_1internal_1_1Cluster.html">internal::Cluster&lt;Particle&gt;</a> &amp;cluster, <span class="keywordtype">bool</span> isHaloCluster) {</div>
@@ -142,15 +149,15 @@ $(function() {
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = i + 1; j &lt; _clusterSize; j++) {</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>          <span class="comment">// this if else branch is needed because of https://github.com/AutoPas/AutoPas/issues/426</span></div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>          <span class="keywordflow">if</span> (_useNewton3) {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            _functor-&gt;AoSFunctor(cluster[i], cluster[j], <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>            _functor-&gt;<a class="code hl_function" href="classautopas_1_1PairwiseFunctor.html#ac815e1d742c803dd862fd164ce75cccf">AoSFunctor</a>(cluster[i], cluster[j], <span class="keyword">true</span>);</div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>          } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            _functor-&gt;AoSFunctor(cluster[i], cluster[j], <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            _functor-&gt;AoSFunctor(cluster[j], cluster[i], <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>            _functor-&gt;<a class="code hl_function" href="classautopas_1_1PairwiseFunctor.html#ac815e1d742c803dd862fd164ce75cccf">AoSFunctor</a>(cluster[i], cluster[j], <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>            _functor-&gt;<a class="code hl_function" href="classautopas_1_1PairwiseFunctor.html#ac815e1d742c803dd862fd164ce75cccf">AoSFunctor</a>(cluster[j], cluster[i], <span class="keyword">false</span>);</div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>          }</div>
 <div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>        }</div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      }</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      _functor-&gt;SoAFunctorSingle(cluster.<a class="code hl_function" href="classautopas_1_1internal_1_1Cluster.html#a96ea96e4da6aa9f778c90cd6d17771ac">getSoAView</a>(), _useNewton3);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      _functor-&gt;<a class="code hl_function" href="classautopas_1_1PairwiseFunctor.html#af129afb36f554cbd537ac7190253dacf">SoAFunctorSingle</a>(cluster.<a class="code hl_function" href="classautopas_1_1internal_1_1Cluster.html#a96ea96e4da6aa9f778c90cd6d17771ac">getSoAView</a>(), _useNewton3);</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>  }</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
@@ -158,11 +165,11 @@ $(function() {
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">if</span> (_dataLayout == DataLayoutOption::aos) {</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; _clusterSize; i++) {</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> j = 0; j &lt; _clusterSize; j++) {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>          _functor-&gt;AoSFunctor(cluster[i], neighborCluster[j], _useNewton3);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>          _functor-&gt;<a class="code hl_function" href="classautopas_1_1PairwiseFunctor.html#ac815e1d742c803dd862fd164ce75cccf">AoSFunctor</a>(cluster[i], neighborCluster[j], _useNewton3);</div>
 <div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        }</div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>      }</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>      _functor-&gt;SoAFunctorPair(cluster.getSoAView(), neighborCluster.getSoAView(), _useNewton3);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>      _functor-&gt;<a class="code hl_function" href="classautopas_1_1PairwiseFunctor.html#a5806023c508fcd487ae9c5f8ca19865d">SoAFunctorPair</a>(cluster.getSoAView(), neighborCluster.getSoAView(), _useNewton3);</div>
 <div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  }</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
@@ -177,13 +184,17 @@ $(function() {
 <div class="ttc" id="aCluster_8h_html"><div class="ttname"><a href="Cluster_8h.html">Cluster.h</a></div></div>
 <div class="ttc" id="aDataLayoutOption_8h_html"><div class="ttname"><a href="DataLayoutOption_8h.html">DataLayoutOption.h</a></div></div>
 <div class="ttc" id="aExceptionHandler_8h_html"><div class="ttname"><a href="ExceptionHandler_8h.html">ExceptionHandler.h</a></div></div>
+<div class="ttc" id="aclassautopas_1_1PairwiseFunctor_html"><div class="ttname"><a href="classautopas_1_1PairwiseFunctor.html">autopas::PairwiseFunctor</a></div><div class="ttdoc">PairwiseFunctor class.</div><div class="ttdef"><b>Definition:</b> PairwiseFunctor.h:31</div></div>
+<div class="ttc" id="aclassautopas_1_1PairwiseFunctor_html_a5806023c508fcd487ae9c5f8ca19865d"><div class="ttname"><a href="classautopas_1_1PairwiseFunctor.html#a5806023c508fcd487ae9c5f8ca19865d">autopas::PairwiseFunctor::SoAFunctorPair</a></div><div class="ttdeci">virtual void SoAFunctorPair(SoAView&lt; SoAArraysType &gt; soa1, SoAView&lt; SoAArraysType &gt; soa2, bool newton3)</div><div class="ttdoc">PairwiseFunctor for structure of arrays (SoA)</div><div class="ttdef"><b>Definition:</b> PairwiseFunctor.h:102</div></div>
+<div class="ttc" id="aclassautopas_1_1PairwiseFunctor_html_ac815e1d742c803dd862fd164ce75cccf"><div class="ttname"><a href="classautopas_1_1PairwiseFunctor.html#ac815e1d742c803dd862fd164ce75cccf">autopas::PairwiseFunctor::AoSFunctor</a></div><div class="ttdeci">virtual void AoSFunctor(Particle &amp;i, Particle &amp;j, bool newton3)</div><div class="ttdoc">PairwiseFunctor for arrays of structures (AoS).</div><div class="ttdef"><b>Definition:</b> PairwiseFunctor.h:56</div></div>
+<div class="ttc" id="aclassautopas_1_1PairwiseFunctor_html_af129afb36f554cbd537ac7190253dacf"><div class="ttname"><a href="classautopas_1_1PairwiseFunctor.html#af129afb36f554cbd537ac7190253dacf">autopas::PairwiseFunctor::SoAFunctorSingle</a></div><div class="ttdeci">virtual void SoAFunctorSingle(SoAView&lt; SoAArraysType &gt; soa, bool newton3)</div><div class="ttdoc">PairwiseFunctor for structure of arrays (SoA)</div><div class="ttdef"><b>Definition:</b> PairwiseFunctor.h:70</div></div>
 <div class="ttc" id="aclassautopas_1_1internal_1_1Cluster_html"><div class="ttname"><a href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a></div><div class="ttdoc">This class represents a cluster in the VerletClusterLists container.</div><div class="ttdef"><b>Definition:</b> Cluster.h:26</div></div>
 <div class="ttc" id="aclassautopas_1_1internal_1_1Cluster_html_a96ea96e4da6aa9f778c90cd6d17771ac"><div class="ttname"><a href="classautopas_1_1internal_1_1Cluster.html#a96ea96e4da6aa9f778c90cd6d17771ac">autopas::internal::Cluster::getSoAView</a></div><div class="ttdeci">auto getSoAView()</div><div class="ttdoc">Returns the SoAView for this cluster.</div><div class="ttdef"><b>Definition:</b> Cluster.h:90</div></div>
 <div class="ttc" id="aclassautopas_1_1internal_1_1Cluster_html_a972fd45481a9bef02ba3c2f113b4421a"><div class="ttname"><a href="classautopas_1_1internal_1_1Cluster.html#a972fd45481a9bef02ba3c2f113b4421a">autopas::internal::Cluster::getNeighbors</a></div><div class="ttdeci">std::vector&lt; Cluster&lt; Particle &gt; * &gt; * getNeighbors()</div><div class="ttdoc">Returns the reference to the neighbor list for this cluster.</div><div class="ttdef"><b>Definition:</b> Cluster.h:108</div></div>
 <div class="ttc" id="aclassautopas_1_1internal_1_1VCLClusterFunctor_html"><div class="ttname"><a href="classautopas_1_1internal_1_1VCLClusterFunctor.html">autopas::internal::VCLClusterFunctor</a></div><div class="ttdoc">Provides methods to traverse a single cluster and a pair of clusters.</div><div class="ttdef"><b>Definition:</b> VCLClusterFunctor.h:21</div></div>
 <div class="ttc" id="aclassautopas_1_1internal_1_1VCLClusterFunctor_html_a1ee40556a82fb3b3b00915afd6c6d228"><div class="ttname"><a href="classautopas_1_1internal_1_1VCLClusterFunctor.html#a1ee40556a82fb3b3b00915afd6c6d228">autopas::internal::VCLClusterFunctor::processCluster</a></div><div class="ttdeci">void processCluster(internal::Cluster&lt; Particle &gt; &amp;cluster, bool isHaloCluster)</div><div class="ttdoc">Invokes the calculations of all interactions within the cluster and, if they exist,...</div><div class="ttdef"><b>Definition:</b> VCLClusterFunctor.h:38</div></div>
 <div class="ttc" id="aclassautopas_1_1internal_1_1VCLClusterFunctor_html_aa856a91c5fa406cb7cd56a4f7bffea37"><div class="ttname"><a href="classautopas_1_1internal_1_1VCLClusterFunctor.html#aa856a91c5fa406cb7cd56a4f7bffea37">autopas::internal::VCLClusterFunctor::VCLClusterFunctor</a></div><div class="ttdeci">VCLClusterFunctor(PairwiseFunctor *functor, size_t clusterSize, DataLayoutOption dataLayout, bool useNewton3)</div><div class="ttdoc">Constructs a VCLClusterFunctor that uses the given functor internally.</div><div class="ttdef"><b>Definition:</b> VCLClusterFunctor.h:30</div></div>
-<div class="ttc" id="anamespaceautopas_1_1internal_html"><div class="ttname"><a href="namespaceautopas_1_1internal.html">autopas::internal</a></div><div class="ttdoc">This namespace is used for implementation specifics.</div><div class="ttdef"><b>Definition:</b> CellBlock3D.h:23</div></div>
+<div class="ttc" id="anamespaceautopas_1_1internal_html"><div class="ttname"><a href="namespaceautopas_1_1internal.html">autopas::internal</a></div><div class="ttdoc">This namespace is used for implementation specifics.</div><div class="ttdef"><b>Definition:</b> CellFunctor.h:14</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

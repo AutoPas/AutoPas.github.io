@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -119,10 +126,10 @@ $(function() {
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ParticleCell, <span class="keyword">class</span> PairwiseFunctor&gt;</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="classautopas_1_1C08TraversalColorChangeNotify.html">   20</a></span><span class="keyword">class </span><a class="code hl_class" href="classautopas_1_1C08TraversalColorChangeNotify.html">C08TraversalColorChangeNotify</a> : <span class="keyword">public</span> <a class="code hl_class" href="classautopas_1_1LCC08Traversal.html">LCC08Traversal</a>&lt;ParticleCell, PairwiseFunctor&gt; {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classautopas_1_1C08TraversalColorChangeNotify.html#a1f70fca25a08b5fa30f50327830d7f76">   33</a></span>  <a class="code hl_function" href="classautopas_1_1C08TraversalColorChangeNotify.html#a1f70fca25a08b5fa30f50327830d7f76">C08TraversalColorChangeNotify</a>(<span class="keyword">const</span> std::array&lt;unsigned long, 3&gt; &amp;dims, PairwiseFunctor *pairwiseFunctor,</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classautopas_1_1C08TraversalColorChangeNotify.html#a1f70fca25a08b5fa30f50327830d7f76">   33</a></span>  <a class="code hl_function" href="classautopas_1_1C08TraversalColorChangeNotify.html#a1f70fca25a08b5fa30f50327830d7f76">C08TraversalColorChangeNotify</a>(<span class="keyword">const</span> std::array&lt;unsigned long, 3&gt; &amp;dims, <a class="code hl_class" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> *pairwiseFunctor,</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>                                <span class="keywordtype">double</span> interactionLength, <span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;cellLength,</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>                                <a class="code hl_class" href="classautopas_1_1ColorChangeObserver.html">ColorChangeObserver</a> *observer, DataLayoutOption dataLayout, <span class="keywordtype">bool</span> useNewton3)</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      : <a class="code hl_class" href="classautopas_1_1LCC08Traversal.html">LCC08Traversal</a>&lt;<a class="code hl_class" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, PairwiseFunctor&gt;(dims, pairwiseFunctor, interactionLength, cellLength, dataLayout,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      : <a class="code hl_class" href="classautopas_1_1LCC08Traversal.html">LCC08Traversal</a>&lt;<a class="code hl_class" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="code hl_class" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a>&gt;(dims, pairwiseFunctor, interactionLength, cellLength, dataLayout,</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                                                      useNewton3),</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        _observer(observer) {}</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
@@ -143,7 +150,8 @@ $(function() {
 <div class="ttc" id="aclassautopas_1_1C08TraversalColorChangeNotify_html_a2e25e00ede9b6bce1c5781cb2860b293"><div class="ttname"><a href="classautopas_1_1C08TraversalColorChangeNotify.html#a2e25e00ede9b6bce1c5781cb2860b293">autopas::C08TraversalColorChangeNotify::notifyColorChange</a></div><div class="ttdeci">void notifyColorChange(unsigned long newColor) override</div><div class="ttdoc">Notifies the observer.</div><div class="ttdef"><b>Definition:</b> C08TraversalColorChangeNotify.h:45</div></div>
 <div class="ttc" id="aclassautopas_1_1ColorChangeObserver_html"><div class="ttname"><a href="classautopas_1_1ColorChangeObserver.html">autopas::ColorChangeObserver</a></div><div class="ttdoc">Observer interface that specifies handling color changes.</div><div class="ttdef"><b>Definition:</b> ColorChangeObserver.h:14</div></div>
 <div class="ttc" id="aclassautopas_1_1ColorChangeObserver_html_a4324243af2818f7cc9edc1af5bb47551"><div class="ttname"><a href="classautopas_1_1ColorChangeObserver.html#a4324243af2818f7cc9edc1af5bb47551">autopas::ColorChangeObserver::receiveColorChange</a></div><div class="ttdeci">virtual void receiveColorChange(unsigned long newColor)=0</div><div class="ttdoc">Gets called when the color changes during the observed traversal.</div></div>
-<div class="ttc" id="aclassautopas_1_1LCC08Traversal_html"><div class="ttname"><a href="classautopas_1_1LCC08Traversal.html">autopas::LCC08Traversal</a></div><div class="ttdoc">This class provides the lc_c08 traversal.</div><div class="ttdef"><b>Definition:</b> LCC08Traversal.h:29</div></div>
+<div class="ttc" id="aclassautopas_1_1LCC08Traversal_html"><div class="ttname"><a href="classautopas_1_1LCC08Traversal.html">autopas::LCC08Traversal</a></div><div class="ttdoc">This class provides the lc_c08 traversal.</div><div class="ttdef"><b>Definition:</b> LCC08Traversal.h:28</div></div>
+<div class="ttc" id="aclassautopas_1_1PairwiseFunctor_html"><div class="ttname"><a href="classautopas_1_1PairwiseFunctor.html">autopas::PairwiseFunctor</a></div><div class="ttdoc">PairwiseFunctor class.</div><div class="ttdef"><b>Definition:</b> PairwiseFunctor.h:31</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleCell_html"><div class="ttname"><a href="classautopas_1_1ParticleCell.html">autopas::ParticleCell</a></div><div class="ttdoc">Class for Cells of Particles.</div><div class="ttdef"><b>Definition:</b> ParticleCell.h:51</div></div>
 <div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">This is the main namespace of AutoPas.</div><div class="ttdef"><b>Definition:</b> AutoPasDecl.h:31</div></div>
 </div><!-- fragment --></div><!-- contents -->

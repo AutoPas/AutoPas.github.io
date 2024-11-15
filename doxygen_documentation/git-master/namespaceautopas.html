@@ -33,6 +33,13 @@
 <link href="search/search.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="search/searchdata.js"></script>
 <script type="text/javascript" src="search/search.js"></script>
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  extensions: ["tex2jax.js"],
+  jax: ["input/TeX","output/HTML-CSS"],
+});
+</script>
+<script type="text/javascript" async="async" src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 </head>
 <body onload="doOnLoad()">
@@ -228,14 +235,14 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1C18BasedTraversal.html">C18BasedTraversal</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class provides the base for traversals using the c18 base step.  <a href="classautopas_1_1C18BasedTraversal.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CBasedTraversal.html">CBasedTraversal</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class provides the base for traversals using base steps based on cell coloring.  <a href="classautopas_1_1CBasedTraversal.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellBasedParticleContainer.html">CellBasedParticleContainer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The <a class="el" href="classautopas_1_1CellBasedParticleContainer.html" title="The CellBasedParticleContainer class stores particles in some object and provides methods to iterate ...">CellBasedParticleContainer</a> class stores particles in some object and provides methods to iterate over its particles.  <a href="classautopas_1_1CellBasedParticleContainer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellPairTraversal.html">CellPairTraversal</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A cell pair traversal.  <a href="classautopas_1_1CellPairTraversal.html#details">More...</a><br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellTraversal.html">CellTraversal</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A cell pair traversal.  <a href="classautopas_1_1CellTraversal.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ColorBasedTraversal.html">ColorBasedTraversal</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class provides the base for traversals using base steps based on cell coloring.  <a href="classautopas_1_1ColorBasedTraversal.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ColorChangeObserver.html">ColorChangeObserver</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Observer interface that specifies handling color changes.  <a href="classautopas_1_1ColorChangeObserver.html#details">More...</a><br /></td></tr>
@@ -280,13 +287,13 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Encoder to convert <a class="el" href="classautopas_1_1FeatureVector.html" title="FeatureVector representation of a Configuration.">FeatureVector</a> from and to Eigen::Vector.  <a href="classautopas_1_1FeatureVectorEncoder.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1FLOPLogger.html">FLOPLogger</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to log FLOP count and HitRate for <a class="el" href="classautopas_1_1AutoPas.html#aa4f698155519b2dc75f7a4ec800b3763" title="Function to iterate over all pairs of particles in the container.">AutoPas::iteratePairwise()</a> calls with the functors in the molecular dynamics library to a csv file for easier analysis.  <a href="classautopas_1_1FLOPLogger.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to log FLOP count and HitRate for AutoPas::iteratePairwise() calls with the functors in the molecular dynamics library to a csv file for easier analysis.  <a href="classautopas_1_1FLOPLogger.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1FullParticleCell.html">FullParticleCell</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This class handles the storage of particles in their full form.  <a href="classautopas_1_1FullParticleCell.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Functor.html">Functor</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classautopas_1_1Functor.html" title="Functor class.">Functor</a> class.  <a href="classautopas_1_1Functor.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classautopas_1_1Functor.html" title="Functor base class.">Functor</a> base class.  <a href="classautopas_1_1Functor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1FuzzyTuning.html">FuzzyTuning</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A tuning strategy that uses fuzzy logic to make predictions about the performance of configurations.  <a href="classautopas_1_1FuzzyTuning.html#details">More...</a><br /></td></tr>
@@ -307,7 +314,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class to count autopas instances.  <a href="structautopas_1_1InstanceCounter.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1IterationLogger.html">IterationLogger</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to log performance data of <a class="el" href="classautopas_1_1AutoPas.html#aa4f698155519b2dc75f7a4ec800b3763" title="Function to iterate over all pairs of particles in the container.">AutoPas::iteratePairwise()</a> to a csv file for easier analysis.  <a href="classautopas_1_1IterationLogger.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to log performance data of <a class="el" href="classautopas_1_1AutoPas.html#ab1b7cf464564dd21a8deecf34a7984d1" title="Function to iterate over all inter-particle interactions in the container This function only handles ...">AutoPas::computeInteractions()</a> to a csv file for easier analysis.  <a href="classautopas_1_1IterationLogger.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structautopas_1_1IterationMeasurements.html">IterationMeasurements</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Struct to collect all sorts of measurements taken during a computeInteractions iteration.  <a href="structautopas_1_1IterationMeasurements.html#details">More...</a><br /></td></tr>
@@ -414,6 +421,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1OTTraversalInterface.html">OTTraversalInterface</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This interface exists to provide a row interface for octree to add its cells.  <a href="classautopas_1_1OTTraversalInterface.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classautopas_1_1PairwiseFunctor.html" title="PairwiseFunctor class.">PairwiseFunctor</a> class.  <a href="classautopas_1_1PairwiseFunctor.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleBase.html">ParticleBase</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Minimal definition of a basic particle.  <a href="classautopas_1_1ParticleBase.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -482,6 +492,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structautopas_1_1TrivialHash.html">TrivialHash</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trivial hash for enums.  <a href="structautopas_1_1TrivialHash.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TriwiseFunctor.html">TriwiseFunctor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classautopas_1_1TriwiseFunctor.html" title="TriwiseFunctor class.">TriwiseFunctor</a> class.  <a href="classautopas_1_1TriwiseFunctor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningDataLogger.html">TuningDataLogger</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to log results of the tuning process to a csv file for easier analysis.  <a href="classautopas_1_1TuningDataLogger.html#details">More...</a><br /></td></tr>
@@ -624,6 +637,12 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>Particle</b> = <a cl
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
+<tr class="memitem:aae98cfb33c0ad2e9682bff91f985fcdb"><td class="memItemLeft" align="right" valign="top"><a id="aae98cfb33c0ad2e9682bff91f985fcdb" name="aae98cfb33c0ad2e9682bff91f985fcdb"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#aae98cfb33c0ad2e9682bff91f985fcdb">FunctorN3Modes</a> { <b>Newton3Only</b>
+, <b>Newton3Off</b>
+, <b>Both</b>
+ }</td></tr>
+<tr class="memdesc:aae98cfb33c0ad2e9682bff91f985fcdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Newton 3 modes for the Functor. <br /></td></tr>
+<tr class="separator:aae98cfb33c0ad2e9682bff91f985fcdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0503ca3cdb1ed5bdd6844883536ca3f8"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8">CellType</a> { <br />
 &#160;&#160;<a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8a8644cb057acddc83274e92b5d319ee53">FullParticleCell</a>
 , <a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8ae5e6fc2ac7bf5ed173b4cef47d8fcf41">ReferenceParticleCell</a>
@@ -635,12 +654,6 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:a0503ca3cdb1ed5bdd6844883536ca3f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">The ParticleCell Type as an Enum.  <a href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8">More...</a><br /></td></tr>
 <tr class="separator:a0503ca3cdb1ed5bdd6844883536ca3f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aae98cfb33c0ad2e9682bff91f985fcdb"><td class="memItemLeft" align="right" valign="top"><a id="aae98cfb33c0ad2e9682bff91f985fcdb" name="aae98cfb33c0ad2e9682bff91f985fcdb"></a>enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#aae98cfb33c0ad2e9682bff91f985fcdb">FunctorN3Modes</a> { <b>Newton3Only</b>
-, <b>Newton3Off</b>
-, <b>Both</b>
- }</td></tr>
-<tr class="memdesc:aae98cfb33c0ad2e9682bff91f985fcdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Newton 3 modes for the LJFunctor. <br /></td></tr>
-<tr class="separator:aae98cfb33c0ad2e9682bff91f985fcdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a82a8cce861d1c5e0aae32f34ed39e5e0"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0">OwnershipState</a> : int64_t { <a class="el" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a275876e34cf609db118f3d84b799a790">dummy</a> = 0b0000
 , <a class="el" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a8f9a4c5fe0824547590a3fc568f5c7c7">owned</a> = 0b0001
 , <a class="el" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a57f842286171094855e51fc3a541c1e2">halo</a> = 0b0010
