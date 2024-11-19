@@ -363,6 +363,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>forceRetune</b> ()</t
 <tr class="memitem:a490c854f31edec8e52c5e642d70d03f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a490c854f31edec8e52c5e642d70d03f3">setNumSamples</a> (unsigned int numSamples)</td></tr>
 <tr class="memdesc:a490c854f31edec8e52c5e642d70d03f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set number of samples taken per configuration during the tuning.  <br /></td></tr>
 <tr class="separator:a490c854f31edec8e52c5e642d70d03f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54217839a6b6a0b8948845a264e51c75"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a54217839a6b6a0b8948845a264e51c75">getUseLOESSSmoothening</a> () const</td></tr>
+<tr class="memdesc:a54217839a6b6a0b8948845a264e51c75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get flag for whether a LOESS-based smoothening is used.  <br /></td></tr>
+<tr class="separator:a54217839a6b6a0b8948845a264e51c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9007861ff046666d0d2c4134e87d8caa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a9007861ff046666d0d2c4134e87d8caa">setUseLOESSSmoothening</a> (bool useLOESSSmoothening)</td></tr>
+<tr class="memdesc:a9007861ff046666d0d2c4134e87d8caa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set flag for whether a LOESS-based smoothening is used.  <br /></td></tr>
+<tr class="separator:a9007861ff046666d0d2c4134e87d8caa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3bb1e75c5e3e5de84d13e356a1362e42"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a3bb1e75c5e3e5de84d13e356a1362e42">getMaxEvidence</a> () const</td></tr>
 <tr class="memdesc:a3bb1e75c5e3e5de84d13e356a1362e42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get maximum number of evidence for tuning.  <br /></td></tr>
 <tr class="separator:a3bb1e75c5e3e5de84d13e356a1362e42"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -2548,6 +2554,36 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
+<a id="a54217839a6b6a0b8948845a264e51c75" name="a54217839a6b6a0b8948845a264e51c75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54217839a6b6a0b8948845a264e51c75">&#9670;&#160;</a></span>getUseLOESSSmoothening()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getUseLOESSSmoothening </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get flag for whether a LOESS-based smoothening is used. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 <a id="a64c33011595eb88abc24bfbc61eb0c81" name="a64c33011595eb88abc24bfbc61eb0c81"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a64c33011595eb88abc24bfbc61eb0c81">&#9670;&#160;</a></span>getVerletClusterSize()</h2>
 
@@ -4515,6 +4551,42 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <p>For possible tuning strategy choices see <a class="el" href="classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4" title="Possible choices for the auto tuner.">options::TuningStrategyOption::Value</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">tuningStrategyOptions</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9007861ff046666d0d2c4134e87d8caa" name="a9007861ff046666d0d2c4134e87d8caa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9007861ff046666d0d2c4134e87d8caa">&#9670;&#160;</a></span>setUseLOESSSmoothening()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::setUseLOESSSmoothening </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>useLOESSSmoothening</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set flag for whether a LOESS-based smoothening is used. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">useLOESSSmoothening</td><td></td></tr>
   </table>
   </dd>
 </dl>
