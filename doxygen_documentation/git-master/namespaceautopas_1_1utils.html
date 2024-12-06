@@ -421,6 +421,7 @@ template&lt;typename <a class="el" href="namespaceautopas.html#a1103977ab8f79d29
 
 <p>Calculates homogeneity and max density of given <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> container. </p>
 <p>Both values are computed at once to avoid iterating over the same space twice. homogeneity &gt; 0.0, normally &lt; 1.0, but for extreme scenarios &gt; 1.0 maxDensity &gt; 0.0, normally &lt; 3.0, but for extreme scenarios &gt; 3.0</p>
+<p>A homogeneity of 0 describes a perfectly homogeneous scenario, and as the scenario becomes more heterogeneous, this becomes greater. If there are no particles, homogeneity is forced as 0 as this scenario is perfectly homogeneous.</p>
 <p>These values are calculated by dividing the container's domain into bins of perfectly equal cuboid shapes.</p>
 <dl class="section note"><dt>Note</dt><dd>The bin shapes between different <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> containers will not match if the dimensions of their domains don't match. Bins with greater surface area are probably more likely to feature fluctuations in the density.</dd></dl>
 <p>Not a rigorous proof, but should give an idea:</p><ul>

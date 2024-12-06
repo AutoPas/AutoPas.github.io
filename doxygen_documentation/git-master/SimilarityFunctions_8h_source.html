@@ -125,96 +125,97 @@ $(function() {
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceautopas_1_1utils.html">autopas::utils</a> {</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Particle&gt;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="namespaceautopas_1_1utils.html#a087d3b888e7487a88afe4278f9f16c1a">   44</a></span>std::pair&lt;double, double&gt; <a class="code hl_function" href="namespaceautopas_1_1utils.html#a087d3b888e7487a88afe4278f9f16c1a">calculateHomogeneityAndMaxDensity</a>(<span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1ParticleContainerInterface.html">ParticleContainerInterface&lt;Particle&gt;</a> &amp;container) {</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  <span class="keyword">using namespace </span>autopas::utils::ArrayMath::literals;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keyword">const</span> <span class="keyword">auto</span> numberOfParticles = container.<a class="code hl_function" href="classautopas_1_1ParticleContainerInterface.html#ad4643b9f9629050b3731ec5326247692">getNumberOfParticles</a>();</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">const</span> <span class="keyword">auto</span> domainDimensions = container.<a class="code hl_function" href="classautopas_1_1ParticleContainerInterface.html#afe78d425e123737e61a77a218ece7031">getBoxMax</a>() - container.<a class="code hl_function" href="classautopas_1_1ParticleContainerInterface.html#afc9b73ca3fbd7a346c7ceccc9f2a2b66">getBoxMin</a>();</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">const</span> <span class="keyword">auto</span> domainVolume = domainDimensions[0] * domainDimensions[1] * domainDimensions[2];</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="comment">// We scale the dimensions of the domain to bins with volumes which give approximately 10 particles per bin.</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="comment">// Todo The choice of 10 is arbitrary and probably can be optimized</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keyword">const</span> <span class="keyword">auto</span> targetNumberOfBins = std::ceil(numberOfParticles / 10.);</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keyword">const</span> <span class="keyword">auto</span> targetNumberOfBinsPerDim = std::cbrt(<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(targetNumberOfBins));</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="comment">// This is probably not an integer, so we floor to get more than 10 particles per bin than too small bins</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">const</span> <span class="keyword">auto</span> numberOfBinsPerDim = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::floor(targetNumberOfBinsPerDim));</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keyword">const</span> <span class="keyword">auto</span> binDimensions = domainDimensions / <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(numberOfBinsPerDim);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">const</span> <span class="keyword">auto</span> numberOfBins = numberOfBinsPerDim * numberOfBinsPerDim * numberOfBinsPerDim;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keyword">const</span> <span class="keyword">auto</span> binVolume = domainVolume / <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(numberOfBins);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> Particle&gt;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="namespaceautopas_1_1utils.html#a087d3b888e7487a88afe4278f9f16c1a">   47</a></span>std::pair&lt;double, double&gt; <a class="code hl_function" href="namespaceautopas_1_1utils.html#a087d3b888e7487a88afe4278f9f16c1a">calculateHomogeneityAndMaxDensity</a>(<span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1ParticleContainerInterface.html">ParticleContainerInterface&lt;Particle&gt;</a> &amp;container) {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">using namespace </span>autopas::utils::ArrayMath::literals;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keyword">const</span> <span class="keyword">auto</span> numberOfParticles = container.<a class="code hl_function" href="classautopas_1_1ParticleContainerInterface.html#ad4643b9f9629050b3731ec5326247692">getNumberOfParticles</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keyword">const</span> <span class="keyword">auto</span> domainDimensions = container.<a class="code hl_function" href="classautopas_1_1ParticleContainerInterface.html#afe78d425e123737e61a77a218ece7031">getBoxMax</a>() - container.<a class="code hl_function" href="classautopas_1_1ParticleContainerInterface.html#afc9b73ca3fbd7a346c7ceccc9f2a2b66">getBoxMin</a>();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keyword">const</span> <span class="keyword">auto</span> domainVolume = domainDimensions[0] * domainDimensions[1] * domainDimensions[2];</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="comment">// We scale the dimensions of the domain to bins with volumes which give approximately 10 particles per bin.</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="comment">// Todo The choice of 10 is arbitrary and probably can be optimized</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keyword">const</span> <span class="keyword">auto</span> targetNumberOfBins = std::ceil(numberOfParticles / 10.);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keyword">const</span> <span class="keyword">auto</span> targetNumberOfBinsPerDim = std::cbrt(<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(targetNumberOfBins));</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="comment">// This is probably not an integer, so we floor to get more than 10 particles per bin than too small bins</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>  <span class="keyword">const</span> <span class="keyword">auto</span> numberOfBinsPerDim = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(std::floor(targetNumberOfBinsPerDim));</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keyword">const</span> <span class="keyword">auto</span> binDimensions = domainDimensions / <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(numberOfBinsPerDim);</div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  std::vector&lt;size_t&gt; particlesPerBin(numberOfBins, 0);</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="comment">// add particles accordingly to their bin to get the amount of particles in each bin</span></div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> particleItr = container.<a class="code hl_function" href="classautopas_1_1ParticleContainerInterface.html#a01662c901808511a2785ecad6f536c32">begin</a>(autopas::IteratorBehavior::owned); particleItr.isValid(); ++particleItr) {</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keyword">const</span> <span class="keyword">auto</span> &amp;particleLocation = particleItr-&gt;getR();</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keyword">const</span> <span class="keyword">auto</span> binIndex3dUnsafe =</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a013c54004baba529ff9b1dc5bb8e2773">autopas::utils::ArrayMath::floorToInt</a>((particleLocation - container.<a class="code hl_function" href="classautopas_1_1ParticleContainerInterface.html#afc9b73ca3fbd7a346c7ceccc9f2a2b66">getBoxMin</a>()) / binDimensions);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keyword">const</span> <span class="keyword">auto</span> numberOfBins = numberOfBinsPerDim * numberOfBinsPerDim * numberOfBinsPerDim;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keyword">const</span> <span class="keyword">auto</span> binVolume = domainVolume / <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(numberOfBins);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  std::vector&lt;size_t&gt; particlesPerBin(numberOfBins, 0);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="comment">// add particles accordingly to their bin to get the amount of particles in each bin</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> particleItr = container.<a class="code hl_function" href="classautopas_1_1ParticleContainerInterface.html#a01662c901808511a2785ecad6f536c32">begin</a>(autopas::IteratorBehavior::owned); particleItr.isValid(); ++particleItr) {</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keyword">const</span> <span class="keyword">auto</span> &amp;particleLocation = particleItr-&gt;getR();</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="comment">// It is possible that floating point errors result in out of bounds indices.</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="comment">// e.g. if there are 7 bins in the x dimension, and that particle is close to the right domain boundary, the</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="comment">// division above might result in 7.0, which gets floored to 7 corresponding to a bin index that is out of bounds!</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="comment">// We therefore check for particle indices that are out of bounds and, if the particle is within the domain we</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="comment">// adjust the index. We don&#39;t care about floating point errors causing incorrect indices internally in the</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="comment">// domain as, for particles so close to a boundary, it is somewhat arbitrary which bin they fall into.</span></div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="keyword">const</span> <span class="keyword">auto</span> binIndex3DSafe = [&amp;]() {</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>      <span class="keyword">auto</span> newBinIndex3D = binIndex3dUnsafe;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dim = 0; dim &lt; 3; ++dim) {</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">if</span> (particleLocation[dim] &gt; container.<a class="code hl_function" href="classautopas_1_1ParticleContainerInterface.html#afc9b73ca3fbd7a346c7ceccc9f2a2b66">getBoxMin</a>()[dim] or particleLocation[dim] &lt; container.<a class="code hl_function" href="classautopas_1_1ParticleContainerInterface.html#afe78d425e123737e61a77a218ece7031">getBoxMax</a>()[dim]) {</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>          newBinIndex3D[dim] = std::clamp(binIndex3dUnsafe[dim], 0, numberOfBinsPerDim - 1);</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>          <a class="code hl_function" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a>(</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>              <span class="stringliteral">&quot;calculateHomogeneityAndMaxDensity: Particle is outside the container!&quot;</span>);</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        }</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>      }</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      <span class="keywordflow">return</span> newBinIndex3D;</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    }();</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="keyword">const</span> <span class="keyword">auto</span> binIndex1d = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ThreeDimensionalMapping.html#a8d92b8e30d9eb33d3b6828989d9b5eb2">autopas::utils::ThreeDimensionalMapping::threeToOneD</a>(</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>        binIndex3DSafe, {numberOfBinsPerDim, numberOfBinsPerDim, numberOfBinsPerDim});</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keyword">const</span> <span class="keyword">auto</span> binIndex3dUnsafe =</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a013c54004baba529ff9b1dc5bb8e2773">autopas::utils::ArrayMath::floorToInt</a>((particleLocation - container.<a class="code hl_function" href="classautopas_1_1ParticleContainerInterface.html#afc9b73ca3fbd7a346c7ceccc9f2a2b66">getBoxMin</a>()) / binDimensions);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="comment">// It is possible that floating point errors result in out of bounds indices.</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="comment">// e.g. if there are 7 bins in the x dimension, and that particle is close to the right domain boundary, the</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="comment">// division above might result in 7.0, which gets floored to 7 corresponding to a bin index that is out of bounds!</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="comment">// We therefore check for particle indices that are out of bounds and, if the particle is within the domain we</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <span class="comment">// adjust the index. We don&#39;t care about floating point errors causing incorrect indices internally in the</span></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="comment">// domain as, for particles so close to a boundary, it is somewhat arbitrary which bin they fall into.</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    <span class="keyword">const</span> <span class="keyword">auto</span> binIndex3DSafe = [&amp;]() {</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>      <span class="keyword">auto</span> newBinIndex3D = binIndex3dUnsafe;</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> dim = 0; dim &lt; 3; ++dim) {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>        <span class="keywordflow">if</span> (particleLocation[dim] &gt; container.<a class="code hl_function" href="classautopas_1_1ParticleContainerInterface.html#afc9b73ca3fbd7a346c7ceccc9f2a2b66">getBoxMin</a>()[dim] or particleLocation[dim] &lt; container.<a class="code hl_function" href="classautopas_1_1ParticleContainerInterface.html#afe78d425e123737e61a77a218ece7031">getBoxMax</a>()[dim]) {</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>          newBinIndex3D[dim] = std::clamp(binIndex3dUnsafe[dim], 0, numberOfBinsPerDim - 1);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>          <a class="code hl_function" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a>(</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>              <span class="stringliteral">&quot;calculateHomogeneityAndMaxDensity: Particle is outside the container!&quot;</span>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        }</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      }</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>      <span class="keywordflow">return</span> newBinIndex3D;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }();</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    particlesPerBin[binIndex1d] += 1;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">const</span> <span class="keyword">auto</span> binIndex1d = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ThreeDimensionalMapping.html#a8d92b8e30d9eb33d3b6828989d9b5eb2">autopas::utils::ThreeDimensionalMapping::threeToOneD</a>(</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>        binIndex3DSafe, {numberOfBinsPerDim, numberOfBinsPerDim, numberOfBinsPerDim});</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  <span class="comment">// calculate density for each bin and track max density</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keywordtype">double</span> maxDensity{0.};</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  std::vector&lt;double&gt; densityPerBin{};</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  densityPerBin.reserve(numberOfBins);</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; i &lt; numberOfBins; i++) {</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    densityPerBin.push_back(<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(particlesPerBin[i]) / binVolume);</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    maxDensity = std::max(maxDensity, densityPerBin[i]);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  }</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keywordflow">if</span> (maxDensity &lt; 0.0) {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <a class="code hl_function" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">utils::ExceptionHandler::exception</a>(</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="stringliteral">&quot;calculateHomogeneityAndMaxDensity(): maxDensity can never be smaller than 0.0, but is: {}&quot;</span>, maxDensity);</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  }</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="comment">// get mean and reserve variable for densityVariance</span></div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> densityMean = numberOfParticles / domainVolume;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> densityDifferenceSquaredSum = std::transform_reduce(densityPerBin.begin(), densityPerBin.end(), 0.0,</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                                                                   std::plus&lt;&gt;(), [densityMean](<span class="keywordtype">double</span> density) {</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>                                                                     double densityDifference = density - densityMean;</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>                                                                     return densityDifference * densityDifference;</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                                                                   });</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="keyword">const</span> <span class="keyword">auto</span> densityVariance = densityDifferenceSquaredSum / numberOfBins;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="comment">// finally calculate standard deviation</span></div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> homogeneity = std::sqrt(densityVariance);</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="comment">// normally between 0.0 and 1.5</span></div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="keywordflow">if</span> (homogeneity &lt; 0.0) {</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <a class="code hl_function" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">utils::ExceptionHandler::exception</a>(</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="stringliteral">&quot;calculateHomogeneityAndMaxDensity(): homogeneity can never be smaller than 0.0, but is: {}&quot;</span>, homogeneity);</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  }</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  <span class="keywordflow">return</span> {homogeneity, maxDensity};</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>}</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>}  <span class="comment">// namespace autopas::utils</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    particlesPerBin[binIndex1d] += 1;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  <span class="comment">// calculate density for each bin and track max density</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keywordtype">double</span> maxDensity{0.};</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  std::vector&lt;double&gt; densityPerBin{};</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>  densityPerBin.reserve(numberOfBins);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="keywordflow">for</span> (<span class="keyword">auto</span> i = 0; i &lt; numberOfBins; i++) {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    densityPerBin.push_back(<span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(particlesPerBin[i]) / binVolume);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    maxDensity = std::max(maxDensity, densityPerBin[i]);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keywordflow">if</span> (maxDensity &lt; 0.0) {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <a class="code hl_function" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">utils::ExceptionHandler::exception</a>(</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        <span class="stringliteral">&quot;calculateHomogeneityAndMaxDensity(): maxDensity can never be smaller than 0.0, but is: {}&quot;</span>, maxDensity);</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  }</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  <span class="comment">// get mean and reserve variable for densityVariance</span></div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> densityMean = numberOfParticles / domainVolume;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> densityDifferenceSquaredSum = std::transform_reduce(densityPerBin.begin(), densityPerBin.end(), 0.0,</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>                                                                   std::plus&lt;&gt;(), [densityMean](<span class="keywordtype">double</span> density) {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>                                                                     double densityDifference = density - densityMean;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>                                                                     return densityDifference * densityDifference;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>                                                                   });</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keyword">const</span> <span class="keyword">auto</span> densityVariance = densityDifferenceSquaredSum / numberOfBins;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  <span class="comment">// finally calculate standard deviation. If there are no particles, the above calculation leads to nan. This should</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>  <span class="comment">// be forced to 0.</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> homogeneity = numberOfParticles == 0 ? 0. : std::sqrt(densityVariance);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  <span class="comment">// normally between 0.0 and 1.5</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  <span class="keywordflow">if</span> (homogeneity &lt; 0.0) {</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>    <a class="code hl_function" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">utils::ExceptionHandler::exception</a>(</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>        <span class="stringliteral">&quot;calculateHomogeneityAndMaxDensity(): homogeneity can never be smaller than 0.0, but is: {}&quot;</span>, homogeneity);</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>  }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  <span class="keywordflow">return</span> {homogeneity, maxDensity};</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>}</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span> </div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>}  <span class="comment">// namespace autopas::utils</span></div>
 <div class="ttc" id="aArrayMath_8h_html"><div class="ttname"><a href="ArrayMath_8h.html">ArrayMath.h</a></div></div>
 <div class="ttc" id="aParticleContainerInterface_8h_html"><div class="ttname"><a href="ParticleContainerInterface_8h.html">ParticleContainerInterface.h</a></div></div>
 <div class="ttc" id="aThreeDimensionalMapping_8h_html"><div class="ttname"><a href="ThreeDimensionalMapping_8h.html">ThreeDimensionalMapping.h</a></div></div>
@@ -228,7 +229,7 @@ $(function() {
 <div class="ttc" id="anamespaceautopas_1_1utils_1_1ArrayMath_html_a013c54004baba529ff9b1dc5bb8e2773"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ArrayMath.html#a013c54004baba529ff9b1dc5bb8e2773">autopas::utils::ArrayMath::floorToInt</a></div><div class="ttdeci">constexpr std::array&lt; int, SIZE &gt; floorToInt(const std::array&lt; T, SIZE &gt; &amp;a)</div><div class="ttdoc">Floors all array elements and converts them to integers.</div><div class="ttdef"><b>Definition:</b> ArrayMath.h:332</div></div>
 <div class="ttc" id="anamespaceautopas_1_1utils_1_1ThreeDimensionalMapping_html_a8d92b8e30d9eb33d3b6828989d9b5eb2"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ThreeDimensionalMapping.html#a8d92b8e30d9eb33d3b6828989d9b5eb2">autopas::utils::ThreeDimensionalMapping::threeToOneD</a></div><div class="ttdeci">constexpr T threeToOneD(T x, T y, T z, const std::array&lt; T, 3 &gt; &amp;dims)</div><div class="ttdoc">Convert a 3d index to a 1d index.</div><div class="ttdef"><b>Definition:</b> ThreeDimensionalMapping.h:29</div></div>
 <div class="ttc" id="anamespaceautopas_1_1utils_html"><div class="ttname"><a href="namespaceautopas_1_1utils.html">autopas::utils</a></div><div class="ttdoc">In this namespace some helper classes and functions can be found used inside of AutoPas.</div><div class="ttdef"><b>Definition:</b> namespaces.h:44</div></div>
-<div class="ttc" id="anamespaceautopas_1_1utils_html_a087d3b888e7487a88afe4278f9f16c1a"><div class="ttname"><a href="namespaceautopas_1_1utils.html#a087d3b888e7487a88afe4278f9f16c1a">autopas::utils::calculateHomogeneityAndMaxDensity</a></div><div class="ttdeci">std::pair&lt; double, double &gt; calculateHomogeneityAndMaxDensity(const ParticleContainerInterface&lt; Particle &gt; &amp;container)</div><div class="ttdoc">Calculates homogeneity and max density of given AutoPas container.</div><div class="ttdef"><b>Definition:</b> SimilarityFunctions.h:44</div></div>
+<div class="ttc" id="anamespaceautopas_1_1utils_html_a087d3b888e7487a88afe4278f9f16c1a"><div class="ttname"><a href="namespaceautopas_1_1utils.html#a087d3b888e7487a88afe4278f9f16c1a">autopas::utils::calculateHomogeneityAndMaxDensity</a></div><div class="ttdeci">std::pair&lt; double, double &gt; calculateHomogeneityAndMaxDensity(const ParticleContainerInterface&lt; Particle &gt; &amp;container)</div><div class="ttdoc">Calculates homogeneity and max density of given AutoPas container.</div><div class="ttdef"><b>Definition:</b> SimilarityFunctions.h:47</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
