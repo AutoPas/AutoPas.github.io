@@ -111,8 +111,8 @@ $(function() {
   <div class="headertitle"><div class="title">Particle Ownership Model </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md53"></a> In the spirit of the <a href="https://github.com/AutoPas/AutoPas/blob/master/docs/userdoc/ContainerInterfaceModel.md">container interface model</a> AutoPas needs a way to distinguish owned and halo particles. It uses a flagging mechanism, because, depending on the currently used container, they might be mixed in the same data structure.</p>
-<h1><a class="anchor" id="autotoc_md54"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md55"></a> In the spirit of the <a href="https://github.com/AutoPas/AutoPas/blob/master/docs/userdoc/ContainerInterfaceModel.md">container interface model</a> AutoPas needs a way to distinguish owned and halo particles. It uses a flagging mechanism, because, depending on the currently used container, they might be mixed in the same data structure.</p>
+<h1><a class="anchor" id="autotoc_md56"></a>
 Types</h1>
 <p>Particles in AutoPas have the property <code>ParticleBase::_ownershipState</code>, which indicates one of three possible states:</p>
 <ul>
@@ -126,14 +126,14 @@ Types</h1>
 <p class="startli">These particles do not affect the interaction calculation and are removed from the data container when <code>updateContainer()</code> is called, and the data structure is really updated.</p>
 </li>
 </ul>
-<h1><a class="anchor" id="autotoc_md55"></a>
+<h1><a class="anchor" id="autotoc_md57"></a>
 Enforcement</h1>
 <ul>
 <li>The ownership state is enforced according to the called function when inserting particles via <code>addParticle()</code> or <code>addHaloParticle()</code>.</li>
 <li>Due to its close relation to <code>IteratorBehavior</code>, static checks are in place to ensure that the binary values for <code>owned</code> and <code>halo</code> match. As explained in the respective classes, this is not easily possible for <code>dummy</code>.</li>
 <li>Never change the ownership state of a particle if you do not know precisely what you are doing. Especially deletion should always be done through methods of the main interface to avoid confusing internal counters.</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md56"></a>
+<h1><a class="anchor" id="autotoc_md58"></a>
 Related Files and Folders</h1>
 <ul>
 <li><a class="el" href="IteratorBehavior_8h.html">IteratorBehavior.h</a></li>

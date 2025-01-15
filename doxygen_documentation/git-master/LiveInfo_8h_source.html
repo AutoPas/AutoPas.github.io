@@ -228,175 +228,176 @@ $(function() {
 <div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        <span class="keywordflow">if</span> (particlesInBin == 0) {</div>
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>          ++numEmptyCellsLambda;</div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>          <span class="comment">// FIXME: Tobias explain this calculation (:</span></div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>          estimatedNumNeighborInteractionsLambda +=</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>              <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(particlesInBin * (particlesInBin * 27 - 1)) * 0.155;</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        }</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        maxParticlesPerCellLambda = std::max(particlesInBin, maxParticlesPerCellLambda);</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        minParticlesPerCellLambda = std::min(particlesInBin, minParticlesPerCellLambda);</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <span class="keyword">const</span> <span class="keyword">auto</span> diffFromAvg = avgParticlesPerCell - <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(particlesInBin);</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        maxDiffLambda = std::max(diffFromAvg, maxDiffLambda);</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        sumStddevLambda += diffFromAvg * diffFromAvg;</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>      }</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>      estimatedNumNeighborInteractionsLambda /= 2;</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>      <span class="keywordflow">return</span> std::tuple{estimatedNumNeighborInteractionsLambda,</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>                        maxDiffLambda,</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                        sumStddevLambda,</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                        numEmptyCellsLambda,</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                        maxParticlesPerCellLambda,</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                        minParticlesPerCellLambda};</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    }();</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    infos[<span class="stringliteral">&quot;numEmptyCells&quot;</span>] = numEmptyCells;</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    infos[<span class="stringliteral">&quot;maxParticlesPerCell&quot;</span>] = maxParticlesPerCell;</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    infos[<span class="stringliteral">&quot;minParticlesPerCell&quot;</span>] = minParticlesPerCell;</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    infos[<span class="stringliteral">&quot;particlesPerCellStdDev&quot;</span>] =</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        numParticles == 0 ? 0.</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>                          : std::sqrt(sumStddev) / <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(particleBins.size() - 1) / avgParticlesPerCell;</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    infos[<span class="stringliteral">&quot;avgParticlesPerCell&quot;</span>] = avgParticlesPerCell;</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keyword">const</span> <span class="keyword">auto</span> [homogeneity, maxDensity] = <a class="code hl_function" href="namespaceautopas_1_1utils.html#a087d3b888e7487a88afe4278f9f16c1a">autopas::utils::calculateHomogeneityAndMaxDensity</a>(container);</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>    infos[<span class="stringliteral">&quot;homogeneity&quot;</span>] = homogeneity;</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    infos[<span class="stringliteral">&quot;maxDensity&quot;</span>] = maxDensity;</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>    infos[<span class="stringliteral">&quot;estimatedNumNeighborInteractions&quot;</span>] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span>(estimatedNumNeighborInteractions);</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span> </div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> sumStddevBlurred = [&amp;]() {</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>      <span class="keywordtype">double</span> res = 0.;</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> numParticlesInBin : particleBinsBlurred) {</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <span class="keyword">auto</span> diff = avgParticlesPerBlurredCell - <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(numParticlesInBin);</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        res += diff * diff;</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>      }</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>      <span class="keywordflow">return</span> res;</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    }();</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    infos[<span class="stringliteral">&quot;particlesPerBlurredCellStdDev&quot;</span>] = numParticles == 0 ? 0.</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>                                                               : std::sqrt(sumStddevBlurred) /</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                                                                     <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(particleBinsBlurred.size()) /</div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                                                                     avgParticlesPerBlurredCell;</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    infos[<span class="stringliteral">&quot;threadCount&quot;</span>] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(<a class="code hl_function" href="namespaceautopas.html#a385797c464a683f32da2d4a43ab53220">autopas::autopas_get_max_threads</a>());</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> particleSizeNeededByFunctor = calculateParticleSizeNeededByFunctor&lt;Particle, PairwiseFunctor&gt;(</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        std::make_index_sequence&lt;<a class="code hl_function" href="classautopas_1_1Functor.html#aadf3d67809de082653da8495de30ed31">PairwiseFunctor::getNeededAttr</a>().size()&gt;());</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>    infos[<span class="stringliteral">&quot;particleSizeNeededByFunctor&quot;</span>] = particleSizeNeededByFunctor;</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>  }</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno"><a class="line" href="classautopas_1_1LiveInfo.html#ab5d17a44d9ad1c2df4bc53ea1bf8e995">  222</a></span>  [[nodiscard]] <span class="keyword">const</span> <span class="keyword">auto</span> &amp;<a class="code hl_function" href="classautopas_1_1LiveInfo.html#ab5d17a44d9ad1c2df4bc53ea1bf8e995">get</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> infos; }</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno"><a class="line" href="classautopas_1_1LiveInfo.html#a02b304cd13b8cd4ef0cb21fecf5fed04">  228</a></span>  [[nodiscard]] std::string <a class="code hl_function" href="classautopas_1_1LiveInfo.html#a02b304cd13b8cd4ef0cb21fecf5fed04">toString</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <span class="keyword">auto</span> typeToString = [](<span class="keyword">auto</span> type) {</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;<span class="keyword">decltype</span>(type), <span class="keywordtype">bool</span>&gt; or std::is_same_v&lt;<span class="keyword">decltype</span>(type), <span class="keywordtype">double</span>&gt; or</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>                    std::is_same_v&lt;<span class="keyword">decltype</span>(type), <span class="keywordtype">size_t</span>&gt;) {</div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        <span class="keywordflow">return</span> std::to_string(type);</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_base_of_v&lt;Option&lt;<span class="keyword">decltype</span>(type)&gt;, <span class="keyword">decltype</span>(type)&gt;) {</div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        <span class="keywordflow">return</span> type.to_string();</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>      }</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>      <span class="keywordflow">return</span> std::string{<span class="stringliteral">&quot;fail&quot;</span>};</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    };</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="keyword">auto</span> pairToString = [&amp;](<span class="keyword">const</span> <span class="keyword">auto</span> &amp;pair) { <span class="keywordflow">return</span> pair.first + <span class="stringliteral">&quot;=&quot;</span> + std::visit(typeToString, pair.second); };</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    std::string res{<span class="stringliteral">&quot;Live Info: &quot;</span>};</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="keywordflow">if</span> (not infos.empty()) {</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>      <span class="comment">// We initialize the accumulation with the first element. Hence, the accumulation starts at next(begin).</span></div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>      res += std::accumulate(std::next(infos.begin()), infos.end(), pairToString(*infos.begin()),</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>                             [&amp;](std::string s, <span class="keyword">const</span> <span class="keyword">auto</span> &amp;elem) { return std::move(s) + <span class="stringliteral">&quot; &quot;</span> + pairToString(elem); });</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>    }</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    <span class="keywordflow">return</span> res;</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>  }</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno"><a class="line" href="classautopas_1_1LiveInfo.html#a46a5f871096bc06cbe9903e3aef2a882">  254</a></span>  <span class="keyword">friend</span> std::ostream &amp;<a class="code hl_friend" href="classautopas_1_1LiveInfo.html#a46a5f871096bc06cbe9903e3aef2a882">operator&lt;&lt;</a>(std::ostream &amp;out, <span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1LiveInfo.html">LiveInfo</a> &amp;info) {</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    out &lt;&lt; info.infos.size() &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;[name, val] : info.infos) {</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>      <span class="comment">// val.index here is the index of this value&#39;s type in the LiveInfo::InfoType variant type.</span></div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>      <span class="comment">// This is needed for determining the type when reading this file via readIndex.</span></div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>      out &lt;&lt; name &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; val.index() &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>      std::visit([&amp;](<span class="keyword">const</span> <span class="keyword">auto</span> &amp;v) { out &lt;&lt; v &lt;&lt; <span class="charliteral">&#39; &#39;</span>; }, val);</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    }</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="keywordflow">return</span> out;</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>  }</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno"><a class="line" href="classautopas_1_1LiveInfo.html#a109cc415d9563a2b7777ae2af7bc26a6">  271</a></span>  <span class="keyword">friend</span> std::istream &amp;<a class="code hl_friend" href="classautopas_1_1LiveInfo.html#a109cc415d9563a2b7777ae2af7bc26a6">operator&gt;&gt;</a>(std::istream &amp;in, <a class="code hl_class" href="classautopas_1_1LiveInfo.html">LiveInfo</a> &amp;info) {</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    <span class="keywordtype">size_t</span> numElements{0};</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    in &gt;&gt; numElements;</div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; numElements; i++) {</div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>      std::string name;</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>      in &gt;&gt; name;</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>      <span class="keywordtype">size_t</span> idx{0};</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>      in &gt;&gt; idx;</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>      <span class="keyword">const</span> <span class="keyword">auto</span> val =</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>          readIndex&lt;LiveInfo::InfoType&gt;(in, idx, std::make_index_sequence&lt;std::variant_size_v&lt;LiveInfo::InfoType&gt;&gt;());</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>      info.infos[name] = val;</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    }</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    <span class="keywordflow">return</span> in;</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>  }</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span> </div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno"><a class="line" href="classautopas_1_1LiveInfo.html#a082c22c074edd04622098f11967a912a">  291</a></span>  [[nodiscard]] std::pair&lt;std::string, std::string&gt; <a class="code hl_function" href="classautopas_1_1LiveInfo.html#a082c22c074edd04622098f11967a912a">getCSVLine</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    <span class="comment">// match all words (anything that is neither a &#39; &#39; or &#39;=&#39;), that are followed by a &#39;=&#39;,</span></div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    <span class="comment">// ignoring the &#39;Live Info: &#39; prefix</span></div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    <span class="keyword">const</span> <span class="keyword">auto</span> keyRegex = std::regex(<span class="stringliteral">&quot;([^= ]+)=[^ ]*&quot;</span>);</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <span class="comment">// match all words that are preceded by a &#39;=&#39;</span></div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="keyword">const</span> <span class="keyword">auto</span> valueRegex = std::regex(<span class="stringliteral">&quot;=([^ ]+)&quot;</span>);</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    <span class="keyword">auto</span> searchString = <a class="code hl_function" href="classautopas_1_1LiveInfo.html#a02b304cd13b8cd4ef0cb21fecf5fed04">toString</a>();</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    <span class="comment">// remove leading Live Info:</span></div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    searchString = searchString.substr(std::string(<span class="stringliteral">&quot;Live Info: &quot;</span>).size());</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span> </div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    std::sregex_iterator keyIter(searchString.begin(), searchString.end(), keyRegex);</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    std::sregex_iterator valueIter(searchString.begin(), searchString.end(), valueRegex);</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    std::sregex_iterator end;</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span> </div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    std::stringstream header;</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    std::stringstream line;</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span> </div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    <span class="keywordflow">while</span> (keyIter != end) {</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>      <span class="comment">// first submatch is the match of the capture group</span></div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>      header &lt;&lt; keyIter-&gt;str(1) &lt;&lt; <span class="stringliteral">&quot;,&quot;</span>;</div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>      ++keyIter;</div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>    }</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    <span class="keywordflow">while</span> (valueIter != end) {</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>      <span class="comment">// first submatch is the match of the capture group</span></div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>      line &lt;&lt; valueIter-&gt;str(1) &lt;&lt; <span class="stringliteral">&quot;,&quot;</span>;</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>      ++valueIter;</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    }</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span> </div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    <span class="keyword">auto</span> headerStr = header.str();</div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    <span class="keyword">auto</span> lineStr = line.str();</div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    <span class="comment">// drop trailing &#39;,&#39;</span></div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    headerStr.pop_back();</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    lineStr.pop_back();</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span> </div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>    <span class="keywordflow">return</span> std::make_pair(headerStr, lineStr);</div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>  }</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span> </div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>  <span class="keyword">template</span> &lt;<span class="keyword">class </span><a class="code hl_typedef" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, <span class="keyword">class </span><a class="code hl_class" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a>, <span class="keywordtype">size_t</span>... Idx&gt;</div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keyword">auto</span> calculateParticleSizeNeededByFunctor(std::index_sequence&lt;Idx...&gt;) {</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    <span class="keywordflow">return</span> (0 + ... +</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>            <span class="keyword">sizeof</span>(<span class="keyword">typename</span> std::tuple_element&lt;<a class="code hl_function" href="classautopas_1_1Functor.html#aadf3d67809de082653da8495de30ed31">PairwiseFunctor::getNeededAttr</a>()[Idx],</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>                                               <span class="keyword">typename</span> <a class="code hl_typedef" href="classautopas_1_1ParticleBase.html#a5edc300640c4ece1b7cd14dbe3633c18">Particle::SoAArraysType</a>&gt;::type::value_type));</div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>  }</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span> </div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Variant, <span class="keyword">class</span> Type, <span class="keywordtype">size_t</span> Idx&gt;</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> readIndexHelper(std::istream &amp;in, <span class="keywordtype">size_t</span> idx, Variant &amp;var) {</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>    <span class="keywordflow">if</span> (Idx == idx) {</div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>      <a class="code hl_enumeration" href="namespaceautopas.html#af7ac3614f0c9b42bab1d8c1a3703431a">Type</a> val;</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>      in &gt;&gt; val;</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>      var = val;</div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>    }</div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>  }</div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span> </div>
-<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>  <span class="keyword">template</span> &lt;<span class="keyword">class </span>Variant, <span class="keywordtype">size_t</span>... Idx&gt;</div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>  <span class="keyword">static</span> Variant readIndex(std::istream &amp;in, <span class="keywordtype">size_t</span> idx, std::index_sequence&lt;Idx...&gt;) {</div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>    Variant var;</div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>    (readIndexHelper&lt;Variant, std::variant_alternative_t&lt;Idx, Variant&gt;, Idx&gt;(in, idx, var), ...);</div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>    <span class="keywordflow">return</span> var;</div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>  }</div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span> </div>
-<div class="line"><a id="l00382" name="l00382"></a><span class="lineno">  382</span>  std::map&lt;std::string, InfoType&gt; infos;</div>
-<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>};</div>
-<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span> </div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>}  <span class="comment">// namespace autopas</span></div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>          <span class="keyword">const</span> <span class="keyword">auto</span> estimatedNumParticlesInVicinity = particlesInBin * (particlesInBin * 27 - 1);</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>          <span class="comment">// ratio of sphere volume to volume of 3x3x3 cubes where edge size of cube is same as the radius of sphere</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>          <span class="keyword">constexpr</span> <span class="keywordtype">double</span> probabilityParticleWithinCutoff = 0.155;</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>          estimatedNumNeighborInteractionsLambda += estimatedNumParticlesInVicinity * probabilityParticleWithinCutoff;</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        }</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        maxParticlesPerCellLambda = std::max(particlesInBin, maxParticlesPerCellLambda);</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        minParticlesPerCellLambda = std::min(particlesInBin, minParticlesPerCellLambda);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <span class="keyword">const</span> <span class="keyword">auto</span> diffFromAvg = avgParticlesPerCell - <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(particlesInBin);</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        maxDiffLambda = std::max(diffFromAvg, maxDiffLambda);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        sumStddevLambda += diffFromAvg * diffFromAvg;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>      }</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>      estimatedNumNeighborInteractionsLambda /= 2;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>      <span class="keywordflow">return</span> std::tuple{estimatedNumNeighborInteractionsLambda,</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                        maxDiffLambda,</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                        sumStddevLambda,</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>                        numEmptyCellsLambda,</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>                        maxParticlesPerCellLambda,</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>                        minParticlesPerCellLambda};</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>    }();</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>    infos[<span class="stringliteral">&quot;numEmptyCells&quot;</span>] = numEmptyCells;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>    infos[<span class="stringliteral">&quot;maxParticlesPerCell&quot;</span>] = maxParticlesPerCell;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    infos[<span class="stringliteral">&quot;minParticlesPerCell&quot;</span>] = minParticlesPerCell;</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>    infos[<span class="stringliteral">&quot;particlesPerCellStdDev&quot;</span>] =</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        numParticles == 0 ? 0.</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>                          : std::sqrt(sumStddev) / <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(particleBins.size() - 1) / avgParticlesPerCell;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    infos[<span class="stringliteral">&quot;avgParticlesPerCell&quot;</span>] = avgParticlesPerCell;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>    <span class="keyword">const</span> <span class="keyword">auto</span> [homogeneity, maxDensity] = <a class="code hl_function" href="namespaceautopas_1_1utils.html#a087d3b888e7487a88afe4278f9f16c1a">autopas::utils::calculateHomogeneityAndMaxDensity</a>(container);</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    infos[<span class="stringliteral">&quot;homogeneity&quot;</span>] = homogeneity;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    infos[<span class="stringliteral">&quot;maxDensity&quot;</span>] = maxDensity;</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span> </div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    infos[<span class="stringliteral">&quot;estimatedNumNeighborInteractions&quot;</span>] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">long</span><span class="keyword">&gt;</span>(estimatedNumNeighborInteractions);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <span class="keyword">const</span> <span class="keywordtype">double</span> sumStddevBlurred = [&amp;]() {</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>      <span class="keywordtype">double</span> res = 0.;</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> numParticlesInBin : particleBinsBlurred) {</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        <span class="keyword">auto</span> diff = avgParticlesPerBlurredCell - <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(numParticlesInBin);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        res += diff * diff;</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>      }</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>      <span class="keywordflow">return</span> res;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>    }();</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    infos[<span class="stringliteral">&quot;particlesPerBlurredCellStdDev&quot;</span>] = numParticles == 0 ? 0.</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>                                                               : std::sqrt(sumStddevBlurred) /</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>                                                                     <span class="keyword">static_cast&lt;</span><span class="keywordtype">double</span><span class="keyword">&gt;</span>(particleBinsBlurred.size()) /</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>                                                                     avgParticlesPerBlurredCell;</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    infos[<span class="stringliteral">&quot;threadCount&quot;</span>] = <span class="keyword">static_cast&lt;</span><span class="keywordtype">size_t</span><span class="keyword">&gt;</span>(<a class="code hl_function" href="namespaceautopas.html#a385797c464a683f32da2d4a43ab53220">autopas::autopas_get_max_threads</a>());</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>    <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> particleSizeNeededByFunctor = calculateParticleSizeNeededByFunctor&lt;Particle, PairwiseFunctor&gt;(</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        std::make_index_sequence&lt;<a class="code hl_function" href="classautopas_1_1Functor.html#aadf3d67809de082653da8495de30ed31">PairwiseFunctor::getNeededAttr</a>().size()&gt;());</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    infos[<span class="stringliteral">&quot;particleSizeNeededByFunctor&quot;</span>] = particleSizeNeededByFunctor;</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>  }</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="classautopas_1_1LiveInfo.html#ab5d17a44d9ad1c2df4bc53ea1bf8e995">  223</a></span>  [[nodiscard]] <span class="keyword">const</span> <span class="keyword">auto</span> &amp;<a class="code hl_function" href="classautopas_1_1LiveInfo.html#ab5d17a44d9ad1c2df4bc53ea1bf8e995">get</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> infos; }</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno"><a class="line" href="classautopas_1_1LiveInfo.html#a02b304cd13b8cd4ef0cb21fecf5fed04">  229</a></span>  [[nodiscard]] std::string <a class="code hl_function" href="classautopas_1_1LiveInfo.html#a02b304cd13b8cd4ef0cb21fecf5fed04">toString</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <span class="keyword">auto</span> typeToString = [](<span class="keyword">auto</span> type) {</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;<span class="keyword">decltype</span>(type), <span class="keywordtype">bool</span>&gt; or std::is_same_v&lt;<span class="keyword">decltype</span>(type), <span class="keywordtype">double</span>&gt; or</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                    std::is_same_v&lt;<span class="keyword">decltype</span>(type), <span class="keywordtype">size_t</span>&gt;) {</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        <span class="keywordflow">return</span> std::to_string(type);</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_base_of_v&lt;Option&lt;<span class="keyword">decltype</span>(type)&gt;, <span class="keyword">decltype</span>(type)&gt;) {</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        <span class="keywordflow">return</span> type.to_string();</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>      }</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>      <span class="keywordflow">return</span> std::string{<span class="stringliteral">&quot;fail&quot;</span>};</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    };</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <span class="keyword">auto</span> pairToString = [&amp;](<span class="keyword">const</span> <span class="keyword">auto</span> &amp;pair) { <span class="keywordflow">return</span> pair.first + <span class="stringliteral">&quot;=&quot;</span> + std::visit(typeToString, pair.second); };</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    std::string res{<span class="stringliteral">&quot;Live Info: &quot;</span>};</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keywordflow">if</span> (not infos.empty()) {</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>      <span class="comment">// We initialize the accumulation with the first element. Hence, the accumulation starts at next(begin).</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>      res += std::accumulate(std::next(infos.begin()), infos.end(), pairToString(*infos.begin()),</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>                             [&amp;](std::string s, <span class="keyword">const</span> <span class="keyword">auto</span> &amp;elem) { return std::move(s) + <span class="stringliteral">&quot; &quot;</span> + pairToString(elem); });</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>    }</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <span class="keywordflow">return</span> res;</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>  }</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno"><a class="line" href="classautopas_1_1LiveInfo.html#a46a5f871096bc06cbe9903e3aef2a882">  255</a></span>  <span class="keyword">friend</span> std::ostream &amp;<a class="code hl_friend" href="classautopas_1_1LiveInfo.html#a46a5f871096bc06cbe9903e3aef2a882">operator&lt;&lt;</a>(std::ostream &amp;out, <span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1LiveInfo.html">LiveInfo</a> &amp;info) {</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    out &lt;&lt; info.infos.size() &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;[name, val] : info.infos) {</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>      <span class="comment">// val.index here is the index of this value&#39;s type in the LiveInfo::InfoType variant type.</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>      <span class="comment">// This is needed for determining the type when reading this file via readIndex.</span></div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>      out &lt;&lt; name &lt;&lt; <span class="charliteral">&#39; &#39;</span> &lt;&lt; val.index() &lt;&lt; <span class="charliteral">&#39; &#39;</span>;</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>      std::visit([&amp;](<span class="keyword">const</span> <span class="keyword">auto</span> &amp;v) { out &lt;&lt; v &lt;&lt; <span class="charliteral">&#39; &#39;</span>; }, val);</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    }</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <span class="keywordflow">return</span> out;</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>  }</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span> </div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno"><a class="line" href="classautopas_1_1LiveInfo.html#a109cc415d9563a2b7777ae2af7bc26a6">  272</a></span>  <span class="keyword">friend</span> std::istream &amp;<a class="code hl_friend" href="classautopas_1_1LiveInfo.html#a109cc415d9563a2b7777ae2af7bc26a6">operator&gt;&gt;</a>(std::istream &amp;in, <a class="code hl_class" href="classautopas_1_1LiveInfo.html">LiveInfo</a> &amp;info) {</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    <span class="keywordtype">size_t</span> numElements{0};</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    in &gt;&gt; numElements;</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; numElements; i++) {</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>      std::string name;</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>      in &gt;&gt; name;</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>      <span class="keywordtype">size_t</span> idx{0};</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>      in &gt;&gt; idx;</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>      <span class="keyword">const</span> <span class="keyword">auto</span> val =</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>          readIndex&lt;LiveInfo::InfoType&gt;(in, idx, std::make_index_sequence&lt;std::variant_size_v&lt;LiveInfo::InfoType&gt;&gt;());</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>      info.infos[name] = val;</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    }</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    <span class="keywordflow">return</span> in;</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  }</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno"><a class="line" href="classautopas_1_1LiveInfo.html#a082c22c074edd04622098f11967a912a">  292</a></span>  [[nodiscard]] std::pair&lt;std::string, std::string&gt; <a class="code hl_function" href="classautopas_1_1LiveInfo.html#a082c22c074edd04622098f11967a912a">getCSVLine</a>()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    <span class="comment">// match all words (anything that is neither a &#39; &#39; or &#39;=&#39;), that are followed by a &#39;=&#39;,</span></div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    <span class="comment">// ignoring the &#39;Live Info: &#39; prefix</span></div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <span class="keyword">const</span> <span class="keyword">auto</span> keyRegex = std::regex(<span class="stringliteral">&quot;([^= ]+)=[^ ]*&quot;</span>);</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="comment">// match all words that are preceded by a &#39;=&#39;</span></div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    <span class="keyword">const</span> <span class="keyword">auto</span> valueRegex = std::regex(<span class="stringliteral">&quot;=([^ ]+)&quot;</span>);</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    <span class="keyword">auto</span> searchString = <a class="code hl_function" href="classautopas_1_1LiveInfo.html#a02b304cd13b8cd4ef0cb21fecf5fed04">toString</a>();</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    <span class="comment">// remove leading Live Info:</span></div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    searchString = searchString.substr(std::string(<span class="stringliteral">&quot;Live Info: &quot;</span>).size());</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    std::sregex_iterator keyIter(searchString.begin(), searchString.end(), keyRegex);</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    std::sregex_iterator valueIter(searchString.begin(), searchString.end(), valueRegex);</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    std::sregex_iterator end;</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span> </div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    std::stringstream header;</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    std::stringstream line;</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    <span class="keywordflow">while</span> (keyIter != end) {</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>      <span class="comment">// first submatch is the match of the capture group</span></div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>      header &lt;&lt; keyIter-&gt;str(1) &lt;&lt; <span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>      ++keyIter;</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    }</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    <span class="keywordflow">while</span> (valueIter != end) {</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>      <span class="comment">// first submatch is the match of the capture group</span></div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>      line &lt;&lt; valueIter-&gt;str(1) &lt;&lt; <span class="stringliteral">&quot;,&quot;</span>;</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>      ++valueIter;</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    }</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    <span class="keyword">auto</span> headerStr = header.str();</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>    <span class="keyword">auto</span> lineStr = line.str();</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>    <span class="comment">// drop trailing &#39;,&#39;</span></div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    headerStr.pop_back();</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>    lineStr.pop_back();</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span> </div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    <span class="keywordflow">return</span> std::make_pair(headerStr, lineStr);</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>  }</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span> </div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>  <span class="keyword">template</span> &lt;<span class="keyword">class </span><a class="code hl_typedef" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>, <span class="keyword">class </span><a class="code hl_class" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a>, <span class="keywordtype">size_t</span>... Idx&gt;</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keyword">auto</span> calculateParticleSizeNeededByFunctor(std::index_sequence&lt;Idx...&gt;) {</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>    <span class="keywordflow">return</span> (0 + ... +</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>            <span class="keyword">sizeof</span>(<span class="keyword">typename</span> std::tuple_element&lt;<a class="code hl_function" href="classautopas_1_1Functor.html#aadf3d67809de082653da8495de30ed31">PairwiseFunctor::getNeededAttr</a>()[Idx],</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>                                               <span class="keyword">typename</span> <a class="code hl_typedef" href="classautopas_1_1ParticleBase.html#a5edc300640c4ece1b7cd14dbe3633c18">Particle::SoAArraysType</a>&gt;::type::value_type));</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>  }</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span> </div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Variant, <span class="keyword">class</span> Type, <span class="keywordtype">size_t</span> Idx&gt;</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> readIndexHelper(std::istream &amp;in, <span class="keywordtype">size_t</span> idx, Variant &amp;var) {</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>    <span class="keywordflow">if</span> (Idx == idx) {</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>      <a class="code hl_enumeration" href="namespaceautopas.html#af7ac3614f0c9b42bab1d8c1a3703431a">Type</a> val;</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>      in &gt;&gt; val;</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>      var = val;</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>    }</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>  }</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span> </div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>  <span class="keyword">template</span> &lt;<span class="keyword">class </span>Variant, <span class="keywordtype">size_t</span>... Idx&gt;</div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span>  <span class="keyword">static</span> Variant readIndex(std::istream &amp;in, <span class="keywordtype">size_t</span> idx, std::index_sequence&lt;Idx...&gt;) {</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>    Variant var;</div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span>    (readIndexHelper&lt;Variant, std::variant_alternative_t&lt;Idx, Variant&gt;, Idx&gt;(in, idx, var), ...);</div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span>    <span class="keywordflow">return</span> var;</div>
+<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span>  }</div>
+<div class="line"><a id="l00379" name="l00379"></a><span class="lineno">  379</span> </div>
+<div class="line"><a id="l00383" name="l00383"></a><span class="lineno">  383</span>  std::map&lt;std::string, InfoType&gt; infos;</div>
+<div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>};</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span> </div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>}  <span class="comment">// namespace autopas</span></div>
 <div class="ttc" id="aArrayMath_8h_html"><div class="ttname"><a href="ArrayMath_8h.html">ArrayMath.h</a></div></div>
 <div class="ttc" id="aContainerOption_8h_html"><div class="ttname"><a href="ContainerOption_8h.html">ContainerOption.h</a></div></div>
 <div class="ttc" id="aDataLayoutOption_8h_html"><div class="ttname"><a href="DataLayoutOption_8h.html">DataLayoutOption.h</a></div></div>
@@ -408,23 +409,23 @@ $(function() {
 <div class="ttc" id="aWrapOpenMP_8h_html"><div class="ttname"><a href="WrapOpenMP_8h.html">WrapOpenMP.h</a></div></div>
 <div class="ttc" id="aclassautopas_1_1Functor_html_aadf3d67809de082653da8495de30ed31"><div class="ttname"><a href="classautopas_1_1Functor.html#aadf3d67809de082653da8495de30ed31">autopas::Functor::getNeededAttr</a></div><div class="ttdeci">static constexpr std::array&lt; typename Particle::AttributeNames, 0 &gt; getNeededAttr()</div><div class="ttdoc">Get attributes needed for computation.</div><div class="ttdef"><b>Definition:</b> Functor.h:77</div></div>
 <div class="ttc" id="aclassautopas_1_1LiveInfo_html"><div class="ttname"><a href="classautopas_1_1LiveInfo.html">autopas::LiveInfo</a></div><div class="ttdoc">This class is able to gather and store important information for a tuning phase from a container and ...</div><div class="ttdef"><b>Definition:</b> LiveInfo.h:31</div></div>
-<div class="ttc" id="aclassautopas_1_1LiveInfo_html_a02b304cd13b8cd4ef0cb21fecf5fed04"><div class="ttname"><a href="classautopas_1_1LiveInfo.html#a02b304cd13b8cd4ef0cb21fecf5fed04">autopas::LiveInfo::toString</a></div><div class="ttdeci">std::string toString() const</div><div class="ttdoc">Creates a string containing all live info gathered.</div><div class="ttdef"><b>Definition:</b> LiveInfo.h:228</div></div>
-<div class="ttc" id="aclassautopas_1_1LiveInfo_html_a082c22c074edd04622098f11967a912a"><div class="ttname"><a href="classautopas_1_1LiveInfo.html#a082c22c074edd04622098f11967a912a">autopas::LiveInfo::getCSVLine</a></div><div class="ttdeci">std::pair&lt; std::string, std::string &gt; getCSVLine() const</div><div class="ttdoc">Generate a csv representation containing all values from the toString() method.</div><div class="ttdef"><b>Definition:</b> LiveInfo.h:291</div></div>
-<div class="ttc" id="aclassautopas_1_1LiveInfo_html_a109cc415d9563a2b7777ae2af7bc26a6"><div class="ttname"><a href="classautopas_1_1LiveInfo.html#a109cc415d9563a2b7777ae2af7bc26a6">autopas::LiveInfo::operator&gt;&gt;</a></div><div class="ttdeci">friend std::istream &amp; operator&gt;&gt;(std::istream &amp;in, LiveInfo &amp;info)</div><div class="ttdoc">Stream operator to read the LiveInfo in from a stream.</div><div class="ttdef"><b>Definition:</b> LiveInfo.h:271</div></div>
-<div class="ttc" id="aclassautopas_1_1LiveInfo_html_a46a5f871096bc06cbe9903e3aef2a882"><div class="ttname"><a href="classautopas_1_1LiveInfo.html#a46a5f871096bc06cbe9903e3aef2a882">autopas::LiveInfo::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;out, const LiveInfo &amp;info)</div><div class="ttdoc">Stream operator to write the LiveInfo to a stream.</div><div class="ttdef"><b>Definition:</b> LiveInfo.h:254</div></div>
+<div class="ttc" id="aclassautopas_1_1LiveInfo_html_a02b304cd13b8cd4ef0cb21fecf5fed04"><div class="ttname"><a href="classautopas_1_1LiveInfo.html#a02b304cd13b8cd4ef0cb21fecf5fed04">autopas::LiveInfo::toString</a></div><div class="ttdeci">std::string toString() const</div><div class="ttdoc">Creates a string containing all live info gathered.</div><div class="ttdef"><b>Definition:</b> LiveInfo.h:229</div></div>
+<div class="ttc" id="aclassautopas_1_1LiveInfo_html_a082c22c074edd04622098f11967a912a"><div class="ttname"><a href="classautopas_1_1LiveInfo.html#a082c22c074edd04622098f11967a912a">autopas::LiveInfo::getCSVLine</a></div><div class="ttdeci">std::pair&lt; std::string, std::string &gt; getCSVLine() const</div><div class="ttdoc">Generate a csv representation containing all values from the toString() method.</div><div class="ttdef"><b>Definition:</b> LiveInfo.h:292</div></div>
+<div class="ttc" id="aclassautopas_1_1LiveInfo_html_a109cc415d9563a2b7777ae2af7bc26a6"><div class="ttname"><a href="classautopas_1_1LiveInfo.html#a109cc415d9563a2b7777ae2af7bc26a6">autopas::LiveInfo::operator&gt;&gt;</a></div><div class="ttdeci">friend std::istream &amp; operator&gt;&gt;(std::istream &amp;in, LiveInfo &amp;info)</div><div class="ttdoc">Stream operator to read the LiveInfo in from a stream.</div><div class="ttdef"><b>Definition:</b> LiveInfo.h:272</div></div>
+<div class="ttc" id="aclassautopas_1_1LiveInfo_html_a46a5f871096bc06cbe9903e3aef2a882"><div class="ttname"><a href="classautopas_1_1LiveInfo.html#a46a5f871096bc06cbe9903e3aef2a882">autopas::LiveInfo::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;out, const LiveInfo &amp;info)</div><div class="ttdoc">Stream operator to write the LiveInfo to a stream.</div><div class="ttdef"><b>Definition:</b> LiveInfo.h:255</div></div>
 <div class="ttc" id="aclassautopas_1_1LiveInfo_html_a5b640814452df0298f2ef926200f26bc"><div class="ttname"><a href="classautopas_1_1LiveInfo.html#a5b640814452df0298f2ef926200f26bc">autopas::LiveInfo::InfoType</a></div><div class="ttdeci">std::variant&lt; bool, double, size_t, ContainerOption, TraversalOption, LoadEstimatorOption, DataLayoutOption, Newton3Option &gt; InfoType</div><div class="ttdoc">The type of an info.</div><div class="ttdef"><b>Definition:</b> LiveInfo.h:41</div></div>
 <div class="ttc" id="aclassautopas_1_1LiveInfo_html_a7e2127016589c2be29435a9886ae5de8"><div class="ttname"><a href="classautopas_1_1LiveInfo.html#a7e2127016589c2be29435a9886ae5de8">autopas::LiveInfo::gather</a></div><div class="ttdeci">void gather(const autopas::ParticleContainerInterface&lt; Particle &gt; &amp;container, const PairwiseFunctor &amp;functor, unsigned int rebuildFrequency)</div><div class="ttdoc">Gathers important information from a particle container and functor.</div><div class="ttdef"><b>Definition:</b> LiveInfo.h:81</div></div>
-<div class="ttc" id="aclassautopas_1_1LiveInfo_html_ab5d17a44d9ad1c2df4bc53ea1bf8e995"><div class="ttname"><a href="classautopas_1_1LiveInfo.html#ab5d17a44d9ad1c2df4bc53ea1bf8e995">autopas::LiveInfo::get</a></div><div class="ttdeci">const auto &amp; get() const</div><div class="ttdoc">Returns a map of all infos.</div><div class="ttdef"><b>Definition:</b> LiveInfo.h:222</div></div>
+<div class="ttc" id="aclassautopas_1_1LiveInfo_html_ab5d17a44d9ad1c2df4bc53ea1bf8e995"><div class="ttname"><a href="classautopas_1_1LiveInfo.html#ab5d17a44d9ad1c2df4bc53ea1bf8e995">autopas::LiveInfo::get</a></div><div class="ttdeci">const auto &amp; get() const</div><div class="ttdoc">Returns a map of all infos.</div><div class="ttdef"><b>Definition:</b> LiveInfo.h:223</div></div>
 <div class="ttc" id="aclassautopas_1_1LoadEstimatorOption_html"><div class="ttname"><a href="classautopas_1_1LoadEstimatorOption.html">autopas::LoadEstimatorOption</a></div><div class="ttdoc">Class representing the load estimator choices.</div><div class="ttdef"><b>Definition:</b> LoadEstimatorOption.h:18</div></div>
 <div class="ttc" id="aclassautopas_1_1PairwiseFunctor_html"><div class="ttname"><a href="classautopas_1_1PairwiseFunctor.html">autopas::PairwiseFunctor</a></div><div class="ttdoc">PairwiseFunctor class.</div><div class="ttdef"><b>Definition:</b> PairwiseFunctor.h:31</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleBase_html"><div class="ttname"><a href="classautopas_1_1ParticleBase.html">autopas::ParticleBase</a></div><div class="ttdoc">Minimal definition of a basic particle.</div><div class="ttdef"><b>Definition:</b> ParticleBase.h:33</div></div>
-<div class="ttc" id="aclassautopas_1_1ParticleBase_html_a5edc300640c4ece1b7cd14dbe3633c18"><div class="ttname"><a href="classautopas_1_1ParticleBase.html#a5edc300640c4ece1b7cd14dbe3633c18">autopas::ParticleBase::SoAArraysType</a></div><div class="ttdeci">typename autopas::utils::SoAType&lt; ParticleBase&lt; floatType, idType &gt; *, idType, floatType, floatType, floatType, floatType, floatType, floatType, OwnershipState &gt;::Type SoAArraysType</div><div class="ttdoc">The type for the soa storage.</div><div class="ttdef"><b>Definition:</b> ParticleBase.h:301</div></div>
+<div class="ttc" id="aclassautopas_1_1ParticleBase_html_a5edc300640c4ece1b7cd14dbe3633c18"><div class="ttname"><a href="classautopas_1_1ParticleBase.html#a5edc300640c4ece1b7cd14dbe3633c18">autopas::ParticleBase::SoAArraysType</a></div><div class="ttdeci">typename autopas::utils::SoAType&lt; ParticleBase&lt; floatType, idType &gt; *, idType, floatType, floatType, floatType, floatType, floatType, floatType, OwnershipState &gt;::Type SoAArraysType</div><div class="ttdoc">The type for the soa storage.</div><div class="ttdef"><b>Definition:</b> ParticleBase.h:355</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleContainerInterface_html"><div class="ttname"><a href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a></div><div class="ttdoc">The ParticleContainerInterface class provides a basic interface for all Containers within AutoPas.</div><div class="ttdef"><b>Definition:</b> ParticleContainerInterface.h:37</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleContainerInterface_html_a4cde802a2682931d2c8fbea7188742ff"><div class="ttname"><a href="classautopas_1_1ParticleContainerInterface.html#a4cde802a2682931d2c8fbea7188742ff">autopas::ParticleContainerInterface::getCutoff</a></div><div class="ttdeci">virtual double getCutoff() const =0</div><div class="ttdoc">Return the cutoff of the container.</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleContainerInterface_html_ad4643b9f9629050b3731ec5326247692"><div class="ttname"><a href="classautopas_1_1ParticleContainerInterface.html#ad4643b9f9629050b3731ec5326247692">autopas::ParticleContainerInterface::getNumberOfParticles</a></div><div class="ttdeci">virtual size_t getNumberOfParticles(IteratorBehavior behavior=IteratorBehavior::owned) const =0</div><div class="ttdoc">Get the number of particles with respect to the specified IteratorBehavior.</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleContainerInterface_html_afc9b73ca3fbd7a346c7ceccc9f2a2b66"><div class="ttname"><a href="classautopas_1_1ParticleContainerInterface.html#afc9b73ca3fbd7a346c7ceccc9f2a2b66">autopas::ParticleContainerInterface::getBoxMin</a></div><div class="ttdeci">virtual const std::array&lt; double, 3 &gt; &amp; getBoxMin() const =0</div><div class="ttdoc">Get the lower corner of the container without halo.</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleContainerInterface_html_afe78d425e123737e61a77a218ece7031"><div class="ttname"><a href="classautopas_1_1ParticleContainerInterface.html#afe78d425e123737e61a77a218ece7031">autopas::ParticleContainerInterface::getBoxMax</a></div><div class="ttdeci">virtual const std::array&lt; double, 3 &gt; &amp; getBoxMax() const =0</div><div class="ttdoc">Get the upper corner of the container without halo.</div></div>
-<div class="ttc" id="aclassautopas_1_1ParticleContainerInterface_html_aff79b9a83a997b3c2fe9371557459a44"><div class="ttname"><a href="classautopas_1_1ParticleContainerInterface.html#aff79b9a83a997b3c2fe9371557459a44">autopas::ParticleContainerInterface::getVerletSkin</a></div><div class="ttdeci">virtual double getVerletSkin() const =0</div><div class="ttdoc">Return the verletSkin of the container verletSkinPerTimestep*rebuildFrequency.</div></div>
+<div class="ttc" id="aclassautopas_1_1ParticleContainerInterface_html_aff79b9a83a997b3c2fe9371557459a44"><div class="ttname"><a href="classautopas_1_1ParticleContainerInterface.html#aff79b9a83a997b3c2fe9371557459a44">autopas::ParticleContainerInterface::getVerletSkin</a></div><div class="ttdeci">virtual double getVerletSkin() const =0</div><div class="ttdoc">Return the verletSkin of the container verletSkin.</div></div>
 <div class="ttc" id="anamespaceautopas_1_1utils_1_1ArrayMath_html_a013c54004baba529ff9b1dc5bb8e2773"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ArrayMath.html#a013c54004baba529ff9b1dc5bb8e2773">autopas::utils::ArrayMath::floorToInt</a></div><div class="ttdeci">constexpr std::array&lt; int, SIZE &gt; floorToInt(const std::array&lt; T, SIZE &gt; &amp;a)</div><div class="ttdoc">Floors all array elements and converts them to integers.</div><div class="ttdef"><b>Definition:</b> ArrayMath.h:332</div></div>
 <div class="ttc" id="anamespaceautopas_1_1utils_1_1ArrayMath_html_af8cc230e98a053854154fc3a3d50ae10"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ArrayMath.html#af8cc230e98a053854154fc3a3d50ae10">autopas::utils::ArrayMath::ceilToInt</a></div><div class="ttdeci">constexpr std::array&lt; int, SIZE &gt; ceilToInt(const std::array&lt; T, SIZE &gt; &amp;a)</div><div class="ttdoc">Ceils all array elements and converts them to integers.</div><div class="ttdef"><b>Definition:</b> ArrayMath.h:348</div></div>
 <div class="ttc" id="anamespaceautopas_1_1utils_html_a087d3b888e7487a88afe4278f9f16c1a"><div class="ttname"><a href="namespaceautopas_1_1utils.html#a087d3b888e7487a88afe4278f9f16c1a">autopas::utils::calculateHomogeneityAndMaxDensity</a></div><div class="ttdeci">std::pair&lt; double, double &gt; calculateHomogeneityAndMaxDensity(const ParticleContainerInterface&lt; Particle &gt; &amp;container)</div><div class="ttdoc">Calculates homogeneity and max density of given AutoPas container.</div><div class="ttdef"><b>Definition:</b> SimilarityFunctions.h:47</div></div>

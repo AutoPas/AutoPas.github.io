@@ -201,6 +201,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a5df661fea7a9e5aa9a55fb482db9a06c"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; const std::vector&lt; <a class="el" href="classautopas_1_1FullParticleCell.html">FullParticleCell</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &gt; &amp;, const std::vector&lt; <a class="el" href="classautopas_1_1FullParticleCell.html">FullParticleCell</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &gt; &amp; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a5df661fea7a9e5aa9a55fb482db9a06c">getParticleBuffers</a> () const</td></tr>
 <tr class="memdesc:a5df661fea7a9e5aa9a55fb482db9a06c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the particle buffers.  <br /></td></tr>
 <tr class="separator:a5df661fea7a9e5aa9a55fb482db9a06c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8a9dd7862268a071a2d1d29791cc11f4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a8a9dd7862268a071a2d1d29791cc11f4">getMeanRebuildFrequency</a> () const</td></tr>
+<tr class="memdesc:a8a9dd7862268a071a2d1d29791cc11f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the mean rebuild frequency.  <br /></td></tr>
+<tr class="separator:a8a9dd7862268a071a2d1d29791cc11f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a354e61596754ce846312a9b17f12666c"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a354e61596754ce846312a9b17f12666c">getNeighborListsInvalidDoDynamicRebuild</a> ()</td></tr>
+<tr class="memdesc:a354e61596754ce846312a9b17f12666c"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter function for _neighborListInvalidDoDynamicRebuild  <br /></td></tr>
+<tr class="separator:a354e61596754ce846312a9b17f12666c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab51886e568f25c3f0e980d4fe6b1bfdd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#ab51886e568f25c3f0e980d4fe6b1bfdd">checkNeighborListsInvalidDoDynamicRebuild</a> ()</td></tr>
+<tr class="memdesc:ab51886e568f25c3f0e980d4fe6b1bfdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if any particle has moved more than skin/2.  <br /></td></tr>
+<tr class="separator:ab51886e568f25c3f0e980d4fe6b1bfdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbfde29220792eb638b7b28cfff441a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#afbfde29220792eb638b7b28cfff441a2">resetNeighborListsInvalidDoDynamicRebuild</a> ()</td></tr>
+<tr class="memdesc:afbfde29220792eb638b7b28cfff441a2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if any particle has moved more than skin/2.  <br /></td></tr>
+<tr class="separator:afbfde29220792eb638b7b28cfff441a2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65405829719e325bbf2a2f5d59fe58b4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a65405829719e325bbf2a2f5d59fe58b4">neighborListsAreValid</a> ()</td></tr>
+<tr class="memdesc:a65405829719e325bbf2a2f5d59fe58b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if in the next iteration the neighbor lists have to be rebuilt.  <br /></td></tr>
+<tr class="separator:a65405829719e325bbf2a2f5d59fe58b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>&gt;<br />
@@ -418,6 +433,25 @@ template&lt;typename <a class="el" href="namespaceautopas.html#a1103977ab8f79d29
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>iterator to the first particle.   </dd></dl>
+
+</div>
+</div>
+<a id="ab51886e568f25c3f0e980d4fe6b1bfdd" name="ab51886e568f25c3f0e980d4fe6b1bfdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab51886e568f25c3f0e980d4fe6b1bfdd">&#9670;&#160;</a></span>checkNeighborListsInvalidDoDynamicRebuild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::checkNeighborListsInvalidDoDynamicRebuild</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if any particle has moved more than skin/2. </p>
+<p>updates bool: _neighborListInvalidDoDynamicRebuild </p>
 
 </div>
 </div>
@@ -742,6 +776,55 @@ template&lt;typename <a class="el" href="namespaceautopas.html#a1103977ab8f79d29
 
 </div>
 </div>
+<a id="a8a9dd7862268a071a2d1d29791cc11f4" name="a8a9dd7862268a071a2d1d29791cc11f4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8a9dd7862268a071a2d1d29791cc11f4">&#9670;&#160;</a></span>getMeanRebuildFrequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getMeanRebuildFrequency </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Getter for the mean rebuild frequency. </p>
+<p>Helpful for determining the frequency for the dynamic containers This function is only used for dynamic containers currently but returns user defined rebuild frequency for static case for safety. </p><dl class="section return"><dt>Returns</dt><dd>value of the mean frequency as double </dd></dl>
+
+</div>
+</div>
+<a id="a354e61596754ce846312a9b17f12666c" name="a354e61596754ce846312a9b17f12666c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a354e61596754ce846312a9b17f12666c">&#9670;&#160;</a></span>getNeighborListsInvalidDoDynamicRebuild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getNeighborListsInvalidDoDynamicRebuild</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>getter function for _neighborListInvalidDoDynamicRebuild </p>
+<dl class="section return"><dt>Returns</dt><dd>bool stored in _neighborListInvalidDoDynamicRebuild </dd></dl>
+
+</div>
+</div>
 <a id="a4baa3c9ae05b9b970216044fc4674a0a" name="a4baa3c9ae05b9b970216044fc4674a0a"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4baa3c9ae05b9b970216044fc4674a0a">&#9670;&#160;</a></span>getNumberOfParticlesHalo()</h2>
 
@@ -992,6 +1075,26 @@ template&lt;class <a class="el" href="classautopas_1_1Functor.html">Functor</a> 
 
 </div>
 </div>
+<a id="a65405829719e325bbf2a2f5d59fe58b4" name="a65405829719e325bbf2a2f5d59fe58b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65405829719e325bbf2a2f5d59fe58b4">&#9670;&#160;</a></span>neighborListsAreValid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::neighborListsAreValid</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if in the next iteration the neighbor lists have to be rebuilt. </p>
+<p>This can be the case either because we hit the rebuild frequency or the dynamic rebuild criteria or because the auto tuner tests a new configuration.</p>
+<dl class="section return"><dt>Returns</dt><dd>True iff the neighbor lists will not be rebuild. </dd></dl>
+
+</div>
+</div>
 <a id="a7e4e897c6d6c40cbeba37b89c480db65" name="a7e4e897c6d6c40cbeba37b89c480db65"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7e4e897c6d6c40cbeba37b89c480db65">&#9670;&#160;</a></span>reserve() <span class="overload">[1/2]</span></h2>
 
@@ -1072,6 +1175,25 @@ template&lt;typename <a class="el" href="namespaceautopas.html#a1103977ab8f79d29
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="afbfde29220792eb638b7b28cfff441a2" name="afbfde29220792eb638b7b28cfff441a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbfde29220792eb638b7b28cfff441a2">&#9670;&#160;</a></span>resetNeighborListsInvalidDoDynamicRebuild()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::resetNeighborListsInvalidDoDynamicRebuild</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks if any particle has moved more than skin/2. </p>
+<p>resets bool: _neighborListInvalidDoDynamicRebuild to false </p>
 
 </div>
 </div>

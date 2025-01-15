@@ -1,7 +1,7 @@
 var searchData=
 [
   ['octant_0',['Octant',['../namespaceautopas_1_1octree.html#ab01b26e0075175330cc7b2d34605a161',1,'autopas::octree']]],
-  ['octree_1',['Octree',['../classautopas_1_1Octree.html',1,'autopas::Octree&lt; Particle &gt;'],['../classautopas_1_1Octree.html#a5f8d067668d1c980c26fa7155e341384',1,'autopas::Octree::Octree()']]],
+  ['octree_1',['Octree',['../classautopas_1_1Octree.html',1,'autopas::Octree&lt; Particle &gt;'],['../classautopas_1_1Octree.html#ae84b1d3166703ea43c7898ac6bc1bd2a',1,'autopas::Octree::Octree()']]],
   ['octree_2',['octree',['../classautopas_1_1options_1_1ContainerOption.html#a16b80e72223e48e127689234cafa302fa3bb369bd262df2c03b58929688ab2b77',1,'autopas::options::ContainerOption']]],
   ['octree_2eh_3',['Octree.h',['../Octree_8h.html',1,'']]],
   ['octreedirection_2eh_4',['OctreeDirection.h',['../OctreeDirection_8h.html',1,'']]],

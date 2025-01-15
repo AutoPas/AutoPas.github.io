@@ -111,15 +111,15 @@ $(function() {
   <div class="headertitle"><div class="title">Simulation Loop </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md57"></a>This page describes the assumptions AutoPas makes about how particle simulations look and how AutoPas fits into them.</p>
-<h1><a class="anchor" id="autotoc_md58"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md59"></a>This page describes the assumptions AutoPas makes about how particle simulations look and how AutoPas fits into them.</p>
+<h1><a class="anchor" id="autotoc_md60"></a>
 High-Level View</h1>
 <p>AutoPas assumes that any (short-range) particle simulation boils down to three high-level steps:</p><ol type="1">
 <li>Particle movement</li>
 <li>Particle interaction</li>
 <li>Measurements</li>
 </ol>
-<h1><a class="anchor" id="autotoc_md59"></a>
+<h1><a class="anchor" id="autotoc_md61"></a>
 Code Example</h1>
 <p>A conceptual example of a primary simulation loop: </p><div class="fragment"><div class="line"> ++</div>
 <div class="line"><span class="comment">// main simulation loop</span></div>
@@ -144,9 +144,9 @@ Code Example</h1>
 <div class="line">   <span class="comment">// 3. Your science goes here.</span></div>
 <div class="line">}</div>
 <div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">This is the main namespace of AutoPas.</div><div class="ttdef"><b>Definition:</b> AutoPasDecl.h:31</div></div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md60"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md62"></a>
 Steps</h1>
-<h2><a class="anchor" id="autotoc_md61"></a>
+<h2><a class="anchor" id="autotoc_md63"></a>
 1. Particle Movement</h2>
 <p>This step is highly user-dependent. Based on the simulation at hand, particles move due to the result of interaction forces or forces coming from the simulation model. Nevertheless, positions are usually updated through regular AutoPas iterators (see <a href="https://github.com/AutoPas/AutoPas/blob/master/docs/userdoc/Iterators.md"><code>Iterators.md</code></a> for details): </p><div class="fragment"><div class="line"> ++</div>
 <div class="line"><span class="keywordtype">void</span> updatePositions() {</div>
@@ -154,7 +154,7 @@ Steps</h1>
 <div class="line">      p.setR(calculateNewPosition(p);</div>
 <div class="line">   }</div>
 <div class="line">}</div>
-</div><!-- fragment --><h3><a class="anchor" id="autotoc_md62"></a>
+</div><!-- fragment --><h3><a class="anchor" id="autotoc_md64"></a>
 1.1 Data Structure Update</h3>
 <div class="fragment"><div class="line"> ++</div>
 <div class="line"><span class="keyword">auto</span> emigrants = <a class="code hl_namespace" href="namespaceautopas.html">autopas</a>-&gt;updateContainer();</div>
@@ -163,7 +163,7 @@ Steps</h1>
 <li>Halo particles are (marked as) deleted.</li>
 <li>Particles leaving the bounding box of the container are (marked as) deleted and returned as emigrants.</li>
 </ul>
-<h3><a class="anchor" id="autotoc_md63"></a>
+<h3><a class="anchor" id="autotoc_md65"></a>
 1.2 Particle Exchange</h3>
 <div class="fragment"><div class="line"> ++</div>
 <div class="line"><a class="code hl_namespace" href="namespaceautopas.html">autopas</a>-&gt;addParticles(immigrants);</div>
@@ -174,16 +174,16 @@ Steps</h1>
 <li>Insertion of particles due to breakup events.</li>
 <li>Deletion of particles due to outflow condition.</li>
 </ul>
-<h2><a class="anchor" id="autotoc_md64"></a>
+<h2><a class="anchor" id="autotoc_md66"></a>
 2. Particle Interaction</h2>
 <div class="fragment"><div class="line"> ++</div>
 <div class="line">YourFunctor functor();</div>
 <div class="line"><a class="code hl_namespace" href="namespaceautopas.html">autopas</a>-&gt;computeInteractions(&amp;functor);</div>
 </div><!-- fragment --><p> Apply your custom force interaction via one or several functors. This step triggers the tuning. It internally applies OpenMP parallelization, so do not use it in other thread-parallel environments.</p>
-<h2><a class="anchor" id="autotoc_md65"></a>
+<h2><a class="anchor" id="autotoc_md67"></a>
 3. Measurements</h2>
 <p>This part encompasses everything else, like sampling particle data, computing macroscopic properties, statistical analysis, ... For performance reasons, it might be advisable to not do any pairwise particle measurements here, like, for example, pairwise distances for a radial distribution function. Such <code>O(N^2)</code> operations are better handled within or as a separate functor in step 2.</p>
-<h1><a class="anchor" id="autotoc_md66"></a>
+<h1><a class="anchor" id="autotoc_md68"></a>
 Related Files and Folders</h1>
 <ul>
 <li><a class="el" href="AutoPasDecl_8h.html">AutoPasDecl.h</a></li>

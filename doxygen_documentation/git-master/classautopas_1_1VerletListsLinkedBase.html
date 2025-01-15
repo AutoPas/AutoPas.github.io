@@ -182,9 +182,9 @@ Collaboration diagram for autopas::VerletListsLinkedBase&lt; Particle &gt;:</div
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af6acfb2007c309ff7bd88fb1ce897a69"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsLinkedBase.html#af6acfb2007c309ff7bd88fb1ce897a69">VerletListsLinkedBase</a> (const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax, const double cutoff, const double skinPerTimestep, const unsigned int rebuildFrequency, const std::set&lt; TraversalOption &gt; &amp;applicableTraversals, const double cellSizeFactor)</td></tr>
-<tr class="memdesc:af6acfb2007c309ff7bd88fb1ce897a69"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the <a class="el" href="classautopas_1_1VerletListsLinkedBase.html" title="Base class for Verlet lists which use an underlying linked cells container.">VerletListsLinkedBase</a> class.  <br /></td></tr>
-<tr class="separator:af6acfb2007c309ff7bd88fb1ce897a69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aadeee2c0981252c1f1f537c55679ec3a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsLinkedBase.html#aadeee2c0981252c1f1f537c55679ec3a">VerletListsLinkedBase</a> (const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax, const double cutoff, const double skin, const unsigned int rebuildFrequency, const std::set&lt; TraversalOption &gt; &amp;applicableTraversals, const double cellSizeFactor)</td></tr>
+<tr class="memdesc:aadeee2c0981252c1f1f537c55679ec3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the <a class="el" href="classautopas_1_1VerletListsLinkedBase.html" title="Base class for Verlet lists which use an underlying linked cells container.">VerletListsLinkedBase</a> class.  <br /></td></tr>
+<tr class="separator:aadeee2c0981252c1f1f537c55679ec3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af5510d28e293f61b4083e40bca611bf7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8">CellType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsLinkedBase.html#af5510d28e293f61b4083e40bca611bf7">getParticleCellTypeEnum</a> () const override</td></tr>
 <tr class="memdesc:af5510d28e293f61b4083e40bca611bf7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a> type as an Enum.    <br /></td></tr>
 <tr class="separator:af5510d28e293f61b4083e40bca611bf7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -281,7 +281,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a066801266d25186ef3c02cf8a51de24c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cutoff of the container.    <br /></td></tr>
 <tr class="separator:a066801266d25186ef3c02cf8a51de24c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a73572eba330386ac14ffefb7fe85d7f8"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a73572eba330386ac14ffefb7fe85d7f8">getVerletSkin</a> () const final</td></tr>
-<tr class="memdesc:a73572eba330386ac14ffefb7fe85d7f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the verletSkin of the container verletSkinPerTimestep*rebuildFrequency.    <br /></td></tr>
+<tr class="memdesc:a73572eba330386ac14ffefb7fe85d7f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the verletSkin of the container verletSkin.    <br /></td></tr>
 <tr class="separator:a73572eba330386ac14ffefb7fe85d7f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac7605e4096bb4d151daace6e5121afd1"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsLinkedBase.html#ac7605e4096bb4d151daace6e5121afd1">getInteractionLength</a> () const final</td></tr>
 <tr class="memdesc:ac7605e4096bb4d151daace6e5121afd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the interaction length (cutoff+skin) of the container.    <br /></td></tr>
@@ -290,9 +290,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa0d021848386b655665099f6536d38f3 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8">CellType</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#aa0d021848386b655665099f6536d38f3">getParticleCellTypeEnum</a> () const =0</td></tr>
 <tr class="memdesc:aa0d021848386b655665099f6536d38f3 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a> type as an Enum.  <br /></td></tr>
 <tr class="separator:aa0d021848386b655665099f6536d38f3 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a418d31e949c58e79c73597685f5f7932 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a418d31e949c58e79c73597685f5f7932">ParticleContainerInterface</a> (double skinPerTimestep)</td></tr>
-<tr class="memdesc:a418d31e949c58e79c73597685f5f7932 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
-<tr class="separator:a418d31e949c58e79c73597685f5f7932 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e8307c24bf0cbe2d5387ac9473376b3 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a6e8307c24bf0cbe2d5387ac9473376b3">ParticleContainerInterface</a> (double skin)</td></tr>
+<tr class="memdesc:a6e8307c24bf0cbe2d5387ac9473376b3 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="separator:a6e8307c24bf0cbe2d5387ac9473376b3 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3c2c64bd4786635537cbdb17ba1b416 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top"><a id="af3c2c64bd4786635537cbdb17ba1b416" name="af3c2c64bd4786635537cbdb17ba1b416"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ParticleContainerInterface</b> ()=default</td></tr>
 <tr class="memdesc:af3c2c64bd4786635537cbdb17ba1b416 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor of <a class="el" href="classautopas_1_1ParticleContainerInterface.html" title="The ParticleContainerInterface class provides a basic interface for all Containers within AutoPas.">ParticleContainerInterface</a>. <br /></td></tr>
@@ -369,7 +369,7 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ParticleContainer
 <tr class="memdesc:a65a8be37e00420b0006bf145fe731cb9 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the cutoff of the container.  <br /></td></tr>
 <tr class="separator:a65a8be37e00420b0006bf145fe731cb9 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff79b9a83a997b3c2fe9371557459a44 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#aff79b9a83a997b3c2fe9371557459a44">getVerletSkin</a> () const =0</td></tr>
-<tr class="memdesc:aff79b9a83a997b3c2fe9371557459a44 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the verletSkin of the container verletSkinPerTimestep*rebuildFrequency.  <br /></td></tr>
+<tr class="memdesc:aff79b9a83a997b3c2fe9371557459a44 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the verletSkin of the container verletSkin.  <br /></td></tr>
 <tr class="separator:aff79b9a83a997b3c2fe9371557459a44 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a776f714977d93a885ce91bdd60c4dbf4 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a776f714977d93a885ce91bdd60c4dbf4">getStepsSinceLastRebuild</a> () const</td></tr>
 <tr class="memdesc:a776f714977d93a885ce91bdd60c4dbf4 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of time-steps since last neighbor list rebuild.  <br /></td></tr>
@@ -426,10 +426,10 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_verletBuiltNewton3</
 <tr class="memitem:ad99e3729351970d811228d4f308fe7ed inherit pro_attribs_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#ad99e3729351970d811228d4f308fe7ed">_stepsSinceLastRebuild</a> {0}</td></tr>
 <tr class="memdesc:ad99e3729351970d811228d4f308fe7ed inherit pro_attribs_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the number of time-steps since last neighbor list rebuild.  <br /></td></tr>
 <tr class="separator:ad99e3729351970d811228d4f308fe7ed inherit pro_attribs_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4de3c46f496b5491c04026b9ef7b4a4c inherit pro_attribs_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top"><a id="a4de3c46f496b5491c04026b9ef7b4a4c" name="a4de3c46f496b5491c04026b9ef7b4a4c"></a>
-double&#160;</td><td class="memItemRight" valign="bottom"><b>_skinPerTimestep</b></td></tr>
-<tr class="memdesc:a4de3c46f496b5491c04026b9ef7b4a4c inherit pro_attribs_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skin distance a particle is allowed to move in one time-step. <br /></td></tr>
-<tr class="separator:a4de3c46f496b5491c04026b9ef7b4a4c inherit pro_attribs_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adc17ceddabf1fca25d2ffbdaf9f1ccc8 inherit pro_attribs_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top"><a id="adc17ceddabf1fca25d2ffbdaf9f1ccc8" name="adc17ceddabf1fca25d2ffbdaf9f1ccc8"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>_skin</b></td></tr>
+<tr class="memdesc:adc17ceddabf1fca25d2ffbdaf9f1ccc8 inherit pro_attribs_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skin distance a particle is allowed to move in one time-step. <br /></td></tr>
+<tr class="separator:adc17ceddabf1fca25d2ffbdaf9f1ccc8 inherit pro_attribs_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
@@ -456,8 +456,8 @@ class autopas::VerletListsLinkedBase&lt; Particle &gt;</div><p>Base class for Ve
   </dd>
 </dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af6acfb2007c309ff7bd88fb1ce897a69" name="af6acfb2007c309ff7bd88fb1ce897a69"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af6acfb2007c309ff7bd88fb1ce897a69">&#9670;&#160;</a></span>VerletListsLinkedBase()</h2>
+<a id="aadeee2c0981252c1f1f537c55679ec3a" name="aadeee2c0981252c1f1f537c55679ec3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadeee2c0981252c1f1f537c55679ec3a">&#9670;&#160;</a></span>VerletListsLinkedBase()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -489,7 +489,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>skinPerTimestep</em>, </td>
+          <td class="paramname"><em>skin</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -528,7 +528,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
     <tr><td class="paramname">boxMin</td><td>the lower corner of the domain </td></tr>
     <tr><td class="paramname">boxMax</td><td>the upper corner of the domain </td></tr>
     <tr><td class="paramname">cutoff</td><td>the cutoff radius of the interaction </td></tr>
-    <tr><td class="paramname">skinPerTimestep</td><td>the skin radius per timestep </td></tr>
+    <tr><td class="paramname">skin</td><td>the skin radius </td></tr>
     <tr><td class="paramname">rebuildFrequency</td><td>the rebuild frequency. </td></tr>
     <tr><td class="paramname">applicableTraversals</td><td>all applicable traversals </td></tr>
     <tr><td class="paramname">cellSizeFactor</td><td>cell size factor relative to cutoff. Verlet lists are only implemented for values &gt;= 1.0 (smaller values are set to 1.0). </td></tr>
@@ -1633,7 +1633,7 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </table>
 </div><div class="memdoc">
 
-<p>Return the verletSkin of the container verletSkinPerTimestep*rebuildFrequency.   </p>
+<p>Return the verletSkin of the container verletSkin.   </p>
 <dl class="section return"><dt>Returns</dt><dd>verletSkin   </dd></dl>
 
 <p>Implements <a class="el" href="classautopas_1_1ParticleContainerInterface.html#aff79b9a83a997b3c2fe9371557459a44">autopas::ParticleContainerInterface&lt; Particle &gt;</a>.</p>
