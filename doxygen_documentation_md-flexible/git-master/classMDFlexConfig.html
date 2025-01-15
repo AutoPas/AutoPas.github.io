@@ -390,12 +390,12 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a941d7a47c7e72a78ad0cbd7448923de8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMDFlexConfig_1_1MDFlexOption.html">MDFlexOption</a>&lt; unsigned int, __LINE__ &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#a941d7a47c7e72a78ad0cbd7448923de8">verletRebuildFrequency</a></td></tr>
 <tr class="memdesc:a941d7a47c7e72a78ad0cbd7448923de8"><td class="mdescLeft">&#160;</td><td class="mdescRight">verletRebuildFrequency  <br /></td></tr>
 <tr class="separator:a941d7a47c7e72a78ad0cbd7448923de8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a76137c72f2f7846763e35827c90bbe9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMDFlexConfig_1_1MDFlexOption.html">MDFlexOption</a>&lt; double, __LINE__ &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#a76137c72f2f7846763e35827c90bbe9c">verletSkinRadiusPerTimestep</a></td></tr>
-<tr class="memdesc:a76137c72f2f7846763e35827c90bbe9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">verletSkinRadiusPerTimeStep  <br /></td></tr>
-<tr class="separator:a76137c72f2f7846763e35827c90bbe9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c8b2357e8ead6afa6075ad484b57c56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMDFlexConfig_1_1MDFlexOption.html">MDFlexOption</a>&lt; bool, __LINE__ &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#a8c8b2357e8ead6afa6075ad484b57c56">fastParticlesThrow</a></td></tr>
 <tr class="memdesc:a8c8b2357e8ead6afa6075ad484b57c56"><td class="mdescLeft">&#160;</td><td class="mdescRight">fastParticlesThrow  <br /></td></tr>
 <tr class="separator:a8c8b2357e8ead6afa6075ad484b57c56"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada358b5f901036e050590651267e273d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMDFlexConfig_1_1MDFlexOption.html">MDFlexOption</a>&lt; double, __LINE__ &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#ada358b5f901036e050590651267e273d">verletSkinRadius</a></td></tr>
+<tr class="memdesc:ada358b5f901036e050590651267e273d"><td class="mdescLeft">&#160;</td><td class="mdescRight">verletSkinRadius  <br /></td></tr>
+<tr class="separator:ada358b5f901036e050590651267e273d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a299beba6c90fbb3c91080eb9587f5095"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structMDFlexConfig_1_1MDFlexOption.html">MDFlexOption</a>&lt; std::array&lt; double, 3 &gt;, 0 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#a299beba6c90fbb3c91080eb9587f5095">boxMin</a></td></tr>
 <tr class="memdesc:a299beba6c90fbb3c91080eb9587f5095"><td class="mdescLeft">&#160;</td><td class="mdescRight">boxMin  <br /></td></tr>
 <tr class="separator:a299beba6c90fbb3c91080eb9587f5095"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1425,9 +1425,10 @@ static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>value
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">{<span class="keyword">false</span>, <span class="stringliteral">&quot;fastParticlesThrow&quot;</span>, <span class="keyword">false</span>,</div>
-<div class="line">                                                  <span class="stringliteral">&quot;Decide if particles that move farther than skin/2/rebuildFrequency &quot;</span></div>
-<div class="line">                                                  <span class="stringliteral">&quot;will throw an exception during the position update or not.&quot;</span>}</div>
+<b>Initial value:</b><div class="fragment"><div class="line">{</div>
+<div class="line">      <span class="keyword">false</span>, <span class="stringliteral">&quot;fastParticlesThrow&quot;</span>, <span class="keyword">false</span>,</div>
+<div class="line">      <span class="stringliteral">&quot;Decide if particles that move farther than skin/2/rebuildFrequency &quot;</span></div>
+<div class="line">      <span class="stringliteral">&quot;will throw an exception during the position update or not for the case with statically rebuilding containers.&quot;</span>}</div>
 </div><!-- fragment -->
 <p>fastParticlesThrow </p>
 
@@ -2329,23 +2330,21 @@ static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>value
 
 </div>
 </div>
-<a id="a76137c72f2f7846763e35827c90bbe9c" name="a76137c72f2f7846763e35827c90bbe9c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a76137c72f2f7846763e35827c90bbe9c">&#9670;&#160;</a></span>verletSkinRadiusPerTimestep</h2>
+<a id="ada358b5f901036e050590651267e273d" name="ada358b5f901036e050590651267e273d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada358b5f901036e050590651267e273d">&#9670;&#160;</a></span>verletSkinRadius</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structMDFlexConfig_1_1MDFlexOption.html">MDFlexOption</a>&lt;double, __LINE__&gt; MDFlexConfig::verletSkinRadiusPerTimestep</td>
+          <td class="memname"><a class="el" href="structMDFlexConfig_1_1MDFlexOption.html">MDFlexOption</a>&lt;double, __LINE__&gt; MDFlexConfig::verletSkinRadius</td>
         </tr>
       </table>
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
-<div class="line">      .2, <span class="stringliteral">&quot;verlet-skin-radius-per-timestep&quot;</span>, <span class="keyword">true</span>,</div>
-<div class="line">      <span class="stringliteral">&quot;Skin added to the cutoff to form the interaction length. The total skin width is this number times &quot;</span></div>
-<div class="line">      <span class="stringliteral">&quot;verletRebuildFrequency.&quot;</span>}</div>
+<div class="line">      .2, <span class="stringliteral">&quot;verlet-skin-radius&quot;</span>, <span class="keyword">true</span>, <span class="stringliteral">&quot;Skin added to the cutoff avoid rebuilding containers every iteration.&quot;</span>}</div>
 </div><!-- fragment -->
-<p>verletSkinRadiusPerTimeStep </p>
+<p>verletSkinRadius </p>
 
 </div>
 </div>
