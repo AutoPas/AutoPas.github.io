@@ -282,8 +282,8 @@ var searchData=
   ['getzminmax_279',['getZMinMax',['../classautopas_1_1internal_1_1Cluster.html#a68d2ead0ed863816100128fae4d44245',1,'autopas::internal::Cluster']]],
   ['gradw_280',['gradW',['../classsphLib_1_1SPHKernels.html#a113d94730867587667003e5e575bfa2d',1,'sphLib::SPHKernels']]],
   ['gray_281',['GRAY',['../namespaceautopas.html#a3b4599ef932732f32abe3e0614c34198',1,'autopas']]],
-  ['greater_282',['greater',['../structautopas_1_1RuleSyntax_1_1ConfigurationOrder.html#a3729724d8e13c09b179f88e3a4eb2ddf',1,'autopas::RuleSyntax::ConfigurationOrder']]],
-  ['greater_283',['GREATER',['../classautopas_1_1RuleVM.html#a3c6dee07a0f58e342d0560f54972650dafb2758d5cf623b9dc4d5aaf5ff3aa5b3',1,'autopas::RuleVM']]],
+  ['greater_282',['GREATER',['../classautopas_1_1RuleVM.html#a3c6dee07a0f58e342d0560f54972650dafb2758d5cf623b9dc4d5aaf5ff3aa5b3',1,'autopas::RuleVM']]],
+  ['greater_283',['greater',['../structautopas_1_1RuleSyntax_1_1ConfigurationOrder.html#a3729724d8e13c09b179f88e3a4eb2ddf',1,'autopas::RuleSyntax::ConfigurationOrder']]],
   ['gteq_5fedge_5fneighbor_284',['GTEQ_EDGE_NEIGHBOR',['../classautopas_1_1OctreeNodeInterface.html#aa2d23fac19e40ae71dbe67e030c5545a',1,'autopas::OctreeNodeInterface']]],
   ['gteq_5fface_5fneighbor_285',['GTEQ_FACE_NEIGHBOR',['../classautopas_1_1OctreeNodeInterface.html#aeb0bc6d7b0340dbdd0a190fb499501ba',1,'autopas::OctreeNodeInterface']]],
   ['gteq_5fvertex_5fneighbor_286',['GTEQ_VERTEX_NEIGHBOR',['../classautopas_1_1OctreeNodeInterface.html#a9040808b3a236e75772418143779ad28',1,'autopas::OctreeNodeInterface']]]
