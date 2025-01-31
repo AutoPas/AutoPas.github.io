@@ -79,7 +79,7 @@ var searchData=
   ['setquaternion_76',['setQuaternion',['../classmdLib_1_1MultisiteMoleculeLJ.html#a7dfb5b4532b7a6b7c46a3c1a0ee56655',1,'mdLib::MultisiteMoleculeLJ']]],
   ['setr_77',['setR',['../classautopas_1_1ParticleBase.html#a570c7d5e795dd2c9a2211fafb3e26189',1,'autopas::ParticleBase']]],
   ['setrdistancecheck_78',['setRDistanceCheck',['../classautopas_1_1ParticleBase.html#a88abb0e06b30651f873fcebf53cea532',1,'autopas::ParticleBase']]],
-  ['setrebuildfrequency_79',['setRebuildFrequency',['../classautopas_1_1VerletClusterLists.html#aa2d0dc79ba35a126f559e6e1271c388f',1,'autopas::VerletClusterLists']]],
+  ['setrebuildfrequency_79',['setRebuildFrequency',['../classautopas_1_1VerletClusterLists.html#aa2d0dc79ba35a126f559e6e1271c388f',1,'autopas::VerletClusterLists::setRebuildFrequency()'],['../classautopas_1_1AutoTuner.html#af4f9c5fcb939e80d209a6a41721c3d16',1,'autopas::AutoTuner::setRebuildFrequency()']]],
   ['setrelativeblacklistrange_80',['setRelativeBlacklistRange',['../classautopas_1_1AutoPas.html#ab50dc4421f8d4b05abb82ecd2bcd9ec4',1,'autopas::AutoPas']]],
   ['setrelativeoptimumrange_81',['setRelativeOptimumRange',['../classautopas_1_1AutoPas.html#a9251b08e6f7fdd7c92d3c05332dd6987',1,'autopas::AutoPas']]],
   ['setrulefilename_82',['setRuleFileName',['../classautopas_1_1AutoPas.html#ad0a8ef13cae8b9ab887e64c66d3f751d',1,'autopas::AutoPas']]],

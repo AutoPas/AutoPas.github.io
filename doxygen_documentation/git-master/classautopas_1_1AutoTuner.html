@@ -163,7 +163,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a2b3efd0da6d143a2a333d524553bc84a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increase internal iteration counters by one.  <br /></td></tr>
 <tr class="separator:a2b3efd0da6d143a2a333d524553bc84a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a796da93e86a1678f995acd6819e34e9e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a796da93e86a1678f995acd6819e34e9e">willRebuildNeighborLists</a> () const</td></tr>
-<tr class="memdesc:a796da93e86a1678f995acd6819e34e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether rebuildNeighborLists() will be triggered in the next iteration.  <br /></td></tr>
+<tr class="memdesc:a796da93e86a1678f995acd6819e34e9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether rebuildNeighborLists() should be triggered in the next iteration.  <br /></td></tr>
 <tr class="separator:a796da93e86a1678f995acd6819e34e9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad8c778b2db88b8c7cfcbd4417b33ed5f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#ad8c778b2db88b8c7cfcbd4417b33ed5f">getCurrentConfig</a> () const</td></tr>
 <tr class="memdesc:ad8c778b2db88b8c7cfcbd4417b33ed5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the currently selected configuration.  <br /></td></tr>
@@ -207,12 +207,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac5383029952ce900fd2cf745aabaa634"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#ac5383029952ce900fd2cf745aabaa634">inTuningPhase</a> () const</td></tr>
 <tr class="memdesc:ac5383029952ce900fd2cf745aabaa634"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate if the tuner considers itself currently in a tuning phase according to its internal counters.  <br /></td></tr>
 <tr class="separator:ac5383029952ce900fd2cf745aabaa634"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad450fa545a43e3b80924aabc5abbba29"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#ad450fa545a43e3b80924aabc5abbba29">inFirstTuningIteration</a> () const</td></tr>
+<tr class="memdesc:ad450fa545a43e3b80924aabc5abbba29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate if the tuner is in the first iteration of a tuning phase.  <br /></td></tr>
+<tr class="separator:ad450fa545a43e3b80924aabc5abbba29"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c5eb51d45b6653060f0e3347b015aba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a9c5eb51d45b6653060f0e3347b015aba">inLastTuningIteration</a> () const</td></tr>
+<tr class="memdesc:a9c5eb51d45b6653060f0e3347b015aba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate if the tuner is in the last iteration of the tuning phase.  <br /></td></tr>
+<tr class="separator:a9c5eb51d45b6653060f0e3347b015aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc45ebb44212a4438832c007918de4a8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classautopas_1_1EvidenceCollection.html">EvidenceCollection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#adc45ebb44212a4438832c007918de4a8">getEvidenceCollection</a> () const</td></tr>
 <tr class="memdesc:adc45ebb44212a4438832c007918de4a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the internal evidence collection.  <br /></td></tr>
 <tr class="separator:adc45ebb44212a4438832c007918de4a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac150a44caf878d980d963a5761768442"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#ac150a44caf878d980d963a5761768442">canMeasureEnergy</a> () const</td></tr>
 <tr class="memdesc:ac150a44caf878d980d963a5761768442"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether the <a class="el" href="classautopas_1_1AutoTuner.html" title="This class manages all logic related to the auto tuning mechanic.">AutoTuner</a> can take energy measurements.  <br /></td></tr>
 <tr class="separator:ac150a44caf878d980d963a5761768442"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4f9c5fcb939e80d209a6a41721c3d16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#af4f9c5fcb939e80d209a6a41721c3d16">setRebuildFrequency</a> (double rebuildFrequency)</td></tr>
+<tr class="memdesc:af4f9c5fcb939e80d209a6a41721c3d16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the _rebuildFrequency.  <br /></td></tr>
+<tr class="separator:af4f9c5fcb939e80d209a6a41721c3d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class manages all logic related to the auto tuning mechanic. </p>
@@ -549,6 +558,26 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ad450fa545a43e3b80924aabc5abbba29" name="ad450fa545a43e3b80924aabc5abbba29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad450fa545a43e3b80924aabc5abbba29">&#9670;&#160;</a></span>inFirstTuningIteration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool autopas::AutoTuner::inFirstTuningIteration </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicate if the tuner is in the first iteration of a tuning phase. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 <a id="ac10dcc9eac0aa2ffa243577bc12447cf" name="ac10dcc9eac0aa2ffa243577bc12447cf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac10dcc9eac0aa2ffa243577bc12447cf">&#9670;&#160;</a></span>initEnergy()</h2>
 
@@ -566,6 +595,26 @@ Public Member Functions</h2></td></tr>
 
 <p>Initialize rapl meter. </p>
 <dl class="section return"><dt>Returns</dt><dd>True if energy measurements are possible on this system. </dd></dl>
+
+</div>
+</div>
+<a id="a9c5eb51d45b6653060f0e3347b015aba" name="a9c5eb51d45b6653060f0e3347b015aba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c5eb51d45b6653060f0e3347b015aba">&#9670;&#160;</a></span>inLastTuningIteration()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool autopas::AutoTuner::inLastTuningIteration </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicate if the tuner is in the last iteration of the tuning phase. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
@@ -849,6 +898,32 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="af4f9c5fcb939e80d209a6a41721c3d16" name="af4f9c5fcb939e80d209a6a41721c3d16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4f9c5fcb939e80d209a6a41721c3d16">&#9670;&#160;</a></span>setRebuildFrequency()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void autopas::AutoTuner::setRebuildFrequency </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>rebuildFrequency</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sets the _rebuildFrequency. </p>
+<p>This is the average number of iterations per rebuild. This is used to dynamically change the _rebuildFrequency based on estimate in case of dynamic containers. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">rebuildFrequency</td><td>Current rebuild frequency in this instance of autopas, used by autopas for weighing rebuild and non-rebuild iterations </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a796da93e86a1678f995acd6819e34e9e" name="a796da93e86a1678f995acd6819e34e9e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a796da93e86a1678f995acd6819e34e9e">&#9670;&#160;</a></span>willRebuildNeighborLists()</h2>
 
@@ -864,9 +939,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Returns whether rebuildNeighborLists() will be triggered in the next iteration. </p>
-<p>This might also indicate a container change.</p>
-<dl class="section return"><dt>Returns</dt><dd>True if the current iteration counters indicate a rebuild in the next iteration. </dd></dl>
+<p>Returns whether rebuildNeighborLists() should be triggered in the next iteration. </p>
+<p>This indicates a configuration change. In the non-tuning phase, the rebuildNeighborLists() is triggered in <a class="el" href="classautopas_1_1LogicHandler.html" title="The LogicHandler takes care of the containers s.t.">LogicHandler</a>. </p><dl class="section return"><dt>Returns</dt><dd>True if the current iteration counters indicate a rebuild in the next iteration due to a configuration change. </dd></dl>
 
 </div>
 </div>

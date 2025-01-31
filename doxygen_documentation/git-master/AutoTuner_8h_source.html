@@ -158,102 +158,108 @@ $(function() {
 <div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#a2b3efd0da6d143a2a333d524553bc84a">bumpIterationCounters</a>(<span class="keywordtype">bool</span> needToWait = <span class="keyword">false</span>);</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#a796da93e86a1678f995acd6819e34e9e">willRebuildNeighborLists</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  [[nodiscard]] <span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1Configuration.html">Configuration</a> &amp;<a class="code hl_function" href="classautopas_1_1AutoTuner.html#ad8c778b2db88b8c7cfcbd4417b33ed5f">getCurrentConfig</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  [[nodiscard]] std::tuple&lt;Configuration, bool&gt; <a class="code hl_function" href="classautopas_1_1AutoTuner.html#a38a705e04679b24fbd0de7def40e38d1">getNextConfig</a>();</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span> </div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>  [[nodiscard]] std::tuple&lt;Configuration, bool&gt; <a class="code hl_function" href="classautopas_1_1AutoTuner.html#aa8f05fb22f0b00eaea592e4fa89ecf85">rejectConfig</a>(<span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1Configuration.html">Configuration</a> &amp;rejectedConfig, <span class="keywordtype">bool</span> indefinitely);</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span> </div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#ae200ca1f23fb9ca4f9f798cd5e443af6">searchSpaceIsTrivial</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#a08333ac15c1db2f1ebd2820cc2d56d54">searchSpaceIsEmpty</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#a4869c59c2bc70ac244e27840a1f716c1">logTuningResult</a>(<span class="keywordtype">bool</span> tuningIteration, <span class="keywordtype">long</span> tuningTime) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span> </div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#ac10dcc9eac0aa2ffa243577bc12447cf">initEnergy</a>();</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span> </div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#a7c0c30c81b4a96e2783c84a2d51c384d">resetEnergy</a>();</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>  std::tuple&lt;double, double, double, long&gt; <a class="code hl_function" href="classautopas_1_1AutoTuner.html#a071591bc54c4a76ae1bd6a08bd6de8b7">sampleEnergy</a>();</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#aaa33a8e72dd043a9872ff9f51415fcf0">addMeasurement</a>(<span class="keywordtype">long</span> sample, <span class="keywordtype">bool</span> neighborListRebuilt);</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#a411e32258a3a23b30787e5a636fc523a">addHomogeneityAndMaxDensity</a>(<span class="keywordtype">double</span> homogeneity, <span class="keywordtype">double</span> maxDensity, <span class="keywordtype">long</span> time);</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>  <span class="keyword">const</span> std::vector&lt;Configuration&gt; &amp;<a class="code hl_function" href="classautopas_1_1AutoTuner.html#aad340bf7e91f7b47c951ff70c38c7a30">getConfigQueue</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>  <span class="keyword">const</span> std::vector&lt;std::unique_ptr&lt;TuningStrategyInterface&gt;&gt; &amp;<a class="code hl_function" href="classautopas_1_1AutoTuner.html#a7dc9c3399b98e20b23c642753ded91e5">getTuningStrategies</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#ac5383029952ce900fd2cf745aabaa634">inTuningPhase</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>  <span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1EvidenceCollection.html">EvidenceCollection</a> &amp;<a class="code hl_function" href="classautopas_1_1AutoTuner.html#adc45ebb44212a4438832c007918de4a8">getEvidenceCollection</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#ac150a44caf878d980d963a5761768442">canMeasureEnergy</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>  <a class="code hl_class" href="classautopas_1_1utils_1_1RaplMeter.html">utils::RaplMeter</a> _raplMeter;</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>  <span class="keywordtype">size_t</span> getCurrentNumSamples() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>  [[nodiscard]] <span class="keywordtype">long</span> estimateRuntimeFromSamples() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>  <span class="keywordtype">bool</span> tuneConfiguration();</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>  SelectorStrategyOption _selectorStrategy;</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span> </div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>  std::vector&lt;std::unique_ptr&lt;TuningStrategyInterface&gt;&gt; _tuningStrategies;</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>  <span class="keywordtype">size_t</span> _iteration{0};</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span> </div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  <span class="keywordtype">size_t</span> _tuningPhase{0};</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>  <span class="keywordtype">size_t</span> _tuningInterval;</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span> </div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>  TuningMetricOption _tuningMetric;</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>  <span class="keywordtype">bool</span> _useLOESSSmoothening;</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>  <span class="keywordtype">bool</span> _energyMeasurementPossible;</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span> </div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> _rebuildFrequency;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#a796da93e86a1678f995acd6819e34e9e">willRebuildNeighborLists</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  [[nodiscard]] <span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1Configuration.html">Configuration</a> &amp;<a class="code hl_function" href="classautopas_1_1AutoTuner.html#ad8c778b2db88b8c7cfcbd4417b33ed5f">getCurrentConfig</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  [[nodiscard]] std::tuple&lt;Configuration, bool&gt; <a class="code hl_function" href="classautopas_1_1AutoTuner.html#a38a705e04679b24fbd0de7def40e38d1">getNextConfig</a>();</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>  [[nodiscard]] std::tuple&lt;Configuration, bool&gt; <a class="code hl_function" href="classautopas_1_1AutoTuner.html#aa8f05fb22f0b00eaea592e4fa89ecf85">rejectConfig</a>(<span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1Configuration.html">Configuration</a> &amp;rejectedConfig, <span class="keywordtype">bool</span> indefinitely);</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span> </div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#ae200ca1f23fb9ca4f9f798cd5e443af6">searchSpaceIsTrivial</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#a08333ac15c1db2f1ebd2820cc2d56d54">searchSpaceIsEmpty</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#a4869c59c2bc70ac244e27840a1f716c1">logTuningResult</a>(<span class="keywordtype">bool</span> tuningIteration, <span class="keywordtype">long</span> tuningTime) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#ac10dcc9eac0aa2ffa243577bc12447cf">initEnergy</a>();</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span> </div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#a7c0c30c81b4a96e2783c84a2d51c384d">resetEnergy</a>();</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>  std::tuple&lt;double, double, double, long&gt; <a class="code hl_function" href="classautopas_1_1AutoTuner.html#a071591bc54c4a76ae1bd6a08bd6de8b7">sampleEnergy</a>();</div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#aaa33a8e72dd043a9872ff9f51415fcf0">addMeasurement</a>(<span class="keywordtype">long</span> sample, <span class="keywordtype">bool</span> neighborListRebuilt);</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#a411e32258a3a23b30787e5a636fc523a">addHomogeneityAndMaxDensity</a>(<span class="keywordtype">double</span> homogeneity, <span class="keywordtype">double</span> maxDensity, <span class="keywordtype">long</span> time);</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>  <span class="keyword">const</span> std::vector&lt;Configuration&gt; &amp;<a class="code hl_function" href="classautopas_1_1AutoTuner.html#aad340bf7e91f7b47c951ff70c38c7a30">getConfigQueue</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>  <span class="keyword">const</span> std::vector&lt;std::unique_ptr&lt;TuningStrategyInterface&gt;&gt; &amp;<a class="code hl_function" href="classautopas_1_1AutoTuner.html#a7dc9c3399b98e20b23c642753ded91e5">getTuningStrategies</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#ac5383029952ce900fd2cf745aabaa634">inTuningPhase</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#ad450fa545a43e3b80924aabc5abbba29">inFirstTuningIteration</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#a9c5eb51d45b6653060f0e3347b015aba">inLastTuningIteration</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>  <span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1EvidenceCollection.html">EvidenceCollection</a> &amp;<a class="code hl_function" href="classautopas_1_1AutoTuner.html#adc45ebb44212a4438832c007918de4a8">getEvidenceCollection</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#ac150a44caf878d980d963a5761768442">canMeasureEnergy</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1AutoTuner.html#af4f9c5fcb939e80d209a6a41721c3d16">setRebuildFrequency</a>(<span class="keywordtype">double</span> rebuildFrequency);</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span> </div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>  <a class="code hl_class" href="classautopas_1_1utils_1_1RaplMeter.html">utils::RaplMeter</a> _raplMeter;</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span> </div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>  <span class="keywordtype">size_t</span> getCurrentNumSamples() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>  [[nodiscard]] <span class="keywordtype">long</span> estimateRuntimeFromSamples() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  <span class="keywordtype">bool</span> tuneConfiguration();</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span> </div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  SelectorStrategyOption _selectorStrategy;</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>  std::vector&lt;std::unique_ptr&lt;TuningStrategyInterface&gt;&gt; _tuningStrategies;</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>  <span class="keywordtype">size_t</span> _iteration{0};</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>  <span class="keywordtype">size_t</span> _tuningPhase{0};</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>  <span class="keywordtype">size_t</span> _tuningInterval;</div>
 <div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span> </div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>  <span class="keywordtype">size_t</span> _maxSamples;</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>  TuningMetricOption _tuningMetric;</div>
 <div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span> </div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>  <span class="keywordtype">bool</span> _needsHomogeneityAndMaxDensity;</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>  <span class="keywordtype">bool</span> _useLOESSSmoothening;</div>
 <div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>  <span class="keywordtype">bool</span> _needsLiveInfo;</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span> </div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>  std::vector&lt;double&gt; _homogeneitiesOfLastTenIterations{};</div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span> </div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>  std::vector&lt;double&gt; _maxDensitiesOfLastTenIterations{};</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span> </div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>  std::vector&lt;long&gt; _samplesNotRebuildingNeighborLists;</div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span> </div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>  std::vector&lt;long&gt; _samplesRebuildingNeighborLists{};</div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>  <span class="keywordtype">bool</span> _energyMeasurementPossible;</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span> </div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>  <span class="keywordtype">double</span> _rebuildFrequency;</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span> </div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>  <span class="keywordtype">size_t</span> _maxSamples;</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span> </div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>  <span class="keywordtype">bool</span> _needsHomogeneityAndMaxDensity;</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span> </div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>  <span class="keywordtype">bool</span> _needsLiveInfo;</div>
 <div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span> </div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>  EvidenceCollection _evidenceCollection{};</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>  std::vector&lt;double&gt; _homogeneitiesOfLastTenIterations{};</div>
 <div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span> </div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>  <a class="code hl_typedef" href="classautopas_1_1AutoTuner.html#a4fc20dc92bb8731859dab10d26faddac">SearchSpaceType</a> _searchSpace;</div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>  std::vector&lt;double&gt; _maxDensitiesOfLastTenIterations{};</div>
 <div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span> </div>
-<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>  std::vector&lt;Configuration&gt; _configQueue;</div>
+<div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>  std::vector&lt;long&gt; _samplesNotRebuildingNeighborLists;</div>
 <div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span> </div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>  <a class="code hl_class" href="classautopas_1_1utils_1_1Timer.html">autopas::utils::Timer</a> _timerCalculateHomogeneity;</div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span>  std::vector&lt;long&gt; _samplesRebuildingNeighborLists{};</div>
 <div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span> </div>
-<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>  TuningResultLogger _tuningResultLogger;</div>
+<div class="line"><a id="l00380" name="l00380"></a><span class="lineno">  380</span>  EvidenceCollection _evidenceCollection{};</div>
 <div class="line"><a id="l00381" name="l00381"></a><span class="lineno">  381</span> </div>
-<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>  TuningDataLogger _tuningDataLogger;</div>
+<div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>  <a class="code hl_typedef" href="classautopas_1_1AutoTuner.html#a4fc20dc92bb8731859dab10d26faddac">SearchSpaceType</a> _searchSpace;</div>
 <div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span> </div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>  <span class="keywordtype">bool</span> _isTuning{<span class="keyword">false</span>};</div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span> </div>
-<div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>  <span class="keywordtype">bool</span> _endOfTuningPhase{<span class="keyword">false</span>};</div>
-<div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span> </div>
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span>  <span class="keywordtype">bool</span> _forceRetune{<span class="keyword">false</span>};</div>
-<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span> </div>
-<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>  <span class="keywordtype">size_t</span> _iterationBaseline{0};</div>
-<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>};</div>
-<div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>}  <span class="comment">// namespace autopas</span></div>
+<div class="line"><a id="l00393" name="l00393"></a><span class="lineno">  393</span>  std::vector&lt;Configuration&gt; _configQueue;</div>
+<div class="line"><a id="l00394" name="l00394"></a><span class="lineno">  394</span> </div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>  <a class="code hl_class" href="classautopas_1_1utils_1_1Timer.html">autopas::utils::Timer</a> _timerCalculateHomogeneity;</div>
+<div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span> </div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>  TuningResultLogger _tuningResultLogger;</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span> </div>
+<div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>  TuningDataLogger _tuningDataLogger;</div>
+<div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span> </div>
+<div class="line"><a id="l00414" name="l00414"></a><span class="lineno">  414</span>  <span class="keywordtype">bool</span> _isTuning{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00415" name="l00415"></a><span class="lineno">  415</span> </div>
+<div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>  <span class="keywordtype">bool</span> _endOfTuningPhase{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span> </div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>  <span class="keywordtype">bool</span> _forceRetune{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span> </div>
+<div class="line"><a id="l00433" name="l00433"></a><span class="lineno">  433</span>  <span class="keywordtype">size_t</span> _iterationBaseline{0};</div>
+<div class="line"><a id="l00434" name="l00434"></a><span class="lineno">  434</span>};</div>
+<div class="line"><a id="l00435" name="l00435"></a><span class="lineno">  435</span>}  <span class="comment">// namespace autopas</span></div>
 <div class="ttc" id="aAutoTunerInfo_8h_html"><div class="ttname"><a href="AutoTunerInfo_8h.html">AutoTunerInfo.h</a></div></div>
 <div class="ttc" id="aConfiguration_8h_html"><div class="ttname"><a href="Configuration_8h.html">Configuration.h</a></div></div>
 <div class="ttc" id="aEvidenceCollection_8h_html"><div class="ttname"><a href="EvidenceCollection_8h.html">EvidenceCollection.h</a></div></div>
@@ -273,24 +279,27 @@ $(function() {
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_a411e32258a3a23b30787e5a636fc523a"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#a411e32258a3a23b30787e5a636fc523a">autopas::AutoTuner::addHomogeneityAndMaxDensity</a></div><div class="ttdeci">void addHomogeneityAndMaxDensity(double homogeneity, double maxDensity, long time)</div><div class="ttdoc">Adds measurements of homogeneity and maximal density to the vector of measurements.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:57</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_a4869c59c2bc70ac244e27840a1f716c1"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#a4869c59c2bc70ac244e27840a1f716c1">autopas::AutoTuner::logTuningResult</a></div><div class="ttdeci">void logTuningResult(bool tuningIteration, long tuningTime) const</div><div class="ttdoc">After a tuning phase has finished, write the result to a file.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:63</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_a4fc20dc92bb8731859dab10d26faddac"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#a4fc20dc92bb8731859dab10d26faddac">autopas::AutoTuner::SearchSpaceType</a></div><div class="ttdeci">std::set&lt; Configuration &gt; SearchSpaceType</div><div class="ttdoc">Type for the search space holding all possible configurations.</div><div class="ttdef"><b>Definition:</b> AutoTuner.h:50</div></div>
-<div class="ttc" id="aclassautopas_1_1AutoTuner_html_a796da93e86a1678f995acd6819e34e9e"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#a796da93e86a1678f995acd6819e34e9e">autopas::AutoTuner::willRebuildNeighborLists</a></div><div class="ttdeci">bool willRebuildNeighborLists() const</div><div class="ttdoc">Returns whether rebuildNeighborLists() will be triggered in the next iteration.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:313</div></div>
+<div class="ttc" id="aclassautopas_1_1AutoTuner_html_a796da93e86a1678f995acd6819e34e9e"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#a796da93e86a1678f995acd6819e34e9e">autopas::AutoTuner::willRebuildNeighborLists</a></div><div class="ttdeci">bool willRebuildNeighborLists() const</div><div class="ttdoc">Returns whether rebuildNeighborLists() should be triggered in the next iteration.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:313</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_a7c0c30c81b4a96e2783c84a2d51c384d"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#a7c0c30c81b4a96e2783c84a2d51c384d">autopas::AutoTuner::resetEnergy</a></div><div class="ttdeci">bool resetEnergy()</div><div class="ttdoc">Reset the rapl meter to prepare for a new measurement.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:326</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_a7dc9c3399b98e20b23c642753ded91e5"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#a7dc9c3399b98e20b23c642753ded91e5">autopas::AutoTuner::getTuningStrategies</a></div><div class="ttdeci">const std::vector&lt; std::unique_ptr&lt; TuningStrategyInterface &gt; &gt; &amp; getTuningStrategies() const</div><div class="ttdoc">Get the list of tuning strategies that are used.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:426</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_a87659e501b6d6c57bfe282b204e23efb"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#a87659e501b6d6c57bfe282b204e23efb">autopas::AutoTuner::TuningStrategiesListType</a></div><div class="ttdeci">std::vector&lt; std::unique_ptr&lt; TuningStrategyInterface &gt; &gt; TuningStrategiesListType</div><div class="ttdoc">Type for the member holding all tuning strategies.</div><div class="ttdef"><b>Definition:</b> AutoTuner.h:46</div></div>
+<div class="ttc" id="aclassautopas_1_1AutoTuner_html_a9c5eb51d45b6653060f0e3347b015aba"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#a9c5eb51d45b6653060f0e3347b015aba">autopas::AutoTuner::inLastTuningIteration</a></div><div class="ttdeci">bool inLastTuningIteration() const</div><div class="ttdoc">Indicate if the tuner is in the last iteration of the tuning phase.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:446</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_aa8f05fb22f0b00eaea592e4fa89ecf85"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#aa8f05fb22f0b00eaea592e4fa89ecf85">autopas::AutoTuner::rejectConfig</a></div><div class="ttdeci">std::tuple&lt; Configuration, bool &gt; rejectConfig(const Configuration &amp;rejectedConfig, bool indefinitely)</div><div class="ttdoc">Tell the tuner that the given config is not applicable.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:189</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_aaa33a8e72dd043a9872ff9f51415fcf0"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#aaa33a8e72dd043a9872ff9f51415fcf0">autopas::AutoTuner::addMeasurement</a></div><div class="ttdeci">void addMeasurement(long sample, bool neighborListRebuilt)</div><div class="ttdoc">Save the runtime of a given traversal.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:225</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_aad340bf7e91f7b47c951ff70c38c7a30"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#aad340bf7e91f7b47c951ff70c38c7a30">autopas::AutoTuner::getConfigQueue</a></div><div class="ttdeci">const std::vector&lt; Configuration &gt; &amp; getConfigQueue() const</div><div class="ttdoc">Getter for the current queue of configurations.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:424</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_ac10dcc9eac0aa2ffa243577bc12447cf"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#ac10dcc9eac0aa2ffa243577bc12447cf">autopas::AutoTuner::initEnergy</a></div><div class="ttdeci">bool initEnergy()</div><div class="ttdoc">Initialize rapl meter.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:321</div></div>
-<div class="ttc" id="aclassautopas_1_1AutoTuner_html_ac150a44caf878d980d963a5761768442"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#ac150a44caf878d980d963a5761768442">autopas::AutoTuner::canMeasureEnergy</a></div><div class="ttdeci">bool canMeasureEnergy() const</div><div class="ttdoc">Returns whether the AutoTuner can take energy measurements.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:446</div></div>
+<div class="ttc" id="aclassautopas_1_1AutoTuner_html_ac150a44caf878d980d963a5761768442"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#ac150a44caf878d980d963a5761768442">autopas::AutoTuner::canMeasureEnergy</a></div><div class="ttdeci">bool canMeasureEnergy() const</div><div class="ttdoc">Returns whether the AutoTuner can take energy measurements.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:450</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_ac5383029952ce900fd2cf745aabaa634"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#ac5383029952ce900fd2cf745aabaa634">autopas::AutoTuner::inTuningPhase</a></div><div class="ttdeci">bool inTuningPhase() const</div><div class="ttdoc">Indicate if the tuner considers itself currently in a tuning phase according to its internal counters...</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:438</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_acd71cda0cc2c6f07b2108aaca118f609"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#acd71cda0cc2c6f07b2108aaca118f609">autopas::AutoTuner::needsHomogeneityAndMaxDensityBeforePrepare</a></div><div class="ttdeci">bool needsHomogeneityAndMaxDensityBeforePrepare() const</div><div class="ttdoc">Indicator whether tuner needs homogeneity and max density information before the next call to prepare...</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:417</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_ad32706623a5717a5564d01b4694cbcb5"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#ad32706623a5717a5564d01b4694cbcb5">autopas::AutoTuner::receiveLiveInfo</a></div><div class="ttdeci">void receiveLiveInfo(const LiveInfo &amp;liveInfo)</div><div class="ttdoc">Pass live info on to all tuning strategies.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:430</div></div>
+<div class="ttc" id="aclassautopas_1_1AutoTuner_html_ad450fa545a43e3b80924aabc5abbba29"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#ad450fa545a43e3b80924aabc5abbba29">autopas::AutoTuner::inFirstTuningIteration</a></div><div class="ttdeci">bool inFirstTuningIteration() const</div><div class="ttdoc">Indicate if the tuner is in the first iteration of a tuning phase.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:444</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_ad8c778b2db88b8c7cfcbd4417b33ed5f"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#ad8c778b2db88b8c7cfcbd4417b33ed5f">autopas::AutoTuner::getCurrentConfig</a></div><div class="ttdeci">const Configuration &amp; getCurrentConfig() const</div><div class="ttdoc">Get the currently selected configuration.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:172</div></div>
-<div class="ttc" id="aclassautopas_1_1AutoTuner_html_adc45ebb44212a4438832c007918de4a8"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#adc45ebb44212a4438832c007918de4a8">autopas::AutoTuner::getEvidenceCollection</a></div><div class="ttdeci">const EvidenceCollection &amp; getEvidenceCollection() const</div><div class="ttdoc">Getter for the internal evidence collection.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:444</div></div>
+<div class="ttc" id="aclassautopas_1_1AutoTuner_html_adc45ebb44212a4438832c007918de4a8"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#adc45ebb44212a4438832c007918de4a8">autopas::AutoTuner::getEvidenceCollection</a></div><div class="ttdeci">const EvidenceCollection &amp; getEvidenceCollection() const</div><div class="ttdoc">Getter for the internal evidence collection.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:448</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_ae067e7ec72d47901218da725b136f58b"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#ae067e7ec72d47901218da725b136f58b">autopas::AutoTuner::getTuningMetric</a></div><div class="ttdeci">const TuningMetricOption &amp; getTuningMetric() const</div><div class="ttdoc">Getter for the primary metric for tuning.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:436</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_ae200ca1f23fb9ca4f9f798cd5e443af6"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#ae200ca1f23fb9ca4f9f798cd5e443af6">autopas::AutoTuner::searchSpaceIsTrivial</a></div><div class="ttdeci">bool searchSpaceIsTrivial() const</div><div class="ttdoc">Indicator function whether the search space consists of exactly one configuration.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:73</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_ae50e16a3864ee82c7e6b9525aa43a16b"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#ae50e16a3864ee82c7e6b9525aa43a16b">autopas::AutoTuner::prepareIteration</a></div><div class="ttdeci">bool prepareIteration()</div><div class="ttdoc">Determines what live infos are needed and passes collected live info to the tuning strategies.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:380</div></div>
 <div class="ttc" id="aclassautopas_1_1AutoTuner_html_aed4b05aace993e15acdf69b4f0946ccc"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#aed4b05aace993e15acdf69b4f0946ccc">autopas::AutoTuner::forceRetune</a></div><div class="ttdeci">void forceRetune()</div><div class="ttdoc">Force the internal tuner to enter a new tuning phase upon the next call to computeInteractions().</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:77</div></div>
+<div class="ttc" id="aclassautopas_1_1AutoTuner_html_af4f9c5fcb939e80d209a6a41721c3d16"><div class="ttname"><a href="classautopas_1_1AutoTuner.html#af4f9c5fcb939e80d209a6a41721c3d16">autopas::AutoTuner::setRebuildFrequency</a></div><div class="ttdeci">void setRebuildFrequency(double rebuildFrequency)</div><div class="ttdoc">Sets the _rebuildFrequency.</div><div class="ttdef"><b>Definition:</b> AutoTuner.cpp:452</div></div>
 <div class="ttc" id="aclassautopas_1_1Configuration_html"><div class="ttname"><a href="classautopas_1_1Configuration.html">autopas::Configuration</a></div><div class="ttdoc">Class containing multiple options that form an algorithm configuration for the pairwise iteration.</div><div class="ttdef"><b>Definition:</b> Configuration.h:24</div></div>
 <div class="ttc" id="aclassautopas_1_1EvidenceCollection_html"><div class="ttname"><a href="classautopas_1_1EvidenceCollection.html">autopas::EvidenceCollection</a></div><div class="ttdoc">Class to manage all evidence.</div><div class="ttdef"><b>Definition:</b> EvidenceCollection.h:21</div></div>
 <div class="ttc" id="aclassautopas_1_1LiveInfo_html"><div class="ttname"><a href="classautopas_1_1LiveInfo.html">autopas::LiveInfo</a></div><div class="ttdoc">This class is able to gather and store important information for a tuning phase from a container and ...</div><div class="ttdef"><b>Definition:</b> LiveInfo.h:31</div></div>

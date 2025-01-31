@@ -133,9 +133,9 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~TuningDataLogger</b> ()</td></tr>
 <tr class="memdesc:a592be40947688226a689b912da9d6eb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor drops the logger from the spd registry. <br /></td></tr>
 <tr class="separator:a592be40947688226a689b912da9d6eb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8be1d422dc35a4dae900c3d7d2d793ad"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningDataLogger.html#a8be1d422dc35a4dae900c3d7d2d793ad">logTuningData</a> (const <a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a> &amp;configuration, const std::vector&lt; long &gt; &amp;samplesRebuildingNeighborLists, const std::vector&lt; long &gt; &amp;samplesNotRebuildingNeighborLists, size_t iteration, long reducedValue, long smoothedVale) const</td></tr>
-<tr class="memdesc:a8be1d422dc35a4dae900c3d7d2d793ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log the result of a tuning phase.  <br /></td></tr>
-<tr class="separator:a8be1d422dc35a4dae900c3d7d2d793ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af0a8c3b8237f0405db5818cfd72a8785"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningDataLogger.html#af0a8c3b8237f0405db5818cfd72a8785">logTuningData</a> (const <a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a> &amp;configuration, const std::vector&lt; long &gt; &amp;samplesRebuildingNeighborLists, const std::vector&lt; long &gt; &amp;samplesNotRebuildingNeighborLists, size_t iteration, long reducedValue, long smoothedVale, double meanRebuildFrequency) const</td></tr>
+<tr class="memdesc:af0a8c3b8237f0405db5818cfd72a8785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log the result of a tuning phase.  <br /></td></tr>
+<tr class="separator:af0a8c3b8237f0405db5818cfd72a8785"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper to log results of the tuning process to a csv file for easier analysis. </p>
@@ -188,8 +188,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8be1d422dc35a4dae900c3d7d2d793ad" name="a8be1d422dc35a4dae900c3d7d2d793ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8be1d422dc35a4dae900c3d7d2d793ad">&#9670;&#160;</a></span>logTuningData()</h2>
+<a id="af0a8c3b8237f0405db5818cfd72a8785" name="af0a8c3b8237f0405db5818cfd72a8785"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af0a8c3b8237f0405db5818cfd72a8785">&#9670;&#160;</a></span>logTuningData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -228,7 +228,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">long&#160;</td>
-          <td class="paramname"><em>smoothedVale</em>&#160;</td>
+          <td class="paramname"><em>smoothedVale</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>meanRebuildFrequency</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -247,6 +253,7 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">iteration</td><td></td></tr>
     <tr><td class="paramname">reducedValue</td><td></td></tr>
     <tr><td class="paramname">smoothedVale</td><td></td></tr>
+    <tr><td class="paramname">meanRebuildFrequency</td><td></td></tr>
   </table>
   </dd>
 </dl>
