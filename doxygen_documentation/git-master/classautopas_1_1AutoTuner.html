@@ -222,6 +222,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af4f9c5fcb939e80d209a6a41721c3d16"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#af4f9c5fcb939e80d209a6a41721c3d16">setRebuildFrequency</a> (double rebuildFrequency)</td></tr>
 <tr class="memdesc:af4f9c5fcb939e80d209a6a41721c3d16"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the _rebuildFrequency.  <br /></td></tr>
 <tr class="separator:af4f9c5fcb939e80d209a6a41721c3d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afbb2e7ebee62c9775fc18193427e26c5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#afbb2e7ebee62c9775fc18193427e26c5">checkEarlyStoppingCondition</a> ()</td></tr>
+<tr class="memdesc:afbb2e7ebee62c9775fc18193427e26c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the current configuration performs so poorly that it shouldn't be resampled further within this tuning phase.  <br /></td></tr>
+<tr class="separator:afbb2e7ebee62c9775fc18193427e26c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class manages all logic related to the auto tuning mechanic. </p>
@@ -416,6 +419,26 @@ Public Member Functions</h2></td></tr>
 
 <p>Returns whether the <a class="el" href="classautopas_1_1AutoTuner.html" title="This class manages all logic related to the auto tuning mechanic.">AutoTuner</a> can take energy measurements. </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="afbb2e7ebee62c9775fc18193427e26c5" name="afbb2e7ebee62c9775fc18193427e26c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afbb2e7ebee62c9775fc18193427e26c5">&#9670;&#160;</a></span>checkEarlyStoppingCondition()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void autopas::AutoTuner::checkEarlyStoppingCondition </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Checks whether the current configuration performs so poorly that it shouldn't be resampled further within this tuning phase. </p>
+<p>If the currently sampled configuration is worse than the current best configuration by more than the earlyStoppingFactor factor, it will not be sampled again this tuning phase. Uses the _estimateRuntimeFromSamples() function to estimate the runtimes. </p>
 
 </div>
 </div>

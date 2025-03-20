@@ -360,6 +360,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>forceRetune</b> ()</t
 <tr class="memitem:a490c854f31edec8e52c5e642d70d03f3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a490c854f31edec8e52c5e642d70d03f3">setNumSamples</a> (unsigned int numSamples)</td></tr>
 <tr class="memdesc:a490c854f31edec8e52c5e642d70d03f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set number of samples taken per configuration during the tuning.  <br /></td></tr>
 <tr class="separator:a490c854f31edec8e52c5e642d70d03f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a89cf30ecd6bc567091f8560e757562cb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a89cf30ecd6bc567091f8560e757562cb">setEarlyStoppingFactor</a> (double earlyStoppingFactor)</td></tr>
+<tr class="memdesc:a89cf30ecd6bc567091f8560e757562cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the earlyStoppingFactor for the auto tuner.  <br /></td></tr>
+<tr class="separator:a89cf30ecd6bc567091f8560e757562cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a54217839a6b6a0b8948845a264e51c75"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a54217839a6b6a0b8948845a264e51c75">getUseLOESSSmoothening</a> () const</td></tr>
 <tr class="memdesc:a54217839a6b6a0b8948845a264e51c75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get flag for whether a LOESS-based smoothening is used.  <br /></td></tr>
 <tr class="separator:a54217839a6b6a0b8948845a264e51c75"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -3975,6 +3978,42 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cutoff</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a89cf30ecd6bc567091f8560e757562cb" name="a89cf30ecd6bc567091f8560e757562cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89cf30ecd6bc567091f8560e757562cb">&#9670;&#160;</a></span>setEarlyStoppingFactor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::setEarlyStoppingFactor </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>earlyStoppingFactor</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the earlyStoppingFactor for the auto tuner. </p>
+<p>If a configuration seems to be slower than the optimum configuration found so far by more than this factor, it will not be sampled again during that tuning phase. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">earlyStoppingFactor</td><td></td></tr>
   </table>
   </dd>
 </dl>
