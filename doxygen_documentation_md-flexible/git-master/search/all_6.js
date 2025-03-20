@@ -10,9 +10,9 @@ var searchData=
   ['forceupdatetotal_7',['forceUpdateTotal',['../structSimulation_1_1Timers.html#af3dd15b6a76514a2a4ec106ce1fe886a',1,'Simulation::Timers']]],
   ['forceupdatetriwise_8',['forceUpdateTriwise',['../structSimulation_1_1Timers.html#a0bde5ded8d52460ebdb31ee715d140d2',1,'Simulation::Timers']]],
   ['forceupdatetuning_9',['forceUpdateTuning',['../structSimulation_1_1Timers.html#ac1f635886d26411e9139c92453f7b7f3',1,'Simulation::Timers']]],
-  ['functoroption_10',['FunctorOption',['../classMDFlexConfig.html#aab1c93ccad9657702fb7647dd4cc6854',1,'MDFlexConfig']]],
-  ['functoroption_11',['functorOption',['../classMDFlexConfig.html#a2ba0f342e9ae2f0758b1080822690375',1,'MDFlexConfig']]],
-  ['functoroption3b_12',['functorOption3B',['../classMDFlexConfig.html#a73c748c00387869bb638f5d2e3b93fb3',1,'MDFlexConfig']]],
-  ['functoroption3b_13',['FunctorOption3B',['../classMDFlexConfig.html#a079597869480c78d0d1a8674f0bfee6d',1,'MDFlexConfig']]],
+  ['functoroption_10',['functorOption',['../classMDFlexConfig.html#a2ba0f342e9ae2f0758b1080822690375',1,'MDFlexConfig']]],
+  ['functoroption_11',['FunctorOption',['../classMDFlexConfig.html#aab1c93ccad9657702fb7647dd4cc6854',1,'MDFlexConfig']]],
+  ['functoroption3b_12',['FunctorOption3B',['../classMDFlexConfig.html#a079597869480c78d0d1a8674f0bfee6d',1,'MDFlexConfig']]],
+  ['functoroption3b_13',['functorOption3B',['../classMDFlexConfig.html#a73c748c00387869bb638f5d2e3b93fb3',1,'MDFlexConfig']]],
   ['fuzzyrulefilename_14',['fuzzyRuleFilename',['../classMDFlexConfig.html#a77cf2aae0265540509bb8dd841172a38',1,'MDFlexConfig']]]
 ];
