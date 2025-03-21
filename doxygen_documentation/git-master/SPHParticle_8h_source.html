@@ -121,13 +121,13 @@ $(function() {
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;cstring&gt;</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="Particle_8h.html">autopas/particles/Particle.h</a>&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="ParticleDefinitions_8h.html">autopas/particles/ParticleDefinitions.h</a>&quot;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">namespace </span>sphLib {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classsphLib_1_1SPHParticle.html">   18</a></span><span class="keyword">class </span><a class="code hl_class" href="classsphLib_1_1SPHParticle.html">SPHParticle</a> : <span class="keyword">public</span> <a class="code hl_class" href="classautopas_1_1ParticleBase.html">autopas::Particle</a> {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="classsphLib_1_1SPHParticle.html">   18</a></span><span class="keyword">class </span><a class="code hl_class" href="classsphLib_1_1SPHParticle.html">SPHParticle</a> : <span class="keyword">public</span> <a class="code hl_class" href="classautopas_1_1ParticleBase.html">autopas::ParticleBaseFP64</a> {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classsphLib_1_1SPHParticle.html#a820af75388b7567c28b166f6e9a7f34c">   24</a></span>  <a class="code hl_function" href="classsphLib_1_1SPHParticle.html#a820af75388b7567c28b166f6e9a7f34c">SPHParticle</a>()</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      : <a class="code hl_namespace" href="namespaceautopas.html">autopas</a>::<a class="code hl_class" href="classautopas_1_1ParticleBase.html">Particle</a>(),</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>      : <a class="code hl_namespace" href="namespaceautopas.html">autopas</a>::ParticleBaseFP64(),</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        _density(0.),</div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        _pressure(0.),</div>
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        _mass(0.),</div>
@@ -142,7 +142,7 @@ $(function() {
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        _vel_half{0., 0., 0.},</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        _eng_half(0.) {}</div>
 <div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="classsphLib_1_1SPHParticle.html#a1252dcf0342ed091b27cd94f4130cfd5">   45</a></span>  <a class="code hl_function" href="classsphLib_1_1SPHParticle.html#a1252dcf0342ed091b27cd94f4130cfd5">SPHParticle</a>(<span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;r, <span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;v, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">id</span>)</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>      : <a class="code hl_namespace" href="namespaceautopas.html">autopas</a>::<a class="code hl_class" href="classautopas_1_1ParticleBase.html">Particle</a>(r, v, id),</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>      : <a class="code hl_namespace" href="namespaceautopas.html">autopas</a>::ParticleBaseFP64(r, v, id),</div>
 <div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>        _density(0.),</div>
 <div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        _pressure(0.),</div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>        _mass(0.),</div>
@@ -159,7 +159,7 @@ $(function() {
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="classsphLib_1_1SPHParticle.html#aba9343efd21dea27e65a897daca96a7f">   70</a></span>  <a class="code hl_function" href="classsphLib_1_1SPHParticle.html#aba9343efd21dea27e65a897daca96a7f">SPHParticle</a>(<span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;r, <span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;v, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <span class="keywordtype">id</span>, <span class="keywordtype">double</span> mass,</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>              <span class="keywordtype">double</span> smth, <span class="keywordtype">double</span> snds)</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      : <a class="code hl_namespace" href="namespaceautopas.html">autopas</a>::<a class="code hl_class" href="classautopas_1_1ParticleBase.html">Particle</a>(r, v, id),</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      : <a class="code hl_namespace" href="namespaceautopas.html">autopas</a>::ParticleBaseFP64(r, v, id),</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        _density(0.),</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        _pressure(0.),</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        _mass(mass),</div>
@@ -468,7 +468,7 @@ $(function() {
 <div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span>  <span class="keywordtype">double</span> _eng_half;                 <span class="comment">// energy at half time-step</span></div>
 <div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span>};</div>
 <div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span>}  <span class="comment">// namespace sphLib</span></div>
-<div class="ttc" id="aParticle_8h_html"><div class="ttname"><a href="Particle_8h.html">Particle.h</a></div></div>
+<div class="ttc" id="aParticleDefinitions_8h_html"><div class="ttname"><a href="ParticleDefinitions_8h.html">ParticleDefinitions.h</a></div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleBase_html"><div class="ttname"><a href="classautopas_1_1ParticleBase.html">autopas::ParticleBase</a></div><div class="ttdoc">Minimal definition of a basic particle.</div><div class="ttdef"><b>Definition:</b> ParticleBase.h:33</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleBase_html_a474cc4fb63630efd29bdaf1179681e9a"><div class="ttname"><a href="classautopas_1_1ParticleBase.html#a474cc4fb63630efd29bdaf1179681e9a">autopas::ParticleBase::_r</a></div><div class="ttdeci">std::array&lt; floatType, 3 &gt; _r</div><div class="ttdoc">Particle position as 3D coordinates.</div><div class="ttdef"><b>Definition:</b> ParticleBase.h:78</div></div>
 <div class="ttc" id="aclassautopas_1_1ParticleBase_html_a72e16f410d088365c960a12882c19c9e"><div class="ttname"><a href="classautopas_1_1ParticleBase.html#a72e16f410d088365c960a12882c19c9e">autopas::ParticleBase::_ownershipState</a></div><div class="ttdeci">OwnershipState _ownershipState</div><div class="ttdoc">Defines the state of the ownership of the particle.</div><div class="ttdef"><b>Definition:</b> ParticleBase.h:105</div></div>

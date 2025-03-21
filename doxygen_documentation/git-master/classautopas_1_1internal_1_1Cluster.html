@@ -115,7 +115,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classautopas_1_1internal_1_1Cluster-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">autopas::internal::Cluster&lt; Particle &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">autopas::internal::Cluster&lt; Particle_T &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -126,73 +126,73 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:abee124f0cb582fcea1978d664dd1a401"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#abee124f0cb582fcea1978d664dd1a401">Cluster</a> (<a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> *firstParticle, size_t clusterSize)</td></tr>
-<tr class="memdesc:abee124f0cb582fcea1978d664dd1a401"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a cluster starting from firstParticle and going on for clusterSize particles.  <br /></td></tr>
-<tr class="separator:abee124f0cb582fcea1978d664dd1a401"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeafd34c635433e2b229a5c4db3ea969f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#aeafd34c635433e2b229a5c4db3ea969f">operator[]</a> (size_t index)</td></tr>
-<tr class="memdesc:aeafd34c635433e2b229a5c4db3ea969f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the particle at position index in the cluster.  <br /></td></tr>
-<tr class="separator:aeafd34c635433e2b229a5c4db3ea969f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbee3dd2f07dd9ce6baf080c13932569"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#afbee3dd2f07dd9ce6baf080c13932569">operator[]</a> (size_t index) const</td></tr>
-<tr class="memdesc:afbee3dd2f07dd9ce6baf080c13932569"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the particle at position index in the cluster.    <br /></td></tr>
-<tr class="separator:afbee3dd2f07dd9ce6baf080c13932569"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aebaaa4e0ecd8699f458d9f030f92a2b3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#aebaaa4e0ecd8699f458d9f030f92a2b3">empty</a> () const</td></tr>
-<tr class="memdesc:aebaaa4e0ecd8699f458d9f030f92a2b3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the cluster contains any non-dummy particles.  <br /></td></tr>
-<tr class="separator:aebaaa4e0ecd8699f458d9f030f92a2b3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a68d2ead0ed863816100128fae4d44245"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; double, double, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#a68d2ead0ed863816100128fae4d44245">getZMinMax</a> () const</td></tr>
-<tr class="memdesc:a68d2ead0ed863816100128fae4d44245"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Minimum and Maximum of the particles in z-direction.  <br /></td></tr>
-<tr class="separator:a68d2ead0ed863816100128fae4d44245"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a96ea96e4da6aa9f778c90cd6d17771ac"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#a96ea96e4da6aa9f778c90cd6d17771ac">getSoAView</a> ()</td></tr>
-<tr class="memdesc:a96ea96e4da6aa9f778c90cd6d17771ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="classautopas_1_1SoAView.html" title="View on a fixed part of a SoA between a start index and an end index.">SoAView</a> for this cluster.  <br /></td></tr>
-<tr class="separator:a96ea96e4da6aa9f778c90cd6d17771ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af66e251ea2b5c53cab3c79918e53a254"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#af66e251ea2b5c53cab3c79918e53a254">setSoAView</a> (const <a class="el" href="classautopas_1_1SoAView.html">SoAView</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#a5edc300640c4ece1b7cd14dbe3633c18">Particle::SoAArraysType</a> &gt; &amp;view)</td></tr>
-<tr class="memdesc:af66e251ea2b5c53cab3c79918e53a254"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the <a class="el" href="classautopas_1_1SoAView.html" title="View on a fixed part of a SoA between a start index and an end index.">SoAView</a> for this cluster.  <br /></td></tr>
-<tr class="separator:af66e251ea2b5c53cab3c79918e53a254"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a63d697cf0cbac75372c1d0fb7c11d253"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#a63d697cf0cbac75372c1d0fb7c11d253">setNeighborList</a> (std::vector&lt; <a class="el" href="classautopas_1_1internal_1_1Cluster.html">Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; * &gt; *neighborList)</td></tr>
-<tr class="memdesc:a63d697cf0cbac75372c1d0fb7c11d253"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the internal neighbor list pointer to an allocated, but not necessarily complete, existing list.  <br /></td></tr>
-<tr class="separator:a63d697cf0cbac75372c1d0fb7c11d253"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a972fd45481a9bef02ba3c2f113b4421a"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classautopas_1_1internal_1_1Cluster.html">Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#a972fd45481a9bef02ba3c2f113b4421a">getNeighbors</a> ()</td></tr>
-<tr class="memdesc:a972fd45481a9bef02ba3c2f113b4421a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the reference to the neighbor list for this cluster.  <br /></td></tr>
-<tr class="separator:a972fd45481a9bef02ba3c2f113b4421a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afaafa234f395488a0569edf06ead3bb8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#afaafa234f395488a0569edf06ead3bb8">addNeighbor</a> (<a class="el" href="classautopas_1_1internal_1_1Cluster.html">Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp;neighbor)</td></tr>
-<tr class="memdesc:afaafa234f395488a0569edf06ead3bb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the given cluster to the neighbor list of this cluster.  <br /></td></tr>
-<tr class="separator:afaafa234f395488a0569edf06ead3bb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa8dd3363b9aec4f8a55083b7a3a00461"><td class="memItemLeft" align="right" valign="top"><a id="aa8dd3363b9aec4f8a55083b7a3a00461" name="aa8dd3363b9aec4f8a55083b7a3a00461"></a>
+<tr class="memitem:a5d4840800574972eefe6676ce6176c5b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#a5d4840800574972eefe6676ce6176c5b">Cluster</a> (Particle_T *firstParticle, size_t clusterSize)</td></tr>
+<tr class="memdesc:a5d4840800574972eefe6676ce6176c5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a cluster starting from firstParticle and going on for clusterSize particles.  <br /></td></tr>
+<tr class="separator:a5d4840800574972eefe6676ce6176c5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a27ab4b78915f9ef8ad264732387b1d1a"><td class="memItemLeft" align="right" valign="top">Particle_T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#a27ab4b78915f9ef8ad264732387b1d1a">operator[]</a> (size_t index)</td></tr>
+<tr class="memdesc:a27ab4b78915f9ef8ad264732387b1d1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the particle at position index in the cluster.  <br /></td></tr>
+<tr class="separator:a27ab4b78915f9ef8ad264732387b1d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c8bf3d6a91c650f6ffd11d75744a1e6"><td class="memItemLeft" align="right" valign="top">const Particle_T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#a2c8bf3d6a91c650f6ffd11d75744a1e6">operator[]</a> (size_t index) const</td></tr>
+<tr class="memdesc:a2c8bf3d6a91c650f6ffd11d75744a1e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the particle at position index in the cluster.    <br /></td></tr>
+<tr class="separator:a2c8bf3d6a91c650f6ffd11d75744a1e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2dd58e2ce66eb778530cba56c379f403"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#a2dd58e2ce66eb778530cba56c379f403">empty</a> () const</td></tr>
+<tr class="memdesc:a2dd58e2ce66eb778530cba56c379f403"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the cluster contains any non-dummy particles.  <br /></td></tr>
+<tr class="separator:a2dd58e2ce66eb778530cba56c379f403"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a378d1de0f9922eb508b6f46702b07d9c"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; double, double, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#a378d1de0f9922eb508b6f46702b07d9c">getZMinMax</a> () const</td></tr>
+<tr class="memdesc:a378d1de0f9922eb508b6f46702b07d9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get Minimum and Maximum of the particles in z-direction.  <br /></td></tr>
+<tr class="separator:a378d1de0f9922eb508b6f46702b07d9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c53faa5cc4b4e767b13ea26a2e507ab"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#a9c53faa5cc4b4e767b13ea26a2e507ab">getSoAView</a> ()</td></tr>
+<tr class="memdesc:a9c53faa5cc4b4e767b13ea26a2e507ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the <a class="el" href="classautopas_1_1SoAView.html" title="View on a fixed part of a SoA between a start index and an end index.">SoAView</a> for this cluster.  <br /></td></tr>
+<tr class="separator:a9c53faa5cc4b4e767b13ea26a2e507ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1ad875195ab04930496d3501aaa8713"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#af1ad875195ab04930496d3501aaa8713">setSoAView</a> (const <a class="el" href="classautopas_1_1SoAView.html">SoAView</a>&lt; typename Particle_T::SoAArraysType &gt; &amp;view)</td></tr>
+<tr class="memdesc:af1ad875195ab04930496d3501aaa8713"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the <a class="el" href="classautopas_1_1SoAView.html" title="View on a fixed part of a SoA between a start index and an end index.">SoAView</a> for this cluster.  <br /></td></tr>
+<tr class="separator:af1ad875195ab04930496d3501aaa8713"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66577e81b14132337345123161466ec7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#a66577e81b14132337345123161466ec7">setNeighborList</a> (std::vector&lt; <a class="el" href="classautopas_1_1internal_1_1Cluster.html">Cluster</a>&lt; Particle_T &gt; * &gt; *neighborList)</td></tr>
+<tr class="memdesc:a66577e81b14132337345123161466ec7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the internal neighbor list pointer to an allocated, but not necessarily complete, existing list.  <br /></td></tr>
+<tr class="separator:a66577e81b14132337345123161466ec7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0aaace3e2e4581b920e1a49bd0c5f69b"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classautopas_1_1internal_1_1Cluster.html">Cluster</a>&lt; Particle_T &gt; * &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#a0aaace3e2e4581b920e1a49bd0c5f69b">getNeighbors</a> ()</td></tr>
+<tr class="memdesc:a0aaace3e2e4581b920e1a49bd0c5f69b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the reference to the neighbor list for this cluster.  <br /></td></tr>
+<tr class="separator:a0aaace3e2e4581b920e1a49bd0c5f69b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38892eb7d3db29160e5482b50edb96c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#a38892eb7d3db29160e5482b50edb96c8">addNeighbor</a> (<a class="el" href="classautopas_1_1internal_1_1Cluster.html">Cluster</a>&lt; Particle_T &gt; &amp;neighbor)</td></tr>
+<tr class="memdesc:a38892eb7d3db29160e5482b50edb96c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the given cluster to the neighbor list of this cluster.  <br /></td></tr>
+<tr class="separator:a38892eb7d3db29160e5482b50edb96c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8369de824e697ec18ebe050aa945668"><td class="memItemLeft" align="right" valign="top"><a id="ab8369de824e697ec18ebe050aa945668" name="ab8369de824e697ec18ebe050aa945668"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>clearNeighbors</b> ()</td></tr>
-<tr class="memdesc:aa8dd3363b9aec4f8a55083b7a3a00461"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all neighbors. <br /></td></tr>
-<tr class="separator:aa8dd3363b9aec4f8a55083b7a3a00461"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24eeadf4efa0718a5475e8f82d16848a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#a24eeadf4efa0718a5475e8f82d16848a">reset</a> (<a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> *firstParticle)</td></tr>
-<tr class="separator:a24eeadf4efa0718a5475e8f82d16848a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e51499fbd573fc8b64bdcc27badc6eb"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; std::array&lt; double, 3 &gt;, std::array&lt; double, 3 &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#a1e51499fbd573fc8b64bdcc27badc6eb">getBoundingBox</a> () const</td></tr>
-<tr class="memdesc:a1e51499fbd573fc8b64bdcc27badc6eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the bounding box of this cluster.  <br /></td></tr>
-<tr class="separator:a1e51499fbd573fc8b64bdcc27badc6eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:ab8369de824e697ec18ebe050aa945668"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove all neighbors. <br /></td></tr>
+<tr class="separator:ab8369de824e697ec18ebe050aa945668"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5384a8dac721e2b01c6e80313fce69d3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#a5384a8dac721e2b01c6e80313fce69d3">reset</a> (Particle_T *firstParticle)</td></tr>
+<tr class="separator:a5384a8dac721e2b01c6e80313fce69d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c51b89e9b016e3473d7653576c13330"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; std::array&lt; double, 3 &gt;, std::array&lt; double, 3 &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1Cluster.html#a8c51b89e9b016e3473d7653576c13330">getBoundingBox</a> () const</td></tr>
+<tr class="memdesc:a8c51b89e9b016e3473d7653576c13330"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the bounding box of this cluster.  <br /></td></tr>
+<tr class="separator:a8c51b89e9b016e3473d7653576c13330"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a>&gt;<br />
-class autopas::internal::Cluster&lt; Particle &gt;</div><p>This class represents a cluster in the <a class="el" href="classautopas_1_1VerletClusterLists.html" title="Particles are divided into clusters.">VerletClusterLists</a> container. </p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class Particle_T&gt;<br />
+class autopas::internal::Cluster&lt; Particle_T &gt;</div><p>This class represents a cluster in the <a class="el" href="classautopas_1_1VerletClusterLists.html" title="Particles are divided into clusters.">VerletClusterLists</a> container. </p>
 <p>It contains a pointer to the particles for AoS, a <a class="el" href="classautopas_1_1SoAView.html" title="View on a fixed part of a SoA between a start index and an end index.">SoAView</a> for <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a>, and the neighbor list for this cluster.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Particle</td><td>The type of the particles this cluster consists of. </td></tr>
+    <tr><td class="paramname">Particle_T</td><td>The type of the particles this cluster consists of. </td></tr>
     <tr><td class="paramname">clusterSize</td><td>The number of particles in the cluster. </td></tr>
   </table>
   </dd>
 </dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="abee124f0cb582fcea1978d664dd1a401" name="abee124f0cb582fcea1978d664dd1a401"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abee124f0cb582fcea1978d664dd1a401">&#9670;&#160;</a></span>Cluster()</h2>
+<a id="a5d4840800574972eefe6676ce6176c5b" name="a5d4840800574972eefe6676ce6176c5b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d4840800574972eefe6676ce6176c5b">&#9670;&#160;</a></span>Cluster()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle_T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::Cluster </td>
+          <td class="memname"><a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; Particle_T &gt;::Cluster </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> *&#160;</td>
+          <td class="paramtype">Particle_T *&#160;</td>
           <td class="paramname"><em>firstParticle</em>, </td>
         </tr>
         <tr>
@@ -227,21 +227,21 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="afaafa234f395488a0569edf06ead3bb8" name="afaafa234f395488a0569edf06ead3bb8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afaafa234f395488a0569edf06ead3bb8">&#9670;&#160;</a></span>addNeighbor()</h2>
+<a id="a38892eb7d3db29160e5482b50edb96c8" name="a38892eb7d3db29160e5482b50edb96c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38892eb7d3db29160e5482b50edb96c8">&#9670;&#160;</a></span>addNeighbor()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle_T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::addNeighbor </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; Particle_T &gt;::addNeighbor </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classautopas_1_1internal_1_1Cluster.html">Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1internal_1_1Cluster.html">Cluster</a>&lt; Particle_T &gt; &amp;&#160;</td>
           <td class="paramname"><em>neighbor</em></td><td>)</td>
           <td></td>
         </tr>
@@ -263,19 +263,19 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="aebaaa4e0ecd8699f458d9f030f92a2b3" name="aebaaa4e0ecd8699f458d9f030f92a2b3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aebaaa4e0ecd8699f458d9f030f92a2b3">&#9670;&#160;</a></span>empty()</h2>
+<a id="a2dd58e2ce66eb778530cba56c379f403" name="a2dd58e2ce66eb778530cba56c379f403"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2dd58e2ce66eb778530cba56c379f403">&#9670;&#160;</a></span>empty()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle_T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::empty </td>
+          <td class="memname">bool <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; Particle_T &gt;::empty </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -293,19 +293,19 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="a1e51499fbd573fc8b64bdcc27badc6eb" name="a1e51499fbd573fc8b64bdcc27badc6eb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e51499fbd573fc8b64bdcc27badc6eb">&#9670;&#160;</a></span>getBoundingBox()</h2>
+<a id="a8c51b89e9b016e3473d7653576c13330" name="a8c51b89e9b016e3473d7653576c13330"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c51b89e9b016e3473d7653576c13330">&#9670;&#160;</a></span>getBoundingBox()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle_T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::tuple&lt; std::array&lt; double, 3 &gt;, std::array&lt; double, 3 &gt; &gt; <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getBoundingBox </td>
+          <td class="memname">std::tuple&lt; std::array&lt; double, 3 &gt;, std::array&lt; double, 3 &gt; &gt; <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; Particle_T &gt;::getBoundingBox </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -323,19 +323,19 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="a972fd45481a9bef02ba3c2f113b4421a" name="a972fd45481a9bef02ba3c2f113b4421a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a972fd45481a9bef02ba3c2f113b4421a">&#9670;&#160;</a></span>getNeighbors()</h2>
+<a id="a0aaace3e2e4581b920e1a49bd0c5f69b" name="a0aaace3e2e4581b920e1a49bd0c5f69b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0aaace3e2e4581b920e1a49bd0c5f69b">&#9670;&#160;</a></span>getNeighbors()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle_T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="classautopas_1_1internal_1_1Cluster.html">Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; * &gt; * <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getNeighbors </td>
+          <td class="memname">std::vector&lt; <a class="el" href="classautopas_1_1internal_1_1Cluster.html">Cluster</a>&lt; Particle_T &gt; * &gt; * <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; Particle_T &gt;::getNeighbors </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -353,19 +353,19 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="a96ea96e4da6aa9f778c90cd6d17771ac" name="a96ea96e4da6aa9f778c90cd6d17771ac"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a96ea96e4da6aa9f778c90cd6d17771ac">&#9670;&#160;</a></span>getSoAView()</h2>
+<a id="a9c53faa5cc4b4e767b13ea26a2e507ab" name="a9c53faa5cc4b4e767b13ea26a2e507ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c53faa5cc4b4e767b13ea26a2e507ab">&#9670;&#160;</a></span>getSoAView()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle_T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getSoAView </td>
+          <td class="memname">auto <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; Particle_T &gt;::getSoAView </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -383,19 +383,19 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="a68d2ead0ed863816100128fae4d44245" name="a68d2ead0ed863816100128fae4d44245"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a68d2ead0ed863816100128fae4d44245">&#9670;&#160;</a></span>getZMinMax()</h2>
+<a id="a378d1de0f9922eb508b6f46702b07d9c" name="a378d1de0f9922eb508b6f46702b07d9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a378d1de0f9922eb508b6f46702b07d9c">&#9670;&#160;</a></span>getZMinMax()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle_T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::tuple&lt; double, double, bool &gt; <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::getZMinMax </td>
+          <td class="memname">std::tuple&lt; double, double, bool &gt; <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; Particle_T &gt;::getZMinMax </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -414,19 +414,19 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="aeafd34c635433e2b229a5c4db3ea969f" name="aeafd34c635433e2b229a5c4db3ea969f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeafd34c635433e2b229a5c4db3ea969f">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
+<a id="a27ab4b78915f9ef8ad264732387b1d1a" name="a27ab4b78915f9ef8ad264732387b1d1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a27ab4b78915f9ef8ad264732387b1d1a">&#9670;&#160;</a></span>operator[]() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle_T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &amp; <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::operator[] </td>
+          <td class="memname">Particle_T &amp; <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; Particle_T &gt;::operator[] </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -452,19 +452,19 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="afbee3dd2f07dd9ce6baf080c13932569" name="afbee3dd2f07dd9ce6baf080c13932569"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afbee3dd2f07dd9ce6baf080c13932569">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
+<a id="a2c8bf3d6a91c650f6ffd11d75744a1e6" name="a2c8bf3d6a91c650f6ffd11d75744a1e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c8bf3d6a91c650f6ffd11d75744a1e6">&#9670;&#160;</a></span>operator[]() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle_T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &amp; <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::operator[] </td>
+          <td class="memname">const Particle_T &amp; <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; Particle_T &gt;::operator[] </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>index</em></td><td>)</td>
@@ -490,21 +490,21 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="a24eeadf4efa0718a5475e8f82d16848a" name="a24eeadf4efa0718a5475e8f82d16848a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24eeadf4efa0718a5475e8f82d16848a">&#9670;&#160;</a></span>reset()</h2>
+<a id="a5384a8dac721e2b01c6e80313fce69d3" name="a5384a8dac721e2b01c6e80313fce69d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5384a8dac721e2b01c6e80313fce69d3">&#9670;&#160;</a></span>reset()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle_T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::reset </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; Particle_T &gt;::reset </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> *&#160;</td>
+          <td class="paramtype">Particle_T *&#160;</td>
           <td class="paramname"><em>firstParticle</em></td><td>)</td>
           <td></td>
         </tr>
@@ -524,21 +524,21 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="a63d697cf0cbac75372c1d0fb7c11d253" name="a63d697cf0cbac75372c1d0fb7c11d253"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a63d697cf0cbac75372c1d0fb7c11d253">&#9670;&#160;</a></span>setNeighborList()</h2>
+<a id="a66577e81b14132337345123161466ec7" name="a66577e81b14132337345123161466ec7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66577e81b14132337345123161466ec7">&#9670;&#160;</a></span>setNeighborList()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle_T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::setNeighborList </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; Particle_T &gt;::setNeighborList </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="classautopas_1_1internal_1_1Cluster.html">Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; * &gt; *&#160;</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classautopas_1_1internal_1_1Cluster.html">Cluster</a>&lt; Particle_T &gt; * &gt; *&#160;</td>
           <td class="paramname"><em>neighborList</em></td><td>)</td>
           <td></td>
         </tr>
@@ -560,21 +560,21 @@ template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296ce
 
 </div>
 </div>
-<a id="af66e251ea2b5c53cab3c79918e53a254" name="af66e251ea2b5c53cab3c79918e53a254"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af66e251ea2b5c53cab3c79918e53a254">&#9670;&#160;</a></span>setSoAView()</h2>
+<a id="af1ad875195ab04930496d3501aaa8713" name="af1ad875195ab04930496d3501aaa8713"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1ad875195ab04930496d3501aaa8713">&#9670;&#160;</a></span>setSoAView()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt; </div>
+template&lt;class Particle_T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; <a class="el" href="namespaceautopas.html#a1103977ab8f79d296cee5b0afa78dae2">Particle</a> &gt;::setSoAView </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1internal_1_1Cluster.html">autopas::internal::Cluster</a>&lt; Particle_T &gt;::setSoAView </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classautopas_1_1SoAView.html">SoAView</a>&lt; typename <a class="el" href="classautopas_1_1ParticleBase.html#a5edc300640c4ece1b7cd14dbe3633c18">Particle::SoAArraysType</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classautopas_1_1SoAView.html">SoAView</a>&lt; typename Particle_T::SoAArraysType &gt; &amp;&#160;</td>
           <td class="paramname"><em>view</em></td><td>)</td>
           <td></td>
         </tr>

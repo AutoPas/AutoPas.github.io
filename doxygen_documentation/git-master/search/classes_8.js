@@ -16,7 +16,7 @@ var searchData=
   ['lctraversalinterface_13',['LCTraversalInterface',['../classautopas_1_1LCTraversalInterface.html',1,'autopas']]],
   ['linguisticvariable_14',['LinguisticVariable',['../classautopas_1_1FuzzyLogic_1_1LinguisticVariable.html',1,'autopas::FuzzyLogic']]],
   ['linkedcells_15',['LinkedCells',['../classautopas_1_1LinkedCells.html',1,'autopas']]],
-  ['linkedcells_3c_20autopas_3a_3aparticlebase_20_3e_16',['LinkedCells&lt; autopas::ParticleBase &gt;',['../classautopas_1_1LinkedCells.html',1,'autopas']]],
+  ['linkedcells_3c_20particlecell_3a_3aparticletype_20_3e_16',['LinkedCells&lt; ParticleCell::ParticleType &gt;',['../classautopas_1_1LinkedCells.html',1,'autopas']]],
   ['linkedcellsreferences_17',['LinkedCellsReferences',['../classautopas_1_1LinkedCellsReferences.html',1,'autopas']]],
   ['literal_18',['Literal',['../structautopas_1_1RuleSyntax_1_1Literal.html',1,'autopas::RuleSyntax']]],
   ['liveinfo_19',['LiveInfo',['../classautopas_1_1LiveInfo.html',1,'autopas']]],
