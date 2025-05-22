@@ -16,11 +16,9 @@ var searchData=
   ['functor_3c_20particle_5ft_2c_20sphcalchydroforcefunctor_3c_20particle_5ft_20_3e_20_3e_13',['Functor&lt; Particle_T, SPHCalcHydroForceFunctor&lt; Particle_T &gt; &gt;',['../classautopas_1_1Functor.html',1,'autopas']]],
   ['functor_3c_20particle_5ft_2c_20verletlistgeneratorfunctor_20_3e_14',['Functor&lt; Particle_T, VerletListGeneratorFunctor &gt;',['../classautopas_1_1Functor.html',1,'autopas']]],
   ['functor_3c_20particle_5ft_2c_20verletlistvaliditycheckerfunctor_20_3e_15',['Functor&lt; Particle_T, VerletListValidityCheckerFunctor &gt;',['../classautopas_1_1Functor.html',1,'autopas']]],
-  ['functor_3c_20particle_5ft_2c_20vlcallcellsgeneratorfunctor_3c_20particle_5ft_2c_20traversaloptionenum_20_3e_20_3e_16',['Functor&lt; Particle_T, VLCAllCellsGeneratorFunctor&lt; Particle_T, TraversalOptionEnum &gt; &gt;',['../classautopas_1_1Functor.html',1,'autopas']]],
-  ['functor_3c_20particle_5ft_2c_20vlccellpairgeneratorfunctor_3c_20particle_5ft_20_3e_20_3e_17',['Functor&lt; Particle_T, VLCCellPairGeneratorFunctor&lt; Particle_T &gt; &gt;',['../classautopas_1_1Functor.html',1,'autopas']]],
-  ['fuzzycontrolsystem_18',['FuzzyControlSystem',['../classautopas_1_1FuzzyLogic_1_1FuzzyControlSystem.html',1,'autopas::FuzzyLogic']]],
-  ['fuzzyrule_19',['FuzzyRule',['../classautopas_1_1FuzzyLogic_1_1FuzzyRule.html',1,'autopas::FuzzyLogic']]],
-  ['fuzzyset_20',['FuzzySet',['../classautopas_1_1FuzzyLogic_1_1FuzzySet.html',1,'autopas::FuzzyLogic']]],
-  ['fuzzysetfactory_21',['FuzzySetFactory',['../classautopas_1_1FuzzyLogic_1_1FuzzySetFactory.html',1,'autopas::FuzzyLogic']]],
-  ['fuzzytuning_22',['FuzzyTuning',['../classautopas_1_1FuzzyTuning.html',1,'autopas']]]
+  ['fuzzycontrolsystem_16',['FuzzyControlSystem',['../classautopas_1_1FuzzyLogic_1_1FuzzyControlSystem.html',1,'autopas::FuzzyLogic']]],
+  ['fuzzyrule_17',['FuzzyRule',['../classautopas_1_1FuzzyLogic_1_1FuzzyRule.html',1,'autopas::FuzzyLogic']]],
+  ['fuzzyset_18',['FuzzySet',['../classautopas_1_1FuzzyLogic_1_1FuzzySet.html',1,'autopas::FuzzyLogic']]],
+  ['fuzzysetfactory_19',['FuzzySetFactory',['../classautopas_1_1FuzzyLogic_1_1FuzzySetFactory.html',1,'autopas::FuzzyLogic']]],
+  ['fuzzytuning_20',['FuzzyTuning',['../classautopas_1_1FuzzyTuning.html',1,'autopas']]]
 ];

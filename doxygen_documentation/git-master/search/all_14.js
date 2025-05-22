@@ -81,8 +81,7 @@ var searchData=
   ['tuningstrategyoption_78',['TuningStrategyOption',['../classautopas_1_1options_1_1TuningStrategyOption.html',1,'autopas::options::TuningStrategyOption'],['../classautopas_1_1options_1_1TuningStrategyOption.html#a5a321034926055125b94a5003ed3511b',1,'autopas::options::TuningStrategyOption::TuningStrategyOption(Value option)'],['../classautopas_1_1options_1_1TuningStrategyOption.html#a9d4b54d55f0dc0a52c30129d06073cac',1,'autopas::options::TuningStrategyOption::TuningStrategyOption()=default']]],
   ['tuningstrategyoption_2eh_79',['TuningStrategyOption.h',['../TuningStrategyOption_8h.html',1,'']]],
   ['tupleutils_2eh_80',['TupleUtils.h',['../TupleUtils_8h.html',1,'']]],
-  ['type_81',['Type',['../structautopas_1_1utils_1_1SoAType.html#af5c29fca401a20a2dede6e5bc762d69f',1,'autopas::utils::SoAType']]],
-  ['type_82',['type',['../structautopas_1_1RuleSyntax_1_1Literal.html#ada18fb6a784c2e4c0f916fa61670569a',1,'autopas::RuleSyntax::Literal']]],
-  ['type_83',['Type',['../namespaceautopas.html#af7ac3614f0c9b42bab1d8c1a3703431a',1,'autopas']]],
-  ['typeof_84',['typeOf',['../namespaceautopas_1_1RuleSyntax.html#a9771a081693f0117fea6b40c71c3ba4c',1,'autopas::RuleSyntax']]]
+  ['type_81',['type',['../structautopas_1_1RuleSyntax_1_1Literal.html#ada18fb6a784c2e4c0f916fa61670569a',1,'autopas::RuleSyntax::Literal']]],
+  ['type_82',['Type',['../structautopas_1_1utils_1_1SoAType.html#af5c29fca401a20a2dede6e5bc762d69f',1,'autopas::utils::SoAType::Type'],['../namespaceautopas.html#af7ac3614f0c9b42bab1d8c1a3703431a',1,'autopas::Type']]],
+  ['typeof_83',['typeOf',['../namespaceautopas_1_1RuleSyntax.html#a9771a081693f0117fea6b40c71c3ba4c',1,'autopas::RuleSyntax']]]
 ];

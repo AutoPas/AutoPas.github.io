@@ -165,12 +165,8 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aaffcc5bd8684edc25ebe6ce4327929ef"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsCells.html#aaffcc5bd8684edc25ebe6ce4327929ef">getNumberOfPartners</a> (const Particle_T *particle) const</td></tr>
 <tr class="memdesc:aaffcc5bd8684edc25ebe6ce4327929ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of neighbors over all neighbor lists that belong to this particle.  <br /></td></tr>
 <tr class="separator:aaffcc5bd8684edc25ebe6ce4327929ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe59093108df3284d08b5dea7213a611"><td class="memItemLeft" align="right" valign="top"><a id="afe59093108df3284d08b5dea7213a611" name="afe59093108df3284d08b5dea7213a611"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>rebuildNeighborListsC08</b> ()</td></tr>
-<tr class="memdesc:afe59093108df3284d08b5dea7213a611"><td class="mdescLeft">&#160;</td><td class="mdescRight">Special case of building the neighbor lists in c08 style where all lists that belong to one base step are stored together. <br /></td></tr>
-<tr class="separator:afe59093108df3284d08b5dea7213a611"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e0a38c9aeff1823e9be6b767de1c8b5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsCells.html#a0e0a38c9aeff1823e9be6b767de1c8b5">rebuildNeighborLists</a> (<a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *traversal) override</td></tr>
-<tr class="memdesc:a0e0a38c9aeff1823e9be6b767de1c8b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuilds the neighbor lists for the next traversals.  <br /></td></tr>
+<tr class="memdesc:a0e0a38c9aeff1823e9be6b767de1c8b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuilds the neighbor lists and marks them valid.  <br /></td></tr>
 <tr class="separator:a0e0a38c9aeff1823e9be6b767de1c8b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a624946160f9a3dcb476f07ba26421173"><td class="memItemLeft" align="right" valign="top">const std::array&lt; double, 3 &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsCells.html#a624946160f9a3dcb476f07ba26421173">getCellLength</a> () const</td></tr>
 <tr class="memdesc:a624946160f9a3dcb476f07ba26421173"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the cell length of the underlying linked cells structure, normally needed only for unit tests.  <br /></td></tr>
@@ -731,10 +727,11 @@ template&lt;class Particle_T , class NeighborList &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Rebuilds the neighbor lists for the next traversals. </p>
+<p>Rebuilds the neighbor lists and marks them valid. </p>
+<dl class="section note"><dt>Note</dt><dd>This function will be called in <a class="el" href="classautopas_1_1VerletListsCells.html#ac50b5daeb29526c3e1a53bc1924463a7" title="Iterates over all particle multiples (e.g.">computeInteractions()</a>! </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">traversal</td><td>The used traversal. </td></tr>
+    <tr><td class="paramname">traversal</td><td>The traversal currently used </td></tr>
   </table>
   </dd>
 </dl>

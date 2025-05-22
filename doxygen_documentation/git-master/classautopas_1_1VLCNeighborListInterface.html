@@ -114,7 +114,6 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classautopas_1_1VLCNeighborListInterface-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">autopas::VLCNeighborListInterface&lt; Particle_T &gt; Class Template Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
@@ -161,9 +160,9 @@ Public Member Functions</h2></td></tr>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~VLCNeighborListInterface</b> ()=default</td></tr>
 <tr class="memdesc:a8a21089a37a2bfb08d00b7b972038dfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Virtual default destructor. <br /></td></tr>
 <tr class="separator:a8a21089a37a2bfb08d00b7b972038dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac617aa1bd0bb13a94b23f6b0d8c45f0b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VLCNeighborListInterface.html#ac617aa1bd0bb13a94b23f6b0d8c45f0b">buildAoSNeighborList</a> (<a class="el" href="classautopas_1_1LinkedCells.html">LinkedCells</a>&lt; Particle_T &gt; &amp;linkedCells, bool useNewton3, double cutoff, double skin, double interactionLength, const TraversalOption vlcTraversalOpt, typename <a class="el" href="namespaceautopas_1_1VerletListsCellsHelpers.html#a9df07b2d6543ff8e48de9304022f84dc">VerletListsCellsHelpers::VLCBuildType</a> buildType)=0</td></tr>
-<tr class="memdesc:ac617aa1bd0bb13a94b23f6b0d8c45f0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds AoS neighbor list from underlying linked cells object.  <br /></td></tr>
-<tr class="separator:ac617aa1bd0bb13a94b23f6b0d8c45f0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed3348004656ca51c122dcacad756b0e"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VLCNeighborListInterface.html#aed3348004656ca51c122dcacad756b0e">buildAoSNeighborList</a> (TraversalOption vlcTraversalOpt, <a class="el" href="classautopas_1_1LinkedCells.html">LinkedCells</a>&lt; Particle_T &gt; &amp;linkedCells, bool useNewton3)=0</td></tr>
+<tr class="memdesc:aed3348004656ca51c122dcacad756b0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds AoS neighbor list from underlying linked cells object.  <br /></td></tr>
+<tr class="separator:aed3348004656ca51c122dcacad756b0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a88a2299e246ef10b5a48eac6da61fccd"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VLCNeighborListInterface.html#a88a2299e246ef10b5a48eac6da61fccd">getNumberOfPartners</a> (const Particle_T *particle) const =0</td></tr>
 <tr class="memdesc:a88a2299e246ef10b5a48eac6da61fccd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of neighbors over all neighbor lists that belong to this particle.  <br /></td></tr>
 <tr class="separator:a88a2299e246ef10b5a48eac6da61fccd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -188,12 +187,6 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~VLCNeighborListIn
 <tr class="memdesc:a3e5fff0fee2a18421f8952e25b07d8ab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the Linked Cells Pointer for this List.  <br /></td></tr>
 <tr class="separator:a3e5fff0fee2a18421f8952e25b07d8ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:a87f270b0116492da21947d5a38ebf8e4"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VLCNeighborListInterface.html#a87f270b0116492da21947d5a38ebf8e4">applyBuildFunctor</a> (<a class="el" href="classautopas_1_1LinkedCells.html">LinkedCells</a>&lt; Particle_T &gt; &amp;linkedCells, bool useNewton3, double cutoff, double skin, double interactionLength, const TraversalOption &amp;vlcTraversalOpt, typename <a class="el" href="namespaceautopas_1_1VerletListsCellsHelpers.html#a9df07b2d6543ff8e48de9304022f84dc">VerletListsCellsHelpers::VLCBuildType</a> buildType)=0</td></tr>
-<tr class="memdesc:a87f270b0116492da21947d5a38ebf8e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates and applies a generator functor for the building of the neighbor list.  <br /></td></tr>
-<tr class="separator:a87f270b0116492da21947d5a38ebf8e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:aeeb53858bbb4e61e72ed1cc9d79b2c52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1LinkedCells.html">LinkedCells</a>&lt; Particle_T &gt; *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VLCNeighborListInterface.html#aeeb53858bbb4e61e72ed1cc9d79b2c52">_internalLinkedCells</a></td></tr>
@@ -214,90 +207,8 @@ class autopas::VLCNeighborListInterface&lt; Particle_T &gt;</div><p>Interface of
   </dd>
 </dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a87f270b0116492da21947d5a38ebf8e4" name="a87f270b0116492da21947d5a38ebf8e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a87f270b0116492da21947d5a38ebf8e4">&#9670;&#160;</a></span>applyBuildFunctor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Particle_T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classautopas_1_1VLCNeighborListInterface.html">autopas::VLCNeighborListInterface</a>&lt; Particle_T &gt;::applyBuildFunctor </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="classautopas_1_1LinkedCells.html">LinkedCells</a>&lt; Particle_T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>linkedCells</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>useNewton3</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>cutoff</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>skin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>interactionLength</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const TraversalOption &amp;&#160;</td>
-          <td class="paramname"><em>vlcTraversalOpt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">typename <a class="el" href="namespaceautopas_1_1VerletListsCellsHelpers.html#a9df07b2d6543ff8e48de9304022f84dc">VerletListsCellsHelpers::VLCBuildType</a>&#160;</td>
-          <td class="paramname"><em>buildType</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Creates and applies a generator functor for the building of the neighbor list. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">linkedCells</td><td>Linked Cells object used to build the neighbor list. </td></tr>
-    <tr><td class="paramname">useNewton3</td><td>Whether Newton 3 should be used for the neighbor list. </td></tr>
-    <tr><td class="paramname">cutoff</td><td>Cutoff radius. </td></tr>
-    <tr><td class="paramname">skin</td><td>Skin of the verlet list. </td></tr>
-    <tr><td class="paramname">interactionLength</td><td>Interaction length of the underlying linked cells object. </td></tr>
-    <tr><td class="paramname">vlcTraversalOpt</td><td>Traversal for which this neighbor list is built. </td></tr>
-    <tr><td class="paramname">buildType</td><td>Type of build functor to be used for the generation of the neighbor list. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="ac617aa1bd0bb13a94b23f6b0d8c45f0b" name="ac617aa1bd0bb13a94b23f6b0d8c45f0b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac617aa1bd0bb13a94b23f6b0d8c45f0b">&#9670;&#160;</a></span>buildAoSNeighborList()</h2>
+<a id="aed3348004656ca51c122dcacad756b0e" name="aed3348004656ca51c122dcacad756b0e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed3348004656ca51c122dcacad756b0e">&#9670;&#160;</a></span>buildAoSNeighborList()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -310,6 +221,12 @@ template&lt;class Particle_T &gt; </div>
         <tr>
           <td class="memname">virtual void <a class="el" href="classautopas_1_1VLCNeighborListInterface.html">autopas::VLCNeighborListInterface</a>&lt; Particle_T &gt;::buildAoSNeighborList </td>
           <td>(</td>
+          <td class="paramtype">TraversalOption&#160;</td>
+          <td class="paramname"><em>vlcTraversalOpt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype"><a class="el" href="classautopas_1_1LinkedCells.html">LinkedCells</a>&lt; Particle_T &gt; &amp;&#160;</td>
           <td class="paramname"><em>linkedCells</em>, </td>
         </tr>
@@ -317,37 +234,7 @@ template&lt;class Particle_T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>useNewton3</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>cutoff</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>skin</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>interactionLength</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const TraversalOption&#160;</td>
-          <td class="paramname"><em>vlcTraversalOpt</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">typename <a class="el" href="namespaceautopas_1_1VerletListsCellsHelpers.html#a9df07b2d6543ff8e48de9304022f84dc">VerletListsCellsHelpers::VLCBuildType</a>&#160;</td>
-          <td class="paramname"><em>buildType</em>&#160;</td>
+          <td class="paramname"><em>useNewton3</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -365,18 +252,14 @@ template&lt;class Particle_T &gt; </div>
 <p>Builds AoS neighbor list from underlying linked cells object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
+    <tr><td class="paramname">vlcTraversalOpt</td><td>Traversal for which this neighbor list is built. </td></tr>
     <tr><td class="paramname">linkedCells</td><td>Linked Cells object used to build the neighbor list. </td></tr>
     <tr><td class="paramname">useNewton3</td><td>Whether Newton 3 should be used for the neighbor list. </td></tr>
-    <tr><td class="paramname">cutoff</td><td>Cutoff radius. </td></tr>
-    <tr><td class="paramname">skin</td><td>Skin of the verlet list. </td></tr>
-    <tr><td class="paramname">interactionLength</td><td>Interaction length of the underlying linked cells object. </td></tr>
-    <tr><td class="paramname">vlcTraversalOpt</td><td>Traversal for which this neighbor list is built. </td></tr>
-    <tr><td class="paramname">buildType</td><td>Type of build functor to be used for the generation of the neighbor list. </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classautopas_1_1VLCAllCellsNeighborList.html#a48cbf889069ed7794e3282175a9628d0">autopas::VLCAllCellsNeighborList&lt; Particle_T &gt;</a>, <a class="el" href="classautopas_1_1VLCCellPairNeighborList.html#aa9da9c0e77f4b6bad025baf67733c563">autopas::VLCCellPairNeighborList&lt; Particle_T &gt;</a>, and <a class="el" href="classautopas_1_1VLCCellPairNeighborList.html#aa9da9c0e77f4b6bad025baf67733c563">autopas::VLCCellPairNeighborList&lt; ParticleCell::ParticleType &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classautopas_1_1VLCAllCellsNeighborList.html#a33d050b23f61cbf2b4bb6a505ac9ada7">autopas::VLCAllCellsNeighborList&lt; Particle_T &gt;</a>, <a class="el" href="classautopas_1_1VLCCellPairNeighborList.html#a7b6c96409f8c5d98abd758e4996f1ffd">autopas::VLCCellPairNeighborList&lt; Particle_T &gt;</a>, and <a class="el" href="classautopas_1_1VLCCellPairNeighborList.html#a7b6c96409f8c5d98abd758e4996f1ffd">autopas::VLCCellPairNeighborList&lt; ParticleCell::ParticleType &gt;</a>.</p>
 
 </div>
 </div>

@@ -154,13 +154,13 @@ Functions</h2></td></tr>
 <tr class="memitem:ae255a582efce60e88fec907758987437"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1VerletListsCellsHelpers.html#ae255a582efce60e88fec907758987437">estimateListLength</a> (size_t numParticles, const std::array&lt; double, 3 &gt; &amp;boxSize, double interactionLength, double correctionFactor)</td></tr>
 <tr class="memdesc:ae255a582efce60e88fec907758987437"><td class="mdescLeft">&#160;</td><td class="mdescRight">Simple heuristic to calculate the average number of particles per verlet list assuming particles are evenly distributed in the domain box.  <br /></td></tr>
 <tr class="separator:ae255a582efce60e88fec907758987437"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e2c40617177bfb7797639311716e70f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structautopas_1_1VerletListsCellsHelpers_1_1BaseStepOffsets.html">BaseStepOffsets</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1VerletListsCellsHelpers.html#a8e2c40617177bfb7797639311716e70f">buildC08BaseStep</a> (const std::array&lt; int, 3 &gt; &amp;cellsPerDim)</td></tr>
-<tr class="memdesc:a8e2c40617177bfb7797639311716e70f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds the list of offsets from the base cell for the c08 base step.  <br /></td></tr>
-<tr class="separator:a8e2c40617177bfb7797639311716e70f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0f4d9a08526a6a1df8f861d2a52985e5"><td class="memTemplParams" colspan="2">template&lt;class Cells &gt; </td></tr>
-<tr class="memitem:a0f4d9a08526a6a1df8f861d2a52985e5"><td class="memTemplItemLeft" align="right" valign="top">size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1VerletListsCellsHelpers.html#a0f4d9a08526a6a1df8f861d2a52985e5">estimateNumLists</a> (size_t baseCellIndex, bool useNewton3, const Cells &amp;cells, const std::vector&lt; <a class="el" href="structautopas_1_1VerletListsCellsHelpers_1_1BaseStepOffsets.html">BaseStepOffsets</a> &gt; &amp;offsetsC08)</td></tr>
-<tr class="memdesc:a0f4d9a08526a6a1df8f861d2a52985e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to estimate the number of neighbor lists for one base step.  <br /></td></tr>
-<tr class="separator:a0f4d9a08526a6a1df8f861d2a52985e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc2ca5085d0c1746c10ca190ac269a13"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structautopas_1_1VerletListsCellsHelpers_1_1BaseStepOffsets.html">BaseStepOffsets</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1VerletListsCellsHelpers.html#afc2ca5085d0c1746c10ca190ac269a13">buildBaseStep</a> (const std::array&lt; int, 3 &gt; &amp;cellsPerDim, const TraversalOption traversal)</td></tr>
+<tr class="memdesc:afc2ca5085d0c1746c10ca190ac269a13"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds the list of offsets from the base cell for the c01, c08, and c18 base step.  <br /></td></tr>
+<tr class="separator:afc2ca5085d0c1746c10ca190ac269a13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5d3e6322fadf8fc87048f9056b50dad"><td class="memTemplParams" colspan="2">template&lt;class Cells &gt; </td></tr>
+<tr class="memitem:ad5d3e6322fadf8fc87048f9056b50dad"><td class="memTemplItemLeft" align="right" valign="top">size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1VerletListsCellsHelpers.html#ad5d3e6322fadf8fc87048f9056b50dad">estimateNumLists</a> (size_t baseCellIndex, bool useNewton3, const Cells &amp;cells, const std::vector&lt; <a class="el" href="structautopas_1_1VerletListsCellsHelpers_1_1BaseStepOffsets.html">BaseStepOffsets</a> &gt; &amp;offsetsC08, const std::array&lt; size_t, 3 &gt; cellsPerDim)</td></tr>
+<tr class="memdesc:ad5d3e6322fadf8fc87048f9056b50dad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to estimate the number of neighbor lists for one base step.  <br /></td></tr>
+<tr class="separator:ad5d3e6322fadf8fc87048f9056b50dad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper functions and type aliases for verlet lists cells. </p>
@@ -243,29 +243,40 @@ template&lt;class Particle_T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a8e2c40617177bfb7797639311716e70f" name="a8e2c40617177bfb7797639311716e70f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e2c40617177bfb7797639311716e70f">&#9670;&#160;</a></span>buildC08BaseStep()</h2>
+<a id="afc2ca5085d0c1746c10ca190ac269a13" name="afc2ca5085d0c1746c10ca190ac269a13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc2ca5085d0c1746c10ca190ac269a13">&#9670;&#160;</a></span>buildBaseStep()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; <a class="el" href="structautopas_1_1VerletListsCellsHelpers_1_1BaseStepOffsets.html">BaseStepOffsets</a> &gt; autopas::VerletListsCellsHelpers::buildC08BaseStep </td>
+          <td class="memname">std::vector&lt; <a class="el" href="structautopas_1_1VerletListsCellsHelpers_1_1BaseStepOffsets.html">BaseStepOffsets</a> &gt; autopas::VerletListsCellsHelpers::buildBaseStep </td>
           <td>(</td>
           <td class="paramtype">const std::array&lt; int, 3 &gt; &amp;&#160;</td>
-          <td class="paramname"><em>cellsPerDim</em></td><td>)</td>
+          <td class="paramname"><em>cellsPerDim</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const TraversalOption&#160;</td>
+          <td class="paramname"><em>traversal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Builds the list of offsets from the base cell for the c08 base step. </p>
+<p>Builds the list of offsets from the base cell for the c01, c08, and c18 base step. </p>
 <p>A offset pair are two cell indices relative to the base cell index that have to interact.</p>
 <p>The third tuple entry is an estimation factor on the fraction of particles that will end up needing a neighbor list in the base cell. This depends on the relative position of the two cells: Whether they are the same, or share a face, edge, or corner.</p>
 <dl class="section note"><dt>Note</dt><dd>This function is implemented for CSF==1, meaning preallocation weight factors are intended for CSF==1. For CSF &gt; 1 the implementation works but the factors might be suboptimal. For CSF &lt; 1 more factors (and different) are needed if more neighbor cells interact with the base cell.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cellsPerDim</td><td>Number of cells per dimension including halo. </td></tr>
+    <tr><td class="paramname">traversal</td><td>The TraversalOption for which the offsets should be generated (currently c01, c08, or c18). </td></tr>
   </table>
   </dd>
 </dl>
@@ -325,8 +336,8 @@ template&lt;class Particle_T &gt; </div>
 
 </div>
 </div>
-<a id="a0f4d9a08526a6a1df8f861d2a52985e5" name="a0f4d9a08526a6a1df8f861d2a52985e5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0f4d9a08526a6a1df8f861d2a52985e5">&#9670;&#160;</a></span>estimateNumLists()</h2>
+<a id="ad5d3e6322fadf8fc87048f9056b50dad" name="ad5d3e6322fadf8fc87048f9056b50dad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5d3e6322fadf8fc87048f9056b50dad">&#9670;&#160;</a></span>estimateNumLists()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -355,7 +366,13 @@ template&lt;class Cells &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::vector&lt; <a class="el" href="structautopas_1_1VerletListsCellsHelpers_1_1BaseStepOffsets.html">BaseStepOffsets</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>offsetsC08</em>&#160;</td>
+          <td class="paramname"><em>offsetsC08</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; size_t, 3 &gt;&#160;</td>
+          <td class="paramname"><em>cellsPerDim</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -378,6 +395,7 @@ template&lt;class Cells &gt; </div>
     <tr><td class="paramname">useNewton3</td><td>Whether or not the traversal that uses the lists employs Newton3. </td></tr>
     <tr><td class="paramname">cells</td><td>Reference to the vector of cells. </td></tr>
     <tr><td class="paramname">offsetsC08</td><td>Vector of <a class="el" href="structautopas_1_1VerletListsCellsHelpers_1_1BaseStepOffsets.html" title="Helper Struct to bundle all information about base step offsets.">BaseStepOffsets</a>. </td></tr>
+    <tr><td class="paramname">cellsPerDim</td><td>Number of cells in the block per dimension. </td></tr>
   </table>
   </dd>
 </dl>
