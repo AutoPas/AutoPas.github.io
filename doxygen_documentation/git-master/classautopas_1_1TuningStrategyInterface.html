@@ -177,12 +177,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3cc2e5b8444200e7429fd7dd457fc13f"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a3cc2e5b8444200e7429fd7dd457fc13f">rejectConfiguration</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;configuration, bool indefinitely)</td></tr>
 <tr class="memdesc:a3cc2e5b8444200e7429fd7dd457fc13f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify the strategy about a configuration that is (currently) invalid and thus can potentially be dropped from some internal storage.  <br /></td></tr>
 <tr class="separator:a3cc2e5b8444200e7429fd7dd457fc13f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55f14f8d8fd82e945783a3715452d99f"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a55f14f8d8fd82e945783a3715452d99f">needsSmoothedHomogeneityAndMaxDensity</a> () const</td></tr>
-<tr class="memdesc:a55f14f8d8fd82e945783a3715452d99f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether the strategy needs smoothed values of homogeneity and max density.  <br /></td></tr>
-<tr class="separator:a55f14f8d8fd82e945783a3715452d99f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f063297e8df6c7903651232b372573c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a3f063297e8df6c7903651232b372573c">receiveSmoothedHomogeneityAndMaxDensity</a> (double homogeneity, double maxDensity)</td></tr>
-<tr class="memdesc:a3f063297e8df6c7903651232b372573c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to pass smoothed homogeneity and the maximal density to the tuning strategy.  <br /></td></tr>
-<tr class="separator:a3f063297e8df6c7903651232b372573c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4113e4b9e6e136507cc81c11e07d3b8"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#ad4113e4b9e6e136507cc81c11e07d3b8">needsDomainSimilarityStatistics</a> () const</td></tr>
+<tr class="memdesc:ad4113e4b9e6e136507cc81c11e07d3b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether the strategy needs domain similarity statistics.  <br /></td></tr>
+<tr class="separator:ad4113e4b9e6e136507cc81c11e07d3b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62f0a26dfbe989630aa8ec8354973e00"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a62f0a26dfbe989630aa8ec8354973e00">receiveDomainSimilarityStatistics</a> (double pdBinStdDevDensity, double pdBinMaxDensity)</td></tr>
+<tr class="memdesc:a62f0a26dfbe989630aa8ec8354973e00"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to pass smoothed domain similarity statistics (particle-dependent bin standard deviation in density and max density) to the tuning strategy.  <br /></td></tr>
+<tr class="separator:a62f0a26dfbe989630aa8ec8354973e00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface for tuning strategies for the auto tuner. </p>
@@ -266,6 +266,36 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ad4113e4b9e6e136507cc81c11e07d3b8" name="ad4113e4b9e6e136507cc81c11e07d3b8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad4113e4b9e6e136507cc81c11e07d3b8">&#9670;&#160;</a></span>needsDomainSimilarityStatistics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool autopas::TuningStrategyInterface::needsDomainSimilarityStatistics </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Indicate whether the strategy needs domain similarity statistics. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+<p>Reimplemented in <a class="el" href="classautopas_1_1ActiveHarmony.html#ae5187fe3dab897f7a580d46dd4e283d8">autopas::ActiveHarmony</a>, <a class="el" href="classautopas_1_1BayesianClusterSearch.html#ad1dfbb879ec7b94d9d26764d4274dac7">autopas::BayesianClusterSearch</a>, <a class="el" href="classautopas_1_1BayesianSearch.html#aa17bbf1d89d6e42d29cbf283a70b5f4d">autopas::BayesianSearch</a>, and <a class="el" href="classautopas_1_1MPIParallelizedStrategy.html#aef80f42fffc8623cf7f24601d06005da">autopas::MPIParallelizedStrategy</a>.</p>
+
+</div>
+</div>
 <a id="a7c0bc535436e8aa6a8b25b6f1b50b5e2" name="a7c0bc535436e8aa6a8b25b6f1b50b5e2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7c0bc535436e8aa6a8b25b6f1b50b5e2">&#9670;&#160;</a></span>needsLiveInfo()</h2>
 
@@ -293,36 +323,6 @@ Public Member Functions</h2></td></tr>
 <dl class="section return"><dt>Returns</dt><dd>True, if this tuning strategy wants a <a class="el" href="classautopas_1_1LiveInfo.html" title="This class is able to gather and store important information for a tuning phase from a container and ...">LiveInfo</a> object passed before a new tuning phase via <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a9cb1ba7e258aa647bc0a442a1982f8f8" title="Virtual method that subclasses can override to receive the LiveInfo object before a tuning phase if t...">receiveLiveInfo()</a>. </dd></dl>
 
 <p>Reimplemented in <a class="el" href="classautopas_1_1FuzzyTuning.html#a1855d5f629c894c6a775e99570cc553e">autopas::FuzzyTuning</a>, <a class="el" href="classautopas_1_1RuleBasedTuning.html#ad4d9f87c41cdebf10da537e5db555baf">autopas::RuleBasedTuning</a>, and <a class="el" href="classautopas_1_1TuningStrategyLogger.html#abab67c50b4a84902fa5ad9edab56a38e">autopas::TuningStrategyLogger</a>.</p>
-
-</div>
-</div>
-<a id="a55f14f8d8fd82e945783a3715452d99f" name="a55f14f8d8fd82e945783a3715452d99f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a55f14f8d8fd82e945783a3715452d99f">&#9670;&#160;</a></span>needsSmoothedHomogeneityAndMaxDensity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual bool autopas::TuningStrategyInterface::needsSmoothedHomogeneityAndMaxDensity </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Indicate whether the strategy needs smoothed values of homogeneity and max density. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-<p>Reimplemented in <a class="el" href="classautopas_1_1ActiveHarmony.html#a3145544c3587f8c4a3eabe9657ea5745">autopas::ActiveHarmony</a>, <a class="el" href="classautopas_1_1BayesianClusterSearch.html#a5f46ba5f94ad69ecb866bf0ffb33c2d3">autopas::BayesianClusterSearch</a>, <a class="el" href="classautopas_1_1BayesianSearch.html#adc67b8839af2f517757303a55b4e2a69">autopas::BayesianSearch</a>, and <a class="el" href="classautopas_1_1MPIParallelizedStrategy.html#a83434c982e6f2d4a501e9ee01258b8d9">autopas::MPIParallelizedStrategy</a>.</p>
 
 </div>
 </div>
@@ -375,6 +375,53 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a62f0a26dfbe989630aa8ec8354973e00" name="a62f0a26dfbe989630aa8ec8354973e00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62f0a26dfbe989630aa8ec8354973e00">&#9670;&#160;</a></span>receiveDomainSimilarityStatistics()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void autopas::TuningStrategyInterface::receiveDomainSimilarityStatistics </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pdBinStdDevDensity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>pdBinMaxDensity</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Method to pass smoothed domain similarity statistics (particle-dependent bin standard deviation in density and max density) to the tuning strategy. </p>
+<p>See <a class="el" href="classautopas_1_1LiveInfo.html#a6aaa416e03c4c9e5ac8095ed2de388bf" title="Gathers key statistics that define the computational profile of the simulation, in order to provide l...">LiveInfo::gather</a> for meaning of particle dependent bin. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pdBinStdDevDensity</td><td>particle-dependent bin density standard deviation. </td></tr>
+    <tr><td class="paramname">pdBinMaxDensity</td><td>particle-dependent bin maximum density. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Reimplemented in <a class="el" href="classautopas_1_1MPIParallelizedStrategy.html#a888647d105a602c11cc51c2cebec2d13">autopas::MPIParallelizedStrategy</a>.</p>
+
+</div>
+</div>
 <a id="a9cb1ba7e258aa647bc0a442a1982f8f8" name="a9cb1ba7e258aa647bc0a442a1982f8f8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9cb1ba7e258aa647bc0a442a1982f8f8">&#9670;&#160;</a></span>receiveLiveInfo()</h2>
 
@@ -408,53 +455,6 @@ Public Member Functions</h2></td></tr>
 </dl>
 
 <p>Reimplemented in <a class="el" href="classautopas_1_1RuleBasedTuning.html#ab39e5d203d278395044c57f9e6e0eb5a">autopas::RuleBasedTuning</a>, <a class="el" href="classautopas_1_1TuningStrategyLogger.html#aa83f3ab2c154c01790b57feacb9c63a1">autopas::TuningStrategyLogger</a>, and <a class="el" href="classautopas_1_1FuzzyTuning.html#ac93c34687f697d2cf373d9b2f6c1313d">autopas::FuzzyTuning</a>.</p>
-
-</div>
-</div>
-<a id="a3f063297e8df6c7903651232b372573c" name="a3f063297e8df6c7903651232b372573c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3f063297e8df6c7903651232b372573c">&#9670;&#160;</a></span>receiveSmoothedHomogeneityAndMaxDensity()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void autopas::TuningStrategyInterface::receiveSmoothedHomogeneityAndMaxDensity </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>homogeneity</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>maxDensity</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Method to pass smoothed homogeneity and the maximal density to the tuning strategy. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">homogeneity</td><td></td></tr>
-    <tr><td class="paramname">maxDensity</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented in <a class="el" href="classautopas_1_1MPIParallelizedStrategy.html#a11fb42dab3f4d7a0193c98a7053bae4e">autopas::MPIParallelizedStrategy</a>.</p>
 
 </div>
 </div>

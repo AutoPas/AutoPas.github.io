@@ -199,14 +199,14 @@ Functions</h2></td></tr>
 <tr class="memitem:a46784c0cdd59a5a9626c267a8732aeae"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::array&lt; T, SIZE &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a46784c0cdd59a5a9626c267a8732aeae">ceil</a> (const std::array&lt; T, SIZE &gt; &amp;a)</td></tr>
 <tr class="memdesc:a46784c0cdd59a5a9626c267a8732aeae"><td class="mdescLeft">&#160;</td><td class="mdescRight">For each element in a, computes the smallest integer value not less than the element.  <br /></td></tr>
 <tr class="separator:a46784c0cdd59a5a9626c267a8732aeae"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a013c54004baba529ff9b1dc5bb8e2773"><td class="memTemplParams" colspan="2">template&lt;class T , std::size_t SIZE&gt; </td></tr>
-<tr class="memitem:a013c54004baba529ff9b1dc5bb8e2773"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::array&lt; int, SIZE &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a013c54004baba529ff9b1dc5bb8e2773">floorToInt</a> (const std::array&lt; T, SIZE &gt; &amp;a)</td></tr>
-<tr class="memdesc:a013c54004baba529ff9b1dc5bb8e2773"><td class="mdescLeft">&#160;</td><td class="mdescRight">Floors all array elements and converts them to integers.  <br /></td></tr>
-<tr class="separator:a013c54004baba529ff9b1dc5bb8e2773"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8cc230e98a053854154fc3a3d50ae10"><td class="memTemplParams" colspan="2">template&lt;class T , std::size_t SIZE&gt; </td></tr>
-<tr class="memitem:af8cc230e98a053854154fc3a3d50ae10"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::array&lt; int, SIZE &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#af8cc230e98a053854154fc3a3d50ae10">ceilToInt</a> (const std::array&lt; T, SIZE &gt; &amp;a)</td></tr>
-<tr class="memdesc:af8cc230e98a053854154fc3a3d50ae10"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ceils all array elements and converts them to integers.  <br /></td></tr>
-<tr class="separator:af8cc230e98a053854154fc3a3d50ae10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a268bb46b7424d1944dec3e664a3573ff"><td class="memTemplParams" colspan="2">template&lt;typename target_T  = int, typename float_T , std::size_t SIZE&gt; </td></tr>
+<tr class="memitem:a268bb46b7424d1944dec3e664a3573ff"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::array&lt; target_T, SIZE &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a268bb46b7424d1944dec3e664a3573ff">floorAndCast</a> (const std::array&lt; float_T, SIZE &gt; &amp;a)</td></tr>
+<tr class="memdesc:a268bb46b7424d1944dec3e664a3573ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Floors all array elements and converts them to a different type.  <br /></td></tr>
+<tr class="separator:a268bb46b7424d1944dec3e664a3573ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66c36f72c8476377af6ddbe6b765d467"><td class="memTemplParams" colspan="2">template&lt;class target_T  = int, class float_T , std::size_t SIZE&gt; </td></tr>
+<tr class="memitem:a66c36f72c8476377af6ddbe6b765d467"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::array&lt; target_T, SIZE &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a66c36f72c8476377af6ddbe6b765d467">ceilAndCast</a> (const std::array&lt; float_T, SIZE &gt; &amp;a)</td></tr>
+<tr class="memdesc:a66c36f72c8476377af6ddbe6b765d467"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ceils all array elements and converts them to a different type.  <br /></td></tr>
+<tr class="separator:a66c36f72c8476377af6ddbe6b765d467"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0ea7ab853775ebf205c8230dcbeaf9d0"><td class="memTemplParams" colspan="2">template&lt;class T , std::size_t SIZE&gt; </td></tr>
 <tr class="memitem:a0ea7ab853775ebf205c8230dcbeaf9d0"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a0ea7ab853775ebf205c8230dcbeaf9d0">isNearRel</a> (const std::array&lt; T, SIZE &gt; &amp;a, const std::array&lt; T, SIZE &gt; &amp;b, double maxRelativeDifference=1e-9)</td></tr>
 <tr class="memdesc:a0ea7ab853775ebf205c8230dcbeaf9d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if arrays are elementwise relatively near each other.  <br /></td></tr>
@@ -219,6 +219,10 @@ Functions</h2></td></tr>
 <tr class="memitem:ad860470ac5e53ca77c9be8401bfc5b40"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#ad860470ac5e53ca77c9be8401bfc5b40">isEqual</a> (const std::vector&lt; T &gt; &amp;a, const std::vector&lt; T &gt; &amp;b)</td></tr>
 <tr class="memdesc:ad860470ac5e53ca77c9be8401bfc5b40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if vectors are elementwise equal to each other.  <br /></td></tr>
 <tr class="separator:ad860470ac5e53ca77c9be8401bfc5b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26cb2aeb8e077c05b6076fa79681b1af"><td class="memTemplParams" colspan="2">template&lt;typename new_T , typename old_T , std::size_t SIZE&gt; </td></tr>
+<tr class="memitem:a26cb2aeb8e077c05b6076fa79681b1af"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::array&lt; new_T, SIZE &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a26cb2aeb8e077c05b6076fa79681b1af">staticCastArray</a> (const std::array&lt; old_T, SIZE &gt; &amp;a)</td></tr>
+<tr class="memdesc:a26cb2aeb8e077c05b6076fa79681b1af"><td class="mdescLeft">&#160;</td><td class="mdescRight">static_casts all elements of an array to a new type.  <br /></td></tr>
+<tr class="separator:a26cb2aeb8e077c05b6076fa79681b1af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afa8418c5bcc6b14766db887509cdfb2d"><td class="memTemplParams" colspan="2">template&lt;class T , std::size_t SIZE&gt; </td></tr>
 <tr class="memitem:afa8418c5bcc6b14766db887509cdfb2d"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::array&lt; T, SIZE &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#afa8418c5bcc6b14766db887509cdfb2d">operator+</a> (const std::array&lt; T, SIZE &gt; &amp;a, const std::array&lt; T, SIZE &gt; &amp;b)</td></tr>
 <tr class="memdesc:afa8418c5bcc6b14766db887509cdfb2d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds two arrays, returns the result.  <br /></td></tr>
@@ -543,21 +547,21 @@ template&lt;class T , std::size_t SIZE&gt; </div>
 
 </div>
 </div>
-<a id="af8cc230e98a053854154fc3a3d50ae10" name="af8cc230e98a053854154fc3a3d50ae10"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8cc230e98a053854154fc3a3d50ae10">&#9670;&#160;</a></span>ceilToInt()</h2>
+<a id="a66c36f72c8476377af6ddbe6b765d467" name="a66c36f72c8476377af6ddbe6b765d467"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66c36f72c8476377af6ddbe6b765d467">&#9670;&#160;</a></span>ceilAndCast()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , std::size_t SIZE&gt; </div>
+template&lt;class target_T  = int, class float_T , std::size_t SIZE&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr std::array&lt; int, SIZE &gt; autopas::utils::ArrayMath::ceilToInt </td>
+          <td class="memname">constexpr std::array&lt; target_T, SIZE &gt; autopas::utils::ArrayMath::ceilAndCast </td>
           <td>(</td>
-          <td class="paramtype">const std::array&lt; T, SIZE &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::array&lt; float_T, SIZE &gt; &amp;&#160;</td>
           <td class="paramname"><em>a</em></td><td>)</td>
           <td></td>
         </tr>
@@ -569,10 +573,11 @@ template&lt;class T , std::size_t SIZE&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Ceils all array elements and converts them to integers. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
+<p>Ceils all array elements and converts them to a different type. </p>
+<p>Useful to ceil array elements and cast them to some integer type. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>floating point type </td></tr>
+    <tr><td class="paramname">target_T</td><td>target type. By default int. </td></tr>
+    <tr><td class="paramname">float_T</td><td>floating point type </td></tr>
     <tr><td class="paramname">SIZE</td><td>size of the array </td></tr>
   </table>
   </dd>
@@ -583,7 +588,7 @@ template&lt;class T , std::size_t SIZE&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>New array with ceiled elements of new type int. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>New array with ceiled elements of new type. </dd></dl>
 
 </div>
 </div>
@@ -861,21 +866,21 @@ template&lt;class T , std::size_t SIZE&gt; </div>
 
 </div>
 </div>
-<a id="a013c54004baba529ff9b1dc5bb8e2773" name="a013c54004baba529ff9b1dc5bb8e2773"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a013c54004baba529ff9b1dc5bb8e2773">&#9670;&#160;</a></span>floorToInt()</h2>
+<a id="a268bb46b7424d1944dec3e664a3573ff" name="a268bb46b7424d1944dec3e664a3573ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a268bb46b7424d1944dec3e664a3573ff">&#9670;&#160;</a></span>floorAndCast()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , std::size_t SIZE&gt; </div>
+template&lt;typename target_T  = int, typename float_T , std::size_t SIZE&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr std::array&lt; int, SIZE &gt; autopas::utils::ArrayMath::floorToInt </td>
+          <td class="memname">constexpr std::array&lt; target_T, SIZE &gt; autopas::utils::ArrayMath::floorAndCast </td>
           <td>(</td>
-          <td class="paramtype">const std::array&lt; T, SIZE &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::array&lt; float_T, SIZE &gt; &amp;&#160;</td>
           <td class="paramname"><em>a</em></td><td>)</td>
           <td></td>
         </tr>
@@ -887,10 +892,11 @@ template&lt;class T , std::size_t SIZE&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Floors all array elements and converts them to integers. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
+<p>Floors all array elements and converts them to a different type. </p>
+<p>Useful to floor array elements and cast them to some integer type. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>floating point type </td></tr>
+    <tr><td class="paramname">target_T</td><td>target type. By default int. </td></tr>
+    <tr><td class="paramname">float_T</td><td>floating point type </td></tr>
     <tr><td class="paramname">SIZE</td><td>size of the array </td></tr>
   </table>
   </dd>
@@ -901,7 +907,7 @@ template&lt;class T , std::size_t SIZE&gt; </div>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>New array with floored elements of new type int. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>New array with floored elements of new type. </dd></dl>
 
 </div>
 </div>
@@ -2342,6 +2348,51 @@ template&lt;class T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>product </dd></dl>
+
+</div>
+</div>
+<a id="a26cb2aeb8e077c05b6076fa79681b1af" name="a26cb2aeb8e077c05b6076fa79681b1af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26cb2aeb8e077c05b6076fa79681b1af">&#9670;&#160;</a></span>staticCastArray()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename new_T , typename old_T , std::size_t SIZE&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::array&lt; new_T, SIZE &gt; autopas::utils::ArrayMath::staticCastArray </td>
+          <td>(</td>
+          <td class="paramtype">const std::array&lt; old_T, SIZE &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>static_casts all elements of an array to a new type. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">new_T</td><td></td></tr>
+    <tr><td class="paramname">old_T</td><td></td></tr>
+    <tr><td class="paramname">SIZE</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a</td><td>Old Array </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>

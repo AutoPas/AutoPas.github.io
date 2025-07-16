@@ -153,12 +153,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad32706623a5717a5564d01b4694cbcb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#ad32706623a5717a5564d01b4694cbcb5">receiveLiveInfo</a> (const <a class="el" href="classautopas_1_1LiveInfo.html">LiveInfo</a> &amp;liveInfo)</td></tr>
 <tr class="memdesc:ad32706623a5717a5564d01b4694cbcb5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass live info on to all tuning strategies.  <br /></td></tr>
 <tr class="separator:ad32706623a5717a5564d01b4694cbcb5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acd71cda0cc2c6f07b2108aaca118f609"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#acd71cda0cc2c6f07b2108aaca118f609">needsHomogeneityAndMaxDensityBeforePrepare</a> () const</td></tr>
-<tr class="memdesc:acd71cda0cc2c6f07b2108aaca118f609"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicator whether tuner needs homogeneity and max density information before the next call to <a class="el" href="classautopas_1_1AutoTuner.html#ae50e16a3864ee82c7e6b9525aa43a16b" title="Determines what live infos are needed and passes collected live info to the tuning strategies.">prepareIteration()</a>.  <br /></td></tr>
-<tr class="separator:acd71cda0cc2c6f07b2108aaca118f609"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae50e16a3864ee82c7e6b9525aa43a16b"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#ae50e16a3864ee82c7e6b9525aa43a16b">prepareIteration</a> ()</td></tr>
-<tr class="memdesc:ae50e16a3864ee82c7e6b9525aa43a16b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines what live infos are needed and passes collected live info to the tuning strategies.  <br /></td></tr>
-<tr class="separator:ae50e16a3864ee82c7e6b9525aa43a16b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e3995baebaeab3d6037c24d28b6d478"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a8e3995baebaeab3d6037c24d28b6d478">isStartOfTuningPhase</a> () const</td></tr>
+<tr class="memdesc:a8e3995baebaeab3d6037c24d28b6d478"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the <a class="el" href="classautopas_1_1AutoTuner.html" title="This class manages all logic related to the auto tuning mechanic.">AutoTuner</a> is about to calculate the first interactions of a tuning phase (i.e.  <br /></td></tr>
+<tr class="separator:a8e3995baebaeab3d6037c24d28b6d478"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff832fe7947a0650cfd3c459c74c3ed4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#aff832fe7947a0650cfd3c459c74c3ed4">tuningPhaseAboutToBegin</a> () const</td></tr>
+<tr class="memdesc:aff832fe7947a0650cfd3c459c74c3ed4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the <a class="el" href="classautopas_1_1AutoTuner.html" title="This class manages all logic related to the auto tuning mechanic.">AutoTuner</a> is within 10 iterations of the start of a tuning phase.  <br /></td></tr>
+<tr class="separator:aff832fe7947a0650cfd3c459c74c3ed4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaaf7a1571c2b74efa4d31e465f5705ed"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#aaaf7a1571c2b74efa4d31e465f5705ed">needsLiveInfo</a> () const</td></tr>
+<tr class="memdesc:aaaf7a1571c2b74efa4d31e465f5705ed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the <a class="el" href="classautopas_1_1AutoTuner.html" title="This class manages all logic related to the auto tuning mechanic.">AutoTuner</a> needs live info.  <br /></td></tr>
+<tr class="separator:aaaf7a1571c2b74efa4d31e465f5705ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b3efd0da6d143a2a333d524553bc84a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a2b3efd0da6d143a2a333d524553bc84a">bumpIterationCounters</a> (bool needToWait=false)</td></tr>
 <tr class="memdesc:a2b3efd0da6d143a2a333d524553bc84a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Increase internal iteration counters by one.  <br /></td></tr>
 <tr class="separator:a2b3efd0da6d143a2a333d524553bc84a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -195,9 +198,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aaa33a8e72dd043a9872ff9f51415fcf0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#aaa33a8e72dd043a9872ff9f51415fcf0">addMeasurement</a> (long sample, bool neighborListRebuilt)</td></tr>
 <tr class="memdesc:aaa33a8e72dd043a9872ff9f51415fcf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the runtime of a given traversal.  <br /></td></tr>
 <tr class="separator:aaa33a8e72dd043a9872ff9f51415fcf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a411e32258a3a23b30787e5a636fc523a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a411e32258a3a23b30787e5a636fc523a">addHomogeneityAndMaxDensity</a> (double homogeneity, double maxDensity, long time)</td></tr>
-<tr class="memdesc:a411e32258a3a23b30787e5a636fc523a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds measurements of homogeneity and maximal density to the vector of measurements.  <br /></td></tr>
-<tr class="separator:a411e32258a3a23b30787e5a636fc523a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1db05f5ec89ee9d4fe29cd8db30b3b75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a1db05f5ec89ee9d4fe29cd8db30b3b75">addDomainSimilarityStatistics</a> (double pdBinDensityStdDev, double pdBinMaxDensity)</td></tr>
+<tr class="memdesc:a1db05f5ec89ee9d4fe29cd8db30b3b75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds domain similarity statistics to a vector of measurements, which can be smoothed for use in MPI Tuning to find similar domains.  <br /></td></tr>
+<tr class="separator:a1db05f5ec89ee9d4fe29cd8db30b3b75"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad340bf7e91f7b47c951ff70c38c7a30"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#aad340bf7e91f7b47c951ff70c38c7a30">getConfigQueue</a> () const</td></tr>
 <tr class="memdesc:aad340bf7e91f7b47c951ff70c38c7a30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the current queue of configurations.  <br /></td></tr>
 <tr class="separator:aad340bf7e91f7b47c951ff70c38c7a30"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -294,29 +297,23 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a411e32258a3a23b30787e5a636fc523a" name="a411e32258a3a23b30787e5a636fc523a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a411e32258a3a23b30787e5a636fc523a">&#9670;&#160;</a></span>addHomogeneityAndMaxDensity()</h2>
+<a id="a1db05f5ec89ee9d4fe29cd8db30b3b75" name="a1db05f5ec89ee9d4fe29cd8db30b3b75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1db05f5ec89ee9d4fe29cd8db30b3b75">&#9670;&#160;</a></span>addDomainSimilarityStatistics()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void autopas::AutoTuner::addHomogeneityAndMaxDensity </td>
+          <td class="memname">void autopas::AutoTuner::addDomainSimilarityStatistics </td>
           <td>(</td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>homogeneity</em>, </td>
+          <td class="paramname"><em>pdBinDensityStdDev</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>maxDensity</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">long&#160;</td>
-          <td class="paramname"><em>time</em>&#160;</td>
+          <td class="paramname"><em>pdBinMaxDensity</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -326,12 +323,11 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Adds measurements of homogeneity and maximal density to the vector of measurements. </p>
+<p>Adds domain similarity statistics to a vector of measurements, which can be smoothed for use in MPI Tuning to find similar domains. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">homogeneity</td><td></td></tr>
-    <tr><td class="paramname">maxDensity</td><td></td></tr>
-    <tr><td class="paramname">time</td><td>Time it took to obtain these measurements. </td></tr>
+    <tr><td class="paramname">pdBinDensityStdDev</td><td>particle-dependent bin density standard deviation. See <a class="el" href="classautopas_1_1LiveInfo.html#a6aaa416e03c4c9e5ac8095ed2de388bf" title="Gathers key statistics that define the computational profile of the simulation, in order to provide l...">LiveInfo::gather</a> for more information. </td></tr>
+    <tr><td class="paramname">pdBinMaxDensity</td><td>particle-dependent bin maximum density. See <a class="el" href="classautopas_1_1LiveInfo.html#a6aaa416e03c4c9e5ac8095ed2de388bf" title="Gathers key statistics that define the computational profile of the simulation, in order to provide l...">LiveInfo::gather</a> for more information. </td></tr>
   </table>
   </dd>
 </dl>
@@ -661,6 +657,26 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a8e3995baebaeab3d6037c24d28b6d478" name="a8e3995baebaeab3d6037c24d28b6d478"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e3995baebaeab3d6037c24d28b6d478">&#9670;&#160;</a></span>isStartOfTuningPhase()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool autopas::AutoTuner::isStartOfTuningPhase </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns true if the <a class="el" href="classautopas_1_1AutoTuner.html" title="This class manages all logic related to the auto tuning mechanic.">AutoTuner</a> is about to calculate the first interactions of a tuning phase (i.e. </p>
+<p>the first iteration), before tuneConfiguration() has been called. </p><dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 <a id="a4869c59c2bc70ac244e27840a1f716c1" name="a4869c59c2bc70ac244e27840a1f716c1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4869c59c2bc70ac244e27840a1f716c1">&#9670;&#160;</a></span>logTuningResult()</h2>
 
@@ -698,14 +714,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="acd71cda0cc2c6f07b2108aaca118f609" name="acd71cda0cc2c6f07b2108aaca118f609"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acd71cda0cc2c6f07b2108aaca118f609">&#9670;&#160;</a></span>needsHomogeneityAndMaxDensityBeforePrepare()</h2>
+<a id="aaaf7a1571c2b74efa4d31e465f5705ed" name="aaaf7a1571c2b74efa4d31e465f5705ed"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaaf7a1571c2b74efa4d31e465f5705ed">&#9670;&#160;</a></span>needsLiveInfo()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool autopas::AutoTuner::needsHomogeneityAndMaxDensityBeforePrepare </td>
+          <td class="memname">bool autopas::AutoTuner::needsLiveInfo </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -713,8 +729,8 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Indicator whether tuner needs homogeneity and max density information before the next call to <a class="el" href="classautopas_1_1AutoTuner.html#ae50e16a3864ee82c7e6b9525aa43a16b" title="Determines what live infos are needed and passes collected live info to the tuning strategies.">prepareIteration()</a>. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<p>Returns true if the <a class="el" href="classautopas_1_1AutoTuner.html" title="This class manages all logic related to the auto tuning mechanic.">AutoTuner</a> needs live info. </p>
+<p>This occurs if any strategy requires this and <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> is beginning a tuning phase or if a strategy requires domain similarity statistics (taken from <a class="el" href="classautopas_1_1LiveInfo.html" title="This class is able to gather and store important information for a tuning phase from a container and ...">LiveInfo</a>) and <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> is within 10 iterations of a tuning phase. </p><dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="classautopas_1_1AutoTuner.html" title="This class manages all logic related to the auto tuning mechanic.">AutoTuner</a> needs live info. </dd></dl>
 
 </div>
 </div>
@@ -750,27 +766,6 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="ae50e16a3864ee82c7e6b9525aa43a16b" name="ae50e16a3864ee82c7e6b9525aa43a16b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae50e16a3864ee82c7e6b9525aa43a16b">&#9670;&#160;</a></span>prepareIteration()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool autopas::AutoTuner::prepareIteration </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Determines what live infos are needed and passes collected live info to the tuning strategies. </p>
-<dl class="section note"><dt>Note</dt><dd>The live info is not gathered here because then we would need the container.</dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>Bool indicating if live Infos are needed before the next call to tune </dd></dl>
 
 </div>
 </div>
@@ -943,6 +938,26 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="aff832fe7947a0650cfd3c459c74c3ed4" name="aff832fe7947a0650cfd3c459c74c3ed4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff832fe7947a0650cfd3c459c74c3ed4">&#9670;&#160;</a></span>tuningPhaseAboutToBegin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool autopas::AutoTuner::tuningPhaseAboutToBegin </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns true if the <a class="el" href="classautopas_1_1AutoTuner.html" title="This class manages all logic related to the auto tuning mechanic.">AutoTuner</a> is within 10 iterations of the start of a tuning phase. </p>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>

@@ -135,13 +135,17 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>InfoType</b> = std::
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3e0b277ecc9e63205483499502a07887"><td class="memTemplParams" colspan="2">template&lt;class Particle_T , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </td></tr>
-<tr class="memitem:a3e0b277ecc9e63205483499502a07887"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1LiveInfo.html#a3e0b277ecc9e63205483499502a07887">gather</a> (const <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; Particle_T &gt; &amp;container, const <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &amp;functor, unsigned int rebuildFrequency)</td></tr>
-<tr class="memdesc:a3e0b277ecc9e63205483499502a07887"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gathers important information from a particle container and functor.  <br /></td></tr>
-<tr class="separator:a3e0b277ecc9e63205483499502a07887"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6aaa416e03c4c9e5ac8095ed2de388bf"><td class="memTemplParams" colspan="2">template&lt;class Particle_T &gt; </td></tr>
+<tr class="memitem:a6aaa416e03c4c9e5ac8095ed2de388bf"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1LiveInfo.html#a6aaa416e03c4c9e5ac8095ed2de388bf">gather</a> (<a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; Particle_T, true, false &gt; particleIter, size_t rebuildFrequency, size_t numOwnedParticles, std::array&lt; double, 3 &gt; boxMin, std::array&lt; double, 3 &gt; boxMax, double cutoff, double skin)</td></tr>
+<tr class="memdesc:a6aaa416e03c4c9e5ac8095ed2de388bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gathers key statistics that define the computational profile of the simulation, in order to provide lower dimensional and human understandable inputs for the tuning strategies.  <br /></td></tr>
+<tr class="separator:a6aaa416e03c4c9e5ac8095ed2de388bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab5d17a44d9ad1c2df4bc53ea1bf8e995"><td class="memItemLeft" align="right" valign="top">const auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LiveInfo.html#ab5d17a44d9ad1c2df4bc53ea1bf8e995">get</a> () const</td></tr>
 <tr class="memdesc:ab5d17a44d9ad1c2df4bc53ea1bf8e995"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a map of all infos.  <br /></td></tr>
 <tr class="separator:ab5d17a44d9ad1c2df4bc53ea1bf8e995"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a052c9b943c1c475b842308d23c6c9885"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a052c9b943c1c475b842308d23c6c9885"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1LiveInfo.html#a052c9b943c1c475b842308d23c6c9885">get</a> (const std::string &amp;key) const</td></tr>
+<tr class="memdesc:a052c9b943c1c475b842308d23c6c9885"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets a single value from the infos that corresponds to the given string.  <br /></td></tr>
+<tr class="separator:a052c9b943c1c475b842308d23c6c9885"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02b304cd13b8cd4ef0cb21fecf5fed04"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LiveInfo.html#a02b304cd13b8cd4ef0cb21fecf5fed04">toString</a> () const</td></tr>
 <tr class="memdesc:a02b304cd13b8cd4ef0cb21fecf5fed04"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a string containing all live info gathered.  <br /></td></tr>
 <tr class="separator:a02b304cd13b8cd4ef0cb21fecf5fed04"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -162,13 +166,13 @@ Friends</h2></td></tr>
 <div class="textblock"><p>This class is able to gather and store important information for a tuning phase from a container and functor. </p>
 <p>Infos are identified by a string. Their type is InfoType. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3e0b277ecc9e63205483499502a07887" name="a3e0b277ecc9e63205483499502a07887"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3e0b277ecc9e63205483499502a07887">&#9670;&#160;</a></span>gather()</h2>
+<a id="a6aaa416e03c4c9e5ac8095ed2de388bf" name="a6aaa416e03c4c9e5ac8095ed2de388bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6aaa416e03c4c9e5ac8095ed2de388bf">&#9670;&#160;</a></span>gather()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class Particle_T , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
+template&lt;class Particle_T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -176,20 +180,44 @@ template&lt;class Particle_T , class <a class="el" href="classautopas_1_1Pairwis
         <tr>
           <td class="memname">void autopas::LiveInfo::gather </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; Particle_T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>container</em>, </td>
+          <td class="paramtype"><a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; Particle_T, true, false &gt;&#160;</td>
+          <td class="paramname"><em>particleIter</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &amp;&#160;</td>
-          <td class="paramname"><em>functor</em>, </td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>rebuildFrequency</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>rebuildFrequency</em>&#160;</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>numOwnedParticles</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::array&lt; double, 3 &gt;&#160;</td>
+          <td class="paramname"><em>boxMin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::array&lt; double, 3 &gt;&#160;</td>
+          <td class="paramname"><em>boxMax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>cutoff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>skin</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -204,40 +232,61 @@ template&lt;class Particle_T , class <a class="el" href="classautopas_1_1Pairwis
 </table>
 </div><div class="memdoc">
 
-<p>Gathers important information from a particle container and functor. </p>
-<p>The gathered information should allow to estimate the performance of different configurations.</p>
-<p>Currently, it provides:</p><ul>
-<li>numParticles: The number of particles in the container.</li>
-<li>numHaloParticles: The number of particles in the container that are outside of the domain.</li>
+<p>Gathers key statistics that define the computational profile of the simulation, in order to provide lower dimensional and human understandable inputs for the tuning strategies. </p>
+<p>A lot of the information is based on a couple of different spatial bin resolutions:</p><ul>
+<li>cells: Bin dimensions are the same as cells in the Linked Cells container with CSF 1.</li>
+<li>particleDependentBins: Bin dimensions are designed such that the are approximately 10 particles per bin.</li>
+<li>blurredBins: The domain is divided equally into 3x3x3 "blurred" bins</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>It is not clear how useful the statistics derived from the particleDependentBins are, as the "resolution" varies depending on the number of particles. E.g. Consider a sparse simulation with a "macroscopic" heterogeneity and a dense simulation with a "microscopic" heterogeneity but at a "macroscopic" level is rather homogeneous. These could have the same particleDependentBin homogeneity (relative std. dev. of bin counts) but would respond to traversals very differently. This could, however, provide a useful metric for homogeneity which is somewhat independent of particle density (e.g. could be useful for determining the best traversal with one statistic independently of what cell-size factor is chosen)</dd></dl>
+<p>Currently, it provides: -&mdash; Bin Independent Statistics -&mdash;</p><ul>
+<li>numOwnedParticles: The number of particles in the container that are marked as owned.</li>
+<li>numHaloParticles: The number of particles in the container that are marked as halo.</li>
 <li>cutoff: The configured cutoff radius.</li>
 <li>skin: The configured skin radius.</li>
 <li>domainSizeX: The size of the domain on the x-axis.</li>
 <li>domainSizeY: The size of the domain on the y-axis.</li>
 <li>domainSizeZ: The size of the domain on the z-axis.</li>
 <li>particleSize: The number of bytes one particle in AoS layout needs.</li>
-<li>particleSizeNeededByFunctor: The number of bytes the information needed by the functor from each particle occupies. Important for the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> data layout, but irrelevant for the AoS data layout.</li>
-<li>numCells: The number of cells in the domain if a cell has a side-length equal to the cutoff.</li>
-<li>numEmptyCells: The number of empty cells in the domain.</li>
-<li>minParticlesPerCell: The minimum number of particles a cell in the domain contains.</li>
-<li>maxParticlesPerCell: The maximum number of particles a cell in the domain contains.</li>
-<li>avgParticlesPerCell: The average number of particles per cell. (Cells are small so we don't expect outliers that make the average useless).</li>
-<li>estimatedNumNeighborInteractions: Rough estimation of number of neighbor interactions. Assumes that neighboring cells contain roughly the same number of particles. Estimation does not work well if this is not the case.</li>
-<li>percentParticlesPerCellStdDev: The standard deviation of the number of particles in each cell from the average number of particles per cell, divided by the avgParticlesPerCell. -percentParticlesPerBlurredCellStdDev: The standard deviation of the number of particles in each blurred cell, divided by the average number of particles per blurred cell. A blurred cell is exactly 1/27th of the domain.</li>
-<li>threadCount: The number of threads that can be used.</li>
-<li>rebuildFrequency: The current verlet-rebuild-frequency of the simulation.</li>
+<li>threadCount: The number of OMP threads that can be used.</li>
+<li>rebuildFrequency: The current verlet-rebuild-frequency of the simulation. -&mdash; Cell Statistics -&mdash;</li>
+<li>numCells: The number of cell-bins in the domain.</li>
+<li>numEmptyCells: The number of cell-bins that are empty.</li>
+<li>minParticlesPerCell: The minimum number of particles in a cell-bin.</li>
+<li>maxParticlesPerCell: The maximum number of particles in a cell-bin.</li>
+<li>medianParticlesPerCell: The median number of particles per cell-bin.</li>
+<li>lowerQuartileParticlesPerCell: The lower quartile number of particles per cell-bin.</li>
+<li>upperQuartileParticlesPerCell: The upper quartile number of particles per cell-bin.</li>
+<li>meanParticlesPerCell: The average number of particles per cell-bin.</li>
+<li>particlesPerCellStdDev: The standard deviation in the number of particles per cell-bin.</li>
+<li>relativeParticlesPerCellStdDev: The, relative to the mean, standard deviation in the number of particles per cell-bin.</li>
+<li>estimatedNumNeighborInteractions: Rough estimation of number of neighbor interactions. Assumes that neighboring cell-bins contain roughly the same number of particles. Estimation does not work well if this is not the case. -&mdash; Particle Dependent Bin Statistics -&mdash;</li>
+<li>particleDependentBinMaxDensity: The maximum density of particles of a particle-dependent bin.</li>
+<li>particleDependentBinDensityStdDev: The standard deviation in the density of particles per particle-dependent bin. In earlier versions of <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a>, this was referred to as "Homogeneity". -&mdash; Blurred Bin Statistics -&mdash;</li>
+<li>maxParticlesPerBlurredBin: The maximum number of particles in a blurred bin.</li>
+<li>minParticlesPerBlurredBin: The minimum number of particles in a blurred bin.</li>
+<li>medianParticlesPerBlurredBin: The median number of particles per blurred bin.</li>
+<li>lowerQuartileParticlesPerBlurredBin: The lower quartile number of particles per blurred bin.</li>
+<li>upperQuartileParticlesPerBlurredBin: The upper quartile number of particles per blurred bin.</li>
+<li>meanParticlesPerBlurredBin: The mean number of particles per blurred bin.</li>
+<li>particlesPerBlurredBinStdDev: The standard deviation in the number of particles per blurred bin.</li>
+<li>relativeParticlesPerBlurredBinStdDev: The, relative to the mean, standard deviation in the number of particles per blurred bin.</li>
 </ul>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Particle_T</td><td>The type of particle the container stores. </td></tr>
-    <tr><td class="paramname"><a class="el" href="classautopas_1_1PairwiseFunctor.html" title="PairwiseFunctor class.">PairwiseFunctor</a></td><td>The type of functor. </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">container</td><td>The container to gather the infos from. </td></tr>
-    <tr><td class="paramname">functor</td><td>The functor to gather the infos from. </td></tr>
+    <tr><td class="paramname">particleIter</td><td>Iterator to the first particle in the <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> container. </td></tr>
     <tr><td class="paramname">rebuildFrequency</td><td>The current verlet rebuild frequency that is used in the simulation. </td></tr>
+    <tr><td class="paramname">numOwnedParticles</td><td>The number of owned particles in the container. </td></tr>
+    <tr><td class="paramname">boxMin</td><td>Lower left corner of (sub)domain. </td></tr>
+    <tr><td class="paramname">boxMax</td><td>Upper right corner of (sub)domain. </td></tr>
+    <tr><td class="paramname">cutoff</td><td>The cutoff. </td></tr>
+    <tr><td class="paramname">skin</td><td>The (Verlet) skin. </td></tr>
   </table>
   </dd>
 </dl>
@@ -245,7 +294,7 @@ template&lt;class Particle_T , class <a class="el" href="classautopas_1_1Pairwis
 </div>
 </div>
 <a id="ab5d17a44d9ad1c2df4bc53ea1bf8e995" name="ab5d17a44d9ad1c2df4bc53ea1bf8e995"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab5d17a44d9ad1c2df4bc53ea1bf8e995">&#9670;&#160;</a></span>get()</h2>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5d17a44d9ad1c2df4bc53ea1bf8e995">&#9670;&#160;</a></span>get() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -269,6 +318,49 @@ template&lt;class Particle_T , class <a class="el" href="classautopas_1_1Pairwis
 
 <p>Returns a map of all infos. </p>
 <dl class="section return"><dt>Returns</dt><dd>A map of all infos. </dd></dl>
+
+</div>
+</div>
+<a id="a052c9b943c1c475b842308d23c6c9885" name="a052c9b943c1c475b842308d23c6c9885"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a052c9b943c1c475b842308d23c6c9885">&#9670;&#160;</a></span>get() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">T autopas::LiveInfo::get </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>key</em></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets a single value from the infos that corresponds to the given string. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>return type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">key</td><td>string key for the infos map </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>

@@ -154,9 +154,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a5bfdcfaab93b8ad8f82cff883e95b5a4"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a5bfdcfaab93b8ad8f82cff883e95b5a4">deserializeConfigurations</a> (const std::vector&lt; std::byte &gt; &amp;configurationsSerialized)</td></tr>
 <tr class="memdesc:a5bfdcfaab93b8ad8f82cff883e95b5a4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deserialize a vector of bytes into a vector of configurations.  <br /></td></tr>
 <tr class="separator:a5bfdcfaab93b8ad8f82cff883e95b5a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a828e16104000d1148eb64fcf23ca0eed"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a828e16104000d1148eb64fcf23ca0eed">distributeRanksInBuckets</a> (<a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> comm, <a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> *bucket, double smoothedHomogeneity, double maxDensity, double MPITuningMaxDifferenceForBucket, double MPITuningWeightForMaxDensity)</td></tr>
-<tr class="memdesc:a828e16104000d1148eb64fcf23ca0eed"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distribute ranks in buckets, which contain only ranks with similar scenarios.  <br /></td></tr>
-<tr class="separator:a828e16104000d1148eb64fcf23ca0eed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11c88b1f58d7987931f13bb68d5f5edb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a11c88b1f58d7987931f13bb68d5f5edb">distributeRanksInBuckets</a> (<a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> comm, <a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> *bucket, double smoothedPDBinStdDevDensity, double smoothedPDBinMaxDensity, double MPITuningMaxDifferenceForBucket, double MPITuningWeightForMaxDensity)</td></tr>
+<tr class="memdesc:a11c88b1f58d7987931f13bb68d5f5edb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Distribute ranks in buckets, which contain only ranks with similar scenarios.  <br /></td></tr>
+<tr class="separator:a11c88b1f58d7987931f13bb68d5f5edb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a11f0b76390f13141a4c9e4d0ed0529e7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1AutoPasConfigurationCommunicator.html#a11f0b76390f13141a4c9e4d0ed0529e7">gatherConfigurations</a> (<a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> comm, const std::vector&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;localConfigurations, int root)</td></tr>
 <tr class="memdesc:a11f0b76390f13141a4c9e4d0ed0529e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gather the configuration vectors of all ranks in the communicator into one vector at the root process.  <br /></td></tr>
 <tr class="separator:a11f0b76390f13141a4c9e4d0ed0529e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -370,8 +370,8 @@ template&lt;typename TOption &gt; </div>
 
 </div>
 </div>
-<a id="a828e16104000d1148eb64fcf23ca0eed" name="a828e16104000d1148eb64fcf23ca0eed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a828e16104000d1148eb64fcf23ca0eed">&#9670;&#160;</a></span>distributeRanksInBuckets()</h2>
+<a id="a11c88b1f58d7987931f13bb68d5f5edb" name="a11c88b1f58d7987931f13bb68d5f5edb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11c88b1f58d7987931f13bb68d5f5edb">&#9670;&#160;</a></span>distributeRanksInBuckets()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -392,13 +392,13 @@ template&lt;typename TOption &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>smoothedHomogeneity</em>, </td>
+          <td class="paramname"><em>smoothedPDBinStdDevDensity</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>maxDensity</em>, </td>
+          <td class="paramname"><em>smoothedPDBinMaxDensity</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -422,13 +422,13 @@ template&lt;typename TOption &gt; </div>
 
 <p>Distribute ranks in buckets, which contain only ranks with similar scenarios. </p>
 <p>Each bucket then has its own search space.</p>
-<p>If negative (=invalid) values for homogeneity or density are passed, every rank gets its own bucket.</p>
+<p>If negative (=invalid) values for pdBinStdDevDensity or pdBinMaxDensity are passed, every rank gets its own bucket.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">comm</td><td>MPI communicator </td></tr>
     <tr><td class="paramname">bucket</td><td>new MPI communicator for its bucket </td></tr>
-    <tr><td class="paramname">smoothedHomogeneity</td><td>homogeneity smoothed over last 10 iterations. </td></tr>
-    <tr><td class="paramname">maxDensity</td><td>maxDensity smoothed over last 10 iterations. </td></tr>
+    <tr><td class="paramname">smoothedPDBinStdDevDensity</td><td>standard deviation in particle-dependent bin density smoothed over last 10 iterations. See <a class="el" href="classautopas_1_1LiveInfo.html#a6aaa416e03c4c9e5ac8095ed2de388bf" title="Gathers key statistics that define the computational profile of the simulation, in order to provide l...">LiveInfo::gather()</a> for more details. </td></tr>
+    <tr><td class="paramname">smoothedPDBinMaxDensity</td><td>maximum particle-dependent bin density smoothed over last 10 iterations. See <a class="el" href="classautopas_1_1LiveInfo.html#a6aaa416e03c4c9e5ac8095ed2de388bf" title="Gathers key statistics that define the computational profile of the simulation, in order to provide l...">LiveInfo::gather()</a> for more details. </td></tr>
     <tr><td class="paramname">MPITuningMaxDifferenceForBucket</td><td>For MPI-tuning: Maximum of the relative difference in the comparison metric for two ranks which exchange their tuning information. </td></tr>
     <tr><td class="paramname">MPITuningWeightForMaxDensity</td><td>For MPI-tuning: Weight for maxDensity in the calculation for bucket distribution. </td></tr>
   </table>

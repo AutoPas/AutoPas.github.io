@@ -167,9 +167,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad0158d25d113d37ed6455a2af2a1e263"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#ad0158d25d113d37ed6455a2af2a1e263">searchSpaceIsEmpty</a> () const</td></tr>
 <tr class="memdesc:ad0158d25d113d37ed6455a2af2a1e263"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate if the search space is empty.  <br /></td></tr>
 <tr class="separator:ad0158d25d113d37ed6455a2af2a1e263"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5f46ba5f94ad69ecb866bf0ffb33c2d3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#a5f46ba5f94ad69ecb866bf0ffb33c2d3">needsSmoothedHomogeneityAndMaxDensity</a> () const override</td></tr>
-<tr class="memdesc:a5f46ba5f94ad69ecb866bf0ffb33c2d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether the strategy needs smoothed values of homogeneity and max density.  <br /></td></tr>
-<tr class="separator:a5f46ba5f94ad69ecb866bf0ffb33c2d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1dfbb879ec7b94d9d26764d4274dac7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1BayesianClusterSearch.html#ad1dfbb879ec7b94d9d26764d4274dac7">needsDomainSimilarityStatistics</a> () const override</td></tr>
+<tr class="memdesc:ad1dfbb879ec7b94d9d26764d4274dac7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether the strategy needs domain similarity statistics.  <br /></td></tr>
+<tr class="separator:ad1dfbb879ec7b94d9d26764d4274dac7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classautopas_1_1TuningStrategyInterface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classautopas_1_1TuningStrategyInterface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classautopas_1_1TuningStrategyInterface.html">autopas::TuningStrategyInterface</a></td></tr>
 <tr class="memitem:a02d304fb2f47fc32d2662803323fb8b9 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual TuningStrategyOption&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a02d304fb2f47fc32d2662803323fb8b9">getOptionType</a> () const =0</td></tr>
 <tr class="memdesc:a02d304fb2f47fc32d2662803323fb8b9 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get this object's associated TuningStrategyOption type.  <br /></td></tr>
@@ -192,12 +192,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3cc2e5b8444200e7429fd7dd457fc13f inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a3cc2e5b8444200e7429fd7dd457fc13f">rejectConfiguration</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;configuration, bool indefinitely)</td></tr>
 <tr class="memdesc:a3cc2e5b8444200e7429fd7dd457fc13f inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Notify the strategy about a configuration that is (currently) invalid and thus can potentially be dropped from some internal storage.  <br /></td></tr>
 <tr class="separator:a3cc2e5b8444200e7429fd7dd457fc13f inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a55f14f8d8fd82e945783a3715452d99f inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a55f14f8d8fd82e945783a3715452d99f">needsSmoothedHomogeneityAndMaxDensity</a> () const</td></tr>
-<tr class="memdesc:a55f14f8d8fd82e945783a3715452d99f inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether the strategy needs smoothed values of homogeneity and max density.  <br /></td></tr>
-<tr class="separator:a55f14f8d8fd82e945783a3715452d99f inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f063297e8df6c7903651232b372573c inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a3f063297e8df6c7903651232b372573c">receiveSmoothedHomogeneityAndMaxDensity</a> (double homogeneity, double maxDensity)</td></tr>
-<tr class="memdesc:a3f063297e8df6c7903651232b372573c inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to pass smoothed homogeneity and the maximal density to the tuning strategy.  <br /></td></tr>
-<tr class="separator:a3f063297e8df6c7903651232b372573c inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4113e4b9e6e136507cc81c11e07d3b8 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#ad4113e4b9e6e136507cc81c11e07d3b8">needsDomainSimilarityStatistics</a> () const</td></tr>
+<tr class="memdesc:ad4113e4b9e6e136507cc81c11e07d3b8 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate whether the strategy needs domain similarity statistics.  <br /></td></tr>
+<tr class="separator:ad4113e4b9e6e136507cc81c11e07d3b8 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62f0a26dfbe989630aa8ec8354973e00 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningStrategyInterface.html#a62f0a26dfbe989630aa8ec8354973e00">receiveDomainSimilarityStatistics</a> (double pdBinStdDevDensity, double pdBinMaxDensity)</td></tr>
+<tr class="memdesc:a62f0a26dfbe989630aa8ec8354973e00 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to pass smoothed domain similarity statistics (particle-dependent bin standard deviation in density and max density) to the tuning strategy.  <br /></td></tr>
+<tr class="separator:a62f0a26dfbe989630aa8ec8354973e00 inherit pub_methods_classautopas_1_1TuningStrategyInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Assume that the stochastic distribution of the execution time while fixing discrete variables corresponds to a Gaussian Process. </p>
@@ -398,8 +398,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a5f46ba5f94ad69ecb866bf0ffb33c2d3" name="a5f46ba5f94ad69ecb866bf0ffb33c2d3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5f46ba5f94ad69ecb866bf0ffb33c2d3">&#9670;&#160;</a></span>needsSmoothedHomogeneityAndMaxDensity()</h2>
+<a id="ad1dfbb879ec7b94d9d26764d4274dac7" name="ad1dfbb879ec7b94d9d26764d4274dac7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1dfbb879ec7b94d9d26764d4274dac7">&#9670;&#160;</a></span>needsDomainSimilarityStatistics()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -408,7 +408,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool autopas::BayesianClusterSearch::needsSmoothedHomogeneityAndMaxDensity </td>
+          <td class="memname">bool autopas::BayesianClusterSearch::needsDomainSimilarityStatistics </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -421,10 +421,10 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Indicate whether the strategy needs smoothed values of homogeneity and max density. </p>
+<p>Indicate whether the strategy needs domain similarity statistics. </p>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
-<p>Reimplemented from <a class="el" href="classautopas_1_1TuningStrategyInterface.html#a55f14f8d8fd82e945783a3715452d99f">autopas::TuningStrategyInterface</a>.</p>
+<p>Reimplemented from <a class="el" href="classautopas_1_1TuningStrategyInterface.html#ad4113e4b9e6e136507cc81c11e07d3b8">autopas::TuningStrategyInterface</a>.</p>
 
 </div>
 </div>
