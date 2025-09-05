@@ -155,7 +155,7 @@ $(function() {
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="comment">// 0) check if applicable</span></div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keyword">const</span> <span class="keyword">auto</span> overLapps23 = [&amp;]() -&gt; std::array&lt;size_t, 2&gt; {</div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">if</span> (this-&gt;_spaciallyForward) {</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      <span class="keywordflow">return</span> {this-&gt;_overlap[this-&gt;_dimsPerLength[1]], this-&gt;_overlap[this-&gt;_dimsPerLength[2]]};</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>      <span class="keywordflow">return</span> {this-&gt;_overlap[this-&gt;_dimsSortedByLength[1]], this-&gt;_overlap[this-&gt;_dimsSortedByLength[2]]};</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>      <span class="keywordflow">return</span> {0ul, 0ul};</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    }</div>
@@ -179,7 +179,7 @@ $(function() {
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    timers[slice].start();</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    array&lt;unsigned long, 3&gt; myStartArray{0, 0, 0};</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; slice; ++i) {</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      myStartArray[this-&gt;_dimsPerLength[0]] += this-&gt;_sliceThickness[i];</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>      myStartArray[this-&gt;_dimsSortedByLength[0]] += this-&gt;_sliceThickness[i];</div>
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    }</div>
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="comment">// all but the first slice need to lock their starting layers.</span></div>
@@ -189,28 +189,28 @@ $(function() {
 <div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        locks[lockBaseIndex + i].lock();</div>
 <div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>      }</div>
 <div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    }</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keyword">const</span> <span class="keyword">auto</span> lastLayer = myStartArray[this-&gt;_dimsPerLength[0]] + this-&gt;_sliceThickness[slice];</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <span class="keyword">const</span> <span class="keyword">auto</span> lastLayer = myStartArray[this-&gt;_dimsSortedByLength[0]] + this-&gt;_sliceThickness[slice];</div>
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> sliceOffset = 0ul; sliceOffset &lt; this-&gt;_sliceThickness[slice]; ++sliceOffset) {</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <span class="keyword">const</span> <span class="keyword">auto</span> dimSlice = myStartArray[this-&gt;_dimsPerLength[0]] + sliceOffset;</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>      <span class="keyword">const</span> <span class="keyword">auto</span> dimSlice = myStartArray[this-&gt;_dimsSortedByLength[0]] + sliceOffset;</div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>      <span class="comment">// at the last layers request lock for the starting layer of the next</span></div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>      <span class="comment">// slice. Does not apply for the last slice.</span></div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>      <span class="keywordflow">if</span> (slice != numSlices - 1 and dimSlice &gt;= lastLayer - this-&gt;_overlapLongestAxis) {</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        locks[((slice + 1) * this-&gt;_overlapLongestAxis) - (lastLayer - dimSlice)].lock();</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      }</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> dimMedium = 0; dimMedium &lt; this-&gt;_cellsPerDimension[this-&gt;_dimsPerLength[1]] - overLapps23[0];</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>           ++dimMedium) {</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> dimShort = 0; dimShort &lt; this-&gt;_cellsPerDimension[this-&gt;_dimsPerLength[2]] - overLapps23[1];</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>             ++dimShort) {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>      <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> dimMedium = 0;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>           dimMedium &lt; this-&gt;_cellsPerDimension[this-&gt;_dimsSortedByLength[1]] - overLapps23[0]; ++dimMedium) {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        <span class="keywordflow">for</span> (<span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> dimShort = 0;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>             dimShort &lt; this-&gt;_cellsPerDimension[this-&gt;_dimsSortedByLength[2]] - overLapps23[1]; ++dimShort) {</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>          array&lt;unsigned long, 3&gt; idArray = {};</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>          idArray[this-&gt;_dimsPerLength[0]] = dimSlice;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>          idArray[this-&gt;_dimsPerLength[1]] = dimMedium;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>          idArray[this-&gt;_dimsPerLength[2]] = dimShort;</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>          idArray[this-&gt;_dimsSortedByLength[0]] = dimSlice;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>          idArray[this-&gt;_dimsSortedByLength[1]] = dimMedium;</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>          idArray[this-&gt;_dimsSortedByLength[2]] = dimShort;</div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span> </div>
 <div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>          loopBody(idArray[0], idArray[1], idArray[2]);</div>
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        }</div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>      }</div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>      <span class="comment">// at the end of the first layers release the lock</span></div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>      <span class="keywordflow">if</span> (slice &gt; 0 and dimSlice &lt; myStartArray[this-&gt;_dimsPerLength[0]] + this-&gt;_overlapLongestAxis) {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>      <span class="keywordflow">if</span> (slice &gt; 0 and dimSlice &lt; myStartArray[this-&gt;_dimsSortedByLength[0]] + this-&gt;_overlapLongestAxis) {</div>
 <div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>        locks[lockBaseIndex + sliceOffset].unlock();</div>
 <div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="comment">// if lastLayer is reached within overlap area, unlock all following locks</span></div>
 <div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="comment">// this should never be the case if slice thicknesses are set up properly; thickness should always be</span></div>

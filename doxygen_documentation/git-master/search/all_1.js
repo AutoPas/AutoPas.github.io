@@ -17,7 +17,7 @@ var searchData=
   ['_5fcontainers_14',['_containers',['../structautopas_1_1ConfigurationPattern.html#a75fb67400e5358030c143ec3d5791a61',1,'autopas::ConfigurationPattern']]],
   ['_5fdatalayout_15',['_dataLayout',['../classautopas_1_1LCC08CellHandler.html#ab885a7378abaad7c37f07313333b6279',1,'autopas::LCC08CellHandler::_dataLayout'],['../classautopas_1_1TraversalInterface.html#a55f978445ef25816d76a47ad7c3e8df9',1,'autopas::TraversalInterface::_dataLayout']]],
   ['_5fdatalayouts_16',['_dataLayouts',['../structautopas_1_1ConfigurationPattern.html#a9e6cf0d2df092acd64c6dd8a05c16d68',1,'autopas::ConfigurationPattern']]],
-  ['_5fdimsperlength_17',['_dimsPerLength',['../classautopas_1_1SlicedBasedTraversal.html#a3efe2f7fb39280cfc7f9c7c9f116b1dc',1,'autopas::SlicedBasedTraversal']]],
+  ['_5fdimssortedbylength_17',['_dimsSortedByLength',['../classautopas_1_1SlicedBasedTraversal.html#a9d033f19946458ff3dc70b7a59baba2c',1,'autopas::SlicedBasedTraversal']]],
   ['_5fdynamic_18',['_dynamic',['../classautopas_1_1SlicedLockBasedTraversal.html#a3dfd532e2a4e7d801876b10164464cbb',1,'autopas::SlicedLockBasedTraversal']]],
   ['_5ff_19',['_f',['../classautopas_1_1ParticleBase.html#aae187cde27f0e2fde73338beab3c3f3e',1,'autopas::ParticleBase']]],
   ['_5fhaloleaves_20',['_haloLeaves',['../classautopas_1_1OTTraversalInterface.html#a2f038bae2d868dec1cef4c036081a080',1,'autopas::OTTraversalInterface']]],
