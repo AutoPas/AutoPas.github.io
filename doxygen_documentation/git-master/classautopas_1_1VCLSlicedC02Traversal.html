@@ -198,6 +198,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a3624d6da52faf938caef3189aff04cd5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VCLSlicedC02Traversal.html#a3624d6da52faf938caef3189aff04cd5">loadDataLayout</a> () override</td></tr>
 <tr class="memdesc:a3624d6da52faf938caef3189aff04cd5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load Data Layouts required for this Traversal if cells have been set through <a class="el" href="classautopas_1_1CellTraversal.html#a6869a14bbe8b6233f461aa5629f6344e" title="Sets the cells to iterate over.">setCellsToTraverse()</a>.  <br /></td></tr>
 <tr class="separator:a3624d6da52faf938caef3189aff04cd5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6051bae24c522c5255e6622dd2b10162"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VCLSlicedC02Traversal.html#a6051bae24c522c5255e6622dd2b10162">initTraversal</a> () override</td></tr>
+<tr class="memdesc:a6051bae24c522c5255e6622dd2b10162"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load Data Layouts and sets up slice thicknesses.  <br /></td></tr>
+<tr class="separator:a6051bae24c522c5255e6622dd2b10162"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e420d66e99cbe728114f32bf715d444"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VCLSlicedC02Traversal.html#a7e420d66e99cbe728114f32bf715d444">endTraversal</a> () override</td></tr>
 <tr class="memdesc:a7e420d66e99cbe728114f32bf715d444"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write Data to AoS if cells have been set through <a class="el" href="classautopas_1_1CellTraversal.html#a6869a14bbe8b6233f461aa5629f6344e" title="Sets the cells to iterate over.">setCellsToTraverse()</a>.  <br /></td></tr>
 <tr class="separator:a7e420d66e99cbe728114f32bf715d444"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -291,18 +294,22 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~VCLTraversalInter
 <tr class="memdesc:a922e58d0f1d639ee6abad0dfdfddc67f inherit pub_methods_classautopas_1_1VCLTraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the towers of the cluster list for the traversal to iterate over.  <br /></td></tr>
 <tr class="separator:a922e58d0f1d639ee6abad0dfdfddc67f inherit pub_methods_classautopas_1_1VCLTraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef7269bb662368d8ec6c3904f330c2df inherit pub_methods_classautopas_1_1VCLTraversalInterface"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VCLTraversalInterface.html#aef7269bb662368d8ec6c3904f330c2df">needsStaticClusterThreadPartition</a> ()</td></tr>
-<tr class="memdesc:aef7269bb662368d8ec6c3904f330c2df inherit pub_methods_classautopas_1_1VCLTraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this traversal needs the static cluster thread partiton of the cluster list.  <br /></td></tr>
+<tr class="memdesc:aef7269bb662368d8ec6c3904f330c2df inherit pub_methods_classautopas_1_1VCLTraversalInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns whether this traversal needs the static cluster thread partition of the cluster list.  <br /></td></tr>
 <tr class="separator:aef7269bb662368d8ec6c3904f330c2df inherit pub_methods_classautopas_1_1VCLTraversalInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
 Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_methods_classautopas_1_1SlicedBasedTraversal"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_classautopas_1_1SlicedBasedTraversal')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="classautopas_1_1SlicedBasedTraversal.html">autopas::SlicedBasedTraversal&lt; ParticleCell, Functor &gt;</a></td></tr>
-<tr class="memitem:ad18e64e938b20ea1b7a568ba9676650a inherit pro_methods_classautopas_1_1SlicedBasedTraversal"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1SlicedBasedTraversal.html#ad18e64e938b20ea1b7a568ba9676650a">init</a> (const std::array&lt; unsigned long, 3 &gt; &amp;dims)</td></tr>
-<tr class="memdesc:ad18e64e938b20ea1b7a568ba9676650a inherit pro_methods_classautopas_1_1SlicedBasedTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the cell structure of the traversal.  <br /></td></tr>
-<tr class="separator:ad18e64e938b20ea1b7a568ba9676650a inherit pro_methods_classautopas_1_1SlicedBasedTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92898e7f46ff580fdff5fde6a023c9d9 inherit pro_methods_classautopas_1_1SlicedBasedTraversal"><td class="memItemLeft" align="right" valign="top"><a id="a92898e7f46ff580fdff5fde6a023c9d9" name="a92898e7f46ff580fdff5fde6a023c9d9"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><b>init</b> ()</td></tr>
+<tr class="memdesc:a92898e7f46ff580fdff5fde6a023c9d9 inherit pro_methods_classautopas_1_1SlicedBasedTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resets the cell structure of the traversal. <br /></td></tr>
+<tr class="separator:a92898e7f46ff580fdff5fde6a023c9d9 inherit pro_methods_classautopas_1_1SlicedBasedTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a78bfed3414156e922636844d65d6335d inherit pro_methods_classautopas_1_1SlicedBasedTraversal"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1SlicedBasedTraversal.html#a78bfed3414156e922636844d65d6335d">loadDataLayout</a> ()</td></tr>
 <tr class="memdesc:a78bfed3414156e922636844d65d6335d inherit pro_methods_classautopas_1_1SlicedBasedTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load Data Layouts required for this Traversal if cells have been set through <a class="el" href="classautopas_1_1CellTraversal.html#a6869a14bbe8b6233f461aa5629f6344e" title="Sets the cells to iterate over.">setCellsToTraverse()</a>.  <br /></td></tr>
 <tr class="separator:a78bfed3414156e922636844d65d6335d inherit pro_methods_classautopas_1_1SlicedBasedTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9565c995fc93ce430891ced6f1c6d2f2 inherit pro_methods_classautopas_1_1SlicedBasedTraversal"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1SlicedBasedTraversal.html#a9565c995fc93ce430891ced6f1c6d2f2">reinitForVCL</a> (const <a class="el" href="classautopas_1_1VerletClusterLists.html">VerletClusterLists</a>&lt; typename <a class="el" href="classautopas_1_1ParticleCell.html#af02347c5927b01556f16d950de9f5a53">ParticleCell::ParticleType</a> &gt; *vcl)</td></tr>
+<tr class="memdesc:a9565c995fc93ce430891ced6f1c6d2f2 inherit pro_methods_classautopas_1_1SlicedBasedTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update cell information based on <a class="el" href="classautopas_1_1VerletClusterLists.html" title="Particles are divided into clusters.">VerletClusterLists</a>.  <br /></td></tr>
+<tr class="separator:a9565c995fc93ce430891ced6f1c6d2f2 inherit pro_methods_classautopas_1_1SlicedBasedTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classautopas_1_1SlicedBasedTraversal"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classautopas_1_1SlicedBasedTraversal')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classautopas_1_1SlicedBasedTraversal.html">autopas::SlicedBasedTraversal&lt; ParticleCell, Functor &gt;</a></td></tr>
 <tr class="memitem:a0bce2751539f2dac8b3391f98c682ada inherit pro_attribs_classautopas_1_1SlicedBasedTraversal"><td class="memItemLeft" align="right" valign="top">std::array&lt; unsigned long, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1SlicedBasedTraversal.html#a0bce2751539f2dac8b3391f98c682ada">_overlap</a></td></tr>
 <tr class="memdesc:a0bce2751539f2dac8b3391f98c682ada inherit pro_attribs_classautopas_1_1SlicedBasedTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overlap of interacting cells.  <br /></td></tr>
@@ -323,6 +330,10 @@ std::vector&lt; unsigned long &gt;&#160;</td><td class="memItemRight" valign="bo
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>_spaciallyForward</b></td></tr>
 <tr class="memdesc:a93d0e0f98f870569ee72b1a9d3f6f5ab inherit pro_attribs_classautopas_1_1SlicedBasedTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether the base step only covers neigboring cells tha are spacially forward (for example c08). <br /></td></tr>
 <tr class="separator:a93d0e0f98f870569ee72b1a9d3f6f5ab inherit pro_attribs_classautopas_1_1SlicedBasedTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0ecad2621896bcb9da9442616c16be47 inherit pro_attribs_classautopas_1_1SlicedBasedTraversal"><td class="memItemLeft" align="right" valign="top"><a id="a0ecad2621896bcb9da9442616c16be47" name="a0ecad2621896bcb9da9442616c16be47"></a>
+std::array&lt; double, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_cellLength</b></td></tr>
+<tr class="memdesc:a0ecad2621896bcb9da9442616c16be47 inherit pro_attribs_classautopas_1_1SlicedBasedTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cell length in CellBlock3D. <br /></td></tr>
+<tr class="separator:a0ecad2621896bcb9da9442616c16be47 inherit pro_attribs_classautopas_1_1SlicedBasedTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classautopas_1_1CellTraversal"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classautopas_1_1CellTraversal')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classautopas_1_1CellTraversal.html">autopas::CellTraversal&lt; ParticleCell &gt;</a></td></tr>
 <tr class="memitem:a6f15630c1c150354892dd12ffead19f7 inherit pro_attribs_classautopas_1_1CellTraversal"><td class="memItemLeft" align="right" valign="top">std::array&lt; unsigned long, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellTraversal.html#a6f15630c1c150354892dd12ffead19f7">_cellsPerDimension</a></td></tr>
 <tr class="memdesc:a6f15630c1c150354892dd12ffead19f7 inherit pro_attribs_classautopas_1_1CellTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">The dimensions of the cellblock.  <br /></td></tr>
@@ -504,6 +515,37 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 <dl class="section return"><dt>Returns</dt><dd>Enum representing traversal. </dd></dl>
 
 <p>Implements <a class="el" href="classautopas_1_1TraversalInterface.html#a37474936c05b085f9ad3be1de9f86aaa">autopas::TraversalInterface</a>.</p>
+
+</div>
+</div>
+<a id="a6051bae24c522c5255e6622dd2b10162" name="a6051bae24c522c5255e6622dd2b10162"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6051bae24c522c5255e6622dd2b10162">&#9670;&#160;</a></span>initTraversal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1VCLSlicedC02Traversal.html">autopas::VCLSlicedC02Traversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt;::initTraversal </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Load Data Layouts and sets up slice thicknesses. </p>
+
+<p>Reimplemented from <a class="el" href="classautopas_1_1SlicedBasedTraversal.html#a065d8878c89690602269b532a1daf079">autopas::SlicedBasedTraversal&lt; ParticleCell, Functor &gt;</a>.</p>
 
 </div>
 </div>

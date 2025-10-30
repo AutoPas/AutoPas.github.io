@@ -68,8 +68,9 @@ var searchData=
   ['fuzzysetfactory_65',['FuzzySetFactory',['../classautopas_1_1FuzzyLogic_1_1FuzzySetFactory.html',1,'autopas::FuzzyLogic::FuzzySetFactory'],['../classautopas_1_1FuzzyLogic_1_1FuzzySetFactory.html#a4fbeb6a4b825c80b6a4f260cbb088e97',1,'autopas::FuzzyLogic::FuzzySetFactory::FuzzySetFactory()']]],
   ['fuzzysetfactory_2ecpp_66',['FuzzySetFactory.cpp',['../FuzzySetFactory_8cpp.html',1,'']]],
   ['fuzzysetfactory_2eh_67',['FuzzySetFactory.h',['../FuzzySetFactory_8h.html',1,'']]],
-  ['fuzzytuning_68',['FuzzyTuning',['../classautopas_1_1FuzzyTuning.html',1,'autopas::FuzzyTuning'],['../classautopas_1_1FuzzyTuning.html#acbba1d2eedb866c497f5c942ffbbdb10',1,'autopas::FuzzyTuning::FuzzyTuning()']]],
+  ['fuzzytuning_68',['FuzzyTuning',['../classautopas_1_1FuzzyTuning.html',1,'autopas']]],
   ['fuzzytuning_69',['fuzzyTuning',['../classautopas_1_1options_1_1TuningStrategyOption.html#a04571989e3098ecfedeb774aad1f9af4af807f57d91abc989862b91d3bbd25c25',1,'autopas::options::TuningStrategyOption']]],
-  ['fuzzytuning_2ecpp_70',['FuzzyTuning.cpp',['../FuzzyTuning_8cpp.html',1,'']]],
-  ['fuzzytuning_2eh_71',['FuzzyTuning.h',['../FuzzyTuning_8h.html',1,'']]]
+  ['fuzzytuning_70',['FuzzyTuning',['../classautopas_1_1FuzzyTuning.html#acbba1d2eedb866c497f5c942ffbbdb10',1,'autopas::FuzzyTuning']]],
+  ['fuzzytuning_2ecpp_71',['FuzzyTuning.cpp',['../FuzzyTuning_8cpp.html',1,'']]],
+  ['fuzzytuning_2eh_72',['FuzzyTuning.h',['../FuzzyTuning_8h.html',1,'']]]
 ];

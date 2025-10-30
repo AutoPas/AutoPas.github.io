@@ -167,9 +167,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a44c37b0c167bb47bae70dbd9af0a4288"><td class="memItemLeft" align="right" valign="top">ContainerOption&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VLCAllCellsNeighborList.html#a44c37b0c167bb47bae70dbd9af0a4288">getContainerType</a> () const override</td></tr>
 <tr class="memdesc:a44c37b0c167bb47bae70dbd9af0a4288"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the container type of this neighbor list and the container it belongs to.    <br /></td></tr>
 <tr class="separator:a44c37b0c167bb47bae70dbd9af0a4288"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33d050b23f61cbf2b4bb6a505ac9ada7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VLCAllCellsNeighborList.html#a33d050b23f61cbf2b4bb6a505ac9ada7">buildAoSNeighborList</a> (TraversalOption vlcTraversalOpt, <a class="el" href="classautopas_1_1LinkedCells.html">LinkedCells</a>&lt; Particle_T &gt; &amp;linkedCells, bool useNewton3)</td></tr>
-<tr class="memdesc:a33d050b23f61cbf2b4bb6a505ac9ada7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds AoS neighbor list from underlying linked cells object.    <br /></td></tr>
-<tr class="separator:a33d050b23f61cbf2b4bb6a505ac9ada7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abab0a6c26e231d459ecb21b877d388c3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VLCAllCellsNeighborList.html#abab0a6c26e231d459ecb21b877d388c3">buildAoSNeighborList</a> (TraversalOption vlcTraversalOpt, <a class="el" href="classautopas_1_1LinkedCells.html">LinkedCells</a>&lt; Particle_T &gt; &amp;linkedCells, bool useNewton3) override</td></tr>
+<tr class="memdesc:abab0a6c26e231d459ecb21b877d388c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Builds AoS neighbor list from underlying linked cells object.    <br /></td></tr>
+<tr class="separator:abab0a6c26e231d459ecb21b877d388c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1ec98b066eaf4fcdf9141ac1cbd71321"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VLCAllCellsNeighborList.html#a1ec98b066eaf4fcdf9141ac1cbd71321">getNumberOfPartners</a> (const Particle_T *particle) const override</td></tr>
 <tr class="memdesc:a1ec98b066eaf4fcdf9141ac1cbd71321"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the number of neighbors over all neighbor lists that belong to this particle.    <br /></td></tr>
 <tr class="separator:a1ec98b066eaf4fcdf9141ac1cbd71321"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -231,12 +231,14 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class Particle_T&gt;<br />
 class autopas::VLCAllCellsNeighborList&lt; Particle_T &gt;</div><p>Neighbor list to be used with <a class="el" href="classautopas_1_1VerletListsCells.html" title="Linked Cells with Verlet Lists container.">VerletListsCells</a> container. </p>
+<p>Forward declaration of the neighbor list types used in this interface.</p>
 <p>Classic implementation of verlet lists based on linked cells. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">Particle_T</td><td>Type of particle to be used for this neighbor list. </td></tr>
+    <tr><td class="paramname">Particle_T</td><td>Type of particle to be used for this neighbor list.</td></tr>
   </table>
   </dd>
 </dl>
+<p>This avoid circular dependencies in the header files. <a class="el" href="VLCAllCellsNeighborList_8h.html">VLCAllCellsNeighborList.h</a>/VLCCellPairNeighborList.h -&gt; <a class="el" href="VLCTraversalInterface_8h.html">VLCTraversalInterface.h</a> (This file) </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a81cc178a45607f9f4af4f87512767df3" name="a81cc178a45607f9f4af4f87512767df3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a81cc178a45607f9f4af4f87512767df3">&#9670;&#160;</a></span>SoAListType</h2>
@@ -277,8 +279,8 @@ template&lt;class Particle_T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a33d050b23f61cbf2b4bb6a505ac9ada7" name="a33d050b23f61cbf2b4bb6a505ac9ada7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33d050b23f61cbf2b4bb6a505ac9ada7">&#9670;&#160;</a></span>buildAoSNeighborList()</h2>
+<a id="abab0a6c26e231d459ecb21b877d388c3" name="abab0a6c26e231d459ecb21b877d388c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abab0a6c26e231d459ecb21b877d388c3">&#9670;&#160;</a></span>buildAoSNeighborList()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -314,7 +316,7 @@ template&lt;class Particle_T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

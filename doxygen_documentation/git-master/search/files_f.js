@@ -25,7 +25,6 @@ var searchData=
   ['sphparticle_2ecpp_22',['SPHParticle.cpp',['../SPHParticle_8cpp.html',1,'']]],
   ['sphparticle_2eh_23',['SPHParticle.h',['../SPHParticle_8h.html',1,'']]],
   ['staticboolselector_2eh_24',['StaticBoolSelector.h',['../StaticBoolSelector_8h.html',1,'']]],
-  ['staticcellselector_2eh_25',['StaticCellSelector.h',['../StaticCellSelector_8h.html',1,'']]],
-  ['staticcontainerselector_2eh_26',['StaticContainerSelector.h',['../StaticContainerSelector_8h.html',1,'']]],
-  ['stringutils_2eh_27',['StringUtils.h',['../StringUtils_8h.html',1,'']]]
+  ['staticcontainerselector_2eh_25',['StaticContainerSelector.h',['../StaticContainerSelector_8h.html',1,'']]],
+  ['stringutils_2eh_26',['StringUtils.h',['../StringUtils_8h.html',1,'']]]
 ];

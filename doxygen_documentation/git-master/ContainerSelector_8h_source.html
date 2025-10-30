@@ -118,182 +118,106 @@ $(function() {
 <a href="ContainerSelector_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span> </div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;array&gt;</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="CellBasedParticleContainer_8h.html">autopas/containers/CellBasedParticleContainer.h</a>&quot;</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="DirectSum_8h.html">autopas/containers/directSum/DirectSum.h</a>&quot;</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="LinkedCells_8h.html">autopas/containers/linkedCells/LinkedCells.h</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;autopas/containers/linkedCells/LinkedCellsReferences.h&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="Octree_8h.html">autopas/containers/octree/Octree.h</a>&quot;</span></div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="VerletClusterLists_8h.html">autopas/containers/verletClusterLists/VerletClusterLists.h</a>&quot;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="VarVerletLists_8h.html">autopas/containers/verletListsCellBased/varVerletLists/VarVerletLists.h</a>&quot;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="VerletNeighborListAsBuild_8h.html">autopas/containers/verletListsCellBased/varVerletLists/neighborLists/asBuild/VerletNeighborListAsBuild.h</a>&quot;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="VerletLists_8h.html">autopas/containers/verletListsCellBased/verletLists/VerletLists.h</a>&quot;</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="VerletListsCells_8h.html">autopas/containers/verletListsCellBased/verletListsCells/VerletListsCells.h</a>&quot;</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &quot;<a class="code" href="VerletListsCellsHelpers_8h.html">autopas/containers/verletListsCellBased/verletListsCells/VerletListsCellsHelpers.h</a>&quot;</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &quot;<a class="code" href="ContainerOption_8h.html">autopas/options/ContainerOption.h</a>&quot;</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &quot;<a class="code" href="ContainerSelectorInfo_8h.html">autopas/tuning/selectors/ContainerSelectorInfo.h</a>&quot;</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &quot;<a class="code" href="NumParticlesEstimator_8h.html">autopas/utils/NumParticlesEstimator.h</a>&quot;</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">#include &quot;<a class="code" href="StringUtils_8h.html">autopas/utils/StringUtils.h</a>&quot;</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceautopas.html">autopas</a> {</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle_T&gt;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="classautopas_1_1ContainerSelector.html">   40</a></span><span class="keyword">class </span><a class="code hl_class" href="classautopas_1_1ContainerSelector.html">ContainerSelector</a> {</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="classautopas_1_1ContainerSelector.html#ab50ae02170f850be73dbf06bc14c19a4">   48</a></span>  <a class="code hl_function" href="classautopas_1_1ContainerSelector.html#ab50ae02170f850be73dbf06bc14c19a4">ContainerSelector</a>(<span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;boxMin, <span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;boxMax, <span class="keywordtype">double</span> cutoff)</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>      : _boxMin(boxMin), _boxMax(boxMax), _cutoff(cutoff), _currentContainer(nullptr), _currentInfo() {}</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1ContainerSelector.html#a9e210b31459748b298a71612e1900fe2">selectContainer</a>(ContainerOption containerOption, <a class="code hl_class" href="classautopas_1_1ContainerSelectorInfo.html">ContainerSelectorInfo</a> containerInfo);</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="classautopas_1_1ContainerSelector.html#ae389f581cb955f02bb932c0bdb71524d">   63</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1ContainerSelector.html#ae389f581cb955f02bb932c0bdb71524d">resizeBox</a>(<span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;boxMin, <span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;boxMax) {</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    _boxMin = boxMin;</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    _boxMax = boxMax;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    _currentContainer = std::move(generateContainer(_currentContainer-&gt;getContainerType(), _currentInfo));</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  }</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  <span class="keyword">inline</span> <a class="code hl_class" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface&lt;Particle_T&gt;</a> &amp;<a class="code hl_function" href="classautopas_1_1ContainerSelector.html#af8cc959db9fbed39c2c43e536cd7890b">getCurrentContainer</a>();</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keyword">inline</span> <span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface&lt;Particle_T&gt;</a> &amp;<a class="code hl_function" href="classautopas_1_1ContainerSelector.html#af8cc959db9fbed39c2c43e536cd7890b">getCurrentContainer</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  std::unique_ptr&lt;autopas::ParticleContainerInterface&lt;Particle_T&gt;&gt; generateContainer(</div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      ContainerOption containerChoice, <a class="code hl_class" href="classautopas_1_1ContainerSelectorInfo.html">ContainerSelectorInfo</a> containerInfo);</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>  std::array&lt;double, 3&gt; _boxMin, _boxMax;</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> _cutoff;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  std::unique_ptr&lt;autopas::ParticleContainerInterface&lt;Particle_T&gt;&gt; _currentContainer;</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <a class="code hl_class" href="classautopas_1_1ContainerSelectorInfo.html">ContainerSelectorInfo</a> _currentInfo;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>};</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle_T&gt;</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>std::unique_ptr&lt;autopas::ParticleContainerInterface&lt;Particle_T&gt;&gt; ContainerSelector&lt;Particle_T&gt;::generateContainer(</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    ContainerOption containerChoice, ContainerSelectorInfo containerInfo) {</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  std::unique_ptr&lt;autopas::ParticleContainerInterface&lt;Particle_T&gt;&gt; container;</div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  <span class="keywordflow">switch</span> (containerChoice) {</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordflow">case</span> ContainerOption::directSum: {</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>      container = std::make_unique&lt;DirectSum&lt;Particle_T&gt;&gt;(_boxMin, _boxMax, _cutoff, containerInfo.verletSkin,</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>                                                          containerInfo.verletRebuildFrequency);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    }</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <span class="keywordflow">case</span> ContainerOption::linkedCells: {</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>      container = std::make_unique&lt;LinkedCells&lt;Particle_T&gt;&gt;(_boxMin, _boxMax, _cutoff, containerInfo.verletSkin,</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>                                                            containerInfo.verletRebuildFrequency,</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                                                            containerInfo.cellSizeFactor, containerInfo.loadEstimator);</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    }</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">case</span> ContainerOption::linkedCellsReferences: {</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>      container = std::make_unique&lt;LinkedCellsReferences&lt;Particle_T&gt;&gt;(</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>          _boxMin, _boxMax, _cutoff, containerInfo.verletSkin, containerInfo.verletRebuildFrequency,</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>          containerInfo.cellSizeFactor);</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordflow">case</span> ContainerOption::verletLists: {</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>      container = std::make_unique&lt;VerletLists&lt;Particle_T&gt;&gt;(</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>          _boxMin, _boxMax, _cutoff, containerInfo.verletSkin, containerInfo.verletRebuildFrequency,</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>          <a class="code hl_enumvalue" href="classautopas_1_1VerletLists.html#a1b26e3d1bd7b90b726c27b5a5b0ef4cea6973e7d0512a5dcbe82a2294e311dc39">VerletLists&lt;Particle_T&gt;::BuildVerletListType::VerletSoA</a>, containerInfo.cellSizeFactor);</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    }</div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    <span class="keywordflow">case</span> ContainerOption::verletListsCells: {</div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>      container = std::make_unique&lt;VerletListsCells&lt;Particle_T, VLCAllCellsNeighborList&lt;Particle_T&gt;&gt;&gt;(</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>          _boxMin, _boxMax, _cutoff, containerInfo.verletSkin, containerInfo.verletRebuildFrequency,</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>          containerInfo.cellSizeFactor, containerInfo.loadEstimator, VerletListsCellsHelpers::VLCBuildType::soaBuild);</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    }</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    <span class="keywordflow">case</span> ContainerOption::verletClusterLists: {</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>      container = std::make_unique&lt;VerletClusterLists&lt;Particle_T&gt;&gt;(</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>          _boxMin, _boxMax, _cutoff, containerInfo.verletSkin, containerInfo.verletRebuildFrequency,</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>          containerInfo.verletClusterSize, containerInfo.loadEstimator);</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>    }</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>    <span class="keywordflow">case</span> ContainerOption::varVerletListsAsBuild: {</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>      container = std::make_unique&lt;VarVerletLists&lt;Particle_T, VerletNeighborListAsBuild&lt;Particle_T&gt;&gt;&gt;(</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>          _boxMin, _boxMax, _cutoff, containerInfo.verletSkin, containerInfo.verletRebuildFrequency,</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>          containerInfo.cellSizeFactor);</div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    }</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    <span class="keywordflow">case</span> ContainerOption::pairwiseVerletLists: {</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>      container = std::make_unique&lt;VerletListsCells&lt;Particle_T, VLCCellPairNeighborList&lt;Particle_T&gt;&gt;&gt;(</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>          _boxMin, _boxMax, _cutoff, containerInfo.verletSkin, containerInfo.verletRebuildFrequency,</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>          containerInfo.cellSizeFactor, containerInfo.loadEstimator, VerletListsCellsHelpers::VLCBuildType::soaBuild);</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>    }</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>    <span class="keywordflow">case</span> ContainerOption::octree: {</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>      container =</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>          std::make_unique&lt;Octree&lt;Particle_T&gt;&gt;(_boxMin, _boxMax, _cutoff, containerInfo.verletSkin,</div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                                               containerInfo.verletRebuildFrequency, containerInfo.cellSizeFactor);</div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>      <span class="keywordflow">break</span>;</div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    }</div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    <span class="keywordflow">default</span>: {</div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>      <a class="code hl_function" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">utils::ExceptionHandler::exception</a>(<span class="stringliteral">&quot;ContainerSelector: Container type {} is not a known type!&quot;</span>,</div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                                         containerChoice.to_string());</div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>    }</div>
-<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  }</div>
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  <span class="comment">// copy particles so they do not get lost when container is switched</span></div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>  <span class="keywordflow">if</span> (_currentContainer != <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>    <span class="comment">// with these assumptions slightly more space is reserved as numParticlesTotal already includes halos</span></div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    <span class="keyword">const</span> <span class="keyword">auto</span> numParticlesTotal = _currentContainer-&gt;size();</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>    <span class="keyword">const</span> <span class="keyword">auto</span> numParticlesHalo = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1NumParticlesEstimator.html#a2e1945cd199bdc217e444dcbe9a895eb">autopas::utils::NumParticlesEstimator::estimateNumHalosUniform</a>(</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        numParticlesTotal, _currentContainer-&gt;getBoxMin(), _currentContainer-&gt;getBoxMax(),</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        _currentContainer-&gt;getInteractionLength());</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    container-&gt;reserve(numParticlesTotal, numParticlesHalo);</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> particleIter = _currentContainer-&gt;begin(IteratorBehavior::ownedOrHalo); particleIter.isValid();</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>         ++particleIter) {</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>      <span class="comment">// add particle as inner if it is owned</span></div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>      <span class="keywordflow">if</span> (particleIter-&gt;isOwned()) {</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        container-&gt;addParticle(*particleIter);</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>        container-&gt;addHaloParticle(*particleIter);</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>      }</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>    }</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>  }</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span> </div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>  <span class="keywordflow">return</span> container;</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>}</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span> </div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle_T&gt;</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno"><a class="line" href="classautopas_1_1ContainerSelector.html#af8cc959db9fbed39c2c43e536cd7890b">  188</a></span><a class="code hl_class" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface&lt;Particle_T&gt;</a> &amp;<a class="code hl_function" href="classautopas_1_1ContainerSelector.html#af8cc959db9fbed39c2c43e536cd7890b">ContainerSelector&lt;Particle_T&gt;::getCurrentContainer</a>() {</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  <span class="keywordflow">if</span> (_currentContainer == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    <a class="code hl_function" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a>(</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        <span class="stringliteral">&quot;ContainerSelector: getCurrentContainer() called before any container was selected!&quot;</span>);</div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  }</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  <span class="keywordflow">return</span> *_currentContainer;</div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>}</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span> </div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle_T&gt;</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="classautopas_1_1ContainerSelector.html#aeee980f2678dfdc59a0695d9828bd296">  197</a></span><span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface&lt;Particle_T&gt;</a> &amp;<a class="code hl_function" href="classautopas_1_1ContainerSelector.html#af8cc959db9fbed39c2c43e536cd7890b">ContainerSelector&lt;Particle_T&gt;::getCurrentContainer</a>()<span class="keyword"> const </span>{</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>  <span class="keywordflow">if</span> (_currentContainer == <span class="keyword">nullptr</span>) {</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    <a class="code hl_function" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a>(</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <span class="stringliteral">&quot;ContainerSelector: getCurrentContainer() called before any container was selected!&quot;</span>);</div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>  }</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>  <span class="keywordflow">return</span> *_currentContainer;</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>}</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle_T&gt;</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno"><a class="line" href="classautopas_1_1ContainerSelector.html#a9e210b31459748b298a71612e1900fe2">  206</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1ContainerSelector.html#a9e210b31459748b298a71612e1900fe2">ContainerSelector&lt;Particle_T&gt;::selectContainer</a>(ContainerOption containerOption,</div>
-<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>                                                    <a class="code hl_class" href="classautopas_1_1ContainerSelectorInfo.html">ContainerSelectorInfo</a> containerInfo) {</div>
-<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>  <span class="comment">// Only do something if we have no container, a new type is required, or the info changed</span></div>
-<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>  <span class="keywordflow">if</span> (_currentContainer == <span class="keyword">nullptr</span> or _currentContainer-&gt;getContainerType() != containerOption or</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>      _currentInfo != containerInfo) {</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    _currentContainer = std::move(generateContainer(containerOption, containerInfo));</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    _currentInfo = containerInfo;</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>  }</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>}</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>}  <span class="comment">// namespace autopas</span></div>
-<div class="ttc" id="aCellBasedParticleContainer_8h_html"><div class="ttname"><a href="CellBasedParticleContainer_8h.html">CellBasedParticleContainer.h</a></div></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &quot;<a class="code" href="DirectSum_8h.html">autopas/containers/directSum/DirectSum.h</a>&quot;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &quot;<a class="code" href="LinkedCells_8h.html">autopas/containers/linkedCells/LinkedCells.h</a>&quot;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &quot;autopas/containers/linkedCells/LinkedCellsReferences.h&quot;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &quot;<a class="code" href="Octree_8h.html">autopas/containers/octree/Octree.h</a>&quot;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="VerletClusterLists_8h.html">autopas/containers/verletClusterLists/VerletClusterLists.h</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="VarVerletLists_8h.html">autopas/containers/verletListsCellBased/varVerletLists/VarVerletLists.h</a>&quot;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="VerletNeighborListAsBuild_8h.html">autopas/containers/verletListsCellBased/varVerletLists/neighborLists/asBuild/VerletNeighborListAsBuild.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="VerletLists_8h.html">autopas/containers/verletListsCellBased/verletLists/VerletLists.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &quot;<a class="code" href="VerletListsCells_8h.html">autopas/containers/verletListsCellBased/verletListsCells/VerletListsCells.h</a>&quot;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="VerletListsCellsHelpers_8h.html">autopas/containers/verletListsCellBased/verletListsCells/VerletListsCellsHelpers.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &quot;<a class="code" href="VLCAllCellsNeighborList_8h.html">autopas/containers/verletListsCellBased/verletListsCells/neighborLists/VLCAllCellsNeighborList.h</a>&quot;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &quot;<a class="code" href="ContainerOption_8h.html">autopas/options/ContainerOption.h</a>&quot;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &quot;<a class="code" href="ContainerSelectorInfo_8h.html">autopas/tuning/selectors/ContainerSelectorInfo.h</a>&quot;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespaceautopas.html">autopas</a> {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle_T&gt;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classautopas_1_1ContainerSelector.html">   31</a></span><span class="keyword">class </span><a class="code hl_class" href="classautopas_1_1ContainerSelector.html">ContainerSelector</a> {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>  <span class="keyword">static</span> std::unique_ptr&lt;ParticleContainerInterface&lt;Particle_T&gt;&gt; <a class="code hl_function" href="classautopas_1_1ContainerSelector.html#a6c23e08619f118d3e357447584373460">generateContainer</a>(</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      ContainerOption containerChoice, <span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1ContainerSelectorInfo.html">ContainerSelectorInfo</a> &amp;containerInfo);</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>};</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Particle_T&gt;</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="classautopas_1_1ContainerSelector.html#a6c23e08619f118d3e357447584373460">   44</a></span>std::unique_ptr&lt;ParticleContainerInterface&lt;Particle_T&gt;&gt; <a class="code hl_function" href="classautopas_1_1ContainerSelector.html#a6c23e08619f118d3e357447584373460">ContainerSelector&lt;Particle_T&gt;::generateContainer</a>(</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    ContainerOption containerChoice, <span class="keyword">const</span> <a class="code hl_class" href="classautopas_1_1ContainerSelectorInfo.html">ContainerSelectorInfo</a> &amp;containerInfo) {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;boxMin = containerInfo.<a class="code hl_variable" href="classautopas_1_1ContainerSelectorInfo.html#a42509e94eced69e11c96d6f1d4fe1bcf">boxMin</a>;</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;boxMax = containerInfo.<a class="code hl_variable" href="classautopas_1_1ContainerSelectorInfo.html#aa465f6e1577756f6aad3b450dd1e8292">boxMax</a>;</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;cutoff = containerInfo.<a class="code hl_variable" href="classautopas_1_1ContainerSelectorInfo.html#a8e9c14255c86da0673854014dd8b0867">cutoff</a>;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;verletSkin = containerInfo.<a class="code hl_variable" href="classautopas_1_1ContainerSelectorInfo.html#acddddcb66489c0fc77356fe769367abb">verletSkin</a>;</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;verletClusterSize = containerInfo.<a class="code hl_variable" href="classautopas_1_1ContainerSelectorInfo.html#ad54f256db9819b63fccc91a2d675583d">verletClusterSize</a>;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;cellSizeFactor = containerInfo.<a class="code hl_variable" href="classautopas_1_1ContainerSelectorInfo.html#a4bcd825207368b3fd0683677a65dee86">cellSizeFactor</a>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;loadEstimator = containerInfo.<a class="code hl_variable" href="classautopas_1_1ContainerSelectorInfo.html#ac2184b500586eb0e317b9f3fde430b06">loadEstimator</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keyword">const</span> <span class="keyword">auto</span> &amp;sortingThreshold = containerInfo.<a class="code hl_variable" href="classautopas_1_1ContainerSelectorInfo.html#aded1c60f76d37d35c03095bd70e247cb">sortingThreshold</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  std::unique_ptr&lt;ParticleContainerInterface&lt;Particle_T&gt;&gt; container;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordflow">switch</span> (containerChoice) {</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">case</span> ContainerOption::directSum: {</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>      container = std::make_unique&lt;DirectSum&lt;Particle_T&gt;&gt;(boxMin, boxMax, cutoff, verletSkin, sortingThreshold);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    }</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">case</span> ContainerOption::linkedCells: {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>      container = std::make_unique&lt;LinkedCells&lt;Particle_T&gt;&gt;(boxMin, boxMax, cutoff, verletSkin, cellSizeFactor,</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>                                                            sortingThreshold, loadEstimator);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    }</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordflow">case</span> ContainerOption::linkedCellsReferences: {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>      container = std::make_unique&lt;LinkedCellsReferences&lt;Particle_T&gt;&gt;(boxMin, boxMax, cutoff, verletSkin,</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>                                                                      cellSizeFactor, sortingThreshold);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    }</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordflow">case</span> ContainerOption::verletLists: {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>      container = std::make_unique&lt;VerletLists&lt;Particle_T&gt;&gt;(</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>          boxMin, boxMax, cutoff, verletSkin, <a class="code hl_class" href="classautopas_1_1VerletLists.html">VerletLists&lt;Particle_T&gt;::BuildVerletListType::VerletSoA</a>, cellSizeFactor);</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    }</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordflow">case</span> ContainerOption::verletListsCells: {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>      container = std::make_unique&lt;VerletListsCells&lt;Particle_T, VLCAllCellsNeighborList&lt;Particle_T&gt;&gt;&gt;(</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>          boxMin, boxMax, cutoff, verletSkin, cellSizeFactor, loadEstimator,</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>          VerletListsCellsHelpers::VLCBuildType::soaBuild);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    <span class="keywordflow">case</span> ContainerOption::verletClusterLists: {</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>      container = std::make_unique&lt;VerletClusterLists&lt;Particle_T&gt;&gt;(boxMin, boxMax, cutoff, verletSkin,</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                                                                   verletClusterSize, loadEstimator);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    }</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="keywordflow">case</span> ContainerOption::varVerletListsAsBuild: {</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>      container = std::make_unique&lt;VarVerletLists&lt;Particle_T, VerletNeighborListAsBuild&lt;Particle_T&gt;&gt;&gt;(</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>          boxMin, boxMax, cutoff, verletSkin, cellSizeFactor);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <span class="keywordflow">case</span> ContainerOption::pairwiseVerletLists: {</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>      container = std::make_unique&lt;VerletListsCells&lt;Particle_T, VLCCellPairNeighborList&lt;Particle_T&gt;&gt;&gt;(</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>          boxMin, boxMax, cutoff, verletSkin, cellSizeFactor, loadEstimator,</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>          VerletListsCellsHelpers::VLCBuildType::soaBuild);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">case</span> ContainerOption::octree: {</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>      container =</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>          std::make_unique&lt;Octree&lt;Particle_T&gt;&gt;(boxMin, boxMax, cutoff, verletSkin, cellSizeFactor, sortingThreshold);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>      <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">default</span>: {</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>      <a class="code hl_function" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">utils::ExceptionHandler::exception</a>(<span class="stringliteral">&quot;ContainerSelector: Container type {} is not a known type!&quot;</span>,</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>                                         containerChoice.to_string());</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  }</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>  <span class="keywordflow">return</span> container;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>}</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>}  <span class="comment">// namespace autopas</span></div>
 <div class="ttc" id="aContainerOption_8h_html"><div class="ttname"><a href="ContainerOption_8h.html">ContainerOption.h</a></div></div>
 <div class="ttc" id="aContainerSelectorInfo_8h_html"><div class="ttname"><a href="ContainerSelectorInfo_8h.html">ContainerSelectorInfo.h</a></div></div>
 <div class="ttc" id="aDirectSum_8h_html"><div class="ttname"><a href="DirectSum_8h.html">DirectSum.h</a></div></div>
 <div class="ttc" id="aLinkedCells_8h_html"><div class="ttname"><a href="LinkedCells_8h.html">LinkedCells.h</a></div></div>
-<div class="ttc" id="aNumParticlesEstimator_8h_html"><div class="ttname"><a href="NumParticlesEstimator_8h.html">NumParticlesEstimator.h</a></div></div>
 <div class="ttc" id="aOctree_8h_html"><div class="ttname"><a href="Octree_8h.html">Octree.h</a></div></div>
-<div class="ttc" id="aStringUtils_8h_html"><div class="ttname"><a href="StringUtils_8h.html">StringUtils.h</a></div></div>
+<div class="ttc" id="aVLCAllCellsNeighborList_8h_html"><div class="ttname"><a href="VLCAllCellsNeighborList_8h.html">VLCAllCellsNeighborList.h</a></div></div>
 <div class="ttc" id="aVarVerletLists_8h_html"><div class="ttname"><a href="VarVerletLists_8h.html">VarVerletLists.h</a></div></div>
 <div class="ttc" id="aVerletClusterLists_8h_html"><div class="ttname"><a href="VerletClusterLists_8h.html">VerletClusterLists.h</a></div></div>
 <div class="ttc" id="aVerletListsCellsHelpers_8h_html"><div class="ttname"><a href="VerletListsCellsHelpers_8h.html">VerletListsCellsHelpers.h</a></div></div>
@@ -301,15 +225,18 @@ $(function() {
 <div class="ttc" id="aVerletLists_8h_html"><div class="ttname"><a href="VerletLists_8h.html">VerletLists.h</a></div></div>
 <div class="ttc" id="aVerletNeighborListAsBuild_8h_html"><div class="ttname"><a href="VerletNeighborListAsBuild_8h.html">VerletNeighborListAsBuild.h</a></div></div>
 <div class="ttc" id="aclassautopas_1_1ContainerSelectorInfo_html"><div class="ttname"><a href="classautopas_1_1ContainerSelectorInfo.html">autopas::ContainerSelectorInfo</a></div><div class="ttdoc">Info to generate a container.</div><div class="ttdef"><b>Definition:</b> ContainerSelectorInfo.h:17</div></div>
-<div class="ttc" id="aclassautopas_1_1ContainerSelector_html"><div class="ttname"><a href="classautopas_1_1ContainerSelector.html">autopas::ContainerSelector</a></div><div class="ttdoc">Selector for a particle container.</div><div class="ttdef"><b>Definition:</b> ContainerSelector.h:40</div></div>
-<div class="ttc" id="aclassautopas_1_1ContainerSelector_html_a9e210b31459748b298a71612e1900fe2"><div class="ttname"><a href="classautopas_1_1ContainerSelector.html#a9e210b31459748b298a71612e1900fe2">autopas::ContainerSelector::selectContainer</a></div><div class="ttdeci">void selectContainer(ContainerOption containerOption, ContainerSelectorInfo containerInfo)</div><div class="ttdoc">Sets the container to the given option.</div><div class="ttdef"><b>Definition:</b> ContainerSelector.h:206</div></div>
-<div class="ttc" id="aclassautopas_1_1ContainerSelector_html_ab50ae02170f850be73dbf06bc14c19a4"><div class="ttname"><a href="classautopas_1_1ContainerSelector.html#ab50ae02170f850be73dbf06bc14c19a4">autopas::ContainerSelector::ContainerSelector</a></div><div class="ttdeci">ContainerSelector(const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax, double cutoff)</div><div class="ttdoc">Constructor for the ContainerSelecor class.</div><div class="ttdef"><b>Definition:</b> ContainerSelector.h:48</div></div>
-<div class="ttc" id="aclassautopas_1_1ContainerSelector_html_ae389f581cb955f02bb932c0bdb71524d"><div class="ttname"><a href="classautopas_1_1ContainerSelector.html#ae389f581cb955f02bb932c0bdb71524d">autopas::ContainerSelector::resizeBox</a></div><div class="ttdeci">void resizeBox(const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax)</div><div class="ttdoc">Set new boundaries, convert the container and reevaluate particle ownership.</div><div class="ttdef"><b>Definition:</b> ContainerSelector.h:63</div></div>
-<div class="ttc" id="aclassautopas_1_1ContainerSelector_html_af8cc959db9fbed39c2c43e536cd7890b"><div class="ttname"><a href="classautopas_1_1ContainerSelector.html#af8cc959db9fbed39c2c43e536cd7890b">autopas::ContainerSelector::getCurrentContainer</a></div><div class="ttdeci">autopas::ParticleContainerInterface&lt; Particle_T &gt; &amp; getCurrentContainer()</div><div class="ttdoc">Getter for the optimal container.</div><div class="ttdef"><b>Definition:</b> ContainerSelector.h:188</div></div>
-<div class="ttc" id="aclassautopas_1_1ParticleContainerInterface_html"><div class="ttname"><a href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a></div><div class="ttdoc">The ParticleContainerInterface class provides a basic interface for all Containers within AutoPas.</div><div class="ttdef"><b>Definition:</b> ParticleContainerInterface.h:37</div></div>
-<div class="ttc" id="aclassautopas_1_1VerletLists_html_a1b26e3d1bd7b90b726c27b5a5b0ef4cea6973e7d0512a5dcbe82a2294e311dc39"><div class="ttname"><a href="classautopas_1_1VerletLists.html#a1b26e3d1bd7b90b726c27b5a5b0ef4cea6973e7d0512a5dcbe82a2294e311dc39">autopas::VerletLists::VerletSoA</a></div><div class="ttdeci">@ VerletSoA</div><div class="ttdoc">Build it using AoS.</div><div class="ttdef"><b>Definition:</b> VerletLists.h:47</div></div>
+<div class="ttc" id="aclassautopas_1_1ContainerSelectorInfo_html_a42509e94eced69e11c96d6f1d4fe1bcf"><div class="ttname"><a href="classautopas_1_1ContainerSelectorInfo.html#a42509e94eced69e11c96d6f1d4fe1bcf">autopas::ContainerSelectorInfo::boxMin</a></div><div class="ttdeci">std::array&lt; double, 3 &gt; boxMin</div><div class="ttdoc">Lower corner of the container.</div><div class="ttdef"><b>Definition:</b> ContainerSelectorInfo.h:93</div></div>
+<div class="ttc" id="aclassautopas_1_1ContainerSelectorInfo_html_a4bcd825207368b3fd0683677a65dee86"><div class="ttname"><a href="classautopas_1_1ContainerSelectorInfo.html#a4bcd825207368b3fd0683677a65dee86">autopas::ContainerSelectorInfo::cellSizeFactor</a></div><div class="ttdeci">double cellSizeFactor</div><div class="ttdoc">cellSizeFactor Cell size factor to be used in this container (only relevant for LinkedCells)</div><div class="ttdef"><b>Definition:</b> ContainerSelectorInfo.h:108</div></div>
+<div class="ttc" id="aclassautopas_1_1ContainerSelectorInfo_html_a8e9c14255c86da0673854014dd8b0867"><div class="ttname"><a href="classautopas_1_1ContainerSelectorInfo.html#a8e9c14255c86da0673854014dd8b0867">autopas::ContainerSelectorInfo::cutoff</a></div><div class="ttdeci">double cutoff</div><div class="ttdoc">Cutoff radius to be used in this container.</div><div class="ttdef"><b>Definition:</b> ContainerSelectorInfo.h:103</div></div>
+<div class="ttc" id="aclassautopas_1_1ContainerSelectorInfo_html_aa465f6e1577756f6aad3b450dd1e8292"><div class="ttname"><a href="classautopas_1_1ContainerSelectorInfo.html#aa465f6e1577756f6aad3b450dd1e8292">autopas::ContainerSelectorInfo::boxMax</a></div><div class="ttdeci">std::array&lt; double, 3 &gt; boxMax</div><div class="ttdoc">Upper corner of the container.</div><div class="ttdef"><b>Definition:</b> ContainerSelectorInfo.h:98</div></div>
+<div class="ttc" id="aclassautopas_1_1ContainerSelectorInfo_html_ac2184b500586eb0e317b9f3fde430b06"><div class="ttname"><a href="classautopas_1_1ContainerSelectorInfo.html#ac2184b500586eb0e317b9f3fde430b06">autopas::ContainerSelectorInfo::loadEstimator</a></div><div class="ttdeci">LoadEstimatorOption loadEstimator</div><div class="ttdoc">Load estimator for balanced sliced traversals.</div><div class="ttdef"><b>Definition:</b> ContainerSelectorInfo.h:124</div></div>
+<div class="ttc" id="aclassautopas_1_1ContainerSelectorInfo_html_acddddcb66489c0fc77356fe769367abb"><div class="ttname"><a href="classautopas_1_1ContainerSelectorInfo.html#acddddcb66489c0fc77356fe769367abb">autopas::ContainerSelectorInfo::verletSkin</a></div><div class="ttdeci">double verletSkin</div><div class="ttdoc">Length added to the cutoff for the verlet lists' skin inbetween rebuilding lists.</div><div class="ttdef"><b>Definition:</b> ContainerSelectorInfo.h:112</div></div>
+<div class="ttc" id="aclassautopas_1_1ContainerSelectorInfo_html_ad54f256db9819b63fccc91a2d675583d"><div class="ttname"><a href="classautopas_1_1ContainerSelectorInfo.html#ad54f256db9819b63fccc91a2d675583d">autopas::ContainerSelectorInfo::verletClusterSize</a></div><div class="ttdeci">unsigned int verletClusterSize</div><div class="ttdoc">Size of Verlet Clusters.</div><div class="ttdef"><b>Definition:</b> ContainerSelectorInfo.h:116</div></div>
+<div class="ttc" id="aclassautopas_1_1ContainerSelectorInfo_html_aded1c60f76d37d35c03095bd70e247cb"><div class="ttname"><a href="classautopas_1_1ContainerSelectorInfo.html#aded1c60f76d37d35c03095bd70e247cb">autopas::ContainerSelectorInfo::sortingThreshold</a></div><div class="ttdeci">size_t sortingThreshold</div><div class="ttdoc">Threshold beyond which, if the sum of the number of particles in two cells is greater,...</div><div class="ttdef"><b>Definition:</b> ContainerSelectorInfo.h:120</div></div>
+<div class="ttc" id="aclassautopas_1_1ContainerSelector_html"><div class="ttname"><a href="classautopas_1_1ContainerSelector.html">autopas::ContainerSelector</a></div><div class="ttdoc">Selector for a particle container.</div><div class="ttdef"><b>Definition:</b> ContainerSelector.h:31</div></div>
+<div class="ttc" id="aclassautopas_1_1ContainerSelector_html_a6c23e08619f118d3e357447584373460"><div class="ttname"><a href="classautopas_1_1ContainerSelector.html#a6c23e08619f118d3e357447584373460">autopas::ContainerSelector::generateContainer</a></div><div class="ttdeci">static std::unique_ptr&lt; ParticleContainerInterface&lt; Particle_T &gt; &gt; generateContainer(ContainerOption containerChoice, const ContainerSelectorInfo &amp;containerInfo)</div><div class="ttdoc">Container factory method.</div><div class="ttdef"><b>Definition:</b> ContainerSelector.h:44</div></div>
+<div class="ttc" id="aclassautopas_1_1VerletLists_html"><div class="ttname"><a href="classautopas_1_1VerletLists.html">autopas::VerletLists</a></div><div class="ttdoc">Verlet Lists container.</div><div class="ttdef"><b>Definition:</b> VerletLists.h:32</div></div>
 <div class="ttc" id="aclassautopas_1_1utils_1_1ExceptionHandler_html_ae61b9aac49a90a9ff86859c73005ee07"><div class="ttname"><a href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a></div><div class="ttdeci">static void exception(const Exception e)</div><div class="ttdoc">Handle an exception derived by std::exception.</div><div class="ttdef"><b>Definition:</b> ExceptionHandler.h:63</div></div>
-<div class="ttc" id="anamespaceautopas_1_1utils_1_1NumParticlesEstimator_html_a2e1945cd199bdc217e444dcbe9a895eb"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1NumParticlesEstimator.html#a2e1945cd199bdc217e444dcbe9a895eb">autopas::utils::NumParticlesEstimator::estimateNumHalosUniform</a></div><div class="ttdeci">size_t estimateNumHalosUniform(size_t numParticles, const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax, double haloWidth)</div><div class="ttdoc">Given a number of particles and the dimensions of a box, estimate the number of halo particles.</div><div class="ttdef"><b>Definition:</b> NumParticlesEstimator.cpp:9</div></div>
 <div class="ttc" id="anamespaceautopas_html"><div class="ttname"><a href="namespaceautopas.html">autopas</a></div><div class="ttdoc">This is the main namespace of AutoPas.</div><div class="ttdef"><b>Definition:</b> AutoPasDecl.h:32</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

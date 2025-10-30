@@ -129,9 +129,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a59ed18df06b6424e53ec2e26bd7c327f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a59ed18df06b6424e53ec2e26bd7c327f">LogicHandler</a> (std::unordered_map&lt; InteractionTypeOption::Value, std::unique_ptr&lt; <a class="el" href="classautopas_1_1AutoTuner.html">AutoTuner</a> &gt; &gt; &amp;autotuners, const <a class="el" href="classautopas_1_1LogicHandlerInfo.html">LogicHandlerInfo</a> &amp;logicHandlerInfo, unsigned int rebuildFrequency, const std::string &amp;outputSuffix)</td></tr>
 <tr class="memdesc:a59ed18df06b6424e53ec2e26bd7c327f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the <a class="el" href="classautopas_1_1LogicHandler.html" title="The LogicHandler takes care of the containers s.t.">LogicHandler</a>.  <br /></td></tr>
 <tr class="separator:a59ed18df06b6424e53ec2e26bd7c327f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af08e622019fd7fc04392a4e7127c9419"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; Particle_T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#af08e622019fd7fc04392a4e7127c9419">getContainer</a> ()</td></tr>
-<tr class="memdesc:af08e622019fd7fc04392a4e7127c9419"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a non-const reference to the currently selected particle container.  <br /></td></tr>
-<tr class="separator:af08e622019fd7fc04392a4e7127c9419"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a960151be95c654d7225255f1348c0cb4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1ParticleContainerInterface.html">ParticleContainerInterface</a>&lt; Particle_T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a960151be95c654d7225255f1348c0cb4">getContainer</a> ()</td></tr>
+<tr class="memdesc:a960151be95c654d7225255f1348c0cb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a non-const reference to the currently selected particle container.  <br /></td></tr>
+<tr class="separator:a960151be95c654d7225255f1348c0cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a55079b4fe34f51c0248ec55dd02bec9e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Particle_T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a55079b4fe34f51c0248ec55dd02bec9e">collectLeavingParticlesFromBuffer</a> (bool insertOwnedParticlesToContainer)</td></tr>
 <tr class="memdesc:a55079b4fe34f51c0248ec55dd02bec9e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Collects leaving particles from buffer and potentially inserts owned particles to the container.  <br /></td></tr>
 <tr class="separator:a55079b4fe34f51c0248ec55dd02bec9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -142,7 +142,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:af1c2e9b3aecc257dea9fa0b4e5bebaf2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass values to the actual container.  <br /></td></tr>
 <tr class="separator:af1c2e9b3aecc257dea9fa0b4e5bebaf2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af2d5950e8c5edf57b1a9f44ff655fe8e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#af2d5950e8c5edf57b1a9f44ff655fe8e">reserve</a> (size_t numParticles)</td></tr>
-<tr class="memdesc:af2d5950e8c5edf57b1a9f44ff655fe8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estimates number of halo particles via <a class="el" href="namespaceautopas_1_1utils_1_1NumParticlesEstimator.html#a2e1945cd199bdc217e444dcbe9a895eb" title="Given a number of particles and the dimensions of a box, estimate the number of halo particles.">autopas::utils::NumParticlesEstimator::estimateNumHalosUniform()</a> then calls <a class="el" href="classautopas_1_1LogicHandler.html#a0f774a47021bdf786721594de73b0222" title="Reserves space in the particle buffers and the container.">LogicHandler::reserve(size_t numParticles, size_t numHaloParticles)</a>.  <br /></td></tr>
+<tr class="memdesc:af2d5950e8c5edf57b1a9f44ff655fe8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estimates the number of halo particles via <a class="el" href="namespaceautopas_1_1utils_1_1NumParticlesEstimator.html#a2e1945cd199bdc217e444dcbe9a895eb" title="Given a number of particles and the dimensions of a box, estimate the number of halo particles.">autopas::utils::NumParticlesEstimator::estimateNumHalosUniform()</a>, then calls <a class="el" href="classautopas_1_1LogicHandler.html#a0f774a47021bdf786721594de73b0222" title="Reserves space in the particle buffers and the container.">LogicHandler::reserve(size_t numParticles, size_t numHaloParticles)</a>.  <br /></td></tr>
 <tr class="separator:af2d5950e8c5edf57b1a9f44ff655fe8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f774a47021bdf786721594de73b0222"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a0f774a47021bdf786721594de73b0222">reserve</a> (size_t numParticles, size_t numHaloParticles)</td></tr>
 <tr class="memdesc:a0f774a47021bdf786721594de73b0222"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserves space in the particle buffers and the container.  <br /></td></tr>
@@ -170,18 +170,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8d1a26f17f2bd727257529e1c230e4f0"><td class="memTemplItemLeft" align="right" valign="top">Iterator::ParticleVecType&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a8d1a26f17f2bd727257529e1c230e4f0">gatherAdditionalVectors</a> (IteratorBehavior behavior)</td></tr>
 <tr class="memdesc:a8d1a26f17f2bd727257529e1c230e4f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create the additional vectors vector for a given iterator behavior.  <br /></td></tr>
 <tr class="separator:a8d1a26f17f2bd727257529e1c230e4f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0af9482dacfbf1d95f87044a16a7d5f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1ContainerIterator.html">autopas::ContainerIterator</a>&lt; Particle_T, true, false &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a0af9482dacfbf1d95f87044a16a7d5f0">begin</a> (IteratorBehavior behavior)</td></tr>
-<tr class="memdesc:a0af9482dacfbf1d95f87044a16a7d5f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all particles by using for(auto iter = autoPas.begin(); iter.isValid(); ++iter)    <br /></td></tr>
-<tr class="separator:a0af9482dacfbf1d95f87044a16a7d5f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a02651f2293d40cd304a50820a3587df7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1ContainerIterator.html">autopas::ContainerIterator</a>&lt; Particle_T, false, false &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a02651f2293d40cd304a50820a3587df7">begin</a> (IteratorBehavior behavior) const</td></tr>
-<tr class="memdesc:a02651f2293d40cd304a50820a3587df7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all particles by using for(auto iter = autoPas.begin(); iter.isValid(); ++iter)    <br /></td></tr>
-<tr class="separator:a02651f2293d40cd304a50820a3587df7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afe54db43bc12bee92afb67fafce7e7dd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1ContainerIterator.html">autopas::ContainerIterator</a>&lt; Particle_T, true, true &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#afe54db43bc12bee92afb67fafce7e7dd">getRegionIterator</a> (const std::array&lt; double, 3 &gt; &amp;lowerCorner, const std::array&lt; double, 3 &gt; &amp;higherCorner, IteratorBehavior behavior)</td></tr>
-<tr class="memdesc:afe54db43bc12bee92afb67fafce7e7dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all particles in a specified region.    <br /></td></tr>
-<tr class="separator:afe54db43bc12bee92afb67fafce7e7dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a11e30609829bb1abea33bb35e6c1ffe1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1ContainerIterator.html">autopas::ContainerIterator</a>&lt; Particle_T, false, true &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a11e30609829bb1abea33bb35e6c1ffe1">getRegionIterator</a> (const std::array&lt; double, 3 &gt; &amp;lowerCorner, const std::array&lt; double, 3 &gt; &amp;higherCorner, IteratorBehavior behavior) const</td></tr>
-<tr class="memdesc:a11e30609829bb1abea33bb35e6c1ffe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all particles in a specified region.    <br /></td></tr>
-<tr class="separator:a11e30609829bb1abea33bb35e6c1ffe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1089fa02f23ff9e824dda0625d03931b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; Particle_T, true, false &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a1089fa02f23ff9e824dda0625d03931b">begin</a> (IteratorBehavior behavior)</td></tr>
+<tr class="memdesc:a1089fa02f23ff9e824dda0625d03931b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all particles by using for(auto iter = autoPas.begin(); iter.isValid(); ++iter)    <br /></td></tr>
+<tr class="separator:a1089fa02f23ff9e824dda0625d03931b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac443d0831732b34c2e8fa116c54b6c9b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; Particle_T, false, false &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#ac443d0831732b34c2e8fa116c54b6c9b">begin</a> (IteratorBehavior behavior) const</td></tr>
+<tr class="memdesc:ac443d0831732b34c2e8fa116c54b6c9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all particles by using for(auto iter = autoPas.begin(); iter.isValid(); ++iter)    <br /></td></tr>
+<tr class="separator:ac443d0831732b34c2e8fa116c54b6c9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af93804ed92175471ca46fe633ee8ca03"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; Particle_T, true, true &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#af93804ed92175471ca46fe633ee8ca03">getRegionIterator</a> (const std::array&lt; double, 3 &gt; &amp;lowerCorner, const std::array&lt; double, 3 &gt; &amp;higherCorner, IteratorBehavior behavior)</td></tr>
+<tr class="memdesc:af93804ed92175471ca46fe633ee8ca03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all particles in a specified region.    <br /></td></tr>
+<tr class="separator:af93804ed92175471ca46fe633ee8ca03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cfb2ef0ba1a69621e87e70d45f695af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; Particle_T, false, true &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a9cfb2ef0ba1a69621e87e70d45f695af">getRegionIterator</a> (const std::array&lt; double, 3 &gt; &amp;lowerCorner, const std::array&lt; double, 3 &gt; &amp;higherCorner, IteratorBehavior behavior) const</td></tr>
+<tr class="memdesc:a9cfb2ef0ba1a69621e87e70d45f695af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all particles in a specified region.    <br /></td></tr>
+<tr class="separator:a9cfb2ef0ba1a69621e87e70d45f695af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2056ba9a9fd963ec73cba0572c325b3f"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a2056ba9a9fd963ec73cba0572c325b3f">getNumberOfParticlesOwned</a> () const</td></tr>
 <tr class="memdesc:a2056ba9a9fd963ec73cba0572c325b3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of owned particles.  <br /></td></tr>
 <tr class="separator:a2056ba9a9fd963ec73cba0572c325b3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -191,10 +191,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a83b5b55bbc0307d8190f0feee6b98c6f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a83b5b55bbc0307d8190f0feee6b98c6f">checkTuningStates</a> (const InteractionTypeOption &amp;interactionType)</td></tr>
 <tr class="memdesc:a83b5b55bbc0307d8190f0feee6b98c6f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Check if other autotuners for any other interaction types are still in a tuning phase.  <br /></td></tr>
 <tr class="separator:a83b5b55bbc0307d8190f0feee6b98c6f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa31f593957a15a598fe1ecb8e504d7c"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </td></tr>
-<tr class="memitem:aaa31f593957a15a598fe1ecb8e504d7c"><td class="memTemplItemLeft" align="right" valign="top">std::tuple&lt; std::optional&lt; std::unique_ptr&lt; <a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> &gt; &gt;, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#aaa31f593957a15a598fe1ecb8e504d7c">isConfigurationApplicable</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;conf, <a class="el" href="classautopas_1_1Functor.html">Functor</a> &amp;functor, const InteractionTypeOption &amp;interactionType)</td></tr>
-<tr class="memdesc:aaa31f593957a15a598fe1ecb8e504d7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given configuration can be used with the given functor and the current state of the simulation.  <br /></td></tr>
-<tr class="separator:aaa31f593957a15a598fe1ecb8e504d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0fd4890f7ce1b791f1c9dd9fd219b8fe"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </td></tr>
+<tr class="memitem:a0fd4890f7ce1b791f1c9dd9fd219b8fe"><td class="memTemplItemLeft" align="right" valign="top">std::tuple&lt; std::unique_ptr&lt; <a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> &gt;, bool &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a0fd4890f7ce1b791f1c9dd9fd219b8fe">isConfigurationApplicable</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;config, <a class="el" href="classautopas_1_1Functor.html">Functor</a> &amp;functor)</td></tr>
+<tr class="memdesc:a0fd4890f7ce1b791f1c9dd9fd219b8fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given configuration can be used with the given functor and the current state of the simulation.  <br /></td></tr>
+<tr class="separator:a0fd4890f7ce1b791f1c9dd9fd219b8fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a02bab594312de4075624a7a3e03f94aa"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a02bab594312de4075624a7a3e03f94aa">setParticleBuffers</a> (const std::vector&lt; <a class="el" href="classautopas_1_1FullParticleCell.html">FullParticleCell</a>&lt; Particle_T &gt; &gt; &amp;particleBuffers, const std::vector&lt; <a class="el" href="classautopas_1_1FullParticleCell.html">FullParticleCell</a>&lt; Particle_T &gt; &gt; &amp;haloParticleBuffers)</td></tr>
 <tr class="memdesc:a02bab594312de4075624a7a3e03f94aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Directly exchange the internal particle and halo buffers with the given vectors and update particle counters.  <br /></td></tr>
 <tr class="separator:a02bab594312de4075624a7a3e03f94aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -362,8 +362,8 @@ This function is NOT thread-safe if the container is <a class="el" href="classau
 
 </div>
 </div>
-<a id="a0af9482dacfbf1d95f87044a16a7d5f0" name="a0af9482dacfbf1d95f87044a16a7d5f0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0af9482dacfbf1d95f87044a16a7d5f0">&#9670;&#160;</a></span>begin() <span class="overload">[1/2]</span></h2>
+<a id="a1089fa02f23ff9e824dda0625d03931b" name="a1089fa02f23ff9e824dda0625d03931b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1089fa02f23ff9e824dda0625d03931b">&#9670;&#160;</a></span>begin() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -374,7 +374,7 @@ template&lt;typename Particle_T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1ContainerIterator.html">autopas::ContainerIterator</a>&lt; Particle_T, true, false &gt; <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; Particle_T &gt;::begin </td>
+          <td class="memname"><a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; Particle_T, true, false &gt; <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; Particle_T &gt;::begin </td>
           <td>(</td>
           <td class="paramtype">IteratorBehavior&#160;</td>
           <td class="paramname"><em>behavior</em></td><td>)</td>
@@ -399,8 +399,8 @@ template&lt;typename Particle_T &gt; </div>
 
 </div>
 </div>
-<a id="a02651f2293d40cd304a50820a3587df7" name="a02651f2293d40cd304a50820a3587df7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a02651f2293d40cd304a50820a3587df7">&#9670;&#160;</a></span>begin() <span class="overload">[2/2]</span></h2>
+<a id="ac443d0831732b34c2e8fa116c54b6c9b" name="ac443d0831732b34c2e8fa116c54b6c9b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac443d0831732b34c2e8fa116c54b6c9b">&#9670;&#160;</a></span>begin() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -411,7 +411,7 @@ template&lt;typename Particle_T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1ContainerIterator.html">autopas::ContainerIterator</a>&lt; Particle_T, false, false &gt; <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; Particle_T &gt;::begin </td>
+          <td class="memname"><a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; Particle_T, false, false &gt; <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; Particle_T &gt;::begin </td>
           <td>(</td>
           <td class="paramtype">IteratorBehavior&#160;</td>
           <td class="paramname"><em>behavior</em></td><td>)</td>
@@ -746,8 +746,8 @@ template&lt;class Iterator &gt; </div>
 
 </div>
 </div>
-<a id="af08e622019fd7fc04392a4e7127c9419" name="af08e622019fd7fc04392a4e7127c9419"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af08e622019fd7fc04392a4e7127c9419">&#9670;&#160;</a></span>getContainer()</h2>
+<a id="a960151be95c654d7225255f1348c0cb4" name="a960151be95c654d7225255f1348c0cb4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a960151be95c654d7225255f1348c0cb4">&#9670;&#160;</a></span>getContainer()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -758,7 +758,7 @@ template&lt;typename Particle_T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; Particle_T &gt; &amp; <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; Particle_T &gt;::getContainer </td>
+          <td class="memname"><a class="el" href="classautopas_1_1ParticleContainerInterface.html">ParticleContainerInterface</a>&lt; Particle_T &gt; &amp; <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; Particle_T &gt;::getContainer </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -912,8 +912,8 @@ template&lt;typename Particle_T &gt; </div>
 
 </div>
 </div>
-<a id="afe54db43bc12bee92afb67fafce7e7dd" name="afe54db43bc12bee92afb67fafce7e7dd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afe54db43bc12bee92afb67fafce7e7dd">&#9670;&#160;</a></span>getRegionIterator() <span class="overload">[1/2]</span></h2>
+<a id="af93804ed92175471ca46fe633ee8ca03" name="af93804ed92175471ca46fe633ee8ca03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af93804ed92175471ca46fe633ee8ca03">&#9670;&#160;</a></span>getRegionIterator() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -924,7 +924,7 @@ template&lt;typename Particle_T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1ContainerIterator.html">autopas::ContainerIterator</a>&lt; Particle_T, true, true &gt; <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; Particle_T &gt;::getRegionIterator </td>
+          <td class="memname"><a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; Particle_T, true, true &gt; <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; Particle_T &gt;::getRegionIterator </td>
           <td>(</td>
           <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
           <td class="paramname"><em>lowerCorner</em>, </td>
@@ -969,8 +969,8 @@ template&lt;typename Particle_T &gt; </div>
 
 </div>
 </div>
-<a id="a11e30609829bb1abea33bb35e6c1ffe1" name="a11e30609829bb1abea33bb35e6c1ffe1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a11e30609829bb1abea33bb35e6c1ffe1">&#9670;&#160;</a></span>getRegionIterator() <span class="overload">[2/2]</span></h2>
+<a id="a9cfb2ef0ba1a69621e87e70d45f695af" name="a9cfb2ef0ba1a69621e87e70d45f695af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cfb2ef0ba1a69621e87e70d45f695af">&#9670;&#160;</a></span>getRegionIterator() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -981,7 +981,7 @@ template&lt;typename Particle_T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1ContainerIterator.html">autopas::ContainerIterator</a>&lt; Particle_T, false, true &gt; <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; Particle_T &gt;::getRegionIterator </td>
+          <td class="memname"><a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; Particle_T, false, true &gt; <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; Particle_T &gt;::getRegionIterator </td>
           <td>(</td>
           <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
           <td class="paramname"><em>lowerCorner</em>, </td>
@@ -1026,8 +1026,8 @@ template&lt;typename Particle_T &gt; </div>
 
 </div>
 </div>
-<a id="aaa31f593957a15a598fe1ecb8e504d7c" name="aaa31f593957a15a598fe1ecb8e504d7c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa31f593957a15a598fe1ecb8e504d7c">&#9670;&#160;</a></span>isConfigurationApplicable()</h2>
+<a id="a0fd4890f7ce1b791f1c9dd9fd219b8fe" name="a0fd4890f7ce1b791f1c9dd9fd219b8fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0fd4890f7ce1b791f1c9dd9fd219b8fe">&#9670;&#160;</a></span>isConfigurationApplicable()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1037,22 +1037,16 @@ template&lt;typename Particle_T &gt; </div>
 template&lt;class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">std::tuple&lt; std::optional&lt; std::unique_ptr&lt; <a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> &gt; &gt;, bool &gt; <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; Particle_T &gt;::isConfigurationApplicable </td>
+          <td class="memname">std::tuple&lt; std::unique_ptr&lt; <a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> &gt;, bool &gt; <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; Particle_T &gt;::isConfigurationApplicable </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;&#160;</td>
-          <td class="paramname"><em>conf</em>, </td>
+          <td class="paramname"><em>config</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="classautopas_1_1Functor.html">Functor</a> &amp;&#160;</td>
-          <td class="paramname"><em>functor</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const InteractionTypeOption &amp;&#160;</td>
-          <td class="paramname"><em>interactionType</em>&#160;</td>
+          <td class="paramname"><em>functor</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1063,7 +1057,7 @@ template&lt;class <a class="el" href="classautopas_1_1Functor.html">Functor</a> 
 </div><div class="memdoc">
 
 <p>Checks if the given configuration can be used with the given functor and the current state of the simulation. </p>
-<dl class="section note"><dt>Note</dt><dd>For the checks we need to switch to the container in the config, hece this function can't be const. Also we need to build the traversal, hence, it is returned.</dd></dl>
+<p>For this, the container and traversal need to be instantiated, hence if the configuration is applicable, it sets the current container and returns the traversal.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname"><a class="el" href="classautopas_1_1Functor.html" title="Functor base class.">Functor</a></td><td></td></tr>
@@ -1072,13 +1066,12 @@ template&lt;class <a class="el" href="classautopas_1_1Functor.html">Functor</a> 
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">conf</td><td></td></tr>
+    <tr><td class="paramname">config</td><td></td></tr>
     <tr><td class="paramname">functor</td><td></td></tr>
-    <tr><td class="paramname">interactionType</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>tuple&lt;optional&lt;Traversal&gt;, rejectIndefinitely&gt; The optional is empty if the configuration is not applicable The bool rejectIndefinitely indicates if the configuration can be completely removed from the search space because it will never be applicable. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>tuple&lt;Traversal, rejectIndefinitely&gt; Traversal is a nullptr if the configuration is not applicable The bool rejectIndefinitely indicates if the configuration can be completely removed from the search space because it will never be applicable. </dd></dl>
 
 </div>
 </div>
@@ -1128,7 +1121,7 @@ template&lt;typename Particle_T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Estimates number of halo particles via <a class="el" href="namespaceautopas_1_1utils_1_1NumParticlesEstimator.html#a2e1945cd199bdc217e444dcbe9a895eb" title="Given a number of particles and the dimensions of a box, estimate the number of halo particles.">autopas::utils::NumParticlesEstimator::estimateNumHalosUniform()</a> then calls <a class="el" href="classautopas_1_1LogicHandler.html#a0f774a47021bdf786721594de73b0222" title="Reserves space in the particle buffers and the container.">LogicHandler::reserve(size_t numParticles, size_t numHaloParticles)</a>. </p>
+<p>Estimates the number of halo particles via <a class="el" href="namespaceautopas_1_1utils_1_1NumParticlesEstimator.html#a2e1945cd199bdc217e444dcbe9a895eb" title="Given a number of particles and the dimensions of a box, estimate the number of halo particles.">autopas::utils::NumParticlesEstimator::estimateNumHalosUniform()</a>, then calls <a class="el" href="classautopas_1_1LogicHandler.html#a0f774a47021bdf786721594de73b0222" title="Reserves space in the particle buffers and the container.">LogicHandler::reserve(size_t numParticles, size_t numHaloParticles)</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">numParticles</td><td>Total number of owned particles. </td></tr>

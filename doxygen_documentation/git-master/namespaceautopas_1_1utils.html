@@ -254,10 +254,6 @@ Functions</h2></td></tr>
 <tr class="memitem:ad25131c9e42fb62233cf624a3c09d248"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils.html#ad25131c9e42fb62233cf624a3c09d248">withStaticBool</a> (bool theBool, F &amp;&amp;func)</td></tr>
 <tr class="memdesc:ad25131c9e42fb62233cf624a3c09d248"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to execute the code passed in the lambda with a static bool.  <br /></td></tr>
 <tr class="separator:ad25131c9e42fb62233cf624a3c09d248"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a74ac3a54f767df5861d59cb241c635e3"><td class="memTemplParams" colspan="2">template&lt;typename ParticleType , typename F &gt; </td></tr>
-<tr class="memitem:a74ac3a54f767df5861d59cb241c635e3"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils.html#a74ac3a54f767df5861d59cb241c635e3">withStaticCellType</a> (<a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8">autopas::CellType</a> cellType, F &amp;&amp;func)</td></tr>
-<tr class="memdesc:a74ac3a54f767df5861d59cb241c635e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes the passed function body with the static cell type defined by cellType.  <br /></td></tr>
-<tr class="separator:a74ac3a54f767df5861d59cb241c635e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>In this namespace some helper classes and functions can be found used inside of <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a>. </p>
@@ -546,58 +542,6 @@ template&lt;typename F &gt; </div>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Returns whatever func returns. </dd></dl>
 
-</div>
-</div>
-<a id="a74ac3a54f767df5861d59cb241c635e3" name="a74ac3a54f767df5861d59cb241c635e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a74ac3a54f767df5861d59cb241c635e3">&#9670;&#160;</a></span>withStaticCellType()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename ParticleType , typename F &gt; </div>
-      <table class="memname">
-        <tr>
-          <td class="memname">decltype(auto) autopas::utils::withStaticCellType </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="namespaceautopas.html#a0503ca3cdb1ed5bdd6844883536ca3f8">autopas::CellType</a>&#160;</td>
-          <td class="paramname"><em>cellType</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">F &amp;&amp;&#160;</td>
-          <td class="paramname"><em>func</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Executes the passed function body with the static cell type defined by cellType. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
-  <table class="tparams">
-    <tr><td class="paramname">ParticleType</td><td>The type of the particle, needed to generate a <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a>. </td></tr>
-    <tr><td class="paramname">F</td><td>The type of the functor. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">cellType</td><td>Enum specifying the type of the cell. </td></tr>
-    <tr><td class="paramname">func</td><td>Function that takes a <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a> as argument. E.g., <code>[&amp;](auto particleCellDummy) {...}</code>. The passed cell will be default constructed and should only be used to infer the type of <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a> using <code>decltype(particleCellDummy)</code>. </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>Returns whatever func returns. </dd></dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000030">Todo:</a></b></dt><dd><p class="startdd">c++20 change to explicit template for templates. </p>
-<p class="enddd">function calls also have to be changed to </p>
-</dd></dl>
-<div class="fragment"><div class="line">[&amp;]&lt;<span class="keyword">typename</span> ParticleCellType&gt;() { ... }</div>
-</div><!-- fragment --><p> instead of </p><div class="fragment"><div class="line">[&amp;](<span class="keyword">auto</span> particleCellDummy) {...}</div>
-</div><!-- fragment --> 
 </div>
 </div>
 </div><!-- contents -->
