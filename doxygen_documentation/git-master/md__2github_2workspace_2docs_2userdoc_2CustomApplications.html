@@ -136,7 +136,7 @@ Custom Functors</h1>
 <li><code>getNumFLOPs()</code> and <code>getHitRate()</code>: These functions return the number of FLOPs per traversal of the container and the hit-rate (the ratio of distance calculations that lead to functor interactions e.g. force contributions.) These functions are only used if <code>AUTOPAS_LOG_FLOPS</code> is set to <code>ON</code>. If unimplemented, these functions return 0, making the statistics produced by the FLOP logger useless, but otherwise not affecting the simulation.</li>
 <li><code>getName()</code>: This function should return the name of the functor as a <code>std::string</code>.</li>
 </ul>
-<p>As an example for a pairwise functor see <a href="https://github.com/AutoPas/AutoPas/blob/master/applicationLibrary/sph/SPHLibrary/SPHCalcDensityFunctor.h"><code>SPHCalcDensityFunctor</code></a>. As an example for a triwise functor see <a href="https://github.com/AutoPas/AutoPas/blob/master/applicationLibrary/molecularDynamics/molecularDynamicsLibrary/AxilrodTellerFunctor.h"><code>AxilrodTellerFunctor</code></a>.</p>
+<p>As an example for a pairwise functor see <a href="https://github.com/AutoPas/AutoPas/blob/master/applicationLibrary/sph/SPHLibrary/SPHCalcDensityFunctor.h"><code>SPHCalcDensityFunctor</code></a>. As an example for a triwise functor see <a href="https://github.com/AutoPas/AutoPas/blob/master/applicationLibrary/molecularDynamics/molecularDynamicsLibrary/AxilrodTellerMutoFunctor.h"><code>AxilrodTellerMutoFunctor</code></a>.</p>
 <h2><a class="anchor" id="autotoc_md29"></a>
 Using multiple functors</h2>
 <p>AutoPas is able to work with simulation setups that use multiple functors of the same or different interaction types to describe different forces.</p>
