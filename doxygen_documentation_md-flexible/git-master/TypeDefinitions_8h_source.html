@@ -135,8 +135,8 @@ $(function() {
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &quot;molecularDynamicsLibrary/LJFunctorSVE.h&quot;</span></div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#if defined(MD_FLEXIBLE_FUNCTOR_AT_AUTOVEC)</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;molecularDynamicsLibrary/AxilrodTellerFunctor.h&quot;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#if defined(MD_FLEXIBLE_FUNCTOR_ATM_AUTOVEC)</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;molecularDynamicsLibrary/AxilrodTellerMutoFunctor.h&quot;</span></div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#endif</span></div>
@@ -198,12 +198,12 @@ $(function() {
 <div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
 <div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="preprocessor">#if defined(MD_FLEXIBLE_FUNCTOR_AT_AUTOVEC)</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="preprocessor">#if defined(MD_FLEXIBLE_FUNCTOR_ATM_AUTOVEC)</span></div>
 <div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="preprocessor">#if MD_FLEXIBLE_MODE == MULTISITE</span></div>
 <div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="preprocessor">#error &quot;The Axilrod Teller functor does not have support for multisite molecules!&quot;</span></div>
 <div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="keyword">using </span>ATFunctor = mdLib::AxilrodTellerFunctor&lt;<a class="code hl_typedef" href="TypeDefinitions_8h.html#a508a019295b8d0c8151dee48a9541b3e">ParticleType</a>, <span class="keyword">true</span>, autopas::FunctorN3Modes::Both,</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                                              mdFlexibleTypeDefs::calcGlobals, mdFlexibleTypeDefs::countFLOPs&gt;;</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span><span class="keyword">using </span>ATMFunctor = mdLib::AxilrodTellerMutoFunctor&lt;<a class="code hl_typedef" href="TypeDefinitions_8h.html#a508a019295b8d0c8151dee48a9541b3e">ParticleType</a>, <span class="keyword">true</span>, autopas::FunctorN3Modes::Both,</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>                                                   mdFlexibleTypeDefs::calcGlobals, mdFlexibleTypeDefs::countFLOPs&gt;;</div>
 <div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="preprocessor">#endif</span></div>
 <div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
 <div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span><span class="preprocessor">#endif</span></div>

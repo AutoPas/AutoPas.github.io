@@ -274,7 +274,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>calcSimulationBox</b>
 <tr class="memdesc:aef9586afd9a9b441f5159a1e25f969c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds Lennard-Jones parameters to the specified site.  <br /></td></tr>
 <tr class="separator:aef9586afd9a9b441f5159a1e25f969c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab10a9faa99fb21abb02daac7305c4077"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#ab10a9faa99fb21abb02daac7305c4077">addATParametersToSite</a> (unsigned long siteId, double nu)</td></tr>
-<tr class="memdesc:ab10a9faa99fb21abb02daac7305c4077"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the Axilrod-Teller parameter nu to the specified site.  <br /></td></tr>
+<tr class="memdesc:ab10a9faa99fb21abb02daac7305c4077"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the Axilrod-Teller-Muto parameter nu to the specified site.  <br /></td></tr>
 <tr class="separator:ab10a9faa99fb21abb02daac7305c4077"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebe7d56427c86bc4813ec4642231361e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classMDFlexConfig.html#aebe7d56427c86bc4813ec4642231361e">addMolType</a> (unsigned long molId, const std::vector&lt; unsigned long &gt; &amp;siteIds, const std::vector&lt; std::array&lt; double, 3 &gt; &gt; &amp;relSitePos, std::array&lt; double, 3 &gt; momentOfInertia)</td></tr>
 <tr class="memdesc:aebe7d56427c86bc4813ec4642231361e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds site positions and types for a given molecule type and checks if the molId already exists.  <br /></td></tr>
@@ -728,7 +728,7 @@ static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>value
       </table>
 </div><div class="memdoc">
 
-<p>Adds the Axilrod-Teller parameter nu to the specified site. </p>
+<p>Adds the Axilrod-Teller-Muto parameter nu to the specified site. </p>
 <p>Checks if the given site exists and if the parameter was already specified.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -1517,7 +1517,8 @@ static constexpr int&#160;</td><td class="memItemRight" valign="bottom"><b>value
 </div><div class="memdoc">
 <b>Initial value:</b><div class="fragment"><div class="line">{</div>
 <div class="line">      </div>
-<div class="line">      FunctorOption3B::none, <span class="stringliteral">&quot;functor-3b&quot;</span>, <span class="keyword">true</span>, <span class="stringliteral">&quot;Triwise force functor to use. Possible Values: (axilrod-teller)&quot;</span>}</div>
+<div class="line">      FunctorOption3B::none, <span class="stringliteral">&quot;functor-3b&quot;</span>, <span class="keyword">true</span>,</div>
+<div class="line">      <span class="stringliteral">&quot;Triwise force functor to use. Possible Values: (axilrod-teller-muto)&quot;</span>}</div>
 </div><!-- fragment -->
 <p>functorOption3B </p>
 
