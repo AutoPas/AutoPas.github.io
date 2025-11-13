@@ -330,16 +330,16 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a5b2ebb82e741abf06d3dec07087a35cc"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classautopas_1_1TuningStrategyInterface.html">TuningStrategyInterface</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TuningStrategyFactory_8cpp.html#a5b2ebb82e741abf06d3dec07087a35cc">autopas::TuningStrategyFactory::generateTuningStrategy</a> (const std::set&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;searchSpace, TuningStrategyOption tuningStrategyOption, const <a class="el" href="structautopas_1_1TuningStrategyFactoryInfo.html">TuningStrategyFactoryInfo</a> &amp;info, const std::string &amp;outputSuffix=&quot;&quot;)</td></tr>
-<tr class="memdesc:a5b2ebb82e741abf06d3dec07087a35cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a new Tuning Strategy object.  <br /></td></tr>
-<tr class="separator:a5b2ebb82e741abf06d3dec07087a35cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b227366bff0877d3038b33f8c4bfcdc"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classautopas_1_1TuningStrategyInterface.html">TuningStrategyInterface</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="TuningStrategyFactory_8cpp.html#a7b227366bff0877d3038b33f8c4bfcdc">autopas::TuningStrategyFactory::generateTuningStrategy</a> (const std::set&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;searchSpace, TuningStrategyOption tuningStrategyOption, const <a class="el" href="structautopas_1_1TuningStrategyFactoryInfo.html">TuningStrategyFactoryInfo</a> &amp;info, InteractionTypeOption interactionType, const std::string &amp;outputSuffix=&quot;&quot;)</td></tr>
+<tr class="memdesc:a7b227366bff0877d3038b33f8c4bfcdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates a new Tuning Strategy object.  <br /></td></tr>
+<tr class="separator:a7b227366bff0877d3038b33f8c4bfcdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>seckler </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>07.02.2020 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a5b2ebb82e741abf06d3dec07087a35cc" name="a5b2ebb82e741abf06d3dec07087a35cc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b2ebb82e741abf06d3dec07087a35cc">&#9670;&#160;</a></span>generateTuningStrategy()</h2>
+<a id="a7b227366bff0877d3038b33f8c4bfcdc" name="a7b227366bff0877d3038b33f8c4bfcdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b227366bff0877d3038b33f8c4bfcdc">&#9670;&#160;</a></span>generateTuningStrategy()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -365,6 +365,12 @@ Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">InteractionTypeOption&#160;</td>
+          <td class="paramname"><em>interactionType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
           <td class="paramname"><em>outputSuffix</em> = <code>&quot;&quot;</code>&#160;</td>
         </tr>
@@ -379,9 +385,10 @@ Functions</h2></td></tr>
 <p>Generates a new Tuning Strategy object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">searchSpace</td><td></td></tr>
-    <tr><td class="paramname">tuningStrategyOption</td><td></td></tr>
-    <tr><td class="paramname">info</td><td></td></tr>
+    <tr><td class="paramname">searchSpace</td><td>Search space of algorithmic configurations to choose from. </td></tr>
+    <tr><td class="paramname">tuningStrategyOption</td><td>the tuning strategy type. </td></tr>
+    <tr><td class="paramname">info</td><td>TuningStrategyFactoryInfo containing information which may be relevant when construction the given tuning strategy. </td></tr>
+    <tr><td class="paramname">interactionType</td><td>Type of interaction. </td></tr>
     <tr><td class="paramname">outputSuffix</td><td></td></tr>
   </table>
   </dd>
