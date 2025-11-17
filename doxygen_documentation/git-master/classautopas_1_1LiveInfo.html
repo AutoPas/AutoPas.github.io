@@ -135,6 +135,13 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>InfoType</b> = std::
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a75717fb7b8de0ff3c37ed8e7eb125d90"><td class="memItemLeft" align="right" valign="top"><a id="a75717fb7b8de0ff3c37ed8e7eb125d90" name="a75717fb7b8de0ff3c37ed8e7eb125d90"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>LiveInfo</b> ()=default</td></tr>
+<tr class="memdesc:a75717fb7b8de0ff3c37ed8e7eb125d90"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor. <br /></td></tr>
+<tr class="separator:a75717fb7b8de0ff3c37ed8e7eb125d90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae37242d8033279ff370970d66ab060fa"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LiveInfo.html#ae37242d8033279ff370970d66ab060fa">LiveInfo</a> (size_t numOwnedParticles, size_t numHaloParticles, double cutoff, double skin, double domainSizeX, double domainSizeY, double domainSizeZ, size_t particleSize, size_t threadCount, size_t rebuildFrequency, size_t numCells, size_t numEmptyCells, size_t minParticlesPerCell, size_t maxParticlesPerCell, size_t medianParticlesPerCell, size_t lowerQuartileParticlesPerCell, size_t upperQuartileParticlesPerCell, double meanParticlesPerCell, double particlesPerCellStdDev, double relativeParticlesPerCellStdDev, size_t estimatedNumNeighborInteractions, double particleDependentBinMaxDensity, double particleDependentBinDensityStdDev, size_t maxParticlesPerBlurredBin, size_t minParticlesPerBlurredBin, size_t medianParticlesPerBlurredBin, size_t lowerQuartileParticlesPerBlurredBin, size_t upperQuartileParticlesPerBlurredBin, double meanParticlesPerBlurredBin, double particlesPerBlurredBinStdDev, double relativeParticlesPerBlurredBinStdDev)</td></tr>
+<tr class="memdesc:ae37242d8033279ff370970d66ab060fa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor for <a class="el" href="classautopas_1_1LiveInfo.html" title="This class is able to gather and store important information for a tuning phase from a container and ...">LiveInfo</a> using the parameters.  <br /></td></tr>
+<tr class="separator:ae37242d8033279ff370970d66ab060fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6aaa416e03c4c9e5ac8095ed2de388bf"><td class="memTemplParams" colspan="2">template&lt;class Particle_T &gt; </td></tr>
 <tr class="memitem:a6aaa416e03c4c9e5ac8095ed2de388bf"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1LiveInfo.html#a6aaa416e03c4c9e5ac8095ed2de388bf">gather</a> (<a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; Particle_T, true, false &gt; particleIter, size_t rebuildFrequency, size_t numOwnedParticles, std::array&lt; double, 3 &gt; boxMin, std::array&lt; double, 3 &gt; boxMax, double cutoff, double skin)</td></tr>
 <tr class="memdesc:a6aaa416e03c4c9e5ac8095ed2de388bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gathers key statistics that define the computational profile of the simulation, in order to provide lower dimensional and human understandable inputs for the tuning strategies.  <br /></td></tr>
@@ -165,7 +172,256 @@ Friends</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class is able to gather and store important information for a tuning phase from a container and functor. </p>
 <p>Infos are identified by a string. Their type is InfoType. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ae37242d8033279ff370970d66ab060fa" name="ae37242d8033279ff370970d66ab060fa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae37242d8033279ff370970d66ab060fa">&#9670;&#160;</a></span>LiveInfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">autopas::LiveInfo::LiveInfo </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>numOwnedParticles</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>numHaloParticles</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>cutoff</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>skin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>domainSizeX</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>domainSizeY</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>domainSizeZ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>particleSize</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>threadCount</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>rebuildFrequency</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>numCells</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>numEmptyCells</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>minParticlesPerCell</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>maxParticlesPerCell</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>medianParticlesPerCell</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>lowerQuartileParticlesPerCell</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>upperQuartileParticlesPerCell</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>meanParticlesPerCell</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>particlesPerCellStdDev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>relativeParticlesPerCellStdDev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>estimatedNumNeighborInteractions</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>particleDependentBinMaxDensity</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>particleDependentBinDensityStdDev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>maxParticlesPerBlurredBin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>minParticlesPerBlurredBin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>medianParticlesPerBlurredBin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>lowerQuartileParticlesPerBlurredBin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>upperQuartileParticlesPerBlurredBin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>meanParticlesPerBlurredBin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>particlesPerBlurredBinStdDev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>relativeParticlesPerBlurredBinStdDev</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Constructor for <a class="el" href="classautopas_1_1LiveInfo.html" title="This class is able to gather and store important information for a tuning phase from a container and ...">LiveInfo</a> using the parameters. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">numOwnedParticles</td><td>The number of owned particles. </td></tr>
+    <tr><td class="paramname">numHaloParticles</td><td>The number of halo particles. </td></tr>
+    <tr><td class="paramname">cutoff</td><td>The cutoff radius. </td></tr>
+    <tr><td class="paramname">skin</td><td>The skin radius. </td></tr>
+    <tr><td class="paramname">domainSizeX</td><td>The size of the domain in x direction. </td></tr>
+    <tr><td class="paramname">domainSizeY</td><td>The size of the domain in y direction. </td></tr>
+    <tr><td class="paramname">domainSizeZ</td><td>The size of the domain in z direction. </td></tr>
+    <tr><td class="paramname">particleSize</td><td>The size of a particle in bytes. </td></tr>
+    <tr><td class="paramname">threadCount</td><td>The number of threads used. </td></tr>
+    <tr><td class="paramname">rebuildFrequency</td><td>The rebuild frequency of the neighbor lists. </td></tr>
+    <tr><td class="paramname">numCells</td><td>The number of cells in the container. </td></tr>
+    <tr><td class="paramname">numEmptyCells</td><td>The number of empty cells in the container. </td></tr>
+    <tr><td class="paramname">minParticlesPerCell</td><td>The minimum number of particles in a cell. </td></tr>
+    <tr><td class="paramname">maxParticlesPerCell</td><td>The maximum number of particles in a cell. </td></tr>
+    <tr><td class="paramname">medianParticlesPerCell</td><td>The median number of particles in a cell. </td></tr>
+    <tr><td class="paramname">lowerQuartileParticlesPerCell</td><td>The lower quartile of particles per cell. </td></tr>
+    <tr><td class="paramname">upperQuartileParticlesPerCell</td><td>The upper quartile of particles per cell. </td></tr>
+    <tr><td class="paramname">meanParticlesPerCell</td><td>The mean number of particles per cell. </td></tr>
+    <tr><td class="paramname">particlesPerCellStdDev</td><td>The standard deviation of particles per cell. </td></tr>
+    <tr><td class="paramname">relativeParticlesPerCellStdDev</td><td>The relative standard deviation of particles per cell. (mean normalized) </td></tr>
+    <tr><td class="paramname">estimatedNumNeighborInteractions</td><td>The estimated number of neighbor interactions. </td></tr>
+    <tr><td class="paramname">particleDependentBinMaxDensity</td><td>The maximum density of the particle-dependent bin structure. </td></tr>
+    <tr><td class="paramname">particleDependentBinDensityStdDev</td><td>The standard deviation of the densities of the particle-dependent bin structure. </td></tr>
+    <tr><td class="paramname">maxParticlesPerBlurredBin</td><td>The maximum number of particles in a blurred bin. </td></tr>
+    <tr><td class="paramname">minParticlesPerBlurredBin</td><td>The minimum number of particles in a blurred bin. </td></tr>
+    <tr><td class="paramname">medianParticlesPerBlurredBin</td><td>The median number of particles in a blurred bin. </td></tr>
+    <tr><td class="paramname">lowerQuartileParticlesPerBlurredBin</td><td>The lower quartile of particles per blurred bin. </td></tr>
+    <tr><td class="paramname">upperQuartileParticlesPerBlurredBin</td><td>The upper quartile of particles per blurred bin. </td></tr>
+    <tr><td class="paramname">meanParticlesPerBlurredBin</td><td>The mean number of particles in a blurred bin. </td></tr>
+    <tr><td class="paramname">particlesPerBlurredBinStdDev</td><td>The standard deviation of particles per blurred bin. </td></tr>
+    <tr><td class="paramname">relativeParticlesPerBlurredBinStdDev</td><td>The relative standard deviation of particles per blurred bin. (mean normalized) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a6aaa416e03c4c9e5ac8095ed2de388bf" name="a6aaa416e03c4c9e5ac8095ed2de388bf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6aaa416e03c4c9e5ac8095ed2de388bf">&#9670;&#160;</a></span>gather()</h2>
 
