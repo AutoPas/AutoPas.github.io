@@ -13,8 +13,9 @@ var searchData=
   ['_5fpreviousiterationwastuningiteration_10',['_previousIterationWasTuningIteration',['../classSimulation.html#a622db945c958c352a90fda31b29205c3',1,'Simulation']]],
   ['_5fsimulationispaused_11',['_simulationIsPaused',['../classSimulation.html#aeba9547f5eb7fb1ef4cacd786f3b6215',1,'Simulation']]],
   ['_5ftimers_12',['_timers',['../classSimulation.html#a0f2f174fed0fb0bdcb2714621a93bf95',1,'Simulation']]],
-  ['_5ftypeid_13',['_typeId',['../classObject.html#ae10047db26b38adfd9ebb3940c655a26',1,'Object']]],
-  ['_5fvalueoffset_14',['_valueOffset',['../classObject.html#a034f3a47565c082f819aedac7cbd1de2',1,'Object']]],
-  ['_5fvelocity_15',['_velocity',['../classObject.html#ad832fb5ad0a3e7f928732264045be98b',1,'Object']]],
-  ['_5fvtkwriter_16',['_vtkWriter',['../classSimulation.html#ae7590bec32b8b7c29de42157f2b9f4ab',1,'Simulation']]]
+  ['_5ftotalenergysensor_13',['_totalEnergySensor',['../classSimulation.html#a22c94d93269673b797a8de597eb4c858',1,'Simulation']]],
+  ['_5ftypeid_14',['_typeId',['../classObject.html#ae10047db26b38adfd9ebb3940c655a26',1,'Object']]],
+  ['_5fvalueoffset_15',['_valueOffset',['../classObject.html#a034f3a47565c082f819aedac7cbd1de2',1,'Object']]],
+  ['_5fvelocity_16',['_velocity',['../classObject.html#ad832fb5ad0a3e7f928732264045be98b',1,'Object']]],
+  ['_5fvtkwriter_17',['_vtkWriter',['../classSimulation.html#ae7590bec32b8b7c29de42157f2b9f4ab',1,'Simulation']]]
 ];
