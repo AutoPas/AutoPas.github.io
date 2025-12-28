@@ -9,5 +9,6 @@ var searchData=
   ['loadparticlesfromcheckpoint_6',['loadParticlesFromCheckpoint',['../classMDFlexConfig.html#a0211e5782c5f78a8fdebe759e7eb7a44',1,'MDFlexConfig']]],
   ['loadparticlesfromrankrecord_7',['loadParticlesFromRankRecord',['../namespaceanonymous__namespace_02MDFlexConfig_8cpp_03.html#a3d5b31a1373a11a53541b94dd7a7e366',1,'anonymous_namespace{MDFlexConfig.cpp}']]],
   ['logfilename_8',['logFileName',['../classMDFlexConfig.html#ae958917a9e73a51460169c384566aea2',1,'MDFlexConfig']]],
-  ['loglevel_9',['logLevel',['../classMDFlexConfig.html#a172d51f91a28c5362a9cba2af456220e',1,'MDFlexConfig']]]
+  ['logglobals_9',['logGlobals',['../classGlobalVariableLogger.html#a44b2d9d5d6a7735e6e2008cd3c5e5261',1,'GlobalVariableLogger']]],
+  ['loglevel_10',['logLevel',['../classMDFlexConfig.html#a172d51f91a28c5362a9cba2af456220e',1,'MDFlexConfig']]]
 ];

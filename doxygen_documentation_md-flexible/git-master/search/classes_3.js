@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loadbalanceroption_0',['LoadBalancerOption',['../classLoadBalancerOption.html',1,'']]]
+  ['globalvariablelogger_0',['GlobalVariableLogger',['../classGlobalVariableLogger.html',1,'']]]
 ];

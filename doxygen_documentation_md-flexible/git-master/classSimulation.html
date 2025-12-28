@@ -252,6 +252,17 @@ std::shared_ptr&lt; std::ofstream &gt;&#160;</td><td class="memItemRight" valign
 std::ostream *&#160;</td><td class="memItemRight" valign="bottom"><b>_outputStream</b></td></tr>
 <tr class="memdesc:a9a54c447073c029d035161334da87a9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pointer to the output stream. <br /></td></tr>
 <tr class="separator:a9a54c447073c029d035161334da87a9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae88bc77934ac2e67cf8de656a32d713b"><td class="memItemLeft" align="right" valign="top"><a id="ae88bc77934ac2e67cf8de656a32d713b" name="ae88bc77934ac2e67cf8de656a32d713b"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>_totalPotentialEnergy</b> {}</td></tr>
+<tr class="memdesc:ae88bc77934ac2e67cf8de656a32d713b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable to store total potential energy for the current iteration from both 2B and 3B interactions. <br /></td></tr>
+<tr class="separator:ae88bc77934ac2e67cf8de656a32d713b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4476a3c6f9681391d7ef0bfba41fbb80"><td class="memItemLeft" align="right" valign="top"><a id="a4476a3c6f9681391d7ef0bfba41fbb80" name="a4476a3c6f9681391d7ef0bfba41fbb80"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><b>_totalVirialSum</b> {}</td></tr>
+<tr class="memdesc:a4476a3c6f9681391d7ef0bfba41fbb80"><td class="mdescLeft">&#160;</td><td class="mdescRight">Variable to store total virial sum for the current iteration from both 2B and 3B interactions. <br /></td></tr>
+<tr class="separator:a4476a3c6f9681391d7ef0bfba41fbb80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3e1cf7186aea62a21ee01eacfda37513"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classGlobalVariableLogger.html">GlobalVariableLogger</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulation.html#a3e1cf7186aea62a21ee01eacfda37513">_globalLogger</a></td></tr>
+<tr class="memdesc:a3e1cf7186aea62a21ee01eacfda37513"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logger for global variables calculated by the Functor, eg.  <br /></td></tr>
+<tr class="separator:a3e1cf7186aea62a21ee01eacfda37513"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec6b3d58a474947f6a27ee1682a63ca2"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classSimulation.html#aec6b3d58a474947f6a27ee1682a63ca2">_iteration</a> = 0</td></tr>
 <tr class="memdesc:aec6b3d58a474947f6a27ee1682a63ca2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of completed iterations.  <br /></td></tr>
 <tr class="separator:aec6b3d58a474947f6a27ee1682a63ca2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -435,6 +446,31 @@ static constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><b>_flo
 
 <p>Stores the configuration used for the simulation. </p>
 <p>The configuration is defined by the .yaml file passed to the application with the '&ndash;yaml-file' argument. </p>
+
+</div>
+</div>
+<a id="a3e1cf7186aea62a21ee01eacfda37513" name="a3e1cf7186aea62a21ee01eacfda37513"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3e1cf7186aea62a21ee01eacfda37513">&#9670;&#160;</a></span>_globalLogger</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::unique_ptr&lt;<a class="el" href="classGlobalVariableLogger.html">GlobalVariableLogger</a>&gt; Simulation::_globalLogger</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Logger for global variables calculated by the Functor, eg. </p>
+<p>Virial, Potential Energy, etc. </p>
 
 </div>
 </div>
