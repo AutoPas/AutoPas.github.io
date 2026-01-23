@@ -204,6 +204,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aeeffa6300626625ce75bfb7bb460f2c3"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#aeeffa6300626625ce75bfb7bb460f2c3">getMeanRebuildFrequency</a> (bool considerOnlyLastNonTuningPhase=false) const</td></tr>
 <tr class="memdesc:aeeffa6300626625ce75bfb7bb460f2c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the mean rebuild frequency.  <br /></td></tr>
 <tr class="separator:aeeffa6300626625ce75bfb7bb460f2c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d28dd6f4db18beded61e0675416a84e"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a7d28dd6f4db18beded61e0675416a84e">getVelocityMethodRFEstimate</a> (const double skin, const double deltaT) const</td></tr>
+<tr class="memdesc:a7d28dd6f4db18beded61e0675416a84e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estimates the rebuild frequency based on the current maximum velocity in the container Using the formula rf = skin/deltaT/vmax/2.  <br /></td></tr>
+<tr class="separator:a7d28dd6f4db18beded61e0675416a84e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac71682f6cc7050891908770bb99d704f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#ac71682f6cc7050891908770bb99d704f">getNeighborListsInvalidDoDynamicRebuild</a> ()</td></tr>
 <tr class="memdesc:ac71682f6cc7050891908770bb99d704f"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter function for _neighborListInvalidDoDynamicRebuild  <br /></td></tr>
 <tr class="separator:ac71682f6cc7050891908770bb99d704f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1023,6 +1026,54 @@ template&lt;typename Particle_T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>iterator to iterate over all particles in a specific region   </dd></dl>
+
+</div>
+</div>
+<a id="a7d28dd6f4db18beded61e0675416a84e" name="a7d28dd6f4db18beded61e0675416a84e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d28dd6f4db18beded61e0675416a84e">&#9670;&#160;</a></span>getVelocityMethodRFEstimate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename Particle_T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">double <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; Particle_T &gt;::getVelocityMethodRFEstimate </td>
+          <td>(</td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>skin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>deltaT</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Estimates the rebuild frequency based on the current maximum velocity in the container Using the formula rf = skin/deltaT/vmax/2. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">skin</td><td>is the skin length used in the simulation </td></tr>
+    <tr><td class="paramname">deltaT</td><td>is the time step </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>estimate of the current rebuild frequency </dd></dl>
 
 </div>
 </div>
