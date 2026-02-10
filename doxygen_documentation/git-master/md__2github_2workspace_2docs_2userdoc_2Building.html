@@ -111,8 +111,8 @@ $(function() {
   <div class="headertitle"><div class="title">Building AutoPas </div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p><a class="anchor" id="autotoc_md7"></a> </p>
-<h1><a class="anchor" id="autotoc_md8"></a>
+<div class="textblock"><p><a class="anchor" id="autotoc_md15"></a> </p>
+<h1><a class="anchor" id="autotoc_md16"></a>
 Requirements</h1>
 <ul>
 <li>CMake 3.14 or newer</li>
@@ -126,13 +126,13 @@ Requirements</h1>
 </ul>
 <p>There are a few more dependencies, however you don't need to install them because they come bundled with AutoPas. See <a href="/libs">libs/</a> for a complete list.</p>
 <p>If you insist on using your locally installed version of any of them, set the CMake variable <code>&lt;LIBNAME&gt;_ForceBundled=OFF</code></p>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h1><a class="anchor" id="autotoc_md17"></a>
 Build Instructions</h1>
 <p>Create a build directory and run the default CMake-based build workflow: </p><div class="fragment"><div class="line">mkdir build</div>
 <div class="line">cd build</div>
 <div class="line">cmake ..    # Better: use the interactive version ccmake</div>
 <div class="line">cmake --build .</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md10"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md18"></a>
 Faster Compilation</h2>
 <p>It is highly recommended to only build the target you need instead of all default targets. E.g. The following CMake features are highly recommended to keep compile time and system load to the necessary minimum:</p><ul>
 <li>Only build the target you need</li>
@@ -140,33 +140,33 @@ Faster Compilation</h2>
 <li>Clang tends to use significantly less RAM per thread, thus enabling more parallelism</li>
 </ul>
 <p>Here is an example of a parallel compilation of the md-flexible example: </p><div class="fragment"><div class="line">cmake --build . --target md-flexible --parallel 12</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md11"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md19"></a>
 Enabling Rules-Based Tuning and Fuzzy Tuning</h2>
 <p><a class="anchor" id="rules-based-tuning-fuzzy-tuning"></a></p>
 <p>Two of the possible tuning strategies of AutoPas, rules-based tuning and fuzzy-tuning, require dependencies <code>antlr4cpp</code> and <code>uuid</code>. These are bundled with AutoPas, but can take some time to compile and, in some rare cases, lead to compilation errors. As such, by default, rule based tuning is disabled, and <code>antlr4cpp</code> and <code>uuid</code> are not compiled.</p>
 <p>Both tuning strategies can be enabled via the CMake option: </p><div class="fragment"><div class="line">cmake -DAUTOPAS_ENABLE_RULES_BASED_AND_FUZZY_TUNING=ON .. </div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md12"></a>
+</div><!-- fragment --><h2><a class="anchor" id="autotoc_md20"></a>
 Energy Measurements and Tuning</h2>
 <p>By default, AutoPas tunes for the best configuration according to runtime. For all Linux based systems, it is also possible to tune for the algorithm that consumes the least energy. This is implemented via <a href="https://git.astron.nl/RD/pmt">PMT</a> with customization carried out to remove performance overhead in energy measurements. The changes with respect to parent repository can be found in <code>AutoPas/libs/patches/patch-file-pmt-for-autopas.patch</code>, and detail on the reason behind the changes can be found in the <a href="https://mediatum.ub.tum.de/doc/1760019/1760019.pdf">bachelor's thesis</a> by Maximilian Praus. In the current version, energy consumption can be measured via Intel's RAPL or with LIKWID. RAPL is set as the default sensor and is forced to compile always.</p>
 <p>To use energy tuning, energy measurements must be enabled using the CMake option: </p><div class="fragment"><div class="line">cmake -DAUTOPAS_ENABLE_ENERGY_MEASUREMENTS=ON .. </div>
 </div><!-- fragment --><p>The RAPL sensor is forcibly enabled by AutoPas by forcing the cmake option <code>PMT_BUILD_RAPL</code> to <code>ON</code>. However, other available sensors like <code>LIKWID</code> can also be used by separately compiling them using the CMake option: </p><div class="fragment"><div class="line">cmake -DPMT_BUILD_LIKWID=ON .. </div>
 </div><!-- fragment --><p> Note that user must have <code>LIKWID</code> installed before enabling this option. Additionally, an energy sensor used for measurement needs to be selected during runtime by specifying the option <code>energy-sensor</code> in the input file. The default is set to <code>rapl</code> and will be used when no option is specified. However, when multiple sensors are compiled, user can choose any of the available sensors by specifying the <code>energy-sensor</code> option.</p>
-<h3><a class="anchor" id="autotoc_md13"></a>
+<h3><a class="anchor" id="autotoc_md21"></a>
 RAPL Permissions</h3>
 <p>Energy measurements using Intel RAPL require read access to the system powercap files located at: </p><div class="fragment"><div class="line">/sys/class/powercap/intel-rapl*</div>
 </div><!-- fragment --><p> By default, these files are readable only by the root user and simulation need to be run with <code>sudo</code>. This is not ideal. For example, running MPI applications with <code>sudo</code> is strongly discouraged, the recommended workaround is to adjust the permissions of the RAPL files once prior to running the simulation: </p><div class="fragment"><div class="line">sudo chmod -R a+r /sys/class/powercap/intel-rapl*</div>
 </div><!-- fragment --><p> This command grants read-only access to all users, allowing the simulation to access RAPL energy counters without requiring sudo. However, these permission changes apply only until the next system reboot. After a reboot, the command must be executed again unless a persistent <a href="https://linuxconfig.org/tutorial-on-how-to-write-basic-udev-rules-in-linux">udev</a> rule is configured.</p>
 <p><b>Note</b>: On most Linux clusters, such persistent configuration is typically not required, as system administrators already provide user-level access to RAPL counters.</p>
-<h2><a class="anchor" id="autotoc_md14"></a>
+<h2><a class="anchor" id="autotoc_md22"></a>
 Select a Non-Default Compiler</h2>
 <p>If you want to use a different compiler than your system default, change the <code>CC</code> and <code>CXX</code> environment variables during initial configuration AND building: </p><div class="fragment"><div class="line">CC=clang CXX=clang++ cmake ..</div>
 <div class="line">CC=clang CXX=clang++ cmake --build .</div>
 </div><!-- fragment --><p>This assumes <code>clang</code> and <code>clang++</code> is in your search path. Otherwise, specify the full path e.g. <code>/usr/bin/clang</code> or wherever your clang is kept.</p>
 <p>Explicitly selecting the compiler is very often especially important when compiling on a cluster!</p>
-<h1><a class="anchor" id="autotoc_md15"></a>
+<h1><a class="anchor" id="autotoc_md23"></a>
 Profiling Compilation Time</h1>
 <p>AutoPas offers easy access to compiler-based compile-time profiling for GCC and Clang via the CMake option <code>AUTOPAS_COMPILE_TIME_PROFILING</code>. This generates one <code>.json</code> file per compilation unit next to the generated object file deep in the build folder. Chrome has a built-in tool for viewing these files as flame graphs. It can be accessed through the URL <code>chrome://tracing</code>.</p>
-<h1><a class="anchor" id="autotoc_md16"></a>
+<h1><a class="anchor" id="autotoc_md24"></a>
 Related Files and Folders</h1>
 <ul>
 <li>cmake/</li>
