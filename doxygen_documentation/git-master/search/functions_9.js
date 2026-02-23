@@ -39,6 +39,6 @@ var searchData=
   ['logliveinfo_36',['logLiveInfo',['../classautopas_1_1LiveInfoLogger.html#af0aa3245503d904746cb09d1dcd31588',1,'autopas::LiveInfoLogger']]],
   ['logtosqlitewriter_37',['LogToSQLiteWriter',['../classLogToSQLiteWriter.html#a120f53b995d753b9d9b8a2613c47dad7',1,'LogToSQLiteWriter']]],
   ['logtree_38',['logTree',['../classautopas_1_1OctreeLogger.html#abbd958722b7b40022e31d0427134ff43',1,'autopas::OctreeLogger::logTree(OctreeNodeWrapper&lt; Particle_T &gt; *wrapper)'],['../classautopas_1_1OctreeLogger.html#ac0d95d516ade2ca97746aadee7e8f090',1,'autopas::OctreeLogger::logTree(OctreeNodeInterface&lt; Particle_T &gt; *root)']]],
-  ['logtuningdata_39',['logTuningData',['../classautopas_1_1TuningDataLogger.html#af0a8c3b8237f0405db5818cfd72a8785',1,'autopas::TuningDataLogger']]],
+  ['logtuningdata_39',['logTuningData',['../classautopas_1_1TuningDataLogger.html#ad19a8a80f70baed8641228c691704a25',1,'autopas::TuningDataLogger']]],
   ['logtuningresult_40',['logTuningResult',['../classautopas_1_1AutoTuner.html#a4869c59c2bc70ac244e27840a1f716c1',1,'autopas::AutoTuner::logTuningResult()'],['../classautopas_1_1TuningResultLogger.html#ab59186231fcb88f0a27c902f98a52cb0',1,'autopas::TuningResultLogger::logTuningResult()']]]
 ];

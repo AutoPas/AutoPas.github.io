@@ -126,24 +126,24 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:afd4f5c3ac98ea8cd871e8049e7b9dff9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningDataLogger.html#afd4f5c3ac98ea8cd871e8049e7b9dff9">TuningDataLogger</a> (size_t numSamples, const std::string &amp;outputSuffix=&quot;&quot;)</td></tr>
-<tr class="memdesc:afd4f5c3ac98ea8cd871e8049e7b9dff9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor initializes the logger and sets the output file name.  <br /></td></tr>
-<tr class="separator:afd4f5c3ac98ea8cd871e8049e7b9dff9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92340396be6070c6665fdf7d20d8bb77"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningDataLogger.html#a92340396be6070c6665fdf7d20d8bb77">TuningDataLogger</a> (size_t numSamples, size_t rebuildFrequency, const std::string &amp;outputSuffix=&quot;&quot;)</td></tr>
+<tr class="memdesc:a92340396be6070c6665fdf7d20d8bb77"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor initializes the logger and sets the output file name.  <br /></td></tr>
+<tr class="separator:a92340396be6070c6665fdf7d20d8bb77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a592be40947688226a689b912da9d6eb8"><td class="memItemLeft" align="right" valign="top"><a id="a592be40947688226a689b912da9d6eb8" name="a592be40947688226a689b912da9d6eb8"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~TuningDataLogger</b> ()</td></tr>
 <tr class="memdesc:a592be40947688226a689b912da9d6eb8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor drops the logger from the spd registry. <br /></td></tr>
 <tr class="separator:a592be40947688226a689b912da9d6eb8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af0a8c3b8237f0405db5818cfd72a8785"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningDataLogger.html#af0a8c3b8237f0405db5818cfd72a8785">logTuningData</a> (const <a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a> &amp;configuration, const std::vector&lt; long &gt; &amp;samplesRebuildingNeighborLists, const std::vector&lt; long &gt; &amp;samplesNotRebuildingNeighborLists, size_t iteration, long reducedValue, long smoothedVale, double meanRebuildFrequency) const</td></tr>
-<tr class="memdesc:af0a8c3b8237f0405db5818cfd72a8785"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log the result of a tuning phase.  <br /></td></tr>
-<tr class="separator:af0a8c3b8237f0405db5818cfd72a8785"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad19a8a80f70baed8641228c691704a25"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningDataLogger.html#ad19a8a80f70baed8641228c691704a25">logTuningData</a> (const <a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a> &amp;configuration, const std::vector&lt; long &gt; &amp;samplesRebuildingNeighborLists, const std::vector&lt; long &gt; &amp;samplesTraverseInteractions, size_t iteration, long reducedValue, long smoothedVale, double meanRebuildFrequency) const</td></tr>
+<tr class="memdesc:ad19a8a80f70baed8641228c691704a25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Log the result of a tuning phase.  <br /></td></tr>
+<tr class="separator:ad19a8a80f70baed8641228c691704a25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper to log results of the tuning process to a csv file for easier analysis. </p>
 <p>It uses an asynchronous spd logger to write a csv file named "AutoPas_iterationPerformance_&lt;dateStamp&gt;.csv".</p>
 <p>By default logging the data is disabled. It can be enabled by setting the cmake variable AUTOPAS_LOG_TUNINGDATA to ON. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="afd4f5c3ac98ea8cd871e8049e7b9dff9" name="afd4f5c3ac98ea8cd871e8049e7b9dff9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afd4f5c3ac98ea8cd871e8049e7b9dff9">&#9670;&#160;</a></span>TuningDataLogger()</h2>
+<a id="a92340396be6070c6665fdf7d20d8bb77" name="a92340396be6070c6665fdf7d20d8bb77"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92340396be6070c6665fdf7d20d8bb77">&#9670;&#160;</a></span>TuningDataLogger()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -156,6 +156,12 @@ Public Member Functions</h2></td></tr>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>numSamples</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>rebuildFrequency</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -180,6 +186,7 @@ Public Member Functions</h2></td></tr>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">numSamples</td><td>Number of samples that are taken per configuration. </td></tr>
+    <tr><td class="paramname">rebuildFrequency</td><td>Number of iterations at which the neighbor lists are updated. This is used here to evaluate how many rebuild samples we will collect. </td></tr>
     <tr><td class="paramname">outputSuffix</td><td>Suffix for all output files produced by this class. </td></tr>
   </table>
   </dd>
@@ -188,8 +195,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="af0a8c3b8237f0405db5818cfd72a8785" name="af0a8c3b8237f0405db5818cfd72a8785"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0a8c3b8237f0405db5818cfd72a8785">&#9670;&#160;</a></span>logTuningData()</h2>
+<a id="ad19a8a80f70baed8641228c691704a25" name="ad19a8a80f70baed8641228c691704a25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad19a8a80f70baed8641228c691704a25">&#9670;&#160;</a></span>logTuningData()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -210,7 +217,7 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::vector&lt; long &gt; &amp;&#160;</td>
-          <td class="paramname"><em>samplesNotRebuildingNeighborLists</em>, </td>
+          <td class="paramname"><em>samplesTraverseInteractions</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -249,7 +256,7 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">configuration</td><td></td></tr>
     <tr><td class="paramname">samplesRebuildingNeighborLists</td><td></td></tr>
-    <tr><td class="paramname">samplesNotRebuildingNeighborLists</td><td></td></tr>
+    <tr><td class="paramname">samplesTraverseInteractions</td><td></td></tr>
     <tr><td class="paramname">iteration</td><td></td></tr>
     <tr><td class="paramname">reducedValue</td><td></td></tr>
     <tr><td class="paramname">smoothedVale</td><td></td></tr>

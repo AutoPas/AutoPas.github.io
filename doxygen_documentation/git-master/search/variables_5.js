@@ -7,8 +7,10 @@ var searchData=
   ['energymeasurementspossible_4',['energyMeasurementsPossible',['../structautopas_1_1IterationMeasurements.html#ad9e5b02406d14dfe6f11f514535c2403',1,'autopas::IterationMeasurements']]],
   ['energysensor_5',['energySensor',['../structautopas_1_1AutoTunerInfo.html#ae12773e477213c3c10cdbc2c4e5ef83b',1,'autopas::AutoTunerInfo']]],
   ['energytotal_6',['energyTotal',['../structautopas_1_1IterationMeasurements.html#a586ebaaaed19d5533621606902cd13ef',1,'autopas::IterationMeasurements']]],
-  ['energywatts_7',['energyWatts',['../structautopas_1_1IterationMeasurements.html#a040439915ff43c170104a59c8f33a1bb',1,'autopas::IterationMeasurements']]],
-  ['enum_5fextension_5fexception_8',['ENUM_EXTENSION_EXCEPTION',['../namespaceautopas_1_1LCC08CellHandlerUtility_1_1internal.html#aa9cbeb44075e707bf64cf39034278511',1,'autopas::LCC08CellHandlerUtility::internal']]],
-  ['epsilon_5frelative_5fequality_9',['EPSILON_RELATIVE_EQUALITY',['../Math_8h.html#a668f166a57dfdee470651fae690473be',1,'autopas::utils::Math']]],
-  ['extrapolationmethodoption_10',['extrapolationMethodOption',['../structautopas_1_1TuningStrategyFactoryInfo.html#aaf9b405f478d53fd264e784ffe7095cb',1,'autopas::TuningStrategyFactoryInfo']]]
+  ['energytotalnonrebuild_7',['energyTotalNonRebuild',['../structautopas_1_1IterationMeasurements.html#a9107ad3876a7feddd6e513b2748f7fcf',1,'autopas::IterationMeasurements']]],
+  ['energytotalrebuild_8',['energyTotalRebuild',['../structautopas_1_1IterationMeasurements.html#a84a1c133ebf58f7e9860c26f6d998692',1,'autopas::IterationMeasurements']]],
+  ['energywatts_9',['energyWatts',['../structautopas_1_1IterationMeasurements.html#a040439915ff43c170104a59c8f33a1bb',1,'autopas::IterationMeasurements']]],
+  ['enum_5fextension_5fexception_10',['ENUM_EXTENSION_EXCEPTION',['../namespaceautopas_1_1LCC08CellHandlerUtility_1_1internal.html#aa9cbeb44075e707bf64cf39034278511',1,'autopas::LCC08CellHandlerUtility::internal']]],
+  ['epsilon_5frelative_5fequality_11',['EPSILON_RELATIVE_EQUALITY',['../Math_8h.html#a668f166a57dfdee470651fae690473be',1,'autopas::utils::Math']]],
+  ['extrapolationmethodoption_12',['extrapolationMethodOption',['../structautopas_1_1TuningStrategyFactoryInfo.html#aaf9b405f478d53fd264e784ffe7095cb',1,'autopas::TuningStrategyFactoryInfo']]]
 ];

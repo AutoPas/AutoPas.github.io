@@ -195,9 +195,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a071591bc54c4a76ae1bd6a08bd6de8b7"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; double, double, double, long &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a071591bc54c4a76ae1bd6a08bd6de8b7">sampleEnergy</a> ()</td></tr>
 <tr class="memdesc:a071591bc54c4a76ae1bd6a08bd6de8b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Take an energy measurement.  <br /></td></tr>
 <tr class="separator:a071591bc54c4a76ae1bd6a08bd6de8b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaa33a8e72dd043a9872ff9f51415fcf0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#aaa33a8e72dd043a9872ff9f51415fcf0">addMeasurement</a> (long sample, bool neighborListRebuilt)</td></tr>
-<tr class="memdesc:aaa33a8e72dd043a9872ff9f51415fcf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the runtime of a given traversal.  <br /></td></tr>
-<tr class="separator:aaa33a8e72dd043a9872ff9f51415fcf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e20abf551b81a1dd5e16a9e199f9878"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a5e20abf551b81a1dd5e16a9e199f9878">addMeasurement</a> (long sampleRebuild, long sampleTraverseParticles, bool neighborListRebuilt)</td></tr>
+<tr class="memdesc:a5e20abf551b81a1dd5e16a9e199f9878"><td class="mdescLeft">&#160;</td><td class="mdescRight">Save the runtime of a given traversal.  <br /></td></tr>
+<tr class="separator:a5e20abf551b81a1dd5e16a9e199f9878"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1db05f5ec89ee9d4fe29cd8db30b3b75"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a1db05f5ec89ee9d4fe29cd8db30b3b75">addDomainSimilarityStatistics</a> (double pdBinDensityStdDev, double pdBinMaxDensity)</td></tr>
 <tr class="memdesc:a1db05f5ec89ee9d4fe29cd8db30b3b75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds domain similarity statistics to a vector of measurements, which can be smoothed for use in MPI Tuning to find similar domains.  <br /></td></tr>
 <tr class="separator:a1db05f5ec89ee9d4fe29cd8db30b3b75"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -337,8 +337,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="aaa33a8e72dd043a9872ff9f51415fcf0" name="aaa33a8e72dd043a9872ff9f51415fcf0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaa33a8e72dd043a9872ff9f51415fcf0">&#9670;&#160;</a></span>addMeasurement()</h2>
+<a id="a5e20abf551b81a1dd5e16a9e199f9878" name="a5e20abf551b81a1dd5e16a9e199f9878"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e20abf551b81a1dd5e16a9e199f9878">&#9670;&#160;</a></span>addMeasurement()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -347,7 +347,13 @@ Public Member Functions</h2></td></tr>
           <td class="memname">void autopas::AutoTuner::addMeasurement </td>
           <td>(</td>
           <td class="paramtype">long&#160;</td>
-          <td class="paramname"><em>sample</em>, </td>
+          <td class="paramname"><em>sampleRebuild</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long&#160;</td>
+          <td class="paramname"><em>sampleTraverseParticles</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -367,7 +373,8 @@ Public Member Functions</h2></td></tr>
 <p>Samples are collected and reduced to one single value according to _selectorStrategy. Only then the value is passed on to the tuning strategy. This function expects that samples of the same configuration are taken consecutively. The sample argument is a long because std::chrono::duration::count returns a long.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">sample</td><td></td></tr>
+    <tr><td class="paramname">sampleRebuild</td><td>time or energy sample for rebuild part of the iteration. </td></tr>
+    <tr><td class="paramname">sampleTraverseParticles</td><td>time or energy sample for traverse interaction part of the iteration. This includes computeInteraction and remainderTraversal call. </td></tr>
     <tr><td class="paramname">neighborListRebuilt</td><td>If the neighbor list as been rebuilt during the given time. </td></tr>
   </table>
   </dd>
