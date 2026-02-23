@@ -75,6 +75,7 @@ var menudata={children:[
 {text:"Typedefs",url:"namespacemembers_type.html"},
 {text:"Enumerations",url:"namespacemembers_enum.html"},
 {text:"Enumerator",url:"namespacemembers_eval.html"}]}]},
+{text:"Concepts",url:"concepts.html"},
 {text:"Classes",url:"annotated.html",children:[
 {text:"Class List",url:"annotated.html"},
 {text:"Class Index",url:"classes.html"},
@@ -192,6 +193,7 @@ var menudata={children:[
 {text:"All",url:"globals.html",children:[
 {text:"a",url:"globals.html#index_a"},
 {text:"c",url:"globals.html#index_c"},
+{text:"e",url:"globals.html#index_e"},
 {text:"f",url:"globals.html#index_f"},
 {text:"l",url:"globals.html#index_l"},
 {text:"m",url:"globals.html#index_m"},

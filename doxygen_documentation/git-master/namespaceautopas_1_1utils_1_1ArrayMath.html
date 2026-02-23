@@ -207,14 +207,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a66c36f72c8476377af6ddbe6b765d467"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::array&lt; target_T, SIZE &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a66c36f72c8476377af6ddbe6b765d467">ceilAndCast</a> (const std::array&lt; float_T, SIZE &gt; &amp;a)</td></tr>
 <tr class="memdesc:a66c36f72c8476377af6ddbe6b765d467"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ceils all array elements and converts them to a different type.  <br /></td></tr>
 <tr class="separator:a66c36f72c8476377af6ddbe6b765d467"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0ea7ab853775ebf205c8230dcbeaf9d0"><td class="memTemplParams" colspan="2">template&lt;class T , std::size_t SIZE&gt; </td></tr>
-<tr class="memitem:a0ea7ab853775ebf205c8230dcbeaf9d0"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a0ea7ab853775ebf205c8230dcbeaf9d0">isNearRel</a> (const std::array&lt; T, SIZE &gt; &amp;a, const std::array&lt; T, SIZE &gt; &amp;b, double maxRelativeDifference=1e-9)</td></tr>
-<tr class="memdesc:a0ea7ab853775ebf205c8230dcbeaf9d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if arrays are elementwise relatively near each other.  <br /></td></tr>
-<tr class="separator:a0ea7ab853775ebf205c8230dcbeaf9d0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a889f002bd9a70c1070d80da7d83b9e9b"><td class="memTemplParams" colspan="2">template&lt;class T , std::size_t SIZE&gt; </td></tr>
-<tr class="memitem:a889f002bd9a70c1070d80da7d83b9e9b"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a889f002bd9a70c1070d80da7d83b9e9b">isNearRel</a> (const std::vector&lt; std::array&lt; T, SIZE &gt; &gt; &amp;a, const std::vector&lt; std::array&lt; T, SIZE &gt; &gt; &amp;b, double maxRelativeDifference=1e-9)</td></tr>
-<tr class="memdesc:a889f002bd9a70c1070d80da7d83b9e9b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if vectors of arrays are elementwise relatively near each other.  <br /></td></tr>
-<tr class="separator:a889f002bd9a70c1070d80da7d83b9e9b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a1c8a58302d1ded9d18f5ae5d9f821c"><td class="memTemplParams" colspan="2">template&lt;ContainerType Container&gt; </td></tr>
+<tr class="memitem:a6a1c8a58302d1ded9d18f5ae5d9f821c"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a6a1c8a58302d1ded9d18f5ae5d9f821c">isInUlp</a> (Container lhs, Container rhs, unsigned int ulpDistance=<a class="el" href="Math_8h.html#a7291977aabd8aa56135249876bbd395d">Math::MAX_ULP_DISTANCE</a>)</td></tr>
+<tr class="memdesc:a6a1c8a58302d1ded9d18f5ae5d9f821c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function for comparing closeness of two floating point numbers using ULP (Units in the Last Place) method.  <br /></td></tr>
+<tr class="separator:a6a1c8a58302d1ded9d18f5ae5d9f821c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae05085a34be1522c501a543f8a06532a"><td class="memTemplParams" colspan="2">template&lt;ContainerType Container&gt; </td></tr>
+<tr class="memitem:ae05085a34be1522c501a543f8a06532a"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#ae05085a34be1522c501a543f8a06532a">isNearRel</a> (Container lhs, Container rhs, double maxRelativeDifference=<a class="el" href="Math_8h.html#a668f166a57dfdee470651fae690473be">Math::EPSILON_RELATIVE_EQUALITY</a>)</td></tr>
+<tr class="memdesc:ae05085a34be1522c501a543f8a06532a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if arrays are elementwise relatively near each other.  <br /></td></tr>
+<tr class="separator:ae05085a34be1522c501a543f8a06532a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f7b8d87cddbe5de3cd9f5a5b006e1c4"><td class="memTemplParams" colspan="2">template&lt;class T , std::size_t SIZE&gt; </td></tr>
+<tr class="memitem:a2f7b8d87cddbe5de3cd9f5a5b006e1c4"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a2f7b8d87cddbe5de3cd9f5a5b006e1c4">isNearRel</a> (const std::vector&lt; std::array&lt; T, SIZE &gt; &gt; &amp;a, const std::vector&lt; std::array&lt; T, SIZE &gt; &gt; &amp;b, double maxRelativeDifference=<a class="el" href="Math_8h.html#a668f166a57dfdee470651fae690473be">Math::EPSILON_RELATIVE_EQUALITY</a>)</td></tr>
+<tr class="memdesc:a2f7b8d87cddbe5de3cd9f5a5b006e1c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if vectors of arrays are elementwise relatively near each other.  <br /></td></tr>
+<tr class="separator:a2f7b8d87cddbe5de3cd9f5a5b006e1c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad860470ac5e53ca77c9be8401bfc5b40"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:ad860470ac5e53ca77c9be8401bfc5b40"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils_1_1ArrayMath.html#ad860470ac5e53ca77c9be8401bfc5b40">isEqual</a> (const std::vector&lt; T &gt; &amp;a, const std::vector&lt; T &gt; &amp;b)</td></tr>
 <tr class="memdesc:ad860470ac5e53ca77c9be8401bfc5b40"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if vectors are elementwise equal to each other.  <br /></td></tr>
@@ -957,31 +961,31 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a0ea7ab853775ebf205c8230dcbeaf9d0" name="a0ea7ab853775ebf205c8230dcbeaf9d0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0ea7ab853775ebf205c8230dcbeaf9d0">&#9670;&#160;</a></span>isNearRel() <span class="overload">[1/2]</span></h2>
+<a id="a6a1c8a58302d1ded9d18f5ae5d9f821c" name="a6a1c8a58302d1ded9d18f5ae5d9f821c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6a1c8a58302d1ded9d18f5ae5d9f821c">&#9670;&#160;</a></span>isInUlp()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class T , std::size_t SIZE&gt; </div>
+template&lt;ContainerType Container&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">bool autopas::utils::ArrayMath::isNearRel </td>
+          <td class="memname">bool autopas::utils::ArrayMath::isInUlp </td>
           <td>(</td>
-          <td class="paramtype">const std::array&lt; T, SIZE &gt; &amp;&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
+          <td class="paramtype">Container&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::array&lt; T, SIZE &gt; &amp;&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
+          <td class="paramtype">Container&#160;</td>
+          <td class="paramname"><em>rhs</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>maxRelativeDifference</em> = <code>1e-9</code>&#160;</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>ulpDistance</em> = <code><a class="el" href="Math_8h.html#a7291977aabd8aa56135249876bbd395d">Math::MAX_ULP_DISTANCE</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -991,28 +995,27 @@ template&lt;class T , std::size_t SIZE&gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Returns true if arrays are elementwise relatively near each other. </p>
+<p>Function for comparing closeness of two floating point numbers using ULP (Units in the Last Place) method. </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">T</td><td>floating point type </td></tr>
-    <tr><td class="paramname">SIZE</td><td>size of the array </td></tr>
+    <tr><td class="paramname">Container</td><td>must be container type (array, set, vector) </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">a</td><td>input array </td></tr>
-    <tr><td class="paramname">b</td><td>input array </td></tr>
-    <tr><td class="paramname">maxRelativeDifference</td><td></td></tr>
+    <tr><td class="paramname">lhs</td><td>The left hand side floating point number to compare. </td></tr>
+    <tr><td class="paramname">rhs</td><td>The right hand side floating point number to compare. </td></tr>
+    <tr><td class="paramname">ulpDistance</td><td>The maximum acceptable ULP distance between the two floating points for which they would be considered near each other. This is optional and defaults to <code><a class="el" href="Math_8h.html#a7291977aabd8aa56135249876bbd395d">autopas::utils::Math::MAX_ULP_DISTANCE</a></code> </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>true if the UPL distance for all elements of lhs and rhs is less than or equal to the provided value </dd></dl>
 
 </div>
 </div>
-<a id="a889f002bd9a70c1070d80da7d83b9e9b" name="a889f002bd9a70c1070d80da7d83b9e9b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a889f002bd9a70c1070d80da7d83b9e9b">&#9670;&#160;</a></span>isNearRel() <span class="overload">[2/2]</span></h2>
+<a id="a2f7b8d87cddbe5de3cd9f5a5b006e1c4" name="a2f7b8d87cddbe5de3cd9f5a5b006e1c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f7b8d87cddbe5de3cd9f5a5b006e1c4">&#9670;&#160;</a></span>isNearRel() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1035,7 +1038,7 @@ template&lt;class T , std::size_t SIZE&gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>maxRelativeDifference</em> = <code>1e-9</code>&#160;</td>
+          <td class="paramname"><em>maxRelativeDifference</em> = <code><a class="el" href="Math_8h.html#a668f166a57dfdee470651fae690473be">Math::EPSILON_RELATIVE_EQUALITY</a></code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -1058,6 +1061,59 @@ template&lt;class T , std::size_t SIZE&gt; </div>
     <tr><td class="paramname">a</td><td>input vector of arrays </td></tr>
     <tr><td class="paramname">b</td><td>input vector of arrays </td></tr>
     <tr><td class="paramname">maxRelativeDifference</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="ae05085a34be1522c501a543f8a06532a" name="ae05085a34be1522c501a543f8a06532a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae05085a34be1522c501a543f8a06532a">&#9670;&#160;</a></span>isNearRel() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;ContainerType Container&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">bool autopas::utils::ArrayMath::isNearRel </td>
+          <td>(</td>
+          <td class="paramtype">Container&#160;</td>
+          <td class="paramname"><em>lhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Container&#160;</td>
+          <td class="paramname"><em>rhs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>maxRelativeDifference</em> = <code><a class="el" href="Math_8h.html#a668f166a57dfdee470651fae690473be">Math::EPSILON_RELATIVE_EQUALITY</a></code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns true if arrays are elementwise relatively near each other. </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Container</td><td>the container type </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">lhs</td><td>input array </td></tr>
+    <tr><td class="paramname">rhs</td><td>input array </td></tr>
+    <tr><td class="paramname">maxRelativeDifference</td><td>and defaults to <code><a class="el" href="Math_8h.html#a668f166a57dfdee470651fae690473be">autopas::utils::Math::EPSILON_RELATIVE_EQUALITY</a></code> </td></tr>
   </table>
   </dd>
 </dl>

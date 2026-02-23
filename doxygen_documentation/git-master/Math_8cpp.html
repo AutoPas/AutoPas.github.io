@@ -156,12 +156,6 @@ Functions</h2></td></tr>
 <tr class="memitem:acf7e940d35b3d514d0d11247cec006f4"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Math_8cpp.html#acf7e940d35b3d514d0d11247cec006f4">autopas::utils::Math::sigmoid</a> (double x)</td></tr>
 <tr class="memdesc:acf7e940d35b3d514d0d11247cec006f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sigmoid logistic function.  <br /></td></tr>
 <tr class="separator:acf7e940d35b3d514d0d11247cec006f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a06aa11501587615c728c43bc16b2aa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Math_8cpp.html#a0a06aa11501587615c728c43bc16b2aa">autopas::utils::Math::isNearRel</a> (double a, double b, double maxRelativeDifference=1e-9)</td></tr>
-<tr class="memdesc:a0a06aa11501587615c728c43bc16b2aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if two doubles are near each other.  <br /></td></tr>
-<tr class="separator:a0a06aa11501587615c728c43bc16b2aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af37065c567de887a294d789aeaf7ee8f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Math_8cpp.html#af37065c567de887a294d789aeaf7ee8f">autopas::utils::Math::isNearAbs</a> (double a, double b, double maxAbsoluteDifference)</td></tr>
-<tr class="memdesc:af37065c567de887a294d789aeaf7ee8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines if two doubles are near each other.  <br /></td></tr>
-<tr class="separator:af37065c567de887a294d789aeaf7ee8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:accf030ccc17331c9e06e621770111c5a"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Math_8cpp.html#accf030ccc17331c9e06e621770111c5a">autopas::utils::Math::roundFixed</a> (double d, int fixedPrecision)</td></tr>
 <tr class="memdesc:accf030ccc17331c9e06e621770111c5a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Round a floating point number to a given number of decimal digits.  <br /></td></tr>
 <tr class="separator:accf030ccc17331c9e06e621770111c5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -179,96 +173,6 @@ Functions</h2></td></tr>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>Jan Nguyen </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>18.08.19 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="af37065c567de887a294d789aeaf7ee8f" name="af37065c567de887a294d789aeaf7ee8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af37065c567de887a294d789aeaf7ee8f">&#9670;&#160;</a></span>isNearAbs()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool autopas::utils::Math::isNearAbs </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>maxAbsoluteDifference</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Determines if two doubles are near each other. </p>
-<p>This function should be preferred to comparing with ==. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a</td><td></td></tr>
-    <tr><td class="paramname">b</td><td></td></tr>
-    <tr><td class="paramname">maxAbsoluteDifference</td><td>inclusive </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
-<a id="a0a06aa11501587615c728c43bc16b2aa" name="a0a06aa11501587615c728c43bc16b2aa"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a06aa11501587615c728c43bc16b2aa">&#9670;&#160;</a></span>isNearRel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool autopas::utils::Math::isNearRel </td>
-          <td>(</td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>a</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>b</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>maxRelativeDifference</em> = <code>1e-9</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Determines if two doubles are near each other. </p>
-<p>This function should be preferred to comparing with ==. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">a</td><td></td></tr>
-    <tr><td class="paramname">b</td><td></td></tr>
-    <tr><td class="paramname">maxRelativeDifference</td><td>inclusive, relative to max(|a|, |b|). </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
 <a id="a178157dc9219ded73d569c77ef53e04e" name="a178157dc9219ded73d569c77ef53e04e"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a178157dc9219ded73d569c77ef53e04e">&#9670;&#160;</a></span>makeVectorXd()</h2>
 

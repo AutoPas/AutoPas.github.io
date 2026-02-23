@@ -123,137 +123,187 @@ $(function() {
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="keyword">namespace </span>autopas::utils::Math {</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="Math_8h.html#aca362e100bc1a4f790e6120c513aeae6">   18</a></span><span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="Math_8h.html#aca362e100bc1a4f790e6120c513aeae6">normalScale</a> = 1. / std::sqrt(2 * M_PI);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Int_t, std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;Int_t&gt;, <span class="keywordtype">bool</span>&gt; = true&gt;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="Math_8h.html#a249e593c429798c23e22db04c8f2bb37">   31</a></span>Int_t <a class="code hl_function" href="Math_8h.html#a249e593c429798c23e22db04c8f2bb37">safeAdd</a>(<span class="keyword">const</span> Int_t &amp;a, <span class="keyword">const</span> Int_t &amp;b, <span class="keyword">const</span> Int_t &amp;valUnderflow = std::numeric_limits&lt;Int_t&gt;::min(),</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>              <span class="keyword">const</span> Int_t &amp;valOverflow = std::numeric_limits&lt;Int_t&gt;::max()) {</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  Int_t result;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keywordtype">bool</span> overflow = __builtin_add_overflow(a, b, &amp;result);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>  <span class="keywordflow">if</span> (overflow) {</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment">// if both args are negative this is an underflow.</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keywordflow">if</span> (a &lt; 0 and b &lt; 0) {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>      result = valUnderflow;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>      result = valOverflow;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    }</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  }</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>  <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>}</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Float_t, std::enable_if_t&lt;std::is_<span class="keywordtype">float</span>ing_po<span class="keywordtype">int</span>_v&lt;Float_t&gt;, <span class="keywordtype">bool</span>&gt; = true&gt;</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="Math_8h.html#aeff4d740b832971dfb2e451f8e550738">   60</a></span>Float_t <a class="code hl_function" href="Math_8h.html#a249e593c429798c23e22db04c8f2bb37">safeAdd</a>(<span class="keyword">const</span> Float_t &amp;a, <span class="keyword">const</span> Float_t &amp;b, <span class="keyword">const</span> Float_t &amp;valUnderflow = -std::numeric_limits&lt;Float_t&gt;::max(),</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>                <span class="keyword">const</span> Float_t &amp;valOverflow = std::numeric_limits&lt;Float_t&gt;::max()) {</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  Float_t result = a + b;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordflow">if</span> (std::isinf(result)) {</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">if</span> (result &gt; 0) {</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>      result = valOverflow;</div>
-<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>      result = valUnderflow;</div>
-<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    }</div>
-<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  }</div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>  <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>}</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Int_t, std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;Int_t&gt;, <span class="keywordtype">bool</span>&gt; = true&gt;</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno"><a class="line" href="Math_8h.html#a3dc3f17108daa1bf9ed13971891b56db">   84</a></span>Int_t <a class="code hl_function" href="Math_8h.html#a3dc3f17108daa1bf9ed13971891b56db">safeSub</a>(<span class="keyword">const</span> Int_t &amp;a, <span class="keyword">const</span> Int_t &amp;b, <span class="keyword">const</span> Int_t &amp;valUnderflow = std::numeric_limits&lt;Int_t&gt;::min(),</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>              <span class="keyword">const</span> Int_t &amp;valOverflow = std::numeric_limits&lt;Int_t&gt;::max()) {</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  Int_t result;</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordtype">bool</span> overflow = __builtin_sub_overflow(a, b, &amp;result);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keywordflow">if</span> (overflow) {</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="comment">// underflow is only possible if we subtract a positive number. Everything else is an overflow.</span></div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordflow">if</span> (b &gt; 0) {</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>      result = valUnderflow;</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>      result = valOverflow;</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    }</div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  }</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Float_t, std::enable_if_t&lt;std::is_<span class="keywordtype">float</span>ing_po<span class="keywordtype">int</span>_v&lt;Float_t&gt;, <span class="keywordtype">bool</span>&gt; = true&gt;</div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="Math_8h.html#a1c993e8b5eda252c44ff81920cd998c9">  113</a></span>Float_t <a class="code hl_function" href="Math_8h.html#a3dc3f17108daa1bf9ed13971891b56db">safeSub</a>(<span class="keyword">const</span> Float_t &amp;a, <span class="keyword">const</span> Float_t &amp;b, <span class="keyword">const</span> Float_t &amp;valUnderflow = -std::numeric_limits&lt;Float_t&gt;::max(),</div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                <span class="keyword">const</span> Float_t &amp;valOverflow = std::numeric_limits&lt;Float_t&gt;::max()) {</div>
-<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  Float_t result = a - b;</div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <span class="keywordflow">if</span> (std::isinf(result)) {</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keywordflow">if</span> (result &gt; 0) {</div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>      result = valOverflow;</div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>      result = valUnderflow;</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    }</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  }</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>  <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>}</div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span> </div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Int_t, std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;Int_t&gt;, <span class="keywordtype">bool</span>&gt; = true&gt;</div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="Math_8h.html#a85e3c9dd73675a457f11e9311726caf3">  137</a></span>Int_t <a class="code hl_function" href="Math_8h.html#a85e3c9dd73675a457f11e9311726caf3">safeMul</a>(<span class="keyword">const</span> Int_t &amp;a, <span class="keyword">const</span> Int_t &amp;b, <span class="keyword">const</span> Int_t &amp;valUnderflow = std::numeric_limits&lt;Int_t&gt;::min(),</div>
-<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>              <span class="keyword">const</span> Int_t &amp;valOverflow = std::numeric_limits&lt;Int_t&gt;::max()) {</div>
-<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  Int_t result;</div>
-<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  <span class="keywordtype">bool</span> overflow = __builtin_mul_overflow(a, b, &amp;result);</div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>  <span class="keywordflow">if</span> (overflow) {</div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="comment">// if exactly one arg is negative this is an underflow.</span></div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    <span class="keywordflow">if</span> ((a &lt; 0) xor (b &lt; 0)) {</div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>      result = valUnderflow;</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>      result = valOverflow;</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>    }</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  }</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>  <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>}</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Float_t, std::enable_if_t&lt;std::is_<span class="keywordtype">float</span>ing_po<span class="keywordtype">int</span>_v&lt;Float_t&gt;, <span class="keywordtype">bool</span>&gt; = true&gt;</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="Math_8h.html#a0764d135bccb759197452459d45a6ceb">  166</a></span>Float_t <a class="code hl_function" href="Math_8h.html#a85e3c9dd73675a457f11e9311726caf3">safeMul</a>(<span class="keyword">const</span> Float_t &amp;a, <span class="keyword">const</span> Float_t &amp;b, <span class="keyword">const</span> Float_t &amp;valUnderflow = -std::numeric_limits&lt;Float_t&gt;::max(),</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>                <span class="keyword">const</span> Float_t &amp;valOverflow = std::numeric_limits&lt;Float_t&gt;::max()) {</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  Float_t result = a * b;</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>  <span class="keywordflow">if</span> (std::isinf(result)) {</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    <span class="keywordflow">if</span> (result &gt; 0) {</div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>      result = valOverflow;</div>
-<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>      result = valUnderflow;</div>
-<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    }</div>
-<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  }</div>
-<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>  <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>}</div>
-<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span> </div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> exponent, <span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno"><a class="line" href="Math_8h.html#aae4f6df05c07618f481dbaa6d9db4768">  187</a></span>T <a class="code hl_function" href="Math_8h.html#aae4f6df05c07618f481dbaa6d9db4768">pow</a>(<span class="keyword">const</span> T &amp;base) {</div>
-<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>  <span class="keywordflow">if</span> (exponent == 0) {</div>
-<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>  }</div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  T res = base;</div>
-<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  <span class="comment">// the compiler should unroll this loop</span></div>
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; exponent - 1; ++i) {</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    res *= base;</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  }</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>  <span class="keywordflow">return</span> res;</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>}</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span> </div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span><span class="keywordtype">double</span> normalPDF(<span class="keywordtype">double</span> x);</div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span><span class="keywordtype">double</span> normalCDF(<span class="keywordtype">double</span> x);</div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span> </div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="keywordtype">double</span> sigmoid(<span class="keywordtype">double</span> x);</div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span><span class="keywordtype">bool</span> isNearRel(<span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b, <span class="keywordtype">double</span> maxRelativeDifference = 1e-9);</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="keywordtype">bool</span> isNearAbs(<span class="keywordtype">double</span> a, <span class="keywordtype">double</span> b, <span class="keywordtype">double</span> maxAbsoluteDifference);</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span><span class="keywordtype">double</span> roundFixed(<span class="keywordtype">double</span> d, <span class="keywordtype">int</span> fixedPrecision);</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span> </div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span><span class="keywordtype">double</span> roundFloating(<span class="keywordtype">double</span> d, <span class="keywordtype">int</span> floatingPrecision);</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>Eigen::VectorXd makeVectorXd(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;elements);</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>Eigen::VectorXi makeVectorXi(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;elements);</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>}  <span class="comment">// namespace autopas::utils::Math</span></div>
-<div class="ttc" id="aMath_8h_html_a249e593c429798c23e22db04c8f2bb37"><div class="ttname"><a href="Math_8h.html#a249e593c429798c23e22db04c8f2bb37">autopas::utils::Math::safeAdd</a></div><div class="ttdeci">Int_t safeAdd(const Int_t &amp;a, const Int_t &amp;b, const Int_t &amp;valUnderflow=std::numeric_limits&lt; Int_t &gt;::min(), const Int_t &amp;valOverflow=std::numeric_limits&lt; Int_t &gt;::max())</div><div class="ttdoc">Addition function for integer types that is safe against over and underflow.</div><div class="ttdef"><b>Definition:</b> Math.h:31</div></div>
-<div class="ttc" id="aMath_8h_html_a3dc3f17108daa1bf9ed13971891b56db"><div class="ttname"><a href="Math_8h.html#a3dc3f17108daa1bf9ed13971891b56db">autopas::utils::Math::safeSub</a></div><div class="ttdeci">Int_t safeSub(const Int_t &amp;a, const Int_t &amp;b, const Int_t &amp;valUnderflow=std::numeric_limits&lt; Int_t &gt;::min(), const Int_t &amp;valOverflow=std::numeric_limits&lt; Int_t &gt;::max())</div><div class="ttdoc">Subtraction function for integer types that is safe against over and underflow.</div><div class="ttdef"><b>Definition:</b> Math.h:84</div></div>
-<div class="ttc" id="aMath_8h_html_a85e3c9dd73675a457f11e9311726caf3"><div class="ttname"><a href="Math_8h.html#a85e3c9dd73675a457f11e9311726caf3">autopas::utils::Math::safeMul</a></div><div class="ttdeci">Int_t safeMul(const Int_t &amp;a, const Int_t &amp;b, const Int_t &amp;valUnderflow=std::numeric_limits&lt; Int_t &gt;::min(), const Int_t &amp;valOverflow=std::numeric_limits&lt; Int_t &gt;::max())</div><div class="ttdoc">Multiplication function for integer types that is safe against over and underflow.</div><div class="ttdef"><b>Definition:</b> Math.h:137</div></div>
-<div class="ttc" id="aMath_8h_html_aae4f6df05c07618f481dbaa6d9db4768"><div class="ttname"><a href="Math_8h.html#aae4f6df05c07618f481dbaa6d9db4768">autopas::utils::Math::pow</a></div><div class="ttdeci">T pow(const T &amp;base)</div><div class="ttdoc">No-overhead power function with exponent known at compile time.</div><div class="ttdef"><b>Definition:</b> Math.h:187</div></div>
-<div class="ttc" id="aMath_8h_html_aca362e100bc1a4f790e6120c513aeae6"><div class="ttname"><a href="Math_8h.html#aca362e100bc1a4f790e6120c513aeae6">autopas::utils::Math::normalScale</a></div><div class="ttdeci">const double normalScale</div><div class="ttdoc">Factor of PDF of standard normal distribution.</div><div class="ttdef"><b>Definition:</b> Math.h:18</div></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="Math_8h.html#aca362e100bc1a4f790e6120c513aeae6">   17</a></span><span class="keyword">const</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="Math_8h.html#aca362e100bc1a4f790e6120c513aeae6">normalScale</a> = 1. / std::sqrt(2 * M_PI);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Int_t, std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;Int_t&gt;, <span class="keywordtype">bool</span>&gt; = true&gt;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="Math_8h.html#a249e593c429798c23e22db04c8f2bb37">   30</a></span>Int_t <a class="code hl_function" href="Math_8h.html#a249e593c429798c23e22db04c8f2bb37">safeAdd</a>(<span class="keyword">const</span> Int_t &amp;a, <span class="keyword">const</span> Int_t &amp;b, <span class="keyword">const</span> Int_t &amp;valUnderflow = std::numeric_limits&lt;Int_t&gt;::min(),</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>              <span class="keyword">const</span> Int_t &amp;valOverflow = std::numeric_limits&lt;Int_t&gt;::max()) {</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>  Int_t result;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  <span class="keywordtype">bool</span> overflow = __builtin_add_overflow(a, b, &amp;result);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>  <span class="keywordflow">if</span> (overflow) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="comment">// if both args are negative this is an underflow.</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">if</span> (a &lt; 0 and b &lt; 0) {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>      result = valUnderflow;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>      result = valOverflow;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>  }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Float_t, std::enable_if_t&lt;std::is_<span class="keywordtype">float</span>ing_po<span class="keywordtype">int</span>_v&lt;Float_t&gt;, <span class="keywordtype">bool</span>&gt; = true&gt;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="Math_8h.html#aeff4d740b832971dfb2e451f8e550738">   59</a></span>Float_t <a class="code hl_function" href="Math_8h.html#a249e593c429798c23e22db04c8f2bb37">safeAdd</a>(<span class="keyword">const</span> Float_t &amp;a, <span class="keyword">const</span> Float_t &amp;b, <span class="keyword">const</span> Float_t &amp;valUnderflow = -std::numeric_limits&lt;Float_t&gt;::max(),</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>                <span class="keyword">const</span> Float_t &amp;valOverflow = std::numeric_limits&lt;Float_t&gt;::max()) {</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  Float_t result = a + b;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keywordflow">if</span> (std::isinf(result)) {</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keywordflow">if</span> (result &gt; 0) {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>      result = valOverflow;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>      result = valUnderflow;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    }</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  }</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Int_t, std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;Int_t&gt;, <span class="keywordtype">bool</span>&gt; = true&gt;</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="Math_8h.html#a3dc3f17108daa1bf9ed13971891b56db">   83</a></span>Int_t <a class="code hl_function" href="Math_8h.html#a3dc3f17108daa1bf9ed13971891b56db">safeSub</a>(<span class="keyword">const</span> Int_t &amp;a, <span class="keyword">const</span> Int_t &amp;b, <span class="keyword">const</span> Int_t &amp;valUnderflow = std::numeric_limits&lt;Int_t&gt;::min(),</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>              <span class="keyword">const</span> Int_t &amp;valOverflow = std::numeric_limits&lt;Int_t&gt;::max()) {</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  Int_t result;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>  <span class="keywordtype">bool</span> overflow = __builtin_sub_overflow(a, b, &amp;result);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="keywordflow">if</span> (overflow) {</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <span class="comment">// underflow is only possible if we subtract a positive number. Everything else is an overflow.</span></div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <span class="keywordflow">if</span> (b &gt; 0) {</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>      result = valUnderflow;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>      result = valOverflow;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  }</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Float_t, std::enable_if_t&lt;std::is_<span class="keywordtype">float</span>ing_po<span class="keywordtype">int</span>_v&lt;Float_t&gt;, <span class="keywordtype">bool</span>&gt; = true&gt;</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="Math_8h.html#a1c993e8b5eda252c44ff81920cd998c9">  112</a></span>Float_t <a class="code hl_function" href="Math_8h.html#a3dc3f17108daa1bf9ed13971891b56db">safeSub</a>(<span class="keyword">const</span> Float_t &amp;a, <span class="keyword">const</span> Float_t &amp;b, <span class="keyword">const</span> Float_t &amp;valUnderflow = -std::numeric_limits&lt;Float_t&gt;::max(),</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                <span class="keyword">const</span> Float_t &amp;valOverflow = std::numeric_limits&lt;Float_t&gt;::max()) {</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  Float_t result = a - b;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="keywordflow">if</span> (std::isinf(result)) {</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">if</span> (result &gt; 0) {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      result = valOverflow;</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>      result = valUnderflow;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  }</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>}</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Int_t, std::enable_if_t&lt;std::is_<span class="keywordtype">int</span>egral_v&lt;Int_t&gt;, <span class="keywordtype">bool</span>&gt; = true&gt;</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="Math_8h.html#a85e3c9dd73675a457f11e9311726caf3">  136</a></span>Int_t <a class="code hl_function" href="Math_8h.html#a85e3c9dd73675a457f11e9311726caf3">safeMul</a>(<span class="keyword">const</span> Int_t &amp;a, <span class="keyword">const</span> Int_t &amp;b, <span class="keyword">const</span> Int_t &amp;valUnderflow = std::numeric_limits&lt;Int_t&gt;::min(),</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>              <span class="keyword">const</span> Int_t &amp;valOverflow = std::numeric_limits&lt;Int_t&gt;::max()) {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>  Int_t result;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>  <span class="keywordtype">bool</span> overflow = __builtin_mul_overflow(a, b, &amp;result);</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>  <span class="keywordflow">if</span> (overflow) {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>    <span class="comment">// if exactly one arg is negative this is an underflow.</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>    <span class="keywordflow">if</span> ((a &lt; 0) xor (b &lt; 0)) {</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>      result = valUnderflow;</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>      result = valOverflow;</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    }</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>  }</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>}</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> Float_t, std::enable_if_t&lt;std::is_<span class="keywordtype">float</span>ing_po<span class="keywordtype">int</span>_v&lt;Float_t&gt;, <span class="keywordtype">bool</span>&gt; = true&gt;</div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno"><a class="line" href="Math_8h.html#a0764d135bccb759197452459d45a6ceb">  165</a></span>Float_t <a class="code hl_function" href="Math_8h.html#a85e3c9dd73675a457f11e9311726caf3">safeMul</a>(<span class="keyword">const</span> Float_t &amp;a, <span class="keyword">const</span> Float_t &amp;b, <span class="keyword">const</span> Float_t &amp;valUnderflow = -std::numeric_limits&lt;Float_t&gt;::max(),</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>                <span class="keyword">const</span> Float_t &amp;valOverflow = std::numeric_limits&lt;Float_t&gt;::max()) {</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>  Float_t result = a * b;</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>  <span class="keywordflow">if</span> (std::isinf(result)) {</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>    <span class="keywordflow">if</span> (result &gt; 0) {</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>      result = valOverflow;</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>      result = valUnderflow;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    }</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>  }</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span>  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>}</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span> </div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span><span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> exponent, <span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno"><a class="line" href="Math_8h.html#aae4f6df05c07618f481dbaa6d9db4768">  186</a></span>T <a class="code hl_function" href="Math_8h.html#aae4f6df05c07618f481dbaa6d9db4768">pow</a>(<span class="keyword">const</span> T &amp;base) {</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>  <span class="keywordflow">if</span> (exponent == 0) {</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>  }</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>  T res = base;</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>  <span class="comment">// the compiler should unroll this loop</span></div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>  <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; exponent - 1; ++i) {</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>    res *= base;</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>  }</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>  <span class="keywordflow">return</span> res;</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>}</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span><span class="keywordtype">double</span> normalPDF(<span class="keywordtype">double</span> x);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span><span class="keywordtype">double</span> normalCDF(<span class="keywordtype">double</span> x);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span><span class="keywordtype">double</span> sigmoid(<span class="keywordtype">double</span> x);</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="Math_8h.html#a668f166a57dfdee470651fae690473be">  223</a></span><span class="keyword">constexpr</span> <span class="keywordtype">double</span> <a class="code hl_variable" href="Math_8h.html#a668f166a57dfdee470651fae690473be">EPSILON_RELATIVE_EQUALITY</a> = 1e-9;</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span> </div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno"><a class="line" href="Math_8h.html#a7291977aabd8aa56135249876bbd395d">  232</a></span><span class="keyword">constexpr</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="Math_8h.html#a7291977aabd8aa56135249876bbd395d">MAX_ULP_DISTANCE</a> = 4;</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span> </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="keyword">namespace </span>internal {</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno"><a class="line" href="Math_8h.html#a83d6b7e300c7ea67bdcedf1d9a3e675c">  240</a></span><span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> <a class="code hl_variable" href="Math_8h.html#a83d6b7e300c7ea67bdcedf1d9a3e675c">bit_size_v</a> = <span class="keyword">sizeof</span>(T) * 8;</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span> </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span><span class="keyword">template</span> &lt;std::<span class="keywordtype">float</span>ing_po<span class="keywordtype">int</span> FloatType&gt;</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno"><a class="line" href="structautopas_1_1utils_1_1Math_1_1internal_1_1int__t__impl.html">  249</a></span><span class="keyword">struct </span><a class="code hl_struct" href="structautopas_1_1utils_1_1Math_1_1internal_1_1int__t__impl.html">int_t_impl</a> {</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>  <span class="keyword">static_assert</span>(bit_size_v&lt;FloatType&gt; == 32 || bit_size_v&lt;FloatType&gt; == 64,</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                <span class="stringliteral">&quot;int_t only supports 32-bit and 64-bit floating-point types yet. Please extend to 128-bit types&quot;</span>);</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno"><a class="line" href="structautopas_1_1utils_1_1Math_1_1internal_1_1int__t__impl.html#a0cdb451ca32eeca5b107740383543883">  253</a></span>  <span class="keyword">using </span><a class="code hl_typedef" href="structautopas_1_1utils_1_1Math_1_1internal_1_1int__t__impl.html#a0cdb451ca32eeca5b107740383543883">type</a> = std::conditional_t&lt;bit_size_v&lt;FloatType&gt; == 32, std::int32_t, std::int64_t&gt;;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>};</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>}  <span class="comment">// namespace internal</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span><span class="keyword">template</span> &lt;std::<span class="keywordtype">float</span>ing_po<span class="keywordtype">int</span> FloatType&gt;</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno"><a class="line" href="Math_8h.html#ace9e05436eb677501f534f07816305e3">  261</a></span><span class="keyword">using </span><a class="code hl_typedef" href="Math_8h.html#ace9e05436eb677501f534f07816305e3">int_t</a> = <span class="keyword">typename</span> <a class="code hl_typedef" href="structautopas_1_1utils_1_1Math_1_1internal_1_1int__t__impl.html#a0cdb451ca32eeca5b107740383543883">internal::int_t_impl&lt;FloatType&gt;::type</a>;</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span> </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="keyword">template</span> &lt;std::<span class="keywordtype">float</span>ing_po<span class="keywordtype">int</span> FloatType&gt;</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno"><a class="line" href="Math_8h.html#aae77c274cb88831d72a409d1d1a4d5f0">  279</a></span><span class="keywordtype">bool</span> isInUlp(FloatType lhs, FloatType rhs, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ulpDistance = MAX_ULP_DISTANCE) {</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>  <span class="comment">// In case the floats are equal in their bitwise representation, return true</span></div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>  <span class="keywordflow">if</span> (lhs == rhs) {</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>  }</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  <span class="comment">// In case the signs mismatch, return false</span></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  <span class="keywordflow">if</span> (lhs &lt; <span class="keyword">static_cast&lt;</span>FloatType<span class="keyword">&gt;</span>(0.0) &amp;&amp; rhs &gt; <span class="keyword">static_cast&lt;</span>FloatType<span class="keyword">&gt;</span>(0.0) ||</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>      lhs &gt; <span class="keyword">static_cast&lt;</span>FloatType<span class="keyword">&gt;</span>(0.0) &amp;&amp; rhs &lt; <span class="keyword">static_cast&lt;</span>FloatType<span class="keyword">&gt;</span>(0.0)) {</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>  }</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>  <span class="comment">// Compute ULP distance by interpreting the floating point as an equivalent-sized integer</span></div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>  <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span><a class="code hl_typedef" href="Math_8h.html#ace9e05436eb677501f534f07816305e3">int_t&lt;FloatType&gt;</a> &amp;<span class="keyword">&gt;</span>(rhs) - <span class="keyword">reinterpret_cast&lt;</span><a class="code hl_typedef" href="Math_8h.html#ace9e05436eb677501f534f07816305e3">int_t&lt;FloatType&gt;</a> &amp;<span class="keyword">&gt;</span>(lhs) &lt;= ulpDistance;</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>}</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span><span class="keyword">template</span> &lt;std::<span class="keywordtype">float</span>ing_po<span class="keywordtype">int</span> FloatType&gt;</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno"><a class="line" href="Math_8h.html#a82aa49dde56275b095491b5603e7c54e">  304</a></span><span class="keywordtype">bool</span> isNearRel(FloatType a, FloatType b, <span class="keywordtype">double</span> maxRelativeDifference = EPSILON_RELATIVE_EQUALITY) {</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>  <span class="keyword">const</span> <span class="keyword">auto</span> greaterNumber = std::max(std::abs(a), std::abs(b));</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>  <span class="keyword">const</span> <span class="keyword">auto</span> absoluteDifference = maxRelativeDifference * greaterNumber;</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>  <span class="keyword">const</span> <span class="keyword">auto</span> diff = std::abs(a - b);</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>  <span class="keywordflow">return</span> diff &lt;= absoluteDifference;</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>}</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span> </div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span><span class="keyword">template</span> &lt;std::<span class="keywordtype">float</span>ing_po<span class="keywordtype">int</span> FloatType&gt;</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno"><a class="line" href="Math_8h.html#a27fe6086c7c4b5c3c2f128fa99f7b83b">  319</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="Math_8h.html#a27fe6086c7c4b5c3c2f128fa99f7b83b">isNearAbs</a>(FloatType a, FloatType b, <span class="keywordtype">double</span> maxAbsoluteDifference) {</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>  <span class="keywordflow">return</span> std::abs(a - b) &lt;= maxAbsoluteDifference;</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>}</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span> </div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span><span class="keywordtype">double</span> roundFixed(<span class="keywordtype">double</span> d, <span class="keywordtype">int</span> fixedPrecision);</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span> </div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span><span class="keywordtype">double</span> roundFloating(<span class="keywordtype">double</span> d, <span class="keywordtype">int</span> floatingPrecision);</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span> </div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>Eigen::VectorXd makeVectorXd(<span class="keyword">const</span> std::vector&lt;double&gt; &amp;elements);</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span> </div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>Eigen::VectorXi makeVectorXi(<span class="keyword">const</span> std::vector&lt;int&gt; &amp;elements);</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>}  <span class="comment">// namespace autopas::utils::Math</span></div>
+<div class="ttc" id="aMath_8h_html_a249e593c429798c23e22db04c8f2bb37"><div class="ttname"><a href="Math_8h.html#a249e593c429798c23e22db04c8f2bb37">autopas::utils::Math::safeAdd</a></div><div class="ttdeci">Int_t safeAdd(const Int_t &amp;a, const Int_t &amp;b, const Int_t &amp;valUnderflow=std::numeric_limits&lt; Int_t &gt;::min(), const Int_t &amp;valOverflow=std::numeric_limits&lt; Int_t &gt;::max())</div><div class="ttdoc">Addition function for integer types that is safe against over and underflow.</div><div class="ttdef"><b>Definition:</b> Math.h:30</div></div>
+<div class="ttc" id="aMath_8h_html_a27fe6086c7c4b5c3c2f128fa99f7b83b"><div class="ttname"><a href="Math_8h.html#a27fe6086c7c4b5c3c2f128fa99f7b83b">autopas::utils::Math::isNearAbs</a></div><div class="ttdeci">bool isNearAbs(FloatType a, FloatType b, double maxAbsoluteDifference)</div><div class="ttdoc">Determines if two doubles are near each other.</div><div class="ttdef"><b>Definition:</b> Math.h:319</div></div>
+<div class="ttc" id="aMath_8h_html_a3dc3f17108daa1bf9ed13971891b56db"><div class="ttname"><a href="Math_8h.html#a3dc3f17108daa1bf9ed13971891b56db">autopas::utils::Math::safeSub</a></div><div class="ttdeci">Int_t safeSub(const Int_t &amp;a, const Int_t &amp;b, const Int_t &amp;valUnderflow=std::numeric_limits&lt; Int_t &gt;::min(), const Int_t &amp;valOverflow=std::numeric_limits&lt; Int_t &gt;::max())</div><div class="ttdoc">Subtraction function for integer types that is safe against over and underflow.</div><div class="ttdef"><b>Definition:</b> Math.h:83</div></div>
+<div class="ttc" id="aMath_8h_html_a668f166a57dfdee470651fae690473be"><div class="ttname"><a href="Math_8h.html#a668f166a57dfdee470651fae690473be">autopas::utils::Math::EPSILON_RELATIVE_EQUALITY</a></div><div class="ttdeci">constexpr double EPSILON_RELATIVE_EQUALITY</div><div class="ttdoc">This default relative EPSILON used for the isNearRel function.</div><div class="ttdef"><b>Definition:</b> Math.h:223</div></div>
+<div class="ttc" id="aMath_8h_html_a7291977aabd8aa56135249876bbd395d"><div class="ttname"><a href="Math_8h.html#a7291977aabd8aa56135249876bbd395d">autopas::utils::Math::MAX_ULP_DISTANCE</a></div><div class="ttdeci">constexpr unsigned int MAX_ULP_DISTANCE</div><div class="ttdoc">The default maximal allowed ULP (Units in the Last Place) distance utilized for FloatingPoint compari...</div><div class="ttdef"><b>Definition:</b> Math.h:232</div></div>
+<div class="ttc" id="aMath_8h_html_a83d6b7e300c7ea67bdcedf1d9a3e675c"><div class="ttname"><a href="Math_8h.html#a83d6b7e300c7ea67bdcedf1d9a3e675c">autopas::utils::Math::internal::bit_size_v</a></div><div class="ttdeci">constexpr size_t bit_size_v</div><div class="ttdoc">Helper to find out the bit size of a given type.</div><div class="ttdef"><b>Definition:</b> Math.h:240</div></div>
+<div class="ttc" id="aMath_8h_html_a85e3c9dd73675a457f11e9311726caf3"><div class="ttname"><a href="Math_8h.html#a85e3c9dd73675a457f11e9311726caf3">autopas::utils::Math::safeMul</a></div><div class="ttdeci">Int_t safeMul(const Int_t &amp;a, const Int_t &amp;b, const Int_t &amp;valUnderflow=std::numeric_limits&lt; Int_t &gt;::min(), const Int_t &amp;valOverflow=std::numeric_limits&lt; Int_t &gt;::max())</div><div class="ttdoc">Multiplication function for integer types that is safe against over and underflow.</div><div class="ttdef"><b>Definition:</b> Math.h:136</div></div>
+<div class="ttc" id="aMath_8h_html_aae4f6df05c07618f481dbaa6d9db4768"><div class="ttname"><a href="Math_8h.html#aae4f6df05c07618f481dbaa6d9db4768">autopas::utils::Math::pow</a></div><div class="ttdeci">T pow(const T &amp;base)</div><div class="ttdoc">No-overhead power function with exponent known at compile time.</div><div class="ttdef"><b>Definition:</b> Math.h:186</div></div>
+<div class="ttc" id="aMath_8h_html_aca362e100bc1a4f790e6120c513aeae6"><div class="ttname"><a href="Math_8h.html#aca362e100bc1a4f790e6120c513aeae6">autopas::utils::Math::normalScale</a></div><div class="ttdeci">const double normalScale</div><div class="ttdoc">Factor of PDF of standard normal distribution.</div><div class="ttdef"><b>Definition:</b> Math.h:17</div></div>
+<div class="ttc" id="aMath_8h_html_ace9e05436eb677501f534f07816305e3"><div class="ttname"><a href="Math_8h.html#ace9e05436eb677501f534f07816305e3">autopas::utils::Math::int_t</a></div><div class="ttdeci">typename internal::int_t_impl&lt; FloatType &gt;::type int_t</div><div class="ttdoc">Returns the correspondingly sized integer type for a given float.</div><div class="ttdef"><b>Definition:</b> Math.h:261</div></div>
+<div class="ttc" id="astructautopas_1_1utils_1_1Math_1_1internal_1_1int__t__impl_html"><div class="ttname"><a href="structautopas_1_1utils_1_1Math_1_1internal_1_1int__t__impl.html">autopas::utils::Math::internal::int_t_impl</a></div><div class="ttdoc">Helper struct to get the correspondingly sized integer for a given floating type.</div><div class="ttdef"><b>Definition:</b> Math.h:249</div></div>
+<div class="ttc" id="astructautopas_1_1utils_1_1Math_1_1internal_1_1int__t__impl_html_a0cdb451ca32eeca5b107740383543883"><div class="ttname"><a href="structautopas_1_1utils_1_1Math_1_1internal_1_1int__t__impl.html#a0cdb451ca32eeca5b107740383543883">autopas::utils::Math::internal::int_t_impl::type</a></div><div class="ttdeci">std::conditional_t&lt; bit_size_v&lt; FloatType &gt;==32, std::int32_t, std::int64_t &gt; type</div><div class="ttdoc">access the int data type</div><div class="ttdef"><b>Definition:</b> Math.h:253</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
