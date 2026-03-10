@@ -218,6 +218,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1utils_1_1Timer.html">Timer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classautopas_1_1utils_1_1Timer.html" title="Timer class to stop times.">Timer</a> class to stop times.  <a href="classautopas_1_1utils_1_1Timer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1utils_1_1TraceTimer.html">TraceTimer</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper around <a class="el" href="classautopas_1_1utils_1_1Timer.html" title="Timer class to stop times.">autopas::utils::Timer</a> that only compiles implementation logic if the SPDLOG_ACTIVE_LEVEL is set to TRACE.  <a href="classautopas_1_1utils_1_1TraceTimer.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
 Concepts</h2></td></tr>
@@ -240,6 +243,9 @@ template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ae10dd2c812a2730e56bef02552dc4606"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><b>optRef</b> = std::optional&lt; std::reference_wrapper&lt; T &gt; &gt;</td></tr>
 <tr class="memdesc:ae10dd2c812a2730e56bef02552dc4606"><td class="mdescLeft">&#160;</td><td class="mdescRight">Short alias for std::optional&lt;std::reference_wrapper&lt;T&gt;&gt; <br /></td></tr>
 <tr class="separator:ae10dd2c812a2730e56bef02552dc4606"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b35a034133888f0c319c60c099db14b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils.html#a9b35a034133888f0c319c60c099db14b">bestSteadyClock</a> = std::conditional_t&lt; std::chrono::high_resolution_clock::is_steady, std::chrono::high_resolution_clock, std::chrono::steady_clock &gt;</td></tr>
+<tr class="memdesc:a9b35a034133888f0c319c60c099db14b"><td class="mdescLeft">&#160;</td><td class="mdescRight">high_resolution_clock is not guaranteed to be monotonous in time, which can lead to negative duration times.  <br /></td></tr>
+<tr class="separator:a9b35a034133888f0c319c60c099db14b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -274,6 +280,23 @@ Functions</h2></td></tr>
 <div class="textblock"><p>In this namespace some helper classes and functions can be found used inside of <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a>. </p>
 <p>These classes reside mostly in the utils directory. However, most commonly used function inside the utils directory might not be in the utils namespace. </p>
 </div><h2 class="groupheader">Typedef Documentation</h2>
+<a id="a9b35a034133888f0c319c60c099db14b" name="a9b35a034133888f0c319c60c099db14b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b35a034133888f0c319c60c099db14b">&#9670;&#160;</a></span>bestSteadyClock</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceautopas_1_1utils.html#a9b35a034133888f0c319c60c099db14b">autopas::utils::bestSteadyClock</a> = typedef std::conditional_t&lt;std::chrono::high_resolution_clock::is_steady, std::chrono::high_resolution_clock, std::chrono::steady_clock&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>high_resolution_clock is not guaranteed to be monotonous in time, which can lead to negative duration times. </p>
+<p>Swap to steady_clock then, which is usually the same precision or precise enough. </p>
+
+</div>
+</div>
 <a id="acac3f5cff802aacc3b721e9766f50e14" name="acac3f5cff802aacc3b721e9766f50e14"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#acac3f5cff802aacc3b721e9766f50e14">&#9670;&#160;</a></span>isPairwiseFunctor</h2>
 
