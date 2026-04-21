@@ -14,7 +14,7 @@ var searchData=
   ['consequences_11',['consequences',['../structautopas_1_1RuleSyntax_1_1If.html#ae8a5e6c7753139bc5b6e253bcd1d8409',1,'autopas::RuleSyntax::If']]],
   ['container_12',['container',['../classautopas_1_1Configuration.html#a6f60f44ea162cec7863f0d88237946b0',1,'autopas::Configuration']]],
   ['containeroptions_13',['containerOptions',['../structautopas_1_1SearchSpaceGenerators_1_1OptionSpace.html#a4628fa4e3a0db4fad7fe684c6c042463',1,'autopas::SearchSpaceGenerators::OptionSpace']]],
-  ['count_14',['count',['../structautopas_1_1InstanceCounter.html#a158fd3670a2eb70383019cdc0e2d605a',1,'autopas::InstanceCounter::count'],['../structautopas_1_1AutoPas__MPI__Status.html#a02243c4223248fcfdb8b756fed425c75',1,'autopas::AutoPas_MPI_Status::count']]],
+  ['count_14',['count',['../structautopas_1_1AutoPas__MPI__Status.html#a02243c4223248fcfdb8b756fed425c75',1,'autopas::AutoPas_MPI_Status']]],
   ['covmatinv_15',['covMatInv',['../classautopas_1_1GaussianHyperparameters.html#a832cea054b701bfe727547caedd91344',1,'autopas::GaussianHyperparameters']]],
   ['cutoff_16',['cutoff',['../classautopas_1_1LogicHandlerInfo.html#a8e92127647d1e748d9cd8d2518f51dbe',1,'autopas::LogicHandlerInfo::cutoff'],['../classautopas_1_1ContainerSelectorInfo.html#a8e9c14255c86da0673854014dd8b0867',1,'autopas::ContainerSelectorInfo::cutoff']]]
 ];
