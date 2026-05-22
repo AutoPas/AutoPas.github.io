@@ -267,12 +267,6 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ParticleContainer
 <tr class="memitem:a31ff749bcd4540af8bbdda48064dd6c4"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a31ff749bcd4540af8bbdda48064dd6c4">getVerletSkin</a> () const =0</td></tr>
 <tr class="memdesc:a31ff749bcd4540af8bbdda48064dd6c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the verletSkin of the container verletSkin.  <br /></td></tr>
 <tr class="separator:a31ff749bcd4540af8bbdda48064dd6c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ade006f01a9966aeaee7ff6aff677a995"><td class="memItemLeft" align="right" valign="top">virtual size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#ade006f01a9966aeaee7ff6aff677a995">getStepsSinceLastRebuild</a> () const</td></tr>
-<tr class="memdesc:ade006f01a9966aeaee7ff6aff677a995"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the number of time-steps since last neighbor list rebuild.  <br /></td></tr>
-<tr class="separator:ade006f01a9966aeaee7ff6aff677a995"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a94447de936c48623cb7f5e71972dd5cb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a94447de936c48623cb7f5e71972dd5cb">setStepsSinceLastRebuild</a> (size_t stepsSinceLastRebuild)</td></tr>
-<tr class="memdesc:a94447de936c48623cb7f5e71972dd5cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the number of time-steps since last neighbor list rebuild.  <br /></td></tr>
-<tr class="separator:a94447de936c48623cb7f5e71972dd5cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4a7e30b5867e028a31976bbcb57b8275"><td class="memItemLeft" align="right" valign="top">virtual double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a4a7e30b5867e028a31976bbcb57b8275">getInteractionLength</a> () const =0</td></tr>
 <tr class="memdesc:a4a7e30b5867e028a31976bbcb57b8275"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the interaction length (cutoff+skin) of the container.  <br /></td></tr>
 <tr class="separator:a4a7e30b5867e028a31976bbcb57b8275"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -315,9 +309,6 @@ Protected Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:a6a5e4ad2c387e347a8c9dfc49bbbb946"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a6a5e4ad2c387e347a8c9dfc49bbbb946">_stepsSinceLastRebuild</a> {0}</td></tr>
-<tr class="memdesc:a6a5e4ad2c387e347a8c9dfc49bbbb946"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stores the number of time-steps since last neighbor list rebuild.  <br /></td></tr>
-<tr class="separator:a6a5e4ad2c387e347a8c9dfc49bbbb946"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c20cff49ca6e0ca6c31ae32c2639b55"><td class="memItemLeft" align="right" valign="top"><a id="a9c20cff49ca6e0ca6c31ae32c2639b55" name="a9c20cff49ca6e0ca6c31ae32c2639b55"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>_skin</b></td></tr>
 <tr class="memdesc:a9c20cff49ca6e0ca6c31ae32c2639b55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Skin distance a particle is allowed to move in one time-step. <br /></td></tr>
@@ -1587,37 +1578,6 @@ template&lt;class Particle_T &gt; </div>
 
 </div>
 </div>
-<a id="ade006f01a9966aeaee7ff6aff677a995" name="ade006f01a9966aeaee7ff6aff677a995"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ade006f01a9966aeaee7ff6aff677a995">&#9670;&#160;</a></span>getStepsSinceLastRebuild()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Particle_T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual size_t <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; Particle_T &gt;::getStepsSinceLastRebuild </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Return the number of time-steps since last neighbor list rebuild. </p>
-<dl class="section note"><dt>Note</dt><dd>: The value has to be set by <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a94447de936c48623cb7f5e71972dd5cb" title="Set the number of time-steps since last neighbor list rebuild.">setStepsSinceLastRebuild()</a> from outside the container. Otherwise this will always return 0 </dd></dl>
-<dl class="section return"><dt>Returns</dt><dd>steps since last rebuild </dd></dl>
-
-</div>
-</div>
 <a id="a28e4db645c91162b8ce86c33436edd64" name="a28e4db645c91162b8ce86c33436edd64"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a28e4db645c91162b8ce86c33436edd64">&#9670;&#160;</a></span>getTraversalSelectorInfo()</h2>
 
@@ -1845,44 +1805,6 @@ template&lt;class Particle_T &gt; </div>
 
 </div>
 </div>
-<a id="a94447de936c48623cb7f5e71972dd5cb" name="a94447de936c48623cb7f5e71972dd5cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a94447de936c48623cb7f5e71972dd5cb">&#9670;&#160;</a></span>setStepsSinceLastRebuild()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Particle_T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; Particle_T &gt;::setStepsSinceLastRebuild </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>stepsSinceLastRebuild</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Set the number of time-steps since last neighbor list rebuild. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">stepsSinceLastRebuild</td><td>steps since last neighbor list rebuild </td></tr>
-  </table>
-  </dd>
-</dl>
-
-<p>Reimplemented in <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a438c1ea993ac393d3702d719ff9e5a57">autopas::VerletListsLinkedBase&lt; Particle_T &gt;</a>.</p>
-
-</div>
-</div>
 <a id="aef4c790d1bbf0d35988bea267a2e0f59" name="aef4c790d1bbf0d35988bea267a2e0f59"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aef4c790d1bbf0d35988bea267a2e0f59">&#9670;&#160;</a></span>size()</h2>
 
@@ -1990,34 +1912,6 @@ template&lt;class Particle_T &gt; </div>
 <dl class="section return"><dt>Returns</dt><dd>Returns true if the particle was updated, false if no particle could be found. </dd></dl>
 
 <p>Implemented in <a class="el" href="classautopas_1_1VerletClusterLists.html#af74f36b67332c31ce87e9b3776858445">autopas::VerletClusterLists&lt; Particle_T &gt;</a>, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a0353c0f0a44f84cc1cffffd507bbcb14">autopas::VerletListsLinkedBase&lt; Particle_T &gt;</a>, and <a class="el" href="classautopas_1_1VerletClusterLists.html#af74f36b67332c31ce87e9b3776858445">autopas::VerletClusterLists&lt; ParticleCell::ParticleType &gt;</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Data Documentation</h2>
-<a id="a6a5e4ad2c387e347a8c9dfc49bbbb946" name="a6a5e4ad2c387e347a8c9dfc49bbbb946"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6a5e4ad2c387e347a8c9dfc49bbbb946">&#9670;&#160;</a></span>_stepsSinceLastRebuild</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Particle_T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; Particle_T &gt;::_stepsSinceLastRebuild {0}</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Stores the number of time-steps since last neighbor list rebuild. </p>
-<dl class="section note"><dt>Note</dt><dd>: The value has to be set by <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a94447de936c48623cb7f5e71972dd5cb" title="Set the number of time-steps since last neighbor list rebuild.">setStepsSinceLastRebuild()</a> from outside the container. Otherwise this will always be 0 </dd></dl>
 
 </div>
 </div>
