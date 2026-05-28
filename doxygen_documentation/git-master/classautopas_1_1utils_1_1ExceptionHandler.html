@@ -152,10 +152,10 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ae61b9aac49a90a9ff86859c73005ee07"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">exception</a> (const Exception e)</td></tr>
 <tr class="memdesc:ae61b9aac49a90a9ff86859c73005ee07"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handle an exception derived by std::exception.  <br /></td></tr>
 <tr class="separator:ae61b9aac49a90a9ff86859c73005ee07"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e8e7d2ecce857f1e48e8dab32695bf0"><td class="memTemplParams" colspan="2">template&lt;typename First , typename... Args&gt; </td></tr>
-<tr class="memitem:a0e8e7d2ecce857f1e48e8dab32695bf0"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1utils_1_1ExceptionHandler.html#a0e8e7d2ecce857f1e48e8dab32695bf0">exception</a> (std::string exceptionString, First first, Args... args)</td></tr>
-<tr class="memdesc:a0e8e7d2ecce857f1e48e8dab32695bf0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles an exception that is defined using exceptionString as well as multiple arguments.  <br /></td></tr>
-<tr class="separator:a0e8e7d2ecce857f1e48e8dab32695bf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8862bcb1e96c4a04bc86f9a0c3402d47"><td class="memTemplParams" colspan="2">template&lt;typename First , typename... Args&gt; </td></tr>
+<tr class="memitem:a8862bcb1e96c4a04bc86f9a0c3402d47"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1utils_1_1ExceptionHandler.html#a8862bcb1e96c4a04bc86f9a0c3402d47">exception</a> (fmt::format_string&lt; First, Args... &gt; exceptionString, First &amp;&amp;first, Args &amp;&amp;...args)</td></tr>
+<tr class="memdesc:a8862bcb1e96c4a04bc86f9a0c3402d47"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handles an exception that is defined using exceptionString as well as multiple arguments.  <br /></td></tr>
+<tr class="separator:a8862bcb1e96c4a04bc86f9a0c3402d47"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a539fd181000f9daab3b0668b10ec8914"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1utils_1_1ExceptionHandler.html#a539fd181000f9daab3b0668b10ec8914">rethrow</a> ()</td></tr>
 <tr class="memdesc:a539fd181000f9daab3b0668b10ec8914"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rethrows the current exception or prints it.  <br /></td></tr>
 <tr class="separator:a539fd181000f9daab3b0668b10ec8914"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -265,8 +265,8 @@ template&lt;&gt; </div>
 
 </div>
 </div>
-<a id="a0e8e7d2ecce857f1e48e8dab32695bf0" name="a0e8e7d2ecce857f1e48e8dab32695bf0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e8e7d2ecce857f1e48e8dab32695bf0">&#9670;&#160;</a></span>exception() <span class="overload">[4/4]</span></h2>
+<a id="a8862bcb1e96c4a04bc86f9a0c3402d47" name="a8862bcb1e96c4a04bc86f9a0c3402d47"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8862bcb1e96c4a04bc86f9a0c3402d47">&#9670;&#160;</a></span>exception() <span class="overload">[4/4]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -279,19 +279,19 @@ template&lt;typename First , typename... Args&gt; </div>
         <tr>
           <td class="memname">void autopas::utils::ExceptionHandler::exception </td>
           <td>(</td>
-          <td class="paramtype">std::string&#160;</td>
+          <td class="paramtype">fmt::format_string&lt; First, Args... &gt;&#160;</td>
           <td class="paramname"><em>exceptionString</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">First&#160;</td>
+          <td class="paramtype">First &amp;&amp;&#160;</td>
           <td class="paramname"><em>first</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">Args...&#160;</td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
           <td class="paramname"><em>args</em>&#160;</td>
         </tr>
         <tr>
