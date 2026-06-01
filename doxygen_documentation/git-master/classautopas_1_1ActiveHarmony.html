@@ -146,9 +146,9 @@ Collaboration diagram for autopas::ActiveHarmony:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9bc439d5cb34d28afe1a0d7b1374b9b0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ActiveHarmony.html#a9bc439d5cb34d28afe1a0d7b1374b9b0">ActiveHarmony</a> (const InteractionTypeOption &amp;interactionType, const std::set&lt; ContainerOption &gt; &amp;allowedContainerOptions, const <a class="el" href="classautopas_1_1NumberSet.html">NumberSet</a>&lt; double &gt; &amp;allowedCellSizeFactors, const std::set&lt; TraversalOption &gt; &amp;allowedTraversalOptions, const std::set&lt; <a class="el" href="classautopas_1_1LoadEstimatorOption.html">LoadEstimatorOption</a> &gt; &amp;allowedLoadEstimatorOptions, const std::set&lt; DataLayoutOption &gt; &amp;allowedDataLayoutOptions, const std::set&lt; Newton3Option &gt; &amp;allowedNewton3Options, bool mpiDivideAndConquer, <a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> comm)</td></tr>
-<tr class="memdesc:a9bc439d5cb34d28afe1a0d7b1374b9b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
-<tr class="separator:a9bc439d5cb34d28afe1a0d7b1374b9b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a80feed5a794739172d02c59cf0863649"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ActiveHarmony.html#a80feed5a794739172d02c59cf0863649">ActiveHarmony</a> (const InteractionTypeOption &amp;interactionType, const std::set&lt; ContainerOption &gt; &amp;allowedContainerOptions, const <a class="el" href="classautopas_1_1NumberSet.html">NumberSet</a>&lt; double &gt; &amp;allowedCellSizeFactors, const std::set&lt; TraversalOption &gt; &amp;allowedTraversalOptions, const std::set&lt; <a class="el" href="classautopas_1_1LoadEstimatorOption.html">LoadEstimatorOption</a> &gt; &amp;allowedLoadEstimatorOptions, const std::set&lt; DataLayoutOption &gt; &amp;allowedDataLayoutOptions, const std::set&lt; Newton3Option &gt; &amp;allowedNewton3Options, const std::set&lt; VectorizationPatternOption &gt; &amp;allowedVecPatternOptions, bool mpiDivideAndConquer, <a class="el" href="namespaceautopas.html#ab7d7e9a630b960c5bb1d4622504c7b1a">AutoPas_MPI_Comm</a> comm)</td></tr>
+<tr class="memdesc:a80feed5a794739172d02c59cf0863649"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="separator:a80feed5a794739172d02c59cf0863649"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2f63000f38a77c98a64bf3b77194a8a3"><td class="memItemLeft" align="right" valign="top">TuningStrategyOption&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ActiveHarmony.html#a2f63000f38a77c98a64bf3b77194a8a3">getOptionType</a> () const override</td></tr>
 <tr class="memdesc:a2f63000f38a77c98a64bf3b77194a8a3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get this object's associated TuningStrategyOption type.  <br /></td></tr>
 <tr class="separator:a2f63000f38a77c98a64bf3b77194a8a3"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -203,8 +203,8 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>Interface to the Active Harmony (AH) tuning framework. </p>
 <p>If a global AH server is provided and MPI is enabled, the server can be reached via the environment variables HARMONY_HOST and HARMONY_PORT. They have to be set to the host address and port of the server respectively. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a9bc439d5cb34d28afe1a0d7b1374b9b0" name="a9bc439d5cb34d28afe1a0d7b1374b9b0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9bc439d5cb34d28afe1a0d7b1374b9b0">&#9670;&#160;</a></span>ActiveHarmony()</h2>
+<a id="a80feed5a794739172d02c59cf0863649" name="a80feed5a794739172d02c59cf0863649"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80feed5a794739172d02c59cf0863649">&#9670;&#160;</a></span>ActiveHarmony()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -254,6 +254,12 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const std::set&lt; VectorizationPatternOption &gt; &amp;&#160;</td>
+          <td class="paramname"><em>allowedVecPatternOptions</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
           <td class="paramtype">bool&#160;</td>
           <td class="paramname"><em>mpiDivideAndConquer</em>, </td>
         </tr>
@@ -281,6 +287,7 @@ Public Member Functions</h2></td></tr>
     <tr><td class="paramname">allowedLoadEstimatorOptions</td><td></td></tr>
     <tr><td class="paramname">allowedDataLayoutOptions</td><td></td></tr>
     <tr><td class="paramname">allowedNewton3Options</td><td></td></tr>
+    <tr><td class="paramname">allowedVecPatternOptions</td><td></td></tr>
     <tr><td class="paramname">mpiDivideAndConquer</td><td></td></tr>
     <tr><td class="paramname">comm</td><td></td></tr>
   </table>

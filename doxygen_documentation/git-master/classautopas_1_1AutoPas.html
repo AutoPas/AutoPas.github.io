@@ -453,6 +453,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>forceRetune</b> ()</t
 <tr class="memitem:a02fb723927701aba956b696d592f21f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a02fb723927701aba956b696d592f21f9">setAllowedNewton3Options</a> (const std::set&lt; Newton3Option &gt; &amp;allowedNewton3Options, const InteractionTypeOption interactionType=InteractionTypeOption::pairwise)</td></tr>
 <tr class="memdesc:a02fb723927701aba956b696d592f21f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the list of allowed newton 3 options.  <br /></td></tr>
 <tr class="separator:a02fb723927701aba956b696d592f21f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2736b8b2ef9eafaf3f8cc6c0ed57953b"><td class="memItemLeft" align="right" valign="top">const std::set&lt; VectorizationPatternOption &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a2736b8b2ef9eafaf3f8cc6c0ed57953b">getAllowedVecPatternOptions</a> (const InteractionTypeOption interactionType=InteractionTypeOption::pairwise) const</td></tr>
+<tr class="memdesc:a2736b8b2ef9eafaf3f8cc6c0ed57953b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the list of allowed vectorization pattern options.  <br /></td></tr>
+<tr class="separator:a2736b8b2ef9eafaf3f8cc6c0ed57953b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69d519eb582c049b228848b543beb042"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a69d519eb582c049b228848b543beb042">setAllowedVecPatterns</a> (const std::set&lt; VectorizationPatternOption &gt; &amp;allowedVecPatterns, const InteractionTypeOption interactionType=InteractionTypeOption::pairwise)</td></tr>
+<tr class="memdesc:a69d519eb582c049b228848b543beb042"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the list of allowed vectorization pattern options For possible options, see options::VectorizationOption::Value.  <br /></td></tr>
+<tr class="separator:a69d519eb582c049b228848b543beb042"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac592644f12178f265ba482d53f5fd2a1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#ac592644f12178f265ba482d53f5fd2a1">setAllowedInteractionTypeOptions</a> (const std::set&lt; InteractionTypeOption &gt; &amp;allowedInteractionTypeOptions)</td></tr>
 <tr class="memdesc:ac592644f12178f265ba482d53f5fd2a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the list of allowed interaction types.  <br /></td></tr>
 <tr class="separator:ac592644f12178f265ba482d53f5fd2a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1962,6 +1968,43 @@ template&lt;class Particle_T &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">interactionType</td><td>Get allowed traversals for this interaction type. Defaults to InteractionTypeOption::pairwise. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a2736b8b2ef9eafaf3f8cc6c0ed57953b" name="a2736b8b2ef9eafaf3f8cc6c0ed57953b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2736b8b2ef9eafaf3f8cc6c0ed57953b">&#9670;&#160;</a></span>getAllowedVecPatternOptions()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Particle_T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::set&lt; VectorizationPatternOption &gt; &amp; <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; Particle_T &gt;::getAllowedVecPatternOptions </td>
+          <td>(</td>
+          <td class="paramtype">const InteractionTypeOption&#160;</td>
+          <td class="paramname"><em>interactionType</em> = <code>InteractionTypeOption::pairwise</code></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the list of allowed vectorization pattern options. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">interactionType</td><td>Get allowed vectorization pattern options for this interaction type. Defaults to InteractionTypeOption::pairwise. </td></tr>
   </table>
   </dd>
 </dl>
@@ -3875,6 +3918,53 @@ template&lt;class Particle_T &gt; </div>
   <table class="params">
     <tr><td class="paramname">allowedTraversals</td><td></td></tr>
     <tr><td class="paramname">interactionType</td><td>Set allowed traversals for this interaction type. Defaults to InteractionTypeOption::pairwise. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a69d519eb582c049b228848b543beb042" name="a69d519eb582c049b228848b543beb042"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69d519eb582c049b228848b543beb042">&#9670;&#160;</a></span>setAllowedVecPatterns()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Particle_T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; Particle_T &gt;::setAllowedVecPatterns </td>
+          <td>(</td>
+          <td class="paramtype">const std::set&lt; VectorizationPatternOption &gt; &amp;&#160;</td>
+          <td class="paramname"><em>allowedVecPatterns</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const InteractionTypeOption&#160;</td>
+          <td class="paramname"><em>interactionType</em> = <code>InteractionTypeOption::pairwise</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the list of allowed vectorization pattern options For possible options, see options::VectorizationOption::Value. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">allowedVecPatterns</td><td></td></tr>
+    <tr><td class="paramname">interactionType</td><td>Set allowed vectorization pattern options for this interaction type. Defaults to InteractionTypeOption::pairwise </td></tr>
   </table>
   </dd>
 </dl>

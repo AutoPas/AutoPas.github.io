@@ -149,9 +149,9 @@ Collaboration diagram for autopas::Configuration:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8b3befd66d47c0ac38c47f4ae1603adb"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Configuration.html#a8b3befd66d47c0ac38c47f4ae1603adb">Configuration</a> (ContainerOption _container, double _cellSizeFactor, TraversalOption _traversal, <a class="el" href="classautopas_1_1LoadEstimatorOption.html">LoadEstimatorOption</a> _loadEstimator, DataLayoutOption _dataLayout, Newton3Option _newton3, InteractionTypeOption _interactionType)</td></tr>
-<tr class="memdesc:a8b3befd66d47c0ac38c47f4ae1603adb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
-<tr class="separator:a8b3befd66d47c0ac38c47f4ae1603adb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd1d18ef084b5f2bf86cbc4c8525f7f8"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Configuration.html#acd1d18ef084b5f2bf86cbc4c8525f7f8">Configuration</a> (ContainerOption _container, double _cellSizeFactor, TraversalOption _traversal, <a class="el" href="classautopas_1_1LoadEstimatorOption.html">LoadEstimatorOption</a> _loadEstimator, DataLayoutOption _dataLayout, Newton3Option _newton3, InteractionTypeOption _interactionType, VectorizationPatternOption _vecPattern=VectorizationPatternOption::p1xVec)</td></tr>
+<tr class="memdesc:acd1d18ef084b5f2bf86cbc4c8525f7f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <br /></td></tr>
+<tr class="separator:acd1d18ef084b5f2bf86cbc4c8525f7f8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41ae85775df70dd4587547cda46b5f94"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Configuration.html#a41ae85775df70dd4587547cda46b5f94">Configuration</a> ()</td></tr>
 <tr class="memdesc:a41ae85775df70dd4587547cda46b5f94"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor taking no arguments.  <br /></td></tr>
 <tr class="separator:a41ae85775df70dd4587547cda46b5f94"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -190,6 +190,10 @@ ContainerOption&#160;</td><td class="memItemRight" valign="bottom"><b>container<
 TraversalOption&#160;</td><td class="memItemRight" valign="bottom"><b>traversal</b></td></tr>
 <tr class="memdesc:a064071ca0d7525b3b2c4a743306b545a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Traversal option. <br /></td></tr>
 <tr class="separator:a064071ca0d7525b3b2c4a743306b545a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae7d3fb864a93c2ff58b636bde26c62d8"><td class="memItemLeft" align="right" valign="top"><a id="ae7d3fb864a93c2ff58b636bde26c62d8" name="ae7d3fb864a93c2ff58b636bde26c62d8"></a>
+VectorizationPatternOption&#160;</td><td class="memItemRight" valign="bottom"><b>vecPattern</b></td></tr>
+<tr class="memdesc:ae7d3fb864a93c2ff58b636bde26c62d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vectorization Pattern option. <br /></td></tr>
+<tr class="separator:ae7d3fb864a93c2ff58b636bde26c62d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a00a76ca9f33ec89148117b540a3e88cb"><td class="memItemLeft" align="right" valign="top"><a id="a00a76ca9f33ec89148117b540a3e88cb" name="a00a76ca9f33ec89148117b540a3e88cb"></a>
 <a class="el" href="classautopas_1_1LoadEstimatorOption.html">LoadEstimatorOption</a>&#160;</td><td class="memItemRight" valign="bottom"><b>loadEstimator</b></td></tr>
 <tr class="memdesc:a00a76ca9f33ec89148117b540a3e88cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load Estimator option. <br /></td></tr>
@@ -214,8 +218,8 @@ InteractionTypeOption&#160;</td><td class="memItemRight" valign="bottom"><b>inte
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class containing multiple options that form an algorithm configuration for the pairwise iteration. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8b3befd66d47c0ac38c47f4ae1603adb" name="a8b3befd66d47c0ac38c47f4ae1603adb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8b3befd66d47c0ac38c47f4ae1603adb">&#9670;&#160;</a></span>Configuration() <span class="overload">[1/2]</span></h2>
+<a id="acd1d18ef084b5f2bf86cbc4c8525f7f8" name="acd1d18ef084b5f2bf86cbc4c8525f7f8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd1d18ef084b5f2bf86cbc4c8525f7f8">&#9670;&#160;</a></span>Configuration() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -263,7 +267,13 @@ InteractionTypeOption&#160;</td><td class="memItemRight" valign="bottom"><b>inte
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">InteractionTypeOption&#160;</td>
-          <td class="paramname"><em>_interactionType</em>&#160;</td>
+          <td class="paramname"><em>_interactionType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">VectorizationPatternOption&#160;</td>
+          <td class="paramname"><em>_vecPattern</em> = <code>VectorizationPatternOption::p1xVec</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -288,6 +298,7 @@ InteractionTypeOption&#160;</td><td class="memItemRight" valign="bottom"><b>inte
     <tr><td class="paramname">_newton3</td><td></td></tr>
     <tr><td class="paramname">_cellSizeFactor</td><td></td></tr>
     <tr><td class="paramname">_interactionType</td><td></td></tr>
+    <tr><td class="paramname">_vecPattern</td><td></td></tr>
   </table>
   </dd>
 </dl>
