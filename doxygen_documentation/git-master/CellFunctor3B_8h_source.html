@@ -126,7 +126,7 @@ $(function() {
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ParticleCell, <span class="keyword">class</span> ParticleFunctor, <span class="keywordtype">bool</span> b<span class="keywordtype">id</span>irectional = true&gt;</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classautopas_1_1internal_1_1CellFunctor3B.html">   24</a></span><span class="keyword">class </span><a class="code hl_class" href="classautopas_1_1internal_1_1CellFunctor3B.html">CellFunctor3B</a> {</div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classautopas_1_1internal_1_1CellFunctor3B.html#a6cde93412fe29aa54f5bf922a9b9c8ab">   35</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classautopas_1_1internal_1_1CellFunctor3B.html#a6cde93412fe29aa54f5bf922a9b9c8ab">CellFunctor3B</a>(ParticleFunctor *f, <span class="keyword">const</span> <span class="keywordtype">double</span> sortingCutoff, DataLayoutOption dataLayout, <span class="keywordtype">bool</span> useNewton3)</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="classautopas_1_1internal_1_1CellFunctor3B.html#a95e5fdd878b4756f58a25a2dbd32e857">   35</a></span>  <span class="keyword">explicit</span> <a class="code hl_function" href="classautopas_1_1internal_1_1CellFunctor3B.html#a95e5fdd878b4756f58a25a2dbd32e857">CellFunctor3B</a>(ParticleFunctor &amp;f, <span class="keyword">const</span> <span class="keywordtype">double</span> sortingCutoff, DataLayoutOption dataLayout, <span class="keywordtype">bool</span> useNewton3)</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>      : _functor(f), _sortingCutoff(sortingCutoff), _dataLayout(dataLayout), _useNewton3(useNewton3) {}</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1internal_1_1CellFunctor3B.html#a600ff0480a1893ec8e35b8b96c15e88d">processCell</a>(<a class="code hl_class" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &amp;cell);</div>
@@ -170,7 +170,7 @@ $(function() {
 <div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
 <div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>  <span class="keywordtype">void</span> processCellSoANoN3(<a class="code hl_class" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &amp;cell);</div>
 <div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  ParticleFunctor *_functor;</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>  ParticleFunctor &amp;_functor;</div>
 <div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span> </div>
 <div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> _sortingCutoff;</div>
 <div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span> </div>
@@ -299,16 +299,16 @@ $(function() {
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>  <span class="comment">// helper function</span></div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>  <span class="keyword">const</span> <span class="keyword">auto</span> interactParticles = [&amp;](<span class="keyword">auto</span> &amp;p1, <span class="keyword">auto</span> &amp;p2, <span class="keyword">auto</span> &amp;p3) {</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    <span class="keywordflow">if</span> (_useNewton3) {</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>      _functor-&gt;AoSFunctor(p1, p2, p3, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>      _functor.AoSFunctor(p1, p2, p3, <span class="keyword">true</span>);</div>
 <div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>      <span class="keywordflow">if</span> (not p1.isHalo()) {</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        _functor-&gt;AoSFunctor(p1, p2, p3, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        _functor.AoSFunctor(p1, p2, p3, <span class="keyword">false</span>);</div>
 <div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>      }</div>
 <div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>      <span class="keywordflow">if</span> (not p2.isHalo()) {</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        _functor-&gt;AoSFunctor(p2, p1, p3, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        _functor.AoSFunctor(p2, p1, p3, <span class="keyword">false</span>);</div>
 <div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>      }</div>
 <div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>      <span class="keywordflow">if</span> (not p3.isHalo()) {</div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        _functor-&gt;AoSFunctor(p3, p1, p2, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        _functor.AoSFunctor(p3, p1, p2, <span class="keyword">false</span>);</div>
 <div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>      }</div>
 <div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    }</div>
 <div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>  };</div>
@@ -372,7 +372,7 @@ $(function() {
 <div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span>              std::abs(p1Projection - p3Projection) &gt; _sortingCutoff) {</div>
 <div class="line"><a id="l00369" name="l00369"></a><span class="lineno">  369</span>            <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00370" name="l00370"></a><span class="lineno">  370</span>          }</div>
-<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>          _functor-&gt;AoSFunctor(*p1Ptr, *p2Ptr, *p3Ptr, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00371" name="l00371"></a><span class="lineno">  371</span>          _functor.AoSFunctor(*p1Ptr, *p2Ptr, *p3Ptr, <span class="keyword">true</span>);</div>
 <div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span>        }</div>
 <div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span>      }</div>
 <div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span> </div>
@@ -388,7 +388,7 @@ $(function() {
 <div class="line"><a id="l00384" name="l00384"></a><span class="lineno">  384</span>              std::abs(p1Projection - p3Projection) &gt; _sortingCutoff) {</div>
 <div class="line"><a id="l00385" name="l00385"></a><span class="lineno">  385</span>            <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span>          }</div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>          _functor-&gt;AoSFunctor(*p1Ptr, *p2Ptr, *p3Ptr, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span>          _functor.AoSFunctor(*p1Ptr, *p2Ptr, *p3Ptr, <span class="keyword">true</span>);</div>
 <div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span>        }</div>
 <div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span>      }</div>
 <div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span>    }</div>
@@ -400,7 +400,7 @@ $(function() {
 <div class="line"><a id="l00396" name="l00396"></a><span class="lineno">  396</span>      ++p2Ptr;</div>
 <div class="line"><a id="l00397" name="l00397"></a><span class="lineno">  397</span>      <span class="keywordflow">for</span> (; p2Ptr != cell1.end(); ++p2Ptr) {</div>
 <div class="line"><a id="l00398" name="l00398"></a><span class="lineno">  398</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;p3 : cell2) {</div>
-<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>          _functor-&gt;AoSFunctor(*p1Ptr, *p2Ptr, p3, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00399" name="l00399"></a><span class="lineno">  399</span>          _functor.AoSFunctor(*p1Ptr, *p2Ptr, p3, <span class="keyword">true</span>);</div>
 <div class="line"><a id="l00400" name="l00400"></a><span class="lineno">  400</span>        }</div>
 <div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span>      }</div>
 <div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span> </div>
@@ -409,7 +409,7 @@ $(function() {
 <div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>        <span class="keyword">auto</span> p3Ptr = p2Ptr;</div>
 <div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>        ++p3Ptr;</div>
 <div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>        <span class="keywordflow">for</span> (; p3Ptr != cell2.end(); ++p3Ptr) {</div>
-<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>          _functor-&gt;AoSFunctor(*p1Ptr, *p2Ptr, *p3Ptr, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>          _functor.AoSFunctor(*p1Ptr, *p2Ptr, *p3Ptr, <span class="keyword">true</span>);</div>
 <div class="line"><a id="l00409" name="l00409"></a><span class="lineno">  409</span>        }</div>
 <div class="line"><a id="l00410" name="l00410"></a><span class="lineno">  410</span>      }</div>
 <div class="line"><a id="l00411" name="l00411"></a><span class="lineno">  411</span>    }</div>
@@ -421,16 +421,16 @@ $(function() {
 <div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>    ParticleCell &amp;cell1, ParticleCell &amp;cell2, <span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;sortingDirection) {</div>
 <div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span>  <span class="comment">// helper function</span></div>
 <div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>  <span class="keyword">const</span> <span class="keyword">auto</span> interactParticles = [&amp;](<span class="keyword">auto</span> &amp;p1, <span class="keyword">auto</span> &amp;p2, <span class="keyword">auto</span> &amp;p3, <span class="keyword">const</span> <span class="keywordtype">bool</span> p2FromCell1) {</div>
-<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>    _functor-&gt;AoSFunctor(p1, p2, p3, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>    _functor.AoSFunctor(p1, p2, p3, <span class="keyword">false</span>);</div>
 <div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>    <span class="keywordflow">if</span> (p2FromCell1) {</div>
-<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>      _functor-&gt;AoSFunctor(p2, p1, p3, <span class="keyword">false</span>);  <span class="comment">// because of no newton3 and p2 is still in cell1</span></div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>      _functor.AoSFunctor(p2, p1, p3, <span class="keyword">false</span>);  <span class="comment">// because of no newton3 and p2 is still in cell1</span></div>
 <div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span>    } <span class="keywordflow">else</span> {</div>
 <div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (bidirectional) {</div>
-<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>        _functor-&gt;AoSFunctor(p2, p1, p3, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span>        _functor.AoSFunctor(p2, p1, p3, <span class="keyword">false</span>);</div>
 <div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span>      }</div>
 <div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span>    }</div>
 <div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (bidirectional) {</div>
-<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>      _functor-&gt;AoSFunctor(p3, p1, p2, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00429" name="l00429"></a><span class="lineno">  429</span>      _functor.AoSFunctor(p3, p1, p2, <span class="keyword">false</span>);</div>
 <div class="line"><a id="l00430" name="l00430"></a><span class="lineno">  430</span>    }</div>
 <div class="line"><a id="l00431" name="l00431"></a><span class="lineno">  431</span>  };</div>
 <div class="line"><a id="l00432" name="l00432"></a><span class="lineno">  432</span> </div>
@@ -511,7 +511,7 @@ $(function() {
 <div class="line"><a id="l00507" name="l00507"></a><span class="lineno">  507</span>          <span class="keywordflow">break</span>;</div>
 <div class="line"><a id="l00508" name="l00508"></a><span class="lineno">  508</span>        }</div>
 <div class="line"><a id="l00509" name="l00509"></a><span class="lineno">  509</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;p3 : cell3) {</div>
-<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>          _functor-&gt;AoSFunctor(*p1Ptr, *p2Ptr, p3, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00510" name="l00510"></a><span class="lineno">  510</span>          _functor.AoSFunctor(*p1Ptr, *p2Ptr, p3, <span class="keyword">true</span>);</div>
 <div class="line"><a id="l00511" name="l00511"></a><span class="lineno">  511</span>        }</div>
 <div class="line"><a id="l00512" name="l00512"></a><span class="lineno">  512</span>      }</div>
 <div class="line"><a id="l00513" name="l00513"></a><span class="lineno">  513</span>    }</div>
@@ -519,7 +519,7 @@ $(function() {
 <div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;p1 : cell1) {</div>
 <div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;p2 : cell2) {</div>
 <div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;p3 : cell3) {</div>
-<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>          _functor-&gt;AoSFunctor(p1, p2, p3, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span>          _functor.AoSFunctor(p1, p2, p3, <span class="keyword">true</span>);</div>
 <div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span>        }</div>
 <div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>      }</div>
 <div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span>    }</div>
@@ -531,10 +531,10 @@ $(function() {
 <div class="line"><a id="l00527" name="l00527"></a><span class="lineno">  527</span>    ParticleCell &amp;cell1, ParticleCell &amp;cell2, ParticleCell &amp;cell3, <span class="keyword">const</span> std::array&lt;double, 3&gt; &amp;sortingDirection) {</div>
 <div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span>  <span class="comment">// helper function</span></div>
 <div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span>  <span class="keyword">const</span> <span class="keyword">auto</span> interactParticlesNoN3 = [&amp;](<span class="keyword">auto</span> &amp;p1, <span class="keyword">auto</span> &amp;p2, <span class="keyword">auto</span> &amp;p3) {</div>
-<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>    _functor-&gt;AoSFunctor(p1, p2, p3, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span>    _functor.AoSFunctor(p1, p2, p3, <span class="keyword">false</span>);</div>
 <div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (bidirectional) {</div>
-<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>      _functor-&gt;AoSFunctor(p2, p1, p3, <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>      _functor-&gt;AoSFunctor(p3, p1, p2, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span>      _functor.AoSFunctor(p2, p1, p3, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span>      _functor.AoSFunctor(p3, p1, p2, <span class="keyword">false</span>);</div>
 <div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span>    }</div>
 <div class="line"><a id="l00535" name="l00535"></a><span class="lineno">  535</span>  };</div>
 <div class="line"><a id="l00536" name="l00536"></a><span class="lineno">  536</span> </div>
@@ -567,42 +567,42 @@ $(function() {
 <div class="line"><a id="l00563" name="l00563"></a><span class="lineno">  563</span> </div>
 <div class="line"><a id="l00564" name="l00564"></a><span class="lineno">  564</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ParticleCell, <span class="keyword">class</span> ParticleFunctor, <span class="keywordtype">bool</span> b<span class="keywordtype">id</span>irectional&gt;</div>
 <div class="line"><a id="l00565" name="l00565"></a><span class="lineno">  565</span><span class="keywordtype">void</span> CellFunctor3B&lt;ParticleCell, ParticleFunctor, bidirectional&gt;::processCellSoAN3(ParticleCell &amp;cell) {</div>
-<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>  _functor-&gt;SoAFunctorSingle(cell._particleSoABuffer, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00566" name="l00566"></a><span class="lineno">  566</span>  _functor.SoAFunctorSingle(cell._particleSoABuffer, <span class="keyword">true</span>);</div>
 <div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span>}</div>
 <div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span> </div>
 <div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ParticleCell, <span class="keyword">class</span> ParticleFunctor, <span class="keywordtype">bool</span> b<span class="keywordtype">id</span>irectional&gt;</div>
 <div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span><span class="keywordtype">void</span> CellFunctor3B&lt;ParticleCell, ParticleFunctor, bidirectional&gt;::processCellSoANoN3(ParticleCell &amp;cell) {</div>
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>  _functor-&gt;SoAFunctorSingle(cell._particleSoABuffer, <span class="keyword">false</span>);  <span class="comment">// the functor has to enable this...</span></div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span>  _functor.SoAFunctorSingle(cell._particleSoABuffer, <span class="keyword">false</span>);  <span class="comment">// the functor has to enable this...</span></div>
 <div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span>}</div>
 <div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span> </div>
 <div class="line"><a id="l00574" name="l00574"></a><span class="lineno">  574</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ParticleCell, <span class="keyword">class</span> ParticleFunctor, <span class="keywordtype">bool</span> b<span class="keywordtype">id</span>irectional&gt;</div>
 <div class="line"><a id="l00575" name="l00575"></a><span class="lineno">  575</span><span class="keywordtype">void</span> CellFunctor3B&lt;ParticleCell, ParticleFunctor, bidirectional&gt;::processCellPairSoAN3(ParticleCell &amp;cell1,</div>
 <div class="line"><a id="l00576" name="l00576"></a><span class="lineno">  576</span>                                                                                       ParticleCell &amp;cell2) {</div>
-<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>  _functor-&gt;SoAFunctorPair(cell1._particleSoABuffer, cell2._particleSoABuffer, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00577" name="l00577"></a><span class="lineno">  577</span>  _functor.SoAFunctorPair(cell1._particleSoABuffer, cell2._particleSoABuffer, <span class="keyword">true</span>);</div>
 <div class="line"><a id="l00578" name="l00578"></a><span class="lineno">  578</span>}</div>
 <div class="line"><a id="l00579" name="l00579"></a><span class="lineno">  579</span> </div>
 <div class="line"><a id="l00580" name="l00580"></a><span class="lineno">  580</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ParticleCell, <span class="keyword">class</span> ParticleFunctor, <span class="keywordtype">bool</span> b<span class="keywordtype">id</span>irectional&gt;</div>
 <div class="line"><a id="l00581" name="l00581"></a><span class="lineno">  581</span><span class="keywordtype">void</span> CellFunctor3B&lt;ParticleCell, ParticleFunctor, bidirectional&gt;::processCellPairSoANoN3(ParticleCell &amp;cell1,</div>
 <div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span>                                                                                         ParticleCell &amp;cell2) {</div>
-<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>  _functor-&gt;SoAFunctorPair(cell1._particleSoABuffer, cell2._particleSoABuffer, <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>  <span class="keywordflow">if</span> (bidirectional) _functor-&gt;SoAFunctorPair(cell2._particleSoABuffer, cell1._particleSoABuffer, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span>  _functor.SoAFunctorPair(cell1._particleSoABuffer, cell2._particleSoABuffer, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span>  <span class="keywordflow">if</span> (bidirectional) _functor.SoAFunctorPair(cell2._particleSoABuffer, cell1._particleSoABuffer, <span class="keyword">false</span>);</div>
 <div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span>}</div>
 <div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span> </div>
 <div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ParticleCell, <span class="keyword">class</span> ParticleFunctor, <span class="keywordtype">bool</span> b<span class="keywordtype">id</span>irectional&gt;</div>
 <div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span><span class="keywordtype">void</span> CellFunctor3B&lt;ParticleCell, ParticleFunctor, bidirectional&gt;::processCellTripleSoAN3(ParticleCell &amp;cell1,</div>
 <div class="line"><a id="l00589" name="l00589"></a><span class="lineno">  589</span>                                                                                         ParticleCell &amp;cell2,</div>
 <div class="line"><a id="l00590" name="l00590"></a><span class="lineno">  590</span>                                                                                         ParticleCell &amp;cell3) {</div>
-<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>  _functor-&gt;SoAFunctorTriple(cell1._particleSoABuffer, cell2._particleSoABuffer, cell3._particleSoABuffer, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00591" name="l00591"></a><span class="lineno">  591</span>  _functor.SoAFunctorTriple(cell1._particleSoABuffer, cell2._particleSoABuffer, cell3._particleSoABuffer, <span class="keyword">true</span>);</div>
 <div class="line"><a id="l00592" name="l00592"></a><span class="lineno">  592</span>}</div>
 <div class="line"><a id="l00593" name="l00593"></a><span class="lineno">  593</span> </div>
 <div class="line"><a id="l00594" name="l00594"></a><span class="lineno">  594</span><span class="keyword">template</span> &lt;<span class="keyword">class</span> ParticleCell, <span class="keyword">class</span> ParticleFunctor, <span class="keywordtype">bool</span> b<span class="keywordtype">id</span>irectional&gt;</div>
 <div class="line"><a id="l00595" name="l00595"></a><span class="lineno">  595</span><span class="keywordtype">void</span> CellFunctor3B&lt;ParticleCell, ParticleFunctor, bidirectional&gt;::processCellTripleSoANoN3(ParticleCell &amp;cell1,</div>
 <div class="line"><a id="l00596" name="l00596"></a><span class="lineno">  596</span>                                                                                           ParticleCell &amp;cell2,</div>
 <div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span>                                                                                           ParticleCell &amp;cell3) {</div>
-<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>  _functor-&gt;SoAFunctorTriple(cell1._particleSoABuffer, cell2._particleSoABuffer, cell3._particleSoABuffer, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span>  _functor.SoAFunctorTriple(cell1._particleSoABuffer, cell2._particleSoABuffer, cell3._particleSoABuffer, <span class="keyword">false</span>);</div>
 <div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span>  <span class="keywordflow">if</span> (bidirectional) {</div>
-<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>    _functor-&gt;SoAFunctorTriple(cell2._particleSoABuffer, cell1._particleSoABuffer, cell3._particleSoABuffer, <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>    _functor-&gt;SoAFunctorTriple(cell3._particleSoABuffer, cell1._particleSoABuffer, cell2._particleSoABuffer, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>    _functor.SoAFunctorTriple(cell2._particleSoABuffer, cell1._particleSoABuffer, cell3._particleSoABuffer, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span>    _functor.SoAFunctorTriple(cell3._particleSoABuffer, cell1._particleSoABuffer, cell2._particleSoABuffer, <span class="keyword">false</span>);</div>
 <div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span>  }</div>
 <div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span>}</div>
 <div class="line"><a id="l00604" name="l00604"></a><span class="lineno">  604</span> </div>
@@ -619,8 +619,8 @@ $(function() {
 <div class="ttc" id="aclassautopas_1_1internal_1_1CellFunctor3B_html_a24e368110b1e1c01f0ad64c3153ea9a5"><div class="ttname"><a href="classautopas_1_1internal_1_1CellFunctor3B.html#a24e368110b1e1c01f0ad64c3153ea9a5">autopas::internal::CellFunctor3B::setSortingThreshold</a></div><div class="ttdeci">void setSortingThreshold(size_t sortingThreshold)</div><div class="ttdoc">Set the sorting-threshold If the sum of the number of particles in three cells is greater or equal to...</div><div class="ttdef"><b>Definition:</b> CellFunctor3B.h:181</div></div>
 <div class="ttc" id="aclassautopas_1_1internal_1_1CellFunctor3B_html_a600ff0480a1893ec8e35b8b96c15e88d"><div class="ttname"><a href="classautopas_1_1internal_1_1CellFunctor3B.html#a600ff0480a1893ec8e35b8b96c15e88d">autopas::internal::CellFunctor3B::processCell</a></div><div class="ttdeci">void processCell(ParticleCell &amp;cell)</div><div class="ttdoc">Process the interactions inside one cell.</div><div class="ttdef"><b>Definition:</b> CellFunctor3B.h:186</div></div>
 <div class="ttc" id="aclassautopas_1_1internal_1_1CellFunctor3B_html_a63641f06b50f2c086e1a274ae8af6e75"><div class="ttname"><a href="classautopas_1_1internal_1_1CellFunctor3B.html#a63641f06b50f2c086e1a274ae8af6e75">autopas::internal::CellFunctor3B::getDataLayout</a></div><div class="ttdeci">DataLayoutOption::Value getDataLayout() const</div><div class="ttdoc">Getter.</div><div class="ttdef"><b>Definition:</b> CellFunctor3B.h:71</div></div>
-<div class="ttc" id="aclassautopas_1_1internal_1_1CellFunctor3B_html_a6cde93412fe29aa54f5bf922a9b9c8ab"><div class="ttname"><a href="classautopas_1_1internal_1_1CellFunctor3B.html#a6cde93412fe29aa54f5bf922a9b9c8ab">autopas::internal::CellFunctor3B::CellFunctor3B</a></div><div class="ttdeci">CellFunctor3B(ParticleFunctor *f, const double sortingCutoff, DataLayoutOption dataLayout, bool useNewton3)</div><div class="ttdoc">The constructor of CellFunctor3B.</div><div class="ttdef"><b>Definition:</b> CellFunctor3B.h:35</div></div>
 <div class="ttc" id="aclassautopas_1_1internal_1_1CellFunctor3B_html_a7561e22ca73dba05871e606ab49947b9"><div class="ttname"><a href="classautopas_1_1internal_1_1CellFunctor3B.html#a7561e22ca73dba05871e606ab49947b9">autopas::internal::CellFunctor3B::getBidirectional</a></div><div class="ttdeci">bool getBidirectional() const</div><div class="ttdoc">Getter.</div><div class="ttdef"><b>Definition:</b> CellFunctor3B.h:83</div></div>
+<div class="ttc" id="aclassautopas_1_1internal_1_1CellFunctor3B_html_a95e5fdd878b4756f58a25a2dbd32e857"><div class="ttname"><a href="classautopas_1_1internal_1_1CellFunctor3B.html#a95e5fdd878b4756f58a25a2dbd32e857">autopas::internal::CellFunctor3B::CellFunctor3B</a></div><div class="ttdeci">CellFunctor3B(ParticleFunctor &amp;f, const double sortingCutoff, DataLayoutOption dataLayout, bool useNewton3)</div><div class="ttdoc">The constructor of CellFunctor3B.</div><div class="ttdef"><b>Definition:</b> CellFunctor3B.h:35</div></div>
 <div class="ttc" id="aclassautopas_1_1internal_1_1CellFunctor3B_html_af848b5869745282a27b3e1dca82af618"><div class="ttname"><a href="classautopas_1_1internal_1_1CellFunctor3B.html#af848b5869745282a27b3e1dca82af618">autopas::internal::CellFunctor3B::processCellPair</a></div><div class="ttdeci">void processCellPair(ParticleCell &amp;cell1, ParticleCell &amp;cell2, const std::array&lt; double, 3 &gt; &amp;sortingDirection={0., 0., 0.})</div><div class="ttdoc">Process the interactions between the particles of cell1 with particles of cell2.</div><div class="ttdef"><b>Definition:</b> CellFunctor3B.h:214</div></div>
 <div class="ttc" id="aclassautopas_1_1internal_1_1CellFunctor3B_html_af9c44d9f245cedc46e00fbccfadb727f"><div class="ttname"><a href="classautopas_1_1internal_1_1CellFunctor3B.html#af9c44d9f245cedc46e00fbccfadb727f">autopas::internal::CellFunctor3B::getNewton3</a></div><div class="ttdeci">bool getNewton3() const</div><div class="ttdoc">Getter.</div><div class="ttdef"><b>Definition:</b> CellFunctor3B.h:77</div></div>
 <div class="ttc" id="anamespaceautopas_1_1internal_html"><div class="ttname"><a href="namespaceautopas_1_1internal.html">autopas::internal</a></div><div class="ttdoc">This namespace is used for implementation specifics.</div><div class="ttdef"><b>Definition:</b> CellFunctor.h:14</div></div>
