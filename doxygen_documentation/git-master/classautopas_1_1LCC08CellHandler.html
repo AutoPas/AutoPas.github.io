@@ -114,9 +114,10 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-types">Protected Types</a> &#124;
 <a href="#pro-attribs">Protected Attributes</a> &#124;
 <a href="classautopas_1_1LCC08CellHandler-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">autopas::LCC08CellHandler&lt; ParticleCell, PairwiseFunctor &gt; Class Template Reference</div></div>
+  <div class="headertitle"><div class="title">autopas::LCC08CellHandler&lt; ParticleCell_T, Functor_T &gt; Class Template Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -125,73 +126,88 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="LCC08CellHandler_8h_source.html">LCC08CellHandler.h</a>&gt;</code></p>
 <div class="dynheader">
-Inheritance diagram for autopas::LCC08CellHandler&lt; ParticleCell, PairwiseFunctor &gt;:</div>
+Inheritance diagram for autopas::LCC08CellHandler&lt; ParticleCell_T, Functor_T &gt;:</div>
 <div class="dyncontent">
-<div class="center"><img src="classautopas_1_1LCC08CellHandler__inherit__graph.png" border="0" usemap="#aautopas_1_1LCC08CellHandler_3_01ParticleCell_00_01PairwiseFunctor_01_4_inherit__map" alt="Inheritance graph"/></div>
-<map name="aautopas_1_1LCC08CellHandler_3_01ParticleCell_00_01PairwiseFunctor_01_4_inherit__map" id="aautopas_1_1LCC08CellHandler_3_01ParticleCell_00_01PairwiseFunctor_01_4_inherit__map">
-<area shape="rect" title="This class provides the base for traversals using the c08 base step." alt="" coords="5,5,240,45"/>
-<area shape="rect" href="classautopas_1_1LCC08CellHandler.html" title=" " alt="" coords="21,123,224,177"/>
-<area shape="poly" title=" " alt="" coords="125,59,125,122,120,122,120,59"/>
+<div class="center"><img src="classautopas_1_1LCC08CellHandler__inherit__graph.png" border="0" usemap="#aautopas_1_1LCC08CellHandler_3_01ParticleCell__T_00_01Functor__T_01_4_inherit__map" alt="Inheritance graph"/></div>
+<map name="aautopas_1_1LCC08CellHandler_3_01ParticleCell__T_00_01Functor__T_01_4_inherit__map" id="aautopas_1_1LCC08CellHandler_3_01ParticleCell__T_00_01Functor__T_01_4_inherit__map">
+<area shape="rect" title="This class provides the base for traversals using the c08 base step." alt="" coords="5,41,216,81"/>
+<area shape="rect" href="classautopas_1_1LCC08CellHandler.html" title=" " alt="" coords="445,5,680,45"/>
+<area shape="poly" title=" " alt="" coords="229,49,445,32,445,37,230,55"/>
+<area shape="rect" href="classautopas_1_1LCC08CellHandler.html" title=" " alt="" coords="461,70,664,125"/>
+<area shape="poly" title=" " alt="" coords="224,81,240,83,355,91,461,95,461,100,354,97,240,88,224,86"/>
 </map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a035542d65d736d855a2c48e019009e24"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC08CellHandler.html#a035542d65d736d855a2c48e019009e24">LCC08CellHandler</a> (<a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &amp;pairwiseFunctor, const std::array&lt; unsigned long, 3 &gt; &amp;cellsPerDimension, double interactionLength, const std::array&lt; double, 3 &gt; &amp;cellLength, const std::array&lt; unsigned long, 3 &gt; &amp;overlap, DataLayoutOption dataLayout, bool useNewton3)</td></tr>
-<tr class="memdesc:a035542d65d736d855a2c48e019009e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the <a class="el" href="classautopas_1_1LCC08CellHandler.html" title="This class provides the base for traversals using the c08 base step.">LCC08CellHandler</a>.  <br /></td></tr>
-<tr class="separator:a035542d65d736d855a2c48e019009e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaba9d426061d148b372df6c2dfdeed8f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC08CellHandler.html#aaba9d426061d148b372df6c2dfdeed8f">processBaseCell</a> (std::vector&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; &amp;cells, unsigned long baseIndex)</td></tr>
-<tr class="memdesc:aaba9d426061d148b372df6c2dfdeed8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes one interaction for each spacial direction based on the lower left frontal corner (=base index) of a 2x2x2 block of cells.  <br /></td></tr>
-<tr class="separator:aaba9d426061d148b372df6c2dfdeed8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3582d067e46e3282d815347f17268c87"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC08CellHandler.html#a3582d067e46e3282d815347f17268c87">setSortingThreshold</a> (size_t sortingThreshold)</td></tr>
-<tr class="memdesc:a3582d067e46e3282d815347f17268c87"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the sorting-threshold for traversals that use the CellFunctor If the sum of the number of particles in two cells is greater or equal to that value, the CellFunctor creates a sorted view of the particles to avoid unnecessary distance checks.    <br /></td></tr>
-<tr class="separator:a3582d067e46e3282d815347f17268c87"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46f8784f3e6c1f38937805244a727686"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC08CellHandler.html#a46f8784f3e6c1f38937805244a727686">LCC08CellHandler</a> (Functor_T &amp;functor, const std::array&lt; unsigned long, 3 &gt; &amp;cellsPerDimension, double interactionLength, const std::array&lt; double, 3 &gt; &amp;cellLength, const std::array&lt; unsigned long, 3 &gt; &amp;overlap, DataLayoutOption dataLayout, bool useNewton3)</td></tr>
+<tr class="memdesc:a46f8784f3e6c1f38937805244a727686"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the <a class="el" href="classautopas_1_1LCC08CellHandler.html" title="This class provides the base for traversals using the c08 base step.">LCC08CellHandler</a>.  <br /></td></tr>
+<tr class="separator:a46f8784f3e6c1f38937805244a727686"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a571a5f189d92aac14beb8e4c11d41054"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC08CellHandler.html#a571a5f189d92aac14beb8e4c11d41054">processBaseCell</a> (std::vector&lt; ParticleCell_T &gt; &amp;cells, unsigned long baseIndex)</td></tr>
+<tr class="memdesc:a571a5f189d92aac14beb8e4c11d41054"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes one interaction for each spacial direction based on the lower left frontal corner (=base index) of a 2x2x2 block of cells.  <br /></td></tr>
+<tr class="separator:a571a5f189d92aac14beb8e4c11d41054"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a590aa6a19cee967d36dcbabab1638879"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC08CellHandler.html#a590aa6a19cee967d36dcbabab1638879">processBaseCellPairwise</a> (std::vector&lt; ParticleCell_T &gt; &amp;cells, unsigned long baseIndex)</td></tr>
+<tr class="memdesc:a590aa6a19cee967d36dcbabab1638879"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pairwise implementation of <a class="el" href="classautopas_1_1LCC08CellHandler.html#a571a5f189d92aac14beb8e4c11d41054" title="Computes one interaction for each spacial direction based on the lower left frontal corner (=base ind...">processBaseCell()</a>.  <br /></td></tr>
+<tr class="separator:a590aa6a19cee967d36dcbabab1638879"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9b2b19527131c58bdd18a8db51846e19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC08CellHandler.html#a9b2b19527131c58bdd18a8db51846e19">processBaseCellTriwise</a> (std::vector&lt; ParticleCell_T &gt; &amp;cells, unsigned long baseIndex)</td></tr>
+<tr class="memdesc:a9b2b19527131c58bdd18a8db51846e19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triwise implementation of <a class="el" href="classautopas_1_1LCC08CellHandler.html#a571a5f189d92aac14beb8e4c11d41054" title="Computes one interaction for each spacial direction based on the lower left frontal corner (=base ind...">processBaseCell()</a>.  <br /></td></tr>
+<tr class="separator:a9b2b19527131c58bdd18a8db51846e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66d92556d9a669f60b4c66fbd23091e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC08CellHandler.html#a66d92556d9a669f60b4c66fbd23091e7">setSortingThreshold</a> (size_t sortingThreshold)</td></tr>
+<tr class="memdesc:a66d92556d9a669f60b4c66fbd23091e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the sorting-threshold for traversals that use the CellFunctor If the sum of the number of particles in two cells is greater or equal to that value, the CellFunctor creates a sorted view of the particles to avoid unnecessary distance checks.    <br /></td></tr>
+<tr class="separator:a66d92556d9a669f60b4c66fbd23091e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-types" name="pro-types"></a>
+Protected Types</h2></td></tr>
+<tr class="memitem:a0545ecb048335c763eb7f4d247873e70"><td class="memItemLeft" align="right" valign="top"><a id="a0545ecb048335c763eb7f4d247873e70" name="a0545ecb048335c763eb7f4d247873e70"></a>
+using&#160;</td><td class="memItemRight" valign="bottom"><b>CellOffsetType</b> = std::conditional_t&lt; decltype(<a class="el" href="namespaceautopas_1_1utils.html#acac3f5cff802aacc3b721e9766f50e14">utils::isPairwiseFunctor</a>&lt; Functor_T &gt;())::value, <a class="el" href="namespaceautopas_1_1LCC08CellHandlerUtility.html#a8c698b1a8b1039af296e7f726b8b4c7e">LCC08CellHandlerUtility::OffsetPairSorting</a>, <a class="el" href="namespaceautopas_1_1LCC08CellHandlerUtility.html#ad8fda1e7f42f37752de505c2be28c051">LCC08CellHandlerUtility::OffsetTripletSorting</a> &gt;</td></tr>
+<tr class="memdesc:a0545ecb048335c763eb7f4d247873e70"><td class="mdescLeft">&#160;</td><td class="mdescRight">CellOffset needs to store interaction pairs or triplets depending on the <a class="el" href="classautopas_1_1Functor.html" title="Functor base class.">Functor</a> type. <br /></td></tr>
+<tr class="separator:a0545ecb048335c763eb7f4d247873e70"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-attribs" name="pro-attribs"></a>
 Protected Attributes</h2></td></tr>
-<tr class="memitem:ac3bfb75e89d9fcffb1f59491e255cf66"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="namespaceautopas_1_1LCC08CellHandlerUtility.html#a8c698b1a8b1039af296e7f726b8b4c7e">LCC08CellHandlerUtility::OffsetPairSorting</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC08CellHandler.html#ac3bfb75e89d9fcffb1f59491e255cf66">_cellPairOffsets</a></td></tr>
-<tr class="memdesc:ac3bfb75e89d9fcffb1f59491e255cf66"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pair sets for <a class="el" href="classautopas_1_1LCC08CellHandler.html#aaba9d426061d148b372df6c2dfdeed8f" title="Computes one interaction for each spacial direction based on the lower left frontal corner (=base ind...">processBaseCell()</a>.  <br /></td></tr>
-<tr class="separator:ac3bfb75e89d9fcffb1f59491e255cf66"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9ddbf23e6c5a967652fa31d47bc612ad"><td class="memItemLeft" align="right" valign="top">const std::array&lt; unsigned long, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC08CellHandler.html#a9ddbf23e6c5a967652fa31d47bc612ad">_overlap</a></td></tr>
-<tr class="memdesc:a9ddbf23e6c5a967652fa31d47bc612ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overlap of interacting cells.  <br /></td></tr>
-<tr class="separator:a9ddbf23e6c5a967652fa31d47bc612ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab885a7378abaad7c37f07313333b6279"><td class="memItemLeft" align="right" valign="top"><a id="ab885a7378abaad7c37f07313333b6279" name="ab885a7378abaad7c37f07313333b6279"></a>
+<tr class="memitem:aa76ea1ccfd371dedad4b7922c451ac7e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classautopas_1_1LCC08CellHandler.html#a0545ecb048335c763eb7f4d247873e70">CellOffsetType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC08CellHandler.html#aa76ea1ccfd371dedad4b7922c451ac7e">_cellOffsets</a></td></tr>
+<tr class="memdesc:aa76ea1ccfd371dedad4b7922c451ac7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pair sets for <a class="el" href="classautopas_1_1LCC08CellHandler.html#a571a5f189d92aac14beb8e4c11d41054" title="Computes one interaction for each spacial direction based on the lower left frontal corner (=base ind...">processBaseCell()</a>.  <br /></td></tr>
+<tr class="separator:aa76ea1ccfd371dedad4b7922c451ac7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a426d5646b94e1b98ea56a137c096c6b6"><td class="memItemLeft" align="right" valign="top">const std::array&lt; unsigned long, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC08CellHandler.html#a426d5646b94e1b98ea56a137c096c6b6">_overlap</a></td></tr>
+<tr class="memdesc:a426d5646b94e1b98ea56a137c096c6b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Overlap of interacting cells.  <br /></td></tr>
+<tr class="separator:a426d5646b94e1b98ea56a137c096c6b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c25a0587e41aae1bd4e27c71ea1b222"><td class="memItemLeft" align="right" valign="top"><a id="a4c25a0587e41aae1bd4e27c71ea1b222" name="a4c25a0587e41aae1bd4e27c71ea1b222"></a>
 DataLayoutOption&#160;</td><td class="memItemRight" valign="bottom"><b>_dataLayout</b></td></tr>
-<tr class="memdesc:ab885a7378abaad7c37f07313333b6279"><td class="mdescLeft">&#160;</td><td class="mdescRight">The datalayout to be used. <br /></td></tr>
-<tr class="separator:ab885a7378abaad7c37f07313333b6279"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af87a117baf6bde9cd9938e701eca1852"><td class="memItemLeft" align="right" valign="top"><a id="af87a117baf6bde9cd9938e701eca1852" name="af87a117baf6bde9cd9938e701eca1852"></a>
+<tr class="memdesc:a4c25a0587e41aae1bd4e27c71ea1b222"><td class="mdescLeft">&#160;</td><td class="mdescRight">The datalayout to be used. <br /></td></tr>
+<tr class="separator:a4c25a0587e41aae1bd4e27c71ea1b222"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a76cc9966ccdebdb7d1b1e6cd039fda2e"><td class="memItemLeft" align="right" valign="top"><a id="a76cc9966ccdebdb7d1b1e6cd039fda2e" name="a76cc9966ccdebdb7d1b1e6cd039fda2e"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>_useNewton3</b></td></tr>
-<tr class="memdesc:af87a117baf6bde9cd9938e701eca1852"><td class="mdescLeft">&#160;</td><td class="mdescRight">If newton3 should be used or not. <br /></td></tr>
-<tr class="separator:af87a117baf6bde9cd9938e701eca1852"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memdesc:a76cc9966ccdebdb7d1b1e6cd039fda2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">If newton3 should be used or not. <br /></td></tr>
+<tr class="separator:a76cc9966ccdebdb7d1b1e6cd039fda2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a>&gt;<br />
-class autopas::LCC08CellHandler&lt; ParticleCell, PairwiseFunctor &gt;</div><p>This class provides the base for traversals using the c08 base step. </p>
-<p>The base step <a class="el" href="classautopas_1_1LCC08CellHandler.html#aaba9d426061d148b372df6c2dfdeed8f" title="Computes one interaction for each spacial direction based on the lower left frontal corner (=base ind...">processBaseCell()</a> computes one set of pairwise interactions between two cells for each spatial direction based on the baseIndex. After executing the base step on all cells all pairwise interactions for all cells are done.</p>
+<div class="textblock"><div class="compoundTemplParams">template&lt;class ParticleCell_T, class Functor_T&gt;<br />
+class autopas::LCC08CellHandler&lt; ParticleCell_T, Functor_T &gt;</div><p>This class provides the base for traversals using the c08 base step. </p>
+<p>The base step <a class="el" href="classautopas_1_1LCC08CellHandler.html#a571a5f189d92aac14beb8e4c11d41054" title="Computes one interaction for each spacial direction based on the lower left frontal corner (=base ind...">processBaseCell()</a> computes the full set of pairwise (or triwise) interactions between two (or three) cells for each spatial direction based on the baseIndex. After executing the base step on all cells, all pairwise (or triwise) interactions for all cells are done.</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname"><a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a></td><td>the type of cells </td></tr>
-    <tr><td class="paramname"><a class="el" href="classautopas_1_1PairwiseFunctor.html" title="PairwiseFunctor class.">PairwiseFunctor</a></td><td>The functor that defines the interaction of two particles. </td></tr>
+    <tr><td class="paramname">ParticleCell_T</td><td>the type of cells </td></tr>
+    <tr><td class="paramname">Functor_T</td><td>The functor that defines the interaction of two or three particles. </td></tr>
   </table>
   </dd>
 </dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a035542d65d736d855a2c48e019009e24" name="a035542d65d736d855a2c48e019009e24"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a035542d65d736d855a2c48e019009e24">&#9670;&#160;</a></span>LCC08CellHandler()</h2>
+<a id="a46f8784f3e6c1f38937805244a727686" name="a46f8784f3e6c1f38937805244a727686"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46f8784f3e6c1f38937805244a727686">&#9670;&#160;</a></span>LCC08CellHandler()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
+template&lt;class ParticleCell_T , class Functor_T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1LCC08CellHandler.html">autopas::LCC08CellHandler</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt;::LCC08CellHandler </td>
+          <td class="memname"><a class="el" href="classautopas_1_1LCC08CellHandler.html">autopas::LCC08CellHandler</a>&lt; ParticleCell_T, Functor_T &gt;::LCC08CellHandler </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &amp;&#160;</td>
-          <td class="paramname"><em>pairwiseFunctor</em>, </td>
+          <td class="paramtype">Functor_T &amp;&#160;</td>
+          <td class="paramname"><em>functor</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -245,7 +261,7 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 <p>Constructor of the <a class="el" href="classautopas_1_1LCC08CellHandler.html" title="This class provides the base for traversals using the c08 base step.">LCC08CellHandler</a>. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">pairwiseFunctor</td><td>The functor that defines the interaction of two particles. </td></tr>
+    <tr><td class="paramname">functor</td><td>The functor that defines the interaction of two particles. </td></tr>
     <tr><td class="paramname">cellsPerDimension</td><td>The number of cells per dimension. </td></tr>
     <tr><td class="paramname">interactionLength</td><td>Interaction length (cutoff + skin). </td></tr>
     <tr><td class="paramname">cellLength</td><td>cell length. </td></tr>
@@ -260,21 +276,21 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="aaba9d426061d148b372df6c2dfdeed8f" name="aaba9d426061d148b372df6c2dfdeed8f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaba9d426061d148b372df6c2dfdeed8f">&#9670;&#160;</a></span>processBaseCell()</h2>
+<a id="a571a5f189d92aac14beb8e4c11d41054" name="a571a5f189d92aac14beb8e4c11d41054"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a571a5f189d92aac14beb8e4c11d41054">&#9670;&#160;</a></span>processBaseCell()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
+template&lt;class ParticleCell_T , class Functor_T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1LCC08CellHandler.html">autopas::LCC08CellHandler</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt;::processBaseCell </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1LCC08CellHandler.html">autopas::LCC08CellHandler</a>&lt; ParticleCell_T, Functor_T &gt;::processBaseCell </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">std::vector&lt; ParticleCell_T &gt; &amp;&#160;</td>
           <td class="paramname"><em>cells</em>, </td>
         </tr>
         <tr>
@@ -307,19 +323,115 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 
 </div>
 </div>
-<a id="a3582d067e46e3282d815347f17268c87" name="a3582d067e46e3282d815347f17268c87"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3582d067e46e3282d815347f17268c87">&#9670;&#160;</a></span>setSortingThreshold()</h2>
+<a id="a590aa6a19cee967d36dcbabab1638879" name="a590aa6a19cee967d36dcbabab1638879"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a590aa6a19cee967d36dcbabab1638879">&#9670;&#160;</a></span>processBaseCellPairwise()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
+template&lt;class ParticleCell_T , class Functor_T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1LCC08CellHandler.html">autopas::LCC08CellHandler</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt;::setSortingThreshold </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1LCC08CellHandler.html">autopas::LCC08CellHandler</a>&lt; ParticleCell_T, Functor_T &gt;::processBaseCellPairwise </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; ParticleCell_T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cells</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>baseIndex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pairwise implementation of <a class="el" href="classautopas_1_1LCC08CellHandler.html#a571a5f189d92aac14beb8e4c11d41054" title="Computes one interaction for each spacial direction based on the lower left frontal corner (=base ind...">processBaseCell()</a>. </p>
+<p>Computes one interaction for each spacial direction based on the lower left frontal corner (=base index) of a 2x2x2 block of cells.  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cells</td><td>vector of all cells. </td></tr>
+    <tr><td class="paramname">baseIndex</td><td>Index respective to which box is constructed.   </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a9b2b19527131c58bdd18a8db51846e19" name="a9b2b19527131c58bdd18a8db51846e19"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b2b19527131c58bdd18a8db51846e19">&#9670;&#160;</a></span>processBaseCellTriwise()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ParticleCell_T , class Functor_T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1LCC08CellHandler.html">autopas::LCC08CellHandler</a>&lt; ParticleCell_T, Functor_T &gt;::processBaseCellTriwise </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; ParticleCell_T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cells</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>baseIndex</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Triwise implementation of <a class="el" href="classautopas_1_1LCC08CellHandler.html#a571a5f189d92aac14beb8e4c11d41054" title="Computes one interaction for each spacial direction based on the lower left frontal corner (=base ind...">processBaseCell()</a>. </p>
+<p>Computes one interaction for each spacial direction based on the lower left frontal corner (=base index) of a 2x2x2 block of cells.  </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cells</td><td>vector of all cells. </td></tr>
+    <tr><td class="paramname">baseIndex</td><td>Index respective to which box is constructed.   </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a66d92556d9a669f60b4c66fbd23091e7" name="a66d92556d9a669f60b4c66fbd23091e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66d92556d9a669f60b4c66fbd23091e7">&#9670;&#160;</a></span>setSortingThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ParticleCell_T , class Functor_T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1LCC08CellHandler.html">autopas::LCC08CellHandler</a>&lt; ParticleCell_T, Functor_T &gt;::setSortingThreshold </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>sortingThreshold</em></td><td>)</td>
@@ -344,19 +456,19 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a id="ac3bfb75e89d9fcffb1f59491e255cf66" name="ac3bfb75e89d9fcffb1f59491e255cf66"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac3bfb75e89d9fcffb1f59491e255cf66">&#9670;&#160;</a></span>_cellPairOffsets</h2>
+<a id="aa76ea1ccfd371dedad4b7922c451ac7e" name="aa76ea1ccfd371dedad4b7922c451ac7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa76ea1ccfd371dedad4b7922c451ac7e">&#9670;&#160;</a></span>_cellOffsets</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
+template&lt;class ParticleCell_T , class Functor_T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;<a class="el" href="namespaceautopas_1_1LCC08CellHandlerUtility.html#a8c698b1a8b1039af296e7f726b8b4c7e">LCC08CellHandlerUtility::OffsetPairSorting</a>&gt; <a class="el" href="classautopas_1_1LCC08CellHandler.html">autopas::LCC08CellHandler</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt;::_cellPairOffsets</td>
+          <td class="memname">std::vector&lt;<a class="el" href="classautopas_1_1LCC08CellHandler.html#a0545ecb048335c763eb7f4d247873e70">CellOffsetType</a>&gt; <a class="el" href="classautopas_1_1LCC08CellHandler.html">autopas::LCC08CellHandler</a>&lt; ParticleCell_T, Functor_T &gt;::_cellOffsets</td>
         </tr>
       </table>
   </td>
@@ -366,24 +478,24 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 </table>
 </div><div class="memdoc">
 
-<p>Pair sets for <a class="el" href="classautopas_1_1LCC08CellHandler.html#aaba9d426061d148b372df6c2dfdeed8f" title="Computes one interaction for each spacial direction based on the lower left frontal corner (=base ind...">processBaseCell()</a>. </p>
+<p>Pair sets for <a class="el" href="classautopas_1_1LCC08CellHandler.html#a571a5f189d92aac14beb8e4c11d41054" title="Computes one interaction for each spacial direction based on the lower left frontal corner (=base ind...">processBaseCell()</a>. </p>
 <p>Values are: offset of first cell, offset of second cell, sorting direction. </p>
 
 </div>
 </div>
-<a id="a9ddbf23e6c5a967652fa31d47bc612ad" name="a9ddbf23e6c5a967652fa31d47bc612ad"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9ddbf23e6c5a967652fa31d47bc612ad">&#9670;&#160;</a></span>_overlap</h2>
+<a id="a426d5646b94e1b98ea56a137c096c6b6" name="a426d5646b94e1b98ea56a137c096c6b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a426d5646b94e1b98ea56a137c096c6b6">&#9670;&#160;</a></span>_overlap</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt; </div>
+template&lt;class ParticleCell_T , class Functor_T &gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const std::array&lt;unsigned long, 3&gt; <a class="el" href="classautopas_1_1LCC08CellHandler.html">autopas::LCC08CellHandler</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1PairwiseFunctor.html">PairwiseFunctor</a> &gt;::_overlap</td>
+          <td class="memname">const std::array&lt;unsigned long, 3&gt; <a class="el" href="classautopas_1_1LCC08CellHandler.html">autopas::LCC08CellHandler</a>&lt; ParticleCell_T, Functor_T &gt;::_overlap</td>
         </tr>
       </table>
   </td>

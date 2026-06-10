@@ -119,87 +119,95 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;<a class="el" href="LCC08CellHandlerUtility_8h_source.html">LCC08CellHandlerUtility.h</a>&quot;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &quot;<a class="el" href="ArrayMath_8h_source.html">autopas/utils/ArrayMath.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ArrayUtils_8h_source.html">autopas/utils/ArrayUtils.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ExceptionHandler_8h_source.html">autopas/utils/ExceptionHandler.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="Math_8h_source.html">autopas/utils/Math.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="ThreeDimensionalMapping_8h_source.html">autopas/utils/ThreeDimensionalMapping.h</a>&quot;</code><br />
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for LCC08CellHandlerUtility.cpp:</div>
 <div class="dyncontent">
 <div class="center"><img src="LCC08CellHandlerUtility_8cpp__incl.png" border="0" usemap="#aautopas_2containers_2linkedCells_2traversals_2LCC08CellHandlerUtility_8cpp" alt=""/></div>
 <map name="aautopas_2containers_2linkedCells_2traversals_2LCC08CellHandlerUtility_8cpp" id="aautopas_2containers_2linkedCells_2traversals_2LCC08CellHandlerUtility_8cpp">
-<area shape="rect" title=" " alt="" coords="527,5,735,60"/>
-<area shape="rect" href="LCC08CellHandlerUtility_8h.html" title=" " alt="" coords="536,108,725,133"/>
-<area shape="poly" title=" " alt="" coords="633,60,633,94,628,94,628,60"/>
-<area shape="rect" title=" " alt="" coords="313,350,369,375"/>
-<area shape="poly" title=" " alt="" coords="554,136,485,154,450,167,417,184,373,213,358,230,345,256,339,276,337,297,339,336,334,336,332,297,334,275,340,254,354,227,369,209,415,179,448,162,484,149,553,131"/>
-<area shape="rect" title=" " alt="" coords="147,181,202,207"/>
-<area shape="poly" title=" " alt="" coords="536,136,388,156,222,184,216,185,215,180,221,179,387,151,536,131"/>
-<area shape="rect" title=" " alt="" coords="93,350,185,375"/>
-<area shape="poly" title=" " alt="" coords="536,124,449,128,348,138,240,156,136,184,64,207,38,225,14,256,8,275,14,293,27,310,43,323,81,343,78,348,40,328,23,313,10,296,3,275,10,253,34,221,61,203,134,179,239,150,347,133,449,123,536,119"/>
-<area shape="rect" title=" " alt="" coords="1321,262,1381,287"/>
-<area shape="poly" title=" " alt="" coords="726,123,1061,142,1217,158,1271,168,1303,179,1319,194,1332,211,1347,248,1342,250,1327,214,1315,197,1300,184,1270,173,1216,163,1061,147,726,128"/>
-<area shape="rect" title=" " alt="" coords="1105,350,1167,375"/>
-<area shape="poly" title=" " alt="" coords="726,126,860,141,1012,165,1084,182,1147,202,1198,225,1232,253,1238,266,1239,280,1226,305,1201,327,1173,346,1170,341,1198,323,1222,302,1234,279,1233,268,1227,256,1195,230,1145,207,1082,187,1011,170,859,146,725,132"/>
-<area shape="rect" href="ArrayMath_8h.html" title=" " alt="" coords="429,181,619,207"/>
-<area shape="poly" title=" " alt="" coords="615,136,554,176,551,171,612,131"/>
-<area shape="rect" href="Math_8h.html" title=" " alt="" coords="941,262,1096,287"/>
-<area shape="poly" title=" " alt="" coords="683,131,760,151,844,179,924,216,990,253,987,257,921,221,842,184,758,156,682,136"/>
-<area shape="rect" href="ArrayUtils_8h.html" title=" " alt="" coords="644,181,831,207"/>
-<area shape="poly" title=" " alt="" coords="649,131,710,171,707,176,646,136"/>
-<area shape="rect" href="ExceptionHandler_8h.html" title=" " alt="" coords="1450,181,1686,207"/>
-<area shape="poly" title=" " alt="" coords="726,127,1437,180,1436,185,726,132"/>
-<area shape="rect" href="ThreeDimensionalMapping_8h.html" title=" " alt="" coords="24,255,253,295"/>
-<area shape="poly" title=" " alt="" coords="536,129,409,146,340,162,273,184,218,214,172,248,169,243,215,209,271,179,338,156,408,141,536,124"/>
-<area shape="poly" title=" " alt="" coords="454,209,408,227,387,240,369,256,357,275,349,296,344,337,338,336,344,294,352,272,365,253,384,236,406,222,452,204"/>
-<area shape="rect" title=" " alt="" coords="879,350,942,375"/>
-<area shape="poly" title=" " alt="" coords="620,204,779,226,844,239,879,252,894,271,904,293,913,336,908,337,899,295,890,274,876,257,842,244,778,231,620,209"/>
-<area shape="rect" title=" " alt="" coords="477,262,552,287"/>
-<area shape="poly" title=" " alt="" coords="525,207,520,248,515,248,520,207"/>
-<area shape="rect" title=" " alt="" coords="379,262,453,287"/>
-<area shape="poly" title=" " alt="" coords="510,209,445,256,442,252,507,205"/>
-<area shape="rect" href="ContainerConcept_8h.html" title=" " alt="" coords="627,262,866,287"/>
-<area shape="poly" title=" " alt="" coords="557,204,703,255,701,260,556,209"/>
-<area shape="poly" title=" " alt="" coords="608,204,923,252,949,257,948,262,922,257,608,209"/>
-<area shape="poly" title=" " alt="" coords="693,290,383,355,382,350,692,285"/>
-<area shape="poly" title=" " alt="" coords="666,290,199,356,198,350,665,285"/>
-<area shape="poly" title=" " alt="" coords="814,285,937,308,1077,340,1092,344,1091,350,1075,345,936,313,813,290"/>
-<area shape="rect" title=" " alt="" coords="664,350,744,375"/>
-<area shape="poly" title=" " alt="" coords="743,289,719,338,714,336,739,286"/>
-<area shape="rect" title=" " alt="" coords="768,350,811,375"/>
-<area shape="poly" title=" " alt="" coords="755,286,780,336,775,338,750,289"/>
-<area shape="poly" title=" " alt="" coords="1036,285,1111,340,1108,344,1033,290"/>
-<area shape="poly" title=" " alt="" coords="1006,290,938,343,935,339,1003,285"/>
-<area shape="rect" title=" " alt="" coords="973,350,1065,375"/>
-<area shape="poly" title=" " alt="" coords="1021,288,1021,336,1016,336,1016,288"/>
-<area shape="poly" title=" " alt="" coords="710,209,665,230,616,257,592,278,565,297,518,318,469,335,383,356,382,351,468,330,516,313,563,292,588,273,613,252,663,225,708,204"/>
-<area shape="poly" title=" " alt="" coords="831,198,1059,218,1157,233,1190,242,1209,253,1216,265,1217,277,1208,302,1189,324,1167,344,1163,340,1185,321,1204,299,1212,277,1211,266,1205,257,1188,247,1155,238,1058,223,831,203"/>
-<area shape="poly" title=" " alt="" coords="706,209,561,260,559,255,704,204"/>
-<area shape="poly" title=" " alt="" coords="673,209,575,229,466,257,458,260,456,255,465,252,574,224,672,204"/>
-<area shape="poly" title=" " alt="" coords="741,207,746,248,741,248,736,207"/>
-<area shape="rect" title=" " alt="" coords="1120,262,1195,287"/>
-<area shape="poly" title=" " alt="" coords="831,202,964,221,1109,252,1118,255,1117,260,1107,257,963,227,831,208"/>
-<area shape="poly" title=" " alt="" coords="1533,209,1394,257,1390,259,1388,254,1393,252,1531,204"/>
-<area shape="rect" title=" " alt="" coords="1671,262,1737,287"/>
-<area shape="poly" title=" " alt="" coords="1590,205,1673,253,1671,257,1587,209"/>
-<area shape="rect" title=" " alt="" coords="1761,262,1847,287"/>
-<area shape="poly" title=" " alt="" coords="1604,204,1750,252,1759,255,1757,260,1749,257,1602,209"/>
-<area shape="rect" title=" " alt="" coords="1872,262,1936,287"/>
-<area shape="poly" title=" " alt="" coords="1646,204,1749,223,1861,252,1868,254,1866,259,1859,257,1748,229,1645,209"/>
-<area shape="rect" title=" " alt="" coords="1405,262,1464,287"/>
-<area shape="poly" title=" " alt="" coords="1550,209,1468,257,1465,253,1547,205"/>
-<area shape="rect" href="Logger_8h.html" title=" " alt="" coords="1489,255,1647,295"/>
-<area shape="poly" title=" " alt="" coords="1571,207,1571,241,1565,241,1565,207"/>
-<area shape="rect" title=" " alt="" coords="1625,343,1773,383"/>
-<area shape="poly" title=" " alt="" coords="1599,293,1660,333,1657,337,1596,297"/>
-<area shape="rect" title=" " alt="" coords="1797,343,1939,383"/>
-<area shape="poly" title=" " alt="" coords="1635,292,1790,336,1788,341,1633,297"/>
-<area shape="rect" title=" " alt="" coords="1963,343,2125,383"/>
-<area shape="poly" title=" " alt="" coords="1648,290,1661,292,1950,340,1949,345,1660,297,1647,295"/>
-<area shape="rect" title=" " alt="" coords="1199,343,1347,383"/>
-<area shape="poly" title=" " alt="" coords="1504,297,1352,341,1350,336,1503,292"/>
-<area shape="rect" title=" " alt="" coords="1371,350,1495,375"/>
-<area shape="poly" title=" " alt="" coords="1540,297,1465,345,1462,340,1537,293"/>
-<area shape="rect" title=" " alt="" coords="1520,350,1600,375"/>
-<area shape="poly" title=" " alt="" coords="1569,295,1565,336,1560,336,1564,295"/>
-<area shape="poly" title=" " alt="" coords="184,292,303,342,301,347,182,297"/>
-<area shape="poly" title=" " alt="" coords="141,295,141,336,136,336,136,295"/>
+<area shape="rect" title=" " alt="" coords="872,5,1080,60"/>
+<area shape="rect" href="LCC08CellHandlerUtility_8h.html" title=" " alt="" coords="1200,189,1389,214"/>
+<area shape="poly" title=" " alt="" coords="994,59,1022,97,1040,115,1060,131,1089,145,1132,159,1228,183,1227,188,1130,164,1087,150,1057,136,1036,119,1018,100,989,62"/>
+<area shape="rect" title=" " alt="" coords="1115,108,1200,133"/>
+<area shape="poly" title=" " alt="" coords="1033,58,1122,100,1120,105,1030,62"/>
+<area shape="rect" href="ArrayMath_8h.html" title=" " alt="" coords="358,108,549,133"/>
+<area shape="poly" title=" " alt="" coords="872,54,537,108,536,103,871,48"/>
+<area shape="rect" href="Math_8h.html" title=" " alt="" coords="5,189,160,214"/>
+<area shape="poly" title=" " alt="" coords="872,42,630,63,487,83,346,111,223,147,122,186,121,181,221,142,345,105,486,78,629,58,871,37"/>
+<area shape="rect" href="ArrayUtils_8h.html" title=" " alt="" coords="667,108,853,133"/>
+<area shape="poly" title=" " alt="" coords="911,63,803,105,801,100,909,58"/>
+<area shape="rect" href="ExceptionHandler_8h.html" title=" " alt="" coords="1414,189,1650,214"/>
+<area shape="poly" title=" " alt="" coords="1007,58,1059,101,1104,131,1442,184,1442,189,1102,136,1056,105,1004,62"/>
+<area shape="rect" href="ThreeDimensionalMapping_8h.html" title=" " alt="" coords="947,181,1176,221"/>
+<area shape="poly" title=" " alt="" coords="984,60,995,95,1010,132,1036,169,1032,172,1006,135,990,97,979,61"/>
+<area shape="rect" title=" " alt="" coords="783,277,839,302"/>
+<area shape="poly" title=" " alt="" coords="1230,217,853,283,852,278,1229,211"/>
+<area shape="rect" title=" " alt="" coords="1218,277,1273,302"/>
+<area shape="poly" title=" " alt="" coords="1290,216,1261,266,1257,263,1286,213"/>
+<area shape="rect" title=" " alt="" coords="1015,277,1107,302"/>
+<area shape="poly" title=" " alt="" coords="1264,217,1106,274,1105,269,1262,212"/>
+<area shape="rect" title=" " alt="" coords="1297,277,1357,302"/>
+<area shape="poly" title=" " alt="" coords="1301,213,1320,262,1315,264,1296,215"/>
+<area shape="rect" title=" " alt="" coords="598,277,661,302"/>
+<area shape="poly" title=" " alt="" coords="1234,217,1188,224,980,249,771,272,674,285,674,279,770,267,979,244,1188,219,1233,211"/>
+<area shape="poly" title=" " alt="" coords="484,131,533,152,585,179,611,200,637,219,706,251,770,273,768,278,704,256,635,224,608,204,583,184,530,156,482,136"/>
+<area shape="rect" title=" " alt="" coords="159,277,222,302"/>
+<area shape="poly" title=" " alt="" coords="358,128,323,135,287,145,254,161,225,183,211,201,202,222,194,263,189,262,197,220,206,198,221,179,251,157,285,140,321,129,357,123"/>
+<area shape="rect" title=" " alt="" coords="648,189,723,214"/>
+<area shape="poly" title=" " alt="" coords="488,131,639,182,638,187,486,136"/>
+<area shape="rect" title=" " alt="" coords="235,189,309,214"/>
+<area shape="poly" title=" " alt="" coords="428,136,312,186,310,181,426,131"/>
+<area shape="rect" href="ContainerConcept_8h.html" title=" " alt="" coords="334,189,573,214"/>
+<area shape="poly" title=" " alt="" coords="456,134,456,175,451,175,451,134"/>
+<area shape="poly" title=" " alt="" coords="400,136,150,188,149,183,399,131"/>
+<area shape="poly" title=" " alt="" coords="502,211,770,275,768,281,501,217"/>
+<area shape="poly" title=" " alt="" coords="535,211,1002,277,1001,282,534,217"/>
+<area shape="poly" title=" " alt="" coords="478,212,594,268,592,273,476,217"/>
+<area shape="rect" title=" " alt="" coords="371,277,451,302"/>
+<area shape="poly" title=" " alt="" coords="450,215,425,265,420,263,445,213"/>
+<area shape="rect" title=" " alt="" coords="475,277,517,302"/>
+<area shape="poly" title=" " alt="" coords="461,213,486,263,482,265,457,215"/>
+<area shape="poly" title=" " alt="" coords="161,211,530,267,585,277,584,282,529,272,160,216"/>
+<area shape="poly" title=" " alt="" coords="99,212,167,266,164,270,96,216"/>
+<area shape="rect" title=" " alt="" coords="37,277,129,302"/>
+<area shape="poly" title=" " alt="" coords="85,214,85,262,80,262,80,214"/>
+<area shape="poly" title=" " alt="" coords="766,133,781,181,806,262,801,264,776,182,761,134"/>
+<area shape="poly" title=" " alt="" coords="762,134,757,175,749,200,737,223,707,252,673,273,670,268,704,248,733,220,744,198,752,174,757,133"/>
+<area shape="poly" title=" " alt="" coords="751,135,708,181,704,177,747,132"/>
+<area shape="poly" title=" " alt="" coords="667,131,504,149,412,164,322,184,312,187,311,182,321,179,411,159,504,144,666,126"/>
+<area shape="poly" title=" " alt="" coords="716,136,512,188,511,183,715,131"/>
+<area shape="rect" title=" " alt="" coords="848,189,923,214"/>
+<area shape="poly" title=" " alt="" coords="780,131,857,179,854,183,777,136"/>
+<area shape="poly" title=" " alt="" coords="1505,216,1370,272,1366,274,1364,269,1368,267,1503,212"/>
+<area shape="rect" title=" " alt="" coords="1735,277,1801,302"/>
+<area shape="poly" title=" " alt="" coords="1568,212,1725,267,1731,269,1729,274,1723,272,1566,217"/>
+<area shape="rect" title=" " alt="" coords="1825,277,1911,302"/>
+<area shape="poly" title=" " alt="" coords="1587,211,1693,235,1814,267,1824,270,1823,275,1813,272,1692,240,1586,217"/>
+<area shape="rect" title=" " alt="" coords="1381,277,1445,302"/>
+<area shape="poly" title=" " alt="" coords="1518,216,1442,271,1439,266,1514,212"/>
+<area shape="rect" title=" " alt="" coords="1469,277,1528,302"/>
+<area shape="poly" title=" " alt="" coords="1530,215,1511,264,1506,262,1525,213"/>
+<area shape="rect" href="Logger_8h.html" title=" " alt="" coords="1553,269,1711,309"/>
+<area shape="poly" title=" " alt="" coords="1547,212,1601,258,1598,262,1544,216"/>
+<area shape="rect" title=" " alt="" coords="1123,357,1271,397"/>
+<area shape="poly" title=" " alt="" coords="1553,310,1541,312,1285,360,1284,355,1539,307,1552,304"/>
+<area shape="rect" title=" " alt="" coords="1296,357,1437,397"/>
+<area shape="poly" title=" " alt="" coords="1575,312,1438,356,1437,351,1573,307"/>
+<area shape="rect" title=" " alt="" coords="1462,357,1623,397"/>
+<area shape="poly" title=" " alt="" coords="1614,312,1574,350,1571,346,1610,308"/>
+<area shape="rect" title=" " alt="" coords="1647,357,1795,397"/>
+<area shape="poly" title=" " alt="" coords="1654,308,1693,346,1690,350,1650,312"/>
+<area shape="rect" title=" " alt="" coords="1819,365,1943,390"/>
+<area shape="poly" title=" " alt="" coords="1688,307,1836,358,1834,363,1686,312"/>
+<area shape="rect" title=" " alt="" coords="1968,365,2048,390"/>
+<area shape="poly" title=" " alt="" coords="1712,304,1957,355,1967,358,1965,363,1955,360,1711,309"/>
+<area shape="poly" title=" " alt="" coords="1007,224,852,277,851,272,1005,219"/>
+<area shape="poly" title=" " alt="" coords="1064,222,1064,263,1059,263,1059,222"/>
 </map>
 </div>
 </div><table class="memberdecls">
@@ -218,18 +226,22 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ae93273a6af9e02a5550cdad49c035ac4"><td class="memItemLeft" align="right" valign="top">constexpr std::pair&lt; int, int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1LCC08CellHandlerUtility_1_1internal.html#ae93273a6af9e02a5550cdad49c035ac4">autopas::LCC08CellHandlerUtility::internal::toMaskXY</a> (const <a class="el" href="namespaceautopas_1_1LCC08CellHandlerUtility_1_1internal.html#ae863f3dbd03b36447d4a63ecd41e202f">C08CellDirection</a> &amp;direction)</td></tr>
-<tr class="memdesc:ae93273a6af9e02a5550cdad49c035ac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for <a class="el" href="namespaceautopas_1_1LCC08CellHandlerUtility.html#a84e4153304b20b6ed53a419673a87eac" title="Computes the cell pair offsets for the C08 base step and the normalized vector between pair of cell-c...">autopas::LCC08CellHandlerUtility::computePairwiseCellOffsetsC08</a>.  <br /></td></tr>
+<tr class="memdesc:ae93273a6af9e02a5550cdad49c035ac4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function for <a class="el" href="namespaceautopas_1_1LCC08CellHandlerUtility.html#a84e4153304b20b6ed53a419673a87eac" title="Computes the cell pair offsets for the C08 base step and the normalized vector between the pair of ce...">autopas::LCC08CellHandlerUtility::computePairwiseCellOffsetsC08</a>.  <br /></td></tr>
 <tr class="separator:ae93273a6af9e02a5550cdad49c035ac4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aec211a91a7fd922e38c3a45f3890118b"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1LCC08CellHandlerUtility_1_1internal.html#aec211a91a7fd922e38c3a45f3890118b">autopas::LCC08CellHandlerUtility::internal::includeCellPair</a> (const <a class="el" href="namespaceautopas_1_1LCC08CellHandlerUtility_1_1internal.html#ae863f3dbd03b36447d4a63ecd41e202f">C08CellDirection</a> &amp;direction, const std::array&lt; int, 3 &gt; &amp;overlap, int x, int y, int z)</td></tr>
 <tr class="memdesc:aec211a91a7fd922e38c3a45f3890118b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns true if the cell-interaction in the given direction, with the given base cell coordinates (x, y, z) and overlap needs to be included into the pairwise cell offsets.  <br /></td></tr>
 <tr class="separator:aec211a91a7fd922e38c3a45f3890118b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aef2f8792514e2347692292d5d45918b8"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1LCC08CellHandlerUtility_1_1internal.html#aef2f8792514e2347692292d5d45918b8">autopas::LCC08CellHandlerUtility::internal::computeSortingDirection</a> (const std::array&lt; double, 3 &gt; &amp;offset1Vector, const std::array&lt; double, 3 &gt; &amp;offset2Vector, const std::array&lt; double, 3 &gt; &amp;cellLength)</td></tr>
-<tr class="memdesc:aef2f8792514e2347692292d5d45918b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the sorting direction between two cells from center of cell1 to center of cell2 using the 3D indices of the cells while incoperating the cellLength (required in case of less regular cuboid cells)  <br /></td></tr>
+<tr class="memdesc:aef2f8792514e2347692292d5d45918b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the sorting direction between two cells from center of cell1 to center of cell2 using the 3D indices of the cells while incorporating the cellLength (required in case of less regular cuboid cells)  <br /></td></tr>
 <tr class="separator:aef2f8792514e2347692292d5d45918b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84e4153304b20b6ed53a419673a87eac"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceautopas_1_1LCC08CellHandlerUtility.html#af3ed4a5718b5370362c4a0d4518bb444">C08OffsetMode</a> Mode&gt; </td></tr>
-<tr class="memitem:a84e4153304b20b6ed53a419673a87eac"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceautopas_1_1LCC08CellHandlerUtility.html#a4f3735b49a7661311a770055077684a8">OffsetPairType</a>&lt; Mode &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1LCC08CellHandlerUtility.html#a84e4153304b20b6ed53a419673a87eac">autopas::LCC08CellHandlerUtility::computePairwiseCellOffsetsC08</a> (const std::array&lt; unsigned long, 3 &gt; &amp;cellsPerDimension, const std::array&lt; double, 3 &gt; &amp;cellLength, double interactionLength)</td></tr>
-<tr class="memdesc:a84e4153304b20b6ed53a419673a87eac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the cell pair offsets for the C08 base step and the normalized vector between pair of cell-centers, which is later used for early stopping the evaluation of the pairwise cell interactions due to being out-of-reach.  <br /></td></tr>
+<tr class="memitem:a84e4153304b20b6ed53a419673a87eac"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceautopas_1_1LCC08CellHandlerUtility.html#a0beaad7c3ace64fbde6b6cb3ff9cd4c4">OffsetPairType</a>&lt; Mode &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1LCC08CellHandlerUtility.html#a84e4153304b20b6ed53a419673a87eac">autopas::LCC08CellHandlerUtility::computePairwiseCellOffsetsC08</a> (const std::array&lt; unsigned long, 3 &gt; &amp;cellsPerDimension, const std::array&lt; double, 3 &gt; &amp;cellLength, double interactionLength)</td></tr>
+<tr class="memdesc:a84e4153304b20b6ed53a419673a87eac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the cell pair offsets for the C08 base step and the normalized vector between the pair of cell-centers, which is later used for early stopping the evaluation of the pairwise cell interactions due to being out-of-reach.  <br /></td></tr>
 <tr class="separator:a84e4153304b20b6ed53a419673a87eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71195dbbdfa82c9cb1e7aa00e178d80a"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="namespaceautopas_1_1LCC08CellHandlerUtility.html#af3ed4a5718b5370362c4a0d4518bb444">C08OffsetMode</a> Mode&gt; </td></tr>
+<tr class="memitem:a71195dbbdfa82c9cb1e7aa00e178d80a"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="namespaceautopas_1_1LCC08CellHandlerUtility.html#a63fa2c808127ab69af5e902ab939a6ed">OffsetTripletType</a>&lt; Mode &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1LCC08CellHandlerUtility.html#a71195dbbdfa82c9cb1e7aa00e178d80a">autopas::LCC08CellHandlerUtility::computeTriwiseCellOffsetsC08</a> (const std::array&lt; unsigned long, 3 &gt; &amp;cellsPerDimension, const std::array&lt; double, 3 &gt; &amp;cellLength, double interactionLength)</td></tr>
+<tr class="memdesc:a71195dbbdfa82c9cb1e7aa00e178d80a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes the cell triplet offsets for the C08 base step.  <br /></td></tr>
+<tr class="separator:a71195dbbdfa82c9cb1e7aa00e178d80a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>J. Schuhmacher </dd></dl>

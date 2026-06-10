@@ -292,155 +292,156 @@ $(function() {
 <div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>          <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;[offset1, offset2, _] : offsets) {</div>
 <div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>            <span class="keyword">const</span> <span class="keyword">auto</span> cell1Index1D = cellIndexBase + offset1;</div>
 <div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>            <span class="keyword">const</span> <span class="keyword">auto</span> cell2Index1D = cellIndexBase + offset2;</div>
-<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>            <span class="keyword">auto</span> &amp;cell1List = neighborLists[cell1Index1D];</div>
-<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            <span class="keyword">auto</span> &amp;cell2List = neighborLists[cell2Index1D];</div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            <span class="comment">// For all traversals ensures the partner cell is not outside the boundary</span></div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>            <span class="keyword">const</span> <span class="keyword">auto</span> cell2Index3D = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ThreeDimensionalMapping.html#a695d7461713f9c1ad63a1df22fbc29ed">utils::ThreeDimensionalMapping::oneToThreeD</a>(cell2Index1D, cellsPerDim);</div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>            <span class="keywordflow">if</span> (cell2Index3D[0] &gt;= cellsPerDim[0] or cell2Index3D[0] &lt; 0 or cell2Index3D[1] &gt;= cellsPerDim[1] or</div>
-<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>                cell2Index3D[1] &lt; 0 or cell2Index3D[2] &gt;= cellsPerDim[2] or cell2Index3D[2] &lt; 0) {</div>
-<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>              <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            }</div>
-<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span> </div>
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>            <span class="comment">// Skip if both cells only contain halos or dummys</span></div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>            <span class="keywordflow">if</span> (not(cells[cell1Index1D].getPossibleParticleOwnerships() == <a class="code hl_enumvalue" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a8f9a4c5fe0824547590a3fc568f5c7c7">OwnershipState::owned</a>) and</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>                not(cells[cell2Index1D].getPossibleParticleOwnerships() == <a class="code hl_enumvalue" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a8f9a4c5fe0824547590a3fc568f5c7c7">OwnershipState::owned</a>)) {</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>              <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>            }</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            <span class="comment">// Go over all particle pairs in the two cells and insert close pairs into their respective lists</span></div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> particleIndexCell1 = 0; particleIndexCell1 &lt; cells[cell1Index1D].size(); ++particleIndexCell1) {</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>              <span class="keyword">auto</span> &amp;p1 = cells[cell1Index1D][particleIndexCell1];</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>              <span class="comment">// Determine the starting index for the second particle in the pair.</span></div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>              <span class="comment">// If both cells are the same and the traversal is newton3 compatible, this is the next particle in the</span></div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>              <span class="comment">// cell. If the cells are different or the traversal is not newton3 compatible, this is index 0. For</span></div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>              <span class="comment">// non-newton 3 compatible traversals (vlp_c01) we have to consider the interaction in both directions, so</span></div>
-<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>              <span class="comment">// we always start from index 0.</span></div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>              <span class="keywordtype">size_t</span> startIndexCell2 = 0;</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>              <span class="keywordflow">if</span> (cell1Index1D == cell2Index1D and vlcTraversalOpt != TraversalOption::vlp_c01) {</div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                startIndexCell2 = particleIndexCell1 + 1;</div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>              }</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>              <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> particleIndexCell2 = startIndexCell2; particleIndexCell2 &lt; cells[cell2Index1D].size();</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>                   ++particleIndexCell2) {</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>                <span class="keyword">auto</span> &amp;p2 = cells[cell2Index1D][particleIndexCell2];</div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>                <span class="comment">// Ignore dummies and self interaction</span></div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>                <span class="keywordflow">if</span> (&amp;p1 == &amp;p2 or p1.isDummy() or p2.isDummy()) {</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                  <span class="keywordflow">continue</span>;</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                }</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                <span class="comment">// If the distance is less than interaction length add the pair to the list</span></div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                <span class="keyword">const</span> <span class="keyword">auto</span> distVec = p2.getR() - p1.getR();</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                <span class="keyword">const</span> <span class="keyword">auto</span> distSquared = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a1d321ba1191121f73334c284d1e72e72">utils::ArrayMath::dot</a>(distVec, distVec);</div>
-<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                <span class="keywordflow">if</span> (distSquared &lt; interactionLengthSquared) {</div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                  {</div>
-<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                    <span class="keyword">const</span> <span class="keywordtype">size_t</span> secondCellIndexInFirst = relativeNeighborhoodIndex(cell1Index1D, cell2Index1D);</div>
-<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>                    insert(p1, p2, cell1List[secondCellIndexInFirst]);</div>
-<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                  }</div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                  <span class="comment">// If the traversal is Newton3 compatible, Newton3 is used for building regardless of if the actual</span></div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                  <span class="comment">// interactions will use Newton3. In the case that Newton3 will not be used, the inverse interaction</span></div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                  <span class="comment">// also needs to be stored in p2&#39;s list. If the traversal is Newton3 incompatible, the insertion into</span></div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                  <span class="comment">// p2&#39;s list will occur when the p2 particle is p1. This is ensured above by the startIndexCell2.</span></div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                  <span class="keywordflow">if</span> (not useNewton3 and not(vlcTraversalOpt == TraversalOption::vlp_c01)) {</div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                    {</div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                      <span class="keyword">const</span> <span class="keywordtype">size_t</span> secondCellIndexInFirst = relativeNeighborhoodIndex(cell2Index1D, cell1Index1D);</div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>                      insert(p2, p1, cell2List[secondCellIndexInFirst]);</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>                    }</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>                  }</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>                }</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>              }</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>            }</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>          }</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        }</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>      }</div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>    }</div>
-<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span> </div>
-<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    <span class="comment">// Cleanup: Remove any unused ptr-list pairs to avoid accessing nullptr</span></div>
-<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;neighborCellLists : neighborLists) {</div>
-<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;cellLists : neighborCellLists) {</div>
-<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>        cellLists.erase(std::remove_if(cellLists.begin(), cellLists.end(),</div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                                       [](<span class="keyword">const</span> <span class="keyword">auto</span> &amp;pair) {</div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>                                         const auto &amp;[particlePtr, neighbors] = pair;</div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>                                         return particlePtr == nullptr;</div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>                                       }),</div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>                        cellLists.end());</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>      }</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    }</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>  }</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span> </div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno"><a class="line" href="classautopas_1_1VLCCellPairNeighborList.html#ae5ebc9a407dd686f71400c2f4c29d73c">  287</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1VLCCellPairNeighborList.html#ae5ebc9a407dd686f71400c2f4c29d73c">generateSoAFromAoS</a>(<a class="code hl_class" href="classautopas_1_1LinkedCells.html">LinkedCells&lt;Particle_T&gt;</a> &amp;linkedCells)<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>    _soaNeighborList.clear();</div>
-<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
-<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    <span class="comment">// particle pointer to global index of particle</span></div>
-<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    std::unordered_map&lt;Particle_T *, size_t&gt; particlePtrToIndex;</div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    particlePtrToIndex.reserve(linkedCells.<a class="code hl_function" href="classautopas_1_1CellBasedParticleContainer.html#a55756e9c49c11846864222045485591e">size</a>());</div>
-<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    <span class="keywordtype">size_t</span> i = 0;</div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> iter = linkedCells.<a class="code hl_function" href="classautopas_1_1LinkedCells.html#a3b822398150967e77daa36431b2d53c3">begin</a>(IteratorBehavior::ownedOrHaloOrDummy); iter.isValid(); ++iter, ++i) {</div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>      particlePtrToIndex[&amp;(*iter)] = i;</div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    }</div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span> </div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    _soaNeighborList.resize(linkedCells.<a class="code hl_function" href="classautopas_1_1LinkedCells.html#a8a07c9d8e4338dbb760d23472681b8bc">getCells</a>().size());</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    <span class="comment">// iterate over cells and for each create the soa lists from the aos lists</span></div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> firstCellIndex = 0; firstCellIndex &lt; _aosNeighborList.size(); ++firstCellIndex) {</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>      <span class="keyword">const</span> <span class="keyword">auto</span> &amp;aosLists = _aosNeighborList[firstCellIndex];</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>      <span class="keyword">auto</span> &amp;soaLists = _soaNeighborList[firstCellIndex];</div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>      soaLists.resize(aosLists.size());</div>
-<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span> </div>
-<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>      <span class="comment">// iterate over each cell&#39;s neighboring cells</span></div>
-<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> secondCellIndex = 0; secondCellIndex &lt; aosLists.size(); ++secondCellIndex) {</div>
-<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        <span class="keyword">const</span> <span class="keyword">auto</span> &amp;aosCellPairLists = aosLists[secondCellIndex];</div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        <span class="keyword">auto</span> &amp;soaCellPairLists = soaLists[secondCellIndex];</div>
-<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        soaCellPairLists.reserve(aosCellPairLists.capacity());</div>
-<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span> </div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>        <span class="comment">// iterate over pairs of particle and neighbor list</span></div>
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;[particlePtr, neighbors] : aosCellPairLists) {</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>          <span class="comment">// global index of current particle</span></div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>          <span class="keywordtype">size_t</span> currentParticleGlobalIndex = particlePtrToIndex.at(particlePtr);</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span> </div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>          <span class="comment">// create SoA neighbor list for current particle</span></div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>          std::vector&lt;size_t, autopas::AlignedAllocator&lt;size_t&gt;&gt; currentSoANeighborList{};</div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>          currentSoANeighborList.reserve(neighbors.size());</div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span> </div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>          <span class="comment">// fill the SoA neighbor list with the indices of the particles from the corresponding AoS neighbor list</span></div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>          <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;neighborOfCurrentParticle : neighbors) {</div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>            currentSoANeighborList.emplace_back(particlePtrToIndex.at(neighborOfCurrentParticle));</div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>          }</div>
-<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span> </div>
-<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span>          <span class="comment">// add the newly constructed pair of particle index and SoA particle neighbor list to cell pair</span></div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>          soaCellPairLists.emplace_back(currentParticleGlobalIndex, currentSoANeighborList);</div>
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>        }</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>      }</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    }</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>  }</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span> </div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno"><a class="line" href="classautopas_1_1VLCCellPairNeighborList.html#adb98f3a8d9f6921c9f5bda9bd92f2d75">  333</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1VLCCellPairNeighborList.html#adb98f3a8d9f6921c9f5bda9bd92f2d75">setUpTraversal</a>(<a class="code hl_class" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *traversal)<span class="keyword"> override </span>{</div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>    <span class="keyword">auto</span> vTraversal = <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="classautopas_1_1VLCCellPairTraversalInterface.html">VLCCellPairTraversalInterface&lt;Particle_T&gt;</a> *<span class="keyword">&gt;</span>(traversal);</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>    <span class="keywordflow">if</span> (vTraversal) {</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>      vTraversal-&gt;<a class="code hl_function" href="classautopas_1_1VLCCellPairTraversalInterface.html#a8bd249ff78b40fe0f32007fdc326d8fb">setVerletList</a>(*<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>      <span class="keyword">auto</span> traversal2 =</div>
-<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>          <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="classautopas_1_1VLCTraversalInterface.html">VLCTraversalInterface&lt;Particle_T, VLCCellPairNeighborList&lt;Particle_T&gt;</a><span class="keyword">&gt;</span> *&gt;(traversal);</div>
-<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>      <span class="keywordflow">if</span> (traversal2) {</div>
-<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>        traversal2-&gt;<a class="code hl_function" href="classautopas_1_1VLCTraversalInterface.html#ac52e597df11424769a132f669e8de894">setVerletList</a>(*<span class="keyword">this</span>);</div>
-<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>      } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>        <a class="code hl_function" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a>(</div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>            <span class="stringliteral">&quot;Trying to use a traversal of wrong type in VerletListCells.h. TraversalID: {}&quot;</span>,</div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>            traversal-&gt;<a class="code hl_function" href="classautopas_1_1TraversalInterface.html#a37474936c05b085f9ad3be1de9f86aaa">getTraversalType</a>());</div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>      }</div>
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>    }</div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>  }</div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span> </div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>  <span class="keyword">typename</span> <a class="code hl_typedef" href="namespaceautopas_1_1VerletListsCellsHelpers.html#aad03d00768d79bf4053e28072c709575">VerletListsCellsHelpers::PairwiseNeighborListsType&lt;Particle_T&gt;</a> _aosNeighborList =</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>      std::vector&lt;std::vector&lt;std::vector&lt;std::pair&lt;Particle_T *, std::vector&lt;Particle_T *&gt;&gt;&gt;&gt;&gt;();</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span> </div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>  <a class="code hl_typedef" href="classautopas_1_1VLCCellPairNeighborList.html#a318b975154ed7db6a9460f2c94f63510">SoAListType</a> _soaNeighborList = std::vector&lt;</div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>      std::vector&lt;std::vector&lt;std::pair&lt;size_t, std::vector&lt;size_t, autopas::AlignedAllocator&lt;size_t&gt;&gt;&gt;&gt;&gt;&gt;();</div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>};</div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>}  <span class="comment">// namespace autopas</span></div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>            <span class="comment">// For all traversals ensures the partner cell is not outside the boundary</span></div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>            <span class="keyword">const</span> <span class="keyword">auto</span> cell2Index3D = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ThreeDimensionalMapping.html#a695d7461713f9c1ad63a1df22fbc29ed">utils::ThreeDimensionalMapping::oneToThreeD</a>(cell2Index1D, cellsPerDim);</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>            <span class="keywordflow">if</span> (cell2Index3D[0] &gt;= cellsPerDim[0] or cell2Index3D[0] &lt; 0 or cell2Index3D[1] &gt;= cellsPerDim[1] or</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>                cell2Index3D[1] &lt; 0 or cell2Index3D[2] &gt;= cellsPerDim[2] or cell2Index3D[2] &lt; 0) {</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>              <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>            }</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>            <span class="keyword">auto</span> &amp;cell1List = neighborLists[cell1Index1D];</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>            <span class="keyword">auto</span> &amp;cell2List = neighborLists[cell2Index1D];</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span> </div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>            <span class="comment">// Skip if both cells only contain halos or dummys</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>            <span class="keywordflow">if</span> (not(cells[cell1Index1D].getPossibleParticleOwnerships() == <a class="code hl_enumvalue" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a8f9a4c5fe0824547590a3fc568f5c7c7">OwnershipState::owned</a>) and</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>                not(cells[cell2Index1D].getPossibleParticleOwnerships() == <a class="code hl_enumvalue" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a8f9a4c5fe0824547590a3fc568f5c7c7">OwnershipState::owned</a>)) {</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>              <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>            }</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            <span class="comment">// Go over all particle pairs in the two cells and insert close pairs into their respective lists</span></div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> particleIndexCell1 = 0; particleIndexCell1 &lt; cells[cell1Index1D].size(); ++particleIndexCell1) {</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>              <span class="keyword">auto</span> &amp;p1 = cells[cell1Index1D][particleIndexCell1];</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span> </div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>              <span class="comment">// Determine the starting index for the second particle in the pair.</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>              <span class="comment">// If both cells are the same and the traversal is newton3 compatible, this is the next particle in the</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>              <span class="comment">// cell. If the cells are different or the traversal is not newton3 compatible, this is index 0. For</span></div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>              <span class="comment">// non-newton 3 compatible traversals (vlp_c01) we have to consider the interaction in both directions, so</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>              <span class="comment">// we always start from index 0.</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>              <span class="keywordtype">size_t</span> startIndexCell2 = 0;</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>              <span class="keywordflow">if</span> (cell1Index1D == cell2Index1D and vlcTraversalOpt != TraversalOption::vlp_c01) {</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                startIndexCell2 = particleIndexCell1 + 1;</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>              }</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>              <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> particleIndexCell2 = startIndexCell2; particleIndexCell2 &lt; cells[cell2Index1D].size();</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>                   ++particleIndexCell2) {</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>                <span class="keyword">auto</span> &amp;p2 = cells[cell2Index1D][particleIndexCell2];</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>                <span class="comment">// Ignore dummies and self interaction</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>                <span class="keywordflow">if</span> (&amp;p1 == &amp;p2 or p1.isDummy() or p2.isDummy()) {</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                  <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                }</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                <span class="comment">// If the distance is less than interaction length add the pair to the list</span></div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>                <span class="keyword">const</span> <span class="keyword">auto</span> distVec = p2.getR() - p1.getR();</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>                <span class="keyword">const</span> <span class="keyword">auto</span> distSquared = <a class="code hl_function" href="namespaceautopas_1_1utils_1_1ArrayMath.html#a1d321ba1191121f73334c284d1e72e72">utils::ArrayMath::dot</a>(distVec, distVec);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>                <span class="keywordflow">if</span> (distSquared &lt; interactionLengthSquared) {</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>                  {</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>                    <span class="keyword">const</span> <span class="keywordtype">size_t</span> secondCellIndexInFirst = relativeNeighborhoodIndex(cell1Index1D, cell2Index1D);</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>                    insert(p1, p2, cell1List[secondCellIndexInFirst]);</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>                  }</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>                  <span class="comment">// If the traversal is Newton3 compatible, Newton3 is used for building regardless of if the actual</span></div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>                  <span class="comment">// interactions will use Newton3. In the case that Newton3 will not be used, the inverse interaction</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>                  <span class="comment">// also needs to be stored in p2&#39;s list. If the traversal is Newton3 incompatible, the insertion into</span></div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>                  <span class="comment">// p2&#39;s list will occur when the p2 particle is p1. This is ensured above by the startIndexCell2.</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>                  <span class="keywordflow">if</span> (not useNewton3 and not(vlcTraversalOpt == TraversalOption::vlp_c01)) {</div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>                    {</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>                      <span class="keyword">const</span> <span class="keywordtype">size_t</span> secondCellIndexInFirst = relativeNeighborhoodIndex(cell2Index1D, cell1Index1D);</div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>                      insert(p2, p1, cell2List[secondCellIndexInFirst]);</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>                    }</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>                  }</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>                }</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>              }</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>            }</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>          }</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>        }</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>      }</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>    }</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span> </div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    <span class="comment">// Cleanup: Remove any unused ptr-list pairs to avoid accessing nullptr</span></div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;neighborCellLists : neighborLists) {</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>      <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;cellLists : neighborCellLists) {</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>        cellLists.erase(std::remove_if(cellLists.begin(), cellLists.end(),</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>                                       [](<span class="keyword">const</span> <span class="keyword">auto</span> &amp;pair) {</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>                                         const auto &amp;[particlePtr, neighbors] = pair;</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>                                         return particlePtr == nullptr;</div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>                                       }),</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>                        cellLists.end());</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>      }</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    }</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>  }</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span> </div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno"><a class="line" href="classautopas_1_1VLCCellPairNeighborList.html#ae5ebc9a407dd686f71400c2f4c29d73c">  288</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1VLCCellPairNeighborList.html#ae5ebc9a407dd686f71400c2f4c29d73c">generateSoAFromAoS</a>(<a class="code hl_class" href="classautopas_1_1LinkedCells.html">LinkedCells&lt;Particle_T&gt;</a> &amp;linkedCells)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>    _soaNeighborList.clear();</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span> </div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    <span class="comment">// particle pointer to global index of particle</span></div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    std::unordered_map&lt;Particle_T *, size_t&gt; particlePtrToIndex;</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    particlePtrToIndex.reserve(linkedCells.<a class="code hl_function" href="classautopas_1_1CellBasedParticleContainer.html#a55756e9c49c11846864222045485591e">size</a>());</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    <span class="keywordtype">size_t</span> i = 0;</div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> iter = linkedCells.<a class="code hl_function" href="classautopas_1_1LinkedCells.html#a3b822398150967e77daa36431b2d53c3">begin</a>(IteratorBehavior::ownedOrHaloOrDummy); iter.isValid(); ++iter, ++i) {</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>      particlePtrToIndex[&amp;(*iter)] = i;</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    }</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    _soaNeighborList.resize(linkedCells.<a class="code hl_function" href="classautopas_1_1LinkedCells.html#a8a07c9d8e4338dbb760d23472681b8bc">getCells</a>().size());</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span> </div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    <span class="comment">// iterate over cells and for each create the soa lists from the aos lists</span></div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> firstCellIndex = 0; firstCellIndex &lt; _aosNeighborList.size(); ++firstCellIndex) {</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>      <span class="keyword">const</span> <span class="keyword">auto</span> &amp;aosLists = _aosNeighborList[firstCellIndex];</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>      <span class="keyword">auto</span> &amp;soaLists = _soaNeighborList[firstCellIndex];</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>      soaLists.resize(aosLists.size());</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span> </div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>      <span class="comment">// iterate over each cell&#39;s neighboring cells</span></div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> secondCellIndex = 0; secondCellIndex &lt; aosLists.size(); ++secondCellIndex) {</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>        <span class="keyword">const</span> <span class="keyword">auto</span> &amp;aosCellPairLists = aosLists[secondCellIndex];</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>        <span class="keyword">auto</span> &amp;soaCellPairLists = soaLists[secondCellIndex];</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>        soaCellPairLists.reserve(aosCellPairLists.capacity());</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>        <span class="comment">// iterate over pairs of particle and neighbor list</span></div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;[particlePtr, neighbors] : aosCellPairLists) {</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>          <span class="comment">// global index of current particle</span></div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>          <span class="keywordtype">size_t</span> currentParticleGlobalIndex = particlePtrToIndex.at(particlePtr);</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span> </div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>          <span class="comment">// create SoA neighbor list for current particle</span></div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>          std::vector&lt;size_t, autopas::AlignedAllocator&lt;size_t&gt;&gt; currentSoANeighborList{};</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>          currentSoANeighborList.reserve(neighbors.size());</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span> </div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>          <span class="comment">// fill the SoA neighbor list with the indices of the particles from the corresponding AoS neighbor list</span></div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>          <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;neighborOfCurrentParticle : neighbors) {</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>            currentSoANeighborList.emplace_back(particlePtrToIndex.at(neighborOfCurrentParticle));</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>          }</div>
+<div class="line"><a id="l00326" name="l00326"></a><span class="lineno">  326</span> </div>
+<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>          <span class="comment">// add the newly constructed pair of particle index and SoA particle neighbor list to cell pair</span></div>
+<div class="line"><a id="l00328" name="l00328"></a><span class="lineno">  328</span>          soaCellPairLists.emplace_back(currentParticleGlobalIndex, currentSoANeighborList);</div>
+<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>        }</div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>      }</div>
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>    }</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>  }</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span> </div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno"><a class="line" href="classautopas_1_1VLCCellPairNeighborList.html#adb98f3a8d9f6921c9f5bda9bd92f2d75">  334</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classautopas_1_1VLCCellPairNeighborList.html#adb98f3a8d9f6921c9f5bda9bd92f2d75">setUpTraversal</a>(<a class="code hl_class" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *traversal)<span class="keyword"> override </span>{</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>    <span class="keyword">auto</span> vTraversal = <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="classautopas_1_1VLCCellPairTraversalInterface.html">VLCCellPairTraversalInterface&lt;Particle_T&gt;</a> *<span class="keyword">&gt;</span>(traversal);</div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span> </div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>    <span class="keywordflow">if</span> (vTraversal) {</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>      vTraversal-&gt;<a class="code hl_function" href="classautopas_1_1VLCCellPairTraversalInterface.html#a8bd249ff78b40fe0f32007fdc326d8fb">setVerletList</a>(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>      <span class="keyword">auto</span> traversal2 =</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span>          <span class="keyword">dynamic_cast&lt;</span><a class="code hl_class" href="classautopas_1_1VLCTraversalInterface.html">VLCTraversalInterface&lt;Particle_T, VLCCellPairNeighborList&lt;Particle_T&gt;</a><span class="keyword">&gt;</span> *&gt;(traversal);</div>
+<div class="line"><a id="l00342" name="l00342"></a><span class="lineno">  342</span>      <span class="keywordflow">if</span> (traversal2) {</div>
+<div class="line"><a id="l00343" name="l00343"></a><span class="lineno">  343</span>        traversal2-&gt;<a class="code hl_function" href="classautopas_1_1VLCTraversalInterface.html#ac52e597df11424769a132f669e8de894">setVerletList</a>(*<span class="keyword">this</span>);</div>
+<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>      } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>        <a class="code hl_function" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a>(</div>
+<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span>            <span class="stringliteral">&quot;Trying to use a traversal of wrong type in VerletListCells.h. TraversalID: {}&quot;</span>,</div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>            traversal-&gt;<a class="code hl_function" href="classautopas_1_1TraversalInterface.html#a37474936c05b085f9ad3be1de9f86aaa">getTraversalType</a>());</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>      }</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>    }</div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>  }</div>
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span> </div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>  <span class="keyword">typename</span> <a class="code hl_typedef" href="namespaceautopas_1_1VerletListsCellsHelpers.html#aad03d00768d79bf4053e28072c709575">VerletListsCellsHelpers::PairwiseNeighborListsType&lt;Particle_T&gt;</a> _aosNeighborList =</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>      std::vector&lt;std::vector&lt;std::vector&lt;std::pair&lt;Particle_T *, std::vector&lt;Particle_T *&gt;&gt;&gt;&gt;&gt;();</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span> </div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>  <a class="code hl_typedef" href="classautopas_1_1VLCCellPairNeighborList.html#a318b975154ed7db6a9460f2c94f63510">SoAListType</a> _soaNeighborList = std::vector&lt;</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>      std::vector&lt;std::vector&lt;std::pair&lt;size_t, std::vector&lt;size_t, autopas::AlignedAllocator&lt;size_t&gt;&gt;&gt;&gt;&gt;&gt;();</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>};</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>}  <span class="comment">// namespace autopas</span></div>
 <div class="ttc" id="aVLCCellPairTraversalInterface_8h_html"><div class="ttname"><a href="VLCCellPairTraversalInterface_8h.html">VLCCellPairTraversalInterface.h</a></div></div>
 <div class="ttc" id="aVLCNeighborListInterface_8h_html"><div class="ttname"><a href="VLCNeighborListInterface_8h.html">VLCNeighborListInterface.h</a></div></div>
 <div class="ttc" id="aVLCTraversalInterface_8h_html"><div class="ttname"><a href="VLCTraversalInterface_8h.html">VLCTraversalInterface.h</a></div></div>
@@ -465,8 +466,8 @@ $(function() {
 <div class="ttc" id="aclassautopas_1_1VLCCellPairNeighborList_html_a81c43bd6b2f4ac50641722f964ec67f9"><div class="ttname"><a href="classautopas_1_1VLCCellPairNeighborList.html#a81c43bd6b2f4ac50641722f964ec67f9">autopas::VLCCellPairNeighborList::SoAPairOfParticleAndList</a></div><div class="ttdeci">std::pair&lt; size_t, std::vector&lt; size_t, autopas::AlignedAllocator&lt; size_t &gt; &gt; &gt; SoAPairOfParticleAndList</div><div class="ttdoc">Helper type definition.</div><div class="ttdef"><b>Definition:</b> VLCCellPairNeighborList.h:33</div></div>
 <div class="ttc" id="aclassautopas_1_1VLCCellPairNeighborList_html_ab002f2a0d9ca301fbe8a8ef6e0666700"><div class="ttname"><a href="classautopas_1_1VLCCellPairNeighborList.html#ab002f2a0d9ca301fbe8a8ef6e0666700">autopas::VLCCellPairNeighborList::getAoSNeighborList</a></div><div class="ttdeci">VerletListsCellsHelpers::PairwiseNeighborListsType&lt; Particle_T &gt; &amp; getAoSNeighborList()</div><div class="ttdoc">Returns the neighbor list in AoS layout.</div><div class="ttdef"><b>Definition:</b> VLCCellPairNeighborList.h:73</div></div>
 <div class="ttc" id="aclassautopas_1_1VLCCellPairNeighborList_html_ac7a07af87fa9fcc7a37baa937ff0cb83"><div class="ttname"><a href="classautopas_1_1VLCCellPairNeighborList.html#ac7a07af87fa9fcc7a37baa937ff0cb83">autopas::VLCCellPairNeighborList::getNumberOfPartners</a></div><div class="ttdeci">size_t getNumberOfPartners(const Particle_T *particle) const override</div><div class="ttdoc">Gets the number of neighbors over all neighbor lists that belong to this particle.</div><div class="ttdef"><b>Definition:</b> VLCCellPairNeighborList.h:43</div></div>
-<div class="ttc" id="aclassautopas_1_1VLCCellPairNeighborList_html_adb98f3a8d9f6921c9f5bda9bd92f2d75"><div class="ttname"><a href="classautopas_1_1VLCCellPairNeighborList.html#adb98f3a8d9f6921c9f5bda9bd92f2d75">autopas::VLCCellPairNeighborList::setUpTraversal</a></div><div class="ttdeci">void setUpTraversal(TraversalInterface *traversal) override</div><div class="ttdoc">Assigns the current traversal to the correct traversal interface.</div><div class="ttdef"><b>Definition:</b> VLCCellPairNeighborList.h:333</div></div>
-<div class="ttc" id="aclassautopas_1_1VLCCellPairNeighborList_html_ae5ebc9a407dd686f71400c2f4c29d73c"><div class="ttname"><a href="classautopas_1_1VLCCellPairNeighborList.html#ae5ebc9a407dd686f71400c2f4c29d73c">autopas::VLCCellPairNeighborList::generateSoAFromAoS</a></div><div class="ttdeci">void generateSoAFromAoS(LinkedCells&lt; Particle_T &gt; &amp;linkedCells) override</div><div class="ttdoc">Generates neighbor list in SoA layout from available neighbor list in AoS layout.</div><div class="ttdef"><b>Definition:</b> VLCCellPairNeighborList.h:287</div></div>
+<div class="ttc" id="aclassautopas_1_1VLCCellPairNeighborList_html_adb98f3a8d9f6921c9f5bda9bd92f2d75"><div class="ttname"><a href="classautopas_1_1VLCCellPairNeighborList.html#adb98f3a8d9f6921c9f5bda9bd92f2d75">autopas::VLCCellPairNeighborList::setUpTraversal</a></div><div class="ttdeci">void setUpTraversal(TraversalInterface *traversal) override</div><div class="ttdoc">Assigns the current traversal to the correct traversal interface.</div><div class="ttdef"><b>Definition:</b> VLCCellPairNeighborList.h:334</div></div>
+<div class="ttc" id="aclassautopas_1_1VLCCellPairNeighborList_html_ae5ebc9a407dd686f71400c2f4c29d73c"><div class="ttname"><a href="classautopas_1_1VLCCellPairNeighborList.html#ae5ebc9a407dd686f71400c2f4c29d73c">autopas::VLCCellPairNeighborList::generateSoAFromAoS</a></div><div class="ttdeci">void generateSoAFromAoS(LinkedCells&lt; Particle_T &gt; &amp;linkedCells) override</div><div class="ttdoc">Generates neighbor list in SoA layout from available neighbor list in AoS layout.</div><div class="ttdef"><b>Definition:</b> VLCCellPairNeighborList.h:288</div></div>
 <div class="ttc" id="aclassautopas_1_1VLCCellPairNeighborList_html_af010817ef90ba86a46e75fe9a467596f"><div class="ttname"><a href="classautopas_1_1VLCCellPairNeighborList.html#af010817ef90ba86a46e75fe9a467596f">autopas::VLCCellPairNeighborList::ListType</a></div><div class="ttdeci">typename VerletListsCellsHelpers::PairwiseNeighborListsType&lt; Particle_T &gt; ListType</div><div class="ttdoc">Type of the data structure used to save the neighbor lists.</div><div class="ttdef"><b>Definition:</b> VLCCellPairNeighborList.h:28</div></div>
 <div class="ttc" id="aclassautopas_1_1VLCCellPairTraversalInterface_html"><div class="ttname"><a href="classautopas_1_1VLCCellPairTraversalInterface.html">autopas::VLCCellPairTraversalInterface</a></div><div class="ttdoc">Interface for traversals used with VLCCellPairNeighborList.</div><div class="ttdef"><b>Definition:</b> VLCCellPairTraversalInterface.h:21</div></div>
 <div class="ttc" id="aclassautopas_1_1VLCCellPairTraversalInterface_html_a8bd249ff78b40fe0f32007fdc326d8fb"><div class="ttname"><a href="classautopas_1_1VLCCellPairTraversalInterface.html#a8bd249ff78b40fe0f32007fdc326d8fb">autopas::VLCCellPairTraversalInterface::setVerletList</a></div><div class="ttdeci">void setVerletList(VLCCellPairNeighborList&lt; Particle_T &gt; &amp;verlet)</div><div class="ttdoc">Sets the verlet list for the traversal to iterate over.</div><div class="ttdef"><b>Definition:</b> VLCCellPairTraversalInterface.h:27</div></div>
