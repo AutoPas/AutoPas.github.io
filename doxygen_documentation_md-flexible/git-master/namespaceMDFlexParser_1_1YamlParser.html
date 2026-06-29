@@ -123,9 +123,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a02e9d5df09f9ecd54af9cff4a9c5de55"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMDFlexParser_1_1YamlParser.html#a02e9d5df09f9ecd54af9cff4a9c5de55">parseYamlFile</a> (<a class="el" href="classMDFlexConfig.html">MDFlexConfig</a> &amp;config)</td></tr>
 <tr class="memdesc:a02e9d5df09f9ecd54af9cff4a9c5de55"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses the Input for the simulation from the Yaml File specified in the configuration.  <br /></td></tr>
 <tr class="separator:a02e9d5df09f9ecd54af9cff4a9c5de55"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1da39d6d17595bde8384c0abeb1b161"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMDFlexParser_1_1YamlParser.html#ad1da39d6d17595bde8384c0abeb1b161">parseSequenceOneElementExpected</a> (const YAML::Node node, const std::string &amp;errMsg)</td></tr>
-<tr class="memdesc:ad1da39d6d17595bde8384c0abeb1b161"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses an input where exactly one option is expected and throws an error if a sequence of multiple options is given.  <br /></td></tr>
-<tr class="separator:ad1da39d6d17595bde8384c0abeb1b161"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a350622ceb8bd5d8c9be032524934c6cd"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMDFlexParser_1_1YamlParser.html#a350622ceb8bd5d8c9be032524934c6cd">parseSequenceOneElementExpected</a> (const YAML::Node &amp;node, const std::string &amp;errMsg, bool allThrowsError=true)</td></tr>
+<tr class="memdesc:a350622ceb8bd5d8c9be032524934c6cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Parses an input where exactly one option is expected and throws an error if a sequence of multiple options is given.  <br /></td></tr>
+<tr class="separator:a350622ceb8bd5d8c9be032524934c6cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a72dfa8d26bc24f09c276afc165d3adcb"><td class="memItemLeft" align="right" valign="top">const std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceMDFlexParser_1_1YamlParser.html#a72dfa8d26bc24f09c276afc165d3adcb">makeErrorMsg</a> (const YAML::Mark &amp;mark, const std::string &amp;key, const std::string &amp;errorMsg, const std::string &amp;expected, const std::string &amp;description)</td></tr>
 <tr class="memdesc:a72dfa8d26bc24f09c276afc165d3adcb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an error message for all non-object-keys.  <br /></td></tr>
 <tr class="separator:a72dfa8d26bc24f09c276afc165d3adcb"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -547,23 +547,29 @@ template&lt;typename T &gt; </div>
 
 </div>
 </div>
-<a id="ad1da39d6d17595bde8384c0abeb1b161" name="ad1da39d6d17595bde8384c0abeb1b161"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1da39d6d17595bde8384c0abeb1b161">&#9670;&#160;</a></span>parseSequenceOneElementExpected()</h2>
+<a id="a350622ceb8bd5d8c9be032524934c6cd" name="a350622ceb8bd5d8c9be032524934c6cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a350622ceb8bd5d8c9be032524934c6cd">&#9670;&#160;</a></span>parseSequenceOneElementExpected()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const std::string MDFlexParser::YamlParser::parseSequenceOneElementExpected </td>
+          <td class="memname">std::string MDFlexParser::YamlParser::parseSequenceOneElementExpected </td>
           <td>(</td>
-          <td class="paramtype">const YAML::Node&#160;</td>
+          <td class="paramtype">const YAML::Node &amp;&#160;</td>
           <td class="paramname"><em>node</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>errMsg</em>&#160;</td>
+          <td class="paramname"><em>errMsg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>allThrowsError</em> = <code>true</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -578,6 +584,7 @@ template&lt;typename T &gt; </div>
   <table class="params">
     <tr><td class="paramname">node</td><td>The current YAML::Node, that should be parsed </td></tr>
     <tr><td class="paramname">errMsg</td><td>The error message thrown if multiple options are passed </td></tr>
+    <tr><td class="paramname">allThrowsError</td><td>If true (default), the value "all" is rejected with errMsg, because parsing it as an option would expand it into multiple options. Set to false if we want to allow "all" silently (e.g. for load-balancer, where all probably means "A Load-balancing Library (ALL)") </td></tr>
   </table>
   </dd>
 </dl>
