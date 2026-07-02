@@ -46,9 +46,10 @@ var searchData=
   ['configurationandrankiteratorhandler_43',['ConfigurationAndRankIteratorHandler',['../classautopas_1_1utils_1_1ConfigurationAndRankIteratorHandler.html',1,'autopas::utils']]],
   ['configurationorder_44',['ConfigurationOrder',['../structautopas_1_1RuleSyntax_1_1ConfigurationOrder.html',1,'autopas::RuleSyntax']]],
   ['configurationpattern_45',['ConfigurationPattern',['../structautopas_1_1ConfigurationPattern.html',1,'autopas']]],
-  ['containeriterator_46',['ContainerIterator',['../classautopas_1_1ContainerIterator.html',1,'autopas']]],
-  ['containeroption_47',['ContainerOption',['../classautopas_1_1options_1_1ContainerOption.html',1,'autopas::options']]],
-  ['containerselector_48',['ContainerSelector',['../classautopas_1_1ContainerSelector.html',1,'autopas']]],
-  ['containerselectorinfo_49',['ContainerSelectorInfo',['../classautopas_1_1ContainerSelectorInfo.html',1,'autopas']]],
-  ['crispset_50',['CrispSet',['../classautopas_1_1FuzzyLogic_1_1CrispSet.html',1,'autopas::FuzzyLogic']]]
+  ['containerconfiguration_46',['ContainerConfiguration',['../structContainerConfiguration.html',1,'']]],
+  ['containeriterator_47',['ContainerIterator',['../classautopas_1_1ContainerIterator.html',1,'autopas']]],
+  ['containeroption_48',['ContainerOption',['../classautopas_1_1options_1_1ContainerOption.html',1,'autopas::options']]],
+  ['containerselector_49',['ContainerSelector',['../classautopas_1_1ContainerSelector.html',1,'autopas']]],
+  ['containerselectorinfo_50',['ContainerSelectorInfo',['../classautopas_1_1ContainerSelectorInfo.html',1,'autopas']]],
+  ['crispset_51',['CrispSet',['../classautopas_1_1FuzzyLogic_1_1CrispSet.html',1,'autopas::FuzzyLogic']]]
 ];

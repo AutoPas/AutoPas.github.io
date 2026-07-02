@@ -1069,6 +1069,12 @@ template&lt;class <a class="el" href="classautopas_1_1Functor.html">Functor</a> 
 
 <p>Checks if the given configuration can be used with the given functor and the current state of the simulation. </p>
 <p>For this, the container and traversal need to be instantiated, hence if the configuration is applicable, it sets the current container and returns the traversal.</p>
+<p>This function uses</p><ul>
+<li><a class="el" href="classautopas_1_1Configuration.html#aea1e0c2fca7bbda1cf4e9750707a6ebf" title="Checks if any of the configuration values are incompatible with each other.">Configuration::hasCompatibleValues</a> for checking configuration is compatible independent of the functor and domain.</li>
+<li><a class="el" href="classautopas_1_1TraversalInterface.html#a2874ddbb4a6b797783e24f2103476dcc" title="Checks if the traversal is applicable to the current state of the domain.">TraversalInterface::isApplicableToDomain</a> (via <a class="el" href="classautopas_1_1TraversalSelector.html#abae8bd050120c5e4648e78659858c9d6" title="Generates a traversal from the given configuration.">TraversalSelector::generateTraversalFromConfig</a>) for checking configuration (specifically traversal) is compatible with the domain.</li>
+</ul>
+<p>In addition, this function checks that the configuration is applicable to the functor.</p>
+<dl class="section note"><dt>Note</dt><dd>for developers: this function should not directly check configuration compatibility where it could be done indirectly through <a class="el" href="classautopas_1_1Configuration.html#aea1e0c2fca7bbda1cf4e9750707a6ebf" title="Checks if any of the configuration values are incompatible with each other.">Configuration::hasCompatibleValues</a> or <a class="el" href="classautopas_1_1TraversalInterface.html#a2874ddbb4a6b797783e24f2103476dcc" title="Checks if the traversal is applicable to the current state of the domain.">TraversalInterface::isApplicableToDomain</a>.</dd></dl>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname"><a class="el" href="classautopas_1_1Functor.html" title="Functor base class.">Functor</a></td><td></td></tr>

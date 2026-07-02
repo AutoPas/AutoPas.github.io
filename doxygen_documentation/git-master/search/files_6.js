@@ -9,5 +9,6 @@ var searchData=
   ['gaussianhyperparameters_2eh_6',['GaussianHyperparameters.h',['../GaussianHyperparameters_8h.html',1,'']]],
   ['gaussianmodeltypes_2eh_7',['GaussianModelTypes.h',['../GaussianModelTypes_8h.html',1,'']]],
   ['gaussianprocess_2ecpp_8',['GaussianProcess.cpp',['../GaussianProcess_8cpp.html',1,'']]],
-  ['gaussianprocess_2eh_9',['GaussianProcess.h',['../GaussianProcess_8h.html',1,'']]]
+  ['gaussianprocess_2eh_9',['GaussianProcess.h',['../GaussianProcess_8h.html',1,'']]],
+  ['generatevalidconfigurations_2eh_10',['GenerateValidConfigurations.h',['../GenerateValidConfigurations_8h.html',1,'']]]
 ];
