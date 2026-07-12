@@ -12,7 +12,7 @@ var searchData=
   ['simulation_2eh_9',['Simulation.h',['../Simulation_8h.html',1,'']]],
   ['sitestr_10',['siteStr',['../classMDFlexConfig.html#aa5fd05e976752cf0ece92d5fc81b80a9',1,'MDFlexConfig']]],
   ['sixthrootoftwo_11',['sixthRootOfTwo',['../namespaceanonymous__namespace_02RegularGridDecomposition_8h_03.html#a8bee503d7b9a33f9bda87f4e2820b41f',1,'anonymous_namespace{RegularGridDecomposition.h}']]],
-  ['sortingthreshold_12',['sortingThreshold',['../classMDFlexConfig.html#a6f94320b54447c16e3b15280594d5c8e',1,'MDFlexConfig']]],
+  ['soasortingthreshold_12',['soaSortingThreshold',['../classMDFlexConfig.html#a15437aab65b6298e3fe6c3072e2ac9e6',1,'MDFlexConfig']]],
   ['sphere_13',['Sphere',['../classSphere.html#a1acd1e3faf1d667e73ddfa7863a1583f',1,'Sphere::Sphere()'],['../classSphere.html',1,'Sphere']]],
   ['sphere_2eh_14',['Sphere.h',['../Sphere_8h.html',1,'']]],
   ['spherecenterstr_15',['sphereCenterStr',['../classMDFlexConfig.html#ac3bc989c14bbe85d14bf79428d186110',1,'MDFlexConfig']]],
