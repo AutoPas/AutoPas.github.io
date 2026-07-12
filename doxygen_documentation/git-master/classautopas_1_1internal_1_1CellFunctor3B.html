@@ -147,9 +147,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6244a94de03611d9147a3317a37b8b12"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellFunctor3B.html#a6244a94de03611d9147a3317a37b8b12">getBidirectional</a> () const</td></tr>
 <tr class="memdesc:a6244a94de03611d9147a3317a37b8b12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter.  <br /></td></tr>
 <tr class="separator:a6244a94de03611d9147a3317a37b8b12"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaf528803a1a8721e1220c0d555da31c7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellFunctor3B.html#aaf528803a1a8721e1220c0d555da31c7">setSortingThreshold</a> (size_t sortingThreshold)</td></tr>
-<tr class="memdesc:aaf528803a1a8721e1220c0d555da31c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the sorting-threshold If the sum of the number of particles in three cells is greater or equal to that value, the <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html" title="A cell functor.">CellFunctor</a> creates a sorted view of the particles to avoid unnecessary distance checks.  <br /></td></tr>
-<tr class="separator:aaf528803a1a8721e1220c0d555da31c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7d1e7af0d4bf2337e1a53260fe9be438"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellFunctor3B.html#a7d1e7af0d4bf2337e1a53260fe9be438">setAoSSortingThreshold</a> (size_t aosSortingThreshold)</td></tr>
+<tr class="memdesc:a7d1e7af0d4bf2337e1a53260fe9be438"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the aos-sorting-threshold for AoS traversals.  <br /></td></tr>
+<tr class="separator:a7d1e7af0d4bf2337e1a53260fe9be438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7430a3d114577dd56334df5562d5b11f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellFunctor3B.html#a7430a3d114577dd56334df5562d5b11f">setSoASortingThreshold</a> (size_t soaSortingThreshold)</td></tr>
+<tr class="memdesc:a7430a3d114577dd56334df5562d5b11f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting-threshold.  <br /></td></tr>
+<tr class="separator:a7430a3d114577dd56334df5562d5b11f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class ParticleCell_T, class ParticleFunctor_T, bool bidirectional = true&gt;<br />
@@ -442,8 +445,8 @@ template&lt;class ParticleCell_T , class ParticleFunctor_T , bool bidirectional&
 
 </div>
 </div>
-<a id="aaf528803a1a8721e1220c0d555da31c7" name="aaf528803a1a8721e1220c0d555da31c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaf528803a1a8721e1220c0d555da31c7">&#9670;&#160;</a></span>setSortingThreshold()</h2>
+<a id="a7d1e7af0d4bf2337e1a53260fe9be438" name="a7d1e7af0d4bf2337e1a53260fe9be438"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7d1e7af0d4bf2337e1a53260fe9be438">&#9670;&#160;</a></span>setAoSSortingThreshold()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -451,19 +454,47 @@ template&lt;class ParticleCell_T , class ParticleFunctor_T , bool bidirectional&
 template&lt;class ParticleCell_T , class ParticleFunctor_T , bool bidirectional&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1internal_1_1CellFunctor3B.html">autopas::internal::CellFunctor3B</a>&lt; ParticleCell_T, ParticleFunctor_T, bidirectional &gt;::setSortingThreshold </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1internal_1_1CellFunctor3B.html">autopas::internal::CellFunctor3B</a>&lt; ParticleCell_T, ParticleFunctor_T, bidirectional &gt;::setAoSSortingThreshold </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>sortingThreshold</em></td><td>)</td>
+          <td class="paramname"><em>aosSortingThreshold</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set the sorting-threshold If the sum of the number of particles in three cells is greater or equal to that value, the <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html" title="A cell functor.">CellFunctor</a> creates a sorted view of the particles to avoid unnecessary distance checks. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Set the aos-sorting-threshold for AoS traversals. </p>
+<p>If the sum of the number of particles in three cells is greater or equal to that value, the <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html" title="A cell functor.">CellFunctor</a> creates a sorted view of the particles to avoid unnecessary distance checks. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">sortingThreshold</td><td>Sum of the number of particles in three cells from which sorting should be enabled. </td></tr>
+    <tr><td class="paramname">aosSortingThreshold</td><td>Sum of the number of particles in three cells from which sorting should be enabled. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7430a3d114577dd56334df5562d5b11f" name="a7430a3d114577dd56334df5562d5b11f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7430a3d114577dd56334df5562d5b11f">&#9670;&#160;</a></span>setSoASortingThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ParticleCell_T , class ParticleFunctor_T , bool bidirectional&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1internal_1_1CellFunctor3B.html">autopas::internal::CellFunctor3B</a>&lt; ParticleCell_T, ParticleFunctor_T, bidirectional &gt;::setSoASortingThreshold </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>soaSortingThreshold</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting-threshold. </p>
+<p>Stored for interface consistency with <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html" title="A cell functor.">CellFunctor</a>; <a class="el" href="classautopas_1_1internal_1_1CellFunctor3B.html" title="A cell functor.">CellFunctor3B</a> does not currently apply SoA-level sorting. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">soaSortingThreshold</td><td>Threshold value. </td></tr>
   </table>
   </dd>
 </dl>

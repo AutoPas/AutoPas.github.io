@@ -18,13 +18,14 @@ var searchData=
   ['sortbyname_2ecpp_15',['SortByName.cpp',['../SortByName_8cpp.html',1,'']]],
   ['sortbyname_2eh_16',['SortByName.h',['../SortByName_8h.html',1,'']]],
   ['sortedcellview_2eh_17',['SortedCellView.h',['../SortedCellView_8h.html',1,'']]],
-  ['sphcalcdensityfunctor_2eh_18',['SPHCalcDensityFunctor.h',['../SPHCalcDensityFunctor_8h.html',1,'']]],
-  ['sphcalchydroforcefunctor_2eh_19',['SPHCalcHydroForceFunctor.h',['../SPHCalcHydroForceFunctor_8h.html',1,'']]],
-  ['sphkernels_2ecpp_20',['SPHKernels.cpp',['../SPHKernels_8cpp.html',1,'']]],
-  ['sphkernels_2eh_21',['SPHKernels.h',['../SPHKernels_8h.html',1,'']]],
-  ['sphparticle_2ecpp_22',['SPHParticle.cpp',['../SPHParticle_8cpp.html',1,'']]],
-  ['sphparticle_2eh_23',['SPHParticle.h',['../SPHParticle_8h.html',1,'']]],
-  ['staticboolselector_2eh_24',['StaticBoolSelector.h',['../StaticBoolSelector_8h.html',1,'']]],
-  ['staticcontainerselector_2eh_25',['StaticContainerSelector.h',['../StaticContainerSelector_8h.html',1,'']]],
-  ['stringutils_2eh_26',['StringUtils.h',['../StringUtils_8h.html',1,'']]]
+  ['sortedsoaview_2eh_18',['SortedSoAView.h',['../SortedSoAView_8h.html',1,'']]],
+  ['sphcalcdensityfunctor_2eh_19',['SPHCalcDensityFunctor.h',['../SPHCalcDensityFunctor_8h.html',1,'']]],
+  ['sphcalchydroforcefunctor_2eh_20',['SPHCalcHydroForceFunctor.h',['../SPHCalcHydroForceFunctor_8h.html',1,'']]],
+  ['sphkernels_2ecpp_21',['SPHKernels.cpp',['../SPHKernels_8cpp.html',1,'']]],
+  ['sphkernels_2eh_22',['SPHKernels.h',['../SPHKernels_8h.html',1,'']]],
+  ['sphparticle_2ecpp_23',['SPHParticle.cpp',['../SPHParticle_8cpp.html',1,'']]],
+  ['sphparticle_2eh_24',['SPHParticle.h',['../SPHParticle_8h.html',1,'']]],
+  ['staticboolselector_2eh_25',['StaticBoolSelector.h',['../StaticBoolSelector_8h.html',1,'']]],
+  ['staticcontainerselector_2eh_26',['StaticContainerSelector.h',['../StaticContainerSelector_8h.html',1,'']]],
+  ['stringutils_2eh_27',['StringUtils.h',['../StringUtils_8h.html',1,'']]]
 ];

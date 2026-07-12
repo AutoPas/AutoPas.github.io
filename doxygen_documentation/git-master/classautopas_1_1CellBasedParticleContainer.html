@@ -170,9 +170,9 @@ Collaboration diagram for autopas::CellBasedParticleContainer&lt; ParticleCell_T
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a2d81cd40befa45455b8f2b72f6dfd2a6"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a2d81cd40befa45455b8f2b72f6dfd2a6">CellBasedParticleContainer</a> (const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax, const double cutoff, const double skin, const size_t sortingThreshold)</td></tr>
-<tr class="memdesc:a2d81cd40befa45455b8f2b72f6dfd2a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of <a class="el" href="classautopas_1_1CellBasedParticleContainer.html" title="The CellBasedParticleContainer class stores particles in some object and provides methods to iterate ...">CellBasedParticleContainer</a>.  <br /></td></tr>
-<tr class="separator:a2d81cd40befa45455b8f2b72f6dfd2a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29f34a1c207e1eb85a8ad1d07a5d1c6b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a29f34a1c207e1eb85a8ad1d07a5d1c6b">CellBasedParticleContainer</a> (const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax, const double cutoff, const double skin, const size_t aosSortingThreshold, const size_t soaSortingThreshold)</td></tr>
+<tr class="memdesc:a29f34a1c207e1eb85a8ad1d07a5d1c6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of <a class="el" href="classautopas_1_1CellBasedParticleContainer.html" title="The CellBasedParticleContainer class stores particles in some object and provides methods to iterate ...">CellBasedParticleContainer</a>.  <br /></td></tr>
+<tr class="separator:a29f34a1c207e1eb85a8ad1d07a5d1c6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15b734fa9d9a9a82033aed183da8c415"><td class="memItemLeft" align="right" valign="top"><a id="a15b734fa9d9a9a82033aed183da8c415" name="a15b734fa9d9a9a82033aed183da8c415"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~CellBasedParticleContainer</b> () override=default</td></tr>
 <tr class="memdesc:a15b734fa9d9a9a82033aed183da8c415"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destructor of <a class="el" href="classautopas_1_1CellBasedParticleContainer.html" title="The CellBasedParticleContainer class stores particles in some object and provides methods to iterate ...">CellBasedParticleContainer</a>. <br /></td></tr>
@@ -329,9 +329,13 @@ Protected Attributes</h2></td></tr>
 <tr class="memitem:aee772455d3ea16a114ecb6e6af6157e8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; ParticleCellType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellBasedParticleContainer.html#aee772455d3ea16a114ecb6e6af6157e8">_cells</a></td></tr>
 <tr class="memdesc:aee772455d3ea16a114ecb6e6af6157e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Vector of particle cells.  <br /></td></tr>
 <tr class="separator:aee772455d3ea16a114ecb6e6af6157e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d11713a05e6796886393b342534ae42"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellBasedParticleContainer.html#a1d11713a05e6796886393b342534ae42">_sortingThreshold</a></td></tr>
-<tr class="memdesc:a1d11713a05e6796886393b342534ae42"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the number of particles in a cell or cell pair exceeds this threshold, the particles will be sorted.  <br /></td></tr>
-<tr class="separator:a1d11713a05e6796886393b342534ae42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab9fd71631f7d993d8d8cbe03eb164f37"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellBasedParticleContainer.html#ab9fd71631f7d993d8d8cbe03eb164f37">_aosSortingThreshold</a></td></tr>
+<tr class="memdesc:ab9fd71631f7d993d8d8cbe03eb164f37"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the number of particles in a cell or cell pair exceeds this threshold, the particles will be sorted.  <br /></td></tr>
+<tr class="separator:ab9fd71631f7d993d8d8cbe03eb164f37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3f7dc6f687ef519703c316a2b61134c"><td class="memItemLeft" align="right" valign="top"><a id="ad3f7dc6f687ef519703c316a2b61134c" name="ad3f7dc6f687ef519703c316a2b61134c"></a>
+size_t&#160;</td><td class="memItemRight" valign="bottom"><b>_soaSortingThreshold</b></td></tr>
+<tr class="memdesc:ad3f7dc6f687ef519703c316a2b61134c"><td class="mdescLeft">&#160;</td><td class="mdescRight">If the sum of the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> buffer sizes of two cells exceeds this threshold, SoAFunctorPairSorted is used. <br /></td></tr>
+<tr class="separator:ad3f7dc6f687ef519703c316a2b61134c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pro_attribs_classautopas_1_1ParticleContainerInterface"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classautopas_1_1ParticleContainerInterface')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface&lt; ParticleCell_T::ParticleType &gt;</a></td></tr>
 <tr class="memitem:a9c20cff49ca6e0ca6c31ae32c2639b55 inherit pro_attribs_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top"><a id="a9c20cff49ca6e0ca6c31ae32c2639b55" name="a9c20cff49ca6e0ca6c31ae32c2639b55"></a>
 double&#160;</td><td class="memItemRight" valign="bottom"><b>_skin</b></td></tr>
@@ -363,8 +367,8 @@ class autopas::CellBasedParticleContainer&lt; ParticleCell_T &gt;</div><p>The <a
   </dd>
 </dl>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a2d81cd40befa45455b8f2b72f6dfd2a6" name="a2d81cd40befa45455b8f2b72f6dfd2a6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d81cd40befa45455b8f2b72f6dfd2a6">&#9670;&#160;</a></span>CellBasedParticleContainer() <span class="overload">[1/2]</span></h2>
+<a id="a29f34a1c207e1eb85a8ad1d07a5d1c6b" name="a29f34a1c207e1eb85a8ad1d07a5d1c6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29f34a1c207e1eb85a8ad1d07a5d1c6b">&#9670;&#160;</a></span>CellBasedParticleContainer() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -402,7 +406,13 @@ template&lt;class ParticleCell_T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const size_t&#160;</td>
-          <td class="paramname"><em>sortingThreshold</em>&#160;</td>
+          <td class="paramname"><em>aosSortingThreshold</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const size_t&#160;</td>
+          <td class="paramname"><em>soaSortingThreshold</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -424,7 +434,8 @@ template&lt;class ParticleCell_T &gt; </div>
     <tr><td class="paramname">boxMax</td><td></td></tr>
     <tr><td class="paramname">cutoff</td><td></td></tr>
     <tr><td class="paramname">skin</td><td></td></tr>
-    <tr><td class="paramname">sortingThreshold</td><td></td></tr>
+    <tr><td class="paramname">aosSortingThreshold</td><td>Sum of the number of particles in two cells from which AoS sorting should be enabled. </td></tr>
+    <tr><td class="paramname">soaSortingThreshold</td><td>Sum of the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> buffer sizes of two cells from which <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting should be enabled. </td></tr>
   </table>
   </dd>
 </dl>
@@ -838,6 +849,33 @@ template&lt;class ParticleCell_T &gt; </div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="ab9fd71631f7d993d8d8cbe03eb164f37" name="ab9fd71631f7d993d8d8cbe03eb164f37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab9fd71631f7d993d8d8cbe03eb164f37">&#9670;&#160;</a></span>_aosSortingThreshold</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ParticleCell_T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classautopas_1_1CellBasedParticleContainer.html">autopas::CellBasedParticleContainer</a>&lt; ParticleCell_T &gt;::_aosSortingThreshold</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>If the number of particles in a cell or cell pair exceeds this threshold, the particles will be sorted. </p>
+<p>To be forwarded to cell traversals. </p>
+
+</div>
+</div>
 <a id="aee772455d3ea16a114ecb6e6af6157e8" name="aee772455d3ea16a114ecb6e6af6157e8"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aee772455d3ea16a114ecb6e6af6157e8">&#9670;&#160;</a></span>_cells</h2>
 
@@ -862,33 +900,6 @@ template&lt;class ParticleCell_T &gt; </div>
 
 <p>Vector of particle cells. </p>
 <p>All particle containers store their particles in ParticleCells. This is the common vector for this purpose. </p>
-
-</div>
-</div>
-<a id="a1d11713a05e6796886393b342534ae42" name="a1d11713a05e6796886393b342534ae42"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d11713a05e6796886393b342534ae42">&#9670;&#160;</a></span>_sortingThreshold</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class ParticleCell_T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t <a class="el" href="classautopas_1_1CellBasedParticleContainer.html">autopas::CellBasedParticleContainer</a>&lt; ParticleCell_T &gt;::_sortingThreshold</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>If the number of particles in a cell or cell pair exceeds this threshold, the particles will be sorted. </p>
-<p>To be forwarded to cell traversals. </p>
 
 </div>
 </div>

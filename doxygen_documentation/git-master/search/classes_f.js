@@ -18,5 +18,6 @@ var searchData=
   ['tuningstrategyinterface_15',['TuningStrategyInterface',['../classautopas_1_1TuningStrategyInterface.html',1,'autopas']]],
   ['tuningstrategylogger_16',['TuningStrategyLogger',['../classautopas_1_1TuningStrategyLogger.html',1,'autopas']]],
   ['tuningstrategylogreplayer_17',['TuningStrategyLogReplayer',['../classautopas_1_1TuningStrategyLogReplayer.html',1,'autopas']]],
-  ['tuningstrategyoption_18',['TuningStrategyOption',['../classautopas_1_1options_1_1TuningStrategyOption.html',1,'autopas::options']]]
+  ['tuningstrategyoption_18',['TuningStrategyOption',['../classautopas_1_1options_1_1TuningStrategyOption.html',1,'autopas::options']]],
+  ['twocellsinteractionhitrategeneratortest_19',['TwoCellsInteractionHitrateGeneratorTest',['../classTwoCellsInteractionHitrateGeneratorTest.html',1,'']]]
 ];

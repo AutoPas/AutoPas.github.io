@@ -113,6 +113,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classautopas_1_1internal_1_1CellFunctor-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">autopas::internal::CellFunctor&lt; ParticleCell_T, ParticleFunctor_T, bidirectional &gt; Class Template Reference</div></div>
@@ -156,9 +157,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6c1170fec9fc2cd48bc0bb4d23e04689"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellFunctor.html#a6c1170fec9fc2cd48bc0bb4d23e04689">getBidirectional</a> () const</td></tr>
 <tr class="memdesc:a6c1170fec9fc2cd48bc0bb4d23e04689"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter.  <br /></td></tr>
 <tr class="separator:a6c1170fec9fc2cd48bc0bb4d23e04689"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa3ed4003e22ade09c2bdb3a8162605c6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellFunctor.html#aa3ed4003e22ade09c2bdb3a8162605c6">setSortingThreshold</a> (size_t sortingThreshold)</td></tr>
-<tr class="memdesc:aa3ed4003e22ade09c2bdb3a8162605c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the sorting-threshold If the sum of the number of particles in two cells is greater or equal to that value, the <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html" title="A cell functor.">CellFunctor</a> creates a sorted view of the particles to avoid unnecessary distance checks.  <br /></td></tr>
-<tr class="separator:aa3ed4003e22ade09c2bdb3a8162605c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabe1be00f264f89baf0951e270834d7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellFunctor.html#aabe1be00f264f89baf0951e270834d7c">setAoSSortingThreshold</a> (size_t aosSortingThreshold)</td></tr>
+<tr class="memdesc:aabe1be00f264f89baf0951e270834d7c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the aos-sorting-threshold.  <br /></td></tr>
+<tr class="separator:aabe1be00f264f89baf0951e270834d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a21902addfcb3b620bd393099cac57c2e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellFunctor.html#a21902addfcb3b620bd393099cac57c2e">setSoASortingThreshold</a> (size_t soaSortingThreshold)</td></tr>
+<tr class="memdesc:a21902addfcb3b620bd393099cac57c2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting-threshold.  <br /></td></tr>
+<tr class="separator:a21902addfcb3b620bd393099cac57c2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26defb30ac99055e9d51f5e9281a4f57"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structautopas_1_1SoASortingData.html">SoASortingData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1internal_1_1CellFunctor.html#a26defb30ac99055e9d51f5e9281a4f57">computeSortingData</a> (const std::vector&lt; std::pair&lt; double, size_t &gt; &gt; &amp;projIdxI, const std::vector&lt; std::pair&lt; double, size_t &gt; &gt; &amp;projIdxJ, std::vector&lt; size_t &gt; &amp;maxIndexCache, std::vector&lt; size_t &gt; &amp;minIndexCache) const</td></tr>
+<tr class="memdesc:a26defb30ac99055e9d51f5e9281a4f57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Computes conservative per-particle index bounds into projIdxJ based on a 1-D projection cutoff check.  <br /></td></tr>
+<tr class="separator:a26defb30ac99055e9d51f5e9281a4f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class ParticleCell_T, class ParticleFunctor_T, bool bidirectional = true&gt;<br />
@@ -235,6 +242,67 @@ template&lt;class ParticleCell_T , class ParticleFunctor_T , bool bidirectional 
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a26defb30ac99055e9d51f5e9281a4f57" name="a26defb30ac99055e9d51f5e9281a4f57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26defb30ac99055e9d51f5e9281a4f57">&#9670;&#160;</a></span>computeSortingData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ParticleCell_T , class ParticleFunctor_T , bool bidirectional&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structautopas_1_1SoASortingData.html">SoASortingData</a> <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html">autopas::internal::CellFunctor</a>&lt; ParticleCell_T, ParticleFunctor_T, bidirectional &gt;::computeSortingData </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; double, size_t &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>projIdxI</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; double, size_t &gt; &gt; &amp;&#160;</td>
+          <td class="paramname"><em>projIdxJ</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>maxIndexCache</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>minIndexCache</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Computes conservative per-particle index bounds into projIdxJ based on a 1-D projection cutoff check. </p>
+<p>Particles are projected onto the sorting axis. A pair can only interact if their 1-D projection distance is within the cutoff (necessary but not sufficient condition for a 3-D interaction). Because both projIdxI and projIdxJ are sorted, a two-pointer sweep computes the bounds in O(nI + nJ).</p>
+<p>The returned <a class="el" href="structautopas_1_1SoASortingData.html" title="Precomputed index bounds for iterating a pre-sorted SoA pair.">SoASortingData</a> contains:</p><ul>
+<li>startI: index of the first i-particle that could interact with any j-particle. All i before startI project farther than cutoff below projIdxJ[0] and can be skipped unconditionally.</li>
+<li>maxIndex[i]: exclusive upper bound; the first j where projJ &gt; projI[i] + cutoff. A functor iterating j up to (but not including) this index will not miss any candidate pair for particle i.</li>
+<li>minIndex[i]: inclusive lower bound; the first j where projJ &gt;= projI[i] - cutoff. A functor may start its j-loop here and skip all earlier j-particles for particle i.</li>
+</ul>
+<p>Both maxIndex and minIndex are monotonically non-decreasing with i. A functor processing i-particles in order can therefore advance its j-loop bounds without backtracking, and may also derive valid bounds for a contiguous block of i-particles (For example with VecPatterns != 1xVec) by taking minIndex of the first and maxIndex of the last.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">projIdxI</td><td>Sorted (projection, original index) pairs for the outer-loop (i) cell. </td></tr>
+    <tr><td class="paramname">projIdxJ</td><td>Sorted (projection, original index) pairs for the inner-loop (j) cell. </td></tr>
+    <tr><td class="paramname">maxIndexCache</td><td>Output buffer for maxIndex; resized and overwritten by this function. </td></tr>
+    <tr><td class="paramname">minIndexCache</td><td>Output buffer for minIndex; resized and overwritten by this function. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="structautopas_1_1SoASortingData.html" title="Precomputed index bounds for iterating a pre-sorted SoA pair.">SoASortingData</a> with startI and per-i index bounds into projIdxJ. </dd></dl>
+
+</div>
+</div>
 <a id="a6c1170fec9fc2cd48bc0bb4d23e04689" name="a6c1170fec9fc2cd48bc0bb4d23e04689"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a6c1170fec9fc2cd48bc0bb4d23e04689">&#9670;&#160;</a></span>getBidirectional()</h2>
 
@@ -399,8 +467,8 @@ template&lt;class ParticleCell_T , class ParticleFunctor_T , bool bidirectional&
 
 </div>
 </div>
-<a id="aa3ed4003e22ade09c2bdb3a8162605c6" name="aa3ed4003e22ade09c2bdb3a8162605c6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa3ed4003e22ade09c2bdb3a8162605c6">&#9670;&#160;</a></span>setSortingThreshold()</h2>
+<a id="aabe1be00f264f89baf0951e270834d7c" name="aabe1be00f264f89baf0951e270834d7c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabe1be00f264f89baf0951e270834d7c">&#9670;&#160;</a></span>setAoSSortingThreshold()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -408,19 +476,47 @@ template&lt;class ParticleCell_T , class ParticleFunctor_T , bool bidirectional&
 template&lt;class ParticleCell_T , class ParticleFunctor_T , bool bidirectional&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html">autopas::internal::CellFunctor</a>&lt; ParticleCell_T, ParticleFunctor_T, bidirectional &gt;::setSortingThreshold </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html">autopas::internal::CellFunctor</a>&lt; ParticleCell_T, ParticleFunctor_T, bidirectional &gt;::setAoSSortingThreshold </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>sortingThreshold</em></td><td>)</td>
+          <td class="paramname"><em>aosSortingThreshold</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Set the sorting-threshold If the sum of the number of particles in two cells is greater or equal to that value, the <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html" title="A cell functor.">CellFunctor</a> creates a sorted view of the particles to avoid unnecessary distance checks. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Set the aos-sorting-threshold. </p>
+<p>If the sum of the number of particles in two cells is greater or equal to that value, the <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html" title="A cell functor.">CellFunctor</a> creates a sorted view of the particles to avoid unnecessary distance checks. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">sortingThreshold</td><td>Sum of the number of particles in two cells from which sorting should be enabled. </td></tr>
+    <tr><td class="paramname">aosSortingThreshold</td><td>Sum of the number of particles in two cells from which sorting should be enabled. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a21902addfcb3b620bd393099cac57c2e" name="a21902addfcb3b620bd393099cac57c2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21902addfcb3b620bd393099cac57c2e">&#9670;&#160;</a></span>setSoASortingThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class ParticleCell_T , class ParticleFunctor_T , bool bidirectional&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1internal_1_1CellFunctor.html">autopas::internal::CellFunctor</a>&lt; ParticleCell_T, ParticleFunctor_T, bidirectional &gt;::setSoASortingThreshold </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>soaSortingThreshold</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting-threshold. </p>
+<p>If the sum of the number of particles in two <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> buffers is greater than this value, the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> path uses SoAFunctorPairSorted instead of SoAFunctorPair. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">soaSortingThreshold</td><td>Sum of the number of particles in two cells from which <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting should be enabled. </td></tr>
   </table>
   </dd>
 </dl>

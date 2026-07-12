@@ -178,9 +178,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>computeOffsets</b> ()
 <tr class="memitem:a9b04ca135916f65e3917c3c4203bb1f6"><td class="memItemLeft" align="right" valign="top">TraversalOption&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC01Traversal.html#a9b04ca135916f65e3917c3c4203bb1f6">getTraversalType</a> () const override</td></tr>
 <tr class="memdesc:a9b04ca135916f65e3917c3c4203bb1f6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return a enum representing the name of the traversal class.  <br /></td></tr>
 <tr class="separator:a9b04ca135916f65e3917c3c4203bb1f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a04598b36b7a08415cd56a604a9322bd0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC01Traversal.html#a04598b36b7a08415cd56a604a9322bd0">setSortingThreshold</a> (size_t sortingThreshold) override</td></tr>
-<tr class="memdesc:a04598b36b7a08415cd56a604a9322bd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the sorting-threshold for traversals that use the CellFunctor If the sum of the number of particles in two cells is greater or equal to that value, the CellFunctor creates a sorted view of the particles to avoid unnecessary distance checks.    <br /></td></tr>
-<tr class="separator:a04598b36b7a08415cd56a604a9322bd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a502bcdc8c25e2e58fdef6859ab4904b4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC01Traversal.html#a502bcdc8c25e2e58fdef6859ab4904b4">setAoSSortingThreshold</a> (size_t aosSortingThreshold) override</td></tr>
+<tr class="memdesc:a502bcdc8c25e2e58fdef6859ab4904b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the aos-sorting-threshold for traversals that use the CellFunctor If the sum of the number of particles in two cells is greater or equal to that value, the CellFunctor creates a sorted view of the particles to avoid unnecessary distance checks.    <br /></td></tr>
+<tr class="separator:a502bcdc8c25e2e58fdef6859ab4904b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc6783e3d5db4b9898bb89491cd56d1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC01Traversal.html#afc6783e3d5db4b9898bb89491cd56d1a">setSoASortingThreshold</a> (size_t soaSortingThreshold) override</td></tr>
+<tr class="memdesc:afc6783e3d5db4b9898bb89491cd56d1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting-threshold for traversals that use the CellFunctor.    <br /></td></tr>
+<tr class="separator:afc6783e3d5db4b9898bb89491cd56d1a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classautopas_1_1C01BasedTraversal"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classautopas_1_1C01BasedTraversal')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classautopas_1_1C01BasedTraversal.html">autopas::C01BasedTraversal&lt; ParticleCell, Functor, collapseDepth &gt;</a></td></tr>
 <tr class="memitem:a94986510d873c2545b3fe16069f70736 inherit pub_methods_classautopas_1_1C01BasedTraversal"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1C01BasedTraversal.html#a94986510d873c2545b3fe16069f70736">C01BasedTraversal</a> (const std::array&lt; unsigned long, 3 &gt; &amp;dims, <a class="el" href="classautopas_1_1Functor.html">Functor</a> &amp;functor, double interactionLength, const std::array&lt; double, 3 &gt; &amp;cellLength, DataLayoutOption dataLayout, bool useNewton3)</td></tr>
 <tr class="memdesc:a94986510d873c2545b3fe16069f70736 inherit pub_methods_classautopas_1_1C01BasedTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the c01 traversal.  <br /></td></tr>
@@ -203,9 +206,12 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~CellTraversal</b>
 <tr class="memitem:a6869a14bbe8b6233f461aa5629f6344e inherit pub_methods_classautopas_1_1CellTraversal"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellTraversal.html#a6869a14bbe8b6233f461aa5629f6344e">setCellsToTraverse</a> (std::vector&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> &gt; &amp;cells)</td></tr>
 <tr class="memdesc:a6869a14bbe8b6233f461aa5629f6344e inherit pub_methods_classautopas_1_1CellTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the cells to iterate over.  <br /></td></tr>
 <tr class="separator:a6869a14bbe8b6233f461aa5629f6344e inherit pub_methods_classautopas_1_1CellTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afb5af56d616fb6310d54f54a705747fd inherit pub_methods_classautopas_1_1CellTraversal"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellTraversal.html#afb5af56d616fb6310d54f54a705747fd">setSortingThreshold</a> (size_t sortingThreshold)=0</td></tr>
-<tr class="memdesc:afb5af56d616fb6310d54f54a705747fd inherit pub_methods_classautopas_1_1CellTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the sorting-threshold for traversals that use the CellFunctor If the sum of the number of particles in two cells is greater or equal to that value, the CellFunctor creates a sorted view of the particles to avoid unnecessary distance checks.  <br /></td></tr>
-<tr class="separator:afb5af56d616fb6310d54f54a705747fd inherit pub_methods_classautopas_1_1CellTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a800eef59daee4cf1238ccfca58a20c33 inherit pub_methods_classautopas_1_1CellTraversal"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellTraversal.html#a800eef59daee4cf1238ccfca58a20c33">setAoSSortingThreshold</a> (size_t aosSortingThreshold)=0</td></tr>
+<tr class="memdesc:a800eef59daee4cf1238ccfca58a20c33 inherit pub_methods_classautopas_1_1CellTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the aos-sorting-threshold for traversals that use the CellFunctor If the sum of the number of particles in two cells is greater or equal to that value, the CellFunctor creates a sorted view of the particles to avoid unnecessary distance checks.  <br /></td></tr>
+<tr class="separator:a800eef59daee4cf1238ccfca58a20c33 inherit pub_methods_classautopas_1_1CellTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad4e4bd1c8c8eb714b689d378274c1ced inherit pub_methods_classautopas_1_1CellTraversal"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1CellTraversal.html#ad4e4bd1c8c8eb714b689d378274c1ced">setSoASortingThreshold</a> (size_t soaSortingThreshold)=0</td></tr>
+<tr class="memdesc:ad4e4bd1c8c8eb714b689d378274c1ced inherit pub_methods_classautopas_1_1CellTraversal"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting-threshold for traversals that use the CellFunctor.  <br /></td></tr>
+<tr class="separator:ad4e4bd1c8c8eb714b689d378274c1ced inherit pub_methods_classautopas_1_1CellTraversal"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classautopas_1_1TraversalInterface"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classautopas_1_1TraversalInterface')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classautopas_1_1TraversalInterface.html">autopas::TraversalInterface</a></td></tr>
 <tr class="memitem:a60db78538e6a5af17479f006a07fb21c inherit pub_methods_classautopas_1_1TraversalInterface"><td class="memItemLeft" align="right" valign="top"><a id="a60db78538e6a5af17479f006a07fb21c" name="a60db78538e6a5af17479f006a07fb21c"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~TraversalInterface</b> ()=default</td></tr>
@@ -463,8 +469,8 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 
 </div>
 </div>
-<a id="a04598b36b7a08415cd56a604a9322bd0" name="a04598b36b7a08415cd56a604a9322bd0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a04598b36b7a08415cd56a604a9322bd0">&#9670;&#160;</a></span>setSortingThreshold()</h2>
+<a id="a502bcdc8c25e2e58fdef6859ab4904b4" name="a502bcdc8c25e2e58fdef6859ab4904b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a502bcdc8c25e2e58fdef6859ab4904b4">&#9670;&#160;</a></span>setAoSSortingThreshold()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -475,10 +481,10 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1LCC01Traversal.html">autopas::LCC01Traversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1Functor.html">Functor</a>, combineSoA &gt;::setSortingThreshold </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1LCC01Traversal.html">autopas::LCC01Traversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1Functor.html">Functor</a>, combineSoA &gt;::setAoSSortingThreshold </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>sortingThreshold</em></td><td>)</td>
+          <td class="paramname"><em>aosSortingThreshold</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -489,15 +495,53 @@ template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">Particl
 </table>
 </div><div class="memdoc">
 
-<p>Set the sorting-threshold for traversals that use the CellFunctor If the sum of the number of particles in two cells is greater or equal to that value, the CellFunctor creates a sorted view of the particles to avoid unnecessary distance checks.   </p>
+<p>Set the aos-sorting-threshold for traversals that use the CellFunctor If the sum of the number of particles in two cells is greater or equal to that value, the CellFunctor creates a sorted view of the particles to avoid unnecessary distance checks.   </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">sortingThreshold</td><td>Sum of the number of particles in two cells from which sorting should be enabled   </td></tr>
+    <tr><td class="paramname">aosSortingThreshold</td><td>Sum of the number of particles in two cells from which sorting should be enabled   </td></tr>
   </table>
   </dd>
 </dl>
 
-<p>Implements <a class="el" href="classautopas_1_1CellTraversal.html#afb5af56d616fb6310d54f54a705747fd">autopas::CellTraversal&lt; ParticleCell &gt;</a>.</p>
+<p>Implements <a class="el" href="classautopas_1_1CellTraversal.html#a800eef59daee4cf1238ccfca58a20c33">autopas::CellTraversal&lt; ParticleCell &gt;</a>.</p>
+
+</div>
+</div>
+<a id="afc6783e3d5db4b9898bb89491cd56d1a" name="afc6783e3d5db4b9898bb89491cd56d1a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc6783e3d5db4b9898bb89491cd56d1a">&#9670;&#160;</a></span>setSoASortingThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a> , class <a class="el" href="classautopas_1_1Functor.html">Functor</a> , bool combineSoA = false&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1LCC01Traversal.html">autopas::LCC01Traversal</a>&lt; <a class="el" href="classautopas_1_1ParticleCell.html">ParticleCell</a>, <a class="el" href="classautopas_1_1Functor.html">Functor</a>, combineSoA &gt;::setSoASortingThreshold </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>soaSortingThreshold</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting-threshold for traversals that use the CellFunctor.   </p>
+<p>If the sum of the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> buffer sizes of two cells exceeds this value, the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> path uses SoAFunctorPairSorted. Traversals that hold a CellFunctor should forward to it; others should explicitly override with an empty body. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">soaSortingThreshold</td><td>Sum of the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> buffer sizes from which <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting should be enabled.   </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classautopas_1_1CellTraversal.html#ad4e4bd1c8c8eb714b689d378274c1ced">autopas::CellTraversal&lt; ParticleCell &gt;</a>.</p>
 
 </div>
 </div>

@@ -1,20 +1,14 @@
 var searchData=
 [
-  ['tag_5fdouble_0',['tag_double',['../LJFunctorHWY_8h.html#a536e2465c4dc414b6db57ec8d3b339c1',1,'mdLib']]],
-  ['tag_5fdouble_5fhalf_1',['tag_double_half',['../LJFunctorHWY_8h.html#a15973d3ece07c54a4365712e203486be',1,'mdLib']]],
-  ['tag_5flong_2',['tag_long',['../LJFunctorHWY_8h.html#ad5ef8f568e957902b214440bd30f6192',1,'mdLib']]],
-  ['theta_3',['theta',['../classautopas_1_1GaussianHyperparameters.html#ab83c20b6c74d1514b1bd8e98f152eaac',1,'autopas::GaussianHyperparameters']]],
-  ['timecomputeinteractions_4',['timeComputeInteractions',['../structautopas_1_1IterationMeasurements.html#ac74a7d4dcef1af211c1966649a850725',1,'autopas::IterationMeasurements']]],
-  ['timerebuild_5',['timeRebuild',['../structautopas_1_1IterationMeasurements.html#a561729016a061d11da48ad62913c3f59',1,'autopas::IterationMeasurements']]],
-  ['timeremaindertraversal_6',['timeRemainderTraversal',['../structautopas_1_1IterationMeasurements.html#a8ab74dd953f1b237d9d01ff19f5f1bff',1,'autopas::IterationMeasurements']]],
-  ['timetotal_7',['timeTotal',['../structautopas_1_1IterationMeasurements.html#a6cc045f6fe1eba2d4511a8d7fb692017',1,'autopas::IterationMeasurements']]],
-  ['traversal_8',['traversal',['../classautopas_1_1Configuration.html#a064071ca0d7525b3b2c4a743306b545a',1,'autopas::Configuration']]],
-  ['traversaloptions_9',['traversalOptions',['../structautopas_1_1SearchSpaceGenerators_1_1OptionSpace.html#abb96c678ba34d3ef1a25dc1f040723c9',1,'autopas::SearchSpaceGenerators::OptionSpace']]],
-  ['traversalvalue_10',['traversalValue',['../classautopas_1_1Evidence.html#a6bd96051cc3cc16a2fffc4d0814744ca',1,'autopas::Evidence']]],
-  ['tunablecontinuousdims_11',['tunableContinuousDims',['../classautopas_1_1FeatureVectorEncoder.html#a0fb94cd8d4054e7999e68d9b28312c7d',1,'autopas::FeatureVectorEncoder']]],
-  ['tunablediscretedims_12',['tunableDiscreteDims',['../classautopas_1_1FeatureVectorEncoder.html#abb18e2e9ba84755f6a7b827724af0d4e',1,'autopas::FeatureVectorEncoder']]],
-  ['tuninginterval_13',['tuningInterval',['../structautopas_1_1AutoTunerInfo.html#a02bc4a5a5f396cb504c49cee5e515a5b',1,'autopas::AutoTunerInfo']]],
-  ['tuningmetric_14',['tuningMetric',['../structautopas_1_1AutoTunerInfo.html#a37a8d4955cb9c77ba75bed2b7a242f6c',1,'autopas::AutoTunerInfo']]],
-  ['tuningphase_15',['tuningPhase',['../classautopas_1_1Evidence.html#a6c4d4c64cbb0f2ccd74512525217efba',1,'autopas::Evidence']]],
-  ['type_16',['type',['../structautopas_1_1RuleSyntax_1_1Literal.html#ada18fb6a784c2e4c0f916fa61670569a',1,'autopas::RuleSyntax::Literal']]]
+  ['sameproperties_0',['sameProperties',['../structautopas_1_1RuleSyntax_1_1ConfigurationOrder.html#a080fd4585eaa816997aa6864d578e53a',1,'autopas::RuleSyntax::ConfigurationOrder']]],
+  ['score_1',['score',['../classautopas_1_1GaussianHyperparameters.html#aa617089d1878cbbba961e36eaabede34',1,'autopas::GaussianHyperparameters']]],
+  ['selectorstrategy_2',['selectorStrategy',['../structautopas_1_1AutoTunerInfo.html#a0b7721e6f84f4f73271026fab0fbefe6',1,'autopas::AutoTunerInfo']]],
+  ['smaller_3',['smaller',['../structautopas_1_1RuleSyntax_1_1ConfigurationOrder.html#aacf718320d49abdb512183c1bac1414f',1,'autopas::RuleSyntax::ConfigurationOrder']]],
+  ['soasortingthreshold_4',['soaSortingThreshold',['../classautopas_1_1LogicHandlerInfo.html#a9f918f4967fd09fd17995c1aaef4a6f0',1,'autopas::LogicHandlerInfo::soaSortingThreshold'],['../classautopas_1_1ContainerSelectorInfo.html#ad44abef926e6e44c38786e2e8466a79b',1,'autopas::ContainerSelectorInfo::soaSortingThreshold']]],
+  ['starti_5',['startI',['../structautopas_1_1SoASortingData.html#aeca3880038eb02e8bb3e83aa92afbc46',1,'autopas::SoASortingData']]],
+  ['startindexintower_6',['startIndexInTower',['../structautopas_1_1VerletClusterLists_1_1ClusterRange.html#a4fb0eef72f40cc69789cb0ab1ccee0b4',1,'autopas::VerletClusterLists::ClusterRange']]],
+  ['starttowerindex_7',['startTowerIndex',['../structautopas_1_1VerletClusterLists_1_1ClusterRange.html#a557e19ba7dc9a554f7801d9344bf0c5d',1,'autopas::VerletClusterLists::ClusterRange']]],
+  ['statements_8',['statements',['../structautopas_1_1RuleSyntax_1_1RuleBasedProgramTree.html#aab424a422bd890b9b7f56de9ef0ed4af',1,'autopas::RuleSyntax::RuleBasedProgramTree']]],
+  ['statusfilename_9',['statusFileName',['../namespaceautopas_1_1memoryProfiler.html#afaf464519ff2ebd2413975b4c83f37fe',1,'autopas::memoryProfiler']]],
+  ['supportssoasorting_10',['supportsSoASorting',['../classautopas_1_1Functor.html#aff320f85da10d3562f62b077493b1b80',1,'autopas::Functor::supportsSoASorting'],['../classmdLib_1_1LJFunctorHWY.html#a84c83aee34a4d6b7d09c4ef7866eb89d',1,'mdLib::LJFunctorHWY::supportsSoASorting']]]
 ];

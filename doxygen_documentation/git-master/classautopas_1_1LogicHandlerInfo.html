@@ -146,10 +146,12 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>verletSkin</b> {0.4
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><b>verletClusterSize</b> {4}</td></tr>
 <tr class="memdesc:a6305b80526eb2af95aa0dbcfe8a87393"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of particles in a cluster to use in VCL. <br /></td></tr>
 <tr class="separator:a6305b80526eb2af95aa0dbcfe8a87393"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acc419ac23e823eb82f738d3ac85ba981"><td class="memItemLeft" align="right" valign="top"><a id="acc419ac23e823eb82f738d3ac85ba981" name="acc419ac23e823eb82f738d3ac85ba981"></a>
-size_t&#160;</td><td class="memItemRight" valign="bottom"><b>sortingThreshold</b> {8}</td></tr>
-<tr class="memdesc:acc419ac23e823eb82f738d3ac85ba981"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of particles in two cells from which sorting should be performed for traversal that use the CellFunctor. <br /></td></tr>
-<tr class="separator:acc419ac23e823eb82f738d3ac85ba981"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dff3ae51b444067810e5e80c8811bc0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandlerInfo.html#a0dff3ae51b444067810e5e80c8811bc0">aosSortingThreshold</a> {8}</td></tr>
+<tr class="memdesc:a0dff3ae51b444067810e5e80c8811bc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of particles in two cells from which sorting should be performed for traversal that use the CellFunctor.  <br /></td></tr>
+<tr class="separator:a0dff3ae51b444067810e5e80c8811bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f918f4967fd09fd17995c1aaef4a6f0"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandlerInfo.html#a9f918f4967fd09fd17995c1aaef4a6f0">soaSortingThreshold</a> {50}</td></tr>
+<tr class="memdesc:a9f918f4967fd09fd17995c1aaef4a6f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Number of particles in two <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> buffers from which <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting should be performed.  <br /></td></tr>
+<tr class="separator:a9f918f4967fd09fd17995c1aaef4a6f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3e35d23ee1b988eee4deed7045f0f4ef"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandlerInfo.html#a3e35d23ee1b988eee4deed7045f0f4ef">deltaT</a> {0}</td></tr>
 <tr class="memdesc:a3e35d23ee1b988eee4deed7045f0f4ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Time step used in the simulation.  <br /></td></tr>
 <tr class="separator:a3e35d23ee1b988eee4deed7045f0f4ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -157,6 +159,23 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>sortingThreshold</b
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class that wraps all arguments for the logic handler to provide a more stable API. </p>
 </div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a0dff3ae51b444067810e5e80c8811bc0" name="a0dff3ae51b444067810e5e80c8811bc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dff3ae51b444067810e5e80c8811bc0">&#9670;&#160;</a></span>aosSortingThreshold</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t autopas::LogicHandlerInfo::aosSortingThreshold {8}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of particles in two cells from which sorting should be performed for traversal that use the CellFunctor. </p>
+<p>For details on the chosen default threshold see: <a href="https://github.com/AutoPas/AutoPas/pull/619">https://github.com/AutoPas/AutoPas/pull/619</a> </p>
+
+</div>
+</div>
 <a id="a3e35d23ee1b988eee4deed7045f0f4ef" name="a3e35d23ee1b988eee4deed7045f0f4ef"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a3e35d23ee1b988eee4deed7045f0f4ef">&#9670;&#160;</a></span>deltaT</h2>
 
@@ -171,6 +190,23 @@ size_t&#160;</td><td class="memItemRight" valign="bottom"><b>sortingThreshold</b
 
 <p>Time step used in the simulation. </p>
 <p>This is currently used in rebuild frequency estimation for dynamic containers. </p>
+
+</div>
+</div>
+<a id="a9f918f4967fd09fd17995c1aaef4a6f0" name="a9f918f4967fd09fd17995c1aaef4a6f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f918f4967fd09fd17995c1aaef4a6f0">&#9670;&#160;</a></span>soaSortingThreshold</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t autopas::LogicHandlerInfo::soaSortingThreshold {50}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Number of particles in two <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> buffers from which <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting should be performed. </p>
+<p>Default comes from the LJFunctorHWY Benchmarks. </p>
 
 </div>
 </div>

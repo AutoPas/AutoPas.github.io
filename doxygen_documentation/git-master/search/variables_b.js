@@ -1,8 +1,14 @@
 var searchData=
 [
-  ['neededstacksize_0',['neededStackSize',['../structautopas_1_1RuleVM_1_1Program.html#a28cb7a5808c4a18b04b5123e8237795a',1,'autopas::RuleVM::Program']]],
-  ['newton3_1',['newton3',['../classautopas_1_1Configuration.html#a92957ab0a0aea511641fe63d76f28684',1,'autopas::Configuration']]],
-  ['newton3options_2',['newton3Options',['../structautopas_1_1SearchSpaceGenerators_1_1OptionSpace.html#a9179599bce50a73ef8dd38d6ab52d521',1,'autopas::SearchSpaceGenerators::OptionSpace']]],
-  ['normalscale_3',['normalScale',['../Math_8h.html#aca362e100bc1a4f790e6120c513aeae6',1,'autopas::utils::Math']]],
-  ['numclusters_4',['numClusters',['../structautopas_1_1VerletClusterLists_1_1ClusterRange.html#acbd15ad32d2d0fb58ce85164c99d5cbc',1,'autopas::VerletClusterLists::ClusterRange']]]
+  ['max_5fulp_5fdistance_0',['MAX_ULP_DISTANCE',['../Math_8h.html#a7291977aabd8aa56135249876bbd395d',1,'autopas::utils::Math']]],
+  ['maxevidence_1',['maxEvidence',['../structautopas_1_1TuningStrategyFactoryInfo.html#a679124ea5358a4fc15a1c861f0472e40',1,'autopas::TuningStrategyFactoryInfo']]],
+  ['maxindex_2',['maxIndex',['../structautopas_1_1SoASortingData.html#ad9d797d0473443a964350b2b66faf11b',1,'autopas::SoASortingData']]],
+  ['maxsamples_3',['maxSamples',['../structautopas_1_1AutoTunerInfo.html#a1dd1918396b04ba3ebccf0bce793aef9',1,'autopas::AutoTunerInfo']]],
+  ['maxtuningphaseswithouttest_4',['maxTuningPhasesWithoutTest',['../structautopas_1_1TuningStrategyFactoryInfo.html#a85072c3af2355d4c53637454c91c7374',1,'autopas::TuningStrategyFactoryInfo']]],
+  ['mean_5',['mean',['../classautopas_1_1GaussianHyperparameters.html#adc5f286f5f22857a98acccb06de057a1',1,'autopas::GaussianHyperparameters']]],
+  ['minindex_6',['minIndex',['../structautopas_1_1SoASortingData.html#a5eb337b0ab53302e3302d4a7db33dc7a',1,'autopas::SoASortingData']]],
+  ['minnumberofevidence_7',['minNumberOfEvidence',['../structautopas_1_1TuningStrategyFactoryInfo.html#ae5e0eb2a5d34b2f648c6087e7091eb86',1,'autopas::TuningStrategyFactoryInfo']]],
+  ['mpidivideandconquer_8',['mpiDivideAndConquer',['../structautopas_1_1TuningStrategyFactoryInfo.html#aed889cc3e087605d9ba451e1119eef1c',1,'autopas::TuningStrategyFactoryInfo']]],
+  ['mpituningmaxdifferenceforbucket_9',['mpiTuningMaxDifferenceForBucket',['../structautopas_1_1TuningStrategyFactoryInfo.html#a1a4e55e93c5feb1178ea8ee54a5ccb1b',1,'autopas::TuningStrategyFactoryInfo']]],
+  ['mpituningweightformaxdensity_10',['mpiTuningWeightForMaxDensity',['../structautopas_1_1TuningStrategyFactoryInfo.html#a0de08a78462f71d43442ca5a2a19569b',1,'autopas::TuningStrategyFactoryInfo']]]
 ];
