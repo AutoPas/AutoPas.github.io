@@ -313,6 +313,9 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1GaussianProcess.html">GaussianProcess</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gaussian process is a stochastical model.  <a href="classautopas_1_1GaussianProcess.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1InteractionListGeneratorFunctor.html">InteractionListGeneratorFunctor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This functor generates lists of particles within interactionLength of each other: can be used internally for Verlet list generation and provides a base for a public-facing externally used version, provided in the applicationLibrary.  <a href="classautopas_1_1InteractionListGeneratorFunctor.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1IterationLogger.html">IterationLogger</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper to log performance data of <a class="el" href="classautopas_1_1AutoPas.html#ad72b8f0c81c56984e0647becd8bb177d" title="Function to iterate over all inter-particle interactions in the container This function only handles ...">AutoPas::computeInteractions()</a> to a csv file for easier analysis.  <a href="classautopas_1_1IterationLogger.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -381,6 +384,9 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1MPIParallelizedStrategy.html">MPIParallelizedStrategy</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This strategy spreads the configuration queue in a round robin fashion over all ranks (with similar domain).  <a href="classautopas_1_1MPIParallelizedStrategy.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1NeighborIdentificationFunctor.html">NeighborIdentificationFunctor</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This functor generates lists of particles within interactionLength of each other, which could be used within user simulators to replace their neighbor identification/contact detection/cutoff check passes, although they should consider the warning below.  <a href="classautopas_1_1NeighborIdentificationFunctor.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1NeighborListsBuffer.html">NeighborListsBuffer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class for manual memory management of neighbor lists.  <a href="classautopas_1_1NeighborListsBuffer.html#details">More...</a><br /></td></tr>
@@ -560,7 +566,6 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Particles are divided into clusters.  <a href="classautopas_1_1VerletClusterLists.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListHelpers.html">VerletListHelpers</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Class of helpers for the <a class="el" href="classautopas_1_1VerletLists.html" title="Verlet Lists container.">VerletLists</a> class.  <a href="classautopas_1_1VerletListHelpers.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletLists.html">VerletLists</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Verlet Lists container.  <a href="classautopas_1_1VerletLists.html#details">More...</a><br /></td></tr>
@@ -4079,7 +4084,7 @@ template&lt;typename Particle_T , typename FunctionType &gt; </div>
 </div><div class="memdoc">
 
 <p>Default size for a cache line. </p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000028">Todo:</a></b></dt><dd>C++17: replace value by std::hardware_destructive_interference_size not yet possible: as of 27.06.2019 this(P0154R1) is in neither libstc++ (gnu) nor libc++ (clang) </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000027">Todo:</a></b></dt><dd>C++17: replace value by std::hardware_destructive_interference_size not yet possible: as of 27.06.2019 this(P0154R1) is in neither libstc++ (gnu) nor libc++ (clang) </dd></dl>
 
 </div>
 </div>
