@@ -173,6 +173,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aead545475820f043b6693c0474a78946"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsLinkedBase.html#aead545475820f043b6693c0474a78946">VerletListsLinkedBase</a> (const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax, const double cutoff, const double skin, const double cellSizeFactor)</td></tr>
 <tr class="memdesc:aead545475820f043b6693c0474a78946"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the <a class="el" href="classautopas_1_1VerletListsLinkedBase.html" title="Base class for Verlet lists which use an underlying linked cells container.">VerletListsLinkedBase</a> class.  <br /></td></tr>
 <tr class="separator:aead545475820f043b6693c0474a78946"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf0bd4f329ad58cf11c9aa5d3a38cf03"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsLinkedBase.html#acf0bd4f329ad58cf11c9aa5d3a38cf03">setAoSSortingThresholds</a> (std::shared_ptr&lt; const <a class="el" href="structautopas_1_1SortingThresholdInfoInterface.html">SortingThresholdInfoInterface</a> &gt; aosSortingThresholds) override</td></tr>
+<tr class="memdesc:acf0bd4f329ad58cf11c9aa5d3a38cf03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the aos-sorting-threshold for traversals that use the CellFunctor.    <br /></td></tr>
+<tr class="separator:acf0bd4f329ad58cf11c9aa5d3a38cf03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8db9f7039b37db7131e3ab4edfe58beb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a8db9f7039b37db7131e3ab4edfe58beb">setSoASortingThresholds</a> (std::shared_ptr&lt; const <a class="el" href="structautopas_1_1SortingThresholdInfoInterface.html">SortingThresholdInfoInterface</a> &gt; soaSortingThresholds) override</td></tr>
+<tr class="memdesc:a8db9f7039b37db7131e3ab4edfe58beb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting-threshold for traversals that use the CellFunctor.    <br /></td></tr>
+<tr class="separator:a8db9f7039b37db7131e3ab4edfe58beb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a23e51b15eb241ff31812f23a25a897c8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a23e51b15eb241ff31812f23a25a897c8">reserve</a> (size_t numParticles, size_t numParticlesHaloEstimate) override</td></tr>
 <tr class="memdesc:a23e51b15eb241ff31812f23a25a897c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reserve memory for a given number of particles in the container and logic layers.    <br /></td></tr>
 <tr class="separator:a23e51b15eb241ff31812f23a25a897c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -335,6 +341,12 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ParticleContainer
 <tr class="memitem:ab383284c81486ed2eeaf8af598c4a4cb inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#ab383284c81486ed2eeaf8af598c4a4cb">computeInteractions</a> (<a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *traversal)=0</td></tr>
 <tr class="memdesc:ab383284c81486ed2eeaf8af598c4a4cb inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates over all particle multiples (e.g.  <br /></td></tr>
 <tr class="separator:ab383284c81486ed2eeaf8af598c4a4cb inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa81f84239ce520390f7e69b3a2beedbc inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#aa81f84239ce520390f7e69b3a2beedbc">setAoSSortingThresholds</a> (std::shared_ptr&lt; const <a class="el" href="structautopas_1_1SortingThresholdInfoInterface.html">SortingThresholdInfoInterface</a> &gt; aosSortingThresholds)=0</td></tr>
+<tr class="memdesc:aa81f84239ce520390f7e69b3a2beedbc inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the aos-sorting-threshold for traversals that use the CellFunctor.  <br /></td></tr>
+<tr class="separator:aa81f84239ce520390f7e69b3a2beedbc inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4fd4a60db4fb126139e3ed77fd1eaa4b inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a4fd4a60db4fb126139e3ed77fd1eaa4b">setSoASortingThresholds</a> (std::shared_ptr&lt; const <a class="el" href="structautopas_1_1SortingThresholdInfoInterface.html">SortingThresholdInfoInterface</a> &gt; soaSortingThresholds)=0</td></tr>
+<tr class="memdesc:a4fd4a60db4fb126139e3ed77fd1eaa4b inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting-threshold for traversals that use the CellFunctor.  <br /></td></tr>
+<tr class="separator:a4fd4a60db4fb126139e3ed77fd1eaa4b inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1778749aee00722d67d0ac4067df602e inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual const std::array&lt; double, 3 &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a1778749aee00722d67d0ac4067df602e">getBoxMax</a> () const =0</td></tr>
 <tr class="memdesc:a1778749aee00722d67d0ac4067df602e inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the upper corner of the container without halo.  <br /></td></tr>
 <tr class="separator:a1778749aee00722d67d0ac4067df602e inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1752,6 +1764,44 @@ template&lt;class Particle_T &gt; </div>
 
 </div>
 </div>
+<a id="acf0bd4f329ad58cf11c9aa5d3a38cf03" name="acf0bd4f329ad58cf11c9aa5d3a38cf03"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf0bd4f329ad58cf11c9aa5d3a38cf03">&#9670;&#160;</a></span>setAoSSortingThresholds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Particle_T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1VerletListsLinkedBase.html">autopas::VerletListsLinkedBase</a>&lt; Particle_T &gt;::setAoSSortingThresholds </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; const <a class="el" href="structautopas_1_1SortingThresholdInfoInterface.html">SortingThresholdInfoInterface</a> &gt;&#160;</td>
+          <td class="paramname"><em>aosSortingThresholds</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the aos-sorting-threshold for traversals that use the CellFunctor.   </p>
+<p>Cell-based containers store this shared_ptr as-is (agnostic to the concrete shape it points to) and forward it to freshly generated traversals in prepareTraversal(). Containers without a CellFunctor should explicitly override with an empty body. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">aosSortingThresholds</td><td>This container does not use a CellFunctor, so the function has no effect here. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classautopas_1_1ParticleContainerInterface.html#aa81f84239ce520390f7e69b3a2beedbc">autopas::ParticleContainerInterface&lt; Particle_T &gt;</a>.</p>
+
+</div>
+</div>
 <a id="a908f25f81431b27a0db7c35a89145c65" name="a908f25f81431b27a0db7c35a89145c65"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a908f25f81431b27a0db7c35a89145c65">&#9670;&#160;</a></span>setCutoff()</h2>
 
@@ -1787,6 +1837,44 @@ template&lt;class Particle_T &gt; </div>
 </dl>
 
 <p>Implements <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a6271bbef734203f7d902f61a1e7c9cc3">autopas::ParticleContainerInterface&lt; Particle_T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="a8db9f7039b37db7131e3ab4edfe58beb" name="a8db9f7039b37db7131e3ab4edfe58beb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8db9f7039b37db7131e3ab4edfe58beb">&#9670;&#160;</a></span>setSoASortingThresholds()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Particle_T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1VerletListsLinkedBase.html">autopas::VerletListsLinkedBase</a>&lt; Particle_T &gt;::setSoASortingThresholds </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; const <a class="el" href="structautopas_1_1SortingThresholdInfoInterface.html">SortingThresholdInfoInterface</a> &gt;&#160;</td>
+          <td class="paramname"><em>soaSortingThresholds</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Set the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting-threshold for traversals that use the CellFunctor.   </p>
+<p>Cell-based containers store this shared_ptr as-is (agnostic to the concrete shape it points to) and forward it to freshly generated traversals in prepareTraversal(). Containers without a CellFunctor should explicitly override with an empty body. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">soaSortingThresholds</td><td>This container does not use a CellFunctor, so the function has no effect here. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a4fd4a60db4fb126139e3ed77fd1eaa4b">autopas::ParticleContainerInterface&lt; Particle_T &gt;</a>.</p>
 
 </div>
 </div>

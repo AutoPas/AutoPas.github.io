@@ -229,6 +229,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afb91d28c753b4b7b5eb11be19326e0f0"><td class="memItemLeft" align="right" valign="top">const std::set&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#afb91d28c753b4b7b5eb11be19326e0f0">getSearchSpace</a> () const</td></tr>
 <tr class="memdesc:afb91d28c753b4b7b5eb11be19326e0f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return the search space as a const reference.  <br /></td></tr>
 <tr class="separator:afb91d28c753b4b7b5eb11be19326e0f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55b9599345e210b1a1313a4f01fc4db1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1SortingThresholdBenchmark.html">SortingThresholdBenchmark</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a55b9599345e210b1a1313a4f01fc4db1">getSortingThresholdBenchmark</a> ()</td></tr>
+<tr class="memdesc:a55b9599345e210b1a1313a4f01fc4db1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the sorting-threshold benchmark owned by this tuner.  <br /></td></tr>
+<tr class="separator:a55b9599345e210b1a1313a4f01fc4db1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class manages all logic related to the auto tuning mechanic. </p>
@@ -536,6 +539,34 @@ Public Member Functions</h2></td></tr>
 
 <p>Return the search space as a const reference. </p>
 <dl class="section return"><dt>Returns</dt><dd>the search space. </dd></dl>
+
+</div>
+</div>
+<a id="a55b9599345e210b1a1313a4f01fc4db1" name="a55b9599345e210b1a1313a4f01fc4db1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55b9599345e210b1a1313a4f01fc4db1">&#9670;&#160;</a></span>getSortingThresholdBenchmark()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classautopas_1_1SortingThresholdBenchmark.html">SortingThresholdBenchmark</a> &amp; autopas::AutoTuner::getSortingThresholdBenchmark </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the sorting-threshold benchmark owned by this tuner. </p>
+<p>getAoSThreshold()/getSoAThreshold() are always safe to read. Callers only need to consult hasRunAoS()/hasRunSoA() to decide whether a benchmark run is still needed. </p><dl class="section return"><dt>Returns</dt><dd>Reference to the benchmark object. </dd></dl>
 
 </div>
 </div>

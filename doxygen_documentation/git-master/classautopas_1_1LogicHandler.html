@@ -126,9 +126,9 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7cd0c6851d9c3bb39fdc5fc0cc1c36df"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a7cd0c6851d9c3bb39fdc5fc0cc1c36df">LogicHandler</a> (const std::shared_ptr&lt; <a class="el" href="classautopas_1_1TuningManager.html">TuningManager</a> &gt; &amp;tunerManager, const <a class="el" href="classautopas_1_1LogicHandlerInfo.html">LogicHandlerInfo</a> &amp;logicHandlerInfo, unsigned int rebuildFrequency, const std::string &amp;outputSuffix)</td></tr>
-<tr class="memdesc:a7cd0c6851d9c3bb39fdc5fc0cc1c36df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the <a class="el" href="classautopas_1_1LogicHandler.html" title="The LogicHandler takes care of the containers s.t.">LogicHandler</a>.  <br /></td></tr>
-<tr class="separator:a7cd0c6851d9c3bb39fdc5fc0cc1c36df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8dcfb4423efac99bd22dcea5790e242"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#ac8dcfb4423efac99bd22dcea5790e242">LogicHandler</a> (const std::shared_ptr&lt; <a class="el" href="classautopas_1_1TuningManager.html">TuningManager</a> &gt; &amp;tunerManager, const <a class="el" href="classautopas_1_1LogicHandlerInfo.html">LogicHandlerInfo</a> &amp;logicHandlerInfo, unsigned int rebuildFrequency, const std::string &amp;outputSuffix, size_t aosSortingThresholdFallback, size_t soaSortingThresholdFallback)</td></tr>
+<tr class="memdesc:ac8dcfb4423efac99bd22dcea5790e242"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor of the <a class="el" href="classautopas_1_1LogicHandler.html" title="The LogicHandler takes care of the containers s.t.">LogicHandler</a>.  <br /></td></tr>
+<tr class="separator:ac8dcfb4423efac99bd22dcea5790e242"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a960151be95c654d7225255f1348c0cb4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1ParticleContainerInterface.html">ParticleContainerInterface</a>&lt; Particle_T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a960151be95c654d7225255f1348c0cb4">getContainer</a> ()</td></tr>
 <tr class="memdesc:a960151be95c654d7225255f1348c0cb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a non-const reference to the currently selected particle container.  <br /></td></tr>
 <tr class="separator:a960151be95c654d7225255f1348c0cb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -222,8 +222,8 @@ Public Member Functions</h2></td></tr>
 class autopas::LogicHandler&lt; Particle_T &gt;</div><p>The <a class="el" href="classautopas_1_1LogicHandler.html" title="The LogicHandler takes care of the containers s.t.">LogicHandler</a> takes care of the containers s.t. </p>
 <p>they are all in the same valid state. This is mainly done by incorporating a global container rebuild frequency, which defines when containers and their neighbor lists will be rebuilt. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a7cd0c6851d9c3bb39fdc5fc0cc1c36df" name="a7cd0c6851d9c3bb39fdc5fc0cc1c36df"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7cd0c6851d9c3bb39fdc5fc0cc1c36df">&#9670;&#160;</a></span>LogicHandler()</h2>
+<a id="ac8dcfb4423efac99bd22dcea5790e242" name="ac8dcfb4423efac99bd22dcea5790e242"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8dcfb4423efac99bd22dcea5790e242">&#9670;&#160;</a></span>LogicHandler()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -255,7 +255,19 @@ template&lt;typename Particle_T &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>outputSuffix</em>&#160;</td>
+          <td class="paramname"><em>outputSuffix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>aosSortingThresholdFallback</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>soaSortingThresholdFallback</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -277,9 +289,12 @@ template&lt;typename Particle_T &gt; </div>
     <tr><td class="paramname">logicHandlerInfo</td><td></td></tr>
     <tr><td class="paramname">rebuildFrequency</td><td></td></tr>
     <tr><td class="paramname">outputSuffix</td><td></td></tr>
+    <tr><td class="paramname">aosSortingThresholdFallback</td><td>Default AoS sorting threshold used to seed newly generated containers. Mirrors <a class="el" href="structautopas_1_1AutoTunerInfo.html#a3d161e23d4eb71d1cd181d67729c1d9d" title="Default number of particles in two cells from which AoS sorting should be performed,...">AutoTunerInfo::aosSortingThreshold</a>, which independently seeds each <a class="el" href="classautopas_1_1AutoTuner.html" title="This class manages all logic related to the auto tuning mechanic.">AutoTuner</a>'s <a class="el" href="classautopas_1_1SortingThresholdBenchmark.html" title="Determines the per-Newton3-state, per-direction-type particle-count threshold at which using a sorted...">SortingThresholdBenchmark</a>. Passed here explicitly since <a class="el" href="classautopas_1_1LogicHandler.html" title="The LogicHandler takes care of the containers s.t.">LogicHandler</a> has no other access to <a class="el" href="structautopas_1_1AutoTunerInfo.html" title="Helper struct encapsulating most minor information for the auto tuner.">AutoTunerInfo</a>. </td></tr>
+    <tr><td class="paramname">soaSortingThresholdFallback</td><td>Default <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting threshold used to seed newly generated containers. </td></tr>
   </table>
   </dd>
 </dl>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="structautopas_1_1AutoTunerInfo.html#a3d161e23d4eb71d1cd181d67729c1d9d" title="Default number of particles in two cells from which AoS sorting should be performed,...">AutoTunerInfo::aosSortingThreshold</a>, <a class="el" href="structautopas_1_1AutoTunerInfo.html#a10daffd933e7e4057e5020161cd8a7e7" title="Default number of particles in two SoA buffers from which SoA sorting should be performed,...">AutoTunerInfo::soaSortingThreshold</a> </dd></dl>
 
 </div>
 </div>

@@ -1,14 +1,17 @@
 var searchData=
 [
-  ['max_5fulp_5fdistance_0',['MAX_ULP_DISTANCE',['../Math_8h.html#a7291977aabd8aa56135249876bbd395d',1,'autopas::utils::Math']]],
-  ['maxevidence_1',['maxEvidence',['../structautopas_1_1TuningStrategyFactoryInfo.html#a679124ea5358a4fc15a1c861f0472e40',1,'autopas::TuningStrategyFactoryInfo']]],
-  ['maxindex_2',['maxIndex',['../structautopas_1_1SoASortingData.html#ad9d797d0473443a964350b2b66faf11b',1,'autopas::SoASortingData']]],
-  ['maxsamples_3',['maxSamples',['../structautopas_1_1AutoTunerInfo.html#a1dd1918396b04ba3ebccf0bce793aef9',1,'autopas::AutoTunerInfo']]],
-  ['maxtuningphaseswithouttest_4',['maxTuningPhasesWithoutTest',['../structautopas_1_1TuningStrategyFactoryInfo.html#a85072c3af2355d4c53637454c91c7374',1,'autopas::TuningStrategyFactoryInfo']]],
-  ['mean_5',['mean',['../classautopas_1_1GaussianHyperparameters.html#adc5f286f5f22857a98acccb06de057a1',1,'autopas::GaussianHyperparameters']]],
-  ['minindex_6',['minIndex',['../structautopas_1_1SoASortingData.html#a5eb337b0ab53302e3302d4a7db33dc7a',1,'autopas::SoASortingData']]],
-  ['minnumberofevidence_7',['minNumberOfEvidence',['../structautopas_1_1TuningStrategyFactoryInfo.html#ae5e0eb2a5d34b2f648c6087e7091eb86',1,'autopas::TuningStrategyFactoryInfo']]],
-  ['mpidivideandconquer_8',['mpiDivideAndConquer',['../structautopas_1_1TuningStrategyFactoryInfo.html#aed889cc3e087605d9ba451e1119eef1c',1,'autopas::TuningStrategyFactoryInfo']]],
-  ['mpituningmaxdifferenceforbucket_9',['mpiTuningMaxDifferenceForBucket',['../structautopas_1_1TuningStrategyFactoryInfo.html#a1a4e55e93c5feb1178ea8ee54a5ccb1b',1,'autopas::TuningStrategyFactoryInfo']]],
-  ['mpituningweightformaxdensity_10',['mpiTuningWeightForMaxDensity',['../structautopas_1_1TuningStrategyFactoryInfo.html#a0de08a78462f71d43442ca5a2a19569b',1,'autopas::TuningStrategyFactoryInfo']]]
+  ['n3cornerthreshold_0',['n3CornerThreshold',['../structautopas_1_1SortingThresholdInfo2B.html#a6aa9d09bfbf970ffdeae11f220f37e00',1,'autopas::SortingThresholdInfo2B']]],
+  ['n3edgethreshold_1',['n3EdgeThreshold',['../structautopas_1_1SortingThresholdInfo2B.html#a68c62f9a29b01ec4b8689b7381456d25',1,'autopas::SortingThresholdInfo2B']]],
+  ['n3facethreshold_2',['n3FaceThreshold',['../structautopas_1_1SortingThresholdInfo2B.html#a2705a541a6f08f993f885f48be9d5d1f',1,'autopas::SortingThresholdInfo2B']]],
+  ['neededstacksize_3',['neededStackSize',['../structautopas_1_1RuleVM_1_1Program.html#a28cb7a5808c4a18b04b5123e8237795a',1,'autopas::RuleVM::Program']]],
+  ['newton3_4',['newton3',['../classautopas_1_1Configuration.html#a92957ab0a0aea511641fe63d76f28684',1,'autopas::Configuration']]],
+  ['newton3options_5',['newton3Options',['../structautopas_1_1SearchSpaceGenerators_1_1OptionSpace.html#a9179599bce50a73ef8dd38d6ab52d521',1,'autopas::SearchSpaceGenerators::OptionSpace']]],
+  ['non3cornerthresholdbidirectional_6',['noN3CornerThresholdBidirectional',['../structautopas_1_1SortingThresholdInfo2B.html#a49bd5daf9031312194114bf2cf109642',1,'autopas::SortingThresholdInfo2B']]],
+  ['non3cornerthresholdunidirectional_7',['noN3CornerThresholdUnidirectional',['../structautopas_1_1SortingThresholdInfo2B.html#ac3cf2a1f95070964af90362be11b6355',1,'autopas::SortingThresholdInfo2B']]],
+  ['non3edgethresholdbidirectional_8',['noN3EdgeThresholdBidirectional',['../structautopas_1_1SortingThresholdInfo2B.html#ae4d646b0929d86c0416bdc0020f01324',1,'autopas::SortingThresholdInfo2B']]],
+  ['non3edgethresholdunidirectional_9',['noN3EdgeThresholdUnidirectional',['../structautopas_1_1SortingThresholdInfo2B.html#a846d43398eb0e0effa8abb0f32daf54b',1,'autopas::SortingThresholdInfo2B']]],
+  ['non3facethresholdbidirectional_10',['noN3FaceThresholdBidirectional',['../structautopas_1_1SortingThresholdInfo2B.html#a7115345eda6511aad470ba5dd81e3b5f',1,'autopas::SortingThresholdInfo2B']]],
+  ['non3facethresholdunidirectional_11',['noN3FaceThresholdUnidirectional',['../structautopas_1_1SortingThresholdInfo2B.html#ac067725a5e82125f516bcf1c3574e8ec',1,'autopas::SortingThresholdInfo2B']]],
+  ['normalscale_12',['normalScale',['../Math_8h.html#aca362e100bc1a4f790e6120c513aeae6',1,'autopas::utils::Math']]],
+  ['numclusters_13',['numClusters',['../structautopas_1_1VerletClusterLists_1_1ClusterRange.html#acbd15ad32d2d0fb58ce85164c99d5cbc',1,'autopas::VerletClusterLists::ClusterRange']]]
 ];

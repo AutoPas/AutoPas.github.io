@@ -119,7 +119,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>Precomputed index bounds for iterating a pre-sorted <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> pair.  
+<p>Precomputed index bounds for iterating a pre-sorted pair of <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> buffers, soa1 as the outer (i) loop and soa2 as the inner (j) loop.  
  <a href="structautopas_1_1SoASortingData.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="PairwiseFunctor_8h_source.html">PairwiseFunctor.h</a>&gt;</code></p>
@@ -128,22 +128,59 @@ $(function() {
 Public Attributes</h2></td></tr>
 <tr class="memitem:aeca3880038eb02e8bb3e83aa92afbc46"><td class="memItemLeft" align="right" valign="top"><a id="aeca3880038eb02e8bb3e83aa92afbc46" name="aeca3880038eb02e8bb3e83aa92afbc46"></a>
 size_t&#160;</td><td class="memItemRight" valign="bottom"><b>startI</b></td></tr>
-<tr class="memdesc:aeca3880038eb02e8bb3e83aa92afbc46"><td class="mdescLeft">&#160;</td><td class="mdescRight">First index in soa1 whose projection range overlaps soa2. <br /></td></tr>
+<tr class="memdesc:aeca3880038eb02e8bb3e83aa92afbc46"><td class="mdescLeft">&#160;</td><td class="mdescRight">First index into soa1 that can interact with soa2, skipping soa1 particles too far below. <br /></td></tr>
 <tr class="separator:aeca3880038eb02e8bb3e83aa92afbc46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a240e56371187854f637200495a2163c8"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structautopas_1_1SoASortingData.html#a240e56371187854f637200495a2163c8">endI</a></td></tr>
+<tr class="memdesc:a240e56371187854f637200495a2163c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Exclusive upper bound index into soa1 that can interact with soa2, skipping soa1 particles too far above.  <br /></td></tr>
+<tr class="separator:a240e56371187854f637200495a2163c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad9d797d0473443a964350b2b66faf11b"><td class="memItemLeft" align="right" valign="top"><a id="ad9d797d0473443a964350b2b66faf11b" name="ad9d797d0473443a964350b2b66faf11b"></a>
 const std::vector&lt; size_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>maxIndex</b></td></tr>
-<tr class="memdesc:ad9d797d0473443a964350b2b66faf11b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Per-particle upper bound index into soa2 (exclusive). <br /></td></tr>
+<tr class="memdesc:ad9d797d0473443a964350b2b66faf11b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Per-i (soa1) exclusive upper bound index into soa2, skipping soa2 particles too far above particle i. <br /></td></tr>
 <tr class="separator:ad9d797d0473443a964350b2b66faf11b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5eb337b0ab53302e3302d4a7db33dc7a"><td class="memItemLeft" align="right" valign="top"><a id="a5eb337b0ab53302e3302d4a7db33dc7a" name="a5eb337b0ab53302e3302d4a7db33dc7a"></a>
-const std::vector&lt; size_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>minIndex</b></td></tr>
-<tr class="memdesc:a5eb337b0ab53302e3302d4a7db33dc7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Per-particle lower bound index into soa2 (inclusive). <br /></td></tr>
+<tr class="memitem:a5eb337b0ab53302e3302d4a7db33dc7a"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; size_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structautopas_1_1SoASortingData.html#a5eb337b0ab53302e3302d4a7db33dc7a">minIndex</a></td></tr>
+<tr class="memdesc:a5eb337b0ab53302e3302d4a7db33dc7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Per-i (soa1) inclusive lower bound index into soa2, skipping soa2 particles too far below particle i.  <br /></td></tr>
 <tr class="separator:a5eb337b0ab53302e3302d4a7db33dc7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Precomputed index bounds for iterating a pre-sorted <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> pair. </p>
-<p>Produced by CellFunctor and consumed by SoAFunctorPairSorted overrides.</p>
-<dl class="section note"><dt>Note</dt><dd>Importantly <a class="el" href="structautopas_1_1SoASortingData.html" title="Precomputed index bounds for iterating a pre-sorted SoA pair.">SoASortingData</a> does not hold its own storage but rather references. meaning the storage must outlive the struct. </dd></dl>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+<div class="textblock"><p>Precomputed index bounds for iterating a pre-sorted pair of <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> buffers, soa1 as the outer (i) loop and soa2 as the inner (j) loop. </p>
+<p>Produced by CellFunctor::computeSortingData() and consumed by SoAFunctorPairSorted overrides.</p>
+<p>minIndex and endI are needed for the reversed case, i.e. if bidrectional is true and newton3 false. </p><dl class="section note"><dt>Note</dt><dd><a class="el" href="structautopas_1_1SoASortingData.html" title="Precomputed index bounds for iterating a pre-sorted pair of SoA buffers, soa1 as the outer (i) loop a...">SoASortingData</a> does not hold its own storage but rather references, meaning the storage must outlive the struct. </dd></dl>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a240e56371187854f637200495a2163c8" name="a240e56371187854f637200495a2163c8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a240e56371187854f637200495a2163c8">&#9670;&#160;</a></span>endI</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t autopas::SoASortingData::endI</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Exclusive upper bound index into soa1 that can interact with soa2, skipping soa1 particles too far above. </p>
+<p>Whether this or startI is the no-op bound depends on the call, see struct doc. </p>
+
+</div>
+</div>
+<a id="a5eb337b0ab53302e3302d4a7db33dc7a" name="a5eb337b0ab53302e3302d4a7db33dc7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5eb337b0ab53302e3302d4a7db33dc7a">&#9670;&#160;</a></span>minIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::vector&lt;size_t&gt;&amp; autopas::SoASortingData::minIndex</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Per-i (soa1) inclusive lower bound index into soa2, skipping soa2 particles too far below particle i. </p>
+<p>Whether this or maxIndex is the no-op bound depends on the call, see struct doc. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>autopas/baseFunctors/<a class="el" href="PairwiseFunctor_8h_source.html">PairwiseFunctor.h</a></li>
 </ul>
 </div><!-- contents -->

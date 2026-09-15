@@ -15,13 +15,14 @@ var searchData=
   ['option_3c_20iteratorbehavior_20_3e_12',['Option&lt; IteratorBehavior &gt;',['../classautopas_1_1options_1_1Option.html',1,'autopas::options']]],
   ['option_3c_20newton3option_20_3e_13',['Option&lt; Newton3Option &gt;',['../classautopas_1_1options_1_1Option.html',1,'autopas::options']]],
   ['option_3c_20selectorstrategyoption_20_3e_14',['Option&lt; SelectorStrategyOption &gt;',['../classautopas_1_1options_1_1Option.html',1,'autopas::options']]],
-  ['option_3c_20traversaloption_20_3e_15',['Option&lt; TraversalOption &gt;',['../classautopas_1_1options_1_1Option.html',1,'autopas::options']]],
-  ['option_3c_20tuningstrategyoption_20_3e_16',['Option&lt; TuningStrategyOption &gt;',['../classautopas_1_1options_1_1Option.html',1,'autopas::options']]],
-  ['option_3c_20vectorizationpatternoption_20_3e_17',['Option&lt; VectorizationPatternOption &gt;',['../classautopas_1_1options_1_1Option.html',1,'autopas::options']]],
-  ['optionspace_18',['OptionSpace',['../structautopas_1_1SearchSpaceGenerators_1_1OptionSpace.html',1,'autopas::SearchSpaceGenerators']]],
-  ['otc01traversal_19',['OTC01Traversal',['../classautopas_1_1OTC01Traversal.html',1,'autopas']]],
-  ['otc18traversal_20',['OTC18Traversal',['../classautopas_1_1OTC18Traversal.html',1,'autopas']]],
-  ['ottraversalinterface_21',['OTTraversalInterface',['../classautopas_1_1OTTraversalInterface.html',1,'autopas']]],
-  ['ottraversalinterface_3c_20octreenodewrapper_3c_20particle_5ft_20_3e_20_3e_22',['OTTraversalInterface&lt; OctreeNodeWrapper&lt; Particle_T &gt; &gt;',['../classautopas_1_1OTTraversalInterface.html',1,'autopas']]],
-  ['outputmapper_23',['OutputMapper',['../classautopas_1_1FuzzyLogic_1_1OutputMapper.html',1,'autopas::FuzzyLogic']]]
+  ['option_3c_20sortingdirectionoption_20_3e_15',['Option&lt; SortingDirectionOption &gt;',['../classautopas_1_1options_1_1Option.html',1,'autopas::options']]],
+  ['option_3c_20traversaloption_20_3e_16',['Option&lt; TraversalOption &gt;',['../classautopas_1_1options_1_1Option.html',1,'autopas::options']]],
+  ['option_3c_20tuningstrategyoption_20_3e_17',['Option&lt; TuningStrategyOption &gt;',['../classautopas_1_1options_1_1Option.html',1,'autopas::options']]],
+  ['option_3c_20vectorizationpatternoption_20_3e_18',['Option&lt; VectorizationPatternOption &gt;',['../classautopas_1_1options_1_1Option.html',1,'autopas::options']]],
+  ['optionspace_19',['OptionSpace',['../structautopas_1_1SearchSpaceGenerators_1_1OptionSpace.html',1,'autopas::SearchSpaceGenerators']]],
+  ['otc01traversal_20',['OTC01Traversal',['../classautopas_1_1OTC01Traversal.html',1,'autopas']]],
+  ['otc18traversal_21',['OTC18Traversal',['../classautopas_1_1OTC18Traversal.html',1,'autopas']]],
+  ['ottraversalinterface_22',['OTTraversalInterface',['../classautopas_1_1OTTraversalInterface.html',1,'autopas']]],
+  ['ottraversalinterface_3c_20octreenodewrapper_3c_20particle_5ft_20_3e_20_3e_23',['OTTraversalInterface&lt; OctreeNodeWrapper&lt; Particle_T &gt; &gt;',['../classautopas_1_1OTTraversalInterface.html',1,'autopas']]],
+  ['outputmapper_24',['OutputMapper',['../classautopas_1_1FuzzyLogic_1_1OutputMapper.html',1,'autopas::FuzzyLogic']]]
 ];

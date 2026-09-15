@@ -519,6 +519,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>forceRetune</b> ()</t
 <tr class="memitem:a0c97d5a4ae26756966b531ba650db454"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a0c97d5a4ae26756966b531ba650db454">getSoASortingThreshold</a> () const</td></tr>
 <tr class="memdesc:a0c97d5a4ae26756966b531ba650db454"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting-threshold.  <br /></td></tr>
 <tr class="separator:a0c97d5a4ae26756966b531ba650db454"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af85e3ff9c974a9ee1725bdf91f9c5eb3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#af85e3ff9c974a9ee1725bdf91f9c5eb3">setUseSortingThresholdBenchmark</a> (bool useSortingThresholdBenchmark)</td></tr>
+<tr class="memdesc:af85e3ff9c974a9ee1725bdf91f9c5eb3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enable or disable benchmark-based AoS/SoA pair-sorting threshold selection.  <br /></td></tr>
+<tr class="separator:af85e3ff9c974a9ee1725bdf91f9c5eb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class Particle_T&gt;<br />
@@ -3903,7 +3906,7 @@ template&lt;class Particle_T &gt; </div>
 </div><div class="memdoc">
 
 <p>Set the list of allowed newton 3 options. </p>
-<p>For possible newton 3 choices see <a class="el" href="classautopas_1_1options_1_1Newton3Option.html#a38afa593fbe0c8c3e5044ef16f506967" title="Possible choices for the Newton3 optimization.">options::Newton3Option::Value</a>. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>For possible newton 3 choices see <a class="el" href="classautopas_1_1options_1_1Newton3Option.html#a86b4ef6fb9a1856b76f154e4ed8d9ae1" title="Possible choices for the Newton3 optimization.">options::Newton3Option::Value</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">allowedNewton3Options</td><td></td></tr>
     <tr><td class="paramname">interactionType</td><td>Set allowed newton 3 options for this interaction type. Defaults to InteractionTypeOption::pairwise. </td></tr>
@@ -4937,6 +4940,42 @@ template&lt;class Particle_T &gt; </div>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">useLOESSSmoothening</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af85e3ff9c974a9ee1725bdf91f9c5eb3" name="af85e3ff9c974a9ee1725bdf91f9c5eb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af85e3ff9c974a9ee1725bdf91f9c5eb3">&#9670;&#160;</a></span>setUseSortingThresholdBenchmark()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Particle_T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; Particle_T &gt;::setUseSortingThresholdBenchmark </td>
+          <td>(</td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>useSortingThresholdBenchmark</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Enable or disable benchmark-based AoS/SoA pair-sorting threshold selection. </p>
+<p>When enabled, <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> runs a micro-benchmark (once per interaction type) to determine per-direction-type thresholds. <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> thresholds are only benchmarked for functors that support <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting; otherwise the fixed fallback remains. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">useSortingThresholdBenchmark</td><td></td></tr>
   </table>
   </dd>
 </dl>

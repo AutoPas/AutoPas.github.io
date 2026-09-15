@@ -170,10 +170,51 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>earlyStoppingFactor
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>useLOESSSmoothening</b> {false}</td></tr>
 <tr class="memdesc:a1de9158a67c62b023c36efbddd753be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flag for whether LOESS Smoothening is used to smoothen the tuning results. <br /></td></tr>
 <tr class="separator:a1de9158a67c62b023c36efbddd753be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3d161e23d4eb71d1cd181d67729c1d9d"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structautopas_1_1AutoTunerInfo.html#a3d161e23d4eb71d1cd181d67729c1d9d">aosSortingThreshold</a> {8}</td></tr>
+<tr class="memdesc:a3d161e23d4eb71d1cd181d67729c1d9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default number of particles in two cells from which AoS sorting should be performed, used to seed this tuner's <a class="el" href="classautopas_1_1SortingThresholdBenchmark.html" title="Determines the per-Newton3-state, per-direction-type particle-count threshold at which using a sorted...">SortingThresholdBenchmark</a> before/without a benchmark run.  <br /></td></tr>
+<tr class="separator:a3d161e23d4eb71d1cd181d67729c1d9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10daffd933e7e4057e5020161cd8a7e7"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structautopas_1_1AutoTunerInfo.html#a10daffd933e7e4057e5020161cd8a7e7">soaSortingThreshold</a> {100}</td></tr>
+<tr class="memdesc:a10daffd933e7e4057e5020161cd8a7e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default number of particles in two <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> buffers from which <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting should be performed, used to seed this tuner's <a class="el" href="classautopas_1_1SortingThresholdBenchmark.html" title="Determines the per-Newton3-state, per-direction-type particle-count threshold at which using a sorted...">SortingThresholdBenchmark</a> before/without a benchmark run.  <br /></td></tr>
+<tr class="separator:a10daffd933e7e4057e5020161cd8a7e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Helper struct encapsulating most minor information for the auto tuner. </p>
-</div><hr/>The documentation for this struct was generated from the following file:<ul>
+</div><h2 class="groupheader">Member Data Documentation</h2>
+<a id="a3d161e23d4eb71d1cd181d67729c1d9d" name="a3d161e23d4eb71d1cd181d67729c1d9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d161e23d4eb71d1cd181d67729c1d9d">&#9670;&#160;</a></span>aosSortingThreshold</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t autopas::AutoTunerInfo::aosSortingThreshold {8}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default number of particles in two cells from which AoS sorting should be performed, used to seed this tuner's <a class="el" href="classautopas_1_1SortingThresholdBenchmark.html" title="Determines the per-Newton3-state, per-direction-type particle-count threshold at which using a sorted...">SortingThresholdBenchmark</a> before/without a benchmark run. </p>
+<p>For details on the chosen default threshold see: <a href="https://github.com/AutoPas/AutoPas/pull/619">https://github.com/AutoPas/AutoPas/pull/619</a> </p>
+
+</div>
+</div>
+<a id="a10daffd933e7e4057e5020161cd8a7e7" name="a10daffd933e7e4057e5020161cd8a7e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a10daffd933e7e4057e5020161cd8a7e7">&#9670;&#160;</a></span>soaSortingThreshold</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t autopas::AutoTunerInfo::soaSortingThreshold {100}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Default number of particles in two <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> buffers from which <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting should be performed, used to seed this tuner's <a class="el" href="classautopas_1_1SortingThresholdBenchmark.html" title="Determines the per-Newton3-state, per-direction-type particle-count threshold at which using a sorted...">SortingThresholdBenchmark</a> before/without a benchmark run. </p>
+<p>Default comes from the LJFunctorHWY Benchmarks. </p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
 <li>autopas/tuning/utils/<a class="el" href="AutoTunerInfo_8h_source.html">AutoTunerInfo.h</a></li>
 </ul>
 </div><!-- contents -->

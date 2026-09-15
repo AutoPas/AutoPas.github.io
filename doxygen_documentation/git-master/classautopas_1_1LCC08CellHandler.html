@@ -152,12 +152,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a9b2b19527131c58bdd18a8db51846e19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC08CellHandler.html#a9b2b19527131c58bdd18a8db51846e19">processBaseCellTriwise</a> (std::vector&lt; ParticleCell_T &gt; &amp;cells, unsigned long baseIndex)</td></tr>
 <tr class="memdesc:a9b2b19527131c58bdd18a8db51846e19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Triwise implementation of <a class="el" href="classautopas_1_1LCC08CellHandler.html#a571a5f189d92aac14beb8e4c11d41054" title="Computes one interaction for each spacial direction based on the lower left frontal corner (=base ind...">processBaseCell()</a>.  <br /></td></tr>
 <tr class="separator:a9b2b19527131c58bdd18a8db51846e19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b569871bfb3e6653faddaa9ca8c4425"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC08CellHandler.html#a0b569871bfb3e6653faddaa9ca8c4425">setAoSSortingThreshold</a> (size_t aosSortingThreshold)</td></tr>
-<tr class="memdesc:a0b569871bfb3e6653faddaa9ca8c4425"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the aos-sorting-threshold for traversals that use the CellFunctor If the sum of the number of particles in two cells is greater or equal to that value, the CellFunctor creates a sorted view of the particles to avoid unnecessary distance checks.    <br /></td></tr>
-<tr class="separator:a0b569871bfb3e6653faddaa9ca8c4425"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45be56aa25c7a48664ac24c24c6ef2f2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC08CellHandler.html#a45be56aa25c7a48664ac24c24c6ef2f2">setSoASortingThreshold</a> (size_t soaSortingThreshold)</td></tr>
-<tr class="memdesc:a45be56aa25c7a48664ac24c24c6ef2f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting-threshold for traversals that use the CellFunctor.    <br /></td></tr>
-<tr class="separator:a45be56aa25c7a48664ac24c24c6ef2f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29577d85c265c01dfb4a3d5018a24511"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC08CellHandler.html#a29577d85c265c01dfb4a3d5018a24511">setAoSSortingThresholds</a> (const <a class="el" href="structautopas_1_1SortingThresholdInfoInterface.html">SortingThresholdInfoInterface</a> &amp;aosSortingThreshold)</td></tr>
+<tr class="memdesc:a29577d85c265c01dfb4a3d5018a24511"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the aos-sorting-threshold for traversals that use the CellFunctor.    <br /></td></tr>
+<tr class="separator:a29577d85c265c01dfb4a3d5018a24511"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab72c7e712f2aa08389f2ff9f254e00fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LCC08CellHandler.html#ab72c7e712f2aa08389f2ff9f254e00fb">setSoASortingThresholds</a> (const <a class="el" href="structautopas_1_1SortingThresholdInfoInterface.html">SortingThresholdInfoInterface</a> &amp;soaSortingThreshold)</td></tr>
+<tr class="memdesc:ab72c7e712f2aa08389f2ff9f254e00fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting-threshold for traversals that use the CellFunctor.    <br /></td></tr>
+<tr class="separator:ab72c7e712f2aa08389f2ff9f254e00fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-types" name="pro-types"></a>
 Protected Types</h2></td></tr>
@@ -422,8 +422,8 @@ template&lt;class ParticleCell_T , class Functor_T &gt; </div>
 
 </div>
 </div>
-<a id="a0b569871bfb3e6653faddaa9ca8c4425" name="a0b569871bfb3e6653faddaa9ca8c4425"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0b569871bfb3e6653faddaa9ca8c4425">&#9670;&#160;</a></span>setAoSSortingThreshold()</h2>
+<a id="a29577d85c265c01dfb4a3d5018a24511" name="a29577d85c265c01dfb4a3d5018a24511"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29577d85c265c01dfb4a3d5018a24511">&#9670;&#160;</a></span>setAoSSortingThresholds()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -434,9 +434,9 @@ template&lt;class ParticleCell_T , class Functor_T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1LCC08CellHandler.html">autopas::LCC08CellHandler</a>&lt; ParticleCell_T, Functor_T &gt;::setAoSSortingThreshold </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1LCC08CellHandler.html">autopas::LCC08CellHandler</a>&lt; ParticleCell_T, Functor_T &gt;::setAoSSortingThresholds </td>
           <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype">const <a class="el" href="structautopas_1_1SortingThresholdInfoInterface.html">SortingThresholdInfoInterface</a> &amp;&#160;</td>
           <td class="paramname"><em>aosSortingThreshold</em></td><td>)</td>
           <td></td>
         </tr>
@@ -448,18 +448,18 @@ template&lt;class ParticleCell_T , class Functor_T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Set the aos-sorting-threshold for traversals that use the CellFunctor If the sum of the number of particles in two cells is greater or equal to that value, the CellFunctor creates a sorted view of the particles to avoid unnecessary distance checks.   </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Set the aos-sorting-threshold for traversals that use the CellFunctor.   </p>
+<p>If the sum of the number of particles in two cells is greater or equal to that value, the CellFunctor creates a sorted view of the particles to avoid unnecessary distance checks. Traversals that hold a CellFunctor (or <a class="el" href="classautopas_1_1LCC08CellHandler.html" title="This class provides the base for traversals using the c08 base step.">LCC08CellHandler</a>) should forward to it. Others should explicitly override with an empty body. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">aosSortingThreshold</td><td>Sum of the number of particles in two cells from which sorting should be enabled   </td></tr>
+    <tr><td class="paramname">aosSortingThreshold</td><td>Both CellFunctor and CellFunctor3B support <a class="el" href="structautopas_1_1SortingThresholdInfoSingle.html" title="Single threshold value struct.">SortingThresholdInfoSingle</a>. CellFunctor additionally supports <a class="el" href="structautopas_1_1SortingThresholdInfo2B.html" title="Per-Newton3-state, per-SortingDirectionOption pair-sorting thresholds for a 2-body CellFunctor.">SortingThresholdInfo2B</a>.   </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="a45be56aa25c7a48664ac24c24c6ef2f2" name="a45be56aa25c7a48664ac24c24c6ef2f2"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45be56aa25c7a48664ac24c24c6ef2f2">&#9670;&#160;</a></span>setSoASortingThreshold()</h2>
+<a id="ab72c7e712f2aa08389f2ff9f254e00fb" name="ab72c7e712f2aa08389f2ff9f254e00fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab72c7e712f2aa08389f2ff9f254e00fb">&#9670;&#160;</a></span>setSoASortingThresholds()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -470,9 +470,9 @@ template&lt;class ParticleCell_T , class Functor_T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1LCC08CellHandler.html">autopas::LCC08CellHandler</a>&lt; ParticleCell_T, Functor_T &gt;::setSoASortingThreshold </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1LCC08CellHandler.html">autopas::LCC08CellHandler</a>&lt; ParticleCell_T, Functor_T &gt;::setSoASortingThresholds </td>
           <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
+          <td class="paramtype">const <a class="el" href="structautopas_1_1SortingThresholdInfoInterface.html">SortingThresholdInfoInterface</a> &amp;&#160;</td>
           <td class="paramname"><em>soaSortingThreshold</em></td><td>)</td>
           <td></td>
         </tr>
@@ -485,9 +485,9 @@ template&lt;class ParticleCell_T , class Functor_T &gt; </div>
 </div><div class="memdoc">
 
 <p>Set the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting-threshold for traversals that use the CellFunctor.   </p>
-<p>If the sum of the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> buffer sizes of two cells exceeds this value, the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> path uses SoAFunctorPairSorted. Traversals that hold a CellFunctor should forward to it; others should explicitly override with an empty body. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>If the sum of the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> buffer sizes of two cells exceeds this value, the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> path uses SoAFunctorPairSorted. Traversals that hold a CellFunctor (or <a class="el" href="classautopas_1_1LCC08CellHandler.html" title="This class provides the base for traversals using the c08 base step.">LCC08CellHandler</a>) should forward to it. Others should explicitly override with an empty body. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">soaSortingThreshold</td><td>Sum of the <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> buffer sizes from which <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> sorting should be enabled.   </td></tr>
+    <tr><td class="paramname">soaSortingThreshold</td><td>Both CellFunctor and CellFunctor3B support <a class="el" href="structautopas_1_1SortingThresholdInfoSingle.html" title="Single threshold value struct.">SortingThresholdInfoSingle</a>. CellFunctor additionally supports <a class="el" href="structautopas_1_1SortingThresholdInfo2B.html" title="Per-Newton3-state, per-SortingDirectionOption pair-sorting thresholds for a 2-body CellFunctor.">SortingThresholdInfo2B</a>.   </td></tr>
   </table>
   </dd>
 </dl>

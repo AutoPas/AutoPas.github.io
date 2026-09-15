@@ -142,6 +142,9 @@ Namespaces</h2></td></tr>
 <tr class="memitem:namespaceautopas_1_1GaussianModelTypes"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1GaussianModelTypes.html">GaussianModelTypes</a></td></tr>
 <tr class="memdesc:namespaceautopas_1_1GaussianModelTypes"><td class="mdescLeft">&#160;</td><td class="mdescRight">Aliases shared between GaussianModel based files. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:namespaceautopas_1_1generators"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1generators.html">generators</a></td></tr>
+<tr class="memdesc:namespaceautopas_1_1generators"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generators for filling containers with particles in various distributions (uniform, grid, gaussian, closest packed, ...), used by tests, benchmarks, and md-flexible's particle-object generation. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:namespaceautopas_1_1internal"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1internal.html">internal</a></td></tr>
 <tr class="memdesc:namespaceautopas_1_1internal"><td class="mdescLeft">&#160;</td><td class="mdescRight">This namespace is used for implementation specifics. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -485,7 +488,7 @@ Classes</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Structur of the array class.  <a href="classautopas_1_1SoA.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structautopas_1_1SoASortingData.html">SoASortingData</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Precomputed index bounds for iterating a pre-sorted <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> pair.  <a href="structautopas_1_1SoASortingData.html#details">More...</a><br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Precomputed index bounds for iterating a pre-sorted pair of <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> buffers, soa1 as the outer (i) loop and soa2 as the inner (j) loop.  <a href="structautopas_1_1SoASortingData.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1SoAView.html">SoAView</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">View on a fixed part of a <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> between a start index and an end index.  <a href="classautopas_1_1SoAView.html#details">More...</a><br /></td></tr>
@@ -498,6 +501,18 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1SortedSoAView.html">SortedSoAView</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A sorted view on a <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> buffer.  <a href="classautopas_1_1SortedSoAView.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1SortingThresholdBenchmark.html">SortingThresholdBenchmark</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determines the per-Newton3-state, per-direction-type particle-count threshold at which using a sorted cell-pair interaction path becomes faster than the unsorted path, separately for the AoS path (<a class="el" href="classautopas_1_1SortedCellView.html" title="This class defines a sorted view on a given ParticleCell.">SortedCellView</a> vs.  <a href="classautopas_1_1SortingThresholdBenchmark.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structautopas_1_1SortingThresholdInfo2B.html">SortingThresholdInfo2B</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Per-Newton3-state, per-SortingDirectionOption pair-sorting thresholds for a 2-body CellFunctor.  <a href="structautopas_1_1SortingThresholdInfo2B.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structautopas_1_1SortingThresholdInfoInterface.html">SortingThresholdInfoInterface</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Polymorphic base for sorting-threshold storage.  <a href="structautopas_1_1SortingThresholdInfoInterface.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structautopas_1_1SortingThresholdInfoSingle.html">SortingThresholdInfoSingle</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Single threshold value struct.  <a href="structautopas_1_1SortingThresholdInfoSingle.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This interface serves as a common parent class for all traversals.  <a href="classautopas_1_1TraversalInterface.html#details">More...</a><br /></td></tr>
