@@ -51,5 +51,6 @@ var searchData=
   ['containeroption_48',['ContainerOption',['../classautopas_1_1options_1_1ContainerOption.html',1,'autopas::options']]],
   ['containerselector_49',['ContainerSelector',['../classautopas_1_1ContainerSelector.html',1,'autopas']]],
   ['containerselectorinfo_50',['ContainerSelectorInfo',['../classautopas_1_1ContainerSelectorInfo.html',1,'autopas']]],
-  ['crispset_51',['CrispSet',['../classautopas_1_1FuzzyLogic_1_1CrispSet.html',1,'autopas::FuzzyLogic']]]
+  ['crispset_51',['CrispSet',['../classautopas_1_1FuzzyLogic_1_1CrispSet.html',1,'autopas::FuzzyLogic']]],
+  ['crsneighborlistpolicy_52',['CRSNeighborListPolicy',['../classautopas_1_1VerletListHelpers_1_1CRSNeighborListPolicy.html',1,'autopas::VerletListHelpers']]]
 ];

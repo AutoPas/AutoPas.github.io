@@ -115,7 +115,6 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classautopas_1_1VerletLists-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">autopas::VerletLists&lt; Particle_T &gt; Class Template Reference</div></div>
 </div><!--header-->
@@ -155,7 +154,7 @@ Public Types</h2></td></tr>
 <tr class="memitem:a1b26e3d1bd7b90b726c27b5a5b0ef4ce"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletLists.html#a1b26e3d1bd7b90b726c27b5a5b0ef4ce">BuildVerletListType</a> { <a class="el" href="classautopas_1_1VerletLists.html#a1b26e3d1bd7b90b726c27b5a5b0ef4ceacebc6a7b45e99f990ed96402a285b583">VerletAoS</a>
 , <a class="el" href="classautopas_1_1VerletLists.html#a1b26e3d1bd7b90b726c27b5a5b0ef4cea6973e7d0512a5dcbe82a2294e311dc39">VerletSoA</a>
  }</td></tr>
-<tr class="memdesc:a1b26e3d1bd7b90b726c27b5a5b0ef4ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum that specifies how the verlet lists should be build.  <a href="classautopas_1_1VerletLists.html#a1b26e3d1bd7b90b726c27b5a5b0ef4ce">More...</a><br /></td></tr>
+<tr class="memdesc:a1b26e3d1bd7b90b726c27b5a5b0ef4ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">Enum that specifies how the verlet lists should be built.  <a href="classautopas_1_1VerletLists.html#a1b26e3d1bd7b90b726c27b5a5b0ef4ce">More...</a><br /></td></tr>
 <tr class="separator:a1b26e3d1bd7b90b726c27b5a5b0ef4ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classautopas_1_1VerletListsLinkedBase"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classautopas_1_1VerletListsLinkedBase')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classautopas_1_1VerletListsLinkedBase.html">autopas::VerletListsLinkedBase&lt; Particle_T &gt;</a></td></tr>
 <tr class="memitem:aac766e060b9a8443d1a353441df86829 inherit pub_types_classautopas_1_1VerletListsLinkedBase"><td class="memItemLeft" align="right" valign="top"><a id="aac766e060b9a8443d1a353441df86829" name="aac766e060b9a8443d1a353441df86829"></a>
@@ -183,11 +182,14 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8c5efa98ede827e3ba2666c538132932"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletLists.html#a8c5efa98ede827e3ba2666c538132932">computeInteractions</a> (<a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *traversal) override</td></tr>
 <tr class="memdesc:a8c5efa98ede827e3ba2666c538132932"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterates over all particle multiples (e.g.  <br /></td></tr>
 <tr class="separator:a8c5efa98ede827e3ba2666c538132932"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9dac83612a78667db88858f8f865268b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1InteractionListGeneratorFunctor.html">InteractionListGeneratorFunctor</a>&lt; Particle_T, true &gt;::NeighborListAoSType &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletLists.html#a9dac83612a78667db88858f8f865268b">getVerletListsAoS</a> ()</td></tr>
-<tr class="memdesc:a9dac83612a78667db88858f8f865268b"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the actual neighbor list  <br /></td></tr>
-<tr class="separator:a9dac83612a78667db88858f8f865268b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2f56972badbedcaa79cf516d3003cfca"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classautopas_1_1VerletListHelpers.html">VerletListHelpers</a>&lt; Particle_T &gt;::NeighborListCRS &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletLists.html#a2f56972badbedcaa79cf516d3003cfca">getNeighborList</a> () const</td></tr>
+<tr class="memdesc:a2f56972badbedcaa79cf516d3003cfca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the flat CRS neighbor list.  <br /></td></tr>
+<tr class="separator:a2f56972badbedcaa79cf516d3003cfca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea67d83a6a2553a5e48084a60912ac85"><td class="memItemLeft" align="right" valign="top">const std::unordered_map&lt; const Particle_T *, size_t &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletLists.html#aea67d83a6a2553a5e48084a60912ac85">getParticleIndex</a> () const</td></tr>
+<tr class="memdesc:aea67d83a6a2553a5e48084a60912ac85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the particle-pointer-to-SoA-index map.  <br /></td></tr>
+<tr class="separator:aea67d83a6a2553a5e48084a60912ac85"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7a94ffed94309e104a9219a278b89f54"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletLists.html#a7a94ffed94309e104a9219a278b89f54">rebuildNeighborLists</a> (<a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *traversal) override</td></tr>
-<tr class="memdesc:a7a94ffed94309e104a9219a278b89f54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuilds the verlet lists, marks them valid and resets the internal counter.  <br /></td></tr>
+<tr class="memdesc:a7a94ffed94309e104a9219a278b89f54"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuilds the neighbor lists, marks them valid and resets the internal counter.  <br /></td></tr>
 <tr class="separator:a7a94ffed94309e104a9219a278b89f54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classautopas_1_1VerletListsLinkedBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classautopas_1_1VerletListsLinkedBase')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classautopas_1_1VerletListsLinkedBase.html">autopas::VerletListsLinkedBase&lt; Particle_T &gt;</a></td></tr>
 <tr class="memitem:aead545475820f043b6693c0474a78946 inherit pub_methods_classautopas_1_1VerletListsLinkedBase"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletListsLinkedBase.html#aead545475820f043b6693c0474a78946">VerletListsLinkedBase</a> (const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax, const double cutoff, const double skin, const double cellSizeFactor)</td></tr>
@@ -413,27 +415,14 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ParticleContainer
 <tr class="memdesc:a4b0d45825b7200f790e120b17c480d32 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the particle at the given index positions as long as this does not compromise the validity of the container.  <br /></td></tr>
 <tr class="separator:a4b0d45825b7200f790e120b17c480d32 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
-Protected Member Functions</h2></td></tr>
-<tr class="memitem:a2160b39172f1549b664d6834f18dcfff"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletLists.html#a2160b39172f1549b664d6834f18dcfff">updateVerletListsAoS</a> (bool useNewton3)</td></tr>
-<tr class="memdesc:a2160b39172f1549b664d6834f18dcfff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update the verlet lists for AoS usage.  <br /></td></tr>
-<tr class="separator:a2160b39172f1549b664d6834f18dcfff"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b9a293744bce570af04e850fee53394"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1VerletLists.html#a5b9a293744bce570af04e850fee53394">generateAoSNeighborLists</a> ()</td></tr>
-<tr class="memdesc:a5b9a293744bce570af04e850fee53394"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears and then generates the AoS neighbor lists.  <br /></td></tr>
-<tr class="separator:a5b9a293744bce570af04e850fee53394"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad8588a0ce97a9c0dd2970b6321e9d4c"><td class="memItemLeft" align="right" valign="top"><a id="aad8588a0ce97a9c0dd2970b6321e9d4c" name="aad8588a0ce97a9c0dd2970b6321e9d4c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>generateSoAListFromAoSVerletLists</b> ()</td></tr>
-<tr class="memdesc:aad8588a0ce97a9c0dd2970b6321e9d4c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> neighbor list with particle indices. <br /></td></tr>
-<tr class="separator:aad8588a0ce97a9c0dd2970b6321e9d4c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
 <tr class="memitem:a963269f22e648091366b4bcd4280532c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a963269f22e648091366b4bcd4280532c">addParticleImpl</a> (const Particle_T &amp;p)=0</td></tr>
 <tr class="memdesc:a963269f22e648091366b4bcd4280532c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a particle to the container.  <br /></td></tr>
 <tr class="separator:a963269f22e648091366b4bcd4280532c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae22a9cf2391cf726105e1a55c1cb03d6"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#ae22a9cf2391cf726105e1a55c1cb03d6">addHaloParticleImpl</a> (const Particle_T &amp;haloParticle)=0</td></tr>
 <tr class="memdesc:ae22a9cf2391cf726105e1a55c1cb03d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a particle to the container that lies in the halo region of the container.  <br /></td></tr>
 <tr class="separator:ae22a9cf2391cf726105e1a55c1cb03d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
-Additional Inherited Members</h2></td></tr>
 <tr class="inherit_header pro_attribs_classautopas_1_1VerletListsLinkedBase"><td colspan="2" onclick="javascript:toggleInherit('pro_attribs_classautopas_1_1VerletListsLinkedBase')"><img src="closed.png" alt="-"/>&#160;Protected Attributes inherited from <a class="el" href="classautopas_1_1VerletListsLinkedBase.html">autopas::VerletListsLinkedBase&lt; Particle_T &gt;</a></td></tr>
 <tr class="memitem:ae5844c1fda71e12f971a5aa761e582fa inherit pro_attribs_classautopas_1_1VerletListsLinkedBase"><td class="memItemLeft" align="right" valign="top"><a id="ae5844c1fda71e12f971a5aa761e582fa" name="ae5844c1fda71e12f971a5aa761e582fa"></a>
 <a class="el" href="classautopas_1_1LinkedCells.html">LinkedCells</a>&lt; Particle_T &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_linkedCells</b></td></tr>
@@ -477,7 +466,7 @@ template&lt;class Particle_T &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Enum that specifies how the verlet lists should be build. </p>
+<p>Enum that specifies how the verlet lists should be built. </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1b26e3d1bd7b90b726c27b5a5b0ef4ceacebc6a7b45e99f990ed96402a285b583" name="a1b26e3d1bd7b90b726c27b5a5b0ef4ceacebc6a7b45e99f990ed96402a285b583"></a>VerletAoS&#160;</td><td class="fielddoc"><p>Build it using AoS. </p>
 </td></tr>
@@ -549,14 +538,14 @@ template&lt;class Particle_T &gt; </div>
 </div><div class="memdoc">
 
 <p>Constructor of the <a class="el" href="classautopas_1_1VerletLists.html" title="Verlet Lists container.">VerletLists</a> class. </p>
-<p>The neighbor lists are build using a search radius of cutoff + skin. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>The neighbor lists are built using a search radius of cutoff + skin. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">boxMin</td><td>The lower corner of the domain. </td></tr>
     <tr><td class="paramname">boxMax</td><td>The upper corner of the domain. </td></tr>
     <tr><td class="paramname">cutoff</td><td>The cutoff radius of the interaction. </td></tr>
     <tr><td class="paramname">skin</td><td>The skin radius per timestep. </td></tr>
-    <tr><td class="paramname">buildVerletListType</td><td>Specifies how the verlet list should be build, see BuildVerletListType </td></tr>
-    <tr><td class="paramname">cellSizeFactor</td><td>cell size factor ralative to cutoff </td></tr>
+    <tr><td class="paramname">buildVerletListType</td><td>Specifies how the verlet list should be built, see BuildVerletListType </td></tr>
+    <tr><td class="paramname">cellSizeFactor</td><td>cell size factor relative to cutoff </td></tr>
   </table>
   </dd>
 </dl>
@@ -602,36 +591,6 @@ template&lt;class Particle_T &gt; </div>
 
 </div>
 </div>
-<a id="a5b9a293744bce570af04e850fee53394" name="a5b9a293744bce570af04e850fee53394"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b9a293744bce570af04e850fee53394">&#9670;&#160;</a></span>generateAoSNeighborLists()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Particle_T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">size_t <a class="el" href="classautopas_1_1VerletLists.html">autopas::VerletLists</a>&lt; Particle_T &gt;::generateAoSNeighborLists </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Clears and then generates the AoS neighbor lists. </p>
-<p>The Id Map is used to map the id of a particle to the actual particle. </p><dl class="section return"><dt>Returns</dt><dd>Number of particles in the container </dd></dl>
-
-</div>
-</div>
 <a id="a638d892386b38365f8f4d595b2ddfde9" name="a638d892386b38365f8f4d595b2ddfde9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a638d892386b38365f8f4d595b2ddfde9">&#9670;&#160;</a></span>getContainerType()</h2>
 
@@ -664,8 +623,8 @@ template&lt;class Particle_T &gt; </div>
 
 </div>
 </div>
-<a id="a9dac83612a78667db88858f8f865268b" name="a9dac83612a78667db88858f8f865268b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9dac83612a78667db88858f8f865268b">&#9670;&#160;</a></span>getVerletListsAoS()</h2>
+<a id="a2f56972badbedcaa79cf516d3003cfca" name="a2f56972badbedcaa79cf516d3003cfca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2f56972badbedcaa79cf516d3003cfca">&#9670;&#160;</a></span>getNeighborList()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -676,10 +635,10 @@ template&lt;class Particle_T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1InteractionListGeneratorFunctor.html">InteractionListGeneratorFunctor</a>&lt; Particle_T, true &gt;::NeighborListAoSType &amp; <a class="el" href="classautopas_1_1VerletLists.html">autopas::VerletLists</a>&lt; Particle_T &gt;::getVerletListsAoS </td>
+          <td class="memname">const <a class="el" href="classautopas_1_1VerletListHelpers.html">VerletListHelpers</a>&lt; Particle_T &gt;::NeighborListCRS &amp; <a class="el" href="classautopas_1_1VerletLists.html">autopas::VerletLists</a>&lt; Particle_T &gt;::getNeighborList </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td></td>
+          <td> const</td>
         </tr>
       </table>
   </td>
@@ -689,8 +648,38 @@ template&lt;class Particle_T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>get the actual neighbor list </p>
-<dl class="section return"><dt>Returns</dt><dd>the neighbor list </dd></dl>
+<p>Returns the flat CRS neighbor list. </p>
+<p>Offsets and indices are valid after the most recent <a class="el" href="classautopas_1_1VerletLists.html#a7a94ffed94309e104a9219a278b89f54" title="Rebuilds the neighbor lists, marks them valid and resets the internal counter.">rebuildNeighborLists()</a> call. </p><dl class="section return"><dt>Returns</dt><dd>the CRS neighbor list </dd></dl>
+
+</div>
+</div>
+<a id="aea67d83a6a2553a5e48084a60912ac85" name="aea67d83a6a2553a5e48084a60912ac85"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea67d83a6a2553a5e48084a60912ac85">&#9670;&#160;</a></span>getParticleIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Particle_T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const std::unordered_map&lt; const Particle_T *, size_t &gt; &amp; <a class="el" href="classautopas_1_1VerletLists.html">autopas::VerletLists</a>&lt; Particle_T &gt;::getParticleIndex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns the particle-pointer-to-SoA-index map. </p>
+<p>Built once per rebuild alongside the CRS list. </p><dl class="section return"><dt>Returns</dt><dd>the particle index map </dd></dl>
 
 </div>
 </div>
@@ -720,8 +709,8 @@ template&lt;class Particle_T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Rebuilds the verlet lists, marks them valid and resets the internal counter. </p>
-<dl class="section note"><dt>Note</dt><dd>This function will be called in <a class="el" href="classautopas_1_1VerletLists.html#a8c5efa98ede827e3ba2666c538132932" title="Iterates over all particle multiples (e.g.">computeInteractions()</a>! </dd></dl>
+<p>Rebuilds the neighbor lists, marks them valid and resets the internal counter. </p>
+<p>Builds the CRS directly — no separate AoS→SoA conversion pass needed. </p><dl class="section note"><dt>Note</dt><dd>This function will be called in <a class="el" href="classautopas_1_1VerletLists.html#a8c5efa98ede827e3ba2666c538132932" title="Iterates over all particle multiples (e.g.">computeInteractions()</a>! </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">traversal</td><td></td></tr>
@@ -730,43 +719,6 @@ template&lt;class Particle_T &gt; </div>
 </dl>
 
 <p>Implements <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a08a3ffb69099a0917c456e0b844c222b">autopas::ParticleContainerInterface&lt; Particle_T &gt;</a>.</p>
-
-</div>
-</div>
-<a id="a2160b39172f1549b664d6834f18dcfff" name="a2160b39172f1549b664d6834f18dcfff"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2160b39172f1549b664d6834f18dcfff">&#9670;&#160;</a></span>updateVerletListsAoS()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Particle_T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual void <a class="el" href="classautopas_1_1VerletLists.html">autopas::VerletLists</a>&lt; Particle_T &gt;::updateVerletListsAoS </td>
-          <td>(</td>
-          <td class="paramtype">bool&#160;</td>
-          <td class="paramname"><em>useNewton3</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">protected</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Update the verlet lists for AoS usage. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">useNewton3</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000025">Todo:</a></b></dt><dd>autotune traversal </dd></dl>
 
 </div>
 </div>

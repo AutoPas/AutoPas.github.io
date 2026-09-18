@@ -658,257 +658,256 @@ $(function() {
 <div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span> <span class="keyword">public</span>:</div>
 <div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span>  <span class="comment">// clang-format off</span></div>
 <div class="line"><a id="l00606" name="l00606"></a><span class="lineno">  606</span><span class="comment"></span>  <span class="comment">// clang-format on</span></div>
-<div class="line"><a id="l00607" name="l00607"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctorSVE.html#af6426c3cc2e827abca466c6cdfd01b6f">  607</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classmdLib_1_1LJFunctorSVE.html#af6426c3cc2e827abca466c6cdfd01b6f">SoAFunctorVerlet</a>(<a class="code hl_class" href="classautopas_1_1SoAView.html">autopas::SoAView&lt;SoAArraysType&gt;</a> soa, <span class="keyword">const</span> <span class="keywordtype">size_t</span> indexFirst,</div>
-<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>                        <span class="keyword">const</span> std::vector&lt;<span class="keywordtype">size_t</span>, <a class="code hl_class" href="classautopas_1_1AlignedAllocator.html">autopas::AlignedAllocator&lt;size_t&gt;</a>&gt; &amp;neighborList,</div>
-<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>                        <span class="keywordtype">bool</span> newton3) <span class="keyword">final</span> {</div>
-<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>    <span class="keywordflow">if</span> (soa.<a class="code hl_function" href="classautopas_1_1SoAView.html#a03c301441b1ff85d43e55489d06de3b3">size</a>() == 0 or neighborList.empty()) <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>    <span class="keywordflow">if</span> (newton3) {</div>
-<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>      SoAFunctorVerletImpl&lt;true&gt;(soa, indexFirst, neighborList);</div>
-<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>      SoAFunctorVerletImpl&lt;false&gt;(soa, indexFirst, neighborList);</div>
-<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>    }</div>
-<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span>  }</div>
-<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span> </div>
-<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>  <span class="keyword">template</span> &lt;<span class="keywordtype">bool</span> newton3&gt;</div>
-<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>  <span class="keywordtype">void</span> SoAFunctorVerletImpl(<a class="code hl_class" href="classautopas_1_1SoAView.html">autopas::SoAView&lt;SoAArraysType&gt;</a> soa, <span class="keyword">const</span> <span class="keywordtype">size_t</span> indexFirst,</div>
-<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span>                            <span class="keyword">const</span> std::vector&lt;<span class="keywordtype">size_t</span>, <a class="code hl_class" href="classautopas_1_1AlignedAllocator.html">autopas::AlignedAllocator&lt;size_t&gt;</a>&gt; &amp;neighborList) {</div>
-<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span><span class="preprocessor">#ifdef __ARM_FEATURE_SVE</span></div>
-<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict ownedStatePtr = soa.template begin&lt;Particle_T::AttributeNames::ownershipState&gt;();</div>
-<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>    <span class="keywordflow">if</span> (ownedStatePtr[indexFirst] == <a class="code hl_enumvalue" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a275876e34cf609db118f3d84b799a790">autopas::OwnershipState::dummy</a>) {</div>
-<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>      <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>    }</div>
-<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict xptr = soa.template begin&lt;Particle_T::AttributeNames::posX&gt;();</div>
-<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict yptr = soa.template begin&lt;Particle_T::AttributeNames::posY&gt;();</div>
-<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict zptr = soa.template begin&lt;Particle_T::AttributeNames::posZ&gt;();</div>
-<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span> </div>
-<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>    <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict fxptr = soa.template begin&lt;Particle_T::AttributeNames::forceX&gt;();</div>
-<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>    <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict fyptr = soa.template begin&lt;Particle_T::AttributeNames::forceY&gt;();</div>
-<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span>    <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict fzptr = soa.template begin&lt;Particle_T::AttributeNames::forceZ&gt;();</div>
-<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span> </div>
-<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict typeIDptr = soa.template begin&lt;Particle_T::AttributeNames::typeId&gt;();</div>
-<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span> </div>
-<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>    <span class="comment">// accumulators</span></div>
-<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>    svfloat64_t virialSumX = svdup_f64(0.0);</div>
-<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>    svfloat64_t virialSumY = svdup_f64(0.0);</div>
-<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>    svfloat64_t virialSumZ = svdup_f64(0.0);</div>
-<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span>    svfloat64_t potentialEnergySum = svdup_f64(0.0);</div>
-<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span> </div>
-<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>    svfloat64_t fxacc = svdup_f64(0.0);</div>
-<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>    svfloat64_t fyacc = svdup_f64(0.0);</div>
-<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span>    svfloat64_t fzacc = svdup_f64(0.0);</div>
-<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span> </div>
-<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>    <span class="comment">// broadcast particle 1</span></div>
-<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>    <span class="keyword">const</span> <span class="keyword">auto</span> x1 = svdup_f64(xptr[indexFirst]);</div>
-<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>    <span class="keyword">const</span> <span class="keyword">auto</span> y1 = svdup_f64(yptr[indexFirst]);</div>
-<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span>    <span class="keyword">const</span> <span class="keyword">auto</span> z1 = svdup_f64(zptr[indexFirst]);</div>
-<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span> </div>
-<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>    svbool_t pg_1;</div>
-<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> ownedStatePtr2 = <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span>int64_t *<span class="keyword">&gt;</span>(ownedStatePtr);</div>
-<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>    <span class="keywordtype">size_t</span> j = 0;</div>
-<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>    <span class="keywordflow">for</span> (; j &lt; neighborList.size(); j += svlen(x1)) {</div>
-<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>      pg_1 = svwhilelt_b64(j, neighborList.size());</div>
-<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span>      <span class="keyword">const</span> svuint64_t index_1 = svld1(pg_1, &amp;neighborList[j]);</div>
-<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span> </div>
-<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>      svfloat64_t drx_1;</div>
-<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>      svfloat64_t dry_1;</div>
-<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>      svfloat64_t drz_1;</div>
-<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>      svfloat64_t dr2_1;</div>
-<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>      svint64_t ownedStateJ_1;</div>
-<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>      <span class="keyword">const</span> svbool_t pgC_1 = distCalc&lt;true&gt;(0, index_1, x1, y1, z1, pg_1, ownedStatePtr2, xptr, yptr, zptr, drx_1,</div>
-<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span>                                            dry_1, drz_1, dr2_1, ownedStateJ_1);</div>
-<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span> </div>
-<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>      <span class="keyword">const</span> <span class="keywordtype">bool</span> continue_1 = svptest_any(svptrue_b64(), pgC_1);</div>
-<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>      svfloat64_t epsilon24s_1;</div>
-<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>      svfloat64_t shift6s_1;</div>
-<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>      svfloat64_t lj6_1;</div>
-<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>      svfloat64_t fac_1;</div>
-<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>      <span class="keywordflow">if</span> (continue_1)</div>
-<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span>        lennardJones&lt;true&gt;(index_1, typeIDptr, typeIDptr, pgC_1, dr2_1, epsilon24s_1, shift6s_1, lj6_1, fac_1);</div>
-<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span> </div>
-<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>      <span class="keywordflow">if</span> (continue_1)</div>
-<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>        applyForces&lt;newton3, true&gt;(0, index_1, ownedStatePtr[indexFirst] == <a class="code hl_enumvalue" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a8f9a4c5fe0824547590a3fc568f5c7c7">autopas::OwnershipState::owned</a>, fxptr,</div>
-<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>                                   fyptr, fzptr, fxacc, fyacc, fzacc, virialSumX, virialSumY, virialSumZ,</div>
-<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>                                   potentialEnergySum, drx_1, dry_1, drz_1, xptr, yptr, zptr, ownedStateJ_1, pgC_1,</div>
-<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span>                                   epsilon24s_1, shift6s_1, lj6_1, fac_1);</div>
-<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span>    }</div>
-<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span> </div>
-<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>    fxptr[indexFirst] += svaddv_f64(svptrue_b64(), fxacc);</div>
-<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>    fyptr[indexFirst] += svaddv_f64(svptrue_b64(), fyacc);</div>
-<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span>    fzptr[indexFirst] += svaddv_f64(svptrue_b64(), fzacc);</div>
-<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span> </div>
-<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (calculateGlobals) {</div>
-<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span>      <span class="keyword">const</span> <span class="keywordtype">int</span> threadnum = <a class="code hl_function" href="namespaceautopas.html#ac3917775976f91c4251e72887dc1876e">autopas::autopas_get_thread_num</a>();</div>
-<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span> </div>
-<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>      _aosThreadData[threadnum].potentialEnergySum += svaddv_f64(svptrue_b64(), potentialEnergySum);</div>
-<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>      _aosThreadData[threadnum].virialSum[0] += svaddv_f64(svptrue_b64(), virialSumX);</div>
-<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>      _aosThreadData[threadnum].virialSum[1] += svaddv_f64(svptrue_b64(), virialSumY);</div>
-<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>      _aosThreadData[threadnum].virialSum[2] += svaddv_f64(svptrue_b64(), virialSumZ);</div>
-<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span>    }</div>
-<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span>  }</div>
-<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span> </div>
-<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span> <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00701" name="l00701"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctorSVE.html#a81714ba9bdeabd546d8879faf3cece82">  701</a></span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="classmdLib_1_1LJFunctorSVE.html#a81714ba9bdeabd546d8879faf3cece82">getNeededAttr</a>() {</div>
-<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>    <span class="keywordflow">return</span> std::array&lt;typename Particle_T::AttributeNames, 9&gt;{Particle_T::AttributeNames::id,</div>
-<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>                                                              Particle_T::AttributeNames::posX,</div>
-<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>                                                              Particle_T::AttributeNames::posY,</div>
-<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>                                                              Particle_T::AttributeNames::posZ,</div>
-<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>                                                              Particle_T::AttributeNames::forceX,</div>
-<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>                                                              Particle_T::AttributeNames::forceY,</div>
-<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>                                                              Particle_T::AttributeNames::forceZ,</div>
-<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>                                                              Particle_T::AttributeNames::typeId,</div>
-<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>                                                              Particle_T::AttributeNames::ownershipState};</div>
-<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span>  }</div>
-<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span> </div>
-<div class="line"><a id="l00716" name="l00716"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctorSVE.html#a82da5ef65ff61768b2fc9239e553e3b6">  716</a></span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="classmdLib_1_1LJFunctorSVE.html#a82da5ef65ff61768b2fc9239e553e3b6">getNeededAttr</a>(std::false_type) {</div>
-<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>    <span class="keywordflow">return</span> std::array&lt;typename Particle_T::AttributeNames, 6&gt;{</div>
-<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>        Particle_T::AttributeNames::id,     Particle_T::AttributeNames::posX,</div>
-<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>        Particle_T::AttributeNames::posY,   Particle_T::AttributeNames::posZ,</div>
-<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>        Particle_T::AttributeNames::typeId, Particle_T::AttributeNames::ownershipState};</div>
-<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span>  }</div>
-<div class="line"><a id="l00722" name="l00722"></a><span class="lineno">  722</span> </div>
-<div class="line"><a id="l00726" name="l00726"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctorSVE.html#ae29b7000e5c8cdc1e68a24490ed4d54b">  726</a></span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="classmdLib_1_1LJFunctorSVE.html#ae29b7000e5c8cdc1e68a24490ed4d54b">getComputedAttr</a>() {</div>
-<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>    <span class="keywordflow">return</span> std::array&lt;typename Particle_T::AttributeNames, 3&gt;{</div>
-<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>        Particle_T::AttributeNames::forceX, Particle_T::AttributeNames::forceY, Particle_T::AttributeNames::forceZ};</div>
-<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span>  }</div>
-<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span> </div>
-<div class="line"><a id="l00735" name="l00735"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctorSVE.html#a3e395e95a8b2a0317da9badcf298e9e3">  735</a></span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classmdLib_1_1LJFunctorSVE.html#a3e395e95a8b2a0317da9badcf298e9e3">getMixing</a>() { <span class="keywordflow">return</span> useMixing; }</div>
-<div class="line"><a id="l00736" name="l00736"></a><span class="lineno">  736</span> </div>
-<div class="line"><a id="l00748" name="l00748"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctorSVE.html#a4bb2e742f6ecd105cb4346555487235d">  748</a></span>  <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code hl_function" href="classmdLib_1_1LJFunctorSVE.html#a4bb2e742f6ecd105cb4346555487235d">getNumFlopsPerKernelCall</a>(<span class="keywordtype">size_t</span> molAType, <span class="keywordtype">size_t</span> molBType, <span class="keywordtype">bool</span> newton3) {</div>
-<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>    <span class="comment">// Kernel: 12 = 1 (inverse R squared) + 8 (compute scale) + 3 (apply scale) sum</span></div>
-<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>    <span class="comment">// Adding to particle forces: 6 or 3 depending newton3</span></div>
-<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>    <span class="comment">// Total = 12 + (6 or 3) = 18 or 15</span></div>
-<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>    <span class="keywordflow">return</span> newton3 ? 18ul : 15ul;</div>
-<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span>  }</div>
-<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span> </div>
-<div class="line"><a id="l00759" name="l00759"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctorSVE.html#a036bcf821368aee26a36ffba03fa7b2a">  759</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classmdLib_1_1LJFunctorSVE.html#a036bcf821368aee26a36ffba03fa7b2a">initTraversal</a>() final {</div>
-<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span>    _potentialEnergySum = 0.;</div>
-<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>    _virialSum = {0., 0., 0.};</div>
-<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span>    _postProcessed = <span class="keyword">false</span>;</div>
-<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; _aosThreadData.size(); ++i) {</div>
-<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>      _aosThreadData[i].setZero();</div>
-<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>    }</div>
-<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span>  }</div>
-<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span> </div>
-<div class="line"><a id="l00772" name="l00772"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctorSVE.html#a82434013a14a2fa2e5671fbc075a8470">  772</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classmdLib_1_1LJFunctorSVE.html#a82434013a14a2fa2e5671fbc075a8470">endTraversal</a>(<span class="keywordtype">bool</span> newton3) <span class="keyword">final</span> {</div>
-<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span>    <span class="keyword">using namespace </span>autopas::utils::ArrayMath::literals;</div>
-<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span> </div>
-<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>    <span class="keywordflow">if</span> (_postProcessed) {</div>
-<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>      <span class="keywordflow">throw</span> <a class="code hl_class" href="classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html">autopas::utils::ExceptionHandler::AutoPasException</a>(</div>
-<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span>          <span class="stringliteral">&quot;Already postprocessed, endTraversal(bool newton3) was called twice without calling initTraversal().&quot;</span>);</div>
-<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span>    }</div>
-<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span>    <span class="keywordflow">if</span> (calculateGlobals) {</div>
-<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; _aosThreadData.size(); ++i) {</div>
-<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>        _potentialEnergySum += _aosThreadData[i].potentialEnergySum;</div>
-<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>        _virialSum += _aosThreadData[i].virialSum;</div>
-<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>      }</div>
-<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>      <span class="comment">// For each interaction, we added the full contribution for both particles. Divide by 2 here, so that each</span></div>
-<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>      <span class="comment">// contribution is only counted once per pair.</span></div>
-<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>      _potentialEnergySum *= 0.5;</div>
-<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span>      _virialSum *= 0.5;</div>
-<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span> </div>
-<div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>      <span class="comment">// We have always calculated 6*potentialEnergy, so we divide by 6 here!</span></div>
-<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>      _potentialEnergySum /= 6.;</div>
-<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>      _postProcessed = <span class="keyword">true</span>;</div>
-<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span> </div>
-<div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>      <a class="code hl_define" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(DEBUG, <span class="stringliteral">&quot;Final potential energy {}&quot;</span>, _potentialEnergySum);</div>
-<div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span>      <a class="code hl_define" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(DEBUG, <span class="stringliteral">&quot;Final virial           {}&quot;</span>, _virialSum[0] + _virialSum[1] + _virialSum[2]);</div>
-<div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span>    }</div>
-<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span>  }</div>
-<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span> </div>
-<div class="line"><a id="l00802" name="l00802"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctorSVE.html#abef0263d88a35f6410c18ffc829cac6e">  802</a></span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classmdLib_1_1LJFunctorSVE.html#abef0263d88a35f6410c18ffc829cac6e">getPotentialEnergy</a>() {</div>
-<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>    <span class="keywordflow">if</span> (not calculateGlobals) {</div>
-<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>      <span class="keywordflow">throw</span> <a class="code hl_class" href="classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html">autopas::utils::ExceptionHandler::AutoPasException</a>(</div>
-<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span>          <span class="stringliteral">&quot;Trying to get potential energy even though calculateGlobals is false. If you want this functor to calculate &quot;</span></div>
-<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>          <span class="stringliteral">&quot;global &quot;</span></div>
-<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>          <span class="stringliteral">&quot;values, please specify calculateGlobals to be true.&quot;</span>);</div>
-<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>    }</div>
-<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>    <span class="keywordflow">if</span> (not _postProcessed) {</div>
-<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>      <span class="keywordflow">throw</span> <a class="code hl_class" href="classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html">autopas::utils::ExceptionHandler::AutoPasException</a>(</div>
-<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>          <span class="stringliteral">&quot;Cannot get potential energy, because endTraversal was not called.&quot;</span>);</div>
-<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>    }</div>
-<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>    <span class="keywordflow">return</span> _potentialEnergySum;</div>
-<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span>  }</div>
-<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span> </div>
-<div class="line"><a id="l00820" name="l00820"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctorSVE.html#a12684621164f9c70104023fd2ff0b9c3">  820</a></span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classmdLib_1_1LJFunctorSVE.html#a12684621164f9c70104023fd2ff0b9c3">getVirial</a>() {</div>
-<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span>    <span class="keywordflow">if</span> (not calculateGlobals) {</div>
-<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>      <span class="keywordflow">throw</span> <a class="code hl_class" href="classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html">autopas::utils::ExceptionHandler::AutoPasException</a>(</div>
-<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span>          <span class="stringliteral">&quot;Trying to get virial even though calculateGlobals is false. If you want this functor to calculate global &quot;</span></div>
-<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span>          <span class="stringliteral">&quot;values, please specify calculateGlobals to be true.&quot;</span>);</div>
-<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>    }</div>
-<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>    <span class="keywordflow">if</span> (not _postProcessed) {</div>
-<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>      <span class="keywordflow">throw</span> <a class="code hl_class" href="classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html">autopas::utils::ExceptionHandler::AutoPasException</a>(</div>
-<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>          <span class="stringliteral">&quot;Cannot get virial, because endTraversal was not called.&quot;</span>);</div>
-<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>    }</div>
-<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>    <span class="keywordflow">return</span> _virialSum[0] + _virialSum[1] + _virialSum[2];</div>
-<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span>  }</div>
-<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span> </div>
-<div class="line"><a id="l00841" name="l00841"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctorSVE.html#a9fed372df89c6cae40598f196692947d">  841</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classmdLib_1_1LJFunctorSVE.html#a9fed372df89c6cae40598f196692947d">setParticleProperties</a>(<span class="keywordtype">double</span> epsilon24, <span class="keywordtype">double</span> sigmaSquared) {</div>
-<div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span><span class="preprocessor">#ifdef __ARM_FEATURE_SVE</span></div>
-<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>    _epsilon24 = epsilon24;</div>
-<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span>    _sigmaSquared = sigmaSquared;</div>
-<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (applyShift) {</div>
-<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span>      _shift6 = <a class="code hl_function" href="classParticlePropertiesLibrary.html#aee0c262762933e5a1334695c945f81f5">ParticlePropertiesLibrary&lt;double, size_t&gt;::calcShift6</a>(epsilon24, sigmaSquared, _cutoffSquared);</div>
-<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span>      _shift6 = 0.0;</div>
-<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span>    }</div>
-<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span> </div>
-<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>    _epsilon24AoS = epsilon24;</div>
-<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>    _sigmaSquaredAoS = sigmaSquared;</div>
-<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (applyShift) {</div>
-<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>      _shift6AoS = <a class="code hl_function" href="classParticlePropertiesLibrary.html#aee0c262762933e5a1334695c945f81f5">ParticlePropertiesLibrary&lt;double, size_t&gt;::calcShift6</a>(epsilon24, sigmaSquared, _cutoffSquaredAoS);</div>
-<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>      _shift6AoS = 0.;</div>
-<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>    }</div>
-<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>  }</div>
-<div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span> </div>
-<div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span> <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>  <span class="keyword">class </span>AoSThreadData {</div>
-<div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span>   <span class="keyword">public</span>:</div>
-<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>    AoSThreadData() : virialSum{0., 0., 0.}, potentialEnergySum{0.}, __remainingTo64{} {}</div>
-<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span>    <span class="keywordtype">void</span> setZero() {</div>
-<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span>      virialSum = {0., 0., 0.};</div>
-<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span>      potentialEnergySum = 0.;</div>
-<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>    }</div>
-<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span> </div>
-<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>    <span class="comment">// variables</span></div>
-<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>    std::array&lt;double, 3&gt; virialSum;</div>
-<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>    <span class="keywordtype">double</span> potentialEnergySum;</div>
-<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span> </div>
-<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>   <span class="keyword">private</span>:</div>
-<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>    <span class="comment">// dummy parameter to get the right size (64 bytes)</span></div>
-<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>    <span class="keywordtype">double</span> __remainingTo64[(64 - 4 * <span class="keyword">sizeof</span>(double)) / <span class="keyword">sizeof</span>(double)];</div>
-<div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span>  };</div>
-<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span>  <span class="comment">// make sure of the size of AoSThreadData</span></div>
-<div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span>  <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>(AoSThreadData) % 64 == 0, <span class="stringliteral">&quot;AoSThreadData has wrong size&quot;</span>);</div>
-<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span> </div>
-<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span><span class="preprocessor">#ifdef __ARM_FEATURE_SVE</span></div>
-<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> _cutoffSquared{};</div>
-<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span>  <span class="keywordtype">double</span> _shift6{0.};</div>
-<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>  <span class="keywordtype">double</span> _epsilon24{0.};</div>
-<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span>  <span class="keywordtype">double</span> _sigmaSquared{0.};</div>
-<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span> </div>
-<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> _cutoffSquaredAoS;</div>
-<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span>  <span class="keywordtype">double</span> _epsilon24AoS{0.}, _sigmaSquaredAoS{0.}, _shift6AoS{0.};</div>
-<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span> </div>
-<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span>  <a class="code hl_class" href="classParticlePropertiesLibrary.html">ParticlePropertiesLibrary&lt;double, size_t&gt;</a> *_PPLibrary = <span class="keyword">nullptr</span>;</div>
-<div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span> </div>
-<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span>  <span class="comment">// sum of the potential energy, only calculated if calculateGlobals is true</span></div>
-<div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span>  <span class="keywordtype">double</span> _potentialEnergySum{0.};</div>
-<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span> </div>
-<div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span>  <span class="comment">// sum of the virial, only calculated if calculateGlobals is true</span></div>
-<div class="line"><a id="l00900" name="l00900"></a><span class="lineno">  900</span>  std::array&lt;double, 3&gt; _virialSum{0., 0., 0.};</div>
-<div class="line"><a id="l00901" name="l00901"></a><span class="lineno">  901</span> </div>
-<div class="line"><a id="l00902" name="l00902"></a><span class="lineno">  902</span>  <span class="comment">// thread buffer for aos</span></div>
-<div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span>  std::vector&lt;AoSThreadData&gt; _aosThreadData{};</div>
-<div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span> </div>
-<div class="line"><a id="l00905" name="l00905"></a><span class="lineno">  905</span>  <span class="comment">// defines whether or whether not the global values are already preprocessed</span></div>
-<div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span>  <span class="keywordtype">bool</span> _postProcessed{<span class="keyword">false</span>};</div>
-<div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span>};</div>
-<div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span>}  <span class="comment">// namespace mdLib</span></div>
+<div class="line"><a id="l00607" name="l00607"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctorSVE.html#a74b2a061382a360517321d7dc4aecd3d">  607</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classmdLib_1_1LJFunctorSVE.html#a74b2a061382a360517321d7dc4aecd3d">SoAFunctorVerlet</a>(<a class="code hl_class" href="classautopas_1_1SoAView.html">autopas::SoAView&lt;SoAArraysType&gt;</a> soa, <span class="keyword">const</span> <span class="keywordtype">size_t</span> indexFirst,</div>
+<div class="line"><a id="l00608" name="l00608"></a><span class="lineno">  608</span>                        std::span&lt;const size_t&gt; neighborList, <span class="keywordtype">bool</span> newton3) <span class="keyword">final</span> {</div>
+<div class="line"><a id="l00609" name="l00609"></a><span class="lineno">  609</span>    <span class="keywordflow">if</span> (soa.<a class="code hl_function" href="classautopas_1_1SoAView.html#a03c301441b1ff85d43e55489d06de3b3">size</a>() == 0 or neighborList.empty()) <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00610" name="l00610"></a><span class="lineno">  610</span>    <span class="keywordflow">if</span> (newton3) {</div>
+<div class="line"><a id="l00611" name="l00611"></a><span class="lineno">  611</span>      SoAFunctorVerletImpl&lt;true&gt;(soa, indexFirst, neighborList);</div>
+<div class="line"><a id="l00612" name="l00612"></a><span class="lineno">  612</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00613" name="l00613"></a><span class="lineno">  613</span>      SoAFunctorVerletImpl&lt;false&gt;(soa, indexFirst, neighborList);</div>
+<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span>    }</div>
+<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span>  }</div>
+<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span> </div>
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span>  <span class="keyword">template</span> &lt;<span class="keywordtype">bool</span> newton3&gt;</div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span>  <span class="keywordtype">void</span> SoAFunctorVerletImpl(<a class="code hl_class" href="classautopas_1_1SoAView.html">autopas::SoAView&lt;SoAArraysType&gt;</a> soa, <span class="keyword">const</span> <span class="keywordtype">size_t</span> indexFirst,</div>
+<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span>                            std::span&lt;const size_t&gt; neighborList) {</div>
+<div class="line"><a id="l00621" name="l00621"></a><span class="lineno">  621</span><span class="preprocessor">#ifdef __ARM_FEATURE_SVE</span></div>
+<div class="line"><a id="l00622" name="l00622"></a><span class="lineno">  622</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict ownedStatePtr = soa.template begin&lt;Particle_T::AttributeNames::ownershipState&gt;();</div>
+<div class="line"><a id="l00623" name="l00623"></a><span class="lineno">  623</span>    <span class="keywordflow">if</span> (ownedStatePtr[indexFirst] == <a class="code hl_enumvalue" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a275876e34cf609db118f3d84b799a790">autopas::OwnershipState::dummy</a>) {</div>
+<div class="line"><a id="l00624" name="l00624"></a><span class="lineno">  624</span>      <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00625" name="l00625"></a><span class="lineno">  625</span>    }</div>
+<div class="line"><a id="l00626" name="l00626"></a><span class="lineno">  626</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict xptr = soa.template begin&lt;Particle_T::AttributeNames::posX&gt;();</div>
+<div class="line"><a id="l00627" name="l00627"></a><span class="lineno">  627</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict yptr = soa.template begin&lt;Particle_T::AttributeNames::posY&gt;();</div>
+<div class="line"><a id="l00628" name="l00628"></a><span class="lineno">  628</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict zptr = soa.template begin&lt;Particle_T::AttributeNames::posZ&gt;();</div>
+<div class="line"><a id="l00629" name="l00629"></a><span class="lineno">  629</span> </div>
+<div class="line"><a id="l00630" name="l00630"></a><span class="lineno">  630</span>    <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict fxptr = soa.template begin&lt;Particle_T::AttributeNames::forceX&gt;();</div>
+<div class="line"><a id="l00631" name="l00631"></a><span class="lineno">  631</span>    <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict fyptr = soa.template begin&lt;Particle_T::AttributeNames::forceY&gt;();</div>
+<div class="line"><a id="l00632" name="l00632"></a><span class="lineno">  632</span>    <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict fzptr = soa.template begin&lt;Particle_T::AttributeNames::forceZ&gt;();</div>
+<div class="line"><a id="l00633" name="l00633"></a><span class="lineno">  633</span> </div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> __restrict typeIDptr = soa.template begin&lt;Particle_T::AttributeNames::typeId&gt;();</div>
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span> </div>
+<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span>    <span class="comment">// accumulators</span></div>
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span>    svfloat64_t virialSumX = svdup_f64(0.0);</div>
+<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span>    svfloat64_t virialSumY = svdup_f64(0.0);</div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span>    svfloat64_t virialSumZ = svdup_f64(0.0);</div>
+<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span>    svfloat64_t potentialEnergySum = svdup_f64(0.0);</div>
+<div class="line"><a id="l00641" name="l00641"></a><span class="lineno">  641</span> </div>
+<div class="line"><a id="l00642" name="l00642"></a><span class="lineno">  642</span>    svfloat64_t fxacc = svdup_f64(0.0);</div>
+<div class="line"><a id="l00643" name="l00643"></a><span class="lineno">  643</span>    svfloat64_t fyacc = svdup_f64(0.0);</div>
+<div class="line"><a id="l00644" name="l00644"></a><span class="lineno">  644</span>    svfloat64_t fzacc = svdup_f64(0.0);</div>
+<div class="line"><a id="l00645" name="l00645"></a><span class="lineno">  645</span> </div>
+<div class="line"><a id="l00646" name="l00646"></a><span class="lineno">  646</span>    <span class="comment">// broadcast particle 1</span></div>
+<div class="line"><a id="l00647" name="l00647"></a><span class="lineno">  647</span>    <span class="keyword">const</span> <span class="keyword">auto</span> x1 = svdup_f64(xptr[indexFirst]);</div>
+<div class="line"><a id="l00648" name="l00648"></a><span class="lineno">  648</span>    <span class="keyword">const</span> <span class="keyword">auto</span> y1 = svdup_f64(yptr[indexFirst]);</div>
+<div class="line"><a id="l00649" name="l00649"></a><span class="lineno">  649</span>    <span class="keyword">const</span> <span class="keyword">auto</span> z1 = svdup_f64(zptr[indexFirst]);</div>
+<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span> </div>
+<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span>    svbool_t pg_1;</div>
+<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span>    <span class="keyword">const</span> <span class="keyword">auto</span> *<span class="keyword">const</span> ownedStatePtr2 = <span class="keyword">reinterpret_cast&lt;</span><span class="keyword">const </span>int64_t *<span class="keyword">&gt;</span>(ownedStatePtr);</div>
+<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span>    <span class="keywordtype">size_t</span> j = 0;</div>
+<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span>    <span class="keywordflow">for</span> (; j &lt; neighborList.size(); j += svlen(x1)) {</div>
+<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span>      pg_1 = svwhilelt_b64(j, neighborList.size());</div>
+<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span>      <span class="keyword">const</span> svuint64_t index_1 = svld1(pg_1, &amp;neighborList[j]);</div>
+<div class="line"><a id="l00657" name="l00657"></a><span class="lineno">  657</span> </div>
+<div class="line"><a id="l00658" name="l00658"></a><span class="lineno">  658</span>      svfloat64_t drx_1;</div>
+<div class="line"><a id="l00659" name="l00659"></a><span class="lineno">  659</span>      svfloat64_t dry_1;</div>
+<div class="line"><a id="l00660" name="l00660"></a><span class="lineno">  660</span>      svfloat64_t drz_1;</div>
+<div class="line"><a id="l00661" name="l00661"></a><span class="lineno">  661</span>      svfloat64_t dr2_1;</div>
+<div class="line"><a id="l00662" name="l00662"></a><span class="lineno">  662</span>      svint64_t ownedStateJ_1;</div>
+<div class="line"><a id="l00663" name="l00663"></a><span class="lineno">  663</span>      <span class="keyword">const</span> svbool_t pgC_1 = distCalc&lt;true&gt;(0, index_1, x1, y1, z1, pg_1, ownedStatePtr2, xptr, yptr, zptr, drx_1,</div>
+<div class="line"><a id="l00664" name="l00664"></a><span class="lineno">  664</span>                                            dry_1, drz_1, dr2_1, ownedStateJ_1);</div>
+<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span> </div>
+<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span>      <span class="keyword">const</span> <span class="keywordtype">bool</span> continue_1 = svptest_any(svptrue_b64(), pgC_1);</div>
+<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span>      svfloat64_t epsilon24s_1;</div>
+<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span>      svfloat64_t shift6s_1;</div>
+<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span>      svfloat64_t lj6_1;</div>
+<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span>      svfloat64_t fac_1;</div>
+<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span>      <span class="keywordflow">if</span> (continue_1)</div>
+<div class="line"><a id="l00672" name="l00672"></a><span class="lineno">  672</span>        lennardJones&lt;true&gt;(index_1, typeIDptr, typeIDptr, pgC_1, dr2_1, epsilon24s_1, shift6s_1, lj6_1, fac_1);</div>
+<div class="line"><a id="l00673" name="l00673"></a><span class="lineno">  673</span> </div>
+<div class="line"><a id="l00674" name="l00674"></a><span class="lineno">  674</span>      <span class="keywordflow">if</span> (continue_1)</div>
+<div class="line"><a id="l00675" name="l00675"></a><span class="lineno">  675</span>        applyForces&lt;newton3, true&gt;(0, index_1, ownedStatePtr[indexFirst] == <a class="code hl_enumvalue" href="namespaceautopas.html#a82a8cce861d1c5e0aae32f34ed39e5e0a8f9a4c5fe0824547590a3fc568f5c7c7">autopas::OwnershipState::owned</a>, fxptr,</div>
+<div class="line"><a id="l00676" name="l00676"></a><span class="lineno">  676</span>                                   fyptr, fzptr, fxacc, fyacc, fzacc, virialSumX, virialSumY, virialSumZ,</div>
+<div class="line"><a id="l00677" name="l00677"></a><span class="lineno">  677</span>                                   potentialEnergySum, drx_1, dry_1, drz_1, xptr, yptr, zptr, ownedStateJ_1, pgC_1,</div>
+<div class="line"><a id="l00678" name="l00678"></a><span class="lineno">  678</span>                                   epsilon24s_1, shift6s_1, lj6_1, fac_1);</div>
+<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span>    }</div>
+<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span> </div>
+<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span>    fxptr[indexFirst] += svaddv_f64(svptrue_b64(), fxacc);</div>
+<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span>    fyptr[indexFirst] += svaddv_f64(svptrue_b64(), fyacc);</div>
+<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span>    fzptr[indexFirst] += svaddv_f64(svptrue_b64(), fzacc);</div>
+<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span> </div>
+<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (calculateGlobals) {</div>
+<div class="line"><a id="l00686" name="l00686"></a><span class="lineno">  686</span>      <span class="keyword">const</span> <span class="keywordtype">int</span> threadnum = <a class="code hl_function" href="namespaceautopas.html#ac3917775976f91c4251e72887dc1876e">autopas::autopas_get_thread_num</a>();</div>
+<div class="line"><a id="l00687" name="l00687"></a><span class="lineno">  687</span> </div>
+<div class="line"><a id="l00688" name="l00688"></a><span class="lineno">  688</span>      _aosThreadData[threadnum].potentialEnergySum += svaddv_f64(svptrue_b64(), potentialEnergySum);</div>
+<div class="line"><a id="l00689" name="l00689"></a><span class="lineno">  689</span>      _aosThreadData[threadnum].virialSum[0] += svaddv_f64(svptrue_b64(), virialSumX);</div>
+<div class="line"><a id="l00690" name="l00690"></a><span class="lineno">  690</span>      _aosThreadData[threadnum].virialSum[1] += svaddv_f64(svptrue_b64(), virialSumY);</div>
+<div class="line"><a id="l00691" name="l00691"></a><span class="lineno">  691</span>      _aosThreadData[threadnum].virialSum[2] += svaddv_f64(svptrue_b64(), virialSumZ);</div>
+<div class="line"><a id="l00692" name="l00692"></a><span class="lineno">  692</span>    }</div>
+<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span>  }</div>
+<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span> </div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span> <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00700" name="l00700"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctorSVE.html#a81714ba9bdeabd546d8879faf3cece82">  700</a></span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="classmdLib_1_1LJFunctorSVE.html#a81714ba9bdeabd546d8879faf3cece82">getNeededAttr</a>() {</div>
+<div class="line"><a id="l00701" name="l00701"></a><span class="lineno">  701</span>    <span class="keywordflow">return</span> std::array&lt;typename Particle_T::AttributeNames, 9&gt;{Particle_T::AttributeNames::id,</div>
+<div class="line"><a id="l00702" name="l00702"></a><span class="lineno">  702</span>                                                              Particle_T::AttributeNames::posX,</div>
+<div class="line"><a id="l00703" name="l00703"></a><span class="lineno">  703</span>                                                              Particle_T::AttributeNames::posY,</div>
+<div class="line"><a id="l00704" name="l00704"></a><span class="lineno">  704</span>                                                              Particle_T::AttributeNames::posZ,</div>
+<div class="line"><a id="l00705" name="l00705"></a><span class="lineno">  705</span>                                                              Particle_T::AttributeNames::forceX,</div>
+<div class="line"><a id="l00706" name="l00706"></a><span class="lineno">  706</span>                                                              Particle_T::AttributeNames::forceY,</div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span>                                                              Particle_T::AttributeNames::forceZ,</div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span>                                                              Particle_T::AttributeNames::typeId,</div>
+<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span>                                                              Particle_T::AttributeNames::ownershipState};</div>
+<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span>  }</div>
+<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span> </div>
+<div class="line"><a id="l00715" name="l00715"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctorSVE.html#a82da5ef65ff61768b2fc9239e553e3b6">  715</a></span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="classmdLib_1_1LJFunctorSVE.html#a82da5ef65ff61768b2fc9239e553e3b6">getNeededAttr</a>(std::false_type) {</div>
+<div class="line"><a id="l00716" name="l00716"></a><span class="lineno">  716</span>    <span class="keywordflow">return</span> std::array&lt;typename Particle_T::AttributeNames, 6&gt;{</div>
+<div class="line"><a id="l00717" name="l00717"></a><span class="lineno">  717</span>        Particle_T::AttributeNames::id,     Particle_T::AttributeNames::posX,</div>
+<div class="line"><a id="l00718" name="l00718"></a><span class="lineno">  718</span>        Particle_T::AttributeNames::posY,   Particle_T::AttributeNames::posZ,</div>
+<div class="line"><a id="l00719" name="l00719"></a><span class="lineno">  719</span>        Particle_T::AttributeNames::typeId, Particle_T::AttributeNames::ownershipState};</div>
+<div class="line"><a id="l00720" name="l00720"></a><span class="lineno">  720</span>  }</div>
+<div class="line"><a id="l00721" name="l00721"></a><span class="lineno">  721</span> </div>
+<div class="line"><a id="l00725" name="l00725"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctorSVE.html#ae29b7000e5c8cdc1e68a24490ed4d54b">  725</a></span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keyword">auto</span> <a class="code hl_function" href="classmdLib_1_1LJFunctorSVE.html#ae29b7000e5c8cdc1e68a24490ed4d54b">getComputedAttr</a>() {</div>
+<div class="line"><a id="l00726" name="l00726"></a><span class="lineno">  726</span>    <span class="keywordflow">return</span> std::array&lt;typename Particle_T::AttributeNames, 3&gt;{</div>
+<div class="line"><a id="l00727" name="l00727"></a><span class="lineno">  727</span>        Particle_T::AttributeNames::forceX, Particle_T::AttributeNames::forceY, Particle_T::AttributeNames::forceZ};</div>
+<div class="line"><a id="l00728" name="l00728"></a><span class="lineno">  728</span>  }</div>
+<div class="line"><a id="l00729" name="l00729"></a><span class="lineno">  729</span> </div>
+<div class="line"><a id="l00734" name="l00734"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctorSVE.html#a3e395e95a8b2a0317da9badcf298e9e3">  734</a></span>  <span class="keyword">constexpr</span> <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="classmdLib_1_1LJFunctorSVE.html#a3e395e95a8b2a0317da9badcf298e9e3">getMixing</a>() { <span class="keywordflow">return</span> useMixing; }</div>
+<div class="line"><a id="l00735" name="l00735"></a><span class="lineno">  735</span> </div>
+<div class="line"><a id="l00747" name="l00747"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctorSVE.html#a4bb2e742f6ecd105cb4346555487235d">  747</a></span>  <span class="keyword">static</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code hl_function" href="classmdLib_1_1LJFunctorSVE.html#a4bb2e742f6ecd105cb4346555487235d">getNumFlopsPerKernelCall</a>(<span class="keywordtype">size_t</span> molAType, <span class="keywordtype">size_t</span> molBType, <span class="keywordtype">bool</span> newton3) {</div>
+<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span>    <span class="comment">// Kernel: 12 = 1 (inverse R squared) + 8 (compute scale) + 3 (apply scale) sum</span></div>
+<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span>    <span class="comment">// Adding to particle forces: 6 or 3 depending newton3</span></div>
+<div class="line"><a id="l00750" name="l00750"></a><span class="lineno">  750</span>    <span class="comment">// Total = 12 + (6 or 3) = 18 or 15</span></div>
+<div class="line"><a id="l00751" name="l00751"></a><span class="lineno">  751</span>    <span class="keywordflow">return</span> newton3 ? 18ul : 15ul;</div>
+<div class="line"><a id="l00752" name="l00752"></a><span class="lineno">  752</span>  }</div>
+<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span> </div>
+<div class="line"><a id="l00758" name="l00758"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctorSVE.html#a036bcf821368aee26a36ffba03fa7b2a">  758</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classmdLib_1_1LJFunctorSVE.html#a036bcf821368aee26a36ffba03fa7b2a">initTraversal</a>() final {</div>
+<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span>    _potentialEnergySum = 0.;</div>
+<div class="line"><a id="l00760" name="l00760"></a><span class="lineno">  760</span>    _virialSum = {0., 0., 0.};</div>
+<div class="line"><a id="l00761" name="l00761"></a><span class="lineno">  761</span>    _postProcessed = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00762" name="l00762"></a><span class="lineno">  762</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; _aosThreadData.size(); ++i) {</div>
+<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span>      _aosThreadData[i].setZero();</div>
+<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span>    }</div>
+<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span>  }</div>
+<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span> </div>
+<div class="line"><a id="l00771" name="l00771"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctorSVE.html#a82434013a14a2fa2e5671fbc075a8470">  771</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classmdLib_1_1LJFunctorSVE.html#a82434013a14a2fa2e5671fbc075a8470">endTraversal</a>(<span class="keywordtype">bool</span> newton3) <span class="keyword">final</span> {</div>
+<div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span>    <span class="keyword">using namespace </span>autopas::utils::ArrayMath::literals;</div>
+<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span> </div>
+<div class="line"><a id="l00774" name="l00774"></a><span class="lineno">  774</span>    <span class="keywordflow">if</span> (_postProcessed) {</div>
+<div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span>      <span class="keywordflow">throw</span> <a class="code hl_class" href="classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html">autopas::utils::ExceptionHandler::AutoPasException</a>(</div>
+<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>          <span class="stringliteral">&quot;Already postprocessed, endTraversal(bool newton3) was called twice without calling initTraversal().&quot;</span>);</div>
+<div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span>    }</div>
+<div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span>    <span class="keywordflow">if</span> (calculateGlobals) {</div>
+<div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; _aosThreadData.size(); ++i) {</div>
+<div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>        _potentialEnergySum += _aosThreadData[i].potentialEnergySum;</div>
+<div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>        _virialSum += _aosThreadData[i].virialSum;</div>
+<div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>      }</div>
+<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>      <span class="comment">// For each interaction, we added the full contribution for both particles. Divide by 2 here, so that each</span></div>
+<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>      <span class="comment">// contribution is only counted once per pair.</span></div>
+<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>      _potentialEnergySum *= 0.5;</div>
+<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>      _virialSum *= 0.5;</div>
+<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span> </div>
+<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span>      <span class="comment">// We have always calculated 6*potentialEnergy, so we divide by 6 here!</span></div>
+<div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>      _potentialEnergySum /= 6.;</div>
+<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>      _postProcessed = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span> </div>
+<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>      <a class="code hl_define" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(DEBUG, <span class="stringliteral">&quot;Final potential energy {}&quot;</span>, _potentialEnergySum);</div>
+<div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>      <a class="code hl_define" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(DEBUG, <span class="stringliteral">&quot;Final virial           {}&quot;</span>, _virialSum[0] + _virialSum[1] + _virialSum[2]);</div>
+<div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span>    }</div>
+<div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span>  }</div>
+<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span> </div>
+<div class="line"><a id="l00801" name="l00801"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctorSVE.html#abef0263d88a35f6410c18ffc829cac6e">  801</a></span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classmdLib_1_1LJFunctorSVE.html#abef0263d88a35f6410c18ffc829cac6e">getPotentialEnergy</a>() {</div>
+<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>    <span class="keywordflow">if</span> (not calculateGlobals) {</div>
+<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>      <span class="keywordflow">throw</span> <a class="code hl_class" href="classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html">autopas::utils::ExceptionHandler::AutoPasException</a>(</div>
+<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>          <span class="stringliteral">&quot;Trying to get potential energy even though calculateGlobals is false. If you want this functor to calculate &quot;</span></div>
+<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span>          <span class="stringliteral">&quot;global &quot;</span></div>
+<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span>          <span class="stringliteral">&quot;values, please specify calculateGlobals to be true.&quot;</span>);</div>
+<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span>    }</div>
+<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span>    <span class="keywordflow">if</span> (not _postProcessed) {</div>
+<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span>      <span class="keywordflow">throw</span> <a class="code hl_class" href="classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html">autopas::utils::ExceptionHandler::AutoPasException</a>(</div>
+<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>          <span class="stringliteral">&quot;Cannot get potential energy, because endTraversal was not called.&quot;</span>);</div>
+<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>    }</div>
+<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>    <span class="keywordflow">return</span> _potentialEnergySum;</div>
+<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>  }</div>
+<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span> </div>
+<div class="line"><a id="l00819" name="l00819"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctorSVE.html#a12684621164f9c70104023fd2ff0b9c3">  819</a></span>  <span class="keywordtype">double</span> <a class="code hl_function" href="classmdLib_1_1LJFunctorSVE.html#a12684621164f9c70104023fd2ff0b9c3">getVirial</a>() {</div>
+<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span>    <span class="keywordflow">if</span> (not calculateGlobals) {</div>
+<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span>      <span class="keywordflow">throw</span> <a class="code hl_class" href="classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html">autopas::utils::ExceptionHandler::AutoPasException</a>(</div>
+<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>          <span class="stringliteral">&quot;Trying to get virial even though calculateGlobals is false. If you want this functor to calculate global &quot;</span></div>
+<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span>          <span class="stringliteral">&quot;values, please specify calculateGlobals to be true.&quot;</span>);</div>
+<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span>    }</div>
+<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>    <span class="keywordflow">if</span> (not _postProcessed) {</div>
+<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>      <span class="keywordflow">throw</span> <a class="code hl_class" href="classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html">autopas::utils::ExceptionHandler::AutoPasException</a>(</div>
+<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span>          <span class="stringliteral">&quot;Cannot get virial, because endTraversal was not called.&quot;</span>);</div>
+<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span>    }</div>
+<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>    <span class="keywordflow">return</span> _virialSum[0] + _virialSum[1] + _virialSum[2];</div>
+<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>  }</div>
+<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span> </div>
+<div class="line"><a id="l00840" name="l00840"></a><span class="lineno"><a class="line" href="classmdLib_1_1LJFunctorSVE.html#a9fed372df89c6cae40598f196692947d">  840</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="classmdLib_1_1LJFunctorSVE.html#a9fed372df89c6cae40598f196692947d">setParticleProperties</a>(<span class="keywordtype">double</span> epsilon24, <span class="keywordtype">double</span> sigmaSquared) {</div>
+<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span><span class="preprocessor">#ifdef __ARM_FEATURE_SVE</span></div>
+<div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span>    _epsilon24 = epsilon24;</div>
+<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>    _sigmaSquared = sigmaSquared;</div>
+<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (applyShift) {</div>
+<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span>      _shift6 = <a class="code hl_function" href="classParticlePropertiesLibrary.html#aee0c262762933e5a1334695c945f81f5">ParticlePropertiesLibrary&lt;double, size_t&gt;::calcShift6</a>(epsilon24, sigmaSquared, _cutoffSquared);</div>
+<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span>      _shift6 = 0.0;</div>
+<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span>    }</div>
+<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span> </div>
+<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>    _epsilon24AoS = epsilon24;</div>
+<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>    _sigmaSquaredAoS = sigmaSquared;</div>
+<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (applyShift) {</div>
+<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>      _shift6AoS = <a class="code hl_function" href="classParticlePropertiesLibrary.html#aee0c262762933e5a1334695c945f81f5">ParticlePropertiesLibrary&lt;double, size_t&gt;::calcShift6</a>(epsilon24, sigmaSquared, _cutoffSquaredAoS);</div>
+<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>      _shift6AoS = 0.;</div>
+<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>    }</div>
+<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>  }</div>
+<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span> </div>
+<div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span> <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span>  <span class="keyword">class </span>AoSThreadData {</div>
+<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>   <span class="keyword">public</span>:</div>
+<div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span>    AoSThreadData() : virialSum{0., 0., 0.}, potentialEnergySum{0.}, __remainingTo64{} {}</div>
+<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>    <span class="keywordtype">void</span> setZero() {</div>
+<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span>      virialSum = {0., 0., 0.};</div>
+<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span>      potentialEnergySum = 0.;</div>
+<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span>    }</div>
+<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span> </div>
+<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>    <span class="comment">// variables</span></div>
+<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>    std::array&lt;double, 3&gt; virialSum;</div>
+<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>    <span class="keywordtype">double</span> potentialEnergySum;</div>
+<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span> </div>
+<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>   <span class="keyword">private</span>:</div>
+<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>    <span class="comment">// dummy parameter to get the right size (64 bytes)</span></div>
+<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>    <span class="keywordtype">double</span> __remainingTo64[(64 - 4 * <span class="keyword">sizeof</span>(double)) / <span class="keyword">sizeof</span>(double)];</div>
+<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>  };</div>
+<div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span>  <span class="comment">// make sure of the size of AoSThreadData</span></div>
+<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span>  <span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>(AoSThreadData) % 64 == 0, <span class="stringliteral">&quot;AoSThreadData has wrong size&quot;</span>);</div>
+<div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span> </div>
+<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span><span class="preprocessor">#ifdef __ARM_FEATURE_SVE</span></div>
+<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> _cutoffSquared{};</div>
+<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>  <span class="keywordtype">double</span> _shift6{0.};</div>
+<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span>  <span class="keywordtype">double</span> _epsilon24{0.};</div>
+<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>  <span class="keywordtype">double</span> _sigmaSquared{0.};</div>
+<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span> </div>
+<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span>  <span class="keyword">const</span> <span class="keywordtype">double</span> _cutoffSquaredAoS;</div>
+<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span>  <span class="keywordtype">double</span> _epsilon24AoS{0.}, _sigmaSquaredAoS{0.}, _shift6AoS{0.};</div>
+<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span> </div>
+<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span>  <a class="code hl_class" href="classParticlePropertiesLibrary.html">ParticlePropertiesLibrary&lt;double, size_t&gt;</a> *_PPLibrary = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span> </div>
+<div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span>  <span class="comment">// sum of the potential energy, only calculated if calculateGlobals is true</span></div>
+<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span>  <span class="keywordtype">double</span> _potentialEnergySum{0.};</div>
+<div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span> </div>
+<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span>  <span class="comment">// sum of the virial, only calculated if calculateGlobals is true</span></div>
+<div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span>  std::array&lt;double, 3&gt; _virialSum{0., 0., 0.};</div>
+<div class="line"><a id="l00900" name="l00900"></a><span class="lineno">  900</span> </div>
+<div class="line"><a id="l00901" name="l00901"></a><span class="lineno">  901</span>  <span class="comment">// thread buffer for aos</span></div>
+<div class="line"><a id="l00902" name="l00902"></a><span class="lineno">  902</span>  std::vector&lt;AoSThreadData&gt; _aosThreadData{};</div>
+<div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span> </div>
+<div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span>  <span class="comment">// defines whether or whether not the global values are already preprocessed</span></div>
+<div class="line"><a id="l00905" name="l00905"></a><span class="lineno">  905</span>  <span class="keywordtype">bool</span> _postProcessed{<span class="keyword">false</span>};</div>
+<div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span>};</div>
+<div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span>}  <span class="comment">// namespace mdLib</span></div>
 <div class="ttc" id="aAlignedAllocator_8h_html"><div class="ttname"><a href="AlignedAllocator_8h.html">AlignedAllocator.h</a></div></div>
 <div class="ttc" id="aArrayMath_8h_html"><div class="ttname"><a href="ArrayMath_8h.html">ArrayMath.h</a></div></div>
 <div class="ttc" id="aLogger_8h_html_ab5eef0a7030352f281056d3ee7f86575"><div class="ttname"><a href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a></div><div class="ttdeci">#define AutoPasLog(lvl, fmt,...)</div><div class="ttdoc">Macro for logging providing common meta information without filename.</div><div class="ttdef"><b>Definition:</b> Logger.h:24</div></div>
@@ -923,34 +922,33 @@ $(function() {
 <div class="ttc" id="aclassParticlePropertiesLibrary_html_adcfa7412e44128fbebd2ddccbe6b4bf4"><div class="ttname"><a href="classParticlePropertiesLibrary.html#adcfa7412e44128fbebd2ddccbe6b4bf4">ParticlePropertiesLibrary::getLJMixingDataPtr</a></div><div class="ttdeci">const double * getLJMixingDataPtr(intType i, intType j)</div><div class="ttdoc">Get a pointer to Mixing Data for one pair of LJ site types.</div><div class="ttdef"><b>Definition:</b> ParticlePropertiesLibrary.h:242</div></div>
 <div class="ttc" id="aclassParticlePropertiesLibrary_html_adef719658571d5bf89f335f666e0544d"><div class="ttname"><a href="classParticlePropertiesLibrary.html#adef719658571d5bf89f335f666e0544d">ParticlePropertiesLibrary::getMixing24Epsilon</a></div><div class="ttdeci">floatType getMixing24Epsilon(intType i, intType j) const</div><div class="ttdoc">Returns the precomputed mixed epsilon * 24.</div><div class="ttdef"><b>Definition:</b> ParticlePropertiesLibrary.h:224</div></div>
 <div class="ttc" id="aclassParticlePropertiesLibrary_html_aee0c262762933e5a1334695c945f81f5"><div class="ttname"><a href="classParticlePropertiesLibrary.html#aee0c262762933e5a1334695c945f81f5">ParticlePropertiesLibrary::calcShift6</a></div><div class="ttdeci">static double calcShift6(double epsilon24, double sigmaSquared, double cutoffSquared)</div><div class="ttdoc">Calculate the shift multiplied 6 of the lennard jones potential from given cutoff,...</div><div class="ttdef"><b>Definition:</b> ParticlePropertiesLibrary.h:576</div></div>
-<div class="ttc" id="aclassautopas_1_1AlignedAllocator_html"><div class="ttname"><a href="classautopas_1_1AlignedAllocator.html">autopas::AlignedAllocator</a></div><div class="ttdoc">AlignedAllocator class.</div><div class="ttdef"><b>Definition:</b> AlignedAllocator.h:29</div></div>
-<div class="ttc" id="aclassautopas_1_1PairwiseFunctor_html"><div class="ttname"><a href="classautopas_1_1PairwiseFunctor.html">autopas::PairwiseFunctor</a></div><div class="ttdoc">PairwiseFunctor class.</div><div class="ttdef"><b>Definition:</b> PairwiseFunctor.h:65</div></div>
+<div class="ttc" id="aclassautopas_1_1PairwiseFunctor_html"><div class="ttname"><a href="classautopas_1_1PairwiseFunctor.html">autopas::PairwiseFunctor</a></div><div class="ttdoc">PairwiseFunctor class.</div><div class="ttdef"><b>Definition:</b> PairwiseFunctor.h:66</div></div>
 <div class="ttc" id="aclassautopas_1_1SoAView_html"><div class="ttname"><a href="classautopas_1_1SoAView.html">autopas::SoAView</a></div><div class="ttdoc">View on a fixed part of a SoA between a start index and an end index.</div><div class="ttdef"><b>Definition:</b> SoAView.h:25</div></div>
 <div class="ttc" id="aclassautopas_1_1SoAView_html_a03c301441b1ff85d43e55489d06de3b3"><div class="ttname"><a href="classautopas_1_1SoAView.html#a03c301441b1ff85d43e55489d06de3b3">autopas::SoAView::size</a></div><div class="ttdeci">size_t size() const</div><div class="ttdoc">Returns the number of particles in the view.</div><div class="ttdef"><b>Definition:</b> SoAView.h:85</div></div>
 <div class="ttc" id="aclassautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException_html"><div class="ttname"><a href="classautopas_1_1utils_1_1ExceptionHandler_1_1AutoPasException.html">autopas::utils::ExceptionHandler::AutoPasException</a></div><div class="ttdoc">Default exception class for autopas exceptions.</div><div class="ttdef"><b>Definition:</b> ExceptionHandler.h:116</div></div>
 <div class="ttc" id="aclassautopas_1_1utils_1_1ExceptionHandler_html_ae61b9aac49a90a9ff86859c73005ee07"><div class="ttname"><a href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a></div><div class="ttdeci">static void exception(const Exception e)</div><div class="ttdoc">Handle an exception derived by std::exception.</div><div class="ttdef"><b>Definition:</b> ExceptionHandler.h:64</div></div>
 <div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html">mdLib::LJFunctorSVE</a></div><div class="ttdoc">A functor to handle lennard-jones interactions between two particles (molecules).</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:51</div></div>
-<div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_a036bcf821368aee26a36ffba03fa7b2a"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#a036bcf821368aee26a36ffba03fa7b2a">mdLib::LJFunctorSVE::initTraversal</a></div><div class="ttdeci">void initTraversal() final</div><div class="ttdoc">Reset the global values.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:759</div></div>
-<div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_a12684621164f9c70104023fd2ff0b9c3"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#a12684621164f9c70104023fd2ff0b9c3">mdLib::LJFunctorSVE::getVirial</a></div><div class="ttdeci">double getVirial()</div><div class="ttdoc">Get the virial.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:820</div></div>
+<div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_a036bcf821368aee26a36ffba03fa7b2a"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#a036bcf821368aee26a36ffba03fa7b2a">mdLib::LJFunctorSVE::initTraversal</a></div><div class="ttdeci">void initTraversal() final</div><div class="ttdoc">Reset the global values.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:758</div></div>
+<div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_a12684621164f9c70104023fd2ff0b9c3"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#a12684621164f9c70104023fd2ff0b9c3">mdLib::LJFunctorSVE::getVirial</a></div><div class="ttdeci">double getVirial()</div><div class="ttdoc">Get the virial.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:819</div></div>
 <div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_a178f2f215918965994a7ed1c0aa68785"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#a178f2f215918965994a7ed1c0aa68785">mdLib::LJFunctorSVE::isRelevantForTuning</a></div><div class="ttdeci">bool isRelevantForTuning() final</div><div class="ttdoc">Specifies whether the functor should be considered for the auto-tuning process.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:120</div></div>
 <div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_a1be5edd68af139fb2de5a57f84c04dbc"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#a1be5edd68af139fb2de5a57f84c04dbc">mdLib::LJFunctorSVE::SoAFunctorPair</a></div><div class="ttdeci">void SoAFunctorPair(autopas::SoAView&lt; SoAArraysType &gt; soa1, autopas::SoAView&lt; SoAArraysType &gt; soa2, const bool newton3) final</div><div class="ttdoc">PairwiseFunctor for structure of arrays (SoA)</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:203</div></div>
-<div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_a3e395e95a8b2a0317da9badcf298e9e3"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#a3e395e95a8b2a0317da9badcf298e9e3">mdLib::LJFunctorSVE::getMixing</a></div><div class="ttdeci">static constexpr bool getMixing()</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:735</div></div>
+<div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_a3e395e95a8b2a0317da9badcf298e9e3"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#a3e395e95a8b2a0317da9badcf298e9e3">mdLib::LJFunctorSVE::getMixing</a></div><div class="ttdeci">static constexpr bool getMixing()</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:734</div></div>
 <div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_a4049ceb8e46e27beb558023238ee7690"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#a4049ceb8e46e27beb558023238ee7690">mdLib::LJFunctorSVE::LJFunctorSVE</a></div><div class="ttdeci">LJFunctorSVE()=delete</div><div class="ttdoc">Deleted default constructor.</div></div>
-<div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_a4bb2e742f6ecd105cb4346555487235d"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#a4bb2e742f6ecd105cb4346555487235d">mdLib::LJFunctorSVE::getNumFlopsPerKernelCall</a></div><div class="ttdeci">static unsigned long getNumFlopsPerKernelCall(size_t molAType, size_t molBType, bool newton3)</div><div class="ttdoc">Get the number of flops used per kernel call for a given particle pair.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:748</div></div>
+<div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_a4bb2e742f6ecd105cb4346555487235d"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#a4bb2e742f6ecd105cb4346555487235d">mdLib::LJFunctorSVE::getNumFlopsPerKernelCall</a></div><div class="ttdeci">static unsigned long getNumFlopsPerKernelCall(size_t molAType, size_t molBType, bool newton3)</div><div class="ttdoc">Get the number of flops used per kernel call for a given particle pair.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:747</div></div>
 <div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_a5fccfd0e489adf5d32edc9be78aa4590"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#a5fccfd0e489adf5d32edc9be78aa4590">mdLib::LJFunctorSVE::LJFunctorSVE</a></div><div class="ttdeci">LJFunctorSVE(double cutoff)</div><div class="ttdoc">Constructor for Functor with mixing disabled.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:98</div></div>
-<div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_a81714ba9bdeabd546d8879faf3cece82"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#a81714ba9bdeabd546d8879faf3cece82">mdLib::LJFunctorSVE::getNeededAttr</a></div><div class="ttdeci">static constexpr auto getNeededAttr()</div><div class="ttdoc">Get attributes needed for computation.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:701</div></div>
-<div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_a82434013a14a2fa2e5671fbc075a8470"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#a82434013a14a2fa2e5671fbc075a8470">mdLib::LJFunctorSVE::endTraversal</a></div><div class="ttdeci">void endTraversal(bool newton3) final</div><div class="ttdoc">Accumulates global values, e.g.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:772</div></div>
-<div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_a82da5ef65ff61768b2fc9239e553e3b6"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#a82da5ef65ff61768b2fc9239e553e3b6">mdLib::LJFunctorSVE::getNeededAttr</a></div><div class="ttdeci">static constexpr auto getNeededAttr(std::false_type)</div><div class="ttdoc">Get attributes needed for computation without N3 optimization.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:716</div></div>
-<div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_a9fed372df89c6cae40598f196692947d"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#a9fed372df89c6cae40598f196692947d">mdLib::LJFunctorSVE::setParticleProperties</a></div><div class="ttdeci">void setParticleProperties(double epsilon24, double sigmaSquared)</div><div class="ttdoc">Sets the particle properties constants for this functor.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:841</div></div>
+<div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_a74b2a061382a360517321d7dc4aecd3d"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#a74b2a061382a360517321d7dc4aecd3d">mdLib::LJFunctorSVE::SoAFunctorVerlet</a></div><div class="ttdeci">void SoAFunctorVerlet(autopas::SoAView&lt; SoAArraysType &gt; soa, const size_t indexFirst, std::span&lt; const size_t &gt; neighborList, bool newton3) final</div><div class="ttdoc">PairwiseFunctor for structure of arrays (SoA) for neighbor lists.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:607</div></div>
+<div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_a81714ba9bdeabd546d8879faf3cece82"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#a81714ba9bdeabd546d8879faf3cece82">mdLib::LJFunctorSVE::getNeededAttr</a></div><div class="ttdeci">static constexpr auto getNeededAttr()</div><div class="ttdoc">Get attributes needed for computation.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:700</div></div>
+<div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_a82434013a14a2fa2e5671fbc075a8470"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#a82434013a14a2fa2e5671fbc075a8470">mdLib::LJFunctorSVE::endTraversal</a></div><div class="ttdeci">void endTraversal(bool newton3) final</div><div class="ttdoc">Accumulates global values, e.g.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:771</div></div>
+<div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_a82da5ef65ff61768b2fc9239e553e3b6"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#a82da5ef65ff61768b2fc9239e553e3b6">mdLib::LJFunctorSVE::getNeededAttr</a></div><div class="ttdeci">static constexpr auto getNeededAttr(std::false_type)</div><div class="ttdoc">Get attributes needed for computation without N3 optimization.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:715</div></div>
+<div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_a9fed372df89c6cae40598f196692947d"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#a9fed372df89c6cae40598f196692947d">mdLib::LJFunctorSVE::setParticleProperties</a></div><div class="ttdeci">void setParticleProperties(double epsilon24, double sigmaSquared)</div><div class="ttdoc">Sets the particle properties constants for this functor.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:840</div></div>
 <div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_aad860a34d59330ba026de4239e8b0e65"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#aad860a34d59330ba026de4239e8b0e65">mdLib::LJFunctorSVE::getName</a></div><div class="ttdeci">std::string getName() final</div><div class="ttdoc">Returns name of functor.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:118</div></div>
-<div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_abef0263d88a35f6410c18ffc829cac6e"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#abef0263d88a35f6410c18ffc829cac6e">mdLib::LJFunctorSVE::getPotentialEnergy</a></div><div class="ttdeci">double getPotentialEnergy()</div><div class="ttdoc">Get the potential Energy.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:802</div></div>
+<div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_abef0263d88a35f6410c18ffc829cac6e"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#abef0263d88a35f6410c18ffc829cac6e">mdLib::LJFunctorSVE::getPotentialEnergy</a></div><div class="ttdeci">double getPotentialEnergy()</div><div class="ttdoc">Get the potential Energy.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:801</div></div>
 <div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_abfc9200792d1c5ac44cc2e8d00b6222b"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#abfc9200792d1c5ac44cc2e8d00b6222b">mdLib::LJFunctorSVE::LJFunctorSVE</a></div><div class="ttdeci">LJFunctorSVE(double cutoff, ParticlePropertiesLibrary&lt; double, size_t &gt; &amp;particlePropertiesLibrary)</div><div class="ttdoc">Constructor for Functor with mixing active.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:110</div></div>
 <div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_acfe387be51d75cefd1476baad3d51a53"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#acfe387be51d75cefd1476baad3d51a53">mdLib::LJFunctorSVE::allowsNonNewton3</a></div><div class="ttdeci">bool allowsNonNewton3() final</div><div class="ttdoc">Specifies whether the functor is capable of non-Newton3-like functors.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:126</div></div>
 <div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_ad360c805fa0847d72a991db78486d03f"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#ad360c805fa0847d72a991db78486d03f">mdLib::LJFunctorSVE::SoAFunctorSingle</a></div><div class="ttdeci">void SoAFunctorSingle(autopas::SoAView&lt; SoAArraysType &gt; soa, bool newton3) final</div><div class="ttdoc">PairwiseFunctor for structure of arrays (SoA)</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:190</div></div>
 <div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_ad600219de2b0eee219be759738802d8f"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#ad600219de2b0eee219be759738802d8f">mdLib::LJFunctorSVE::allowsNewton3</a></div><div class="ttdeci">bool allowsNewton3() final</div><div class="ttdoc">Specifies whether the functor is capable of Newton3-like functors.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:122</div></div>
-<div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_ae29b7000e5c8cdc1e68a24490ed4d54b"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#ae29b7000e5c8cdc1e68a24490ed4d54b">mdLib::LJFunctorSVE::getComputedAttr</a></div><div class="ttdeci">static constexpr auto getComputedAttr()</div><div class="ttdoc">Get attributes computed by this functor.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:726</div></div>
+<div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_ae29b7000e5c8cdc1e68a24490ed4d54b"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#ae29b7000e5c8cdc1e68a24490ed4d54b">mdLib::LJFunctorSVE::getComputedAttr</a></div><div class="ttdeci">static constexpr auto getComputedAttr()</div><div class="ttdoc">Get attributes computed by this functor.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:725</div></div>
 <div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_af1c53532f61d4ca303090f38ec07d993"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#af1c53532f61d4ca303090f38ec07d993">mdLib::LJFunctorSVE::AoSFunctor</a></div><div class="ttdeci">void AoSFunctor(Particle_T &amp;i, Particle_T &amp;j, bool newton3) final</div><div class="ttdoc">PairwiseFunctor for arrays of structures (AoS).</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:130</div></div>
-<div class="ttc" id="aclassmdLib_1_1LJFunctorSVE_html_af6426c3cc2e827abca466c6cdfd01b6f"><div class="ttname"><a href="classmdLib_1_1LJFunctorSVE.html#af6426c3cc2e827abca466c6cdfd01b6f">mdLib::LJFunctorSVE::SoAFunctorVerlet</a></div><div class="ttdeci">void SoAFunctorVerlet(autopas::SoAView&lt; SoAArraysType &gt; soa, const size_t indexFirst, const std::vector&lt; size_t, autopas::AlignedAllocator&lt; size_t &gt; &gt; &amp;neighborList, bool newton3) final</div><div class="ttdoc">PairwiseFunctor for structure of arrays (SoA) for neighbor lists.</div><div class="ttdef"><b>Definition:</b> LJFunctorSVE.h:607</div></div>
 <div class="ttc" id="ainBox_8h_html"><div class="ttname"><a href="inBox_8h.html">inBox.h</a></div></div>
 <div class="ttc" id="anamespaceautopas_1_1utils_1_1ArrayMath_html_a1d321ba1191121f73334c284d1e72e72"><div class="ttname"><a href="namespaceautopas_1_1utils_1_1ArrayMath.html#a1d321ba1191121f73334c284d1e72e72">autopas::utils::ArrayMath::dot</a></div><div class="ttdeci">constexpr T dot(const std::array&lt; T, SIZE &gt; &amp;a, const std::array&lt; T, SIZE &gt; &amp;b)</div><div class="ttdoc">Generates the dot product of two arrays.</div><div class="ttdef"><b>Definition:</b> ArrayMath.h:233</div></div>
 <div class="ttc" id="anamespaceautopas_html_a385797c464a683f32da2d4a43ab53220"><div class="ttname"><a href="namespaceautopas.html#a385797c464a683f32da2d4a43ab53220">autopas::autopas_get_max_threads</a></div><div class="ttdeci">int autopas_get_max_threads()</div><div class="ttdoc">Dummy for omp_get_max_threads() when no OpenMP is available.</div><div class="ttdef"><b>Definition:</b> WrapOpenMP.h:144</div></div>
