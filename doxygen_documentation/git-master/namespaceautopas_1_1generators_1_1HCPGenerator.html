@@ -108,31 +108,34 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="namespaceautopas.html">autopas</a></li><li class="navelem"><a class="el" href="namespaceautopas_1_1generators.html">generators</a></li><li class="navelem"><a class="el" href="namespaceautopas_1_1generators_1_1ClosestPackingGenerator.html">ClosestPackingGenerator</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespaceautopas.html">autopas</a></li><li class="navelem"><a class="el" href="namespaceautopas_1_1generators.html">generators</a></li><li class="navelem"><a class="el" href="namespaceautopas_1_1generators_1_1HCPGenerator.html">HCPGenerator</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">autopas::generators::ClosestPackingGenerator Namespace Reference</div></div>
+  <div class="headertitle"><div class="title">autopas::generators::HCPGenerator Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Generator for grids of particles.  
-<a href="namespaceautopas_1_1generators_1_1ClosestPackingGenerator.html#details">More...</a></p>
+<p>Generator for an hexagonally closest packed particle grid.  
+<a href="namespaceautopas_1_1generators_1_1HCPGenerator.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ac66e9458188d5335745a4fd9df9cf376"><td class="memTemplParams" colspan="2">template&lt;class Container &gt; </td></tr>
-<tr class="memitem:ac66e9458188d5335745a4fd9df9cf376"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1generators_1_1ClosestPackingGenerator.html#ac66e9458188d5335745a4fd9df9cf376">fillWithParticles</a> (Container &amp;container, const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax, const typename <a class="el" href="structautopas_1_1utils_1_1ParticleTypeTrait.html">autopas::utils::ParticleTypeTrait</a>&lt; Container &gt;::value &amp;defaultParticle=typename <a class="el" href="structautopas_1_1utils_1_1ParticleTypeTrait.html">autopas::utils::ParticleTypeTrait</a>&lt; Container &gt;::value(), const double spacing=1.)</td></tr>
-<tr class="memdesc:ac66e9458188d5335745a4fd9df9cf376"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills any container (also <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> object) with a hexagonally closest packed particles.  <br /></td></tr>
-<tr class="separator:ac66e9458188d5335745a4fd9df9cf376"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a02399f689f537344587770bd4d232993"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1generators_1_1HCPGenerator.html#a02399f689f537344587770bd4d232993">getNumberOfParticles</a> (const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax, const double spacing=1.0, const bool centeredAlignment=false)</td></tr>
+<tr class="memdesc:a02399f689f537344587770bd4d232993"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculates the number of particles generated in an HCP lattice within [boxMin, boxMax) in O(1) time.  <br /></td></tr>
+<tr class="separator:a02399f689f537344587770bd4d232993"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b4ab0f376b3ff5c3b93daf0b49d2c11"><td class="memTemplParams" colspan="2">template&lt;class Container &gt; </td></tr>
+<tr class="memitem:a7b4ab0f376b3ff5c3b93daf0b49d2c11"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1generators_1_1HCPGenerator.html#a7b4ab0f376b3ff5c3b93daf0b49d2c11">fillWithParticles</a> (Container &amp;container, const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax, const typename <a class="el" href="structautopas_1_1utils_1_1ParticleTypeTrait.html">autopas::utils::ParticleTypeTrait</a>&lt; Container &gt;::value &amp;defaultParticle=typename <a class="el" href="structautopas_1_1utils_1_1ParticleTypeTrait.html">autopas::utils::ParticleTypeTrait</a>&lt; Container &gt;::value(), const double spacing=1., const bool centeredAlignment=false)</td></tr>
+<tr class="memdesc:a7b4ab0f376b3ff5c3b93daf0b49d2c11"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills any container (also <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> object) with hexagonally closest packed particles.  <br /></td></tr>
+<tr class="separator:a7b4ab0f376b3ff5c3b93daf0b49d2c11"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Generator for grids of particles. </p>
+<div class="textblock"><p>Generator for an hexagonally closest packed particle grid. </p>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="ac66e9458188d5335745a4fd9df9cf376" name="ac66e9458188d5335745a4fd9df9cf376"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac66e9458188d5335745a4fd9df9cf376">&#9670;&#160;</a></span>fillWithParticles()</h2>
+<a id="a7b4ab0f376b3ff5c3b93daf0b49d2c11" name="a7b4ab0f376b3ff5c3b93daf0b49d2c11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b4ab0f376b3ff5c3b93daf0b49d2c11">&#9670;&#160;</a></span>fillWithParticles()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -140,7 +143,7 @@ Functions</h2></td></tr>
 template&lt;class Container &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">void autopas::generators::ClosestPackingGenerator::fillWithParticles </td>
+          <td class="memname">void autopas::generators::HCPGenerator::fillWithParticles </td>
           <td>(</td>
           <td class="paramtype">Container &amp;&#160;</td>
           <td class="paramname"><em>container</em>, </td>
@@ -167,7 +170,13 @@ template&lt;class Container &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const double&#160;</td>
-          <td class="paramname"><em>spacing</em> = <code>1.</code>&#160;</td>
+          <td class="paramname"><em>spacing</em> = <code>1.</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>centeredAlignment</em> = <code>false</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -177,7 +186,7 @@ template&lt;class Container &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>Fills any container (also <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> object) with a hexagonally closest packed particles. </p>
+<p>Fills any container (also <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> object) with hexagonally closest packed particles. </p>
 <p>Particle properties will be used from the default particle. Particle IDs start from the default particle. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Container</td><td>Arbitrary container class that needs to support addParticle(). </td></tr>
@@ -191,9 +200,70 @@ template&lt;class Container &gt; </div>
     <tr><td class="paramname">boxMax</td><td></td></tr>
     <tr><td class="paramname">defaultParticle</td><td></td></tr>
     <tr><td class="paramname">spacing</td><td>Distance between all neighboring particles </td></tr>
+    <tr><td class="paramname">centeredAlignment</td><td>If true, the cell offset moved inward by 1/4 * lattice constant. </td></tr>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a02399f689f537344587770bd4d232993" name="a02399f689f537344587770bd4d232993"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a02399f689f537344587770bd4d232993">&#9670;&#160;</a></span>getNumberOfParticles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t autopas::generators::HCPGenerator::getNumberOfParticles </td>
+          <td>(</td>
+          <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>boxMin</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; double, 3 &gt; &amp;&#160;</td>
+          <td class="paramname"><em>boxMax</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const double&#160;</td>
+          <td class="paramname"><em>spacing</em> = <code>1.0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const bool&#160;</td>
+          <td class="paramname"><em>centeredAlignment</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Calculates the number of particles generated in an HCP lattice within [boxMin, boxMax) in O(1) time. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">boxMin</td><td></td></tr>
+    <tr><td class="paramname">boxMax</td><td></td></tr>
+    <tr><td class="paramname">spacing</td><td>Nearest-neighbor distance d. </td></tr>
+    <tr><td class="paramname">centeredAlignment</td><td>If true, the cell offset moved inward by 1/4 * lattice constant. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of particles. </dd></dl>
 
 </div>
 </div>
