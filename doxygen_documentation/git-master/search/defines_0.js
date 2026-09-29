@@ -30,5 +30,11 @@ var searchData=
   ['autopas_5fmpi_5funsigned_5fint_27',['AUTOPAS_MPI_UNSIGNED_INT',['../WrapMPI_8h.html#a49eb68cbec5fec61b4b474d29017e2c2',1,'WrapMPI.h']]],
   ['autopas_5fmpi_5funsigned_5flong_28',['AUTOPAS_MPI_UNSIGNED_LONG',['../WrapMPI_8h.html#a0dda7e3061652c8f7f87fdb210a224b8',1,'WrapMPI.h']]],
   ['autopas_5fopenmp_29',['AUTOPAS_OPENMP',['../WrapOpenMP_8h.html#adf64fc4981617d456044d0a30deb3d0d',1,'WrapOpenMP.h']]],
-  ['autopaslog_30',['AutoPasLog',['../Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575',1,'Logger.h']]]
+  ['autopaslog_30',['AutoPasLog',['../Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575',1,'Logger.h']]],
+  ['autopaslog_5fcritical_31',['AutoPasLog_CRITICAL',['../Logger_8h.html#af1a671590d636c6764f18603ffaf184f',1,'Logger.h']]],
+  ['autopaslog_5fdebug_32',['AutoPasLog_DEBUG',['../Logger_8h.html#a3c0eb3447dad9c3b5801404d2887671e',1,'Logger.h']]],
+  ['autopaslog_5ferror_33',['AutoPasLog_ERROR',['../Logger_8h.html#aec6557813082ade752bf7c23b873156f',1,'Logger.h']]],
+  ['autopaslog_5finfo_34',['AutoPasLog_INFO',['../Logger_8h.html#a1a362022cbaa8ade5ca261aefc76afdc',1,'Logger.h']]],
+  ['autopaslog_5ftrace_35',['AutoPasLog_TRACE',['../Logger_8h.html#a1f7b48ae05f4819af9bb56e1fa46099b',1,'Logger.h']]],
+  ['autopaslog_5fwarn_36',['AutoPasLog_WARN',['../Logger_8h.html#a5e985e13a498c9db657304042816839f',1,'Logger.h']]]
 ];

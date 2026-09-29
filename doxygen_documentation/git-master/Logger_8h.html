@@ -303,9 +303,37 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ab5eef0a7030352f281056d3ee7f86575"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(lvl,  fmt, ...)&#160;&#160;&#160;SPDLOG_LOGGER_##lvl(<a class="el" href="classautopas_1_1Logger.html#a919afbf8e2a85bf040a8723f0f4b3d28">autopas::Logger::get</a>(), fmt, ##__VA_ARGS__)</td></tr>
+<tr class="memitem:ab5eef0a7030352f281056d3ee7f86575"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="Logger_8h.html#ab5eef0a7030352f281056d3ee7f86575">AutoPasLog</a>(lvl,  fmt, ...)&#160;&#160;&#160;AutoPasLog_##lvl(fmt, ##__VA_ARGS__)</td></tr>
 <tr class="memdesc:ab5eef0a7030352f281056d3ee7f86575"><td class="mdescLeft">&#160;</td><td class="mdescRight">Macro for logging providing common meta information without filename.  <br /></td></tr>
 <tr class="separator:ab5eef0a7030352f281056d3ee7f86575"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Per-level building blocks of AutoPasLog</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>These mirror spdlog's own SPDLOG_LOGGER_&lt;LEVEL&gt; wrappers, but are gated on AUTOPAS_ACTIVE_LEVEL.</p>
+<p>Levels below the configured one expand to (void)0, so they cost nothing at run time. The purpose of this is to allow for a consumer to keep AutoPas's log level independent of that of their own spdlog. </p>
+</div></td></tr>
+<tr class="memitem:a1f7b48ae05f4819af9bb56e1fa46099b"><td class="memItemLeft" align="right" valign="top"><a id="a1f7b48ae05f4819af9bb56e1fa46099b" name="a1f7b48ae05f4819af9bb56e1fa46099b"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AutoPasLog_TRACE</b>(...)&#160;&#160;&#160;SPDLOG_LOGGER_CALL(<a class="el" href="classautopas_1_1Logger.html#a919afbf8e2a85bf040a8723f0f4b3d28">autopas::Logger::get</a>(), spdlog::level::trace, __VA_ARGS__)</td></tr>
+<tr class="memdesc:a1f7b48ae05f4819af9bb56e1fa46099b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs at TRACE level, or expands to (void)0 if AUTOPAS_ACTIVE_LEVEL is above TRACE. <br /></td></tr>
+<tr class="separator:a1f7b48ae05f4819af9bb56e1fa46099b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3c0eb3447dad9c3b5801404d2887671e"><td class="memItemLeft" align="right" valign="top"><a id="a3c0eb3447dad9c3b5801404d2887671e" name="a3c0eb3447dad9c3b5801404d2887671e"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AutoPasLog_DEBUG</b>(...)&#160;&#160;&#160;SPDLOG_LOGGER_CALL(<a class="el" href="classautopas_1_1Logger.html#a919afbf8e2a85bf040a8723f0f4b3d28">autopas::Logger::get</a>(), spdlog::level::debug, __VA_ARGS__)</td></tr>
+<tr class="memdesc:a3c0eb3447dad9c3b5801404d2887671e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs at DEBUG level, or expands to (void)0 if AUTOPAS_ACTIVE_LEVEL is above DEBUG. <br /></td></tr>
+<tr class="separator:a3c0eb3447dad9c3b5801404d2887671e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1a362022cbaa8ade5ca261aefc76afdc"><td class="memItemLeft" align="right" valign="top"><a id="a1a362022cbaa8ade5ca261aefc76afdc" name="a1a362022cbaa8ade5ca261aefc76afdc"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AutoPasLog_INFO</b>(...)&#160;&#160;&#160;SPDLOG_LOGGER_CALL(<a class="el" href="classautopas_1_1Logger.html#a919afbf8e2a85bf040a8723f0f4b3d28">autopas::Logger::get</a>(), spdlog::level::info, __VA_ARGS__)</td></tr>
+<tr class="memdesc:a1a362022cbaa8ade5ca261aefc76afdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs at INFO level, or expands to (void)0 if AUTOPAS_ACTIVE_LEVEL is above INFO. <br /></td></tr>
+<tr class="separator:a1a362022cbaa8ade5ca261aefc76afdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e985e13a498c9db657304042816839f"><td class="memItemLeft" align="right" valign="top"><a id="a5e985e13a498c9db657304042816839f" name="a5e985e13a498c9db657304042816839f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AutoPasLog_WARN</b>(...)&#160;&#160;&#160;SPDLOG_LOGGER_CALL(<a class="el" href="classautopas_1_1Logger.html#a919afbf8e2a85bf040a8723f0f4b3d28">autopas::Logger::get</a>(), spdlog::level::warn, __VA_ARGS__)</td></tr>
+<tr class="memdesc:a5e985e13a498c9db657304042816839f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs at WARN level, or expands to (void)0 if AUTOPAS_ACTIVE_LEVEL is above WARN. <br /></td></tr>
+<tr class="separator:a5e985e13a498c9db657304042816839f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec6557813082ade752bf7c23b873156f"><td class="memItemLeft" align="right" valign="top"><a id="aec6557813082ade752bf7c23b873156f" name="aec6557813082ade752bf7c23b873156f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AutoPasLog_ERROR</b>(...)&#160;&#160;&#160;SPDLOG_LOGGER_CALL(<a class="el" href="classautopas_1_1Logger.html#a919afbf8e2a85bf040a8723f0f4b3d28">autopas::Logger::get</a>(), spdlog::level::err, __VA_ARGS__)</td></tr>
+<tr class="memdesc:aec6557813082ade752bf7c23b873156f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs at ERROR level, or expands to (void)0 if AUTOPAS_ACTIVE_LEVEL is above ERROR. <br /></td></tr>
+<tr class="separator:aec6557813082ade752bf7c23b873156f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1a671590d636c6764f18603ffaf184f"><td class="memItemLeft" align="right" valign="top"><a id="af1a671590d636c6764f18603ffaf184f" name="af1a671590d636c6764f18603ffaf184f"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><b>AutoPasLog_CRITICAL</b>(...)&#160;&#160;&#160;SPDLOG_LOGGER_CALL(<a class="el" href="classautopas_1_1Logger.html#a919afbf8e2a85bf040a8723f0f4b3d28">autopas::Logger::get</a>(), spdlog::level::critical, __VA_ARGS__)</td></tr>
+<tr class="memdesc:af1a671590d636c6764f18603ffaf184f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs at CRITICAL level, or expands to (void)0 if AUTOPAS_ACTIVE_LEVEL is above CRITICAL. <br /></td></tr>
+<tr class="separator:af1a671590d636c6764f18603ffaf184f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><dl class="section author"><dt>Author</dt><dd>seckler </dd></dl>
@@ -338,7 +366,7 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;SPDLOG_LOGGER_##lvl(<a class="el" href="classautopas_1_1Logger.html#a919afbf8e2a85bf040a8723f0f4b3d28">autopas::Logger::get</a>(), fmt, ##__VA_ARGS__)</td>
+          <td></td><td>&#160;&#160;&#160;AutoPasLog_##lvl(fmt, ##__VA_ARGS__)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -346,7 +374,7 @@ Macros</h2></td></tr>
 <p>Macro for logging providing common meta information without filename. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">lvl</td><td>Possible levels: trace, debug, info, warn, error, critical. </td></tr>
+    <tr><td class="paramname">lvl</td><td>Possible levels: TRACE, DEBUG, INFO, WARN, ERROR, CRITICAL. </td></tr>
     <tr><td class="paramname">fmt</td><td>Message with formatting tokens </td></tr>
     <tr><td class="paramname">...</td><td>Formatting arguments </td></tr>
   </table>
