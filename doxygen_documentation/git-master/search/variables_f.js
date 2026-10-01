@@ -1,8 +1,8 @@
 var searchData=
 [
   ['sameproperties_0',['sameProperties',['../structautopas_1_1RuleSyntax_1_1ConfigurationOrder.html#a080fd4585eaa816997aa6864d578e53a',1,'autopas::RuleSyntax::ConfigurationOrder']]],
-  ['score_1',['score',['../classautopas_1_1GaussianHyperparameters.html#aa617089d1878cbbba961e36eaabede34',1,'autopas::GaussianHyperparameters']]],
-  ['selectorstrategy_2',['selectorStrategy',['../structautopas_1_1AutoTunerInfo.html#a0b7721e6f84f4f73271026fab0fbefe6',1,'autopas::AutoTunerInfo']]],
+  ['selectorstrategy_1',['selectorStrategy',['../structautopas_1_1AutoTunerInfo.html#a0b7721e6f84f4f73271026fab0fbefe6',1,'autopas::AutoTunerInfo']]],
+  ['serializedconfigurationsize_2',['serializedConfigurationSize',['../namespaceautopas.html#a31cba9d894ad1b4fee838d54ed309c81',1,'autopas']]],
   ['smaller_3',['smaller',['../structautopas_1_1RuleSyntax_1_1ConfigurationOrder.html#aacf718320d49abdb512183c1bac1414f',1,'autopas::RuleSyntax::ConfigurationOrder']]],
   ['soasortingthreshold_4',['soaSortingThreshold',['../structautopas_1_1AutoTunerInfo.html#a10daffd933e7e4057e5020161cd8a7e7',1,'autopas::AutoTunerInfo']]],
   ['soasortingthresholdfallback_5',['soaSortingThresholdFallback',['../classautopas_1_1ContainerSelectorInfo.html#ac638892b8c8d20d124a8c590ea6d78d2',1,'autopas::ContainerSelectorInfo']]],

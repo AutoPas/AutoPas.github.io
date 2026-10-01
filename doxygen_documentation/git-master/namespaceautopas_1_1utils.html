@@ -161,9 +161,6 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1utils_1_1ConfigurationAndRankIteratorHandler.html">ConfigurationAndRankIteratorHandler</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Functionality needed to iterate through ranks and configurations simultaneously in an evenly distributed manner.  <a href="classautopas_1_1utils_1_1ConfigurationAndRankIteratorHandler.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1utils_1_1DataLayoutConverter.html">DataLayoutConverter</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">This converts cells to the target data Layout using the given functor.  <a href="classautopas_1_1utils_1_1DataLayoutConverter.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -259,6 +256,14 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a8f7675d61c2f56eb5aa653fc39d14305"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
+<tr class="memitem:a8f7675d61c2f56eb5aa653fc39d14305"><td class="memTemplItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils.html#a8f7675d61c2f56eb5aa653fc39d14305">hashValue</a> (const T &amp;value)</td></tr>
+<tr class="memdesc:a8f7675d61c2f56eb5aa653fc39d14305"><td class="mdescLeft">&#160;</td><td class="mdescRight">Hash of a single value.  <br /></td></tr>
+<tr class="separator:a8f7675d61c2f56eb5aa653fc39d14305"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac9239c64b5c893f2e45077e8f71c0cde"><td class="memTemplParams" colspan="2">template&lt;class... Values_T&gt; </td></tr>
+<tr class="memitem:ac9239c64b5c893f2e45077e8f71c0cde"><td class="memTemplItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils.html#ac9239c64b5c893f2e45077e8f71c0cde">hashCombine</a> (const Values_T &amp;...values)</td></tr>
+<tr class="memdesc:ac9239c64b5c893f2e45077e8f71c0cde"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combines the hashes of an arbitrary number of values into one hash.  <br /></td></tr>
+<tr class="separator:ac9239c64b5c893f2e45077e8f71c0cde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acb8142fa65b2f710d92bcc40a2ba7d03"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:acb8142fa65b2f710d92bcc40a2ba7d03"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1utils.html#acb8142fa65b2f710d92bcc40a2ba7d03">inBox</a> (const std::array&lt; T, 3 &gt; &amp;position, const std::array&lt; T, 3 &gt; &amp;low, const std::array&lt; T, 3 &gt; &amp;high)</td></tr>
 <tr class="memdesc:acb8142fa65b2f710d92bcc40a2ba7d03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if position is inside of a box defined by low and high.  <br /></td></tr>
@@ -431,6 +436,80 @@ template&lt;typename T &gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="ac9239c64b5c893f2e45077e8f71c0cde" name="ac9239c64b5c893f2e45077e8f71c0cde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac9239c64b5c893f2e45077e8f71c0cde">&#9670;&#160;</a></span>hashCombine()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class... Values_T&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t autopas::utils::hashCombine </td>
+          <td>(</td>
+          <td class="paramtype">const Values_T &amp;...&#160;</td>
+          <td class="paramname"><em>values</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Combines the hashes of an arbitrary number of values into one hash. </p>
+<p>Equivalent to repeated application of boost::hash_combine (Boost &gt;= 1.81), i.e. <code>seed = mix(seed + 0x9e3779b9 + hashValue(value))</code>.</p>
+<p>The mixer is the xmxmx bit mixer used by boost::hash_combine (boost/container_hash/detail/hash_mix.hpp). It is reproduced here instead of pulling in Boost, and as we use this for ease and not in performance critical situations, we do not care so much about getting the latest version from Boost.</p>
+<p>The parameters used are those from Jon Maiga's implementation (<a href="https://jonkagstrom.com/mx3/mx3_rev2.html">https://jonkagstrom.com/mx3/mx3_rev2.html</a>).</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">Values_T</td><td>Types of the values to hash. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">values</td><td>Values to hash. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Combined hash. </dd></dl>
+
+</div>
+</div>
+<a id="a8f7675d61c2f56eb5aa653fc39d14305" name="a8f7675d61c2f56eb5aa653fc39d14305"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8f7675d61c2f56eb5aa653fc39d14305">&#9670;&#160;</a></span>hashValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t autopas::utils::hashValue </td>
+          <td>(</td>
+          <td class="paramtype">const T &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Hash of a single value. </p>
+<p>Uses std::hash if it is specialized for T (arithmetic types, enums, strings, pointers, ...) and otherwise falls back to a static_cast to std::size_t. The latter covers <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> Option types, which implicitly convert to their underlying enum.</p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>Type of the value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">value</td><td>Value to hash. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Hash of value. </dd></dl>
 
 </div>
 </div>

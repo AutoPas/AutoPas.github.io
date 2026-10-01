@@ -113,8 +113,8 @@ $(function() {
 <div class="contents">
 <div class="textblock"><p>The ANTLR generated files in <code>parser_generated/autopas_generated_rule_syntax</code> may occasionally need to be update. For example, if ANTLR is updated.</p>
 <p>As for ANTLR 4.13.2, you can use the command:</p>
-<div class="fragment"><div class="line">antlr4 -Dlanguage=Cpp -no-listener -visitor -package AutopasGeneratedRuleSyntax RuleLanguage.g4</div>
-</div><!-- fragment --><p>The <code>-package AutopasGeneratedRuleSyntax</code> simply sets the namespace.</p>
+<div class="fragment"><div class="line">antlr4 -Dlanguage=Cpp -no-listener -visitor -package AutopasGeneratedRuleSyntax -o parser_generated/autopas_generated_rule_syntax RuleLanguage.g4</div>
+</div><!-- fragment --><p>Run it from this directory. The <code>-package AutopasGeneratedRuleSyntax</code> simply sets the namespace, and <code>-o</code> writes the output into <code>parser_generated/autopas_generated_rule_syntax</code> instead of next to the grammar.</p>
 <p>The files in <code>parser_generated</code> are not automatically generated. </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

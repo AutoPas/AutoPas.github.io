@@ -113,7 +113,6 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">autopas::SearchSpaceGenerators Namespace Reference</div></div>
 </div><!--header-->
@@ -122,20 +121,11 @@ $(function() {
 <p>Generators for search spaces.  
 <a href="namespaceautopas_1_1SearchSpaceGenerators.html#details">More...</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structautopas_1_1SearchSpaceGenerators_1_1OptionSpace.html">OptionSpace</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper struct for all dimensions of a full cartesian product search space.  <a href="structautopas_1_1SearchSpaceGenerators_1_1OptionSpace.html#details">More...</a><br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a1ee111928c56a09148f77461d168b1cb"><td class="memItemLeft" align="right" valign="top">std::set&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1SearchSpaceGenerators.html#a1ee111928c56a09148f77461d168b1cb">cartesianProduct</a> (const std::set&lt; ContainerOption &gt; &amp;allowedContainerOptions, const std::set&lt; TraversalOption &gt; &amp;allowedTraversalOptions, const std::set&lt; <a class="el" href="classautopas_1_1LoadEstimatorOption.html">LoadEstimatorOption</a> &gt; &amp;allowedLoadEstimatorOptions, const std::set&lt; DataLayoutOption &gt; &amp;allowedDataLayoutOptions, const std::set&lt; Newton3Option &gt; &amp;allowedNewton3Options, const <a class="el" href="classautopas_1_1NumberSet.html">NumberSet</a>&lt; double &gt; *allowedCellSizeFactors, const std::set&lt; VectorizationPatternOption &gt; &amp;allowedVecPatternOptions, const InteractionTypeOption &amp;interactionType)</td></tr>
 <tr class="memdesc:a1ee111928c56a09148f77461d168b1cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fills the search space with the cartesian product of the given options (minus invalid combinations).  <br /></td></tr>
 <tr class="separator:a1ee111928c56a09148f77461d168b1cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34ae04d2a652da2eed003555983183d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structautopas_1_1SearchSpaceGenerators_1_1OptionSpace.html">OptionSpace</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1SearchSpaceGenerators.html#a34ae04d2a652da2eed003555983183d9">inferOptionDimensions</a> (const std::set&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;searchSet)</td></tr>
-<tr class="memdesc:a34ae04d2a652da2eed003555983183d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Crudely trying to reconstruct the dimensions of the search space from a given set of options.  <br /></td></tr>
-<tr class="separator:a34ae04d2a652da2eed003555983183d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05b4f57bef213ba9ac295355675e8a44"><td class="memItemLeft" align="right" valign="top">std::set&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceautopas_1_1SearchSpaceGenerators.html#a05b4f57bef213ba9ac295355675e8a44">calculateRelevantCsfs</a> (const <a class="el" href="classautopas_1_1NumberInterval.html">NumberInterval</a>&lt; double &gt; &amp;numberInterval, double interactionLength, double domainLengthX)</td></tr>
 <tr class="memdesc:a05b4f57bef213ba9ac295355675e8a44"><td class="mdescLeft">&#160;</td><td class="mdescRight">For a given domain parametrization, calculate which cell size factors (csf) in an interval actually are useful to generate distinct numbers of cells.  <br /></td></tr>
 <tr class="separator:a05b4f57bef213ba9ac295355675e8a44"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -266,34 +256,6 @@ Functions</h2></td></tr>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>A set containing all valid configurations. </dd></dl>
-
-</div>
-</div>
-<a id="a34ae04d2a652da2eed003555983183d9" name="a34ae04d2a652da2eed003555983183d9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34ae04d2a652da2eed003555983183d9">&#9670;&#160;</a></span>inferOptionDimensions()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="structautopas_1_1SearchSpaceGenerators_1_1OptionSpace.html">SearchSpaceGenerators::OptionSpace</a> autopas::SearchSpaceGenerators::inferOptionDimensions </td>
-          <td>(</td>
-          <td class="paramtype">const std::set&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &gt; &amp;&#160;</td>
-          <td class="paramname"><em>searchSet</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Crudely trying to reconstruct the dimensions of the search space from a given set of options. </p>
-<dl class="section note"><dt>Note</dt><dd>It is assumed that searchSet is a complete cartesian product of all contained options.</dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">searchSet</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
 
 </div>
 </div>
