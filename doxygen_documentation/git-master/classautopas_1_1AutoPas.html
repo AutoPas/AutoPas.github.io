@@ -1975,6 +1975,7 @@ template&lt;class Particle_T &gt; </div>
 </div><div class="memdoc">
 
 <p>Get the list of allowed vectorization pattern options. </p>
+<dl class="section note"><dt>Note</dt><dd>This is only relevant for <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a>. The not-applicable (N/A) pattern, which every AoS configuration uses, is always allowed implicitly and therefore never part of the returned set. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">interactionType</td><td>Get allowed vectorization pattern options for this interaction type. Defaults to InteractionTypeOption::pairwise. </td></tr>
@@ -3927,6 +3928,7 @@ template&lt;class Particle_T &gt; </div>
 </div><div class="memdoc">
 
 <p>Set the list of allowed vectorization pattern options For possible options, see options::VectorizationOption::Value. </p>
+<dl class="section note"><dt>Note</dt><dd>This is only relevant for <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a>. The not-applicable (N/A) pattern, which every AoS configuration uses, is always included implicitly when generating the search space, so it does not need to be set. If it is given, it is removed with a warning. To allow <a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> configurations, at least one applicable pattern (see VectorizationPatternOption::getAllApplicablePatterns()) must be given. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">allowedVecPatterns</td><td></td></tr>

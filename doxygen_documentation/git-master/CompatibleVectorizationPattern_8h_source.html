@@ -123,29 +123,42 @@ $(function() {
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="ContainerOption_8h.html">autopas/options/ContainerOption.h</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="VectorizationPatternOption_8h.html">autopas/options/VectorizationPatternOption.h</a>&quot;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">namespace </span>autopas::compatibleVectorizationPattern {</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="CompatibleVectorizationPattern_8h.html#a42ce0ce5d9fe851ec4efd73fb9c4120a">   25</a></span><span class="keyword">static</span> std::set&lt;autopas::VectorizationPatternOption&gt; <a class="code hl_function" href="CompatibleVectorizationPattern_8h.html#a42ce0ce5d9fe851ec4efd73fb9c4120a">allCompatibleVectorizationPattern</a>(</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    autopas::ContainerOption container) {</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>  <span class="keywordflow">switch</span> (container) {</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">case</span> ContainerOption::verletLists:</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">case</span> ContainerOption::verletListsCells:</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">case</span> ContainerOption::pairwiseVerletLists:</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordflow">case</span> ContainerOption::varVerletListsAsBuild: {</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>      <span class="keywordflow">return</span> std::set&lt;autopas::VectorizationPatternOption&gt;{VectorizationPatternOption::p1xVec};</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordflow">default</span>: {</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>      <span class="keywordflow">return</span> std::set&lt;autopas::VectorizationPatternOption&gt;{autopas::VectorizationPatternOption::getAllOptions()};</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    }</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>  }</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}  <span class="comment">// namespace autopas::compatibleVectorizationPattern</span></div>
-<div class="ttc" id="aCompatibleVectorizationPattern_8h_html_a42ce0ce5d9fe851ec4efd73fb9c4120a"><div class="ttname"><a href="CompatibleVectorizationPattern_8h.html#a42ce0ce5d9fe851ec4efd73fb9c4120a">autopas::compatibleVectorizationPattern::allCompatibleVectorizationPattern</a></div><div class="ttdeci">static std::set&lt; autopas::VectorizationPatternOption &gt; allCompatibleVectorizationPattern(autopas::ContainerOption container)</div><div class="ttdoc">Returns a set of vectorization patterns compatible with the container.</div><div class="ttdef"><b>Definition:</b> CompatibleVectorizationPattern.h:25</div></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &quot;<a class="code" href="DataLayoutOption_8h.html">autopas/options/DataLayoutOption.h</a>&quot;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &quot;<a class="code" href="VectorizationPatternOption_8h.html">autopas/options/VectorizationPatternOption.h</a>&quot;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">namespace </span>autopas::compatibleVectorizationPattern {</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="CompatibleVectorizationPattern_8h.html#a631bd31006c6676e047a96f7e1e37ff6">   27</a></span><span class="keyword">static</span> std::set&lt;VectorizationPatternOption&gt; <a class="code hl_function" href="CompatibleVectorizationPattern_8h.html#a631bd31006c6676e047a96f7e1e37ff6">allCompatibleVectorizationPattern</a>(<span class="keyword">const</span> ContainerOption container,</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>                                                                              <span class="keyword">const</span> DataLayoutOption dataLayout) {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>  <span class="keywordflow">switch</span> (dataLayout) {</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordflow">case</span> DataLayoutOption::aos:</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>      <span class="comment">// For AoS, Vectorization Patterns are not applicable.</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>      <span class="keywordflow">return</span> std::set&lt;VectorizationPatternOption&gt;{VectorizationPatternOption::NA};</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordflow">case</span> DataLayoutOption::soa:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>      <span class="keywordflow">switch</span> (container) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <span class="keywordflow">case</span> ContainerOption::verletLists:</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <span class="keywordflow">case</span> ContainerOption::verletListsCells:</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keywordflow">case</span> ContainerOption::pairwiseVerletLists:</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="keywordflow">case</span> ContainerOption::varVerletListsAsBuild:</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">case</span> ContainerOption::directSum: {</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>          <span class="keywordflow">return</span> std::set&lt;VectorizationPatternOption&gt;{VectorizationPatternOption::p1xVec};</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        }</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="keywordflow">default</span>: {</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>          <span class="keywordflow">return</span> std::set&lt;VectorizationPatternOption&gt;{VectorizationPatternOption::getAllApplicablePatterns()};</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        }</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>      }</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">default</span>:</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>      <a class="code hl_function" href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">utils::ExceptionHandler::exception</a>(<span class="stringliteral">&quot;Unknown data layout {}.&quot;</span>, dataLayout.to_string());</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>      <span class="keywordflow">return</span> {};</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>}  <span class="comment">// namespace autopas::compatibleVectorizationPattern</span></div>
+<div class="ttc" id="aCompatibleVectorizationPattern_8h_html_a631bd31006c6676e047a96f7e1e37ff6"><div class="ttname"><a href="CompatibleVectorizationPattern_8h.html#a631bd31006c6676e047a96f7e1e37ff6">autopas::compatibleVectorizationPattern::allCompatibleVectorizationPattern</a></div><div class="ttdeci">static std::set&lt; VectorizationPatternOption &gt; allCompatibleVectorizationPattern(const ContainerOption container, const DataLayoutOption dataLayout)</div><div class="ttdoc">Returns a set of vectorization patterns compatible with the container.</div><div class="ttdef"><b>Definition:</b> CompatibleVectorizationPattern.h:27</div></div>
 <div class="ttc" id="aContainerOption_8h_html"><div class="ttname"><a href="ContainerOption_8h.html">ContainerOption.h</a></div></div>
+<div class="ttc" id="aDataLayoutOption_8h_html"><div class="ttname"><a href="DataLayoutOption_8h.html">DataLayoutOption.h</a></div></div>
 <div class="ttc" id="aVectorizationPatternOption_8h_html"><div class="ttname"><a href="VectorizationPatternOption_8h.html">VectorizationPatternOption.h</a></div></div>
+<div class="ttc" id="aclassautopas_1_1utils_1_1ExceptionHandler_html_ae61b9aac49a90a9ff86859c73005ee07"><div class="ttname"><a href="classautopas_1_1utils_1_1ExceptionHandler.html#ae61b9aac49a90a9ff86859c73005ee07">autopas::utils::ExceptionHandler::exception</a></div><div class="ttdeci">static void exception(const Exception e)</div><div class="ttdoc">Handle an exception derived by std::exception.</div><div class="ttdef"><b>Definition:</b> ExceptionHandler.h:64</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

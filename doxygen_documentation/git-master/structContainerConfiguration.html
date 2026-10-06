@@ -135,6 +135,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a807a2ec928629d61bdf90b74f7862a5f"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structContainerConfiguration.html#a807a2ec928629d61bdf90b74f7862a5f">toString</a> () const</td></tr>
 <tr class="memdesc:a807a2ec928629d61bdf90b74f7862a5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">String representation of the configuration.  <br /></td></tr>
 <tr class="separator:a807a2ec928629d61bdf90b74f7862a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aade127bace6b858efe0026e1d39da3f7"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structContainerConfiguration.html#aade127bace6b858efe0026e1d39da3f7">toShortString</a> () const</td></tr>
+<tr class="memdesc:aade127bace6b858efe0026e1d39da3f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Short string representation of the container configuration that is safe for test names.  <br /></td></tr>
+<tr class="separator:aade127bace6b858efe0026e1d39da3f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0f2cbbfacd265ab07e3979dc7526670"><td class="memItemLeft" align="right" valign="top">std::optional&lt; <a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structContainerConfiguration.html#ab0f2cbbfacd265ab07e3979dc7526670">generateFullConfig</a> (std::optional&lt; autopas::InteractionTypeOption &gt; interactionType=std::nullopt, bool throwIfNone=true) const</td></tr>
+<tr class="memdesc:ab0f2cbbfacd265ab07e3979dc7526670"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates an arbitrary valid full configuration using this container and cell size factor.  <br /></td></tr>
+<tr class="separator:ab0f2cbbfacd265ab07e3979dc7526670"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -150,6 +156,52 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>cellSizeFactor</b><
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Struct to hold a container and a cell size factor. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ab0f2cbbfacd265ab07e3979dc7526670" name="ab0f2cbbfacd265ab07e3979dc7526670"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0f2cbbfacd265ab07e3979dc7526670">&#9670;&#160;</a></span>generateFullConfig()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::optional&lt; <a class="el" href="classautopas_1_1Configuration.html">autopas::Configuration</a> &gt; ContainerConfiguration::generateFullConfig </td>
+          <td>(</td>
+          <td class="paramtype">std::optional&lt; autopas::InteractionTypeOption &gt;&#160;</td>
+          <td class="paramname"><em>interactionType</em> = <code>std::nullopt</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>throwIfNone</em> = <code>true</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Generates an arbitrary valid full configuration using this container and cell size factor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">interactionType</td><td>If provided, restrict to this interaction type, otherwise consider all interaction types. </td></tr>
+    <tr><td class="paramname">throwIfNone</td><td>If true (default), throw when no valid configuration exists; if false, return std::nullopt. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>An arbitrary valid full configuration using this container and cell size factor, or std::nullopt if none exists.. </dd></dl>
+
+</div>
+</div>
 <a id="aaba5efe8e237d3033beb4159f45123e4" name="aaba5efe8e237d3033beb4159f45123e4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aaba5efe8e237d3033beb4159f45123e4">&#9670;&#160;</a></span>operator!=()</h2>
 
@@ -255,6 +307,35 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>cellSizeFactor</b><
 
 </div>
 </div>
+<a id="aade127bace6b858efe0026e1d39da3f7" name="aade127bace6b858efe0026e1d39da3f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aade127bace6b858efe0026e1d39da3f7">&#9670;&#160;</a></span>toShortString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string ContainerConfiguration::toShortString </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Short string representation of the container configuration that is safe for test names. </p>
+<dl class="section note"><dt>Note</dt><dd>All "-" and "." are replaced with "_" so the result is safe to use as (part of) a test name. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
 <a id="a807a2ec928629d61bdf90b74f7862a5f" name="a807a2ec928629d61bdf90b74f7862a5f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a807a2ec928629d61bdf90b74f7862a5f">&#9670;&#160;</a></span>toString()</h2>
 
@@ -284,7 +365,7 @@ double&#160;</td><td class="memItemRight" valign="bottom"><b>cellSizeFactor</b><
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/github/workspace/tests/testAutopas/testingHelpers/<a class="el" href="GenerateValidConfigurations_8h_source.html">GenerateValidConfigurations.h</a></li>
+<li>/github/workspace/tests/testingHelpers/<a class="el" href="GenerateValidConfigurations_8h_source.html">GenerateValidConfigurations.h</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->
