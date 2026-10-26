@@ -7,8 +7,7 @@ var searchData=
   ['sixthrootoftwo_4',['sixthRootOfTwo',['../namespaceanonymous__namespace_02RegularGridDecomposition_8h_03.html#a8bee503d7b9a33f9bda87f4e2820b41f',1,'anonymous_namespace{RegularGridDecomposition.h}']]],
   ['soasortingthreshold_5',['soaSortingThreshold',['../classMDFlexConfig.html#a15437aab65b6298e3fe6c3072e2ac9e6',1,'MDFlexConfig']]],
   ['spherecenterstr_6',['sphereCenterStr',['../classMDFlexConfig.html#ac3bc989c14bbe85d14bf79428d186110',1,'MDFlexConfig']]],
-  ['sphereobjects_7',['sphereObjects',['../classMDFlexConfig.html#afbf51eac56ed442e57297dbb3005feb1',1,'MDFlexConfig']]],
-  ['sphereobjectsstr_8',['sphereObjectsStr',['../classMDFlexConfig.html#ace92d8a7f993647c41928c9855bc3014',1,'MDFlexConfig']]],
-  ['sphereradiusstr_9',['sphereRadiusStr',['../classMDFlexConfig.html#adfd4cd3c95f85ca56df952f472b4d944',1,'MDFlexConfig']]],
-  ['subdividedimension_10',['subdivideDimension',['../classMDFlexConfig.html#aa454e332f10be4305b8c5939a22fcbd5',1,'MDFlexConfig']]]
+  ['sphereobjectsstr_7',['sphereObjectsStr',['../classMDFlexConfig.html#ace92d8a7f993647c41928c9855bc3014',1,'MDFlexConfig']]],
+  ['sphereradiusstr_8',['sphereRadiusStr',['../classMDFlexConfig.html#adfd4cd3c95f85ca56df952f472b4d944',1,'MDFlexConfig']]],
+  ['subdividedimension_9',['subdivideDimension',['../classMDFlexConfig.html#aa454e332f10be4305b8c5939a22fcbd5',1,'MDFlexConfig']]]
 ];
