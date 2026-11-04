@@ -156,9 +156,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aa809e673fc1061f22385a064d75ba8e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#aa809e673fc1061f22385a064d75ba8e3">deleteAllParticles</a> ()</td></tr>
 <tr class="memdesc:aa809e673fc1061f22385a064d75ba8e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all particles.    <br /></td></tr>
 <tr class="separator:aa809e673fc1061f22385a064d75ba8e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7b32ac57bda2f9447a540e533b084cf4"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; bool, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a7b32ac57bda2f9447a540e533b084cf4">deleteParticleFromBuffers</a> (Particle_T &amp;particle)</td></tr>
-<tr class="memdesc:a7b32ac57bda2f9447a540e533b084cf4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes a particle, checks if it is in any of the particle buffers, and deletes it from them if found.  <br /></td></tr>
-<tr class="separator:a7b32ac57bda2f9447a540e533b084cf4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a864569d10ba0196625e5ed7ee908a7c7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a864569d10ba0196625e5ed7ee908a7c7">deleteParticleFromBuffers</a> (Particle_T &amp;particle)</td></tr>
+<tr class="memdesc:a864569d10ba0196625e5ed7ee908a7c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Takes a particle, checks if it is in any of the particle buffers, and marks it as deleted if found.  <br /></td></tr>
+<tr class="separator:a864569d10ba0196625e5ed7ee908a7c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5434c12726c74a3f232b3ff6f456289b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1LogicHandler.html#a5434c12726c74a3f232b3ff6f456289b">decreaseParticleCounter</a> (Particle_T &amp;particle)</td></tr>
 <tr class="memdesc:a5434c12726c74a3f232b3ff6f456289b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Decrease the correct internal particle counters.  <br /></td></tr>
 <tr class="separator:a5434c12726c74a3f232b3ff6f456289b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -333,6 +333,8 @@ template&lt;typename Particle_T &gt; </div>
   </dd>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>An exception is thrown if the halo particle is added and it is inside of the owned domain (defined by boxMin and boxMax) of the container. </dd>
+<dd>
+Several halo particles may have the same ID only if they are different periodic copies of the same particle. Such copies are expected to be at least cutoff + skin apart. </dd>
 <dd>
 This function is NOT thread-safe if the container is <a class="el" href="classautopas_1_1Octree.html" title="The octree is a CellBasedParticleContainer that consists internally of two octrees.">Octree</a>.   </dd></dl>
 
@@ -642,8 +644,8 @@ template&lt;typename Particle_T &gt; </div>
 
 </div>
 </div>
-<a id="a7b32ac57bda2f9447a540e533b084cf4" name="a7b32ac57bda2f9447a540e533b084cf4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7b32ac57bda2f9447a540e533b084cf4">&#9670;&#160;</a></span>deleteParticleFromBuffers()</h2>
+<a id="a864569d10ba0196625e5ed7ee908a7c7" name="a864569d10ba0196625e5ed7ee908a7c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a864569d10ba0196625e5ed7ee908a7c7">&#9670;&#160;</a></span>deleteParticleFromBuffers()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -654,7 +656,7 @@ template&lt;typename Particle_T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::tuple&lt; bool, bool &gt; <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; Particle_T &gt;::deleteParticleFromBuffers </td>
+          <td class="memname">bool <a class="el" href="classautopas_1_1LogicHandler.html">autopas::LogicHandler</a>&lt; Particle_T &gt;::deleteParticleFromBuffers </td>
           <td>(</td>
           <td class="paramtype">Particle_T &amp;&#160;</td>
           <td class="paramname"><em>particle</em></td><td>)</td>
@@ -668,14 +670,14 @@ template&lt;typename Particle_T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Takes a particle, checks if it is in any of the particle buffers, and deletes it from them if found. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Takes a particle, checks if it is in any of the particle buffers, and marks it as deleted if found. </p>
+<p>No particle is moved by this. The particle is removed from the buffer by the next <a class="el" href="classautopas_1_1LogicHandler.html#a14abcfa7a9e2db4a24118cbeb5e47684" title="Updates the container.">updateContainer()</a>. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">particle</td><td>Particle to delete. If something was deleted this reference might point to a different particle or invalid memory. </td></tr>
+    <tr><td class="paramname">particle</td><td>Particle to delete. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Tuple: &lt;True iff the particle was found and deleted, True iff the reference is valid&gt; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>True iff the particle was found and marked as deleted. </dd></dl>
 
 </div>
 </div>

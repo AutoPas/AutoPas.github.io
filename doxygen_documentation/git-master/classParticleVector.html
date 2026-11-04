@@ -152,12 +152,12 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>deleteDummyParticles<
 <tr class="memitem:a015ff6841e562d11b2ac481677ff648e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticleVector.html#a015ff6841e562d11b2ac481677ff648e">needsRebuild</a> ()</td></tr>
 <tr class="memdesc:a015ff6841e562d11b2ac481677ff648e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates, whether References already stored in cells need to be updated.  <br /></td></tr>
 <tr class="separator:a015ff6841e562d11b2ac481677ff648e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac9d4dc9c690be454113444440993877f"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticleVector.html#ac9d4dc9c690be454113444440993877f">beginDirty</a> ()</td></tr>
-<tr class="memdesc:ac9d4dc9c690be454113444440993877f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Begin of the iterator over dirty Particles.  <br /></td></tr>
-<tr class="separator:ac9d4dc9c690be454113444440993877f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4c501f3f7b9273629180f2c0969df088"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticleVector.html#a4c501f3f7b9273629180f2c0969df088">endDirty</a> ()</td></tr>
-<tr class="memdesc:a4c501f3f7b9273629180f2c0969df088"><td class="mdescLeft">&#160;</td><td class="mdescRight">End of the iterator over dirty Particles.  <br /></td></tr>
-<tr class="separator:a4c501f3f7b9273629180f2c0969df088"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b8c8e14f35118b29e1dd8974cb55769"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticleVector.html#a1b8c8e14f35118b29e1dd8974cb55769">getDirtyIndex</a> ()</td></tr>
+<tr class="memdesc:a1b8c8e14f35118b29e1dd8974cb55769"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the index of the first Particle that is not referenced by a cell yet.  <br /></td></tr>
+<tr class="separator:a1b8c8e14f35118b29e1dd8974cb55769"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e83640a4498b97d1f43b917a50b30af"><td class="memItemLeft" align="right" valign="top">std::vector&lt; Particle_T &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classParticleVector.html#a1e83640a4498b97d1f43b917a50b30af">getParticleStorage</a> ()</td></tr>
+<tr class="memdesc:a1e83640a4498b97d1f43b917a50b30af"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the vector that stores the Particles.  <br /></td></tr>
+<tr class="separator:a1e83640a4498b97d1f43b917a50b30af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad29da56bba41d351dbc6140ea1608937"><td class="memTemplParams" colspan="2">template&lt;typename Lambda &gt; </td></tr>
 <tr class="memitem:ad29da56bba41d351dbc6140ea1608937"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classParticleVector.html#ad29da56bba41d351dbc6140ea1608937">forEach</a> (Lambda forEachLambda)</td></tr>
 <tr class="memdesc:ad29da56bba41d351dbc6140ea1608937"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all particles and execute lambda function on them.  <br /></td></tr>
@@ -170,43 +170,13 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>deleteDummyParticles<
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class Particle_T&gt;<br />
 class ParticleVector&lt; Particle_T &gt;</div><p><a class="el" href="classParticleVector.html" title="ParticleVector class.">ParticleVector</a> class. </p>
-<p>This class uses a std::vector to store particles and allows access to its references. It also keeps track, which references are no longer valid, which happens when operations like delete and resize are performed. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+<p>This class uses a std::vector to store particles, which cells refer to by their index in this vector. It also keeps track of which particles are not referenced by a cell yet, and whether all references are no longer valid, which happens when particles are removed. Adding particles keeps all indices valid. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Particle_T</td><td>of the Particle that is being stored </td></tr>
   </table>
   </dd>
 </dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="ac9d4dc9c690be454113444440993877f" name="ac9d4dc9c690be454113444440993877f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac9d4dc9c690be454113444440993877f">&#9670;&#160;</a></span>beginDirty()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Particle_T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto <a class="el" href="classParticleVector.html">ParticleVector</a>&lt; Particle_T &gt;::beginDirty </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Begin of the iterator over dirty Particles. </p>
-<dl class="section return"><dt>Returns</dt><dd>Start of the iterator </dd></dl>
-
-</div>
-</div>
 <a id="a9abae415947098dbca5abe50518f24a3" name="a9abae415947098dbca5abe50518f24a3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a9abae415947098dbca5abe50518f24a3">&#9670;&#160;</a></span>dirtySize()</h2>
 
@@ -234,36 +204,6 @@ template&lt;class Particle_T &gt; </div>
 
 <p>Get the number of dirty Particles in the data structure. </p>
 <dl class="section return"><dt>Returns</dt><dd>Number of dirty Particles </dd></dl>
-
-</div>
-</div>
-<a id="a4c501f3f7b9273629180f2c0969df088" name="a4c501f3f7b9273629180f2c0969df088"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4c501f3f7b9273629180f2c0969df088">&#9670;&#160;</a></span>endDirty()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Particle_T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">auto <a class="el" href="classParticleVector.html">ParticleVector</a>&lt; Particle_T &gt;::endDirty </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>End of the iterator over dirty Particles. </p>
-<dl class="section return"><dt>Returns</dt><dd>End of the iterator </dd></dl>
 
 </div>
 </div>
@@ -302,6 +242,66 @@ template&lt;typename Lambda &gt; </div>
   </table>
   </dd>
 </dl>
+
+</div>
+</div>
+<a id="a1b8c8e14f35118b29e1dd8974cb55769" name="a1b8c8e14f35118b29e1dd8974cb55769"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b8c8e14f35118b29e1dd8974cb55769">&#9670;&#160;</a></span>getDirtyIndex()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Particle_T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="classParticleVector.html">ParticleVector</a>&lt; Particle_T &gt;::getDirtyIndex </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the index of the first Particle that is not referenced by a cell yet. </p>
+<dl class="section return"><dt>Returns</dt><dd>Index of the first dirty Particle </dd></dl>
+
+</div>
+</div>
+<a id="a1e83640a4498b97d1f43b917a50b30af" name="a1e83640a4498b97d1f43b917a50b30af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e83640a4498b97d1f43b917a50b30af">&#9670;&#160;</a></span>getParticleStorage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Particle_T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; Particle_T &gt; &amp; <a class="el" href="classParticleVector.html">ParticleVector</a>&lt; Particle_T &gt;::getParticleStorage </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the vector that stores the Particles. </p>
+<p>Cells refer to Particles by their index in this vector. </p><dl class="section return"><dt>Returns</dt><dd>Reference to the vector storing the Particles </dd></dl>
 
 </div>
 </div>

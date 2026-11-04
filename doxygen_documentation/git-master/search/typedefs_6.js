@@ -5,7 +5,7 @@ var searchData=
   ['int_5ft_2',['int_t',['../Math_8h.html#ace9e05436eb677501f534f07816305e3',1,'autopas::utils::Math']]],
   ['ispairwisefunctor_3',['isPairwiseFunctor',['../namespaceautopas_1_1utils.html#acac3f5cff802aacc3b721e9766f50e14',1,'autopas::utils']]],
   ['istriwisefunctor_4',['isTriwiseFunctor',['../namespaceautopas_1_1utils.html#aa9b300bad229e89ed683f1717016745c',1,'autopas::utils']]],
-  ['iterator_5fcategory_5',['iterator_category',['../classCellIterator.html#ac7a96a6c0d171a71da7726886c110f06',1,'CellIterator']]],
+  ['iterator_5fcategory_5',['iterator_category',['../classCellIterator.html#ac7a96a6c0d171a71da7726886c110f06',1,'CellIterator::iterator_category'],['../classautopas_1_1ReferenceCellIterator.html#a3c78bef21b4f4254e8d4c6072dbb1a9e',1,'autopas::ReferenceCellIterator::iterator_category']]],
   ['iteratort_6',['IteratorT',['../classautopas_1_1AutoPas.html#aa59774c8b6a2255434cf5c0d332c74b7',1,'autopas::AutoPas']]],
-  ['iteratortype_7',['IteratorType',['../classCellIterator.html#aeec0e8547bafbdd8e8e58f876da5d48f',1,'CellIterator']]]
+  ['iteratortype_7',['IteratorType',['../classCellIterator.html#aeec0e8547bafbdd8e8e58f876da5d48f',1,'CellIterator::IteratorType'],['../classautopas_1_1ReferenceCellIterator.html#a85b2ea2702f70b775abeedb5a6329fef',1,'autopas::ReferenceCellIterator::IteratorType']]]
 ];

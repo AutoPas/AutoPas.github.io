@@ -297,12 +297,12 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ParticleContainer
 <tr class="memitem:a3e0ba632522a88de24c8da072d9ebe0c"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; Particle_T *, size_t, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a3e0ba632522a88de24c8da072d9ebe0c">getParticle</a> (size_t cellIndex, size_t particleIndex, IteratorBehavior iteratorBehavior)</td></tr>
 <tr class="memdesc:a3e0ba632522a88de24c8da072d9ebe0c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the pointer to a particle, identified via a cell and particle index.    <br /></td></tr>
 <tr class="separator:a3e0ba632522a88de24c8da072d9ebe0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8d1f4d9292b1f7759cd0764afcddcc3"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#ad8d1f4d9292b1f7759cd0764afcddcc3">deleteParticle</a> (Particle_T &amp;particle)=0</td></tr>
-<tr class="memdesc:ad8d1f4d9292b1f7759cd0764afcddcc3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the given particle as long as this does not compromise the validity of the container.  <br /></td></tr>
-<tr class="separator:ad8d1f4d9292b1f7759cd0764afcddcc3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b0d45825b7200f790e120b17c480d32"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a4b0d45825b7200f790e120b17c480d32">deleteParticle</a> (size_t cellIndex, size_t particleIndex)=0</td></tr>
-<tr class="memdesc:a4b0d45825b7200f790e120b17c480d32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the particle at the given index positions as long as this does not compromise the validity of the container.  <br /></td></tr>
-<tr class="separator:a4b0d45825b7200f790e120b17c480d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0cea44050bb96c5b5dc7ba6f45a1944"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#ac0cea44050bb96c5b5dc7ba6f45a1944">deleteParticle</a> (Particle_T &amp;particle)=0</td></tr>
+<tr class="memdesc:ac0cea44050bb96c5b5dc7ba6f45a1944"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks the given particle as deleted.  <br /></td></tr>
+<tr class="separator:ac0cea44050bb96c5b5dc7ba6f45a1944"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4e0715de65fc18e127aa549a9febe7a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#aa4e0715de65fc18e127aa549a9febe7a">deleteParticle</a> (size_t cellIndex, size_t particleIndex)=0</td></tr>
+<tr class="memdesc:aa4e0715de65fc18e127aa549a9febe7a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks the particle at the given index positions as deleted.  <br /></td></tr>
+<tr class="separator:aa4e0715de65fc18e127aa549a9febe7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
 Protected Member Functions</h2></td></tr>
@@ -789,7 +789,7 @@ template&lt;class Particle_T &gt; </div>
 
 <p>Deletes all particles. </p>
 
-<p>Implemented in <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#aa62300e6423eb6851984f62aafef056b">autopas::CellBasedParticleContainer&lt; ParticleCell_T &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#aa62300e6423eb6851984f62aafef056b">autopas::CellBasedParticleContainer&lt; FullParticleCell&lt; Particle_T &gt; &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#aa62300e6423eb6851984f62aafef056b">autopas::CellBasedParticleContainer&lt; ReferenceParticleCell&lt; Particle_T &gt; &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#aa62300e6423eb6851984f62aafef056b">autopas::CellBasedParticleContainer&lt; OctreeNodeWrapper&lt; Particle_T &gt; &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#aa62300e6423eb6851984f62aafef056b">autopas::CellBasedParticleContainer&lt; FullParticleCell&lt; ParticleCell::ParticleType &gt; &gt;</a>, <a class="el" href="classautopas_1_1LinkedCellsReferences.html#ad9fcb5f445ed83bda8c8f45d70033f5a">autopas::LinkedCellsReferences&lt; Particle_T &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#a710dd760bec4a9d3c6637057f0138586">autopas::VerletClusterLists&lt; Particle_T &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#a710dd760bec4a9d3c6637057f0138586">autopas::VerletClusterLists&lt; ParticleCell::ParticleType &gt;</a>, and <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a4a141094f03b5d65c271d3d8ef3ad516">autopas::VerletListsLinkedBase&lt; Particle_T &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#aa62300e6423eb6851984f62aafef056b">autopas::CellBasedParticleContainer&lt; ParticleCell_T &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#aa62300e6423eb6851984f62aafef056b">autopas::CellBasedParticleContainer&lt; FullParticleCell&lt; Particle_T &gt; &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#aa62300e6423eb6851984f62aafef056b">autopas::CellBasedParticleContainer&lt; ReferenceParticleCell&lt; Particle_T &gt; &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#aa62300e6423eb6851984f62aafef056b">autopas::CellBasedParticleContainer&lt; OctreeNodeWrapper&lt; Particle_T &gt; &gt;</a>, <a class="el" href="classautopas_1_1CellBasedParticleContainer.html#aa62300e6423eb6851984f62aafef056b">autopas::CellBasedParticleContainer&lt; FullParticleCell&lt; ParticleCell::ParticleType &gt; &gt;</a>, <a class="el" href="classautopas_1_1LinkedCellsReferences.html#ad9fcb5f445ed83bda8c8f45d70033f5a">autopas::LinkedCellsReferences&lt; Particle_T &gt;</a>, <a class="el" href="classautopas_1_1Octree.html#ab00ee04b59dd0832ad898c56e69797c1">autopas::Octree&lt; Particle_T &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#a710dd760bec4a9d3c6637057f0138586">autopas::VerletClusterLists&lt; Particle_T &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#a710dd760bec4a9d3c6637057f0138586">autopas::VerletClusterLists&lt; ParticleCell::ParticleType &gt;</a>, and <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a4a141094f03b5d65c271d3d8ef3ad516">autopas::VerletListsLinkedBase&lt; Particle_T &gt;</a>.</p>
 
 </div>
 </div>
@@ -824,8 +824,8 @@ template&lt;class Particle_T &gt; </div>
 
 </div>
 </div>
-<a id="ad8d1f4d9292b1f7759cd0764afcddcc3" name="ad8d1f4d9292b1f7759cd0764afcddcc3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad8d1f4d9292b1f7759cd0764afcddcc3">&#9670;&#160;</a></span>deleteParticle() <span class="overload">[1/2]</span></h2>
+<a id="ac0cea44050bb96c5b5dc7ba6f45a1944" name="ac0cea44050bb96c5b5dc7ba6f45a1944"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac0cea44050bb96c5b5dc7ba6f45a1944">&#9670;&#160;</a></span>deleteParticle() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -836,7 +836,7 @@ template&lt;class Particle_T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; Particle_T &gt;::deleteParticle </td>
+          <td class="memname">virtual void <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; Particle_T &gt;::deleteParticle </td>
           <td>(</td>
           <td class="paramtype">Particle_T &amp;&#160;</td>
           <td class="paramname"><em>particle</em></td><td>)</td>
@@ -850,22 +850,20 @@ template&lt;class Particle_T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Deletes the given particle as long as this does not compromise the validity of the container. </p>
-<p>If this is not possible the particle is just marked as deleted. </p><dl class="section note"><dt>Note</dt><dd>This function might be implemented via swap-delete and is thus not completely thread safe. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Marks the given particle as deleted. </p>
+<p>No particle is moved by this. The particle is removed from the container when the container is rebuilt. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">particle</td><td>Reference to the particle that is to be deleted. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the given pointer still points to a new particle. </dd></dl>
 
-<p>Implemented in <a class="el" href="classautopas_1_1VerletClusterLists.html#ac7e2302e8879d46e8a7b753ce4e6b308">autopas::VerletClusterLists&lt; Particle_T &gt;</a>, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a92984f356e0834768bff7349acea46d7">autopas::VerletListsLinkedBase&lt; Particle_T &gt;</a>, and <a class="el" href="classautopas_1_1VerletClusterLists.html#ac7e2302e8879d46e8a7b753ce4e6b308">autopas::VerletClusterLists&lt; ParticleCell::ParticleType &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classautopas_1_1VerletClusterLists.html#a435e6bb5d49913cf20be176c441985a4">autopas::VerletClusterLists&lt; Particle_T &gt;</a>, <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#a40e2bc126e64921fb8ec86ec1fe831f4">autopas::VerletListsLinkedBase&lt; Particle_T &gt;</a>, and <a class="el" href="classautopas_1_1VerletClusterLists.html#a435e6bb5d49913cf20be176c441985a4">autopas::VerletClusterLists&lt; ParticleCell::ParticleType &gt;</a>.</p>
 
 </div>
 </div>
-<a id="a4b0d45825b7200f790e120b17c480d32" name="a4b0d45825b7200f790e120b17c480d32"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4b0d45825b7200f790e120b17c480d32">&#9670;&#160;</a></span>deleteParticle() <span class="overload">[2/2]</span></h2>
+<a id="aa4e0715de65fc18e127aa549a9febe7a" name="aa4e0715de65fc18e127aa549a9febe7a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4e0715de65fc18e127aa549a9febe7a">&#9670;&#160;</a></span>deleteParticle() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -876,7 +874,7 @@ template&lt;class Particle_T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual bool <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; Particle_T &gt;::deleteParticle </td>
+          <td class="memname">virtual void <a class="el" href="classautopas_1_1ParticleContainerInterface.html">autopas::ParticleContainerInterface</a>&lt; Particle_T &gt;::deleteParticle </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>cellIndex</em>, </td>
@@ -900,17 +898,16 @@ template&lt;class Particle_T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Deletes the particle at the given index positions as long as this does not compromise the validity of the container. </p>
-<p>If this is not possible the particle is just marked as deleted. If the positions do not exist the behavior is undefined. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Marks the particle at the given index positions as deleted. </p>
+<p>No particle is moved by this. The particle is removed from the container when the container is rebuilt. If the positions do not exist the behavior is undefined. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cellIndex</td><td></td></tr>
     <tr><td class="paramname">particleIndex</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the given indices still point to a new particle. </dd></dl>
 
-<p>Implemented in <a class="el" href="classautopas_1_1DirectSum.html#a0731b80f733e8785f55850980a4ba0bb">autopas::DirectSum&lt; Particle_T &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#a08624eb04710a63791c7057e5cb42ea7">autopas::LinkedCells&lt; Particle_T &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#a08624eb04710a63791c7057e5cb42ea7">autopas::LinkedCells&lt; ParticleCell::ParticleType &gt;</a>, <a class="el" href="classautopas_1_1LinkedCellsReferences.html#a401e044cb622201f84d4043ea6f1fc64">autopas::LinkedCellsReferences&lt; Particle_T &gt;</a>, <a class="el" href="classautopas_1_1Octree.html#aedaa2a7d3a6a5764cb8160271bb4defe">autopas::Octree&lt; Particle_T &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#a55be4abe60627adcfd6b76407acbc23b">autopas::VerletClusterLists&lt; Particle_T &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#a55be4abe60627adcfd6b76407acbc23b">autopas::VerletClusterLists&lt; ParticleCell::ParticleType &gt;</a>, and <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#aee248cab15b26a33b9ae714bbd0a1674">autopas::VerletListsLinkedBase&lt; Particle_T &gt;</a>.</p>
+<p>Implemented in <a class="el" href="classautopas_1_1DirectSum.html#a873ea1c01fa5802dc9183046b2bc1ff2">autopas::DirectSum&lt; Particle_T &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#a28f5d8ce046f77782c425b1ef08ca5ea">autopas::LinkedCells&lt; Particle_T &gt;</a>, <a class="el" href="classautopas_1_1LinkedCells.html#a28f5d8ce046f77782c425b1ef08ca5ea">autopas::LinkedCells&lt; ParticleCell::ParticleType &gt;</a>, <a class="el" href="classautopas_1_1LinkedCellsReferences.html#a3b7f7e36dc9e7006752f65207d890234">autopas::LinkedCellsReferences&lt; Particle_T &gt;</a>, <a class="el" href="classautopas_1_1Octree.html#a8672b769edd2da65b37445b5df06e7a5">autopas::Octree&lt; Particle_T &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#a50898e5110476421864e15213e115c50">autopas::VerletClusterLists&lt; Particle_T &gt;</a>, <a class="el" href="classautopas_1_1VerletClusterLists.html#a50898e5110476421864e15213e115c50">autopas::VerletClusterLists&lt; ParticleCell::ParticleType &gt;</a>, and <a class="el" href="classautopas_1_1VerletListsLinkedBase.html#aaa069066fd537081e6442b878ddc3101">autopas::VerletListsLinkedBase&lt; Particle_T &gt;</a>.</p>
 
 </div>
 </div>
@@ -1985,6 +1982,7 @@ template&lt;class Particle_T &gt; </div>
 </div><div class="memdoc">
 
 <p>Update a halo particle of the container with the given haloParticle. </p>
+<p>A stored particle is only updated if it has the same ID as haloParticle and is less than half the skin away from it. </p><dl class="section note"><dt>Note</dt><dd>Several halo particles may have the same ID only if they are different periodic copies of the same particle. Such copies are expected to be at least cutoff + skin apart. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">haloParticle</td><td>Particle to be updated. </td></tr>

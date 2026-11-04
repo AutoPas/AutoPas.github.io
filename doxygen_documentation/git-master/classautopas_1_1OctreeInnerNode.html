@@ -155,9 +155,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aea6478eca9b3b2e070d3312a91824e61"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; <a class="el" href="classautopas_1_1OctreeNodeInterface.html">OctreeNodeInterface</a>&lt; Particle_T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1OctreeInnerNode.html#aea6478eca9b3b2e070d3312a91824e61">insert</a> (const Particle_T &amp;p) override</td></tr>
 <tr class="memdesc:aea6478eca9b3b2e070d3312a91824e61"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a particle into the octree.    <br /></td></tr>
 <tr class="separator:aea6478eca9b3b2e070d3312a91824e61"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a24782ba53caf637805a666a3b088fadc"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1OctreeInnerNode.html#a24782ba53caf637805a666a3b088fadc">deleteParticle</a> (Particle_T &amp;particle) override</td></tr>
-<tr class="memdesc:a24782ba53caf637805a666a3b088fadc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the given particle from the data structure.    <br /></td></tr>
-<tr class="separator:a24782ba53caf637805a666a3b088fadc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae157da9c142908f38643fbde87b10fc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1OctreeInnerNode.html#aae157da9c142908f38643fbde87b10fc">collectAllParticles</a> (std::vector&lt; Particle_T * &gt; &amp;ps) const override</td></tr>
 <tr class="memdesc:aae157da9c142908f38643fbde87b10fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put all particles that are below this node into the vector.    <br /></td></tr>
 <tr class="separator:aae157da9c142908f38643fbde87b10fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -222,9 +219,6 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~OctreeNodeInterfa
 <tr class="memitem:ab5d236108b1d67a05e03eb0ca49a7422 inherit pub_methods_classautopas_1_1OctreeNodeInterface"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="classautopas_1_1OctreeNodeInterface.html">OctreeNodeInterface</a>&lt; Particle_T &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1OctreeNodeInterface.html#ab5d236108b1d67a05e03eb0ca49a7422">insert</a> (const Particle_T &amp;p)=0</td></tr>
 <tr class="memdesc:ab5d236108b1d67a05e03eb0ca49a7422 inherit pub_methods_classautopas_1_1OctreeNodeInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Insert a particle into the octree.  <br /></td></tr>
 <tr class="separator:ab5d236108b1d67a05e03eb0ca49a7422 inherit pub_methods_classautopas_1_1OctreeNodeInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad25687dec42fc04d53c8ad6416290eb6 inherit pub_methods_classautopas_1_1OctreeNodeInterface"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1OctreeNodeInterface.html#ad25687dec42fc04d53c8ad6416290eb6">deleteParticle</a> (Particle_T &amp;particle)=0</td></tr>
-<tr class="memdesc:ad25687dec42fc04d53c8ad6416290eb6 inherit pub_methods_classautopas_1_1OctreeNodeInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Delete the given particle from the data structure.    <br /></td></tr>
-<tr class="separator:ad25687dec42fc04d53c8ad6416290eb6 inherit pub_methods_classautopas_1_1OctreeNodeInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c6ead81def7160fc03a73c447bf7e53 inherit pub_methods_classautopas_1_1OctreeNodeInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1OctreeNodeInterface.html#a6c6ead81def7160fc03a73c447bf7e53">collectAllParticles</a> (std::vector&lt; Particle_T * &gt; &amp;ps) const =0</td></tr>
 <tr class="memdesc:a6c6ead81def7160fc03a73c447bf7e53 inherit pub_methods_classautopas_1_1OctreeNodeInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Put all particles that are below this node into the vector.  <br /></td></tr>
 <tr class="separator:a6c6ead81def7160fc03a73c447bf7e53 inherit pub_methods_classautopas_1_1OctreeNodeInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -614,45 +608,6 @@ template&lt;class Particle_T &gt; </div>
 </dl>
 
 <p>Implements <a class="el" href="classautopas_1_1OctreeNodeInterface.html#a6c6ead81def7160fc03a73c447bf7e53">autopas::OctreeNodeInterface&lt; Particle_T &gt;</a>.</p>
-
-</div>
-</div>
-<a id="a24782ba53caf637805a666a3b088fadc" name="a24782ba53caf637805a666a3b088fadc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a24782ba53caf637805a666a3b088fadc">&#9670;&#160;</a></span>deleteParticle()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Particle_T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool <a class="el" href="classautopas_1_1OctreeInnerNode.html">autopas::OctreeInnerNode</a>&lt; Particle_T &gt;::deleteParticle </td>
-          <td>(</td>
-          <td class="paramtype">Particle_T &amp;&#160;</td>
-          <td class="paramname"><em>particle</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Delete the given particle from the data structure.   </p>
-<p>This function does not change the tree layout if the node is empty after the operation. </p><dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">particle</td><td></td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the given pointer still points to a new, valid particle.   </dd></dl>
-
-<p>Implements <a class="el" href="classautopas_1_1OctreeNodeInterface.html#ad25687dec42fc04d53c8ad6416290eb6">autopas::OctreeNodeInterface&lt; Particle_T &gt;</a>.</p>
 
 </div>
 </div>

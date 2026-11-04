@@ -144,7 +144,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:ad710498ebb2566869998d9189dcff9c9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Clears the internal key map and moves _lastValidListIndex to indicate an empty buffer.  <br /></td></tr>
 <tr class="separator:ad710498ebb2566869998d9189dcff9c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d682fb72fc80fd91575632ce38ef0b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1NeighborListsBuffer.html#a5d682fb72fc80fd91575632ce38ef0b2">reserveNeighborLists</a> (size_t n)</td></tr>
-<tr class="memdesc:a5d682fb72fc80fd91575632ce38ef0b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resize the internal buffer so that there are new spare lists.  <br /></td></tr>
+<tr class="memdesc:a5d682fb72fc80fd91575632ce38ef0b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resize the internal buffer to n lists.  <br /></td></tr>
 <tr class="separator:a5d682fb72fc80fd91575632ce38ef0b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f841de8fbd72754d0fda8477fa0680b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1NeighborListsBuffer.html#a0f841de8fbd72754d0fda8477fa0680b">setDefaultListLength</a> (size_t defaultListLength)</td></tr>
 <tr class="memdesc:a0f841de8fbd72754d0fda8477fa0680b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the initial length of new neighbor lists.  <br /></td></tr>
@@ -384,8 +384,8 @@ template&lt;class Key , class Value , class Hash  = std::hash&lt;Key&gt;, class 
 </table>
 </div><div class="memdoc">
 
-<p>Resize the internal buffer so that there are new spare lists. </p>
-<p>If n is not larger than the current capacity nothing happens.</p>
+<p>Resize the internal buffer to n lists. </p>
+<p>This also shrinks the buffer if it held more than n lists.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">n</td><td>Number of lists to allocate space for. </td></tr>

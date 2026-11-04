@@ -121,7 +121,7 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
-<p>This class handles the storage of particles in their full form.  
+<p>This class refers to particles that are stored in a vector outside of the cell by their indices in that vector.  
  <a href="classautopas_1_1ReferenceParticleCell.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="ReferenceParticleCell_8h_source.html">ReferenceParticleCell.h</a>&gt;</code></p>
@@ -130,7 +130,7 @@ Inheritance diagram for autopas::ReferenceParticleCell&lt; Particle_T &gt;:</div
 <div class="dyncontent">
 <div class="center"><img src="classautopas_1_1ReferenceParticleCell__inherit__graph.png" border="0" usemap="#aautopas_1_1ReferenceParticleCell_3_01Particle__T_01_4_inherit__map" alt="Inheritance graph"/></div>
 <map name="aautopas_1_1ReferenceParticleCell_3_01Particle__T_01_4_inherit__map" id="aautopas_1_1ReferenceParticleCell_3_01Particle__T_01_4_inherit__map">
-<area shape="rect" title="This class handles the storage of particles in their full form." alt="" coords="5,93,201,133"/>
+<area shape="rect" title="This class refers to particles that are stored in a vector outside of the cell by their indices in th..." alt="" coords="5,93,201,133"/>
 <area shape="rect" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles." alt="" coords="26,5,181,45"/>
 <area shape="poly" title=" " alt="" coords="106,59,106,93,101,93,101,59"/>
 </map>
@@ -140,7 +140,7 @@ Collaboration diagram for autopas::ReferenceParticleCell&lt; Particle_T &gt;:</d
 <div class="dyncontent">
 <div class="center"><img src="classautopas_1_1ReferenceParticleCell__coll__graph.png" border="0" usemap="#aautopas_1_1ReferenceParticleCell_3_01Particle__T_01_4_coll__map" alt="Collaboration graph"/></div>
 <map name="aautopas_1_1ReferenceParticleCell_3_01Particle__T_01_4_coll__map" id="aautopas_1_1ReferenceParticleCell_3_01Particle__T_01_4_coll__map">
-<area shape="rect" title="This class handles the storage of particles in their full form." alt="" coords="5,183,201,223"/>
+<area shape="rect" title="This class refers to particles that are stored in a vector outside of the cell by their indices in th..." alt="" coords="5,183,201,223"/>
 <area shape="rect" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles." alt="" coords="26,93,181,133"/>
 <area shape="poly" title=" " alt="" coords="106,147,106,183,101,183,101,147"/>
 <area shape="rect" href="classautopas_1_1AutoPasLock.html" title="AutoPasLock for the sequential case." alt="" coords="21,5,185,31"/>
@@ -154,10 +154,6 @@ Public Types</h2></td></tr>
 using&#160;</td><td class="memItemRight" valign="bottom"><b>SoAArraysType</b> = typename Particle_T::SoAArraysType</td></tr>
 <tr class="memdesc:af6bf3c5b6740c3dfaa5ce648f7524494"><td class="mdescLeft">&#160;</td><td class="mdescRight">The structure of the SoAs is defined by the particle. <br /></td></tr>
 <tr class="separator:af6bf3c5b6740c3dfaa5ce648f7524494"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a13f64b2a7c1a9bac7cb8cee19296c286"><td class="memItemLeft" align="right" valign="top"><a id="a13f64b2a7c1a9bac7cb8cee19296c286" name="a13f64b2a7c1a9bac7cb8cee19296c286"></a>
-using&#160;</td><td class="memItemRight" valign="bottom"><b>StorageType</b> = std::vector&lt; Particle_T * &gt;</td></tr>
-<tr class="memdesc:a13f64b2a7c1a9bac7cb8cee19296c286"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type that holds or refers to the actual particles. <br /></td></tr>
-<tr class="separator:a13f64b2a7c1a9bac7cb8cee19296c286"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_types_classautopas_1_1ParticleCell"><td colspan="2" onclick="javascript:toggleInherit('pub_types_classautopas_1_1ParticleCell')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classautopas_1_1ParticleCell.html">autopas::ParticleCell&lt; Particle_T &gt;</a></td></tr>
 <tr class="memitem:af02347c5927b01556f16d950de9f5a53 inherit pub_types_classautopas_1_1ParticleCell"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleCell.html#af02347c5927b01556f16d950de9f5a53">ParticleType</a> = Particle_T</td></tr>
 <tr class="memdesc:af02347c5927b01556f16d950de9f5a53 inherit pub_types_classautopas_1_1ParticleCell"><td class="mdescLeft">&#160;</td><td class="mdescRight">The particle type for this cell.  <br /></td></tr>
@@ -167,29 +163,32 @@ using&#160;</td><td class="memItemRight" valign="bottom"><b>StorageType</b> = st
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ac1d819f72094eb2fd6fb9f86d18fc183"><td class="memItemLeft" align="right" valign="top"><a id="ac1d819f72094eb2fd6fb9f86d18fc183" name="ac1d819f72094eb2fd6fb9f86d18fc183"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>ReferenceParticleCell</b> ()</td></tr>
-<tr class="memdesc:ac1d819f72094eb2fd6fb9f86d18fc183"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classautopas_1_1ReferenceParticleCell.html" title="This class handles the storage of particles in their full form.">ReferenceParticleCell</a>. <br /></td></tr>
+<tr class="memdesc:ac1d819f72094eb2fd6fb9f86d18fc183"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classautopas_1_1ReferenceParticleCell.html" title="This class refers to particles that are stored in a vector outside of the cell by their indices in th...">ReferenceParticleCell</a>. <br /></td></tr>
 <tr class="separator:ac1d819f72094eb2fd6fb9f86d18fc183"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1271323a5be465a0c9804af4dfaa626d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#a1271323a5be465a0c9804af4dfaa626d">ReferenceParticleCell</a> (const std::array&lt; double, 3 &gt; &amp;cellLength)</td></tr>
-<tr class="memdesc:a1271323a5be465a0c9804af4dfaa626d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classautopas_1_1ReferenceParticleCell.html" title="This class handles the storage of particles in their full form.">ReferenceParticleCell</a> with the given cell side length.  <br /></td></tr>
+<tr class="memdesc:a1271323a5be465a0c9804af4dfaa626d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructs a new <a class="el" href="classautopas_1_1ReferenceParticleCell.html" title="This class refers to particles that are stored in a vector outside of the cell by their indices in th...">ReferenceParticleCell</a> with the given cell side length.  <br /></td></tr>
 <tr class="separator:a1271323a5be465a0c9804af4dfaa626d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abebcd91aa6b6e4453716e16f9f1f4a97"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#abebcd91aa6b6e4453716e16f9f1f4a97">addParticle</a> (const Particle_T &amp;p) override</td></tr>
 <tr class="memdesc:abebcd91aa6b6e4453716e16f9f1f4a97"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a Particle to the cell.  <br /></td></tr>
 <tr class="separator:abebcd91aa6b6e4453716e16f9f1f4a97"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a27a21068e0def673fcc54c03d413d4de"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#a27a21068e0def673fcc54c03d413d4de">addParticleReference</a> (Particle_T *p)</td></tr>
-<tr class="memdesc:a27a21068e0def673fcc54c03d413d4de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a Particle to the cell.    <br /></td></tr>
-<tr class="separator:a27a21068e0def673fcc54c03d413d4de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae9ff2aaef54d6f5bcd53b3a78ecc1928"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCellIterator.html">CellIterator</a>&lt; <a class="el" href="classautopas_1_1ReferenceParticleCell.html#a13f64b2a7c1a9bac7cb8cee19296c286">StorageType</a>, true &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#ae9ff2aaef54d6f5bcd53b3a78ecc1928">begin</a> ()</td></tr>
-<tr class="memdesc:ae9ff2aaef54d6f5bcd53b3a78ecc1928"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an iterator to the start of a <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a>.    <br /></td></tr>
-<tr class="separator:ae9ff2aaef54d6f5bcd53b3a78ecc1928"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abe1643f2e6b337ec8786d2bf4ef7ca52"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCellIterator.html">CellIterator</a>&lt; <a class="el" href="classautopas_1_1ReferenceParticleCell.html#a13f64b2a7c1a9bac7cb8cee19296c286">StorageType</a>, false &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#abe1643f2e6b337ec8786d2bf4ef7ca52">begin</a> () const</td></tr>
-<tr class="memdesc:abe1643f2e6b337ec8786d2bf4ef7ca52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an iterator to the start of a <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a>.    <br /></td></tr>
-<tr class="separator:abe1643f2e6b337ec8786d2bf4ef7ca52"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aba41184bf592d63de0aad006f553cd6b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCellIterator.html">CellIterator</a>&lt; <a class="el" href="classautopas_1_1ReferenceParticleCell.html#a13f64b2a7c1a9bac7cb8cee19296c286">StorageType</a>, true &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#aba41184bf592d63de0aad006f553cd6b">end</a> ()</td></tr>
-<tr class="memdesc:aba41184bf592d63de0aad006f553cd6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an iterator to the end of a <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a>.    <br /></td></tr>
-<tr class="separator:aba41184bf592d63de0aad006f553cd6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4f2b5f6841fdd1a3d05387122a1891b8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classCellIterator.html">CellIterator</a>&lt; <a class="el" href="classautopas_1_1ReferenceParticleCell.html#a13f64b2a7c1a9bac7cb8cee19296c286">StorageType</a>, false &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#a4f2b5f6841fdd1a3d05387122a1891b8">end</a> () const</td></tr>
-<tr class="memdesc:a4f2b5f6841fdd1a3d05387122a1891b8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an iterator to the end of a <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a>.    <br /></td></tr>
-<tr class="separator:a4f2b5f6841fdd1a3d05387122a1891b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc071ec08b64b599eb86ebc10a2ed304"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#acc071ec08b64b599eb86ebc10a2ed304">setParticleStorage</a> (std::vector&lt; Particle_T &gt; *particleStorage)</td></tr>
+<tr class="memdesc:acc071ec08b64b599eb86ebc10a2ed304"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sets the vector the indices stored in this cell refer to.  <br /></td></tr>
+<tr class="separator:acc071ec08b64b599eb86ebc10a2ed304"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66b29764cea07cba7755238ceb650bf1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#a66b29764cea07cba7755238ceb650bf1">addParticleReference</a> (size_t index)</td></tr>
+<tr class="memdesc:a66b29764cea07cba7755238ceb650bf1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds the particle at the given index of the particle storage to this cell.  <br /></td></tr>
+<tr class="separator:a66b29764cea07cba7755238ceb650bf1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a90d2ade5919c3b1be33ca7ba09adeae7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1ReferenceCellIterator.html">ReferenceCellIterator</a>&lt; Particle_T, true &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#a90d2ade5919c3b1be33ca7ba09adeae7">begin</a> ()</td></tr>
+<tr class="memdesc:a90d2ade5919c3b1be33ca7ba09adeae7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an iterator to the start of a <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a>.    <br /></td></tr>
+<tr class="separator:a90d2ade5919c3b1be33ca7ba09adeae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3baca4561bbc67f57b83aa2a36e38b44"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1ReferenceCellIterator.html">ReferenceCellIterator</a>&lt; Particle_T, false &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#a3baca4561bbc67f57b83aa2a36e38b44">begin</a> () const</td></tr>
+<tr class="memdesc:a3baca4561bbc67f57b83aa2a36e38b44"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an iterator to the start of a <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a>.    <br /></td></tr>
+<tr class="separator:a3baca4561bbc67f57b83aa2a36e38b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3a0dd1ea5422072041a382dff05486b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1ReferenceCellIterator.html">ReferenceCellIterator</a>&lt; Particle_T, true &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#ae3a0dd1ea5422072041a382dff05486b">end</a> ()</td></tr>
+<tr class="memdesc:ae3a0dd1ea5422072041a382dff05486b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an iterator to the end of a <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a>.    <br /></td></tr>
+<tr class="separator:ae3a0dd1ea5422072041a382dff05486b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9764ea4a228b0cf8d9a39aeb2042380c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1ReferenceCellIterator.html">ReferenceCellIterator</a>&lt; Particle_T, false &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#a9764ea4a228b0cf8d9a39aeb2042380c">end</a> () const</td></tr>
+<tr class="memdesc:a9764ea4a228b0cf8d9a39aeb2042380c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get an iterator to the end of a <a class="el" href="classautopas_1_1ParticleCell.html" title="Class for Cells of Particles.">ParticleCell</a>.    <br /></td></tr>
+<tr class="separator:a9764ea4a228b0cf8d9a39aeb2042380c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2eca66d266926f60bdc22dad6c15750b"><td class="memTemplParams" colspan="2">template&lt;typename Lambda &gt; </td></tr>
 <tr class="memitem:a2eca66d266926f60bdc22dad6c15750b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#a2eca66d266926f60bdc22dad6c15750b">forEach</a> (Lambda forEachLambda, IteratorBehavior behavior)</td></tr>
 <tr class="memdesc:a2eca66d266926f60bdc22dad6c15750b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Executes code for every particle in this cell as defined by lambda function.  <br /></td></tr>
@@ -245,9 +244,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:af212defff45189f05cf5208e148b16de"><td class="memItemLeft" align="right" valign="top">std::array&lt; double, 3 &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#af212defff45189f05cf5208e148b16de">getCellLength</a> () const override</td></tr>
 <tr class="memdesc:af212defff45189f05cf5208e148b16de"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the side lengths of this cell.  <br /></td></tr>
 <tr class="separator:af212defff45189f05cf5208e148b16de"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5ff3e6b51fc160bddc2b82719ec5d35a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#a5ff3e6b51fc160bddc2b82719ec5d35a">resize</a> (size_t n, const Particle_T &amp;toInsert)</td></tr>
-<tr class="memdesc:a5ff3e6b51fc160bddc2b82719ec5d35a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Resizes the container so that it contains n elements.  <br /></td></tr>
-<tr class="separator:a5ff3e6b51fc160bddc2b82719ec5d35a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5cf1452b6983043416ecb16d86832e4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ReferenceParticleCell.html#ae5cf1452b6983043416ecb16d86832e4">sortByDim</a> (const size_t dim)</td></tr>
 <tr class="memdesc:ae5cf1452b6983043416ecb16d86832e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort the particles in the cell by a dimension.  <br /></td></tr>
 <tr class="separator:ae5cf1452b6983043416ecb16d86832e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -314,10 +310,10 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ParticleCell</b> 
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a337f39da6bb5459ca3ece02a09cf5df1"><td class="memItemLeft" align="right" valign="top"><a id="a337f39da6bb5459ca3ece02a09cf5df1" name="a337f39da6bb5459ca3ece02a09cf5df1"></a>
-<a class="el" href="classautopas_1_1ReferenceParticleCell.html#a13f64b2a7c1a9bac7cb8cee19296c286">StorageType</a>&#160;</td><td class="memItemRight" valign="bottom"><b>_particles</b></td></tr>
-<tr class="memdesc:a337f39da6bb5459ca3ece02a09cf5df1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Storage of the molecules of the cell. <br /></td></tr>
-<tr class="separator:a337f39da6bb5459ca3ece02a09cf5df1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4a119f5c2ef11eece484456030aaf1e9"><td class="memItemLeft" align="right" valign="top"><a id="a4a119f5c2ef11eece484456030aaf1e9" name="a4a119f5c2ef11eece484456030aaf1e9"></a>
+std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_particles</b></td></tr>
+<tr class="memdesc:a4a119f5c2ef11eece484456030aaf1e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indices of the particles of this cell in the particle storage. <br /></td></tr>
+<tr class="separator:a4a119f5c2ef11eece484456030aaf1e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab880c6b3fc45244d1d69b954263f8dff"><td class="memItemLeft" align="right" valign="top"><a id="ab880c6b3fc45244d1d69b954263f8dff" name="ab880c6b3fc45244d1d69b954263f8dff"></a>
 <a class="el" href="classautopas_1_1SoA.html">SoA</a>&lt; <a class="el" href="classautopas_1_1ReferenceParticleCell.html#af6bf3c5b6740c3dfaa5ce648f7524494">SoAArraysType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>_particleSoABuffer</b></td></tr>
 <tr class="memdesc:ab880c6b3fc45244d1d69b954263f8dff"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="classautopas_1_1SoA.html" title="Structur of the array class.">SoA</a> buffer of this cell. <br /></td></tr>
@@ -340,8 +336,8 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>_ownershipStateDefine
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class Particle_T&gt;<br />
-class autopas::ReferenceParticleCell&lt; Particle_T &gt;</div><p>This class handles the storage of particles in their full form. </p>
-<dl class="tparams"><dt>Template Parameters</dt><dd>
+class autopas::ReferenceParticleCell&lt; Particle_T &gt;</div><p>This class refers to particles that are stored in a vector outside of the cell by their indices in that vector. </p>
+<p>Adding particles to that vector does not invalidate the indices, removing particles from it does. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">Particle_T</td><td></td></tr>
   </table>
@@ -374,7 +370,7 @@ template&lt;class Particle_T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Constructs a new <a class="el" href="classautopas_1_1ReferenceParticleCell.html" title="This class handles the storage of particles in their full form.">ReferenceParticleCell</a> with the given cell side length. </p>
+<p>Constructs a new <a class="el" href="classautopas_1_1ReferenceParticleCell.html" title="This class refers to particles that are stored in a vector outside of the cell by their indices in th...">ReferenceParticleCell</a> with the given cell side length. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cellLength</td><td>cell side length </td></tr>
@@ -423,8 +419,8 @@ template&lt;class Particle_T &gt; </div>
 
 </div>
 </div>
-<a id="a27a21068e0def673fcc54c03d413d4de" name="a27a21068e0def673fcc54c03d413d4de"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a27a21068e0def673fcc54c03d413d4de">&#9670;&#160;</a></span>addParticleReference()</h2>
+<a id="a66b29764cea07cba7755238ceb650bf1" name="a66b29764cea07cba7755238ceb650bf1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66b29764cea07cba7755238ceb650bf1">&#9670;&#160;</a></span>addParticleReference()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -437,8 +433,8 @@ template&lt;class Particle_T &gt; </div>
         <tr>
           <td class="memname">void <a class="el" href="classautopas_1_1ReferenceParticleCell.html">autopas::ReferenceParticleCell</a>&lt; Particle_T &gt;::addParticleReference </td>
           <td>(</td>
-          <td class="paramtype">Particle_T *&#160;</td>
-          <td class="paramname"><em>p</em></td><td>)</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -449,10 +445,10 @@ template&lt;class Particle_T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Adds a Particle to the cell.   </p>
+<p>Adds the particle at the given index of the particle storage to this cell. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">p</td><td>the particle to be added   </td></tr>
+    <tr><td class="paramname">index</td><td>Index of the particle in the particle storage. </td></tr>
   </table>
   </dd>
 </dl>
@@ -533,8 +529,8 @@ template&lt;class Particle_T &gt; </div>
 
 </div>
 </div>
-<a id="ae9ff2aaef54d6f5bcd53b3a78ecc1928" name="ae9ff2aaef54d6f5bcd53b3a78ecc1928"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae9ff2aaef54d6f5bcd53b3a78ecc1928">&#9670;&#160;</a></span>begin() <span class="overload">[1/2]</span></h2>
+<a id="a90d2ade5919c3b1be33ca7ba09adeae7" name="a90d2ade5919c3b1be33ca7ba09adeae7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90d2ade5919c3b1be33ca7ba09adeae7">&#9670;&#160;</a></span>begin() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -545,7 +541,7 @@ template&lt;class Particle_T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classCellIterator.html">CellIterator</a>&lt; <a class="el" href="classautopas_1_1ReferenceParticleCell.html#a13f64b2a7c1a9bac7cb8cee19296c286">StorageType</a>, true &gt; <a class="el" href="classautopas_1_1ReferenceParticleCell.html">autopas::ReferenceParticleCell</a>&lt; Particle_T &gt;::begin </td>
+          <td class="memname"><a class="el" href="classautopas_1_1ReferenceCellIterator.html">ReferenceCellIterator</a>&lt; Particle_T, true &gt; <a class="el" href="classautopas_1_1ReferenceParticleCell.html">autopas::ReferenceParticleCell</a>&lt; Particle_T &gt;::begin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -563,8 +559,8 @@ template&lt;class Particle_T &gt; </div>
 
 </div>
 </div>
-<a id="abe1643f2e6b337ec8786d2bf4ef7ca52" name="abe1643f2e6b337ec8786d2bf4ef7ca52"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abe1643f2e6b337ec8786d2bf4ef7ca52">&#9670;&#160;</a></span>begin() <span class="overload">[2/2]</span></h2>
+<a id="a3baca4561bbc67f57b83aa2a36e38b44" name="a3baca4561bbc67f57b83aa2a36e38b44"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3baca4561bbc67f57b83aa2a36e38b44">&#9670;&#160;</a></span>begin() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -575,7 +571,7 @@ template&lt;class Particle_T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classCellIterator.html">CellIterator</a>&lt; <a class="el" href="classautopas_1_1ReferenceParticleCell.html#a13f64b2a7c1a9bac7cb8cee19296c286">StorageType</a>, false &gt; <a class="el" href="classautopas_1_1ReferenceParticleCell.html">autopas::ReferenceParticleCell</a>&lt; Particle_T &gt;::begin </td>
+          <td class="memname"><a class="el" href="classautopas_1_1ReferenceCellIterator.html">ReferenceCellIterator</a>&lt; Particle_T, false &gt; <a class="el" href="classautopas_1_1ReferenceParticleCell.html">autopas::ReferenceParticleCell</a>&lt; Particle_T &gt;::begin </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -694,8 +690,8 @@ template&lt;class Particle_T &gt; </div>
 
 </div>
 </div>
-<a id="aba41184bf592d63de0aad006f553cd6b" name="aba41184bf592d63de0aad006f553cd6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aba41184bf592d63de0aad006f553cd6b">&#9670;&#160;</a></span>end() <span class="overload">[1/2]</span></h2>
+<a id="ae3a0dd1ea5422072041a382dff05486b" name="ae3a0dd1ea5422072041a382dff05486b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3a0dd1ea5422072041a382dff05486b">&#9670;&#160;</a></span>end() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -706,7 +702,7 @@ template&lt;class Particle_T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classCellIterator.html">CellIterator</a>&lt; <a class="el" href="classautopas_1_1ReferenceParticleCell.html#a13f64b2a7c1a9bac7cb8cee19296c286">StorageType</a>, true &gt; <a class="el" href="classautopas_1_1ReferenceParticleCell.html">autopas::ReferenceParticleCell</a>&lt; Particle_T &gt;::end </td>
+          <td class="memname"><a class="el" href="classautopas_1_1ReferenceCellIterator.html">ReferenceCellIterator</a>&lt; Particle_T, true &gt; <a class="el" href="classautopas_1_1ReferenceParticleCell.html">autopas::ReferenceParticleCell</a>&lt; Particle_T &gt;::end </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -724,8 +720,8 @@ template&lt;class Particle_T &gt; </div>
 
 </div>
 </div>
-<a id="a4f2b5f6841fdd1a3d05387122a1891b8" name="a4f2b5f6841fdd1a3d05387122a1891b8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4f2b5f6841fdd1a3d05387122a1891b8">&#9670;&#160;</a></span>end() <span class="overload">[2/2]</span></h2>
+<a id="a9764ea4a228b0cf8d9a39aeb2042380c" name="a9764ea4a228b0cf8d9a39aeb2042380c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9764ea4a228b0cf8d9a39aeb2042380c">&#9670;&#160;</a></span>end() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -736,7 +732,7 @@ template&lt;class Particle_T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classCellIterator.html">CellIterator</a>&lt; <a class="el" href="classautopas_1_1ReferenceParticleCell.html#a13f64b2a7c1a9bac7cb8cee19296c286">StorageType</a>, false &gt; <a class="el" href="classautopas_1_1ReferenceParticleCell.html">autopas::ReferenceParticleCell</a>&lt; Particle_T &gt;::end </td>
+          <td class="memname"><a class="el" href="classautopas_1_1ReferenceCellIterator.html">ReferenceCellIterator</a>&lt; Particle_T, false &gt; <a class="el" href="classautopas_1_1ReferenceParticleCell.html">autopas::ReferenceParticleCell</a>&lt; Particle_T &gt;::end </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -1265,53 +1261,6 @@ template&lt;class Particle_T &gt; </div>
 
 </div>
 </div>
-<a id="a5ff3e6b51fc160bddc2b82719ec5d35a" name="a5ff3e6b51fc160bddc2b82719ec5d35a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5ff3e6b51fc160bddc2b82719ec5d35a">&#9670;&#160;</a></span>resize()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class Particle_T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classautopas_1_1ReferenceParticleCell.html">autopas::ReferenceParticleCell</a>&lt; Particle_T &gt;::resize </td>
-          <td>(</td>
-          <td class="paramtype">size_t&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const Particle_T &amp;&#160;</td>
-          <td class="paramname"><em>toInsert</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p>Resizes the container so that it contains n elements. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">n</td><td>New container size </td></tr>
-    <tr><td class="paramname">toInsert</td><td>Particle to insert. This is needed to allow for non-default-constructible particles. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a id="a419fa129fe4f22a8c9a80b77ec13a7fa" name="a419fa129fe4f22a8c9a80b77ec13a7fa"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a419fa129fe4f22a8c9a80b77ec13a7fa">&#9670;&#160;</a></span>setCellLength()</h2>
 
@@ -1347,6 +1296,42 @@ template&lt;class Particle_T &gt; </div>
 </dl>
 
 <p>Implements <a class="el" href="classautopas_1_1ParticleCell.html#ad229dcc7028778120dfe33b3161d9201">autopas::ParticleCell&lt; Particle_T &gt;</a>.</p>
+
+</div>
+</div>
+<a id="acc071ec08b64b599eb86ebc10a2ed304" name="acc071ec08b64b599eb86ebc10a2ed304"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc071ec08b64b599eb86ebc10a2ed304">&#9670;&#160;</a></span>setParticleStorage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Particle_T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1ReferenceParticleCell.html">autopas::ReferenceParticleCell</a>&lt; Particle_T &gt;::setParticleStorage </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; Particle_T &gt; *&#160;</td>
+          <td class="paramname"><em>particleStorage</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sets the vector the indices stored in this cell refer to. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">particleStorage</td><td>Vector holding the particles. It has to outlive this cell. </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -217,7 +217,7 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a434df2d9deb291ed4de5d5c10d1b457d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Update a halo particle of the container with the given haloParticle.    <br /></td></tr>
 <tr class="separator:a434df2d9deb291ed4de5d5c10d1b457d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2833f3207b5e1089e68ea5615dd55e24"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Octree.html#a2833f3207b5e1089e68ea5615dd55e24">rebuildNeighborLists</a> (<a class="el" href="classautopas_1_1TraversalInterface.html">TraversalInterface</a> *traversal) override</td></tr>
-<tr class="memdesc:a2833f3207b5e1089e68ea5615dd55e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Rebuilds the neighbor lists for the next traversals.  <br /></td></tr>
+<tr class="memdesc:a2833f3207b5e1089e68ea5615dd55e24"><td class="mdescLeft">&#160;</td><td class="mdescRight">The octree has no neighbor lists.  <br /></td></tr>
 <tr class="separator:a2833f3207b5e1089e68ea5615dd55e24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a57973e93cdc0c89931680ae834191009"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; const Particle_T *, size_t, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Octree.html#a57973e93cdc0c89931680ae834191009">getParticle</a> (size_t cellIndex, size_t particleIndex, IteratorBehavior iteratorBehavior, const std::array&lt; double, 3 &gt; &amp;boxMin, const std::array&lt; double, 3 &gt; &amp;boxMax) const override</td></tr>
 <tr class="memdesc:a57973e93cdc0c89931680ae834191009"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the pointer to a particle, identified via a cell and particle index.    <br /></td></tr>
@@ -232,12 +232,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a182727ce2b1c574ef40f4af680563b3e"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; std::vector&lt; size_t &gt;, <a class="el" href="classautopas_1_1OctreeLeafNode.html">OctreeLeafNode</a>&lt; Particle_T &gt; * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Octree.html#a182727ce2b1c574ef40f4af680563b3e">getLeafCellByIndex</a> (size_t cellIndex) const</td></tr>
 <tr class="memdesc:a182727ce2b1c574ef40f4af680563b3e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Helper function to retrieve the pointer to a leaf cell as well as properly parse the cell index.  <br /></td></tr>
 <tr class="separator:a182727ce2b1c574ef40f4af680563b3e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab45099f77ac0a1fdbc42a038f174704d"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Octree.html#ab45099f77ac0a1fdbc42a038f174704d">deleteParticle</a> (Particle_T &amp;particle) override</td></tr>
-<tr class="memdesc:ab45099f77ac0a1fdbc42a038f174704d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the given particle as long as this does not compromise the validity of the container.    <br /></td></tr>
-<tr class="separator:ab45099f77ac0a1fdbc42a038f174704d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aedaa2a7d3a6a5764cb8160271bb4defe"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Octree.html#aedaa2a7d3a6a5764cb8160271bb4defe">deleteParticle</a> (size_t cellIndex, size_t particleIndex) override</td></tr>
-<tr class="memdesc:aedaa2a7d3a6a5764cb8160271bb4defe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the particle at the given index positions as long as this does not compromise the validity of the container.  <br /></td></tr>
-<tr class="separator:aedaa2a7d3a6a5764cb8160271bb4defe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a057dbb73416a287d54f4bfb01ea72ac8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Octree.html#a057dbb73416a287d54f4bfb01ea72ac8">deleteParticle</a> (Particle_T &amp;particle) override</td></tr>
+<tr class="memdesc:a057dbb73416a287d54f4bfb01ea72ac8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks the given particle as deleted.    <br /></td></tr>
+<tr class="separator:a057dbb73416a287d54f4bfb01ea72ac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8672b769edd2da65b37445b5df06e7a5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Octree.html#a8672b769edd2da65b37445b5df06e7a5">deleteParticle</a> (size_t cellIndex, size_t particleIndex) override</td></tr>
+<tr class="memdesc:a8672b769edd2da65b37445b5df06e7a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks the particle at the given index positions as deleted.  <br /></td></tr>
+<tr class="separator:a8672b769edd2da65b37445b5df06e7a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab07e9483fc8e73b0f3939f0357606fe1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; Particle_T, true, false &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Octree.html#ab07e9483fc8e73b0f3939f0357606fe1">begin</a> (IteratorBehavior behavior, <a class="el" href="namespaceautopas_1_1utils.html#ae10dd2c812a2730e56bef02552dc4606">utils::optRef</a>&lt; typename <a class="el" href="classautopas_1_1ContainerIterator.html">ContainerIterator</a>&lt; Particle_T, true, false &gt;::ParticleVecType &gt; additionalVectors) override</td></tr>
 <tr class="memdesc:ab07e9483fc8e73b0f3939f0357606fe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Iterate over all particles using for(auto iter = container.begin(); iter.isValid(); ++iter) .    <br /></td></tr>
 <tr class="separator:ab07e9483fc8e73b0f3939f0357606fe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -262,6 +262,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a749963c343aeecbc1e950381e32d5673"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Octree.html#a749963c343aeecbc1e950381e32d5673">deleteHaloParticles</a> () override</td></tr>
 <tr class="memdesc:a749963c343aeecbc1e950381e32d5673"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all halo particles.  <br /></td></tr>
 <tr class="separator:a749963c343aeecbc1e950381e32d5673"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab00ee04b59dd0832ad898c56e69797c1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Octree.html#ab00ee04b59dd0832ad898c56e69797c1">deleteAllParticles</a> () override</td></tr>
+<tr class="memdesc:ab00ee04b59dd0832ad898c56e69797c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes all particles.  <br /></td></tr>
+<tr class="separator:ab00ee04b59dd0832ad898c56e69797c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a289878975e5899ff982317bfcf53bad9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1Octree.html#a289878975e5899ff982317bfcf53bad9">cellCanContainHaloParticles</a> (std::size_t i) const override</td></tr>
 <tr class="memdesc:a289878975e5899ff982317bfcf53bad9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the cell with the one-dimensional index index1d can contain halo particles.  <br /></td></tr>
 <tr class="separator:a289878975e5899ff982317bfcf53bad9"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -444,12 +447,12 @@ virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~ParticleContainer
 <tr class="memitem:a3e0ba632522a88de24c8da072d9ebe0c inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; ParticleCell_T::ParticleType *, size_t, size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a3e0ba632522a88de24c8da072d9ebe0c">getParticle</a> (size_t cellIndex, size_t particleIndex, IteratorBehavior iteratorBehavior)</td></tr>
 <tr class="memdesc:a3e0ba632522a88de24c8da072d9ebe0c inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fetch the pointer to a particle, identified via a cell and particle index.    <br /></td></tr>
 <tr class="separator:a3e0ba632522a88de24c8da072d9ebe0c inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad8d1f4d9292b1f7759cd0764afcddcc3 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#ad8d1f4d9292b1f7759cd0764afcddcc3">deleteParticle</a> (ParticleCell_T::ParticleType &amp;particle)=0</td></tr>
-<tr class="memdesc:ad8d1f4d9292b1f7759cd0764afcddcc3 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the given particle as long as this does not compromise the validity of the container.  <br /></td></tr>
-<tr class="separator:ad8d1f4d9292b1f7759cd0764afcddcc3 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4b0d45825b7200f790e120b17c480d32 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#a4b0d45825b7200f790e120b17c480d32">deleteParticle</a> (size_t cellIndex, size_t particleIndex)=0</td></tr>
-<tr class="memdesc:a4b0d45825b7200f790e120b17c480d32 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the particle at the given index positions as long as this does not compromise the validity of the container.  <br /></td></tr>
-<tr class="separator:a4b0d45825b7200f790e120b17c480d32 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0cea44050bb96c5b5dc7ba6f45a1944 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#ac0cea44050bb96c5b5dc7ba6f45a1944">deleteParticle</a> (ParticleCell_T::ParticleType &amp;particle)=0</td></tr>
+<tr class="memdesc:ac0cea44050bb96c5b5dc7ba6f45a1944 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks the given particle as deleted.  <br /></td></tr>
+<tr class="separator:ac0cea44050bb96c5b5dc7ba6f45a1944 inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4e0715de65fc18e127aa549a9febe7a inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1ParticleContainerInterface.html#aa4e0715de65fc18e127aa549a9febe7a">deleteParticle</a> (size_t cellIndex, size_t particleIndex)=0</td></tr>
+<tr class="memdesc:aa4e0715de65fc18e127aa549a9febe7a inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="mdescLeft">&#160;</td><td class="mdescRight">Marks the particle at the given index positions as deleted.  <br /></td></tr>
+<tr class="separator:aa4e0715de65fc18e127aa549a9febe7a inherit pub_methods_classautopas_1_1ParticleContainerInterface"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classautopas_1_1internal_1_1CellBorderAndFlagManager"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classautopas_1_1internal_1_1CellBorderAndFlagManager')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classautopas_1_1internal_1_1CellBorderAndFlagManager.html">autopas::internal::CellBorderAndFlagManager</a></td></tr>
 <tr class="memitem:aae6daff8ba7a4c400d1cf81231eb38c5 inherit pub_methods_classautopas_1_1internal_1_1CellBorderAndFlagManager"><td class="memItemLeft" align="right" valign="top"><a id="aae6daff8ba7a4c400d1cf81231eb38c5" name="aae6daff8ba7a4c400d1cf81231eb38c5"></a>
 virtual&#160;</td><td class="memItemRight" valign="bottom"><b>~CellBorderAndFlagManager</b> ()=default</td></tr>
@@ -904,6 +907,37 @@ template&lt;class Particle_T &gt; </div>
 
 </div>
 </div>
+<a id="ab00ee04b59dd0832ad898c56e69797c1" name="ab00ee04b59dd0832ad898c56e69797c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab00ee04b59dd0832ad898c56e69797c1">&#9670;&#160;</a></span>deleteAllParticles()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class Particle_T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classautopas_1_1Octree.html">autopas::Octree</a>&lt; Particle_T &gt;::deleteAllParticles </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Deletes all particles. </p>
+
+<p>Implements <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a740fc3a18464478bffd53abadcf9071d">autopas::ParticleContainerInterface&lt; ParticleCell_T::ParticleType &gt;</a>.</p>
+
+</div>
+</div>
 <a id="a749963c343aeecbc1e950381e32d5673" name="a749963c343aeecbc1e950381e32d5673"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a749963c343aeecbc1e950381e32d5673">&#9670;&#160;</a></span>deleteHaloParticles()</h2>
 
@@ -935,8 +969,8 @@ template&lt;class Particle_T &gt; </div>
 
 </div>
 </div>
-<a id="ab45099f77ac0a1fdbc42a038f174704d" name="ab45099f77ac0a1fdbc42a038f174704d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab45099f77ac0a1fdbc42a038f174704d">&#9670;&#160;</a></span>deleteParticle() <span class="overload">[1/2]</span></h2>
+<a id="a057dbb73416a287d54f4bfb01ea72ac8" name="a057dbb73416a287d54f4bfb01ea72ac8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a057dbb73416a287d54f4bfb01ea72ac8">&#9670;&#160;</a></span>deleteParticle() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -947,7 +981,7 @@ template&lt;class Particle_T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classautopas_1_1Octree.html">autopas::Octree</a>&lt; Particle_T &gt;::deleteParticle </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1Octree.html">autopas::Octree</a>&lt; Particle_T &gt;::deleteParticle </td>
           <td>(</td>
           <td class="paramtype">Particle_T &amp;&#160;</td>
           <td class="paramname"><em>particle</em></td><td>)</td>
@@ -961,20 +995,18 @@ template&lt;class Particle_T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Deletes the given particle as long as this does not compromise the validity of the container.   </p>
-<p>If this is not possible the particle is just marked as deleted. </p><dl class="section note"><dt>Note</dt><dd>This function might be implemented via swap-delete and is thus not completely thread safe. </dd></dl>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Marks the given particle as deleted.   </p>
+<p>No particle is moved by this. The particle is removed from the container when the container is rebuilt. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">particle</td><td>Reference to the particle that is to be deleted. </td></tr>
+    <tr><td class="paramname">particle</td><td>Reference to the particle that is to be deleted.   </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the given pointer still points to a new particle.   </dd></dl>
 
 </div>
 </div>
-<a id="aedaa2a7d3a6a5764cb8160271bb4defe" name="aedaa2a7d3a6a5764cb8160271bb4defe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aedaa2a7d3a6a5764cb8160271bb4defe">&#9670;&#160;</a></span>deleteParticle() <span class="overload">[2/2]</span></h2>
+<a id="a8672b769edd2da65b37445b5df06e7a5" name="a8672b769edd2da65b37445b5df06e7a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8672b769edd2da65b37445b5df06e7a5">&#9670;&#160;</a></span>deleteParticle() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -985,7 +1017,7 @@ template&lt;class Particle_T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classautopas_1_1Octree.html">autopas::Octree</a>&lt; Particle_T &gt;::deleteParticle </td>
+          <td class="memname">void <a class="el" href="classautopas_1_1Octree.html">autopas::Octree</a>&lt; Particle_T &gt;::deleteParticle </td>
           <td>(</td>
           <td class="paramtype">size_t&#160;</td>
           <td class="paramname"><em>cellIndex</em>, </td>
@@ -1009,17 +1041,16 @@ template&lt;class Particle_T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Deletes the particle at the given index positions as long as this does not compromise the validity of the container. </p>
-<p>If this is not possible the particle is just marked as deleted. If the positions do not exist the behavior is undefined. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Marks the particle at the given index positions as deleted. </p>
+<p>No particle is moved by this. The particle is removed from the container when the container is rebuilt. If the positions do not exist the behavior is undefined. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">cellIndex</td><td></td></tr>
     <tr><td class="paramname">particleIndex</td><td></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True if the given indices still point to a new particle. </dd></dl>
 
-<p>Implements <a class="el" href="classautopas_1_1ParticleContainerInterface.html#a4b0d45825b7200f790e120b17c480d32">autopas::ParticleContainerInterface&lt; ParticleCell_T::ParticleType &gt;</a>.</p>
+<p>Implements <a class="el" href="classautopas_1_1ParticleContainerInterface.html#aa4e0715de65fc18e127aa549a9febe7a">autopas::ParticleContainerInterface&lt; ParticleCell_T::ParticleType &gt;</a>.</p>
 
 </div>
 </div>
@@ -1659,10 +1690,10 @@ template&lt;class Particle_T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Rebuilds the neighbor lists for the next traversals. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>The octree has no neighbor lists. </p>
+<p>Instead, this sorts the particles that were added since the last <a class="el" href="classautopas_1_1Octree.html#a97a635f1c83848bb832ae493b7515936" title="Updates the container.">updateContainer()</a> into the octrees. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">traversal</td><td>The used traversal. </td></tr>
+    <tr><td class="paramname">traversal</td><td>Not used. </td></tr>
   </table>
   </dd>
 </dl>
@@ -1963,6 +1994,7 @@ template&lt;class Particle_T &gt; </div>
 </div><div class="memdoc">
 
 <p>Update a halo particle of the container with the given haloParticle.   </p>
+<p>A stored particle is only updated if it has the same ID as haloParticle and is less than half the skin away from it. </p><dl class="section note"><dt>Note</dt><dd>Several halo particles may have the same ID only if they are different periodic copies of the same particle. Such copies are expected to be at least cutoff + skin apart. </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">haloParticle</td><td>Particle to be updated. </td></tr>

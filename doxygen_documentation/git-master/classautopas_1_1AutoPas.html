@@ -208,9 +208,9 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>forceRetune</b> ()</t
 <tr class="memitem:ac926321832a7fd827f99c1eb0b095269"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#ac926321832a7fd827f99c1eb0b095269">deleteParticle</a> (<a class="el" href="classautopas_1_1AutoPas.html#a67d27bc7a614eac5baf28dad9991927b">RegionIteratorT</a> &amp;iter)</td></tr>
 <tr class="memdesc:ac926321832a7fd827f99c1eb0b095269"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the particle behind the current iterator position and leaves the container in a valid state.    <br /></td></tr>
 <tr class="separator:ac926321832a7fd827f99c1eb0b095269"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6cf7356b5dba687737944cfabf592a34"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#a6cf7356b5dba687737944cfabf592a34">deleteParticle</a> (Particle_T &amp;particle)</td></tr>
-<tr class="memdesc:a6cf7356b5dba687737944cfabf592a34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the given particle and leaves the container in a valid state.  <br /></td></tr>
-<tr class="separator:a6cf7356b5dba687737944cfabf592a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa7ca4b0ab591eb1d7ef8d4648735de56"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structautopas_1_1DeleteParticleResult.html">DeleteParticleResult</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#aa7ca4b0ab591eb1d7ef8d4648735de56">deleteParticle</a> (Particle_T &amp;particle)</td></tr>
+<tr class="memdesc:aa7ca4b0ab591eb1d7ef8d4648735de56"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deletes the given particle and leaves the container in a valid state.  <br /></td></tr>
+<tr class="separator:aa7ca4b0ab591eb1d7ef8d4648735de56"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad72b8f0c81c56984e0647becd8bb177d"><td class="memTemplParams" colspan="2">template&lt;class <a class="el" href="classautopas_1_1Functor.html">Functor</a> &gt; </td></tr>
 <tr class="memitem:ad72b8f0c81c56984e0647becd8bb177d"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoPas.html#ad72b8f0c81c56984e0647becd8bb177d">computeInteractions</a> (<a class="el" href="classautopas_1_1Functor.html">Functor</a> *f)</td></tr>
 <tr class="memdesc:ad72b8f0c81c56984e0647becd8bb177d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to iterate over all inter-particle interactions in the container This function only handles short-range interactions.  <br /></td></tr>
@@ -704,6 +704,8 @@ template&lt;class Particle_T &gt; </div>
 </dl>
 <dl class="section note"><dt>Note</dt><dd>An exception is thrown if the halo particle is added and it is inside of the owned domain (defined by boxMin and boxMax) of the container. </dd>
 <dd>
+Several halo particles may have the same ID only if they are different periodic copies of the same particle. Such copies are expected to be at least cutoff + skin apart. </dd>
+<dd>
 This function is NOT thread-safe if the container is <a class="el" href="classautopas_1_1Octree.html" title="The octree is a CellBasedParticleContainer that consists internally of two octrees.">Octree</a>. </dd></dl>
 
 </div>
@@ -1085,7 +1087,7 @@ template&lt;class Particle_T &gt; </div>
 </div><div class="memdoc">
 
 <p>Deletes the particle behind the current iterator position and leaves the container in a valid state. </p>
-<p>Internally, depending on the container, this might just mark the particle as deleted without actually removing it. If this can not be done without compromising e.g. a VerletList reference structure the particle is only marked.</p>
+<p>Internally, the particle is only marked as deleted (i.e. a dummy particle) and removed when the container is rebuilt.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">iter</td><td>Needs to be a modify-able iterator. </td></tr>
@@ -1095,8 +1097,8 @@ template&lt;class Particle_T &gt; </div>
 
 </div>
 </div>
-<a id="a6cf7356b5dba687737944cfabf592a34" name="a6cf7356b5dba687737944cfabf592a34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6cf7356b5dba687737944cfabf592a34">&#9670;&#160;</a></span>deleteParticle() <span class="overload">[2/3]</span></h2>
+<a id="aa7ca4b0ab591eb1d7ef8d4648735de56" name="aa7ca4b0ab591eb1d7ef8d4648735de56"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7ca4b0ab591eb1d7ef8d4648735de56">&#9670;&#160;</a></span>deleteParticle() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1104,7 +1106,7 @@ template&lt;class Particle_T &gt; </div>
 template&lt;class Particle_T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">bool <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; Particle_T &gt;::deleteParticle </td>
+          <td class="memname"><a class="el" href="structautopas_1_1DeleteParticleResult.html">DeleteParticleResult</a> <a class="el" href="classautopas_1_1AutoPas.html">autopas::AutoPas</a>&lt; Particle_T &gt;::deleteParticle </td>
           <td>(</td>
           <td class="paramtype">Particle_T &amp;&#160;</td>
           <td class="paramname"><em>particle</em></td><td>)</td>
@@ -1114,15 +1116,14 @@ template&lt;class Particle_T &gt; </div>
 </div><div class="memdoc">
 
 <p>Deletes the given particle and leaves the container in a valid state. </p>
-<p>Internally, depending on the container, this might just mark the particle as deleted without actually removing it. If this can not be done without compromising e.g. a VerletList reference structure the particle is only marked.</p>
-<dl class="section note"><dt>Note</dt><dd>This function might invalidate iterators.</dd></dl>
+<p>Internally, the particle is only marked as deleted (i.e. a dummy particle) and removed when the container is rebuilt.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">particle</td><td>Reference to the particle that should be deleted.</td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>True iff the reference still points to a valid particle. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Deprecated: True iff the reference still points to a valid particle. After changing <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> to always mark deleted particles as dummies, this always returns false, and is therefore redundant. Using the return value triggers a deprecation warning. In <a class="el" href="classautopas_1_1AutoPas.html" title="The AutoPas class is intended to be the main point of Interaction for the user.">AutoPas</a> v3, this function will return void. </dd></dl>
 
 </div>
 </div>
@@ -1145,7 +1146,7 @@ template&lt;class Particle_T &gt; </div>
 </div><div class="memdoc">
 
 <p>Deletes the particle behind the current iterator position and leaves the container in a valid state.   </p>
-<p>Internally, depending on the container, this might just mark the particle as deleted without actually removing it. If this can not be done without compromising e.g. a VerletList reference structure the particle is only marked.</p>
+<p>Internally, the particle is only marked as deleted (i.e. a dummy particle) and removed when the container is rebuilt.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">iter</td><td>Needs to be a modify-able iterator.  </td></tr>

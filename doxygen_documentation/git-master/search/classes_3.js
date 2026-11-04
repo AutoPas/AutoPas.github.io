@@ -7,7 +7,8 @@ var searchData=
   ['define_4',['Define',['../structautopas_1_1RuleSyntax_1_1Define.html',1,'autopas::RuleSyntax']]],
   ['definelist_5',['DefineList',['../structautopas_1_1RuleSyntax_1_1DefineList.html',1,'autopas::RuleSyntax']]],
   ['defuzzificationmethodoption_6',['DefuzzificationMethodOption',['../classautopas_1_1FuzzyLogic_1_1DefuzzificationMethodOption.html',1,'autopas::FuzzyLogic']]],
-  ['directsum_7',['DirectSum',['../classautopas_1_1DirectSum.html',1,'autopas']]],
-  ['dssequentialtraversal_8',['DSSequentialTraversal',['../classautopas_1_1DSSequentialTraversal.html',1,'autopas']]],
-  ['dstraversalinterface_9',['DSTraversalInterface',['../classautopas_1_1DSTraversalInterface.html',1,'autopas']]]
+  ['deleteparticleresult_7',['DeleteParticleResult',['../structautopas_1_1DeleteParticleResult.html',1,'autopas']]],
+  ['directsum_8',['DirectSum',['../classautopas_1_1DirectSum.html',1,'autopas']]],
+  ['dssequentialtraversal_9',['DSSequentialTraversal',['../classautopas_1_1DSSequentialTraversal.html',1,'autopas']]],
+  ['dstraversalinterface_10',['DSTraversalInterface',['../classautopas_1_1DSTraversalInterface.html',1,'autopas']]]
 ];
