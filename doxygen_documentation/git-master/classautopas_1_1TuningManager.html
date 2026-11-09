@@ -141,9 +141,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0d892da6e5b8d4313ce82d8b3721889c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningManager.html#a0d892da6e5b8d4313ce82d8b3721889c">setRebuildFrequency</a> (double rebuildFrequency)</td></tr>
 <tr class="memdesc:a0d892da6e5b8d4313ce82d8b3721889c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pass the given rebuild frequency over to all AutoTuners.  <br /></td></tr>
 <tr class="separator:a0d892da6e5b8d4313ce82d8b3721889c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac874ebb11f3dfb5e25f31f85ab73dae5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1Configuration.html">Configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningManager.html#ac874ebb11f3dfb5e25f31f85ab73dae5">rejectConfiguration</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;rejectedConfig, bool indefinitely, InteractionTypeOption::Value interactionType)</td></tr>
-<tr class="memdesc:ac874ebb11f3dfb5e25f31f85ab73dae5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reject the current configuration for the interactionType by either skipping over it (indefinitely = false) or removing it entirely (indefinitely = true).  <br /></td></tr>
-<tr class="separator:ac874ebb11f3dfb5e25f31f85ab73dae5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0540f16f862f9572ade163ca3fe8d9ef"><td class="memItemLeft" align="right" valign="top">std::tuple&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a>, bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1TuningManager.html#a0540f16f862f9572ade163ca3fe8d9ef">rejectConfiguration</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;rejectedConfig, bool indefinitely, InteractionTypeOption::Value interactionType)</td></tr>
+<tr class="memdesc:a0540f16f862f9572ade163ca3fe8d9ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reject the current configuration for the interactionType by either skipping over it (indefinitely = false) or removing it entirely (indefinitely = true).  <br /></td></tr>
+<tr class="separator:a0540f16f862f9572ade163ca3fe8d9ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a779ec6919f6c134ffe08c04501dcfaa0"><td class="memItemLeft" align="right" valign="top"><a id="a779ec6919f6c134ffe08c04501dcfaa0" name="a779ec6919f6c134ffe08c04501dcfaa0"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>forceRetune</b> ()</td></tr>
 <tr class="memdesc:a779ec6919f6c134ffe08c04501dcfaa0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Force all AutoTuners to start a new tuning phase immediately. <br /></td></tr>
@@ -533,14 +533,14 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>forceRetune</b> ()</t
 
 </div>
 </div>
-<a id="ac874ebb11f3dfb5e25f31f85ab73dae5" name="ac874ebb11f3dfb5e25f31f85ab73dae5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac874ebb11f3dfb5e25f31f85ab73dae5">&#9670;&#160;</a></span>rejectConfiguration()</h2>
+<a id="a0540f16f862f9572ade163ca3fe8d9ef" name="a0540f16f862f9572ade163ca3fe8d9ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0540f16f862f9572ade163ca3fe8d9ef">&#9670;&#160;</a></span>rejectConfiguration()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1Configuration.html">Configuration</a> autopas::TuningManager::rejectConfiguration </td>
+          <td class="memname">std::tuple&lt; <a class="el" href="classautopas_1_1Configuration.html">Configuration</a>, bool &gt; autopas::TuningManager::rejectConfiguration </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;&#160;</td>
           <td class="paramname"><em>rejectedConfig</em>, </td>
@@ -566,7 +566,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>forceRetune</b> ()</t
 </div><div class="memdoc">
 
 <p>Reject the current configuration for the interactionType by either skipping over it (indefinitely = false) or removing it entirely (indefinitely = true). </p>
-<p>Also refreshes the respective <a class="el" href="classautopas_1_1AutoTuner.html" title="This class manages all logic related to the auto tuning mechanic.">AutoTuner</a>'s queue and returns the next configuration in line. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Also refreshes the respective <a class="el" href="classautopas_1_1AutoTuner.html" title="This class manages all logic related to the auto tuning mechanic.">AutoTuner</a>'s queue and returns the next configuration in line. If this was the last configuration of the tuning phase, the tuning phase is ended the same way as in <a class="el" href="classautopas_1_1TuningManager.html#af8daab5c35f39c25f6742ef3514f2f7d" title="This method is the backbone of the TuningManager.">tune()</a> and the selected configuration is returned. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">rejectedConfig</td><td>The configuration to skip/remove </td></tr>
     <tr><td class="paramname">indefinitely</td><td>True, if the configuration should also be removed from the search space and with that upcoming tuning phases. </td></tr>
@@ -574,7 +574,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>forceRetune</b> ()</t
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>The next configuration from the queue. </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>Tuple&lt;The next configuration to use, true if at least one AutoTuner is still in tuning state&gt;. </dd></dl>
 
 </div>
 </div>

@@ -169,9 +169,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad8c778b2db88b8c7cfcbd4417b33ed5f"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#ad8c778b2db88b8c7cfcbd4417b33ed5f">getCurrentConfig</a> () const</td></tr>
 <tr class="memdesc:ad8c778b2db88b8c7cfcbd4417b33ed5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the currently selected configuration.  <br /></td></tr>
 <tr class="separator:ad8c778b2db88b8c7cfcbd4417b33ed5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1a7b958b488fe528a0a5f115612b1754"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classautopas_1_1Configuration.html">Configuration</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a1a7b958b488fe528a0a5f115612b1754">rejectConfig</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;rejectedConfig, bool indefinitely, size_t tuningPhase)</td></tr>
-<tr class="memdesc:a1a7b958b488fe528a0a5f115612b1754"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell the tuner that the given config is not applicable.  <br /></td></tr>
-<tr class="separator:a1a7b958b488fe528a0a5f115612b1754"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9d92a3b0648764ba675b31bfc4112ec3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a9d92a3b0648764ba675b31bfc4112ec3">rejectConfig</a> (const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;rejectedConfig, bool indefinitely, size_t tuningPhase)</td></tr>
+<tr class="memdesc:a9d92a3b0648764ba675b31bfc4112ec3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tell the tuner that the given config is not applicable.  <br /></td></tr>
+<tr class="separator:a9d92a3b0648764ba675b31bfc4112ec3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae200ca1f23fb9ca4f9f798cd5e443af6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#ae200ca1f23fb9ca4f9f798cd5e443af6">searchSpaceIsTrivial</a> () const</td></tr>
 <tr class="memdesc:ae200ca1f23fb9ca4f9f798cd5e443af6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicator function whether the search space consists of exactly one configuration.  <br /></td></tr>
 <tr class="separator:ae200ca1f23fb9ca4f9f798cd5e443af6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,9 +205,6 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ac5383029952ce900fd2cf745aabaa634"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#ac5383029952ce900fd2cf745aabaa634">inTuningPhase</a> () const</td></tr>
 <tr class="memdesc:ac5383029952ce900fd2cf745aabaa634"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicate if the tuner considers itself currently in a tuning phase according to its internal counters.  <br /></td></tr>
 <tr class="separator:ac5383029952ce900fd2cf745aabaa634"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9c5eb51d45b6653060f0e3347b015aba"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#a9c5eb51d45b6653060f0e3347b015aba">inLastTuningIteration</a> () const</td></tr>
-<tr class="memdesc:a9c5eb51d45b6653060f0e3347b015aba"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates if the tuner is in the last iteration of the tuning phase.  <br /></td></tr>
-<tr class="separator:a9c5eb51d45b6653060f0e3347b015aba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adc45ebb44212a4438832c007918de4a8"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="classautopas_1_1EvidenceCollection.html">EvidenceCollection</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classautopas_1_1AutoTuner.html#adc45ebb44212a4438832c007918de4a8">getEvidenceCollection</a> () const</td></tr>
 <tr class="memdesc:adc45ebb44212a4438832c007918de4a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Getter for the internal evidence collection.  <br /></td></tr>
 <tr class="separator:adc45ebb44212a4438832c007918de4a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -630,26 +627,6 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a9c5eb51d45b6653060f0e3347b015aba" name="a9c5eb51d45b6653060f0e3347b015aba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9c5eb51d45b6653060f0e3347b015aba">&#9670;&#160;</a></span>inLastTuningIteration()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool autopas::AutoTuner::inLastTuningIteration </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Indicates if the tuner is in the last iteration of the tuning phase. </p>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
-
-</div>
-</div>
 <a id="ac5383029952ce900fd2cf745aabaa634" name="ac5383029952ce900fd2cf745aabaa634"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac5383029952ce900fd2cf745aabaa634">&#9670;&#160;</a></span>inTuningPhase()</h2>
 
@@ -819,14 +796,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a1a7b958b488fe528a0a5f115612b1754" name="a1a7b958b488fe528a0a5f115612b1754"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1a7b958b488fe528a0a5f115612b1754">&#9670;&#160;</a></span>rejectConfig()</h2>
+<a id="a9d92a3b0648764ba675b31bfc4112ec3" name="a9d92a3b0648764ba675b31bfc4112ec3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9d92a3b0648764ba675b31bfc4112ec3">&#9670;&#160;</a></span>rejectConfig()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classautopas_1_1Configuration.html">Configuration</a> autopas::AutoTuner::rejectConfig </td>
+          <td class="memname">void autopas::AutoTuner::rejectConfig </td>
           <td>(</td>
           <td class="paramtype">const <a class="el" href="classautopas_1_1Configuration.html">Configuration</a> &amp;&#160;</td>
           <td class="paramname"><em>rejectedConfig</em>, </td>
@@ -852,7 +829,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Tell the tuner that the given config is not applicable. </p>
-<p>Since this operation might change the suggestion what configuration to try next, this next suggestion is returned.</p>
+<p>Since this operation might change the suggestion what configuration to try next, the next configuration has to be retrieved via <a class="el" href="classautopas_1_1AutoTuner.html#ad8c778b2db88b8c7cfcbd4417b33ed5f" title="Get the currently selected configuration.">getCurrentConfig()</a> afterwards. If the rejected configuration was the last one in the queue, the tuner stops tuning (see handleEndOfTuningPhase()).</p>
 <dl class="section note"><dt>Note</dt><dd>The applicability checking logic was moved out of the tuner because it needed the container, thus raising the compile complexity.</dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -862,7 +839,6 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Tuple&lt;Next configuration to use, still tuning&gt;. </dd></dl>
 
 </div>
 </div>
